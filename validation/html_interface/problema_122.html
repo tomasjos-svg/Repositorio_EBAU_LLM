@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 122: pais_vasco_2023 A3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 122 de 139</h1>
+<div class="meta"><span class="badge">pais_vasco_2023</span> &nbsp; Ejercicio A3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_121.html">Anterior</a><a class="button" href="problema_123.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio A3</p>
+<p>Sea \(f(x)=\dfrac{x}{x^2+1}\). Estudia los intervalos de crecimiento y decrecimiento de \(f\), calcula sus asíntotas, y encuentra la recta tangente a la gráfica de \(f\) en el punto de abscisa \(x=0\). Haz una representación aproximada de la gráfica de la función \(f\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio A3</strong></p>
+<p>Sea  <br>
+\[
+f(x)=\frac{x}{x^2+1}.
+\]<br>
+Estudia los intervalos de crecimiento y decrecimiento de \(f\), calcula sus asíntotas, y encuentra la recta tangente a la gráfica de \(f\) en el punto de abscisa \(x=0\). Haz una representación aproximada de la gráfica de la función \(f\).</p>
+<p>El dominio de la función es todo \(\mathbb{R}\), pues el denominador no se anula para ningún valor de \(x\).</p>
+<p>\[
+x^2+1=0 \Rightarrow x^2=-1
+\]</p>
+<p>Hallamos la derivada de la función y la igualamos a cero en busca de sus puntos críticos.</p>
+<p>\[
+f&#x27;(x)=\frac{(x^2+1)-2x^2}{(x^2+1)^2}
+=\frac{1-x^2}{(x^2+1)^2}
+\]</p>
+<p>\[
+f&#x27;(x)=0 \Rightarrow 1-x^2=0 \Rightarrow x^2=1 \Rightarrow x=\pm 1
+\]</p>
+<p>Estudiamos el signo de la derivada:</p>
+<p>- En \((-\infty,-1)\), la derivada es negativa. La función decrece.<br>
+- En \((-1,1)\), la derivada es positiva. La función crece.<br>
+- En \((1,+\infty)\), la derivada es negativa. La función decrece.</p>
+<p>Por tanto, la función decrece en</p>
+<p>\[
+(-\infty,-1)\cup(1,+\infty)
+\]</p>
+<p>y crece en</p>
+<p>\[
+(-1,1).
+\]</p>
+<p>El dominio de la función es \(\mathbb{R}\), por lo que no tiene asíntotas verticales.</p>
+<p>Asíntota horizontal:</p>
+<p>\[
+\lim_{x\to\pm\infty}\frac{x}{x^2+1}=0
+\]</p>
+<p>Luego</p>
+<p>\[
+y=0
+\]</p>
+<p>es asíntota horizontal.</p>
+<p>No tiene asíntota oblicua, pues tiene asíntota horizontal.</p>
+<p>La recta tangente a la gráfica de \(f\) en el punto de abscisa \(x=0\) tiene ecuación</p>
+<p>\[
+y-f(0)=f&#x27;(0)(x-0).
+\]</p>
+<p>\[
+f(0)=0,\qquad f&#x27;(0)=1
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+y=x.
+\]</p>
+<p>La recta tangente es</p>
+<p>\[
+\boxed{y=x}.
+\]</p>
+<p>Tabla de valores para la representación aproximada:</p>
+<p>\[
+\begin{array}{c|c}
+x &amp; f(x) \\ \hline
+-3 &amp; -0.3 \\
+-1 &amp; -1/2 \\
+0 &amp; 0 \\
+1 &amp; 1/2 \\
+3 &amp; 0.3
+\end{array}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio A3, comenzamos con el estudio de la función \( f(x) = \frac{x}{x^2+1} \). Vamos a analizar los intervalos de crecimiento y decrecimiento, las asíntotas de la función y finalmente, encontrar la recta tangente a la gráfica en el punto donde la abscisa es \( x=0 \).</p>
+<h4>1. Intervalos de crecimiento y decrecimiento</h4>
+Para determinar en qué intervalos la función crece o decrece, necesitamos calcular la derivada de \( f \) y estudiar su signo. La derivada de \( f(x) \) se calcula utilizando la regla del cociente:
+<p>\[
+f&#x27;(x) = \frac{(1 \cdot (x^2+1)) - (x \cdot 2x)}{(x^2+1)^2} = \frac{x^2+1 - 2x^2}{(x^2+1)^2} = \frac{-x^2 + 1}{(x^2+1)^2}
+\]</p>
+<p>Simplificamos el numerador:</p>
+<p>\[
+f&#x27;(x) = \frac{1 - x^2}{(x^2+1)^2}
+\]</p>
+<p>Para encontrar intervalos donde la función es creciente o decreciente, igualamos la derivada a cero y resolvemos por \( x \):</p>
+<p>\[
+1 - x^2 = 0 \Rightarrow x^2 = 1 \Rightarrow x = \pm 1
+\]</p>
+<p>Ahora, estudiamos el signo de \( f&#x27;(x) \) en diferentes intervalos divisorios dados por estos puntos críticos:</p>
+<p>- \( x &lt; -1 \): \( 1-x^2 &lt; 0 \) ⇒ \( f&#x27;(x) &lt; 0 \) (decreciente).<br>
+- \( -1 &lt; x &lt; 1 \): \( 1-x^2 &gt; 0 \) ⇒ \( f&#x27;(x) &gt; 0 \) (creciente).<br>
+- \( x &gt; 1 \): \( 1-x^2 &lt; 0 \) ⇒ \( f&#x27;(x) &lt; 0 \) (decreciente).</p>
+<h4>2. Asíntotas</h4>
+#### Horizontal/oblicua:
+Para encontrar asíntotas horizontales/oblicuas, evalúamos los límites de \( f(x) \) cuando \( x \) tiende a infinito:
+<p>\[
+\lim_{x\to\pm\infty} \frac{x}{x^2+1} = \lim_{x\to\pm\infty} \frac{x}{x^2\left(1+\frac{1}{x^2}\right)} = \lim_{x\to\pm\infty} \frac{1}{x} = 0
+\]</p>
+<p>Por lo tanto, la recta \( y = 0 \) es una asíntota horizontal.</p>
+<p>#### Vertical:<br>
+Para asíntotas verticales, identificamos valores de \( x \) donde el denominador se hace cero, pero \( x^2 + 1 = 0 \) no tiene solución real.</p>
+<h4>3. Recta tangente en el punto \( x=0 \)</h4>
+El valor de \( f(0) \) es:
+<p>\[
+f(0) = \frac{0}{0^2+1} = 0
+\]</p>
+<p>Ya que \( f&#x27;(0) = \frac{1-0^2}{(0^2+1)^2} = 1 \), la pendiente de la curva en \( x = 0 \) es 1. Por lo tanto, la ecuación de la recta tangente en este punto es:</p>
+<p>\[
+y = 1x + 0 \Rightarrow y = x
+\]</p>
+<h4>Representación gráfica aproximada</h4>
+La función incrementa de \( -1 \) a \( 1 \) y disminuye fuera de este intervalo, intersectando el origen con una pendiente de \( 1 \) y aproximándose a \( y = 0 \) como asíntota horizontal.
+<p>Estos resultados proveen un estudio completo del comportamiento de la función \(f\) descrita.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el <strong>Ejercicio A3</strong> para la función</p>
+<p>\[
+f(x)=\frac{x}{x^2+1}.
+\]</p>
+<p>---</p>
+<h3>1. Dominio</h3>
+<p>Como \(x^2+1&gt;0\) para todo \(x\in\mathbb{R}\), la función está definida en todos los reales.</p>
+<p>\[
+\mathrm{Dom}(f)=\mathbb{R}.
+\]</p>
+<p>---</p>
+<h3>2. Crecimiento y decrecimiento</h3>
+<p>Calculamos la derivada:</p>
+<p>\[
+f&#x27;(x)=\frac{(x^2+1)\cdot 1 - x\cdot 2x}{(x^2+1)^2}
+=\frac{x^2+1-2x^2}{(x^2+1)^2}
+=\frac{1-x^2}{(x^2+1)^2}.
+\]</p>
+<p>El denominador es siempre positivo, así que el signo de \(f&#x27;(x)\) depende de \(1-x^2\):</p>
+<p>- \(f&#x27;(x)&gt;0\) si \(1-x^2&gt;0 \iff -1&lt;x&lt;1\),<br>
+- \(f&#x27;(x)=0\) si \(x=\pm 1\),<br>
+- \(f&#x27;(x)&lt;0\) si \(x&lt;-1\) o \(x&gt;1\).</p>
+<h4>Conclusión</h4>
+- <strong>Decrece</strong> en \((-\infty,-1)\)
+- <strong>Crece</strong> en \((-1,1)\)
+- <strong>Decrece</strong> en \((1,\infty)\)
+<h4>Extremos relativos</h4>
+- En \(x=-1\), pasa de decrecer a crecer: <strong>mínimo relativo</strong>
+  \[
+  f(-1)=\frac{-1}{2}.
+  \]
+- En \(x=1\), pasa de crecer a decrecer: <strong>máximo relativo</strong>
+  \[
+  f(1)=\frac{1}{2}.
+  \]
+<p>---</p>
+<h3>3. Asíntotas</h3>
+<h4>Asíntotas verticales</h4>
+Se darían donde \(x^2+1=0\), pero esta ecuación no tiene soluciones reales.
+<p>\[
+\text{No hay asíntotas verticales.}
+\]</p>
+<h4>Asíntota horizontal</h4>
+Estudiamos el límite cuando \(x\to\pm\infty\):
+<p>\[
+\lim_{x\to\pm\infty}\frac{x}{x^2+1}=0.
+\]</p>
+<p>Por tanto, la recta</p>
+<p>\[
+y=0
+\]</p>
+<p>es una <strong>asíntota horizontal</strong>.</p>
+<h4>Asíntotas oblicuas</h4>
+No hay, porque ya existe asíntota horizontal.
+<p>---</p>
+<h3>4. Recta tangente en \(x=0\)</h3>
+<p>Primero hallamos el punto de la gráfica:</p>
+<p>\[
+f(0)=\frac{0}{0^2+1}=0.
+\]</p>
+<p>Luego la pendiente:</p>
+<p>\[
+f&#x27;(0)=\frac{1-0}{(0^2+1)^2}=1.
+\]</p>
+<p>La ecuación de la recta tangente en \(x=0\) es</p>
+<p>\[
+y-f(0)=f&#x27;(0)(x-0),
+\]</p>
+<p>es decir,</p>
+<p>\[
+y=x.
+\]</p>
+<p>---</p>
+<h3>5. Representación aproximada de la gráfica</h3>
+<p>Datos importantes para dibujarla:</p>
+<p>- Pasa por el origen: \((0,0)\).<br>
+- Tiene un <strong>mínimo relativo</strong> en \(\left(-1,-\frac12\right)\).<br>
+- Tiene un <strong>máximo relativo</strong> en \(\left(1,\frac12\right)\).<br>
+- Tiene asíntota horizontal \(y=0\).<br>
+- Además, como<br>
+  \[
+  f(-x)=\frac{-x}{x^2+1}=-f(x),
+  \]<br>
+  la función es <strong>impar</strong>, así que su gráfica es simétrica respecto del origen.</p>
+<h4>Esquema del comportamiento</h4>
+- Desde \(x=-\infty\), la gráfica se acerca a \(y=0\) por debajo.
+- Baja hasta \(\left(-1,-\frac12\right)\).
+- Luego sube, pasa por \((0,0)\).
+- Sigue subiendo hasta \(\left(1,\frac12\right)\).
+- Después baja y se acerca a \(y=0\) por arriba cuando \(x\to+\infty\).
+<p>---</p>
+<h3>Resultado final</h3>
+<p>- <strong>Creciente</strong> en \((-1,1)\).<br>
+- <strong>Decreciente</strong> en \((-\infty,-1)\cup(1,\infty)\).<br>
+- <strong>Asíntotas</strong>: solo la horizontal<br>
+  \[
+  y=0.
+  \]<br>
+- <strong>Recta tangente en \(x=0\)</strong>:<br>
+  \[
+  y=x.
+  \]</p>
+<p>Si quieres, también puedo hacerte un <strong>dibujo ASCII de la gráfica</strong>.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_121.html">Anterior</a><a class="button" href="problema_123.html">Siguiente</a></nav>
+</main></body>
+</html>

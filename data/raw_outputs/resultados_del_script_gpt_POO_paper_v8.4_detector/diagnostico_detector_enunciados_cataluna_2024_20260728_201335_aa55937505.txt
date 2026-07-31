@@ -1,0 +1,12 @@
+DIAGNOSTICO DEL DETECTOR - ENUNCIADOS
+================================================================================
+Patron elegido: numeric
+Ejercicios aceptados: 1, 2, 3, 4, 5, 6
+
+CANDIDATOS
+L0036 | numeric | 1 | 1. Considereu la funcio f(x) = , definida per a x > 0.
+L0059 | numeric | 2 | 2. Considereu el sistema d equacions segu ent:
+L0084 | numeric | 3 | 3. En Joan troba entre els papers del seu avi un esbo s com el de la figura adjunta, on es des-
+L0107 | numeric | 4 | 4. L Andreu posa les nou boles que es mostren a continuacio dins d una bossa.
+L0136 | numeric | 5 | 5. Volem construir un petit cobert de fusta de 6 m3 de volum, en forma de prisma rectan -
+L0165 | numeric | 6 | 6. Considereu els punts A = (1, 2, 3) i B = (-3, -2, 3).

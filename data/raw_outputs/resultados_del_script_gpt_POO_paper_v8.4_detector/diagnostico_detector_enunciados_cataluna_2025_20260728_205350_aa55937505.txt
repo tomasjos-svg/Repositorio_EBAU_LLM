@@ -1,0 +1,9 @@
+DIAGNOSTICO DEL DETECTOR - ENUNCIADOS
+================================================================================
+Patron elegido: None
+Ejercicios aceptados: 
+
+ADVERTENCIAS
+- No se encontraron encabezados fiables.
+
+CANDIDATOS

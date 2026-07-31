@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 53: cataluna_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 53 de 139</h1>
+<div class="meta"><span class="badge">cataluna_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_052.html">Anterior</a><a class="button" href="problema_054.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>En el documento aparecen dos ejercicios 4, uno en la <strong>Sèrie 1</strong> y otro en la <strong>Sèrie 5</strong>.</p>
+<h3>Sèrie 1 — Exercici 4</h3>
+<p><strong>4.</strong> Sigui el sistema d’equacions lineals següent, que depèn del paràmetre real :</p>
+<p><strong>a)</strong> Discutiu el sistema per als diferents valors del paràmetre .  <br>
+[1,25 punts]</p>
+<p><strong>b)</strong> Per al cas = -1, resoleu el sistema, interpreteu-lo geomètricament i identifiqueu-ne la solució.  <br>
+[1,25 punts]</p>
+<p>&gt; Nota: En el texto proporcionado no aparece visible el sistema d’equacions ni el símbolo del paràmetre.</p>
+<p>---</p>
+<h3>Sèrie 5 — Exercici 4</h3>
+<p><strong>4.</strong> En una carretera principal hi trobem el poble A. A 12 km del poble A, hi ha un encreuament O amb una carretera secundària que talla perpendicularment la carretera principal. A 9 km de l’encreuament, a la carretera secundària, hi trobem el poble B. Es vol construir una torre de comunicacions T en un punt de la carretera principal situat entre el poble A i l’encreuament O. Aquesta torre ha d’estar connectada amb cadascun dels dos pobles en línia recta per cable. Sabem que instal·lar el cable entre la torre T i el poble B té un preu de 250 €/km i, en canvi, instal·lar el cable entre la torre T i el poble A té un preu de 125 €/km. Determineu a quina distància de l’encreuament O a la carretera principal cal situar la torre T perquè el preu del cablejat sigui mínim i quin serà el valor d’aquest preu mínim.  <br>
+[2,5 punts]</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>En el documento aparecen <strong>dos ejercicios 4</strong>: uno de la <strong>Serie 1</strong> y otro de la <strong>Serie 5</strong>. Extraigo ambos.</p>
+<p>---</p>
+<h3>SERIE 1 — Ejercicio 4</h3>
+<h4>Resolución</h4>
+<p>#### a) Estudio del sistema de ecuaciones lineales según los valores del parámetro</p>
+<p>\[
+M|M&#x27;=
+\begin{pmatrix}
+1 &amp; 2 &amp; 2+\lambda\\
+2+\lambda &amp; 1 &amp; 2\\
+2 &amp; 2+\lambda &amp; 1
+\end{pmatrix}
+\left|
+\begin{matrix}
+0\\
+3\\
+-3
+\end{matrix}
+\right.
+\]</p>
+<p>Calculamos el determinante de la matriz del sistema:</p>
+<p>\[
+\left|
+\begin{matrix}
+1 &amp; 2 &amp; 2+\lambda\\
+2+\lambda &amp; 1 &amp; 2\\
+2 &amp; 2+\lambda &amp; 1
+\end{matrix}
+\right|
+=9\lambda^3+9=9(\lambda^3+1)
+\]</p>
+<p>Resolviendo:</p>
+<p>\[
+9(\lambda^3+1)=0 \Rightarrow \lambda^3=-1 \Rightarrow \lambda=-1
+\]</p>
+<p>Por tanto, hay dos casos.</p>
+<p><strong>Caso I: \(\lambda\neq -1\)</strong></p>
+<p>Como \(|M|\neq 0\), entonces:</p>
+<p>\[
+\operatorname{Rang} M=3=\operatorname{Rang} M&#x27;= \text{número de incógnitas}
+\]</p>
+<p>Por el teorema de Rouché-Frobenius, el sistema es compatible determinado y tiene una única solución.</p>
+<p><strong>Caso II: \(\lambda=-1\)</strong></p>
+<p>\[
+M|M&#x27;=
+\begin{pmatrix}
+1 &amp; -2 &amp; 1\\
+1 &amp; 1 &amp; -2\\
+-2 &amp; 1 &amp; 1
+\end{pmatrix}
+\left|
+\begin{matrix}
+0\\
+3\\
+-3
+\end{matrix}
+\right.
+\]</p>
+<p>Como \(|M|=0\), entonces \(\operatorname{Rang} M&lt;3\), pero:</p>
+<p>\[
+\left|
+\begin{matrix}
+1 &amp; -2\\
+1 &amp; 1
+\end{matrix}
+\right|=3\neq 0
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+\operatorname{Rang} M=2
+\]</p>
+<p>Además,</p>
+<p>\[
+\left|
+\begin{matrix}
+1 &amp; -2 &amp; 0\\
+1 &amp; 1 &amp; 3\\
+-2 &amp; 1 &amp; -3
+\end{matrix}
+\right|=0
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+\operatorname{Rang} M&#x27;=2
+\]</p>
+<p>Así,</p>
+<p>\[
+\operatorname{Rang} M=2=\operatorname{Rang} M&#x27;&lt;3
+\]</p>
+<p>El sistema es compatible indeterminado, con un grado de libertad.</p>
+<p>---</p>
+<p>#### b) Caso \(\lambda=-1\)</p>
+<p>Nos quedamos con el menor de orden 2 no nulo:</p>
+<p>\[
+\begin{cases}
+x-2y=-z\\
+x+y=3+2z
+\end{cases}
+\]</p>
+<p>Aplicando Cramer:</p>
+<p>\[
+x=\frac{
+\left|
+\begin{matrix}
+-z &amp; -2\\
+3+2z &amp; 1
+\end{matrix}
+\right|}
+{
+\left|
+\begin{matrix}
+1 &amp; -2\\
+1 &amp; 1
+\end{matrix}
+\right|}
+=\frac{3z+6}{3}=z+2
+\]</p>
+<p>\[
+y=\frac{
+\left|
+\begin{matrix}
+1 &amp; -z\\
+1 &amp; 3+2z
+\end{matrix}
+\right|}
+{
+\left|
+\begin{matrix}
+1 &amp; -2\\
+1 &amp; 1
+\end{matrix}
+\right|}
+=\frac{3+3z}{3}=z+1
+\]</p>
+<p>Solución:</p>
+<p>\[
+(x,y,z)=(z+2,z+1,z)
+\]</p>
+<p>Interpretación geométrica: los tres planos se cortan en una recta. Como</p>
+<p>\[
+(z+2,z+1,z)=(2,1,0)+z(1,1,1)
+\]</p>
+<p>la recta intersección pasa por \((2,1,0)\) y tiene vector director \((1,1,1)\).</p>
+<p>---</p>
+<h3>SERIE 5 — Ejercicio 4</h3>
+<h4>Resolución</h4>
+<p>Si denotamos por \(x\) la distancia del cruce a la torre, es decir,</p>
+<p>\[
+x=d(O,M)
+\]</p>
+<p>entonces, por el teorema de Pitágoras:</p>
+<p>\[
+d(B,M)=\sqrt{81+x^2}
+\]</p>
+<p>El precio del cableado vendrá dado por la función:</p>
+<p>\[
+P(x)=125(12-x)+250\sqrt{81+x^2}
+\]</p>
+<p>Para encontrar el precio mínimo derivamos:</p>
+<p>\[
+P&#x27;(x)=-125+250\cdot \frac{2x}{2\sqrt{81+x^2}}
+\]</p>
+<p>Resolviendo \(P&#x27;(x)=0\):</p>
+<p>\[
+\sqrt{81+x^2}=2x
+\]</p>
+<p>Elevando al cuadrado:</p>
+<p>\[
+81+x^2=4x^2
+\]</p>
+<p>La solución real positiva es:</p>
+<p>\[
+x=\sqrt{27}=3\sqrt{3}\text{ km}
+\]</p>
+<p>Para comprobar que es un mínimo, se estudia el signo de la derivada en los intervalos:</p>
+<p>\[
+(0,3\sqrt{3}) \quad \text{y} \quad (3\sqrt{3},12)
+\]</p>
+<p>En el primero \(P&#x27;(x)&lt;0\) y en el segundo \(P&#x27;(x)&gt;0\), por tanto el mínimo se alcanza para:</p>
+<p>\[
+x=3\sqrt{3}\text{ km}\approx 5,2\text{ km}
+\]</p>
+<p>Es decir, situando la torre a \(3\sqrt{3}\) km del cruce.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Hay <strong>dos ejercicios 4</strong> en el documento. Los trato por separado.</p>
+<p>---</p>
+<h3>Sèrie 1 — Exercici 4</h3>
+<p>No se puede resolver con la información transcrita, porque <strong>falta el sistema de ecuaciones</strong> y también <strong>no aparece el parámetro</strong>.</p>
+<p>Por tanto:</p>
+<p>- <strong>a)</strong> no se puede discutir el sistema según el parámetro;<br>
+- <strong>b)</strong> tampoco se puede resolver el caso \(= -1\), ni interpretarlo geométricamente,</p>
+<p><strong>sin conocer las ecuaciones concretas</strong>.</p>
+<p>Si me copias el sistema, te lo resuelvo completo.</p>
+<p>---</p>
+<h3>Sèrie 5 — Exercici 4</h3>
+<h4>1. Planteamiento</h4>
+<p>Tomamos:</p>
+<p>- \(O=(0,0)\),<br>
+- la carretera principal como eje \(x\),<br>
+- la secundaria como eje \(y\).</p>
+<p>Entonces:</p>
+<p>- \(A=(12,0)\) (porque está a 12 km de \(O\)),<br>
+- \(B=(0,9)\) (porque está a 9 km de \(O\)),<br>
+- la torre \(T=(x,0)\), con \(0\le x\le 12\), ya que está entre \(A\) y \(O\).</p>
+<p>Aquí \(x\) es la <strong>distancia de \(O\) a \(T\)</strong>.</p>
+<p>---</p>
+<h4>2. Distancias</h4>
+<p>- Distancia de \(T\) a \(A\):<br>
+\[
+TA=12-x
+\]</p>
+<p>- Distancia de \(T\) a \(B\):<br>
+\[
+TB=\sqrt{x^2+9^2}=\sqrt{x^2+81}
+\]</p>
+<p>---</p>
+<h4>3. Función coste</h4>
+<p>El coste total es:</p>
+<p>\[
+C(x)=125(12-x)+250\sqrt{x^2+81}
+\]</p>
+<p>con \(0\le x\le 12\).</p>
+<p>---</p>
+<h4>4. Minimización</h4>
+<p>Derivamos:</p>
+<p>\[
+C&#x27;(x)=-125+250\frac{x}{\sqrt{x^2+81}}
+\]</p>
+<p>Buscamos el punto crítico:</p>
+<p>\[
+-125+250\frac{x}{\sqrt{x^2+81}}=0
+\]</p>
+<p>\[
+250\frac{x}{\sqrt{x^2+81}}=125
+\]</p>
+<p>\[
+2x=\sqrt{x^2+81}
+\]</p>
+<p>Elevando al cuadrado:</p>
+<p>\[
+4x^2=x^2+81
+\]</p>
+<p>\[
+3x^2=81
+\]</p>
+<p>\[
+x^2=27
+\]</p>
+<p>\[
+x=3\sqrt{3}
+\]</p>
+<p>Como \(x\in[0,12]\), vale:</p>
+<p>\[
+x=3\sqrt{3}\ \text{km}
+\]</p>
+<p>Además,</p>
+<p>\[
+C&#x27;&#x27;(x)=250\cdot \frac{81}{(x^2+81)^{3/2}}&gt;0
+\]</p>
+<p>para todo \(x\), luego ese punto da un <strong>mínimo</strong>.</p>
+<p>---</p>
+<h4>5. Coste mínimo</h4>
+<p>Sustituyendo \(x=3\sqrt{3}\):</p>
+<p>\[
+C_{\min}=125(12-3\sqrt3)+250\sqrt{27+81}
+\]</p>
+<p>\[
+=125(12-3\sqrt3)+250\sqrt{108}
+\]</p>
+<p>\[
+=125(12-3\sqrt3)+250\cdot 6\sqrt3
+\]</p>
+<p>\[
+=1500-375\sqrt3+1500\sqrt3
+\]</p>
+<p>\[
+C_{\min}=1500+1125\sqrt3
+\]</p>
+<p>euros.</p>
+<p>Aproximando:</p>
+<p>\[
+C_{\min}\approx 1500+1125(1.732)\approx 3448.56\ \text{€}
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>La torre debe situarse a</p>
+<p>\[
+\boxed{3\sqrt3\ \text{km}}
+\]</p>
+<p>del cruce \(O\), sobre la carretera principal y en dirección hacia \(A\).</p>
+<p>El coste mínimo del cableado es</p>
+<p>\[
+\boxed{1500+1125\sqrt3\ \text{€}}
+\]</p>
+<p>aproximadamente</p>
+<p>\[
+\boxed{3448.56\ \text{€}}
+\]</p>
+<p>Si quieres, también puedo dibujarte un esquema geométrico del problema.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el ejercicio 4 de la <strong>Sèrie 5</strong>, referente a la ubicación de la torre de comunicaciones y el coste mínimo asociado al cableado entre las localizaciones especificadas: pueblos A, B y el encreuament O en la carretera principal.</p>
+<h4>Identificación y Denominación de Variables</h4>
+- x: La distancia entre la torre T y el encreuament O colocada en la carretera principal (donde el valor de x puede variar entre 0 y 12 km).
+- Coste entre T y B (C_TB) = 250 €/km
+- Coste entre T y A (C_TA) = 125 €/km
+<h4>Formulación del Problema</h4>
+Vamos a calcular el costo total de instalar el cable desde T hasta A y B. El costo total (C) será la suma de los costos de ambas conexiones.
+<p>- La distancia de T a A es (12 - x) kilómetros.<br>
+- La distancia de T a B es la hipotenusa de un triángulo rectángulo formado por:<br>
+  - La distancia vertical fija de 9 km (altura del triángulo desde O hasta B, dado que las carreteras se cortan perpendicularmente).<br>
+  - La distancia horizontal de x kilómetros desde O hasta T.</p>
+<p>Por lo tanto, se tiene:<br>
+\[ d_{TB} = \sqrt{x^2 + 9^2} \]</p>
+<h4>Costo Total</h4>
+El costo total (C) para cablear desde T hasta A y B será:
+\[ C = C_{TA} \times d_{TA} + C_{TB} \times d_{TB} \]
+\[ C = 125 \times (12 - x) + 250 \times \sqrt{x^2 + 81} \]
+<h4>Solución</h4>
+Para encontrar el mínimo coste, diferenciamos C con respecto a x y igualamos a cero. Diferenciamos:
+\[ \frac{dC}{dx} = -125 + 250 \cdot \frac{x}{\sqrt{x^2 + 81}} \]
+<p>#### Buscar el punto crítico:<br>
+\[ -125 + 250 \cdot \frac{x}{\sqrt{x^2 + 81}} = 0 \]<br>
+\[ 125 = 250 \cdot \frac{x}{\sqrt{x^2 + 81}} \]<br>
+\[ \frac{1}{2} = \frac{x}{\sqrt{x^2 + 81}} \]<br>
+\[ x = \frac{1}{2} \sqrt{x^2 + 81} \]<br>
+\[ 2x = \sqrt{x^2 + 81} \]<br>
+\[ 4x^2 = x^2 + 81 \]<br>
+\[ 3x^2 = 81 \]<br>
+\[ x^2 = 27 \]<br>
+\[ x = 3\sqrt{3} \]</p>
+<p>#### Punto crítico encontrado<br>
+x = 3\sqrt{3} km</p>
+<h4>Calculando el costo mínimo:</h4>
+\[ C_{\text{min}} = 125 \times (12 - 3\sqrt{3}) + 250 \times \sqrt{(3\sqrt{3})^2 + 81} \]
+\[ C_{\text{min}} = 125 \times (12 - 3\sqrt{3}) + 250 \times 12 \]
+Obtenemos después de calcular:
+<p>\[ C_{\text{min}} = 125 \times (12 - 5.196) + 250 \times 12 \]<br>
+\[ C_{\text{min}} = 125 \times 6.804 + 3000 \]<br>
+\[ C_{\text{min}} = 850.5 + 3000 \]<br>
+\[ C_{\text{min}} = 3850.5 \text{ euros} \]</p>
+<h4>Conclusión</h4>
+La torre T deberá ser ubicada a 3\sqrt{3} (aproximadamente 5.2 km) desde el encreuament O en la carretera principal para minimizar el costo de cableado con un costo mínimo de aproximadamente 3850.5 euros.</section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_052.html">Anterior</a><a class="button" href="problema_054.html">Siguiente</a></nav>
+</main></body>
+</html>

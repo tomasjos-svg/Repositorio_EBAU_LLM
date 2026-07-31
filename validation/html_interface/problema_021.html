@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 21: asturias_2023 3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 21 de 139</h1>
+<div class="meta"><span class="badge">asturias_2023</span> &nbsp; Ejercicio 3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_020.html">Anterior</a><a class="button" href="problema_022.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Pregunta 3. Sean \(A, B \in \mathbb{R}\) y \(f(x) = \dfrac{x^2 + A}{Bx - 1}\). Se pide:</p>
+<p>(a) (0.75 puntos) Calcular \(A\) y \(B\) para que la gráfica de la función pase por el punto \((0,-3)\) y tenga un extremo relativo en \(x = -1\).</p>
+<p>(b) (1.25 puntos) Para los valores de \(A = 3\) y \(B = 1\), estudia si la función tiene asíntotas y extremos relativos.</p>
+<p>(c) (0.5 puntos) Para los valores \(A = 3\) y \(B = 1\), y basándose en los resultados obtenidos en el apartado anterior, realice un esbozo de la función.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Pregunta 3.</strong> Sean \(A,B\in\mathbb{R}\) y  <br>
+\[
+f(x)=\frac{x^2+A}{Bx-1}.
+\]</p>
+<p>Se pide:</p>
+<h4>(a)  </h4>
+Si la función pasa por el punto \((0,-3)\), entonces  
+\[
+-3=\frac{A}{-1}
+\]
+y, por tanto,  
+\[
+A=3.
+\]
+<p>Como tiene un extremo relativo en \(x=-1\), se cumple que \(f&#x27;(-1)=0\):</p>
+<p>\[
+f&#x27;(x)=\frac{Bx^2-2x-3B}{(Bx-1)^2}
+\]</p>
+<p>\[
+f&#x27;(-1)=\frac{-2B+2}{(-B-1)^2}
+\]</p>
+<p>\[
+f&#x27;(-1)=0
+\]<br>
+solo si  <br>
+\[
+B=1.
+\]</p>
+<p>---</p>
+<h4>(b)  </h4>
+Para \(A=3\) y \(B=1\),
+<p>\[
+f(x)=\frac{x^2+3}{x-1}.
+\]</p>
+<p>Como</p>
+<p>\[
+f&#x27;(x)=\frac{x^2-2x-3}{(x-1)^2},
+\]</p>
+<p>para que la derivada se anule se debe cumplir</p>
+<p>\[
+x^2-2x-3=0,
+\]</p>
+<p>que se verifica en \(x=-1\), caso estudiado en el apartado anterior, y \(x=3\).</p>
+<p>Como</p>
+<p>\[
+f&#x27;&#x27;(x)=\frac{8}{(x-1)^3}
+\]</p>
+<p>y \(f&#x27;&#x27;(3)&gt;0\), se trata de un mínimo. No tiene puntos de inflexión.</p>
+<p><strong>Asíntotas horizontales:</strong></p>
+<p>\[
+\lim_{x\to\infty}\frac{x^2+3}{x-1}=\infty
+\]</p>
+<p>Por lo tanto, no tiene asíntotas horizontales.</p>
+<p><strong>Asíntotas verticales:</strong></p>
+<p>\[
+\lim_{x\to 1^+}\frac{x^2+3}{x-1}=+\infty,
+\qquad
+\lim_{x\to 1^-}\frac{x^2+3}{x-1}=-\infty
+\]</p>
+<p>Tiene una asíntota vertical en</p>
+<p>\[
+x=1.
+\]</p>
+<p><strong>Asíntotas oblicuas:</strong></p>
+<p>Puede haber, ya que no hay asíntotas horizontales.</p>
+<p>\[
+m=\lim_{x\to\infty}\frac{\frac{x^2+3}{x-1}}{x}
+=\lim_{x\to\infty}\frac{x^2+3}{x^2-x}=1
+\]</p>
+<p>\[
+n=\lim_{x\to\infty}\left(\frac{x^2+3}{x-1}-x\right)
+=\lim_{x\to\infty}\frac{3+x}{x-1}=1
+\]</p>
+<p>Tiene una asíntota oblicua:</p>
+<p>\[
+y=x+1.
+\]</p>
+<p>---</p>
+<h4>(c)  </h4>
+En la solución oficial aparece únicamente el apartado:
+<p>\[
+(c)\quad (0.5\ \text{puntos})
+\]</p>
+<p>sin incluir el esbozo gráfico en el texto proporcionado.</p></section>
+<section class="card"><h2>Respuesta A</h2><h3>3(a)</h3>
+<p>Dada<br>
+\[
+f(x)=\frac{x^2+A}{Bx-1},
+\]<br>
+pedimos que pase por \((0,-3)\) y que tenga un extremo relativo en \(x=-1\).</p>
+<h4>1. Que pase por \((0,-3)\)</h4>
+\[
+f(0)=\frac{0^2+A}{B\cdot 0-1}=\frac{A}{-1}=-A.
+\]
+Como \(f(0)=-3\), se tiene:
+\[
+-A=-3 \quad\Rightarrow\quad A=3.
+\]
+<h4>2. Que tenga un extremo relativo en \(x=-1\)</h4>
+Derivamos:
+\[
+f&#x27;(x)=\frac{2x(Bx-1)-B(x^2+A)}{(Bx-1)^2}
+=\frac{Bx^2-2x-AB}{(Bx-1)^2}.
+\]
+<p>Sustituyendo \(A=3\):<br>
+\[
+f&#x27;(x)=\frac{Bx^2-2x-3B}{(Bx-1)^2}.
+\]</p>
+<p>Para que haya un extremo relativo en \(x=-1\), debe cumplirse \(f&#x27;(-1)=0\):<br>
+\[
+B(-1)^2-2(-1)-3B=0
+\]<br>
+\[
+B+2-3B=0
+\]<br>
+\[
+2-2B=0 \quad\Rightarrow\quad B=1.
+\]</p>
+<h4>Resultado</h4>
+\[
+\boxed{A=3,\quad B=1.}
+\]
+<p>---</p>
+<h3>3(b)</h3>
+<p>Ahora tomamos \(A=3\) y \(B=1\). Entonces<br>
+\[
+f(x)=\frac{x^2+3}{x-1}.
+\]</p>
+<h4>1. Asíntotas</h4>
+<p>#### Asíntota vertical<br>
+El denominador se anula en \(x=1\), y el numerador allí vale<br>
+\[
+1^2+3=4\neq 0.
+\]<br>
+Luego hay asíntota vertical en<br>
+\[
+\boxed{x=1.}
+\]</p>
+<p>Además,<br>
+\[
+\lim_{x\to 1^-}f(x)=-\infty,\qquad \lim_{x\to 1^+}f(x)=+\infty.
+\]</p>
+<p>#### Asíntota oblicua<br>
+Dividimos:<br>
+\[
+\frac{x^2+3}{x-1}=x+1+\frac{4}{x-1}.
+\]<br>
+Como<br>
+\[
+\lim_{x\to\pm\infty}\frac{4}{x-1}=0,
+\]<br>
+la asíntota oblicua es<br>
+\[
+\boxed{y=x+1.}
+\]</p>
+<p>No hay asíntota horizontal.</p>
+<p>---</p>
+<h4>2. Extremos relativos</h4>
+<p>Derivamos:<br>
+\[
+f&#x27;(x)=\frac{x^2-2x-3}{(x-1)^2}
+=\frac{(x-3)(x+1)}{(x-1)^2}.
+\]</p>
+<p>Como \((x-1)^2&gt;0\) para \(x\neq 1\), el signo de \(f&#x27;(x)\) depende de<br>
+\[
+(x-3)(x+1).
+\]</p>
+<p>#### Estudio del signo de \(f&#x27;(x)\)</p>
+<p>- Si \(x&lt;-1\): \(f&#x27;(x)&gt;0\)  \(\Rightarrow\) creciente.<br>
+- Si \(-1&lt;x&lt;1\): \(f&#x27;(x)&lt;0\)  \(\Rightarrow\) decreciente.<br>
+- Si \(1&lt;x&lt;3\): \(f&#x27;(x)&lt;0\)  \(\Rightarrow\) decreciente.<br>
+- Si \(x&gt;3\): \(f&#x27;(x)&gt;0\)  \(\Rightarrow\) creciente.</p>
+<p>Por tanto:</p>
+<p>- En \(x=-1\), pasa de creciente a decreciente: <strong>máximo relativo</strong>.<br>
+- En \(x=3\), pasa de decreciente a creciente: <strong>mínimo relativo</strong>.</p>
+<p>Calculamos los valores:</p>
+<p>\[
+f(-1)=\frac{(-1)^2+3}{-1-1}=\frac{4}{-2}=-2
+\]<br>
+\[
+f(3)=\frac{3^2+3}{3-1}=\frac{12}{2}=6
+\]</p>
+<h4>Resultado</h4>
+- Máximo relativo en
+\[
+\boxed{(-1,-2)}
+\]
+- Mínimo relativo en
+\[
+\boxed{(3,6)}
+\]
+<p>---</p>
+<h3>3(c) Esbozo de la función</h3>
+<p>Con \(A=3,\ B=1\):<br>
+\[
+f(x)=\frac{x^2+3}{x-1}=x+1+\frac{4}{x-1}.
+\]</p>
+<p>Datos clave para el esbozo:</p>
+<p>- Dominio: \(\mathbb R\setminus\{1\}\)<br>
+- Asíntota vertical: \(\boxed{x=1}\)<br>
+- Asíntota oblicua: \(\boxed{y=x+1}\)<br>
+- Máximo relativo: \(\boxed{(-1,-2)}\)<br>
+- Mínimo relativo: \(\boxed{(3,6)}\)<br>
+- Corte con eje \(Y\):<br>
+  \[
+  f(0)=\frac{3}{-1}=-3 \Rightarrow (0,-3)
+  \]<br>
+- No corta al eje \(X\), porque<br>
+  \[
+  x^2+3=0
+  \]<br>
+  no tiene soluciones reales.</p>
+<h4>Comportamiento</h4>
+<p>- Para \(x&lt;1\): la función es negativa, se acerca a la recta \(y=x+1\) cuando \(x\to -\infty\), sube hasta \((-1,-2)\), luego baja, pasa por \((0,-3)\) y tiende a \(-\infty\) cuando \(x\to 1^-\).<br>
+- Para \(x&gt;1\): sale de \(+\infty\) cuando \(x\to 1^+\), baja hasta \((3,6)\), luego vuelve a subir y se acerca a la recta \(y=x+1\) cuando \(x\to +\infty\).</p>
+<p>Ese es el esbozo cualitativo de la gráfica.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el ejercicio 3 del documento paso a paso según sus apartados:</p>
+<h4>Apartado (a)</h4>
+<p>#### <strong>Calcular \(A\) y \(B\) para que la gráfica pase por el punto \((0,-3)\) y tenga un extremo relativo en \(x = -1\).</strong></p>
+<p>1. <strong>La función pasa por \((0,-3)\):</strong></p>
+<p>Sustituyendo \(x = 0\) en la función \(f(x)\), obtenemos:<br>
+   \[
+   f(0) = \frac{0^2 + A}{B \cdot 0 - 1} = \frac{A}{-1} = -A
+   \]<br>
+   Para que la función pase por \((0, -3)\):<br>
+   \[
+   -A = -3 \implies A = 3
+   \]</p>
+<p>2. <strong>Extremo relativo en \(x = -1\):</strong></p>
+<p>Para que haya un extremo relativo en \(x = -1\), el numerador de la derivada, \(f&#x27;(x)\), debe ser cero en \(x = -1\). Primero, calculamos \(f&#x27;(x)\):<br>
+   \[
+   f&#x27;(x) = \frac{(2x)(Bx - 1) - (x^2 + 3)(B)}{(Bx - 1)^2}
+   \]<br>
+   \[
+   = \frac{2Bx^2 - 2x - Bx^2 - 3B}{(Bx - 1)^2} = \frac{(Bx^2 + 2x - 3B)}{(Bx - 1)^2}
+   \]<br>
+   Sustituyendo \(x = -1\):<br>
+   \[
+   B(-1)^2 - 2(-1) - 3B = B + 2 - 3B = -2B + 2
+   \]<br>
+   Para que sea 0:<br>
+   \[
+   -2B + 2 = 0 \implies -2B = -2 \implies B = 1
+   \]</p>
+<p>Concluimos que \(A = 3\) y \(B = 1\).</p>
+<h4>Apartado (b)</h4>
+<p>#### <strong>Para \(A = 3\) y \(B = 1\), estudiar si la función tiene asíntotas y extremos relativos.</strong></p>
+<p>1. <strong>Asíntotas:</strong></p>
+<p>- <strong>Verticales:</strong> Se encuentran donde el denominador es cero. Para \(Bx - 1 = 0\) con \(B = 1\),<br>
+     \[
+     x - 1 = 0 \implies x = 1
+     \]<br>
+     Así, hay una asíntota vertical en \(x = 1\).</p>
+<p>- <strong>Horizontales:</strong> Si el grado del numerador es menor que el grado del denominador, \(y = 0\) es una asíntota horizontal; si son iguales, calcular \(\lim_{x \to \pm \infty} f(x)\) para determinar la asíntota horizontal en base a la relación de los coeficientes de mayor grado:<br>
+     \[
+     \lim_{x \to \infty} \frac{x^2 + 3}{x - 1} = x + 1
+     \]<br>
+     No hay asíntotas horizontales porque el grado del numerador y el denominador es el mismo y se presenta un término lineal en la expansión para \(x\) grande.</p>
+<p>2. <strong>Extremos relativos</strong>:</p>
+<p>- Usamos \(f&#x27;(x) = \frac{x^2 + 2x - 3}{(x - 1)^2}\). Para extremos relativos, buscamos soluciones a \(x^2 + 2x - 3 = 0\), factorizando:<br>
+     \[
+     (x+3)(x-1) = 0
+     \]<br>
+     Soluciones: \(x = -3\), \(x = 1\) (descartamos \(x=1\) por ser punto de asíntota). Para verificar extremos, se evalúa segunda derivada o cambios de signo en \(f&#x27;(x)\), pero omitimos por brevedad, confirmando así extrema en \(x=-3\).</p>
+<h4>Apartado (c)</h4>
+<p>#### <strong>Esbocé de la función para \(A = 3\) y \(B = 1\).</strong></p>
+<p>- <strong>Puntos identificados:</strong><br>
+  - Asíntota vertical en \(x = 1\).<br>
+  - Pasa por \((0, -3)\).<br>
+  - Extremo relativo en \(x = -3\).<br>
+  - No tiene asíntotas horizontales pero el comportamiento en la izquierda y la derecha de la asíntota debe ser concordante con lo hallado en b).</p>
+<p>- <strong>Comportamiento:</strong><br>
+  - A medida que \(x\) se acerca a \(1\) desde la izquierda, \(f(x) \to -\infty\); desde la derecha, \(f(x) \to \infty\).<br>
+  - En \(x = -3\), hay un mínimo local (verificado por cálculos adicionales de los cambios de signo de \(f&#x27;(x)\)).<br>
+  - Para \(x\) grande, el comportamiento lineal de \(\lim_{x \to \infty} f(x) = x+1\) indica un crecimiento lineal a ambos extremos.</p>
+<p>- <strong>Esbozo de gráfico:</strong><br>
+  1. Dibuja una curva que desciende hacia el mínimo en \((-3, f(-3))\), verifica \(f(-3)\) para la coordenada exacta.<br>
+  2. Aumenta en \(x = -3\) y cae/despega en \(x=1\) conforme se acerca la asíntota.<br>
+  3. Dibuja el cruce en \((0, -3)\) y extiende a \(x\) grande siguiendo el comportamiento \(x + 1\).</p>
+<p>Esto proporciona un resumen y visualización de cómo sería el comportamiento de la función con los valores dados de \(A\) y \(B\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_020.html">Anterior</a><a class="button" href="problema_022.html">Siguiente</a></nav>
+</main></body>
+</html>

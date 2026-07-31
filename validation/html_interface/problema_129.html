@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 129: pais_vasco_2023 B5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 129 de 139</h1>
+<div class="meta"><span class="badge">pais_vasco_2023</span> &nbsp; Ejercicio B5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_128.html">Anterior</a><a class="button" href="problema_130.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio B5</p>
+<p>Una caja que contiene 500 monedas es vaciada sobre una mesa. Halla</p>
+<p>a) la probabilidad de que el número de caras sea mayor que 240;</p>
+<p>b) la probabilidad de que el número de caras sea menor que 230;</p>
+<p>c) la probabilidad de que el número de caras esté comprendido entre 230 y 240, ambos incluidos.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio B5</strong></p>
+<p>Una caja que contiene 500 monedas es vaciada sobre una mesa. Halla  <br>
+a) la probabilidad de que el número de caras sea mayor que 240;  <br>
+b) la probabilidad de que el número de caras sea menor que 230;  <br>
+c) la probabilidad de que el número de caras esté comprendido entre 230 y 240, ambos incluidos.</p>
+<p>---</p>
+<p>\(X=\) Número de caras en 500 lanzamientos de una moneda.</p>
+<p>Esta es una variable binomial siendo sus parámetros:</p>
+<p>\[
+n=500,\qquad p=0.5
+\]</p>
+<p>\[
+X=B(500,0.5)
+\]</p>
+<p>Como el número de repeticiones es muy alto y además</p>
+<p>\[
+n\cdot p=500\cdot 0.5=250&gt;5
+\]</p>
+<p>podemos aproximar la variable binomial \(X\) por una variable normal \(Y\) de parámetros</p>
+<p>\[
+\mu=np=250
+\]</p>
+<p>y desviación típica</p>
+<p>\[
+\sigma=\sqrt{npq}=\sqrt{500\cdot 0.5\cdot 0.5}=5\sqrt5 \simeq 11.18
+\]</p>
+<p>\[
+Y=N(250,11.18)
+\]</p>
+<p>---</p>
+<h4>a)</h4>
+<p>Nos piden calcular:</p>
+<p>\[
+P(X&gt;240)
+\]</p>
+<p>\[
+P(X&gt;240)=P(Y&gt;240.5)
+\]</p>
+<p>\[
+P\left(Z&gt;\frac{240.5-250}{5\sqrt5}\right)
+=
+P(Z&gt;-0.85)
+=
+P(Z&lt;0.85)
+=
+0.8023
+\]</p>
+<p>---</p>
+<h4>b)</h4>
+<p>Nos piden calcular:</p>
+<p>\[
+P(X&lt;230)
+\]</p>
+<p>\[
+P(X&lt;230)=P(Y&lt;229.5)
+\]</p>
+<p>\[
+P\left(Z&lt;\frac{229.5-250}{5\sqrt5}\right)
+=
+P(Z&lt;-1.83)
+\]</p>
+<p>\[
+P(Z&lt;-1.83)=1-P(Z&lt;1.83)=1-0.9664=0.0336
+\]</p>
+<p>---</p>
+<h4>c)</h4>
+<p>Nos piden calcular:</p>
+<p>\[
+P(230\le X\le 240)
+\]</p>
+<p>\[
+P(230\le X\le 240)=P(229.5\le Y\le 240.5)
+\]</p>
+<p>\[
+P(229.5\le Y\le 240.5)
+=
+P(Y\le 240.5)-P(Y&lt;229.5)
+\]</p>
+<p>Usando los apartados anteriores:</p>
+<p>\[
+=1-0.8023-0.0336=0.1641
+\]</p>
+<p>\[
+\boxed{P(230\le X\le 240)=0.1641}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea \(X\) el número de caras al caer las 500 monedas.</p>
+<p>Suponiendo monedas equilibradas e independientes,</p>
+<p>\[
+X\sim \text{Bin}(500,\tfrac12).
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\mu=np=500\cdot \tfrac12=250,\qquad
+\sigma=\sqrt{np(1-p)}=\sqrt{500\cdot \tfrac12\cdot \tfrac12}=\sqrt{125}\approx 11.18.
+\]</p>
+<p>Como \(n\) es grande, usamos la aproximación normal de De Moivre-Laplace con corrección de continuidad:</p>
+<p>\[
+X \approx N(250,125).
+\]</p>
+<p>Denotemos por \(\Phi\) la función de distribución de \(N(0,1)\).</p>
+<p>---</p>
+<h4>a) \(P(X&gt;240)\)</h4>
+<p>\[
+P(X&gt;240)=P(X\ge 241)\approx P(Y&gt;240.5),
+\]<br>
+donde \(Y\sim N(250,125)\).</p>
+<p>Estandarizando:</p>
+<p>\[
+z=\frac{240.5-250}{11.18}\approx -0.85.
+\]</p>
+<p>Entonces</p>
+<p>\[
+P(X&gt;240)\approx P(Z&gt;-0.85)=\Phi(0.85)\approx 0.8023.
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(X&gt;240)\approx 0.802}
+\]</p>
+<p>---</p>
+<h4>b) \(P(X&lt;230)\)</h4>
+<p>\[
+P(X&lt;230)=P(X\le 229)\approx P(Y&lt;229.5).
+\]</p>
+<p>Estandarizando:</p>
+<p>\[
+z=\frac{229.5-250}{11.18}\approx -1.83.
+\]</p>
+<p>Luego</p>
+<p>\[
+P(X&lt;230)\approx P(Z&lt;-1.83)=\Phi(-1.83)\approx 0.0336.
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(X&lt;230)\approx 0.034}
+\]</p>
+<p>---</p>
+<h4>c) \(P(230\le X\le 240)\)</h4>
+<p>Con corrección de continuidad:</p>
+<p>\[
+P(230\le X\le 240)\approx P(229.5\le Y\le 240.5).
+\]</p>
+<p>Estandarizando:</p>
+<p>\[
+z_1=\frac{229.5-250}{11.18}\approx -1.83,\qquad
+z_2=\frac{240.5-250}{11.18}\approx -0.85.
+\]</p>
+<p>Así,</p>
+<p>\[
+P(230\le X\le 240)\approx \Phi(-0.85)-\Phi(-1.83)
+\approx 0.1977-0.0336
+\approx 0.1641.
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(230\le X\le 240)\approx 0.164}
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>\[
+\boxed{a)\;0.802\qquad b)\;0.034\qquad c)\;0.164}
+\]</p>
+<p>(aproximadamente).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio B5, vamos a considerar un modelo aproximado utilizando la distribución normal, que suele ser apropiada para este tipo de problemas cuando se trata de una cantidad grande de ensayos y las probabilidades de los eventos son razonablemente equiparables (ver Principio del Límite Central).</p>
+<p>En este caso, lanzamos una moneda 500 veces (n = 500), y estamos interesados en la cantidad de veces que aparece cara. Suponemos que la probabilidad de obtener cara en un único lanzamiento es de 0.5 (p = 0.5). Por lo tanto, el número de caras que esperamos es una variable aleatoria binomial \( X \) con \( n = 500 \) y \( p = 0.5 \).</p>
+<h4>Características de la Binomial:</h4>
+1. La media \( \mu \) de \( X \) es \( np = 500 \times 0.5 = 250 \).
+2. La varianza \( \sigma^2 \) de \( X \) es \( np(1-p) = 500 \times 0.5 \times (1-0.5) = 125 \).
+3. La desviación estándar \( \sigma \) de \( X \) es \( \sqrt{125} \approx 11.18 \).
+<p>Aproximamos \( X \) por una normal \( N(\mu, \sigma^2) \) siendo \( N(250, 11.18^2) \).</p>
+<h4>Resolución de los apartados:</h4>
+<strong>a) Probabilidad de que el número de caras sea mayor que 240.</strong>
+Para \( X &gt; 240 \), usamos la transformación estándar \( Z = \frac{X - \mu}{\sigma} \).
+\[ Z = \frac{240 - 250}{11.18} \approx -0.894 \]
+Usamos la tabla de la distribución normal estándar o una calculadora para encontrar \( P(Z &gt; -0.894) \).
+\[ P(Z &gt; -0.894) = 1 - P(Z \leq -0.894) \approx 1 - 0.186 = 0.814 \]
+<p><strong>b) Probabilidad de que el número de caras sea menor que 230.</strong><br>
+Para \( X &lt; 230 \), usamos el Z transformado:<br>
+\[ Z = \frac{230 - 250}{11.18} \approx -1.789 \]<br>
+Buscamos \( P(Z &lt; -1.789) \).<br>
+\[ P(Z &lt; -1.789) \approx 0.037 \]</p>
+<p><strong>c) Probabilidad de que el número de caras esté entre 230 y 240, ambos incluidos.</strong><br>
+Aquí debemos calcular \( P(230 \leq X \leq 240) \).<br>
+Usando las transformaciones Z para 230 y 240 vemos:<br>
+\[ Z_{230} = -1.789 \]<br>
+\[ Z_{240} = -0.894 \]<br>
+Entonces:<br>
+\[ P(230 \leq X \leq 240) = P(-1.789 \leq Z \leq -0.894) = P(Z \leq -0.894) - P(Z \leq -1.789) \approx 0.186 - 0.037 = 0.149 \]</p>
+<p>Estos cálculos son aproximaciones que usan la distribución normal para estimar probabilidades en una distribución binomial con un número grande de ensayos.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_128.html">Anterior</a><a class="button" href="problema_130.html">Siguiente</a></nav>
+</main></body>
+</html>

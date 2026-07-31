@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 45: cantabria_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 45 de 139</h1>
+<div class="meta"><span class="badge">cantabria_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_044.html">Anterior</a><a class="button" href="problema_046.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio 4 [2,5 PUNTOS]</p>
+<p>Cierto test determina si una persona consume cierto tipo de droga. En el 99% de los casos, el test clasifica como usuario de la droga a aquellos que la han consumido y también en el 99% de los casos, el test clasifica como no usuarios de la droga a aquellos que no la han consumido. Además, el 0,5% de las personas a las que se les va a pasar el test consumen la droga.</p>
+<p>A) [1 PUNTO] ¿Cuál es la probabilidad de que las personas a las que se les va a pasar el test no consuman la droga?</p>
+<p>B) [1,5 PUNTOS] ¿Cuál es la probabilidad de que una persona consuma la droga si ha dado positivo en el test?</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 4 [2.5 PUNTOS]</strong></p>
+<p>A) Si hay un 0,5% de personas a las que se les va a pasar el test que consumen la droga, entonces hay un 99,5% que no la consumen.</p>
+<p>La probabilidad de que las personas a las que se les va a pasar el test no consuman la droga es de <strong>0,995</strong>.</p>
+<p>---</p>
+<p>B) Es una probabilidad a posteriori. Aplicamos el teorema de Bayes.</p>
+<p>Llamamos \(D\) al suceso “consume la droga” y \(A\) al suceso “dar positivo en consumo de droga en el test”.</p>
+<p>A los no consumidores de droga el 99% da en el test negativo, por lo que el 1% da positivo. Entonces tenemos que:</p>
+<p>\[
+P(A/D^C)=0.01
+\]</p>
+<p>Calculamos la probabilidad de dar positivo en el test \(P(A)\) aplicando el teorema de la probabilidad total:</p>
+<p>\[
+P(A)=P(D)P(A/D)+P(D^C)P(A/D^C)
+\]</p>
+<p>\[
+P(A)=0.005\cdot 0.99+0.995\cdot 0.01=0.0149
+\]</p>
+<p>Nos piden el valor de \(P(D/A)\):</p>
+<p>\[
+P(D/A)=\frac{P(D)P(A/D)}{P(A)}
+\]</p>
+<p>\[
+P(D/A)=\frac{0.005\cdot 0.99}{0.0149}
+=\frac{99}{298}
+=0.3322
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el <strong>Ejercicio 4</strong> proporcionado en el documento, vamos a analizar cada una de las partes (A y B) empleando teoremas y conceptos estadísticos clave como el Teorema de Bayes.</p>
+<h4>Parte A</h4>
+<p>El enunciado indica que el <strong>0,5% de las personas a las que se les va a pasar el test consumen la droga</strong>. Necesitamos encontrar la probabilidad de que una persona no consuma la droga.</p>
+<p>Definimos las siguientes probabilidades:<br>
+- <strong>P(D)</strong>: probabilidad de que una persona consuma la droga = 0,5% = 0.005.<br>
+- <strong>P(D^c)</strong>: probabilidad de que una persona no consuma la droga.</p>
+<p>Sabemos que la suma de las probabilidades de eventos mutuamente excluyentes y exhaustivos es igual a 1. Por lo tanto, podemos calcular <strong>P(D^c)</strong> como:<br>
+\[ P(D^c) = 1 - P(D) = 1 - 0.005 = 0.995. \]</p>
+<p><strong>Respuesta A:</strong><br>
+La probabilidad de que las personas a las que se les va a pasar el test no consuman la droga es del 99,5% (0.995).</p>
+<h4>Parte B</h4>
+<p>Para esta parte se nos pregunta la probabilidad de que una persona consume la droga dado que ha dado positivo en el test. Usaremos el <strong>Teorema de Bayes</strong> para calcular esto.</p>
+<p>Definimos:<br>
+- <strong>P(Positivo | D)</strong>: probabilidad de dar positivo dado que se consume la droga = 99% = 0.99.<br>
+- <strong>P(Positivo | D^c)</strong>: probabilidad de dar positivo dado que no se consume la droga = 1% = 0.01, ya que es complementario al 99% de dar negativo cuando no se consume la droga.</p>
+<p><strong>P(Positivo)</strong>: probabilidad total de dar positivo. Para esto, usamos la ley total de la probabilidad:<br>
+\[ P(Positivo) = P(Positivo | D)P(D) + P(Positivo | D^c)P(D^c) = (0.99)(0.005) + (0.01)(0.995). \]</p>
+<p>Calculando:<br>
+\[ P(Positivo) = (0.99)(0.005) + (0.01)(0.995) = 0.00495 + 0.00995 = 0.0149. \]</p>
+<p>Ahora aplicamos el <strong>Teorema de Bayes</strong> para calcular \(P(D | Positivo)\):<br>
+\[ P(D | Positivo) = \frac{P(Positivo | D)P(D)}{P(Positivo)} = \frac{(0.99)(0.005)}{0.0149} \approx 0.3322. \]</p>
+<p><strong>Respuesta B:</strong><br>
+La probabilidad de que una persona consuma la droga dado que ha dado positivo en el test es aproximadamente del 33.22% (0.3322).</p>
+<p>Esto completa la solución al Ejercicio 4, cubriendo ambos apartados con métodos matemáticos rigurosos y estadísticos.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea:</p>
+<p>- \(D\): “la persona consume la droga”.<br>
+- \(\overline D\): “la persona no consume la droga”.<br>
+- \(+\): “el test da positivo”.</p>
+<p>Datos del enunciado:</p>
+<p>- \(P(D)=0{,}5\% = 0{,}005\)<br>
+- \(P(\overline D)=1-0{,}005=0{,}995\)<br>
+- \(P(+\mid D)=0{,}99\)  (sensibilidad del test)<br>
+- \(P(-\mid \overline D)=0{,}99\)  (especificidad del test)</p>
+<p>Por tanto,</p>
+<p>- \(P(+\mid \overline D)=1-0{,}99=0{,}01\)</p>
+<p>---</p>
+<h3>A) Probabilidad de que una persona no consuma la droga</h3>
+<p>\[
+P(\overline D)=1-P(D)=1-0{,}005=0{,}995
+\]</p>
+<p>En porcentaje:</p>
+<p>\[
+P(\overline D)=99{,}5\%
+\]</p>
+<p><strong>Respuesta A:</strong> \(\boxed{99{,}5\%}\)</p>
+<p>---</p>
+<h3>B) Probabilidad de que una persona consuma la droga si ha dado positivo</h3>
+<p>Queremos calcular \(P(D\mid +)\). Aplicamos la fórmula de Bayes:</p>
+<p>\[
+P(D\mid +)=\frac{P(+\mid D)\,P(D)}{P(+)}
+\]</p>
+<p>Primero calculamos \(P(+)\) con la probabilidad total:</p>
+<p>\[
+P(+)=P(+\mid D)P(D)+P(+\mid \overline D)P(\overline D)
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+P(+)=0{,}99\cdot 0{,}005 + 0{,}01\cdot 0{,}995
+\]</p>
+<p>\[
+P(+)=0{,}00495+0{,}00995=0{,}0149
+\]</p>
+<p>Ahora aplicamos Bayes:</p>
+<p>\[
+P(D\mid +)=\frac{0{,}99\cdot 0{,}005}{0{,}0149}
+=\frac{0{,}00495}{0{,}0149}
+\approx 0{,}3322
+\]</p>
+<p>En porcentaje:</p>
+<p>\[
+P(D\mid +)\approx 33{,}22\%
+\]</p>
+<p><strong>Respuesta B:</strong> \(\boxed{33{,}22\%}\)</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p>- <strong>A)</strong> La probabilidad de que una persona <strong>no consuma</strong> la droga es  <br>
+  \[
+  \boxed{99{,}5\%}
+  \]</p>
+<p>- <strong>B)</strong> La probabilidad de que una persona <strong>consuma</strong> la droga <strong>si ha dado positivo</strong> es  <br>
+  \[
+  \boxed{33{,}22\%}
+  \]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_044.html">Anterior</a><a class="button" href="problema_046.html">Siguiente</a></nav>
+</main></body>
+</html>

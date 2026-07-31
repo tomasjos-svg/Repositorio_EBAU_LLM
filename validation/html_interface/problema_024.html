@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 24: asturias_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 24 de 139</h1>
+<div class="meta"><span class="badge">asturias_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_023.html">Anterior</a><a class="button" href="problema_025.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Pregunta 6. Dados dos planos π: \(x + y + z = 3\), π′: \(x + y = 3\) y el punto \(A = (2, 1, 6)\)</p>
+<p>(a) (0.75 puntos) Calcula un vector director y un punto de la recta \(r\) intersección de los planos π y π′.</p>
+<p>(b) (1 punto) Calcula el punto \(P\) de π tal que el segmento \(AP\) es perpendicular al plano π.</p>
+<p>(c) (0.75 puntos) Calcula el punto \(A&#x27;\) simétrico de \(A\) respecto del plano π.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Pregunta 6.</strong> Dados dos planos \(\pi: x+y+z=3\), \(\pi&#x27;: x+y=3\) y el punto \(A=(2,1,6)\).</p>
+<h4>(a)  </h4>
+Si resolvemos el sistema se tiene que \(z=0\) y \(x+y=3\), por lo que podemos escribir la recta en forma paramétrica como:
+<p>\[
+\begin{cases}
+x=3-\lambda\\
+y=\lambda\\
+z=0
+\end{cases}
+\quad \lambda \in \mathbb{R}
+\]</p>
+<p>Por lo que un punto puede ser \((3,0,0)\) y un vector \((-1,1,0)\).</p>
+<h4>(b)  </h4>
+Un vector normal a \(\pi\) es \(\vec u=(1,1,1)\). La recta que pasa por el punto pedido y \(A\) es perpendicular al plano, por lo tanto cumple que pasa por \(A\) y un vector director es \(\vec u\).
+<p>\[
+r:
+\begin{cases}
+x=2+\lambda\\
+y=1+\lambda\\
+z=6+\lambda
+\end{cases}
+\]</p>
+<p>Como el punto pertenece al plano, entonces</p>
+<p>\[
+2+\lambda+1+\lambda+6+\lambda=3
+\]</p>
+<p>\[
+\lambda=-2
+\]</p>
+<p>Y el punto pedido es:</p>
+<p>\[
+P=(0,-1,4)
+\]</p>
+<h4>(c)  </h4>
+El punto debe verificar que el punto medio del segmento \(AA&#x27;\) debe ser el punto calculado en el apartado anterior:
+<p>\[
+\frac{(2,1,6)+(x,y,z)}{2}=(0,-1,4)
+\]</p>
+<p>\[
+A&#x27;=(-2,-3,2)
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver este problema, trabajaremos cada parte (a), (b) y (c) paso por paso.</p>
+<h4>Parte (a): Encontrar un vector director y un punto en la recta de intersección de los planos \( \pi \) y \( \pi&#x27; \).</h4>
+<p>Para encontrar la recta de intersección, primero necesitamos identificar un vector director común a ambos planos, que será un vector perpendicular a los vectores normales de cada plano.</p>
+<p>#### Vectores normales:<br>
+Para \( \pi: x + y + z = 3 \), el vector normal es \( \mathbf{n}_\pi = (1, 1, 1) \).</p>
+<p>Para \( \pi&#x27;: x + y = 3 \), al estar el plano definido en un espacio tridimensional y z no estar restringido, el vector normal es \( \mathbf{n}_{\pi&#x27;} = (1, 1, 0) \).</p>
+<p>#### Vector director de la recta de intersección:<br>
+El vector director puede encontrarse tomando el producto cruz de los vectores normales de los planos:<br>
+\[
+\mathbf{v} = \mathbf{n}_\pi \times \mathbf{n}_{\pi&#x27;} = (1, 1, 1) \times (1, 1, 0)
+\]<br>
+\[
+\mathbf{v} = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 0 \\
+\end{vmatrix}
+= \mathbf{i} (1\cdot0 - 1\cdot1) - \mathbf{j} (1\cdot0 - 1\cdot1) + \mathbf{k} (1\cdot1 - 1\cdot1)
+= -\mathbf{i} + \mathbf{j}
+= (1, -1, 0)
+\]</p>
+<p>Ahora, necesitamos encontrar un punto que esté en ambos planos. Para ello, hacemos que las ecuaciones de los planos se satisfagan simultáneamente. Si tomamos \( z = 0 \) (para simplificar), tenemos:<br>
+\[
+x + y = 3 \quad \text{y} \quad x + y + 0 = 3
+\]<br>
+Podemos tomar \( x = 0 \), \( y = 3 \), \( z = 0 \). Así, un punto en la recta es \( (0, 3, 0) \).</p>
+<p>La ecuación paramétrica de la recta de intersección es entonces:<br>
+\[
+r: \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 0 \\ 3 \\ 0 \end{pmatrix} + t\begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}
+\]</p>
+<h4>Parte (b): Calcular el punto \( P \) en el plano \( \pi \) tal que \( AP \) es perpendicular a \( \pi \).</h4>
+<p>Para que \( AP \) sea perpendicular a \( \pi \), \( P \) debe proyectar ortogonalmente \( A \) sobre \( \pi \). La fórmula para encontrar la proyección ortogonal de un punto sobre un plano es:<br>
+\[
+P = A - \frac{\mathbf{n}_\pi \cdot (A - Q)}{\mathbf{n}_\pi \cdot \mathbf{n}_\pi} \mathbf{n}_\pi
+\]<br>
+Donde \( Q \) es un punto en el plano (podríamos tomar \( (0, 0, 3) \), por ejemplo), y \( A = (2, 1, 6) \).</p>
+<p>Calculamos:<br>
+\[
+\mathbf{n}_\pi \cdot (A - Q) = (1, 1, 1) \cdot (2-0, 1-0, 6-3) = 2 + 1 + 3 = 6
+\]<br>
+\[
+\mathbf{n}_\pi \cdot \mathbf{n}_\pi = 1 + 1 + 1 = 3
+\]<br>
+\[
+\frac{6}{3} = 2
+\]<br>
+\[
+P = (2, 1, 6) - 2(1, 1, 1) = (0, -1, 4)
+\]</p>
+<h4>Parte (c): Hallar el punto \( A&#x27; \), simétrico de \( A \) respecto al plano \( \pi \).</h4>
+<p>El punto simétrico \( A&#x27; \) se encuentra como:<br>
+\[
+A&#x27; = A - 2\frac{\mathbf{n}_\pi \cdot (A - Q)}{\mathbf{n}_\pi \cdot \mathbf{n}_\pi} \mathbf{n}_\pi
+\]<br>
+Usando las mismas operaciones que antes, tenemos:<br>
+\[
+A&#x27; = (2, 1, 6) - 2 \cdot 2(1, 1, 1) = (-2, -1, 2)
+\]</p>
+<p>Estos son los resultados y procedimientos para resolver cada parte del ejercicio.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los tres apartados.</p>
+<h3>Datos</h3>
+\[
+\pi:\ x+y+z=3,\qquad \pi&#x27;:\ x+y=3,\qquad A=(2,1,6)
+\]
+<p>---</p>
+<h3>(a) Recta \(r=\pi\cap \pi&#x27;\)</h3>
+<p>La recta intersección de dos planos tiene como vector director el producto vectorial de sus normales.</p>
+<p>- Normal de \(\pi\):  <br>
+\[
+\vec n=(1,1,1)
+\]</p>
+<p>- Normal de \(\pi&#x27;\):  <br>
+\[
+\vec n&#x27;=(1,1,0)
+\]</p>
+<p>Entonces, un vector director de \(r\) es<br>
+\[
+\vec v=\vec n\times \vec n&#x27;
+=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+1&amp;1&amp;1\\
+1&amp;1&amp;0
+\end{vmatrix}
+=(-1,1,0)
+\]<br>
+(cualquier múltiplo no nulo sirve, por ejemplo \((1,-1,0)\)).</p>
+<p>Ahora buscamos un punto de la recta resolviendo el sistema:<br>
+\[
+\begin{cases}
+x+y+z=3\\
+x+y=3
+\end{cases}
+\Rightarrow z=0
+\]<br>
+y además \(x+y=3\). Tomamos, por ejemplo,<br>
+\[
+(3,0,0)
+\]</p>
+<h4>Resultado del apartado (a)</h4>
+- Un vector director:
+\[
+\boxed{\vec v=(1,-1,0)}
+\]
+- Un punto de la recta:
+\[
+\boxed{(3,0,0)}
+\]
+<p>Por tanto, una ecuación paramétrica de \(r\) es<br>
+\[
+\boxed{r:\ (x,y,z)=(3,0,0)+t(1,-1,0)}
+\]</p>
+<p>---</p>
+<h3>(b) Punto \(P\) de \(\pi\) tal que \(AP\perp \pi\)</h3>
+<p>Si \(AP\) es perpendicular al plano \(\pi\), entonces \(\overrightarrow{AP}\) es paralelo a la normal de \(\pi\), es decir, a \((1,1,1)\).</p>
+<p>Por tanto,<br>
+\[
+P=A+\lambda(1,1,1)=(2+\lambda,\,1+\lambda,\,6+\lambda)
+\]</p>
+<p>Como \(P\in\pi\), debe cumplir:<br>
+\[
+(2+\lambda)+(1+\lambda)+(6+\lambda)=3
+\]<br>
+\[
+9+3\lambda=3
+\]<br>
+\[
+3\lambda=-6\Rightarrow \lambda=-2
+\]</p>
+<p>Entonces<br>
+\[
+P=(2-2,\,1-2,\,6-2)=(0,-1,4)
+\]</p>
+<h4>Resultado del apartado (b)</h4>
+\[
+\boxed{P=(0,-1,4)}
+\]
+<p>---</p>
+<h3>(c) Punto \(A&#x27;\) simétrico de \(A\) respecto de \(\pi\)</h3>
+<p>El punto \(P\) hallado en el apartado anterior es el punto medio del segmento \(AA&#x27;\), porque \(P\) es la proyección ortogonal de \(A\) sobre el plano.</p>
+<p>Así,<br>
+\[
+A&#x27;=2P-A
+\]</p>
+<p>Calculamos:<br>
+\[
+2P=(0,-2,8)
+\]<br>
+\[
+A&#x27;=(0,-2,8)-(2,1,6)=(-2,-3,2)
+\]</p>
+<h4>Resultado del apartado (c)</h4>
+\[
+\boxed{A&#x27;=(-2,-3,2)}
+\]
+<p>---</p>
+<h2>Resumen final</h2>
+<p>\[
+\boxed{r:\ (x,y,z)=(3,0,0)+t(1,-1,0)}
+\]</p>
+<p>\[
+\boxed{P=(0,-1,4)}
+\]</p>
+<p>\[
+\boxed{A&#x27;=(-2,-3,2)}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_023.html">Anterior</a><a class="button" href="problema_025.html">Siguiente</a></nav>
+</main></body>
+</html>

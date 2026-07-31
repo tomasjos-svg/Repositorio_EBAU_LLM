@@ -1,0 +1,7 @@
+﻿scenario,condition,replicate_count,n_problem_conditions,pct_problem_conditions,variability_estimable
+principal,gpt-4-turbo + Assistants API,3,386,100.0,True
+principal,gpt-5.4 + Responses API,3,386,100.0,True
+estricto,gpt-4-turbo + Assistants API,3,386,100.0,True
+estricto,gpt-5.4 + Responses API,3,386,100.0,True
+sensibilidad,gpt-4-turbo + Assistants API,3,387,100.0,True
+sensibilidad,gpt-5.4 + Responses API,3,387,100.0,True

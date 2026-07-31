@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 76: extremadura_2023 3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 76 de 139</h1>
+<div class="meta"><span class="badge">extremadura_2023</span> &nbsp; Ejercicio 3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_075.html">Anterior</a><a class="button" href="problema_077.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>3. Sean los vectores \(D=(0,0,2)\), \(E=(1,1,0)\) y \(F=(2,-1,1)\).</p>
+<p>a) ¿Son \(D\), \(E\) y \(F\) linealmente independientes? \((0,5\) puntos)</p>
+<p>b) Calcular el área del triángulo formado por los vectores \(D\) y \(E\). \((0,75\) puntos)</p>
+<p>c) Calcular un vector de módulo uno perpendicular a los vectores \(E\) y \(F\). \((0,75\) puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>3. Sean los vectores</strong>  <br>
+\[
+u=(0,0,2),\quad v=(1,1,0),\quad w=(2,-1,1)
+\]</p>
+<h4>a) ¿Son \(u, v\) y \(w\) linealmente independientes?</h4>
+<p>Los vectores son linealmente independientes si su producto mixto \([u,v,w]\) es no nulo.</p>
+<p>\[
+[u,v,w]=
+\begin{vmatrix}
+0 &amp; 0 &amp; 2\\
+1 &amp; 1 &amp; 0\\
+2 &amp; -1 &amp; 1
+\end{vmatrix}
+=0+0-2-4+0+0=-6\neq 0
+\]</p>
+<p>Los vectores \(u, v\) y \(w\) son linealmente independientes.</p>
+<p>---</p>
+<h4>b) Calcular el área del triángulo formado por los vectores \(u\) y \(v\)</h4>
+<p>El área del triángulo formado por los vectores \(u\) y \(v\) es:</p>
+<p>\[
+\frac{|u\times v|}{2}
+\]</p>
+<p>\[
+u\times v=
+\begin{vmatrix}
+i &amp; j &amp; k\\
+0 &amp; 0 &amp; 2\\
+1 &amp; 1 &amp; 0
+\end{vmatrix}
+=-2i+2j=( -2,2,0)
+\]</p>
+<p>\[
+|u\times v|=\sqrt{(-2)^2+2^2+0^2}=\sqrt{8}=2\sqrt{2}
+\]</p>
+<p>\[
+\text{Área}=\frac{2\sqrt{2}}{2}=\sqrt{2}
+\]</p>
+<p>\[
+\boxed{\sqrt{2}\text{ unidades cuadradas}}
+\]</p>
+<p>---</p>
+<h4>c) Calcular un vector de módulo uno perpendicular a los vectores \(v\) y \(w\)</h4>
+<p>Un vector perpendicular a \(v\) y \(w\) es su producto vectorial. Este vector lo dividimos por su módulo y obtenemos el vector unitario \(t\) pedido.</p>
+<p>\[
+v\times w=
+\begin{vmatrix}
+i &amp; j &amp; k\\
+1 &amp; 1 &amp; 0\\
+2 &amp; -1 &amp; 1
+\end{vmatrix}
+=i-k-2k-j=-i-j-3k=(-1,-1,-3)
+\]</p>
+<p>\[
+|v\times w|=\sqrt{(-1)^2+(-1)^2+(-3)^2}=\sqrt{11}
+\]</p>
+<p>\[
+t=\frac{v\times w}{|v\times w|}
+=
+\left(
+-\frac{1}{\sqrt{11}},
+-\frac{1}{\sqrt{11}},
+-\frac{3}{\sqrt{11}}
+\right)
+\]</p>
+<p>También puede tomarse el opuesto:</p>
+<p>\[
+t=
+\left(
+\frac{1}{\sqrt{11}},
+\frac{1}{\sqrt{11}},
+\frac{3}{\sqrt{11}}
+\right)
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 3, abordaremos cada parte del ejercicio siguiendo los pasos matemáticos necesarios.</p>
+<h4>Parte a) ¿Son \(D\), \(E\) y \(F\) linealmente independientes?</h4>
+<p>Para determinar si los vectores \(D=(0,0,2)\), \(E=(1,1,0)\) y \(F=(2,-1,1)\) son linealmente independientes, podemos verificar si el determinante de la matriz formada por estos vectores es distinto de cero. Si el determinante es distinto de cero, los vectores son linealmente independientes.</p>
+<p>\[ \text{Matriz} = \begin{bmatrix} 0 &amp; 0 &amp; 2 \\ 1 &amp; 1 &amp; 0 \\ 2 &amp; -1 &amp; 1 \end{bmatrix} \]</p>
+<p>Calculamos el determinante de esta matriz:<br>
+\[ \text{Determinante} = 0 \cdot \left( 1 \cdot 1 - (-1) \cdot 0  \right) - 0 \cdot \left( 1 \cdot 1 - 1 \cdot 1 \right) + 2 \cdot \left( 1 \cdot (-1) - (-1) \cdot 1 \right) \]<br>
+\[ = 0 - 0 + 2 (-1 + 1) \]<br>
+\[ = 0 \]</p>
+<p>Dado que el determinante es 0, los vectores \(D\), \(E\) y \(F\) son linealmente <strong>dependientes</strong>.</p>
+<h4>Parte b) Calcular el área del triángulo formado por los vectores \(D\) y \(E\).</h4>
+<p>El área \(A\) del triángulo formado por dos vectores \(D\) y \(E\) se calcula como la mitad del módulo del vector producto cruz entre \(D\) y \(E\):<br>
+\[ D \times E = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 0 &amp; 0 &amp; 2 \\ 1 &amp; 1 &amp; 0 \end{vmatrix} \]<br>
+\[ = \mathbf{i}(0 \cdot 0 - 2 \cdot 1) - \mathbf{j}(0 \cdot 0 - 2 \cdot 1) + \mathbf{k}(0 \cdot 1 - 0 \cdot 1) \]<br>
+\[ = -2 \mathbf{i} + 2 \mathbf{j} + 0 \mathbf{k} \]<br>
+\[ = (-2, 2, 0) \]</p>
+<p>El módulo de \((-2, 2, 0)\) es:<br>
+\[ \|(-2, 2, 0)\| = \sqrt{(-2)^2 + 2^2 + 0^2} = \sqrt{4 + 4} = \sqrt{8} = 2\sqrt{2} \]</p>
+<p>El área del triángulo es entonces:<br>
+\[ A = \frac{1}{2} \cdot 2\sqrt{2} = \sqrt{2} \]</p>
+<h4>Parte c) Calcular un vector de módulo uno perpendicular a los vectores \(E\) y \(F\).</h4>
+<p>Calculamos primero el producto cruz de \(E\) y \(F\), que es perpendicular a ambos:<br>
+\[ E \times F = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 1 &amp; 1 &amp; 0 \\ 2 &amp; -1 &amp; 1 \end{vmatrix} \]<br>
+\[ = \mathbf{i}(1 \cdot 1 - 0 \cdot (-1)) - \mathbf{j}(1 \cdot 1 - 0 \cdot 2) + \mathbf{k}(1 \cdot (-1) - 1 \cdot 2) \]<br>
+\[ = \mathbf{i}(1) - \mathbf{j}(1) + \mathbf{k}(-3) \]<br>
+\[ = (1, -1, -3) \]</p>
+<p>Para que tenga módulo uno, normalizamos el vector:<br>
+\[ \|(1, -1, -3)\| = \sqrt{1^2 + (-1)^2 + (-3)^2} = \sqrt{1 + 1 + 9} = \sqrt{11} \]</p>
+<p>El vector unitario es:<br>
+\[ \frac{(1, -1, -3)}{\sqrt{11}} = \left(\frac{1}{\sqrt{11}}, -\frac{1}{\sqrt{11}}, -\frac{3}{\sqrt{11}}\right) \]</p>
+<p>Los resultados obtenidos en cada parte del problema son:<br>
+- Los vectores son linealmente dependientes.<br>
+- El área del triángulo es \(\sqrt{2}\).<br>
+- Un vector unitario perpendicular a los vectores \(E\) y \(F\) es \(\left(\frac{1}{\sqrt{11}}, -\frac{1}{\sqrt{11}}, -\frac{3}{\sqrt{11}}\right)\).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los tres apartados.</p>
+<p>Datos:<br>
+\[
+D=(0,0,2),\qquad E=(1,1,0),\qquad F=(2,-1,1)
+\]</p>
+<p>---</p>
+<h3>a) ¿Son \(D\), \(E\) y \(F\) linealmente independientes?</h3>
+<p>En \(\mathbb{R}^3\), tres vectores son linealmente independientes si el determinante de la matriz que forman es distinto de 0.</p>
+<p>Tomamos la matriz con filas \(D,E,F\):<br>
+\[
+A=\begin{pmatrix}
+0&amp;0&amp;2\\
+1&amp;1&amp;0\\
+2&amp;-1&amp;1
+\end{pmatrix}
+\]</p>
+<p>Calculamos su determinante:<br>
+\[
+\det(A)=
+0-
+0+
+2\begin{vmatrix}
+1&amp;1\\
+2&amp;-1
+\end{vmatrix}
+\]</p>
+<p>\[
+\det(A)=2\big(1\cdot(-1)-1\cdot 2\big)=2(-1-2)=2(-3)=-6
+\]</p>
+<p>Como<br>
+\[
+\det(A)\neq 0,
+\]<br>
+<strong>los vectores \(D,E,F\) son linealmente independientes.</strong></p>
+<p>---</p>
+<h3>b) Calcular el área del triángulo formado por los vectores \(D\) y \(E\)</h3>
+<p>El área del triángulo formado por dos vectores \(D\) y \(E\) es:<br>
+\[
+A=\frac12\|D\times E\|
+\]</p>
+<p>Calculamos el producto vectorial:<br>
+\[
+D\times E=
+\begin{vmatrix}
+\mathbf i&amp;\mathbf j&amp;\mathbf k\\
+0&amp;0&amp;2\\
+1&amp;1&amp;0
+\end{vmatrix}
+\]</p>
+<p>\[
+D\times E=(-2,\,2,\,0)
+\]</p>
+<p>Su módulo es:<br>
+\[
+\|D\times E\|=\sqrt{(-2)^2+2^2+0^2}=\sqrt{4+4}=\sqrt8=2\sqrt2
+\]</p>
+<p>Entonces el área del triángulo es:<br>
+\[
+A=\frac12(2\sqrt2)=\sqrt2
+\]</p>
+<p><strong>Área del triángulo:</strong><br>
+\[
+\boxed{\sqrt2}
+\]</p>
+<p>---</p>
+<h3>c) Calcular un vector de módulo uno perpendicular a \(E\) y \(F\)</h3>
+<p>Un vector perpendicular a \(E\) y \(F\) se obtiene con el producto vectorial:<br>
+\[
+E\times F=
+\begin{vmatrix}
+\mathbf i&amp;\mathbf j&amp;\mathbf k\\
+1&amp;1&amp;0\\
+2&amp;-1&amp;1
+\end{vmatrix}
+\]</p>
+<p>\[
+E\times F=(1,-1,-3)
+\]</p>
+<p>Ahora calculamos su módulo:<br>
+\[
+\|(1,-1,-3)\|=\sqrt{1^2+(-1)^2+(-3)^2}=\sqrt{1+1+9}=\sqrt{11}
+\]</p>
+<p>Por tanto, un vector unitario perpendicular a ambos es:<br>
+\[
+\boxed{\left(\frac1{\sqrt{11}},-\frac1{\sqrt{11}},-\frac3{\sqrt{11}}\right)}
+\]</p>
+<p>También vale su opuesto:<br>
+\[
+\boxed{\left(-\frac1{\sqrt{11}},\frac1{\sqrt{11}},\frac3{\sqrt{11}}\right)}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p><strong>a)</strong> Sí, son linealmente independientes, porque<br>
+\[
+\det\begin{pmatrix}
+0&amp;0&amp;2\\
+1&amp;1&amp;0\\
+2&amp;-1&amp;1
+\end{pmatrix}=-6\neq 0
+\]</p>
+<p><strong>b)</strong> El área del triángulo formado por \(D\) y \(E\) es<br>
+\[
+\boxed{\sqrt2}
+\]</p>
+<p><strong>c)</strong> Un vector de módulo 1 perpendicular a \(E\) y \(F\) es<br>
+\[
+\boxed{\left(\frac1{\sqrt{11}},-\frac1{\sqrt{11}},-\frac3{\sqrt{11}}\right)}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_075.html">Anterior</a><a class="button" href="problema_077.html">Siguiente</a></nav>
+</main></body>
+</html>

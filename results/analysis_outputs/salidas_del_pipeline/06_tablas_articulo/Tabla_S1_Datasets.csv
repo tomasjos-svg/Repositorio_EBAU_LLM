@@ -1,0 +1,301 @@
+﻿Estrato,Métrica,N,Diferencia,IC95% bootstrap,p t-Holm global,p Wilcoxon-Holm global,Pares suficientes
+andalucia_2023,Puntuación global,8,"38,92","22,12–54,88","0,882","1,000",True
+andalucia_2023,Completitud,8,"36,17","18,96–52,33","1,000","1,000",True
+andalucia_2023,Corrección simbólica,8,"33,54","17,08–50,21","1,000","1,000",True
+andalucia_2023,Calidad pedagógica,8,"33,79","20,25–46,92","0,619","1,000",True
+andalucia_2023,Fidelidad al problema,8,"11,21","5,75–17,04","1,000","1,000",True
+andalucia_2023,Precisión por apartados,8,"37,83","19,92–54,67","1,000","1,000",True
+andalucia_2024,Puntuación global,8,"51,58","27,75–75,71","1,000","1,000",True
+andalucia_2024,Completitud,8,"44,67","20,88–71,04","1,000","1,000",True
+andalucia_2024,Corrección simbólica,8,"51,50","27,83–75,62","1,000","1,000",True
+andalucia_2024,Calidad pedagógica,8,"44,79","22,50–70,42","1,000","1,000",True
+andalucia_2024,Fidelidad al problema,8,"31,33","7,25–64,46","1,000","1,000",True
+andalucia_2024,Precisión por apartados,8,"51,17","26,79–75,83","1,000","1,000",True
+andalucia_2025,Puntuación global,7,"36,38","20,81–51,57","1,000","1,000",True
+andalucia_2025,Completitud,7,"20,90","8,48–35,19","1,000","1,000",True
+andalucia_2025,Corrección simbólica,7,"35,76","20,86–51,43","1,000","1,000",True
+andalucia_2025,Calidad pedagógica,7,"27,00","17,19–38,10","0,868","1,000",True
+andalucia_2025,Fidelidad al problema,7,"11,19","5,95–17,38","1,000","1,000",True
+andalucia_2025,Precisión por apartados,7,"35,95","20,33–52,38","1,000","1,000",True
+aragon_2023,Puntuación global,10,"24,97","12,73–39,57","1,000","1,000",True
+aragon_2023,Completitud,10,"20,83","8,67–35,83","1,000","1,000",True
+aragon_2023,Corrección simbólica,10,"25,90","14,13–38,20","0,793","1,000",True
+aragon_2023,Calidad pedagógica,10,"21,33","12,00–30,83","0,566","1,000",True
+aragon_2023,Fidelidad al problema,10,"3,33","0,67–6,67","1,000","1,000",True
+aragon_2023,Precisión por apartados,10,"24,43","12,20–39,07","1,000","1,000",True
+aragon_2024,Puntuación global,10,"21,90","8,07–36,43","1,000","1,000",True
+aragon_2024,Completitud,10,"17,23","5,57–29,73","1,000","1,000",True
+aragon_2024,Corrección simbólica,10,"20,07","7,23–33,33","1,000","1,000",True
+aragon_2024,Calidad pedagógica,10,"17,20","8,30–26,90","1,000","0,578",True
+aragon_2024,Fidelidad al problema,10,"4,83","0,67–9,83","1,000","1,000",True
+aragon_2024,Precisión por apartados,10,"20,83","6,67–35,67","1,000","1,000",True
+aragon_2025,Puntuación global,4,"27,75","5,67–49,83","1,000","1,000",False
+aragon_2025,Completitud,4,"22,92","5,00–40,83","1,000","1,000",False
+aragon_2025,Corrección simbólica,4,"30,67","15,50–45,83","1,000","1,000",False
+aragon_2025,Calidad pedagógica,4,"20,83","9,17–32,50","1,000","1,000",False
+aragon_2025,Fidelidad al problema,4,"-5,17","-15,00–4,17","1,000","1,000",False
+aragon_2025,Precisión por apartados,4,"30,83","10,83–50,83","1,000","1,000",False
+asturias_2023,Puntuación global,8,"25,38","10,46–41,42","1,000","1,000",True
+asturias_2023,Completitud,8,"19,29","5,83–33,75","1,000","1,000",True
+asturias_2023,Corrección simbólica,8,"23,75","9,13–40,25","1,000","1,000",True
+asturias_2023,Calidad pedagógica,8,"19,62","8,13–32,04","1,000","1,000",True
+asturias_2023,Fidelidad al problema,8,"4,37","1,04–8,33","1,000","1,000",True
+asturias_2023,Precisión por apartados,8,"25,75","10,63–42,00","1,000","1,000",True
+asturias_2024,Puntuación global,8,"30,46","13,54–48,75","1,000","1,000",True
+asturias_2024,Completitud,8,"21,17","8,54–36,17","1,000","1,000",True
+asturias_2024,Corrección simbólica,8,"31,33","14,12–50,42","1,000","1,000",True
+asturias_2024,Calidad pedagógica,8,"22,42","11,71–34,79","1,000","1,000",True
+asturias_2024,Fidelidad al problema,8,"7,42","2,12–13,54","1,000","1,000",True
+asturias_2024,Precisión por apartados,8,"31,29","14,04–49,96","1,000","1,000",True
+asturias_2025,Puntuación global,5,"36,20","17,93–55,53","1,000","1,000",True
+asturias_2025,Completitud,5,"32,40","18,47–45,07","1,000","1,000",True
+asturias_2025,Corrección simbólica,5,"31,60","13,40–54,00","1,000","1,000",True
+asturias_2025,Calidad pedagógica,5,"23,93","11,67–36,20","1,000","1,000",True
+asturias_2025,Fidelidad al problema,5,"14,60","8,60–19,67","1,000","1,000",True
+asturias_2025,Precisión por apartados,5,"36,60","18,13–56,60","1,000","1,000",True
+baleares_2023,Puntuación global,8,"30,33","15,62–43,92","1,000","1,000",True
+baleares_2023,Completitud,8,"21,04","8,54–35,29","1,000","1,000",True
+baleares_2023,Corrección simbólica,8,"28,67","15,42–40,08","0,953","1,000",True
+baleares_2023,Calidad pedagógica,8,"22,50","12,50–32,08","0,941","1,000",True
+baleares_2023,Fidelidad al problema,8,"4,17","1,67–6,67","1,000","1,000",True
+baleares_2023,Precisión por apartados,8,"29,79","15,38–43,00","1,000","1,000",True
+baleares_2024,Puntuación global,8,"15,96","5,67–28,17","1,000","1,000",True
+baleares_2024,Completitud,8,"11,04","3,54–19,71","1,000","1,000",True
+baleares_2024,Corrección simbólica,8,"16,12","4,71–29,96","1,000","1,000",True
+baleares_2024,Calidad pedagógica,8,"14,50","6,92–22,92","1,000","1,000",True
+baleares_2024,Fidelidad al problema,8,"2,08","0,83–3,54","1,000","1,000",True
+baleares_2024,Precisión por apartados,8,"14,54","4,58–26,33","1,000","1,000",True
+baleares_2025,Puntuación global,7,"17,81","4,71–31,57","1,000","1,000",True
+baleares_2025,Completitud,7,"11,67","0,95–25,48","1,000","1,000",True
+baleares_2025,Corrección simbólica,7,"15,67","5,05–26,67","1,000","1,000",True
+baleares_2025,Calidad pedagógica,7,"13,43","4,48–22,57","1,000","1,000",True
+baleares_2025,Fidelidad al problema,7,"10,43","-0,62–23,86","1,000","1,000",True
+baleares_2025,Precisión por apartados,7,"17,52","4,95–31,05","1,000","1,000",True
+canarias_2023,Puntuación global,8,"45,67","25,42–65,54","1,000","1,000",True
+canarias_2023,Completitud,8,"32,08","13,75–52,50","1,000","1,000",True
+canarias_2023,Corrección simbólica,8,"45,12","24,79–64,88","1,000","1,000",True
+canarias_2023,Calidad pedagógica,8,"32,42","16,79–48,04","1,000","1,000",True
+canarias_2023,Fidelidad al problema,8,"13,58","4,54–23,88","1,000","1,000",True
+canarias_2023,Precisión por apartados,8,"48,96","26,92–70,34","1,000","1,000",True
+canarias_2024,Puntuación global,8,"49,75","38,29–59,54","0,020","1,000",True
+canarias_2024,Completitud,8,"45,08","30,00–58,42","0,207","1,000",True
+canarias_2024,Corrección simbólica,8,"37,00","20,42–52,96","1,000","1,000",True
+canarias_2024,Calidad pedagógica,8,"36,67","27,50–44,25","0,028","1,000",True
+canarias_2024,Fidelidad al problema,8,"9,71","5,33–13,88","1,000","1,000",True
+canarias_2024,Precisión por apartados,8,"53,58","38,88–69,67","0,114","1,000",True
+cantabria_2023,Puntuación global,7,"1,62","0,33–3,19","1,000","1,000",True
+cantabria_2023,Completitud,7,"0,24","0,00–0,71","1,000","1,000",True
+cantabria_2023,Corrección simbólica,7,"1,10","0,24–2,19","1,000","1,000",True
+cantabria_2023,Calidad pedagógica,7,"3,81","1,43–7,14","1,000","1,000",True
+cantabria_2023,Fidelidad al problema,7,"0,00","0,00–0,00",—,"1,000",True
+cantabria_2023,Precisión por apartados,7,"1,14","0,19–2,29","1,000","1,000",True
+cantabria_2024,Puntuación global,8,"25,50","8,33–46,00","1,000","1,000",True
+cantabria_2024,Completitud,8,"22,21","6,17–42,25","1,000","1,000",True
+cantabria_2024,Corrección simbólica,8,"24,08","8,50–41,92","1,000","1,000",True
+cantabria_2024,Calidad pedagógica,8,"21,96","7,92–39,42","1,000","1,000",True
+cantabria_2024,Fidelidad al problema,8,"7,33","2,62–12,29","1,000","1,000",True
+cantabria_2024,Precisión por apartados,8,"25,83","7,88–47,54","1,000","1,000",True
+cantabria_2025,Puntuación global,22,"13,35","5,89–22,15","1,000","0,029",True
+cantabria_2025,Completitud,22,"14,18","6,98–22,44","0,622","0,059",True
+cantabria_2025,Corrección simbólica,22,"5,42","0,05–13,11","1,000","1,000",True
+cantabria_2025,Calidad pedagógica,22,"10,20","6,21–14,67","0,049","0,014",True
+cantabria_2025,Fidelidad al problema,22,"5,50","1,86–9,95","1,000","1,000",True
+cantabria_2025,Precisión por apartados,22,"17,20","7,15–28,76","1,000","0,358",True
+cataluna_2023,Puntuación global,6,"41,83","29,61–50,56","0,264","1,000",True
+cataluna_2023,Completitud,6,"36,67","24,06–46,83","0,622","1,000",True
+cataluna_2023,Corrección simbólica,6,"29,50","19,61–42,67","1,000","1,000",True
+cataluna_2023,Calidad pedagógica,6,"24,33","16,11–33,56","1,000","1,000",True
+cataluna_2023,Fidelidad al problema,6,"32,39","22,83–41,67","0,466","1,000",True
+cataluna_2023,Precisión por apartados,6,"39,50","25,39–51,50","0,784","1,000",True
+cataluna_2024,Puntuación global,6,"26,89","12,33–46,00","1,000","1,000",True
+cataluna_2024,Completitud,6,"25,00","8,44–44,33","1,000","1,000",True
+cataluna_2024,Corrección simbólica,6,"49,44","29,39–69,44","1,000","1,000",True
+cataluna_2024,Calidad pedagógica,6,"33,06","26,94–39,44","0,068","1,000",True
+cataluna_2024,Fidelidad al problema,6,"17,11","8,22–30,72","1,000","1,000",True
+cataluna_2024,Precisión por apartados,6,"25,06","7,38–47,28","1,000","1,000",True
+cataluna_2025,Puntuación global,7,"15,62","2,57–33,57","1,000","1,000",True
+cataluna_2025,Completitud,7,"12,86","1,67–26,19","1,000","1,000",True
+cataluna_2025,Corrección simbólica,7,"13,43","1,43–31,52","1,000","1,000",True
+cataluna_2025,Calidad pedagógica,7,"12,14","5,24–21,67","1,000","1,000",True
+cataluna_2025,Fidelidad al problema,7,"4,90","0,71–11,62","1,000","1,000",True
+cataluna_2025,Precisión por apartados,7,"17,86","2,14–36,90","1,000","1,000",True
+cleon_2023,Puntuación global,10,"20,40","9,10–32,13","1,000","1,000",True
+cleon_2023,Completitud,10,"13,50","5,17–22,50","1,000","1,000",True
+cleon_2023,Corrección simbólica,10,"21,23","9,30–33,40","1,000","1,000",True
+cleon_2023,Calidad pedagógica,10,"17,00","8,50–26,00","1,000","1,000",True
+cleon_2023,Fidelidad al problema,10,"5,00","1,50–8,83","1,000","1,000",True
+cleon_2023,Precisión por apartados,10,"19,33","7,83–31,50","1,000","1,000",True
+cleon_2024,Puntuación global,5,"22,73","9,67–36,20","1,000","1,000",True
+cleon_2024,Completitud,5,"17,07","7,47–26,40","1,000","1,000",True
+cleon_2024,Corrección simbólica,5,"22,93","9,87–34,47","1,000","1,000",True
+cleon_2024,Calidad pedagógica,5,"17,60","8,27–28,53","1,000","1,000",True
+cleon_2024,Fidelidad al problema,5,"3,87","1,87–5,40","1,000","1,000",True
+cleon_2024,Precisión por apartados,5,"21,73","8,67–35,47","1,000","1,000",True
+cleon_2025,Puntuación global,3,"39,11","7,67–71,67","1,000","1,000",False
+cleon_2025,Completitud,3,"15,56","0,00–26,67","1,000","1,000",False
+cleon_2025,Corrección simbólica,3,"40,22","8,67–71,67","1,000","1,000",False
+cleon_2025,Calidad pedagógica,3,"24,89","4,67–45,00","1,000","1,000",False
+cleon_2025,Fidelidad al problema,3,"22,11","1,67–58,33","1,000","1,000",False
+cleon_2025,Precisión por apartados,3,"39,89","5,67–75,00","1,000","1,000",False
+cvalenciana_2023,Puntuación global,8,"50,04","27,33–71,25","1,000","1,000",True
+cvalenciana_2023,Completitud,8,"41,33","20,50–61,54","1,000","1,000",True
+cvalenciana_2023,Corrección simbólica,8,"45,58","24,25–65,00","1,000","1,000",True
+cvalenciana_2023,Calidad pedagógica,8,"35,33","19,71–50,42","1,000","1,000",True
+cvalenciana_2023,Fidelidad al problema,8,"12,38","4,21–24,04","1,000","1,000",True
+cvalenciana_2023,Precisión por apartados,8,"52,37","28,04–74,46","1,000","1,000",True
+cvalenciana_2024,Puntuación global,8,"47,12","28,25–63,63","0,515","1,000",True
+cvalenciana_2024,Completitud,8,"38,62","22,29–54,75","0,873","1,000",True
+cvalenciana_2024,Corrección simbólica,8,"42,29","25,42–57,71","0,549","1,000",True
+cvalenciana_2024,Calidad pedagógica,8,"31,71","19,42–42,29","0,409","1,000",True
+cvalenciana_2024,Fidelidad al problema,8,"19,38","9,17–31,67","1,000","1,000",True
+cvalenciana_2024,Precisión por apartados,8,"48,17","28,88–65,13","0,531","1,000",True
+cvalenciana_2025,Puntuación global,4,"51,67","31,50–76,00","1,000","1,000",False
+cvalenciana_2025,Completitud,4,"46,42","22,08–73,00","1,000","1,000",False
+cvalenciana_2025,Corrección simbólica,4,"49,25","31,25–73,67","1,000","1,000",False
+cvalenciana_2025,Calidad pedagógica,4,"36,17","16,67–56,67","1,000","1,000",False
+cvalenciana_2025,Fidelidad al problema,4,"20,00","7,50–34,42","1,000","1,000",False
+cvalenciana_2025,Precisión por apartados,4,"53,25","32,17–78,25","1,000","1,000",False
+extremadura_2023,Puntuación global,10,"20,47","7,77–34,53","1,000","1,000",True
+extremadura_2023,Completitud,10,"15,47","3,30–29,83","1,000","1,000",True
+extremadura_2023,Corrección simbólica,10,"20,63","7,97–34,17","1,000","1,000",True
+extremadura_2023,Calidad pedagógica,10,"16,00","6,17–27,00","1,000","1,000",True
+extremadura_2023,Fidelidad al problema,10,"3,00","0,00–7,33","1,000","1,000",True
+extremadura_2023,Precisión por apartados,10,"20,43","7,33–35,00","1,000","1,000",True
+extremadura_2024,Puntuación global,10,"32,90","17,73–48,13","0,775","1,000",True
+extremadura_2024,Completitud,10,"24,80","10,43–41,50","1,000","1,000",True
+extremadura_2024,Corrección simbólica,10,"30,20","16,47–43,73","0,672","1,000",True
+extremadura_2024,Calidad pedagógica,10,"22,10","11,87–33,37","0,949","1,000",True
+extremadura_2024,Fidelidad al problema,10,"6,33","3,00–10,17","1,000","1,000",True
+extremadura_2024,Precisión por apartados,10,"33,27","17,43–49,60","0,969","1,000",True
+extremadura_2025,Puntuación global,3,"23,44","14,00–41,33","1,000","1,000",False
+extremadura_2025,Completitud,3,"26,33","15,67–35,00","1,000","1,000",False
+extremadura_2025,Corrección simbólica,3,"20,56","0,00–55,00","1,000","1,000",False
+extremadura_2025,Calidad pedagógica,3,"15,78","7,33–26,67","1,000","1,000",False
+extremadura_2025,Fidelidad al problema,3,"10,00","1,67–26,67","1,000","1,000",False
+extremadura_2025,Precisión por apartados,3,"27,89","15,33–41,67","1,000","1,000",False
+galicia_2023,Puntuación global,8,"41,21","24,08–57,62","0,761","1,000",True
+galicia_2023,Completitud,8,"28,96","14,58–44,17","1,000","1,000",True
+galicia_2023,Corrección simbólica,8,"38,92","22,04–55,38","0,969","1,000",True
+galicia_2023,Calidad pedagógica,8,"28,25","17,00–38,54","0,566","1,000",True
+galicia_2023,Fidelidad al problema,8,"15,00","7,58–23,08","1,000","1,000",True
+galicia_2023,Precisión por apartados,8,"42,58","24,21–60,38","0,887","1,000",True
+galicia_2024,Puntuación global,8,"26,46","4,42–50,58","1,000","1,000",True
+galicia_2024,Completitud,8,"22,71","-1,46–48,96","1,000","1,000",True
+galicia_2024,Corrección simbólica,8,"24,83","6,08–45,62","1,000","1,000",True
+galicia_2024,Calidad pedagógica,8,"23,12","8,33–40,42","1,000","1,000",True
+galicia_2024,Fidelidad al problema,8,"6,87","-2,08–16,67","1,000","1,000",True
+galicia_2024,Precisión por apartados,8,"25,38","2,25–51,25","1,000","1,000",True
+galicia_2025,Puntuación global,4,"37,50","16,08–56,33","1,000","1,000",False
+galicia_2025,Completitud,4,"26,25","8,75–45,83","1,000","1,000",False
+galicia_2025,Corrección simbólica,4,"33,25","11,33–55,17","1,000","1,000",False
+galicia_2025,Calidad pedagógica,4,"27,33","11,08–42,17","1,000","1,000",False
+galicia_2025,Fidelidad al problema,4,"11,83","4,75–18,42","1,000","1,000",False
+galicia_2025,Precisión por apartados,4,"39,08","16,92–58,83","1,000","1,000",False
+lamancha_2023,Puntuación global,8,"35,29","23,92–46,83","0,253","1,000",True
+lamancha_2023,Completitud,8,"20,83","7,71–35,63","1,000","1,000",True
+lamancha_2023,Corrección simbólica,8,"36,25","25,75–46,58","0,122","1,000",True
+lamancha_2023,Calidad pedagógica,8,"30,17","20,08–40,58","0,295","1,000",True
+lamancha_2023,Fidelidad al problema,8,"9,21","4,38–14,96","1,000","1,000",True
+lamancha_2023,Precisión por apartados,8,"34,42","23,25–45,79","0,267","1,000",True
+lamancha_2024,Puntuación global,8,"33,38","20,96–49,17","0,934","1,000",True
+lamancha_2024,Completitud,8,"23,79","11,37–38,09","1,000","1,000",True
+lamancha_2024,Corrección simbólica,8,"32,62","20,58–48,00","0,941","1,000",True
+lamancha_2024,Calidad pedagógica,8,"21,79","13,12–32,25","1,000","1,000",True
+lamancha_2024,Fidelidad al problema,8,"10,12","3,75–17,08","1,000","1,000",True
+lamancha_2024,Precisión por apartados,8,"34,33","20,79–51,58","1,000","1,000",True
+lamancha_2025,Puntuación global,4,"12,50","0,67–27,17","1,000","1,000",False
+lamancha_2025,Completitud,4,"10,83","0,00–23,75","1,000","1,000",False
+lamancha_2025,Corrección simbólica,4,"13,83","1,33–26,33","1,000","1,000",False
+lamancha_2025,Calidad pedagógica,4,"10,00","-0,83–25,83","1,000","1,000",False
+lamancha_2025,Fidelidad al problema,4,"2,00","-3,33–8,00","1,000","1,000",False
+lamancha_2025,Precisión por apartados,4,"15,08","0,67–29,50","1,000","1,000",False
+madrid_2023,Puntuación global,4,"35,17","11,00–57,83","1,000","1,000",False
+madrid_2023,Completitud,4,"27,50","8,33–45,83","1,000","1,000",False
+madrid_2023,Corrección simbólica,4,"37,08","11,67–59,58","1,000","1,000",False
+madrid_2023,Calidad pedagógica,4,"29,58","11,67–47,92","1,000","1,000",False
+madrid_2023,Fidelidad al problema,4,"12,92","3,75–22,50","1,000","1,000",False
+madrid_2023,Precisión por apartados,4,"34,42","9,50–58,08","1,000","1,000",False
+madrid_2024,Puntuación global,8,"36,88","18,12–55,79","1,000","1,000",True
+madrid_2024,Completitud,8,"32,62","13,54–52,04","1,000","1,000",True
+madrid_2024,Corrección simbólica,8,"32,88","16,83–48,25","1,000","1,000",True
+madrid_2024,Calidad pedagógica,8,"30,96","16,87–44,92","1,000","1,000",True
+madrid_2024,Fidelidad al problema,8,"12,25","5,33–19,79","1,000","1,000",True
+madrid_2024,Precisión por apartados,8,"37,54","17,92–57,00","1,000","1,000",True
+madrid_2025,Puntuación global,4,"48,00","30,75–72,25","1,000","1,000",False
+madrid_2025,Completitud,4,"32,92","15,42–61,67","1,000","1,000",False
+madrid_2025,Corrección simbólica,4,"47,08","32,50–65,42","1,000","1,000",False
+madrid_2025,Calidad pedagógica,4,"37,58","26,08–54,00","1,000","1,000",False
+madrid_2025,Fidelidad al problema,4,"11,17","5,58–19,08","1,000","1,000",False
+madrid_2025,Precisión por apartados,4,"49,00","31,08–73,75","1,000","1,000",False
+murcia_2023,Puntuación global,8,"30,46","13,21–49,83","1,000","1,000",True
+murcia_2023,Completitud,8,"19,38","5,41–38,33","1,000","1,000",True
+murcia_2023,Corrección simbólica,8,"30,88","13,71–49,29","1,000","1,000",True
+murcia_2023,Calidad pedagógica,8,"21,88","9,58–36,46","1,000","1,000",True
+murcia_2023,Fidelidad al problema,8,"7,08","1,25–16,46","1,000","1,000",True
+murcia_2023,Precisión por apartados,8,"30,75","13,25–50,75","1,000","1,000",True
+murcia_2024,Puntuación global,10,"45,47","28,43–62,97","0,251","0,578",True
+murcia_2024,Completitud,10,"34,97","16,06–54,87","1,000","0,578",True
+murcia_2024,Corrección simbólica,10,"43,43","28,37–58,60","0,141","0,578",True
+murcia_2024,Calidad pedagógica,10,"30,77","18,73–43,33","0,331","0,578",True
+murcia_2024,Fidelidad al problema,10,"11,50","4,17–21,00","1,000","1,000",True
+murcia_2024,Precisión por apartados,10,"45,90","28,80–63,30","0,229","0,578",True
+murcia_2025,Puntuación global,10,"28,07","10,63–48,77","1,000","1,000",True
+murcia_2025,Completitud,10,"24,67","8,23–45,77","1,000","1,000",True
+murcia_2025,Corrección simbólica,10,"24,43","8,83–43,00","1,000","1,000",True
+murcia_2025,Calidad pedagógica,10,"24,97","11,80–39,83","1,000","0,578",True
+murcia_2025,Fidelidad al problema,10,"8,10","1,83–17,80","1,000","1,000",True
+murcia_2025,Precisión por apartados,10,"27,83","10,07–49,00","1,000","1,000",True
+navarra_2023,Puntuación global,8,"57,29","37,92–75,96","0,266","1,000",True
+navarra_2023,Completitud,8,"50,83","29,16–71,63","0,873","1,000",True
+navarra_2023,Corrección simbólica,8,"59,00","42,21–75,92","0,117","1,000",True
+navarra_2023,Calidad pedagógica,8,"51,04","37,71–63,33","0,052","1,000",True
+navarra_2023,Fidelidad al problema,8,"31,79","12,67–52,08","1,000","1,000",True
+navarra_2023,Precisión por apartados,8,"56,62","36,92–75,33","0,297","1,000",True
+navarra_2024,Puntuación global,8,"67,71","49,13–82,54","0,051","1,000",True
+navarra_2024,Completitud,8,"65,46","48,21–80,42","0,048","1,000",True
+navarra_2024,Corrección simbólica,8,"59,00","39,29–76,58","0,199","1,000",True
+navarra_2024,Calidad pedagógica,8,"58,88","42,83–72,00","0,050","1,000",True
+navarra_2024,Fidelidad al problema,8,"37,96","20,21–57,92","1,000","1,000",True
+navarra_2024,Precisión por apartados,8,"68,71","49,79–83,75","0,051","1,000",True
+navarra_2025,Puntuación global,8,"37,17","18,25–55,83","1,000","1,000",True
+navarra_2025,Completitud,8,"33,38","13,83–53,42","1,000","1,000",True
+navarra_2025,Corrección simbólica,8,"34,83","17,12–51,88","1,000","1,000",True
+navarra_2025,Calidad pedagógica,8,"29,17","15,00–43,21","1,000","1,000",True
+navarra_2025,Fidelidad al problema,8,"23,92","10,33–35,67","1,000","1,000",True
+navarra_2025,Precisión por apartados,8,"36,88","17,54–56,00","1,000","1,000",True
+pais_vasco_2023,Puntuación global,10,"23,47","11,33–36,60","1,000","1,000",True
+pais_vasco_2023,Completitud,10,"18,33","7,67–30,33","1,000","1,000",True
+pais_vasco_2023,Corrección simbólica,10,"24,50","11,90–38,30","1,000","1,000",True
+pais_vasco_2023,Calidad pedagógica,10,"17,53","9,40–26,70","1,000","1,000",True
+pais_vasco_2023,Fidelidad al problema,10,"9,30","2,27–19,83","1,000","1,000",True
+pais_vasco_2023,Precisión por apartados,10,"24,73","12,50–37,87","1,000","1,000",True
+pais_vasco_2024,Puntuación global,10,"33,97","17,50–51,50","1,000","1,000",True
+pais_vasco_2024,Completitud,10,"29,17","14,17–45,50","1,000","1,000",True
+pais_vasco_2024,Corrección simbólica,10,"30,87","12,93–50,83","1,000","1,000",True
+pais_vasco_2024,Calidad pedagógica,10,"23,70","12,17–36,33","1,000","1,000",True
+pais_vasco_2024,Fidelidad al problema,10,"7,00","3,00–11,33","1,000","1,000",True
+pais_vasco_2024,Precisión por apartados,10,"35,07","17,80–53,97","1,000","1,000",True
+pais_vasco_2025,Puntuación global,10,"30,67","14,37–46,43","1,000","1,000",True
+pais_vasco_2025,Completitud,10,"28,93","13,53–45,17","1,000","1,000",True
+pais_vasco_2025,Corrección simbólica,10,"17,33","5,60–30,20","1,000","1,000",True
+pais_vasco_2025,Calidad pedagógica,10,"22,13","11,43–32,77","0,969","1,000",True
+pais_vasco_2025,Fidelidad al problema,10,"5,53","0,80–10,77","1,000","1,000",True
+pais_vasco_2025,Precisión por apartados,10,"32,80","15,50–49,50","1,000","1,000",True
+rioja_2023,Puntuación global,10,"24,10","4,43–44,57","1,000","1,000",True
+rioja_2023,Completitud,10,"21,17","4,33–39,67","1,000","1,000",True
+rioja_2023,Corrección simbólica,10,"25,50","6,67–45,50","1,000","1,000",True
+rioja_2023,Calidad pedagógica,10,"21,00","8,33–34,33","1,000","1,000",True
+rioja_2023,Fidelidad al problema,10,"2,83","-7,17–11,83","1,000","1,000",True
+rioja_2023,Precisión por apartados,10,"23,00","0,00–45,83","1,000","1,000",True
+rioja_2024,Puntuación global,10,"40,53","22,50–57,40","0,545","1,000",True
+rioja_2024,Completitud,10,"38,97","21,33–55,27","0,562","1,000",True
+rioja_2024,Corrección simbólica,10,"35,07","17,83–52,83","1,000","1,000",True
+rioja_2024,Calidad pedagógica,10,"34,00","19,67–47,00","0,382","1,000",True
+rioja_2024,Fidelidad al problema,10,"10,67","4,67–17,00","1,000","1,000",True
+rioja_2024,Precisión por apartados,10,"41,50","22,30–59,40","0,634","1,000",True
+rioja_2025,Puntuación global,3,"37,67","10,67–83,00","1,000","1,000",False
+rioja_2025,Completitud,3,"34,00","0,00–81,67","1,000","1,000",False
+rioja_2025,Corrección simbólica,3,"36,44","11,67–81,67","1,000","1,000",False
+rioja_2025,Calidad pedagógica,3,"27,33","3,33–61,67","1,000","1,000",False
+rioja_2025,Fidelidad al problema,3,"11,44","3,33–23,33","1,000","1,000",False
+rioja_2025,Precisión por apartados,3,"39,78","11,00–88,33","1,000","1,000",False

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 86: galicia_2023 3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 86 de 139</h1>
+<div class="meta"><span class="badge">galicia_2023</span> &nbsp; Ejercicio 3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_085.html">Anterior</a><a class="button" href="problema_087.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>3. Análisis:  <br>
+a) Enuncie los teoremas de Rolle y del valor medio del cálculo diferencial.  <br>
+b) Explique si \(f: [0,1] \to \mathbb{R}\), \(f(x) = 1 - x^2\), está o no en las hipótesis del teorema del valor medio del cálculo diferencial. En caso de que lo esté, calcule un valor \(c\) para el cual se cumpla la tesis de ese teorema.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>3.</p>
+<p><strong>3.a)</strong>  <br>
+<strong>Teorema de Rolle:</strong> se \(f:[a,b]\to \mathbb{R}\) é continua en \([a,b]\), derivable en \((a,b)\), e tal que \(f(a)=f(b)\), entón existe algún \(c\in(a,b)\) tal que \(f&#x27;(c)=0\).</p>
+<p><strong>Teorema do valor medio:</strong> se \(f:[a,b]\to \mathbb{R}\) é continua en \([a,b]\) e derivable en \((a,b)\), entón existe algún \(c\in(a,b)\) tal que  <br>
+\[
+f(b)-f(a)=f&#x27;(c)(b-a).
+\]</p>
+<p><strong>3.b)</strong>  <br>
+A función \(f:[0,1]\to \mathbb{R}\), \(f(x)=\sqrt{1-x^2}\), é claramente continua en \([0,1]\).</p>
+<p>Ademais,<br>
+\[
+f&#x27;(x)=\frac{1}{2}(1-x^2)^{-1/2}(-2x)=\frac{-x}{\sqrt{1-x^2}},
+\]<br>
+conque \(f\) é derivable en \((0,1)\).</p>
+<p>Logo \(f\) si que está nas hipóteses do teorema do valor medio, polo que ten que existir algún \(c\in(0,1)\) tal que  <br>
+\[
+f(1)-f(0)=f&#x27;(c)(1-0).
+\]</p>
+<p>Ao ser \(f(1)=0\) e \(f(0)=1\), estamos a dicir que \(f&#x27;(c)=-1\) para algún \(c\in(0,1)\).</p>
+<p>Neste caso haberá un único valor posible para \(c\), o cal se pode obter do seguinte xeito:<br>
+\[
+f&#x27;(c)=-1
+\]<br>
+\[
+\frac{-c}{\sqrt{1-c^2}}=-1
+\]<br>
+\[
+c=\sqrt{1-c^2}
+\]<br>
+\[
+c^2=1-c^2,\quad c&gt;0
+\]<br>
+\[
+2c^2=1,\quad c&gt;0
+\]<br>
+\[
+c^2=\frac12,\quad c&gt;0
+\]<br>
+\[
+c=\frac{1}{\sqrt{2}}.
+\]</p>
+<p>Obsérvese que \(c\in(0,1)\).</p></section>
+<section class="card"><h2>Respuesta A</h2><p><strong>Ejercicio 3</strong></p>
+<h3>a) Enunciado de los teoremas</h3>
+<h4><strong>Teorema de Rolle</strong></h4>
+Sea \(f:[a,b]\to \mathbb{R}\) una función tal que:
+<p>1. \(f\) es <strong>continua</strong> en \([a,b]\),<br>
+2. \(f\) es <strong>derivable</strong> en \((a,b)\),<br>
+3. \(f(a)=f(b)\).</p>
+<p>Entonces, <strong>existe</strong> al menos un punto \(c\in (a,b)\) tal que</p>
+<p>\[
+f&#x27;(c)=0.
+\]</p>
+<p>---</p>
+<h4><strong>Teorema del valor medio del cálculo diferencial</strong> (o de Lagrange)</h4>
+Sea \(f:[a,b]\to \mathbb{R}\) una función tal que:
+<p>1. \(f\) es <strong>continua</strong> en \([a,b]\),<br>
+2. \(f\) es <strong>derivable</strong> en \((a,b)\).</p>
+<p>Entonces, <strong>existe</strong> al menos un punto \(c\in (a,b)\) tal que</p>
+<p>\[
+f&#x27;(c)=\frac{f(b)-f(a)}{b-a}.
+\]</p>
+<p>---</p>
+<h3>b) Aplicación a \(f(x)=1-x^2\) en \([0,1]\)</h3>
+<p>Queremos comprobar si \(f\) verifica las hipótesis del teorema del valor medio.</p>
+<h4><strong>1. Continuidad en \([0,1]\)</strong></h4>
+La función
+<p>\[
+f(x)=1-x^2
+\]</p>
+<p>es un polinomio, y todo polinomio es continuo en \(\mathbb{R}\).  <br>
+Por tanto, \(f\) es continua en \([0,1]\).</p>
+<h4><strong>2. Derivabilidad en \((0,1)\)</strong></h4>
+Como también es un polinomio, \(f\) es derivable en todo \(\mathbb{R}\).  
+En particular, es derivable en \((0,1)\).
+<h4><strong>Conclusión</strong></h4>
+Sí, \(f\) <strong>cumple las hipótesis</strong> del teorema del valor medio.
+<p>---</p>
+<h3>Cálculo del valor \(c\)</h3>
+<p>Por el teorema del valor medio, existe \(c\in(0,1)\) tal que</p>
+<p>\[
+f&#x27;(c)=\frac{f(1)-f(0)}{1-0}.
+\]</p>
+<p>Calculamos:</p>
+<p>\[
+f(1)=1-1^2=0, \qquad f(0)=1-0^2=1.
+\]</p>
+<p>Entonces,</p>
+<p>\[
+\frac{f(1)-f(0)}{1-0}=\frac{0-1}{1}=-1.
+\]</p>
+<p>La derivada de \(f\) es</p>
+<p>\[
+f&#x27;(x)=-2x.
+\]</p>
+<p>Buscamos \(c\) tal que</p>
+<p>\[
+-2c=-1.
+\]</p>
+<p>De aquí,</p>
+<p>\[
+c=\frac{1}{2}.
+\]</p>
+<p>---</p>
+<h3><strong>Respuesta final</strong></h3>
+La función \(f(x)=1-x^2\) sí está en las hipótesis del teorema del valor medio porque es continua en \([0,1]\) y derivable en \((0,1)\).  
+Un valor que cumple la tesis del teorema es
+<p>\[
+\boxed{c=\frac{1}{2}}.
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><h4>Resolución del ejercicio 3</h4>
+<p>#### Parte a) Teoremas de Rolle y del Valor Medio</p>
+<p><strong>Teorema de Rolle</strong>: Si una función \( f \) es continua en un intervalo cerrado \([a, b]\), derivable en \((a, b)\) y \( f(a) = f(b) \), entonces existe al menos un punto \( c \) en \( (a, b) \) tal que \( f&#x27;(c) = 0 \).</p>
+<p><strong>Teorema del Valor Medio</strong>: Si una función \( f \) es continua en un intervalo cerrado \([a, b]\) y derivable en \((a, b)\), entonces existe al menos un punto \( c \) en \( (a, b) \) tal que<br>
+\[ f&#x27;(c) = \frac{f(b) - f(a)}{b - a} \]</p>
+<p>#### Parte b) Aplicación del Teorema del Valor Medio</p>
+<p><strong>Función dada</strong>: \( f(x) = 1 - x^2 \) definida en el intervalo \([0, 1]\).</p>
+<p>Para aplicar el Teorema del Valor Medio, necesitamos verificar que \( f \) sea continua en \([0, 1]\) y derivable en \((0, 1)\).</p>
+<p>1. <strong>Continuidad</strong>: La función \( f(x) = 1 - x^2 \) es un polinomio, y los polinomios son continuos en todo \(\mathbb{R}\), incluido el intervalo \([0, 1]\).</p>
+<p>2. <strong>Derivabilidad</strong>: La función \( f(x) = 1 - x^2 \) es también derivable en todo \(\mathbb{R}\) ya que es un polinomio. Por lo tanto, es derivable en el intervalo abierto \((0, 1)\).</p>
+<p>Como \( f \) cumple con las hipótesis del teorema del valor medio, procedemos a aplicarlo.</p>
+<p>Calculamos los valores necesarios:<br>
+- \( f(0) = 1 - 0^2 = 1 \)<br>
+- \( f(1) = 1 - 1^2 = 0 \)</p>
+<p>Aplicando el teorema:<br>
+\[ f&#x27;(c) = \frac{f(1) - f(0)}{1 - 0} = \frac{0 - 1}{1 - 0} = -1 \]</p>
+<p>Calculamos \( f&#x27;(x) \):<br>
+- \( f&#x27;(x) = -2x \)</p>
+<p>Igualamos \( f&#x27;(c) \) a la derivada obtenida del teorema del valor medio:<br>
+\[ -2c = -1 \]<br>
+\[ c = \frac{1}{2} \]</p>
+<p>Así que \( c = \frac{1}{2} \) es un valor que cumple con la tesis del teorema del valor medio para la función dada en el intervalo \([0, 1]\).</p>
+<h4>Conclusión</h4>
+Hemos encontrado que \( c = \frac{1}{2} \) es el valor que satisface el teorema del valor medio para la función \( f(x) = 1 - x^2 \) en el intervalo \([0, 1]\), habiendo confirmado que la función cumple con todas las hipótesis del teorema.</section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_085.html">Anterior</a><a class="button" href="problema_087.html">Siguiente</a></nav>
+</main></body>
+</html>

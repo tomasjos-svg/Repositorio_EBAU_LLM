@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 95: lamancha_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 95 de 139</h1>
+<div class="meta"><span class="badge">lamancha_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_094.html">Anterior</a><a class="button" href="problema_096.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p><strong>4.</strong> Sean el plano \(\pi: ax+y-z=1\), con \(a\in\mathbb{R}\), y los puntos \(A(1,0,0)\) y \(B(b,1,-1)\), con \(b\in\mathbb{R}\).</p>
+<p><strong>a)</strong> \([1,5\ puntos]\) Determina el valor de \(a,b\) para que el vector \(\overrightarrow{AB}\) sea perpendicular al plano \(\pi\) y el punto \(A\) esté contenido en el plano \(\pi\).</p>
+<p><strong>b)</strong> \([1\ punto]\) Con los valores de \(a,b\) obtenidos en el apartado anterior, escribe la ecuación de la recta que pasa por \(A\) y es perpendicular al plano \(\pi\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 4. Solución oficial</strong></p>
+<p>a) El vector \(\overrightarrow{AB}\) es \((b - 1, 1, -1)\). Para que este vector sea perpendicular al plano \(\pi\) se tiene que cumplir que sea paralelo al vector normal del plano \((a, 1, -1)\). En este caso particular, esto se cumple solamente cuando \(b - 1 = a\).</p>
+<p>La otra condición implica que el punto \(A\) cumple la ecuación del plano, es decir:</p>
+<p>\[
+a \cdot 1 + 0 - 0 = 1
+\]</p>
+<p>es decir, \(a = 1\).</p>
+<p>Por tanto:</p>
+<p>\[
+b - 1 = 1
+\]</p>
+<p>es decir, \(b = 2\).</p>
+<p>---</p>
+<p>b) El vector director de la recta es el vector normal al plano \(\pi\): \((1, 1, -1)\). Por tanto, la ecuación que se pide es:</p>
+<p>\[
+(x, y, z) = (1, 0, 0) + \lambda(1, 1, -1), \quad \lambda \in \mathbb{R}.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver los dos apartados.</p>
+<h3>Datos</h3>
+Plano:
+\[
+\pi:\ ax+y-z=1
+\]
+Puntos:
+\[
+A(1,0,0),\qquad B(b,1,-1)
+\]
+<p>El vector normal del plano \(\pi\) es:<br>
+\[
+\vec n=(a,1,-1)
+\]</p>
+<p>Y el vector:<br>
+\[
+\overrightarrow{AB}=B-A=(b-1,1,-1)
+\]</p>
+<p>---</p>
+<h3>a) Hallar \(a\) y \(b\)</h3>
+<h4>1. Condición: \(A\) pertenece al plano \(\pi\)</h4>
+<p>Sustituimos las coordenadas de \(A(1,0,0)\) en la ecuación del plano:<br>
+\[
+a\cdot 1+0-0=1
+\]<br>
+\[
+a=1
+\]</p>
+<h4>2. Condición: \(\overrightarrow{AB}\) es perpendicular al plano \(\pi\)</h4>
+<p>Un vector es perpendicular a un plano si es paralelo a un vector normal del plano.</p>
+<p>Por tanto, debe cumplirse:<br>
+\[
+\overrightarrow{AB}\parallel \vec n
+\]</p>
+<p>Como \(a=1\), el normal del plano es:<br>
+\[
+\vec n=(1,1,-1)
+\]</p>
+<p>Y:<br>
+\[
+\overrightarrow{AB}=(b-1,1,-1)
+\]</p>
+<p>Para que sean paralelos:<br>
+\[
+(b-1,1,-1)=\lambda(1,1,-1)
+\]</p>
+<p>Comparando componentes:<br>
+- de la segunda: \(1=\lambda\)<br>
+- de la tercera: \(-1=-\lambda \Rightarrow \lambda=1\)</p>
+<p>Luego, en la primera:<br>
+\[
+b-1=1
+\]<br>
+\[
+b=2
+\]</p>
+<h4>Resultado del apartado a)</h4>
+\[
+\boxed{a=1,\quad b=2}
+\]
+<p>---</p>
+<h3>b) Recta que pasa por \(A\) y es perpendicular al plano \(\pi\)</h3>
+<p>Una recta perpendicular al plano tiene como vector director un vector normal del plano.</p>
+<p>Con \(a=1\), un vector director es:<br>
+\[
+(1,1,-1)
+\]</p>
+<p>Como además debe pasar por \(A(1,0,0)\), su ecuación vectorial es:<br>
+\[
+\boxed{(x,y,z)=(1,0,0)+t(1,1,-1),\quad t\in\mathbb R}
+\]</p>
+<p>Ecuaciones paramétricas:<br>
+\[
+\boxed{
+\begin{cases}
+x=1+t\\
+y=t\\
+z=-t
+\end{cases}
+\quad t\in\mathbb R
+}
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<strong>a)</strong> \(\boxed{a=1,\ b=2}\)
+<p><strong>b)</strong> La recta pedida es<br>
+\[
+\boxed{(x,y,z)=(1,0,0)+t(1,1,-1),\ t\in\mathbb R}
+\]<br>
+o equivalentemente<br>
+\[
+\boxed{
+\begin{cases}
+x=1+t\\
+y=t\\
+z=-t
+\end{cases}
+}
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p><strong>Solución al problema 4:</strong></p>
+<h4>Apartado a)</h4>
+<p>El enunciado nos proporciona la información del plano \(\pi: ax+y-z=1\) y los puntos \(A(1,0,0)\) y \(B(b,1,-1)\). Primero abordaremos el problema en dos partes:</p>
+<p>1. Asegurar que \(A\) esté en el plano \(\pi\).<br>
+2. Determinar los valores de \(a\) y \(b\) para que \(\overrightarrow{AB}\) sea perpendicular al plano \(\pi\).</p>
+<p>#### 1. Ubicando el punto \(A\) en el plano \(\pi\):</p>
+<p>Sustituimos las coordenadas de \(A\) en la ecuación del plano:</p>
+<p>\[ a \cdot 1 + 0 - 0 = 1 \Rightarrow a = 1 \]</p>
+<p>Por lo tanto, \(a = 1\) para que el punto \(A\) esté contenido en el plano.</p>
+<p>#### 2. Determinando que \(\overrightarrow{AB}\) sea perpendicular al plano \(\pi\):</p>
+<p>Primero hallamos el vector \(\overrightarrow{AB}\):</p>
+<p>\[ \overrightarrow{AB} = (b-1, 1-0, -1-0) = (b-1, 1, -1) \]</p>
+<p>Un vector perpendicular al plano es un vector que es paralelo al vector normal del plano. El vector normal del plano \(\pi\) con \(a = 1\) es \((1, 1, -1)\). Para que \(\overrightarrow{AB}\) sea perpendicular al plano, debe suceder que el producto punto entre \(\overrightarrow{AB}\) y el vector normal del plano sea cero:</p>
+<p>\[ (b-1, 1, -1) \cdot (1, 1, -1) = 0 \]</p>
+<p>Calculamos el producto punto:</p>
+<p>\[ (b-1) \cdot 1 + 1 \cdot 1 + (-1) \cdot (-1) = b-1 + 1 + 1 = b + 1 \]</p>
+<p>Para que sea cero:</p>
+<p>\[ b + 1 = 0 \Rightarrow b = -1 \]</p>
+<p>Por lo tanto, \(a = 1\) y \(b = -1\).</p>
+<h4>Apartado b)</h4>
+<p>Con \(a = 1\) y \(b = -1\), escribimos la ecuación de la recta que pasa por \(A(1,0,0)\) y es perpendicular al plano \(\pi: x + y - z = 1\). Utilizamos el vector normal del plano como dirección para la recta, ya que será perpendicular a él.</p>
+<p>El vector normal del plano (y dirección de la recta) es \((1, 1, -1)\). Por lo tanto, la ecuación paramétrica de la recta, utilizando \(t\) como parámetro, es:</p>
+<p>\[ x = 1 + t, \quad y = 0 + t, \quad z = 0 - t \]</p>
+<p>Lo cual se puede escribir en forma paramétrica como:</p>
+<p>\[ (x, y, z) = (1, 0, 0) + t(1, 1, -1) \]</p>
+<p>Expresando individualmente:</p>
+<p>\[ x = 1 + t, \quad y = t, \quad z = -t \]</p>
+<p>o en forma vectorial:</p>
+<p>\[ \text{Recta}: \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + t \begin{pmatrix} 1 \\ 1 \\ -1 \end{pmatrix} \]</p>
+<p>Esta es la ecuación de la recta que buscábamos.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_094.html">Anterior</a><a class="button" href="problema_096.html">Siguiente</a></nav>
+</main></body>
+</html>

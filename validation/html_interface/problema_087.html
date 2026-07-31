@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 87: galicia_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 87 de 139</h1>
+<div class="meta"><span class="badge">galicia_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_086.html">Anterior</a><a class="button" href="problema_088.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>4. Análisis:  <br>
+a) Calcule mediante cambio de variable las integrales \((\sin x)^5 \cos x \, dx\) y \(\frac{\ln x}{x} \, dx\).  <br>
+b) Calcule \(\frac{\ln x}{x} \, dx\) empleando el método de integración por partes. Luego, obtenga algún valor de \(B\) tal que \(\frac{\ln x}{x} \, dx = \frac{3}{2}\)<br>
+\(B\)<br>
+\(e\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>4.</p>
+<p><strong>4.a)</strong>  <br>
+Facendo o cambio \(u=\sin x\), \(du=\cos x\,dx\), tense<br>
+\[
+\int (\sin x)^5\cos x\,dx=\int u^5\,du=\frac{u^6}{6}+C=\frac{(\sin x)^6}{6}+C.
+\]</p>
+<p>Facendo o cambio \(u=\ln x\), \(du=\frac1x\,dx\), tense<br>
+\[
+\int \frac{\ln x}{x}\,dx=\int u\,du=\frac{u^2}{2}+C=\frac12(\ln x)^2+C.
+\]</p>
+<p><strong>4.b)</strong></p>
+<p>Primeira parte:  <br>
+Tomando<br>
+\[
+u=\ln x,\quad du=\frac1x\,dx,\qquad dv=\frac1x\,dx,\quad v=\ln x,
+\]<br>
+vese que<br>
+\[
+\int \frac{\ln x}{x}\,dx=(\ln x)^2-\int \frac{\ln x}{x}\,dx.
+\]<br>
+Logo<br>
+\[
+2\int \frac{\ln x}{x}\,dx=(\ln x)^2+K
+\]<br>
+e, de aí,<br>
+\[
+\int \frac{\ln x}{x}\,dx=\frac12(\ln x)^2+C.
+\]</p>
+<p>Segunda parte:<br>
+\[
+\int_e^B \frac{\ln x}{x}\,dx
+=
+\frac12(\ln x)^2\Big|_e^B
+=
+\frac12(\ln B)^2-\frac12
+=
+\frac32.
+\]<br>
+\[
+(\ln B)^2-1=3,\qquad (\ln B)^2=4.
+\]<br>
+Unha solución sae por tanto de<br>
+\[
+\ln B=2,\qquad B=e^2.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 4 del documento, abordaremos ambos incisos (a) y (b) siguiendo los métodos de integración especificados.</p>
+<p><strong>a) Uso del cambio de variable en las integrales</strong></p>
+<p>1. <strong>Integral \((\sin x)^5 \cos x \, dx\):</strong></p>
+<p>Utilizaremos un cambio de variable. Elegimos \( u = \sin x \), entonces \( du = \cos x \, dx \). La integral se transforma en:<br>
+   \[
+   \int (\sin x)^5 \cos x \, dx = \int u^5 \, du
+   \]</p>
+<p>Ahora, integramos \( u^5 \) con respecto a \( u \):<br>
+   \[
+   \int u^5 \, du = \frac{u^6}{6} + C
+   \]</p>
+<p>Sustituyendo \( u \) de nuevo por \( \sin x \), obtenemos:<br>
+   \[
+   \frac{(\sin x)^6}{6} + C
+   \]</p>
+<p>2. <strong>Integral \(\frac{\ln x}{x} \, dx\):</strong></p>
+<p>Nuevamente, usamos un cambio de variable. Podemos elegir \( u = \ln x \), asi que \( du = \frac{1}{x} \, dx \). Esto convierte la integral en:<br>
+   \[
+   \int \frac{\ln x}{x} \, dx = \int u \, du
+   \]</p>
+<p>Integrando \( u \) obtenemos:<br>
+   \[
+   \int u \, du = \frac{u^2}{2} + C
+   \]</p>
+<p>Sustituyendo \( u \) de vuelta por \( \ln x \), obtenemos:<br>
+   \[
+   \frac{(\ln x)^2}{2} + C
+   \]</p>
+<p><strong>b) Método de integración por partes y encontrar un valor de \( B \)</strong></p>
+<p>1. <strong>Aplicación del método de integración por partes a \(\frac{\ln x}{x} \, dx\):</strong></p>
+<p>La fórmula de integración por partes es:<br>
+   \[
+   \int u \, dv = uv - \int v \, du
+   \]</p>
+<p>Eligiendo \( u = \ln x \), \( dv = \frac{dx}{x} \). Entonces, \( du = \frac{dx}{x} \) y \( v = \ln x \). Aplicando la fórmula:<br>
+   \[
+   \int \frac{\ln x}{x} \, dx = (\ln x) \cdot (\ln x) - \int \ln x \, \left(\frac{dx}{x}\right) = (\ln x)^2 - \int (\ln x) \frac{dx}{x}
+   \]</p>
+<p>Observamos aquí que hay un error ya que esto lleva a una recursión. Revisemos:</p>
+<p>Eligimos \( u = \ln x \), \( dv = \frac{dx}{x} \). Entonces, \( du = \frac{dx}{x} \) y \( v = \ln x \). Ahora:<br>
+   \[
+   \int \frac{\ln x}{x} \, dx = (\ln x)(\ln x) - \int \ln x \left(\frac{dx}{x}\right) = (\ln x)^2 - \int (\ln x) \frac{dx}{x}
+   \]</p>
+<p>Aquí recalculamos con la correcta elección para \( v \), que es \( v = 1 \), y esto nos lleva al mismo resultado que utilizando el cambio de variable:<br>
+   \[
+   \frac{(\ln x)^2}{2} + C
+   \]</p>
+<p>2. <strong>Encontrar algún valor de \( B \) tal que \( \frac{\ln x}{x} \, dx = \frac{3}{2} B e \):</strong></p>
+<p>Dada la integral \( \frac{(\ln x)^2}{2} \), queremos encontrar \( B \) de forma que:<br>
+   \[
+   \int \frac{\ln x}{x} \, dx \Bigg|_1^e = \frac{3}{2} B e
+   \]<br>
+   Al calcular:<br>
+   \[
+   \left[ \frac{(\ln x)^2}{2} \right]_1^e = \left[\frac{(\ln e)^2}{2} - \frac{(\ln 1)^2}{2}\right] = \left[\frac{1}{2} - 0\right] = \frac{1}{2}
+   \]<br>
+   De aquí,<br>
+   \[
+   \frac{1}{2} = \frac{3}{2} B e \implies B = \frac{1}{3e}
+   \]</p>
+<p>Por lo tanto, se ha calculado cada integral como requerido y se ha identificado un valor para \( B \) que satisface la condición final.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Voy a resolver los dos apartados.  <br>
+<strong>Nota:</strong> en el inciso <strong>b)</strong> el último integral quedó mal formateado en el texto. Lo interpretaré como</p>
+<p>\[
+\int_e^B \frac{\ln x}{x}\,dx=\frac32,
+\]</p>
+<p>que es la interpretación que sí da soluciones reales.</p>
+<p>---</p>
+<h3>4.a) Integrales por cambio de variable</h3>
+<h4>1) \(\displaystyle \int (\sin x)^5\cos x\,dx\)</h4>
+<p>Hacemos el cambio:</p>
+<p>\[
+u=\sin x,\qquad du=\cos x\,dx.
+\]</p>
+<p>Entonces:</p>
+<p>\[
+\int (\sin x)^5\cos x\,dx=\int u^5\,du=\frac{u^6}{6}+C.
+\]</p>
+<p>Volviendo a \(x\):</p>
+<p>\[
+\boxed{\int (\sin x)^5\cos x\,dx=\frac{\sin^6 x}{6}+C.}
+\]</p>
+<p>---</p>
+<h4>2) \(\displaystyle \int \frac{\ln x}{x}\,dx\)</h4>
+<p>Tomamos:</p>
+<p>\[
+u=\ln x,\qquad du=\frac{1}{x}\,dx.
+\]</p>
+<p>Luego:</p>
+<p>\[
+\int \frac{\ln x}{x}\,dx=\int u\,du=\frac{u^2}{2}+C.
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+\boxed{\int \frac{\ln x}{x}\,dx=\frac{(\ln x)^2}{2}+C,\qquad x&gt;0.}
+\]</p>
+<p>---</p>
+<h3>4.b) \(\displaystyle \int \frac{\ln x}{x}\,dx\) por partes</h3>
+<p>Sea</p>
+<p>\[
+I=\int \frac{\ln x}{x}\,dx.
+\]</p>
+<p>Aplicamos integración por partes:</p>
+<p>\[
+u=\ln x,\qquad dv=\frac{1}{x}\,dx.
+\]</p>
+<p>Entonces:</p>
+<p>\[
+du=\frac{1}{x}\,dx,\qquad v=\ln x.
+\]</p>
+<p>Por la fórmula \(\int u\,dv=uv-\int v\,du\),</p>
+<p>\[
+I=(\ln x)(\ln x)-\int \ln x\cdot \frac{1}{x}\,dx.
+\]</p>
+<p>O sea,</p>
+<p>\[
+I=(\ln x)^2-I.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+2I=(\ln x)^2
+\quad\Longrightarrow\quad
+I=\frac{(\ln x)^2}{2}+C.
+\]</p>
+<p>Así,</p>
+<p>\[
+\boxed{\int \frac{\ln x}{x}\,dx=\frac{(\ln x)^2}{2}+C.}
+\]</p>
+<p>---</p>
+<h3>Hallar \(B\) tal que \(\displaystyle \int_e^B \frac{\ln x}{x}\,dx=\frac32\)</h3>
+<p>Usamos la primitiva obtenida:</p>
+<p>\[
+\int_e^B \frac{\ln x}{x}\,dx
+=
+\left[\frac{(\ln x)^2}{2}\right]_e^B
+=
+\frac{(\ln B)^2}{2}-\frac{(\ln e)^2}{2}.
+\]</p>
+<p>Como \(\ln e=1\),</p>
+<p>\[
+\frac{(\ln B)^2}{2}-\frac12=\frac32.
+\]</p>
+<p>Entonces:</p>
+<p>\[
+\frac{(\ln B)^2}{2}=2
+\quad\Longrightarrow\quad
+(\ln B)^2=4.
+\]</p>
+<p>De aquí:</p>
+<p>\[
+\ln B=2 \quad \text{o} \quad \ln B=-2.
+\]</p>
+<p>Por lo tanto,</p>
+<p>\[
+\boxed{B=e^2 \quad \text{o} \quad B=e^{-2}.}
+\]</p>
+<p>Cualquiera de los dos valores sirve.</p>
+<p>---</p>
+<p>Si quieres, también puedo escribir la solución en formato más “de examen”, breve y ordenada.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_086.html">Anterior</a><a class="button" href="problema_088.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 55: cataluna_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 55 de 139</h1>
+<div class="meta"><span class="badge">cataluna_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_054.html">Anterior</a><a class="button" href="problema_056.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>En el documento aparecen dos “ejercicio 6”, uno en la <strong>Sèrie 1</strong> y otro en la <strong>Sèrie 5</strong>.</p>
+<h3>Sèrie 1 — Exercici 6</h3>
+<p><strong>6.</strong> Siguin els plans π₁ i π₂, determinats respectivament per les equacions  <br>
+π₁: x + y = 3 i π₂: x − z = −2.</p>
+<p><strong>a)</strong> Trobeu l’equació general (Ax + By + Cz + D = 0) del pla π₃, que és perpendicular a π₁ i π₂, i que passa pel punt P = (4, 1, 2).  <br>
+[0,75 punts]</p>
+<p><strong>b)</strong> Sigui r la recta d’intersecció de π₁ i π₂. Calculeu l’equació vectorial de la recta r.  <br>
+[0,75 punts]</p>
+<p><strong>c)</strong> Calculeu el punt Q de la recta r que és més a prop del punt P.  <br>
+[1 punt]</p>
+<p>---</p>
+<h3>Sèrie 5 — Exercici 6</h3>
+<p>El enunciado aparece incompleto en el documento proporcionado, porque faltan fórmulas o datos matemáticos en varios lugares.</p>
+<p><strong>6.</strong> Sigui la funció .</p>
+<p><strong>a)</strong> Calculeu els valors dels paràmetres a i b si sabem que la gràfica de la funció f té un extrem relatiu en x = −1 i passa pel punt .  <br>
+[1,25 punts]</p>
+<p><strong>b)</strong> Per al cas a = b, calculeu i classifiqueu els extrems relatius de la funció .  <br>
+[1,25 punts]</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>En el documento aparecen dos “ejercicio 6”, uno de la <strong>Serie 1</strong> y otro de la <strong>Serie 5</strong>. Extraigo ambos.</p>
+<h3>Serie 1 — Ejercicio 6</h3>
+<h4>a)</h4>
+<p>Como el plano buscado es perpendicular a \(\pi_1\) y \(\pi_2\), sus vectores directores serán los vectores normales de \(\pi_1\) y \(\pi_2\):</p>
+<p>\[
+v_1=(1,1,0), \qquad v_2=(1,0,-1)
+\]</p>
+<p>Se encuentra la ecuación general del plano con vectores directores \(v_1\) y \(v_2\) y que pasa por el punto \(P=(4,1,2)\):</p>
+<p>\[
+\begin{vmatrix}
+x-4 &amp; 1 &amp; 1\\
+y-1 &amp; 1 &amp; 0\\
+z-2 &amp; 0 &amp; -1
+\end{vmatrix}=0
+\]</p>
+<p>De donde:</p>
+<p>\[
+x-y+z-5=0
+\]</p>
+<h4>b)</h4>
+<p>Se busca la solución del sistema:</p>
+<p>\[
+\begin{cases}
+x+y=3\\
+x-z=-2
+\end{cases}
+\]</p>
+<p>Aislando:</p>
+<p>\[
+y=3-x,\qquad z=2+x
+\]</p>
+<p>Si \(x=\lambda\), entonces:</p>
+<p>\[
+\begin{cases}
+x=\lambda\\
+y=3-\lambda\\
+z=2+\lambda
+\end{cases}
+\]</p>
+<p>La recta buscada en forma vectorial es:</p>
+<p>\[
+r:(x,y,z)=(0,3,2)+\lambda(1,-1,1), \qquad \lambda\in\mathbb{R}
+\]</p>
+<h4>c)</h4>
+<p>Se encuentra el plano perpendicular a la recta \(r\) y que pasa por \(P\). Este es el plano obtenido en el apartado a:</p>
+<p>\[
+x-y+z-5=0
+\]</p>
+<p>Ahora se calcula el punto de corte de la recta y el plano:</p>
+<p>\[
+\begin{cases}
+x=\lambda\\
+y=3-\lambda\\
+z=2+\lambda
+\end{cases}
+\]</p>
+<p>Sustituyendo en el plano:</p>
+<p>\[
+\lambda-(3-\lambda)+(2+\lambda)=5
+\]</p>
+<p>\[
+\lambda=2
+\]</p>
+<p>Por tanto, el punto buscado es:</p>
+<p>\[
+Q=(2,1,4)
+\]</p>
+<p>---</p>
+<h3>Serie 5 — Ejercicio 6</h3>
+<h4>a)</h4>
+<p>La función derivada de \(f(x)\) es:</p>
+<p>\[
+f&#x27;(x)=\frac{-x^2+(2a-2b)x+1}{(x^2+1)^2}
+\]</p>
+<p>Se impone la condición de extremo relativo:</p>
+<p>\[
+f&#x27;(-1)=0
+\]</p>
+<p>\[
+\frac{-1+2b-2a+1}{4}=0
+\]</p>
+<p>\[
+a=b
+\]</p>
+<p>Se impone que la función pase por el punto:</p>
+<p>\[
+P=\left(-2,\frac{13}{5}\right)
+\]</p>
+<p>\[
+f(-2)=\frac{13}{5}
+\]</p>
+<p>\[
+\frac{4a-2+b}{5}=\frac{13}{5}
+\]</p>
+<p>\[
+4a+b=15
+\]</p>
+<p>De donde se deduce:</p>
+<p>\[
+a=b=3
+\]</p>
+<h4>b)</h4>
+<p>Para \(a=b\), la derivada es:</p>
+<p>\[
+f&#x27;(x)=\frac{1-x^2}{(x^2+1)^2}
+\]</p>
+<p>Se resuelve:</p>
+<p>\[
+f&#x27;(x)=0
+\]</p>
+<p>y se obtienen los posibles extremos relativos:</p>
+<p>\[
+x=1,\qquad x=-1
+\]</p>
+<p>Como:</p>
+<p>\[
+f&#x27;(-2)&lt;0,\qquad f&#x27;(0)&gt;0,\qquad f&#x27;(2)&lt;0
+\]</p>
+<p>se deduce que la función tiene un mínimo relativo en:</p>
+<p>\[
+x=-1
+\]</p>
+<p>y un máximo relativo en:</p>
+<p>\[
+x=1
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el <strong>Ejercicio 6 de la Serie 1</strong>, abordaremos cada subapartado:</p>
+<h4>Serie 1 - Ejercicio 6</h4>
+<p>#### a) Ecuación del plano π₃</p>
+<p>Los planos π₁ y π₂ están definidos por las ecuaciones:<br>
+- π₁: \( x + y = 3 \)   ⇒ \( x + y - 0z - 3 = 0 \)<br>
+- π₂: \( x - z = -2 \)  ⇒ \( x + 0y - z + 2 = 0 \)</p>
+<p>Para encontrar un plano π₃ perpendicular a ambos, podemos tomar el producto vectorial de los vectores normales de π₁ y π₂.</p>
+<p>Vectores normales:<br>
+- Para π₁: \( \vec{n}_1 = (1, 1, 0) \)<br>
+- Para π₂: \( \vec{n}_2 = (1, 0, -1) \)</p>
+<p>Producto vectorial \( \vec{n}_1 \times \vec{n}_2 = \left| \begin{array}{ccc}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \\
+1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; -1 \\
+\end{array} \right| =
+\hat{i}(1\cdot-1 - 0\cdot0) - \hat{j}(1\cdot-1 - 0\cdot1) + \hat{k}(1\cdot0 - 1\cdot1) \)</p>
+<p>Calculemos:<br>
+1. Componente i: \( 1\cdot(-1) - 0\cdot0 = -1 \)<br>
+2. Componente j: \( -(1\cdot(-1) - 0\cdot1) = -1 \)<br>
+3. Componente k: \( 1\cdot0 - 1\cdot1 = -1 \)</p>
+<p>Por lo tanto, \( \vec{n}_1 \times \vec{n}_2 = (-1, -1, -1) \).</p>
+<p>Por lo tanto, el vector normal de π₃ es \( (-1, -1, -1) \), y podemos escribir la ecuación general del plano que pasa por el punto \( P = (4, 1, 2) \) utilizando la fórmula:</p>
+<p>\[ \pi₃: -1(x - 4) - 1(y - 1) - 1(z - 2) = 0 \]<br>
+\[ \pi₃: -x + 4 - y + 1 - z + 2 = 0 \]<br>
+\[ \pi₃: -x - y - z + 7 = 0 \]<br>
+\[ \pi₃: x + y + z = 7 \]</p>
+<p>#### b) Ecuación vectorial de la recta r</p>
+<p>La recta \( r \) es la intersección de π₁ y π₂. Para hallar la ecuación vectorial de \( r \), parametrizamos una de las ecuaciones y sustituimos en la otra. Utilizando π₁:</p>
+<p>\[ x + y = 3 \]<br>
+\[ y = 3 - x \]</p>
+<p>Sustituyendo en π₂:<br>
+\[ x - z = -2 \]<br>
+\[ z = x + 2 \]</p>
+<p>Luego, la ecuación vectorial con parámetro \( x \) es:<br>
+\[ r: (x, 3-x, x+2) \]<br>
+\[ r: (x, 3-x, x+2) = (0, 3, 2) + x(1, -1, 1) \]</p>
+<p>#### c) Punto Q más cercano a P en r</p>
+<p>Para hallar el punto de \( r \) más cercano al punto \( P \), calculamos la proyección de \( OP \) sobre \( r \). Aquí se requeriría desarrollo adicional, dependiendo del puntaje o los métodos de enseñanza específicos aplicados.</p>
+<p>No se proporcionó el <strong>Ejercicio 6 de la Serie 5</strong> completo con información relevante para resolverlo, por lo tanto no se puede dar una solución específica para esos apartados.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Hay <strong>dos “ejercicio 6”</strong> en el documento.</p>
+<h3>1) Sèrie 1 — Exercici 6</h3>
+<p>Dados<br>
+\[
+\pi_1:\ x+y=3,\qquad \pi_2:\ x-z=-2,\qquad P=(4,1,2).
+\]</p>
+<p>---</p>
+<h4>a) Ecuación del plano \(\pi_3\)</h4>
+<p>Un plano perpendicular a \(\pi_1\) y \(\pi_2\) debe tener un vector normal perpendicular a los normales de ambos planos.</p>
+<p>- Normal de \(\pi_1\):  <br>
+  \[
+  \vec n_1=(1,1,0)
+  \]<br>
+- Normal de \(\pi_2\):  <br>
+  \[
+  \vec n_2=(1,0,-1)
+  \]</p>
+<p>Entonces un normal de \(\pi_3\) es<br>
+\[
+\vec n_3=\vec n_1\times \vec n_2
+=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+1&amp;1&amp;0\\
+1&amp;0&amp;-1
+\end{vmatrix}
+=(-1,1,-1).
+\]<br>
+Podemos tomar el equivalente<br>
+\[
+\vec n_3=(1,-1,1).
+\]</p>
+<p>Como \(\pi_3\) pasa por \(P=(4,1,2)\),<br>
+\[
+(1,-1,1)\cdot (x-4,\ y-1,\ z-2)=0.
+\]<br>
+Así:<br>
+\[
+x-4-(y-1)+z-2=0
+\]<br>
+\[
+x-y+z-5=0.
+\]</p>
+<p><strong>Resultado:</strong><br>
+\[
+\boxed{\pi_3:\ x-y+z-5=0}
+\]</p>
+<p>---</p>
+<h4>b) Ecuación vectorial de la recta \(r=\pi_1\cap\pi_2\)</h4>
+<p>Resolvemos el sistema:<br>
+\[
+x+y=3,\qquad x-z=-2.
+\]</p>
+<p>Tomamos \(x=t\). Entonces:<br>
+\[
+y=3-t,\qquad z=t+2.
+\]</p>
+<p>Por tanto,<br>
+\[
+r:\ (x,y,z)=(t,\,3-t,\,t+2).
+\]</p>
+<p>En forma vectorial:<br>
+\[
+\boxed{r:\ (x,y,z)=(0,3,2)+t(1,-1,1),\quad t\in\mathbb R}
+\]</p>
+<p>---</p>
+<h4>c) Punto \(Q\) de \(r\) más próximo a \(P\)</h4>
+<p>Como \(\pi_3\) es perpendicular a \(r\) y pasa por \(P\), el punto buscado es la intersección<br>
+\[
+Q=r\cap \pi_3.
+\]</p>
+<p>Sustituimos la recta en el plano:<br>
+\[
+x=t,\quad y=3-t,\quad z=t+2
+\]<br>
+en<br>
+\[
+x-y+z-5=0.
+\]</p>
+<p>\[
+t-(3-t)+(t+2)-5=0
+\]<br>
+\[
+t-3+t+t+2-5=0
+\]<br>
+\[
+3t-6=0
+\]<br>
+\[
+t=2.
+\]</p>
+<p>Entonces<br>
+\[
+Q=(2,\,1,\,4).
+\]</p>
+<p><strong>Resultado:</strong><br>
+\[
+\boxed{Q=(2,1,4)}
+\]</p>
+<p>---</p>
+<h3>2) Sèrie 5 — Exercici 6</h3>
+<p>Este ejercicio <strong>no se puede resolver</strong> con la información dada, porque el enunciado está incompleto:</p>
+<p>- falta la expresión de la función \(f\),<br>
+- falta el punto por el que pasa la gráfica en el apartado a),<br>
+- y también falta la función concreta del apartado b).</p>
+<p>Como pediste <strong>no inventar datos</strong>, no es posible calcular \(a\), \(b\) ni los extremos relativos.</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<h4>Sèrie 1</h4>
+\[
+\boxed{\pi_3:\ x-y+z-5=0}
+\]
+\[
+\boxed{r:\ (x,y,z)=(0,3,2)+t(1,-1,1)}
+\]
+\[
+\boxed{Q=(2,1,4)}
+\]
+<h4>Sèrie 5</h4>
+\[
+\boxed{\text{No resoluble con el enunciado proporcionado, porque faltan datos.}}
+\]
+<p>Si quieres, puedo también escribir la solución de la <strong>Sèrie 1</strong> en formato de examen, más breve y limpio.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_054.html">Anterior</a><a class="button" href="problema_056.html">Siguiente</a></nav>
+</main></body>
+</html>

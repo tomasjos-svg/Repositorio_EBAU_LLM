@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 72: cvalenciana_2023 7</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 72 de 139</h1>
+<div class="meta"><span class="badge">cvalenciana_2023</span> &nbsp; Ejercicio 7</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_071.html">Anterior</a><a class="button" href="problema_073.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Problema 7. Una urna tiene tres bolas verdes, cuatro rojas y cinco amarillas. Todas de igual tamaño.</p>
+<p>a) Se extrae una bola de la urna, se mira su color y se devuelve a la urna. Se repite de nuevo, una vez más, esta operación. ¿Cuál es la probabilidad de que los colores de las dos bolas extraídas sean el mismo? ¿Y la probabilidad de que sean distintos? (5 puntos)</p>
+<p>b) Se extraen al mismo tiempo tres bolas. ¿Cuál es la probabilidad de que las tres sean de distinto color? (5 puntos)</p>
+<p>Los resultados han de expresarse en forma de fracción o en forma decimal con cuatro decimales de aproximación.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Problema 7. Solución oficial:</strong></p>
+<p>a)  <br>
+\(P(\text{mismo color})=\dfrac{50}{144}\approx 0.3472.\)</p>
+<p>\(P(\text{distinto color})=1-P(\text{mismo color})=\dfrac{94}{144}\approx 0.6527.\)</p>
+<p>b)  <br>
+\(P(\text{distinto color})=6\cdot \dfrac{3\cdot 4\cdot 5}{12\cdot 11\cdot 10}=\dfrac{3}{11}\approx 0.2728.\)</p></section>
+<section class="card"><h2>Respuesta A</h2><h3>Solución del Problema 7</h3>
+<h4>Apartado a)</h4>
+<p><strong>Urnas con bolas de colores:</strong><br>
+- <strong>Verdes:</strong> 3 bolas<br>
+- <strong>Rojas:</strong> 4 bolas<br>
+- <strong>Amarillas:</strong> 5 bolas<br>
+- <strong>Total de bolas:</strong> \(3 + 4 + 5 = 12\) bolas</p>
+<p><strong>a.i) Probabilidad de que los colores de las dos bolas extraídas sean el mismo:</strong></p>
+<p>Primero calcularemos las probabilidades de extraer dos bolas de cada color y luego sumamos estas probabilidades. En este caso, la extracción es con reemplazo.</p>
+<p>- <strong>Verdes:</strong><br>
+  \[
+  P(\text{verde y verde}) = \frac{3}{12} \cdot \frac{3}{12} = \frac{3}{12} \times \frac{3}{12} = \frac{1}{16}
+  \]</p>
+<p>- <strong>Rojas:</strong><br>
+  \[
+  P(\text{roja y roja}) = \frac{4}{12} \cdot \frac{4}{12} = \frac{1}{9}
+  \]</p>
+<p>- <strong>Amarillas:</strong><br>
+  \[
+  P(\text{amarilla y amarilla}) = \frac{5}{12} \cdot \frac{5}{12} = \frac{25}{144}
+  \]</p>
+<p>La probabilidad total de sacar dos bolas del mismo color:<br>
+\[
+P(\text{mismo color}) = \frac{1}{16} + \frac{1}{9} + \frac{25}{144} = \frac{9}{144} + \frac{16}{144} + \frac{25}{144} = \frac{50}{144} = \frac{25}{72} \approx 0.3472
+\]</p>
+<p><strong>a.ii) Probabilidad de que los colores de las dos bolas extraídas sean distintos:</strong><br>
+\[
+P(\text{distintos}) = 1 - P(\text{mismo color}) = 1 - \frac{25}{72} = \frac{47}{72} \approx 0.6528
+\]</p>
+<h4>Apartado b)</h4>
+<p><strong>b) Probabilidad de que tres bolas extraídas al mismo tiempo sean de distinto color:</strong></p>
+<p>Para que las tres bolas sean de diferentes colores, podemos tener una bola verde, una roja y una amarilla. Dado que se eliminan simultáneamente, podemos simplemente calcular la probabilidad de uno de estos casos.</p>
+<p>- <strong>Contar las combinaciones favorables:</strong><br>
+  Primero se extrae una bola de cualquier color (12 posibilidades), luego una bola de un color diferente (8 posibilidades, porque se han eliminado las 4 bolas del primer color), y finalmente una del tercer color (5 posibilidades, porque se han eliminado las bolas de los dos colores ya escogidos).</p>
+<p>Hay \(3 \times 4 \times 5 = 60\) combinaciones que cumplen la condición de los tres colores diferentes.</p>
+<p>El número total de maneras en que podemos extraer tres bolas de 12 es \(\binom{12}{3} = 220\).</p>
+<p>- <strong>Calcular la probabilidad:</strong><br>
+  \[
+  P(\text{tres colores diferentes}) = \frac{60}{220} = \frac{3}{11} \approx 0.2727
+  \]</p>
+<p><strong>En resumen:</strong></p>
+<p>- <strong>(a)</strong> Probabilidad de que los colores sean el mismo: \(\frac{25}{72}\)<br>
+- <strong>(a)</strong> Probabilidad de que los colores sean distintos: \(\frac{47}{72}\)<br>
+- <strong>(b)</strong> Probabilidad de que las tres bolas sean de distinto color: \(\frac{3}{11}\)</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea la urna con:</p>
+<p>- 3 bolas verdes<br>
+- 4 bolas rojas<br>
+- 5 bolas amarillas</p>
+<p>Total:  <br>
+\[
+3+4+5=12
+\]</p>
+<h3>a) Dos extracciones con devolución</h3>
+<p>Como después de cada extracción la bola se devuelve a la urna, las dos extracciones son <strong>independientes</strong>.</p>
+<h4>Probabilidad de que las dos bolas sean del mismo color</h4>
+<p>\[
+P(\text{mismo color})=P(VV)+P(RR)+P(AA)
+\]</p>
+<p>\[
+P(VV)=\frac{3}{12}\cdot\frac{3}{12}=\frac{9}{144}
+\]<br>
+\[
+P(RR)=\frac{4}{12}\cdot\frac{4}{12}=\frac{16}{144}
+\]<br>
+\[
+P(AA)=\frac{5}{12}\cdot\frac{5}{12}=\frac{25}{144}
+\]</p>
+<p>Sumando:</p>
+<p>\[
+P(\text{mismo color})=\frac{9+16+25}{144}=\frac{50}{144}=\frac{25}{72}
+\]</p>
+<p>\[
+\boxed{P(\text{mismo color})=\frac{25}{72}\approx 0.3472}
+\]</p>
+<h4>Probabilidad de que sean de distinto color</h4>
+<p>Es el suceso contrario:</p>
+<p>\[
+P(\text{distinto color})=1-\frac{25}{72}=\frac{47}{72}
+\]</p>
+<p>\[
+\boxed{P(\text{distinto color})=\frac{47}{72}\approx 0.6528}
+\]</p>
+<p>---</p>
+<h3>b) Se extraen al mismo tiempo tres bolas</h3>
+<p>Queremos que las tres sean de distinto color, es decir:</p>
+<p>- 1 verde<br>
+- 1 roja<br>
+- 1 amarilla</p>
+<h4>Casos favorables</h4>
+<p>\[
+\binom31\binom41\binom51=3\cdot4\cdot5=60
+\]</p>
+<h4>Casos posibles</h4>
+<p>Número total de formas de extraer 3 bolas de 12:</p>
+<p>\[
+\binom{12}{3}=220
+\]</p>
+<h4>Probabilidad</h4>
+<p>\[
+P(\text{tres de distinto color})=\frac{60}{220}=\frac{3}{11}
+\]</p>
+<p>\[
+\boxed{P(\text{tres de distinto color})=\frac{3}{11}\approx 0.2727}
+\]</p>
+<p>---</p>
+<h3>Resultados finales</h3>
+<h4>a)</h4>
+- Mismo color:
+\[
+\boxed{\frac{25}{72}\approx 0.3472}
+\]
+<p>- Distinto color:<br>
+\[
+\boxed{\frac{47}{72}\approx 0.6528}
+\]</p>
+<h4>b)</h4>
+- Tres bolas de distinto color:
+\[
+\boxed{\frac{3}{11}\approx 0.2727}
+\]</section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_071.html">Anterior</a><a class="button" href="problema_073.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 57: cleon_2023 E2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 57 de 139</h1>
+<div class="meta"><span class="badge">cleon_2023</span> &nbsp; Ejercicio E2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_056.html">Anterior</a><a class="button" href="problema_058.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>E2.- (Álgebra)  <br>
+Dadas las matrices \(A=\begin{pmatrix}1&amp;1\\0&amp;a\\1&amp;1\end{pmatrix}\) y \(B=\begin{pmatrix}3&amp;-1\\a&amp;0\\3&amp;-1\end{pmatrix}\) con \(a\in\mathbb{R}-\{0\}\).</p>
+<p>a) Calcular la matriz \(C\), siendo \(c_{11}=2\), tal que \(AC=B\). (1 punto)</p>
+<p>b) Si \(D=B^tA\) siendo \(B^t\) la traspuesta de \(B\), determinar los valores de \(a\) para los que \(D\) tiene matriz inversa. (1 punto)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>E2.- (Álgebra)</strong></p>
+<p>Dadas las matrices  <br>
+\[
+A=\begin{pmatrix}
+1&amp;1\\
+0&amp;a\\
+1&amp;1
+\end{pmatrix}
+\quad \text{y} \quad
+B=\begin{pmatrix}
+3&amp;1\\
+0&amp;0\\
+3&amp;1
+\end{pmatrix},
+\quad \text{con } a\neq 0.
+\]</p>
+<h4>a) Calcular la matriz \(C\), siendo \(c_{11}=2\), tal que \(AC=B\).</h4>
+<p>Para que sea posible el producto \(AC\) y el resultado tenga las mismas dimensiones que \(B\), la matriz \(C\) debe ser de dimensiones \(2\times 2\).</p>
+<p>\[
+C=\begin{pmatrix}
+c_{11}&amp;c_{12}\\
+c_{21}&amp;c_{22}
+\end{pmatrix}
+=
+\begin{pmatrix}
+2&amp;c_{12}\\
+c_{21}&amp;c_{22}
+\end{pmatrix}
+\]</p>
+<p>\[
+AC=
+\begin{pmatrix}
+1&amp;1\\
+0&amp;a\\
+1&amp;1
+\end{pmatrix}
+\begin{pmatrix}
+2&amp;c_{12}\\
+c_{21}&amp;c_{22}
+\end{pmatrix}
+=
+\begin{pmatrix}
+2+c_{21}&amp;c_{12}+c_{22}\\
+ac_{21}&amp;ac_{22}\\
+2+c_{21}&amp;c_{12}+c_{22}
+\end{pmatrix}
+=
+\begin{pmatrix}
+3&amp;1\\
+0&amp;0\\
+3&amp;1
+\end{pmatrix}
+\]</p>
+<p>De donde:</p>
+<p>\[
+2+c_{21}=3 \Rightarrow c_{21}=1
+\]</p>
+<p>\[
+ac_{21}=0 \Rightarrow a\cdot 1=0
+\]</p>
+<p>Como \(a\neq 0\), resulta:</p>
+<p>\[
+c_{21}=0
+\]</p>
+<p>Y también:</p>
+<p>\[
+c_{12}+c_{22}=1,\qquad ac_{22}=0 \Rightarrow c_{22}=0
+\]</p>
+<p>\[
+c_{12}=1
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+C=
+\begin{pmatrix}
+2&amp;1\\
+0&amp;0
+\end{pmatrix}
+\]</p>
+<p>---</p>
+<h4>b) Si \(D=AB^t\), siendo \(B^t\) la traspuesta de \(B\), determinar los valores de \(a\) para los que \(D\) tiene matriz inversa.</h4>
+<p>Hallamos la expresión de la matriz \(D\).</p>
+<p>\[
+B^t=
+\begin{pmatrix}
+3&amp;0&amp;3\\
+1&amp;0&amp;1
+\end{pmatrix}
+\]</p>
+<p>\[
+D=AB^t=
+\begin{pmatrix}
+1&amp;1\\
+0&amp;a\\
+1&amp;1
+\end{pmatrix}
+\begin{pmatrix}
+3&amp;0&amp;3\\
+1&amp;0&amp;1
+\end{pmatrix}
+=
+\begin{pmatrix}
+4&amp;0&amp;4\\
+a&amp;0&amp;a\\
+4&amp;0&amp;4
+\end{pmatrix}
+\]</p>
+<p>Averiguamos cuándo se anula su determinante.</p>
+<p>\[
+|D|=0
+\]</p>
+<p>La matriz \(D\) es invertible para cualquier valor de \(a\neq 0\).</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Partamos por resolver el inciso <strong>(a)</strong> del ejercicio:</p>
+<p><strong>a) Calcular la matriz \(C\) tal que \(AC=B\).</strong></p>
+<p>Primero, escribimos de nuevo las matrices \(A\) y \(B\):</p>
+<p>\[ A=\begin{pmatrix}1&amp;1\\0&amp;a\\1&amp;1\end{pmatrix}, \quad B=\begin{pmatrix}3&amp;-1\\a&amp;0\\3&amp;-1\end{pmatrix} \]</p>
+<p>Para encontrar la matriz \(C\), consideremos que \(C\) será de dimensiones \(2 \times 2\) para que el producto \(AC\) sea definido y tenga las mismas dimensiones que \(B\), es decir:</p>
+<p>\[ C = \begin{pmatrix} 
+c_{11} &amp; c_{12} \\ 
+c_{21} &amp; c_{22} 
+\end{pmatrix} \]</p>
+<p>Sabemos que \(c_{11} = 2\) por el enunciado. Ahora, al multiplicar \(A\) y \(C\), tendríamos:</p>
+<p>\[ AC = \begin{pmatrix}
+1 &amp; 1 \\ 
+0 &amp; a \\ 
+1 &amp; 1 
+\end{pmatrix}
+\begin{pmatrix} 
+2 &amp; c_{12} \\ 
+c_{21} &amp; c_{22} 
+\end{pmatrix} 
+=
+\begin{pmatrix} 
+2+c_{21} &amp; c_{12}+c_{22} \\
+0+a \cdot c_{21} &amp; a \cdot c_{22} \\
+2 + c_{21} &amp; c_{12} + c_{22} 
+\end{pmatrix} 
+\]</p>
+<p>Comparando esto con \(B\), obtenemos el siguiente sistema de ecuaciones:</p>
+<p>1. \(2 + c_{21} = 3\)<br>
+2. \(c_{12} + c_{22} = -1\)<br>
+3. \(a \cdot c_{21} = a\)<br>
+4. \(a \cdot c_{22} = 0\)</p>
+<p>De la primera ecuación, se puede resolver que \(c_{21} = 1\). De la tercera ecuación y sabiendo que \(c_{21} = 1\), se sigue que \(a \cdot c_{21} = a\) es verdadero directamente y no nos da información nueva sobre \(c_{22}\).</p>
+<p>Ahora, de la cuarta ecuación \(a \cdot c_{22} = 0\), como \(a \neq 0\) (esto ha sido especificado en la pregunta), es necesario que \(c_{22} = 0\).</p>
+<p>Insertamos \(c_{22} = 0\) en la segunda ecuación para encontrar \(c_{12}\):</p>
+<p>\[
+c_{12} + 0 = -1 \quad \Rightarrow \quad c_{12} = -1
+\]</p>
+<p>Con todo esto, la matriz \(C\) queda como:</p>
+<p>\[
+C = \begin{pmatrix} 2 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}
+\]</p>
+<p>Prosigamos con el inciso <strong>(b)</strong>:</p>
+<p><strong>b) Si \(D=B^tA\) y \(B^t\) es la traspuesta de \(B\), determinar los valores de \(a\) para los que \(D\) tiene matriz inversa.</strong></p>
+<p>Primero, hallamos la traspuesta de \(B\):</p>
+<p>\[ B^t = \begin{pmatrix}
+3 &amp; a &amp; 3 \\ 
+-1 &amp; 0 &amp; -1
+\end{pmatrix} \]</p>
+<p>Luego, realizamos el producto \(B^tA\):</p>
+<p>\[
+B^tA = \begin{pmatrix}
+3 &amp; a &amp; 3 \\ 
+-1 &amp; 0 &amp; -1
+\end{pmatrix}
+\begin{pmatrix}
+1 &amp; 1 \\ 
+0 &amp; a \\ 
+1 &amp; 1
+\end{pmatrix} 
+= 
+\begin{pmatrix}
+3 + 0 + 3 &amp; 3 + a^2 + 3 \\
+-1 - 0 - 1 &amp; -1 - 0 - 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+6 &amp; 3 + a^2 + 3 \\
+-2 &amp; -2
+\end{pmatrix}
+=
+\begin{pmatrix}
+6 &amp; 6 + a^2 \\
+-2 &amp; -2
+\end{pmatrix}
+\]</p>
+<p>Para que \(D\) tenga matriz inversa, debe ser de rango completo (es decir, su determinante no debe ser cero). Como es una matriz \(2 \times 2\), el determinante es:</p>
+<p>\[
+\text{det}(D) = 6 \cdot (-2) - (-2) \cdot (6 + a^2) = -12 + 12 + 2a^2 = 2a^2
+\]</p>
+<p>Para que \( \text{det}(D) \neq 0 \), se debe cumplir que \(2a^2 \neq 0\), o lo que es lo mismo, \(a \neq 0\). Sin embargo, sabemos que \(a\) es siempre diferente de cero según el enunciado, así que el determinante de \(D\) es no cero para cualquier \(a\) real, excepto \(a = 0\) que no se considera en el rango de \(a\).</p>
+<p>Por tanto, el determiante de \(D\) es no nulo para cualquier \(a\) admitido en el enunciado, y por lo tanto, \(D\) siempre tiene matriz inversa para el rango dado de \(a\).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los dos apartados.</p>
+<p>---</p>
+<h3>Datos</h3>
+<p>\[
+A=\begin{pmatrix}
+1&amp;1\\
+0&amp;a\\
+1&amp;1
+\end{pmatrix},
+\qquad
+B=\begin{pmatrix}
+3&amp;-1\\
+a&amp;0\\
+3&amp;-1
+\end{pmatrix},
+\qquad a\in\mathbb R\setminus\{0\}.
+\]</p>
+<p>---</p>
+<h3>a) Hallar \(C\), con \(c_{11}=2\), tal que \(AC=B\)</h3>
+<p>Como \(A\) es \(3\times 2\) y \(B\) es \(3\times 2\), la matriz \(C\) debe ser \(2\times 2\).</p>
+<p>Tomamos</p>
+<p>\[
+C=\begin{pmatrix}
+2&amp;x\\
+y&amp;z
+\end{pmatrix}.
+\]</p>
+<p>Entonces</p>
+<p>\[
+AC=
+\begin{pmatrix}
+1&amp;1\\
+0&amp;a\\
+1&amp;1
+\end{pmatrix}
+\begin{pmatrix}
+2&amp;x\\
+y&amp;z
+\end{pmatrix}
+=
+\begin{pmatrix}
+2+y&amp;x+z\\
+ay&amp;az\\
+2+y&amp;x+z
+\end{pmatrix}.
+\]</p>
+<p>Imponemos que \(AC=B\):</p>
+<p>\[
+\begin{pmatrix}
+2+y&amp;x+z\\
+ay&amp;az\\
+2+y&amp;x+z
+\end{pmatrix}
+=
+\begin{pmatrix}
+3&amp;-1\\
+a&amp;0\\
+3&amp;-1
+\end{pmatrix}.
+\]</p>
+<p>Igualando entradas:</p>
+<p>- \(2+y=3 \Rightarrow y=1\)<br>
+- \(x+z=-1\)<br>
+- \(ay=a\Rightarrow a\neq 0 \Rightarrow y=1\) (coherente)<br>
+- \(az=0\Rightarrow a\neq 0 \Rightarrow z=0\)</p>
+<p>Entonces, de \(x+z=-1\), resulta \(x=-1\).</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{
+C=\begin{pmatrix}
+2&amp;-1\\
+1&amp;0
+\end{pmatrix}
+}
+\]</p>
+<p>---</p>
+<h3>b) Determinar para qué valores de \(a\) la matriz \(D=B^tA\) es invertible</h3>
+<p>Primero calculamos \(B^t\):</p>
+<p>\[
+B^t=
+\begin{pmatrix}
+3&amp;a&amp;3\\
+-1&amp;0&amp;-1
+\end{pmatrix}.
+\]</p>
+<p>Ahora multiplicamos:</p>
+<p>\[
+D=B^tA=
+\begin{pmatrix}
+3&amp;a&amp;3\\
+-1&amp;0&amp;-1
+\end{pmatrix}
+\begin{pmatrix}
+1&amp;1\\
+0&amp;a\\
+1&amp;1
+\end{pmatrix}.
+\]</p>
+<p>Calculamos sus entradas:</p>
+<p>\[
+D_{11}=3\cdot1+a\cdot0+3\cdot1=6,
+\]</p>
+<p>\[
+D_{12}=3\cdot1+a\cdot a+3\cdot1=6+a^2,
+\]</p>
+<p>\[
+D_{21}=-1\cdot1+0\cdot0-1\cdot1=-2,
+\]</p>
+<p>\[
+D_{22}=-1\cdot1+0\cdot a-1\cdot1=-2.
+\]</p>
+<p>Así,</p>
+<p>\[
+D=
+\begin{pmatrix}
+6&amp;6+a^2\\
+-2&amp;-2
+\end{pmatrix}.
+\]</p>
+<p>Para que \(D\) tenga inversa, su determinante debe ser no nulo:</p>
+<p>\[
+\det(D)=6(-2)-(-2)(6+a^2)
+=-12+12+2a^2
+=2a^2.
+\]</p>
+<p>Luego \(D\) es invertible si y solo si</p>
+<p>\[
+2a^2\neq 0 \iff a\neq 0.
+\]</p>
+<p>Como en el enunciado ya se da \(a\in\mathbb R\setminus\{0\}\), se cumple siempre.</p>
+<p>\[
+\boxed{\text{\(D\) es invertible para todo } a\neq 0}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p>\[
+\boxed{
+C=\begin{pmatrix}
+2&amp;-1\\
+1&amp;0
+\end{pmatrix}
+}
+\]</p>
+<p>y</p>
+<p>\[
+\boxed{
+D=B^tA \text{ es invertible para todo } a\neq 0.
+}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_056.html">Anterior</a><a class="button" href="problema_058.html">Siguiente</a></nav>
+</main></body>
+</html>

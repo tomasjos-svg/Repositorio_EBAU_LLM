@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 7: andalucia_2023 7</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 7 de 139</h1>
+<div class="meta"><span class="badge">andalucia_2023</span> &nbsp; Ejercicio 7</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_006.html">Anterior</a><a class="button" href="problema_008.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>EJERCICIO 7. (2,5 puntos)</p>
+<p>Considera los planos π₁: x - y + z = 0 y π₂: x + y = 2.</p>
+<p>a) [1,5 puntos] Calcula la distancia entre la recta intersección de π₁ y π₂ y el punto P(2, 6, -2).</p>
+<p>b) [1 punto] Halla el ángulo que forman π₁ y π₂.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>EJERCICIO 7 (2.5 puntos)</p>
+<p>Considera los planos  <br>
+\[
+\pi_1: x-y+z=0
+\]<br>
+y  <br>
+\[
+\pi_2: x+y=2.
+\]</p>
+<h4>a) [1,5 puntos]</h4>
+<p>Obtenemos las ecuaciones paramétricas de la recta intersección de \(\pi_1\) y \(\pi_2\).</p>
+<p>\[
+\begin{cases}
+x-y+z=0\\
+x+y=2
+\end{cases}
+\Rightarrow x=2-y
+\]</p>
+<p>\[
+2-y-y+z=0 \Rightarrow z=2y-2
+\]</p>
+<p>Tomando \(y=\lambda\):</p>
+<p>\[
+r:\begin{cases}
+x=2-\lambda\\
+y=\lambda\\
+z=-2+2\lambda
+\end{cases}
+\]</p>
+<p>Hallamos el plano perpendicular a la recta que pasa por el punto \(P(2,6,-2)\).  <br>
+Dicho plano tiene como vector normal el vector director de la recta:</p>
+<p>\[
+\vec v_r=(-1,1,2)
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\pi: -1(x-2)+1(y-6)+2(z+2)=0
+\]</p>
+<p>\[
+-x+2+y-6+2z+4=0
+\]</p>
+<p>\[
+\pi: -x+y+2z=0
+\]</p>
+<p>Determinamos el punto \(P&#x27;\) de corte de la recta \(r\) y el plano \(\pi\):</p>
+<p>\[
+-(2-\lambda)+\lambda+2(-2+2\lambda)=0
+\]</p>
+<p>\[
+-2+\lambda+\lambda-4+4\lambda=0
+\]</p>
+<p>\[
+6\lambda-6=0 \Rightarrow \lambda=1
+\]</p>
+<p>\[
+P&#x27;=(1,1,0)
+\]</p>
+<p>La distancia de \(P\) a la recta \(r\) es la distancia de \(P\) a \(P&#x27;\):</p>
+<p>\[
+\overrightarrow{PP&#x27;}=(1,1,0)-(2,6,-2)=(-1,-5,2)
+\]</p>
+<p>\[
+d(P,r)=|\overrightarrow{PP&#x27;}|
+=\sqrt{(-1)^2+(-5)^2+2^2}
+=\sqrt{30}\,u
+\]</p>
+<p>---</p>
+<h4>b) [1 punto]</h4>
+<p>El ángulo que forman \(\pi_1\) y \(\pi_2\) es el ángulo que forman sus vectores normales.</p>
+<p>\[
+\pi_1: x-y+z=0 \Rightarrow \vec n_1=(1,-1,1)
+\]</p>
+<p>\[
+\pi_2: x+y=2 \Rightarrow \vec n_2=(1,1,0)
+\]</p>
+<p>\[
+\cos(\vec n_1,\vec n_2)
+=
+\frac{\vec n_1\cdot \vec n_2}{|\vec n_1||\vec n_2|}
+=
+\frac{1-1+0}{\sqrt{1+1+1}\sqrt{1+1+0}}
+=0
+\]</p>
+<p>\[
+(\pi_1,\pi_2)=\arccos 0=90^\circ
+\]</p>
+<p>Los planos \(\pi_1\) y \(\pi_2\) son perpendiculares.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 7 del documento proporcionado, procedemos con los siguientes pasos:</p>
+<p><strong>a) Calcula la distancia entre la recta intersección de π1 y π2 y el punto P (2, 6,−2).</strong></p>
+<p>Los planos están dados por las ecuaciones:<br>
+- \( \pi_1 \equiv x - y + z = 0 \)<br>
+- \( \pi_2 \equiv x + y = 2 \)</p>
+<p>Primero encontraremos la recta de intersección de los dos planos. Para ello, podemos resolver el sistema de ecuaciones combinando ambos planos.</p>
+<p>1. <strong>De \( \pi_2 \):</strong> \( y = 2 - x \)<br>
+2. Sustituimos \( y \) en \( \pi_1 \):<br>
+   \( x - (2 - x) + z = 0 \rightarrow 2x - 2 + z = 0 \rightarrow z = 2 - 2x \)</p>
+<p>Así, la recta de intersección puede parametrizarse por:<br>
+\[ r(t) = (t, 2 - t, 2 - 2t) \]</p>
+<p>Para calcular la distancia de un punto a una recta, usamos la fórmula:<br>
+\[ d = \frac{ \| \vec{v} \times (\vec{p} - \vec{p_0}) \| }{\| \vec{v} \| } \]<br>
+donde \( \vec{v} \) es un vector director de la recta, \( \vec{p_0} \) es un punto de la recta y \( \vec{p} \) es el punto dado (2, 6, −2).</p>
+<p>En este caso:<br>
+- \( \vec{v} = (1, -1, -2) \) (tomando \( t \) como parámetro de la recta)<br>
+- \( \vec{p_0} = (0, 2, 2) \) (cuando \( t = 0 \))<br>
+- \( \vec{p} - \vec{p_0} = (2 - 0, 6 - 2, -2 - 2) = (2, 4, -4) \)</p>
+<p>Calculamos \( \vec{v} \times (\vec{p} - \vec{p_0}):
+\[ \vec{v} \times (\vec{p} - \vec{p_0}) = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 1 &amp; -1 &amp; -2 \\ 2 &amp; 4 &amp; -4 \end{vmatrix} = \mathbf{i}(4 + 8) - \mathbf{j}(-4 - 4) + \mathbf{k}(2 + 8) \]
+\[ = 12\mathbf{i} + 8\mathbf{j} + 10\mathbf{k} \]
+\[ \| \vec{v} \times (\vec{p} - \vec{p_0}) \| = \sqrt{12^2 + 8^2 + 10^2} = \sqrt{144 + 64 + 100} = \sqrt{308} \]
+\[ \| \vec{v} \| = \sqrt{1^2 + (-1)^2 + (-2)^2} = \sqrt{6} \]
+\[ d = \frac{\sqrt{308}}{\sqrt{6}} = \sqrt{\frac{308}{6}} \approx 7.14 \]
+
+**b) Halla el ángulo que forman π1 y π2.**
+
+El ángulo entre dos planos se puede calcular usando los vectores normales de cada plano:
+\[ \cos \theta = \frac{|n_1 \cdot n_2|}{\|n_1\| \|n_2\|} \]
+
+Para \( \pi_1 \) y \( \pi_2 \):<br>
+- \( n_1 = (1, -1, 1) \)<br>
+- \( n_2 = (1, 1, 0) \)</p>
+<p>Calculamos el producto punto y las magnitudes:<br>
+\[ n_1 \cdot n_2 = 1\cdot1 + (-1)\cdot1 + 1\cdot0 = 0 \]<br>
+\[ \|n_1\| = \sqrt{1^2 + (-1)^2 + 1^2} = \sqrt{3} \]<br>
+\[ \|n_2\| = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{2} \]<br>
+\[ \cos \theta = \frac{0}{\sqrt{3}\sqrt{2}} = 0 \]<br>
+- El ángulo \( \theta \) es \( \frac{\pi}{2} \) o 90 grados (ya que el coseno de 90 grados es 0).</p>
+<p>Estas son soluciones justificadas y detalladas basadas en las matemáticas involucradas en el enunciado del ejercicio 7【4:0†Examen Matemáticas II Andalucia 2023 enunciado.pdf】.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el <strong>Ejercicio 7</strong>.</p>
+<h3>Datos</h3>
+\[
+\pi_1:\ x-y+z=0, \qquad \pi_2:\ x+y=2
+\]
+\[
+P=(2,6,-2)
+\]
+<p>---</p>
+<h2>a) Distancia entre la recta \(\pi_1\cap\pi_2\) y el punto \(P\)</h2>
+<h3>1. Hallamos la recta intersección</h3>
+La recta \(r=\pi_1\cap\pi_2\) viene dada por el sistema:
+\[
+\begin{cases}
+x-y+z=0\\
+x+y=2
+\end{cases}
+\]
+<p>Tomamos \(y=t\). Entonces:<br>
+\[
+x=2-t
+\]<br>
+y sustituyendo en \(x-y+z=0\):<br>
+\[
+(2-t)-t+z=0 \;\Rightarrow\; z=2t-2
+\]</p>
+<p>Por tanto,<br>
+\[
+r:\ (x,y,z)=(2-t,\ t,\ 2t-2)
+\]</p>
+<p>Una forma vectorial es:<br>
+\[
+r:\ (x,y,z)=(2,0,-2)+t(-1,1,2)
+\]</p>
+<p>Así, un punto de la recta es<br>
+\[
+A=(2,0,-2)
+\]<br>
+y un vector director es<br>
+\[
+\vec v=(-1,1,2)
+\]</p>
+<p>---</p>
+<h3>2. Aplicamos la fórmula de la distancia de un punto a una recta en el espacio</h3>
+\[
+d(P,r)=\frac{\|\overrightarrow{AP}\times \vec v\|}{\|\vec v\|}
+\]
+<p>Calculamos:<br>
+\[
+\overrightarrow{AP}=P-A=(2,6,-2)-(2,0,-2)=(0,6,0)
+\]</p>
+<p>Producto vectorial:<br>
+\[
+\overrightarrow{AP}\times \vec v=
+\begin{vmatrix}
+\mathbf i&amp;\mathbf j&amp;\mathbf k\\
+0&amp;6&amp;0\\
+-1&amp;1&amp;2
+\end{vmatrix}
+=(12,0,6)
+\]</p>
+<p>Su módulo es:<br>
+\[
+\|(12,0,6)\|=\sqrt{12^2+0^2+6^2}=\sqrt{180}=6\sqrt5
+\]</p>
+<p>Y<br>
+\[
+\|\vec v\|=\sqrt{(-1)^2+1^2+2^2}=\sqrt6
+\]</p>
+<p>Luego:<br>
+\[
+d(P,r)=\frac{6\sqrt5}{\sqrt6}=\sqrt{30}
+\]</p>
+<h4>Resultado del apartado a)</h4>
+\[
+\boxed{d(P,r)=\sqrt{30}}
+\]
+<p>---</p>
+<h2>b) Ángulo que forman los planos \(\pi_1\) y \(\pi_2\)</h2>
+<p>El ángulo entre dos planos es el ángulo entre sus vectores normales.</p>
+<h3>1. Vectores normales</h3>
+De
+\[
+\pi_1:\ x-y+z=0
+\]
+sale
+\[
+\vec n_1=(1,-1,1)
+\]
+<p>De<br>
+\[
+\pi_2:\ x+y=2
+\]<br>
+sale<br>
+\[
+\vec n_2=(1,1,0)
+\]</p>
+<h3>2. Calculamos el ángulo</h3>
+\[
+\cos\alpha=\frac{|\vec n_1\cdot \vec n_2|}{\|\vec n_1\|\,\|\vec n_2\|}
+\]
+<p>Producto escalar:<br>
+\[
+\vec n_1\cdot \vec n_2=1\cdot1+(-1)\cdot1+1\cdot0=0
+\]</p>
+<p>Entonces:<br>
+\[
+\cos\alpha=0
+\quad\Rightarrow\quad
+\alpha=\frac{\pi}{2}=90^\circ
+\]</p>
+<h4>Resultado del apartado b)</h4>
+\[
+\boxed{\alpha=90^\circ}
+\]
+<p>---</p>
+<h2>Respuesta final</h2>
+- <strong>a)</strong> La distancia entre el punto \(P(2,6,-2)\) y la recta intersección de \(\pi_1\) y \(\pi_2\) es
+\[
+\boxed{\sqrt{30}}
+\]
+<p>- <strong>b)</strong> El ángulo que forman los planos es<br>
+\[
+\boxed{90^\circ}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_006.html">Anterior</a><a class="button" href="problema_008.html">Siguiente</a></nav>
+</main></body>
+</html>

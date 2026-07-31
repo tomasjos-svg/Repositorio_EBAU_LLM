@@ -1,0 +1,40 @@
+{
+  "pipeline_version": "3.1",
+  "generated_utc": "2026-07-30T16:52:47.319424+00:00",
+  "source_files": 52,
+  "unique_file_contents": 52,
+  "records_total_unique": 4644,
+  "duplicate_row_occurrences": 528,
+  "datasets": 51,
+  "unique_problems": 387,
+  "conditions_total_registered": 4,
+  "conditions_valid_for_analysis": 2,
+  "valid_executions": 2322,
+  "technical_error_records": 2322,
+  "weak_reference_records_valid_only": 6,
+  "primary_records": 2316,
+  "sensitivity_records": 2322,
+  "problem_condition_rows_primary": 772,
+  "problem_condition_rows_sensitivity": 774,
+  "complete_problem_condition_rows_primary": 772,
+  "incomplete_problem_condition_rows_expected_grid": 2,
+  "strict_paired_problems": 386,
+  "strict_problem_condition_rows": 772,
+  "paired_primary_problems": 386,
+  "paired_primary_problem_condition_rows": 772,
+  "paired_sensitivity_problems": 387,
+  "paired_sensitivity_problem_condition_rows": 774,
+  "expected_replicates_per_problem_condition": 3,
+  "registered_conditions": [
+    "gpt-4-turbo + Assistants API",
+    "gpt-4-turbo + Responses API",
+    "gpt-5.4 + Assistants API",
+    "gpt-5.4 + Responses API"
+  ],
+  "selected_conditions": [
+    "gpt-4-turbo + Assistants API",
+    "gpt-5.4 + Responses API"
+  ],
+  "v8_config_files": 52,
+  "v8_common_reference_rows": 377
+}

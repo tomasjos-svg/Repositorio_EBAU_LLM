@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 131: rioja_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 131 de 139</h1>
+<div class="meta"><span class="badge">rioja_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_130.html">Anterior</a><a class="button" href="problema_132.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>2.- (2 puntos) Halla el área del recinto encerrado por las gráficas de las parábolas</p>
+<p>\[
+y=x^2-2x+1
+\]</p>
+<p>e</p>
+<p>\[
+y=-x^2+2x+2.
+\]</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 2. Solución oficial</strong></p>
+<p>Determinamos los puntos de corte de ambas gráficas.</p>
+<p>\[
+\begin{cases}
+y=x^2-2x+1\\
+y=-x^2+2x+2
+\end{cases}
+\]</p>
+<p>\[
+x^2-2x+1=-x^2+2x+2
+\]</p>
+<p>\[
+2x^2-4x-1=0
+\]</p>
+<p>\[
+x=\frac{4\pm\sqrt{16+8}}{4}
+=\frac{4\pm 2\sqrt6}{4}
+=\frac{2\pm \sqrt6}{2}
+\]</p>
+<p>El área del recinto será el valor absoluto de la integral definida entre los puntos de corte de la diferencia de las dos funciones:</p>
+<p>\[
+A=\left|\int_{\frac{2-\sqrt6}{2}}^{\frac{2+\sqrt6}{2}}
+\left[(-x^2+2x+2)-(x^2-2x+1)\right]dx\right|
+\]</p>
+<p>\[
+A=\left|\int_{\frac{2-\sqrt6}{2}}^{\frac{2+\sqrt6}{2}}
+(-2x^2+4x+1)\,dx\right|
+\]</p>
+<p>\[
+A=\left|\left[-\frac{2x^3}{3}+2x^2+x\right]_{\frac{2-\sqrt6}{2}}^{\frac{2+\sqrt6}{2}}\right|
+\]</p>
+<p>\[
+A=4\sqrt6
+\]</p>
+<p>El área tiene un valor de:</p>
+<p>\[
+\boxed{4\sqrt6}
+\]</p>
+<p>unidades cuadradas.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a hallar el área del recinto encerrado entre las parábolas</p>
+<p>\[
+y_1=x^2-2x+1
+\qquad\text{y}\qquad
+y_2=-x^2+2x+2.
+\]</p>
+<h3>1) Puntos de corte</h3>
+<p>Igualamos ambas expresiones:</p>
+<p>\[
+x^2-2x+1=-x^2+2x+2
+\]</p>
+<p>Pasamos todo a un lado:</p>
+<p>\[
+2x^2-4x-1=0
+\]</p>
+<p>Resolvemos la ecuación:</p>
+<p>\[
+x=\frac{4\pm\sqrt{16+8}}{4}
+=\frac{4\pm\sqrt{24}}{4}
+=\frac{4\pm 2\sqrt6}{4}
+=1\pm \frac{\sqrt6}{2}
+\]</p>
+<p>Por tanto, los puntos de corte tienen abscisas:</p>
+<p>\[
+x_1=1-\frac{\sqrt6}{2},\qquad x_2=1+\frac{\sqrt6}{2}.
+\]</p>
+<p>---</p>
+<h3>2) Función superior e inferior</h3>
+<p>Tomamos, por ejemplo, \(x=1\):</p>
+<p>\[
+y_1(1)=1-2+1=0,\qquad y_2(1)=-1+2+2=3.
+\]</p>
+<p>Luego, en el intervalo de corte, la parábola superior es</p>
+<p>\[
+y_2=-x^2+2x+2
+\]</p>
+<p>y la inferior es</p>
+<p>\[
+y_1=x^2-2x+1.
+\]</p>
+<p>---</p>
+<h3>3) Área encerrada</h3>
+<p>El área es</p>
+<p>\[
+A=\int_{x_1}^{x_2}\bigl(y_2-y_1\bigr)\,dx.
+\]</p>
+<p>Entonces:</p>
+<p>\[
+A=\int_{1-\frac{\sqrt6}{2}}^{1+\frac{\sqrt6}{2}}
+\left[(-x^2+2x+2)-(x^2-2x+1)\right]dx
+\]</p>
+<p>\[
+A=\int_{1-\frac{\sqrt6}{2}}^{1+\frac{\sqrt6}{2}}
+(-2x^2+4x+1)\,dx.
+\]</p>
+<p>Una primitiva es</p>
+<p>\[
+\int (-2x^2+4x+1)\,dx
+=-\frac{2}{3}x^3+2x^2+x.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+A=\left[-\frac{2}{3}x^3+2x^2+x\right]_{1-\frac{\sqrt6}{2}}^{1+\frac{\sqrt6}{2}}.
+\]</p>
+<p>Para simplificar, hacemos el cambio \(u=x-1\). Entonces los límites pasan a ser</p>
+<p>\[
+u=-\frac{\sqrt6}{2}\quad \text{y}\quad u=\frac{\sqrt6}{2},
+\]</p>
+<p>y además:</p>
+<p>\[
+y_1=(x-1)^2=u^2,\qquad y_2=3-(x-1)^2=3-u^2.
+\]</p>
+<p>Así,</p>
+<p>\[
+y_2-y_1=(3-u^2)-u^2=3-2u^2.
+\]</p>
+<p>El área queda:</p>
+<p>\[
+A=\int_{-\frac{\sqrt6}{2}}^{\frac{\sqrt6}{2}} (3-2u^2)\,du.
+\]</p>
+<p>Como la función es par:</p>
+<p>\[
+A=2\int_0^{\frac{\sqrt6}{2}} (3-2u^2)\,du
+=2\left[3u-\frac{2}{3}u^3\right]_0^{\frac{\sqrt6}{2}}.
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+A=2\left(3\cdot \frac{\sqrt6}{2}-\frac{2}{3}\left(\frac{\sqrt6}{2}\right)^3\right).
+\]</p>
+<p>Como</p>
+<p>\[
+\left(\frac{\sqrt6}{2}\right)^3=\frac{6\sqrt6}{8}=\frac{3\sqrt6}{4},
+\]</p>
+<p>resulta:</p>
+<p>\[
+A=2\left(\frac{3\sqrt6}{2}-\frac{2}{3}\cdot \frac{3\sqrt6}{4}\right)
+=2\left(\frac{3\sqrt6}{2}-\frac{\sqrt6}{2}\right)
+=2\cdot \sqrt6.
+\]</p>
+<h3>Resultado final</h3>
+<p>\[
+\boxed{A=2\sqrt6}
+\]</p>
+<p>unidades cuadradas.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el problema propuesto, que es hallar el área del recinto encerrado por las gráficas de dos parábolas, debemos seguir varios pasos clave en análisis matemático:</p>
+<h4>Paso 1: Determinar los puntos de intersección</h4>
+<p>Primero, necesitamos encontrar los puntos donde las parábolas se intersectan. Así que igualamos las dos ecuaciones dadas:</p>
+<p>\[ y = x^2 - 2x + 1 \]<br>
+\[ y = -x^2 + 2x + 2 \]</p>
+<p>Igualando ambas ecuaciones:</p>
+<p>\[ x^2 - 2x + 1 = -x^2 + 2x + 2 \]</p>
+<p>Combinamos términos semejantes y simplificamos la ecuación:</p>
+<p>\[ 2x^2 - 4x - 1 = 0 \]</p>
+<h4>Paso 2: Resolver la ecuación cuadrática</h4>
+<p>Usamos la fórmula para resolver ecuaciones cuadráticas \( ax^2 + bx + c = 0 \), donde a = 2, b = -4, y c = -1:</p>
+<p>\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]<br>
+\[ x = \frac{-(-4) \pm \sqrt{(-4)^2 - 4 \cdot 2 \cdot (-1)}}{2 \cdot 2} \]<br>
+\[ x = \frac{4 \pm \sqrt{16 + 8}}{4} \]<br>
+\[ x = \frac{4 \pm \sqrt{24}}{4} \]<br>
+\[ x = \frac{4 \pm 2\sqrt{6}}{4} \]<br>
+\[ x = 1 \pm \frac{\sqrt{6}}{2} \]</p>
+<p>Esto nos da dos valores para x, los puntos de intersección de las parábolas. Llamemos a estos \( x_1 = 1 - \frac{\sqrt{6}}{2} \) y \( x_2 = 1 + \frac{\sqrt{6}}{2} \).</p>
+<h4>Paso 3: Configurar la integral para el área</h4>
+<p>Para encontrar el área encerrada entre dos curvas, integramos la diferencia de las ecuaciones de las parábolas en el intervalo determinado por los puntos de intersección. La fórmula es:</p>
+<p>\[ \text{Área} = \int_{a}^{b} (f(x) - g(x)) \, dx \]<br>
+donde<br>
+\[ f(x) = -x^2 + 2x + 2 \text{ y } g(x) = x^2 - 2x + 1 \]<br>
+\[ \text{Área} = \int_{x_1}^{x_2} ((-x^2 + 2x + 2) - (x^2 - 2x + 1)) \, dx \]<br>
+\[ \text{Área} = \int_{x_1}^{x_2} (-2x^2 + 4x + 1) \, dx \]</p>
+<h4>Paso 4: Calcular la integral</h4>
+<p>\[ \text{Área} = \left[ -\frac{2}{3}x^3 + 2x^2 + x \right]_{x_1}^{x_2} \]<br>
+\[ \text{Área} = \left(-\frac{2}{3}(x_2)^3 + 2(x_2)^2 + x_2 \right) - \left(-\frac{2}{3}(x_1)^3 + 2(x_1)^2 + x_1 \right) \]</p>
+<p>Sustituimos \( x_1 \) y \( x_2 \) y calculamos esta diferencia para obtener el área entre las parábolas. Este cálculo requiere precisión y es típicamente realizado con una calculadora o software de matemáticas.</p>
+<h4>Conclusión</h4>
+<p>El área encerrada entre las parábolas es la evaluación de la integral en los límites específicos de intersección \( x_1 \) y \( x_2 \). Aunque no tengo la capacidad de calcular valores exactos aquí, la metodología y la configuración de la integral mostradas te permitirán encontrar el área utilizando un enfoque algebraico o un software/calculadora adecuada para evaluar la integral con precisión.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_130.html">Anterior</a><a class="button" href="problema_132.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 100: madrid_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 100 de 139</h1>
+<div class="meta"><span class="badge">madrid_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_099.html">Anterior</a><a class="button" href="problema_101.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>A.2. Calificación máxima: 2.5 puntos.</p>
+<p>Para la función  <br>
+\[
+f(x)=
+\begin{cases}
+\dfrac{e(x-1)}{e^x-e} &amp; \text{si } x&lt;1,\\[6pt]
+\dfrac{1}{4x-3} &amp; \text{si } x\geq 1,
+\end{cases}
+\]<br>
+se pide:</p>
+<p>a) (1 punto) Estudiar su continuidad en \(\mathbb{R}\) y determinar, en el caso de que existan, las ecuaciones de sus asíntotas.</p>
+<p>b) (0.5 puntos) Para la función \(g(x)=(e^x-e)f(x)\), calcular el valor de \(g&#x27;(0)\).</p>
+<p>c) (1 punto) Calcular<br>
+\[
+\int_1^5 \sqrt{f(x)}\,dx.
+\]</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>A.2.</p>
+<p>a) Si \(x \ne 1\), la función es continua (propiedades de las funciones continuas). En \(x=1\),</p>
+<p>\[
+\lim_{x\to 1^-}\frac{e(x-1)}{e^x-e}
+\overset{\text{L&#x27;Hôpital}}{=}
+\lim_{x\to 1^-}\frac{e}{e^x}=1;
+\qquad
+\lim_{x\to 1^+}\frac{1}{4x-3}=1;
+\qquad
+f(1)=1.
+\]</p>
+<p>Por lo que \(f(x)\) es continua en \(\mathbb{R}\).</p>
+<p>Asíntota horizontal por la derecha:</p>
+<p>\[
+\lim_{x\to +\infty}\frac{1}{4x-3}=0,
+\]</p>
+<p>con lo que la ecuación es \(y=0\).</p>
+<p>Asíntota oblicua por la izquierda:</p>
+<p>\[
+m=\lim_{x\to -\infty}\frac{e(x-1)}{x(e^x-e)}=-1,
+\]</p>
+<p>\[
+n=\lim_{x\to -\infty}\left[\frac{e(x-1)}{e^x-e}+x\right]
+=
+\lim_{x\to -\infty}\frac{xe^x-e}{e^x-e}=1.
+\]</p>
+<p>Con lo que la ecuación es:</p>
+<p>\[
+y=-x+1.
+\]</p>
+<p>b)</p>
+<p>\[
+g(x)=e(x-1), \qquad g&#x27;(x)=e.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+g&#x27;(0)=e.
+\]</p>
+<p>c)</p>
+<p>\[
+\int_1^5 \sqrt{f(x)}\,dx
+=
+\int_1^5 (4x-3)^{-1/2}\,dx
+=
+\left(\frac{1}{2}(4x-3)^{1/2}\right)\Bigg|_1^5
+=
+\frac{\sqrt{17}-1}{2}.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>\[
+f(x)=
+\begin{cases}
+\dfrac{e(x-1)}{e^x-e}, &amp; x&lt;1,\\[4pt]
+\dfrac{1}{4x-3}, &amp; x\ge 1.
+\end{cases}
+\]</p>
+<h3>a) Continuidad y asíntotas</h3>
+<h4>Continuidad</h4>
+- Si \(x&lt;1\), la expresión es continua siempre que \(e^x-e\neq 0\).  
+  Como \(e^x=e\iff x=1\), y aquí \(x&lt;1\), no hay problema.
+<p>- Si \(x\ge 1\), \(\dfrac{1}{4x-3}\) es continua, y además \(4x-3\ge 1\), luego no se anula.</p>
+<p>Solo hay que estudiar \(x=1\).</p>
+<p>Para \(x&lt;1\),<br>
+\[
+f(x)=\frac{e(x-1)}{e^x-e}
+=\frac{x-1}{e^{x-1}-1}.
+\]<br>
+Entonces<br>
+\[
+\lim_{x\to 1^-} f(x)
+=\lim_{x\to 1^-}\frac{x-1}{e^{x-1}-1}.
+\]<br>
+Haciendo \(u=x-1\), cuando \(x\to 1^-\), \(u\to 0\):<br>
+\[
+\lim_{u\to 0}\frac{u}{e^u-1}=1.
+\]<br>
+Por la derecha,<br>
+\[
+\lim_{x\to 1^+} f(x)=\lim_{x\to 1^+}\frac1{4x-3}=1.
+\]<br>
+Y<br>
+\[
+f(1)=\frac1{4\cdot 1-3}=1.
+\]</p>
+<p>Por tanto,<br>
+\[
+\lim_{x\to 1^-}f(x)=\lim_{x\to 1^+}f(x)=f(1)=1,
+\]<br>
+así que <strong>\(f\) es continua en \(\mathbb R\)</strong>.</p>
+<p>---</p>
+<h4>Asíntotas</h4>
+<p>#### Asíntota horizontal cuando \(x\to +\infty\)<br>
+Para \(x\ge 1\),<br>
+\[
+f(x)=\frac1{4x-3}\xrightarrow[x\to+\infty]{}0.
+\]<br>
+Luego la asíntota horizontal es<br>
+\[
+\boxed{y=0}.
+\]</p>
+<p>#### Asíntota oblicua cuando \(x\to -\infty\)<br>
+Usamos la rama \(x&lt;1\):<br>
+\[
+f(x)=\frac{x-1}{e^{x-1}-1}.
+\]<br>
+Comprobamos si<br>
+\[
+f(x)-(1-x)\to 0.
+\]<br>
+En efecto,<br>
+\[
+f(x)-(1-x)=\frac{x-1}{e^{x-1}-1}+(x-1)
+=(x-1)\left(\frac1{e^{x-1}-1}+1\right)
+=\frac{(x-1)e^{x-1}}{e^{x-1}-1}.
+\]<br>
+Si \(x\to-\infty\), entonces \(e^{x-1}\to 0\) y \((x-1)e^{x-1}\to 0\), así que<br>
+\[
+f(x)-(1-x)\to 0.
+\]<br>
+Por tanto, la asíntota oblicua es<br>
+\[
+\boxed{y=1-x}.
+\]</p>
+<p>#### Asíntotas verticales<br>
+No hay ninguna:<br>
+- en \(x=1\) la función es continua;<br>
+- en cada tramo el denominador no se anula dentro de su dominio.</p>
+<p><strong>Conclusión:</strong>  <br>
+- continua en \(\mathbb R\);<br>
+- asíntota horizontal: \(\boxed{y=0}\) cuando \(x\to+\infty\);<br>
+- asíntota oblicua: \(\boxed{y=1-x}\) cuando \(x\to-\infty\);<br>
+- no tiene asíntotas verticales.</p>
+<p>---</p>
+<h3>b) Cálculo de \(g&#x27;(0)\), siendo \(g(x)=(e^x-e)f(x)\)</h3>
+<p>Como \(0&lt;1\), cerca de \(0\) usamos la rama \(x&lt;1\):<br>
+\[
+f(x)=\frac{e(x-1)}{e^x-e}.
+\]<br>
+Entonces<br>
+\[
+g(x)=(e^x-e)f(x)=(e^x-e)\frac{e(x-1)}{e^x-e}=e(x-1),
+\qquad (x&lt;1).
+\]<br>
+Así, en un entorno de \(0\),<br>
+\[
+g(x)=e(x-1),
+\]<br>
+y por tanto<br>
+\[
+g&#x27;(x)=e.
+\]<br>
+En particular,<br>
+\[
+\boxed{g&#x27;(0)=e}.
+\]</p>
+<p>---</p>
+<h3>c) Cálculo de \(\displaystyle \int_1^5 \sqrt{f(x)}\,dx\)</h3>
+<p>En \([1,5]\), se cumple \(x\ge 1\), luego<br>
+\[
+f(x)=\frac1{4x-3}.
+\]<br>
+Por tanto,<br>
+\[
+\sqrt{f(x)}=\frac1{\sqrt{4x-3}}.
+\]<br>
+La integral es<br>
+\[
+\int_1^5 \sqrt{f(x)}\,dx=\int_1^5 \frac{dx}{\sqrt{4x-3}}.
+\]<br>
+Sustituimos:<br>
+\[
+u=4x-3,\qquad du=4\,dx,\qquad dx=\frac{du}{4}.
+\]<br>
+Cuando \(x=1\), \(u=1\); cuando \(x=5\), \(u=17\). Entonces<br>
+\[
+\int_1^5 \frac{dx}{\sqrt{4x-3}}
+=\frac14\int_1^{17} u^{-1/2}\,du
+=\frac14\cdot 2u^{1/2}\Big|_1^{17}
+=\frac12\left(\sqrt{17}-1\right).
+\]</p>
+<p>\[
+\boxed{\int_1^5 \sqrt{f(x)}\,dx=\frac{\sqrt{17}-1}{2}}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p>\[
+\boxed{\text{a) } f \text{ es continua en } \mathbb R}
+\]</p>
+<p>\[
+\boxed{\text{Asíntota horizontal: } y=0,\quad \text{asíntota oblicua: } y=1-x,\quad \text{sin verticales}}
+\]</p>
+<p>\[
+\boxed{\text{b) } g&#x27;(0)=e}
+\]</p>
+<p>\[
+\boxed{\text{c) } \int_1^5 \sqrt{f(x)}\,dx=\frac{\sqrt{17}-1}{2}}
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><h4>Solución del Ejercicio 2:</h4>
+<p>El ejercicio plantea el análisis de la función \( f(x) \) definida a trozos y posteriormente el cálculo de derivadas e integrales relacionados con \( f(x) \).</p>
+<p>#### Parte a) Continuidad y asíntotas:</p>
+<p>\[ 
+f(x) = 
+\begin{cases} 
+\dfrac{e(x-1)}{e^x-e} &amp; \text{si } x &lt; 1, \\
+\dfrac{1}{4x-3} &amp; \text{si } x \geq 1. 
+\end{cases}
+\]</p>
+<p><strong>Continuidad</strong>:<br>
+1. Para \( x &lt; 1 \), la función \( f(x) = \frac{e(x-1)}{e^x-e} \) es continua porque es una función racional donde el denominador \( e^x - e \) no se anula para \( x &lt; 1 \) (ya que \( e^x &gt; e \) para \( x &gt; 0 \) y \( e^x &lt; e \) para \( x &lt; 0 \), y \( e \neq 0 \)).</p>
+<p>2. Para \( x \geq 1 \), la función \( f(x) = \frac{1}{4x-3} \) es continua cuando \( 4x-3 \neq 0 \), lo cual se cumple siempre para \( x \geq 1 \).</p>
+<p>3. En \( x = 1 \), necesitamos verificar si los límites laterales y el valor de la función son iguales:<br>
+   \[
+   \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} \frac{e(x-1)}{e^x-e} = \frac{e(1-1)}{e^1-e} = 0.
+   \]<br>
+   \[
+   \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} \frac{1}{4x-3} = \frac{1}{4(1)-3} = 1.
+   \]<br>
+   \[
+   f(1) = \frac{1}{4(1)-3} = 1.
+   \]<br>
+   Observamos que el límite lateral izquierdo es diferente al límite lateral derecho y al valor de la función. Por lo tanto, \( f(x) \) tiene una discontinuidad de salto en \( x = 1 \).</p>
+<p><strong>Asíntotas</strong>:<br>
+1. <strong>Vertical</strong>: En \( x = \frac{3}{4} \) (para la parte \( x \geq 1 \) de \( f(x) \)), ya que el denominador \( 4x-3 \) se anula en \( x = \frac{3}{4} \), y esto está en el dominio de la segunda parte de la función.</p>
+<p>2. <strong>Horizontal</strong>: No hay asíntotas horizontales ya que \( \lim_{x \to \infty} f(x) = 0 \) y \( \lim_{x \to -\infty} f(x) \) no tiende a un valor finito específico debido al comportamiento exponencial en el numerador y denominador para \( x&lt;1 \).</p>
+<p>#### Parte b) Calcular \( g&#x27;(0) \):</p>
+<p>La función \( g(x) \) se define como:<br>
+\[ g(x) = (e^x-e)f(x) \]<br>
+Dado que \( g(x) \) es producto de dos funciones, usamos la regla del producto para obtener \( g&#x27; \):<br>
+\[ g&#x27;(x) = (e^x-e)&#x27;f(x) + (e^x-e)f&#x27;(x) \]</p>
+<p>El cálculo de \( g&#x27;(x) \) en \( x = 0 \), para la parte \( x &lt; 1 \) de \( f(x) \), requiere \( f&#x27;(x) \). Calculamos \( f&#x27;(x) \) utilizando el cociente:<br>
+\[ f&#x27;(x) = \left( \frac{e(x-1)}{e^x-e} \right)&#x27; \]<br>
+Usamos la regla del cociente y nos enfocaremos en términos de calcular \( f&#x27;(0) \), luego multiplicar por los términos relevantes de \( g&#x27; \) en \( x = 0 \).</p>
+<p>#### Parte c) Integración:</p>
+<p>Por último, necesitamos calcular:<br>
+\[
+\int_1^5 \sqrt{f(x)}\,dx.
+\]<br>
+Para hacer esto, necesitamos la expresión explícita de \( \sqrt{f(x)} \) en \( [1, 5] \). Aquí \( f(x) = \frac{1}{4x-3} \), y por lo tanto:<br>
+\[
+\sqrt{f(x)} = \sqrt{\frac{1}{4x-3}}
+\]<br>
+Calculamos la integral sobre el intervalo dado, utilizando los métodos adecuados de integración (como una sustitución u otros métodos que simplifiquen la integral).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_099.html">Anterior</a><a class="button" href="problema_101.html">Siguiente</a></nav>
+</main></body>
+</html>

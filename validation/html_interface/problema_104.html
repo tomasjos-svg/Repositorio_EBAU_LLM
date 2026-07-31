@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 104: murcia_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 104 de 139</h1>
+<div class="meta"><span class="badge">murcia_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_103.html">Anterior</a><a class="button" href="problema_105.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>1: [2,5 p.] Tres amigos, Luis, Ángel y Josema, tienen ahorrado un total de 400 euros. Si Josema perdiera la cuarta parte de lo que tiene, tendría el triple de lo que tiene Luis. Además, la mitad de lo que tiene Luis es justamente la sexta parte de lo que tiene Ángel. Calcule cuánto dinero tiene ahorrado cada uno de ellos.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 1 — Solución oficial</strong></p>
+<p>Llamamos \(x\) al dinero ahorrado por Luís, \(y\) al dinero ahorrado por Ángel y \(z\) al dinero ahorrado por Josema.</p>
+<p>Tres amigos, Luis, Ángel y Josema, tienen ahorrado un total de 400 euros:</p>
+<p>\[
+x+y+z=400
+\]</p>
+<p>Si Josema perdiera la cuarta parte de lo que tiene, tendría el triple de lo que tiene Luis:</p>
+<p>\[
+z-\frac14z=3x \Rightarrow \frac34z=3x \Rightarrow z=4x
+\]</p>
+<p>La mitad de lo que tiene Luis es justamente la sexta parte de lo que tiene Ángel:</p>
+<p>\[
+\frac{x}{2}=\frac{y}{6} \Rightarrow 6x=2y \Rightarrow y=3x
+\]</p>
+<p>Reunimos las tres ecuaciones en un sistema y lo resolvemos:</p>
+<p>\[
+\begin{cases}
+x+y+z=400\\
+z=4x\\
+y=3x
+\end{cases}
+\]</p>
+<p>\[
+x+3x+4x=400 \Rightarrow 8x=400 \Rightarrow x=50
+\]</p>
+<p>\[
+y=3\cdot 50=150,\qquad z=4\cdot 50=200
+\]</p>
+<p>Luis tiene ahorrado <strong>50 euros</strong>, Ángel <strong>150 euros</strong> y Josema <strong>200 euros</strong>.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver este problema, plantearemos un sistema de ecuaciones basado en la información que nos ofrece el enunciado:</p>
+<p>1. Luis, Ángel y Josema tienen en total 400 euros.<br>
+2. Si Josema perdiera la cuarta parte de lo que tiene, entonces tendría el triple de lo que tiene Luis.<br>
+3. La mitad de lo que tiene Luis es justamente la sexta parte de lo que tiene Ángel.</p>
+<p>Denotemos con \( L \), \( A \), y \( J \) las cantidades que tienen Luis, Ángel y Josema, respectivamente. Usando estas notaciones, podemos escribir las siguientes ecuaciones basadas en el enunciado:</p>
+<p>1. \( L + A + J = 400 \)  (suman un total de 400 euros)</p>
+<p>2. Trabajando con la afirmación de que si Josema perdiera la cuarta parte de lo que tiene tendría el triple de lo que tiene Luis, formamos:<br>
+   \[ J - \frac{J}{4} = 3L \]<br>
+   \[ \frac{3J}{4} = 3L \]<br>
+   \[ J = 4L \] (simplificando y despejando \( J \))</p>
+<p>3. La mitad de lo que tiene Luis es la sexta parte de lo que tiene Ángel:<br>
+   \[ \frac{L}{2} = \frac{A}{6} \]<br>
+   \[ 3L = A \] (multiplicamos ambos lados por 6 para despejar \( A \))</p>
+<p>Ahora, reemplazamos \( A \) y \( J \) en términos de \( L \) en la primera ecuación:<br>
+\[ L + 3L + 4L = 400 \]<br>
+\[ 8L = 400 \]</p>
+<p>De donde:<br>
+\[ L = 50 \] (Luis tiene 50 euros)</p>
+<p>Utilizando el valor de \( L \) para encontrar \( A \) y \( J \):<br>
+\[ A = 3L = 3 \times 50 = 150 \]  (Ángel tiene 150 euros)<br>
+\[ J = 4L = 4 \times 50 = 200 \]  (Josema tiene 200 euros)</p>
+<p>Por lo tanto,Luis tiene 50 euros, Ángel tiene 150 euros, y Josema tiene 200 euros. Estas cantidades satisfacen todas las condiciones mencionadas en el problema.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea:</p>
+<p>- \(L\): dinero de Luis  <br>
+- \(A\): dinero de Ángel  <br>
+- \(J\): dinero de Josema</p>
+<h3>1. Planteamos las ecuaciones</h3>
+<h4>Suma total</h4>
+Entre los tres tienen 400 euros:
+<p>\[
+L + A + J = 400
+\]</p>
+<h4>Condición sobre Josema</h4>
+Si Josema pierde la cuarta parte de lo que tiene, le queda:
+<p>\[
+J - \frac14 J = \frac34 J
+\]</p>
+<p>Eso sería el triple de lo que tiene Luis:</p>
+<p>\[
+\frac34 J = 3L
+\]</p>
+<p>Multiplicando por 4:</p>
+<p>\[
+3J = 12L
+\]</p>
+<p>\[
+J = 4L
+\]</p>
+<h4>Condición sobre Luis y Ángel</h4>
+La mitad de lo que tiene Luis es la sexta parte de lo que tiene Ángel:
+<p>\[
+\frac12 L = \frac16 A
+\]</p>
+<p>Multiplicando por 6:</p>
+<p>\[
+3L = A
+\]</p>
+<h3>2. Sustituimos en la suma total</h3>
+<p>Como \(A = 3L\) y \(J = 4L\), en la primera ecuación:</p>
+<p>\[
+L + 3L + 4L = 400
+\]</p>
+<p>\[
+8L = 400
+\]</p>
+<p>\[
+L = 50
+\]</p>
+<p>Ahora calculamos las otras cantidades:</p>
+<p>\[
+A = 3L = 3\cdot 50 = 150
+\]</p>
+<p>\[
+J = 4L = 4\cdot 50 = 200
+\]</p>
+<h3>3. Comprobación</h3>
+<p>- Total:</p>
+<p>\[
+50 + 150 + 200 = 400
+\]</p>
+<p>- Si Josema pierde la cuarta parte:</p>
+<p>\[
+200 - \frac14(200) = 200 - 50 = 150
+\]</p>
+<p>Y el triple de Luis es:</p>
+<p>\[
+3\cdot 50 = 150
+\]</p>
+<p>- La mitad de Luis:</p>
+<p>\[
+\frac{50}{2} = 25
+\]</p>
+<p>La sexta parte de Ángel:</p>
+<p>\[
+\frac{150}{6} = 25
+\]</p>
+<p>Todo se cumple.</p>
+<h3>Solución</h3>
+<p>- <strong>Luis tiene 50 euros</strong><br>
+- <strong>Ángel tiene 150 euros</strong><br>
+- <strong>Josema tiene 200 euros</strong></p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_103.html">Anterior</a><a class="button" href="problema_105.html">Siguiente</a></nav>
+</main></body>
+</html>

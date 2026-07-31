@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 50: cataluna_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 50 de 139</h1>
+<div class="meta"><span class="badge">cataluna_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_049.html">Anterior</a><a class="button" href="problema_051.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>En el documento aparecen dos ejercicios 1, uno en cada serie:</p>
+<p><strong>Sèrie 1 — Exercici 1</strong></p>
+<p>1. Calculeu els coeficients a, b, c i d de la funció \(f(x) = ax^3 + bx^2 + cx + d\) si sabem que l’equació de la recta tangent a la gràfica de la funció \(f\) en el punt d’inflexió \((1, 0)\) és \(y = -3x + 3\) i que la funció té un extrem relatiu en el punt de la gràfica d’abscissa \(x = 0\).</p>
+<p>[2,5 punts]</p>
+<p>---</p>
+<p><strong>Sèrie 5 — Exercici 1</strong></p>
+<p>1. Considereu les funcions \(f(x) = -x^2 + x + 6\) i \(g(x) = -9x + 3x^2\).</p>
+<p>a) Calculeu l’àrea de la regió delimitada per les dues funcions.  <br>
+[1,25 punts]</p>
+<p>b) Trobeu l’equació de la recta tangent a la funció \(f(x)\) en el punt \((-2, 0)\). Representeu aquesta recta tangent i les funcions \(f(x)\) i \(g(x)\) en uns mateixos eixos de coordenades.  <br>
+[1,25 punts]</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>Hay dos “ejercicio 1” en el documento, uno de la <strong>Serie 1</strong> y otro de la <strong>Serie 5</strong>. Extraigo ambos.</p>
+<h3>Serie 1 — Ejercicio 1</h3>
+<p><strong>Resolución:</strong></p>
+<p>Si calculamos las funciones derivadas sucesivas tenemos:</p>
+<p>\[
+f&#x27;(x)=3ax^2+2bx+c,\qquad f&#x27;&#x27;(x)=6ax+2b
+\]</p>
+<p>Traduciendo las condiciones del enunciado:</p>
+<p>- \(f\) pasa por \((1,0)\):</p>
+<p>\[
+f(1)=0 \Rightarrow a+b+c+d=0
+\]</p>
+<p>- \((1,0)\) es un punto de inflexión:</p>
+<p>\[
+f&#x27;&#x27;(1)=0 \Rightarrow 6a+2b=0
+\]</p>
+<p>- El pendiente de la tangente en \(x=1\) es \(-3\):</p>
+<p>\[
+f&#x27;(1)=-3 \Rightarrow 3a+2b+c=-3
+\]</p>
+<p>- \(f\) tiene un extremo en \(x=0\):</p>
+<p>\[
+f&#x27;(0)=0 \Rightarrow c=0
+\]</p>
+<p>Resolviendo el sistema formado por estas ecuaciones, se obtiene:</p>
+<p>\[
+a=1,\qquad b=-3,\qquad c=0,\qquad d=2
+\]</p>
+<p>---</p>
+<h3>Serie 5 — Ejercicio 1</h3>
+<h4>a)</h4>
+<p>Puntos de corte:</p>
+<p>\[
+-x^2+x+6=-9x+3x^2
+\]</p>
+<p>\[
+4x^2-10x-6=0
+\]</p>
+<p>\[
+x=\frac{10\pm\sqrt{(-10)^2-4\cdot4\cdot(-6)}}{8}
+=\frac{10\pm14}{8}
+\]</p>
+<p>\[
+x=3,\qquad x=-\frac12
+\]</p>
+<p>Comprobamos la posición de las curvas: en \(\left(-\frac12,3\right)\), \(f(x)&gt;g(x)\).</p>
+<p>\[
+A=\int_{-1/2}^{3}(f(x)-g(x))\,dx
+\]</p>
+<p>\[
+A=\int_{-1/2}^{3}\left(-x^2+x+6-(-9x+3x^2)\right)\,dx
+\]</p>
+<p>\[
+A=\int_{-1/2}^{3}(-4x^2+10x+6)\,dx
+\]</p>
+<p>\[
+A=\left[-\frac43x^3+5x^2+6x\right]_{-1/2}^{3}
+\]</p>
+<p>\[
+A=27-\left(-\frac{19}{12}\right)=\frac{343}{12}\,u^2
+\]</p>
+<h4>b)</h4>
+<p>Calculamos la recta tangente a:</p>
+<p>\[
+f(x)=-x^2+x+6
+\]</p>
+<p>que pasa por el punto \((-2,0)\).</p>
+<p>El pendiente viene dado por la derivada:</p>
+<p>\[
+f&#x27;(x)=-2x+1
+\]</p>
+<p>\[
+f&#x27;(-2)=5
+\]</p>
+<p>La recta tangente será:</p>
+<p>\[
+y=5x+n
+\]</p>
+<p>Como pasa por \((-2,0)\):</p>
+<p>\[
+0=5(-2)+n \Rightarrow n=10
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+y=5x+10
+\]</p>
+<p>Para la representación gráfica:</p>
+<p>- La recta \(y=5x+10\) pasa por \((0,10)\) y \((-2,0)\).<br>
+- La gráfica de \(f\) es una parábola con ramas hacia abajo y vértice:</p>
+<p>\[
+\left(\frac12,\frac{27}{4}\right)
+\]</p>
+<p>Sus puntos de corte con el eje \(x\) son:</p>
+<p>\[
+(-2,0),\quad (3,0)
+\]</p>
+<p>- La gráfica de \(g(x)=-9x+3x^2\) es una parábola con ramas hacia arriba y vértice:</p>
+<p>\[
+\left(\frac32,-\frac{27}{4}\right)
+\]</p>
+<p>Sus puntos de corte con el eje \(x\) son:</p>
+<p>\[
+(0,0),\quad (3,0)
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Como en el documento hay <strong>dos “Ejercicio 1”</strong>, resuelvo <strong>ambos</strong>.</p>
+<p>---</p>
+<h2>Sèrie 1 — Exercici 1</h2>
+<p>Sea  <br>
+\[
+f(x)=ax^3+bx^2+cx+d.
+\]</p>
+<h3>1) Condiciones del enunciado</h3>
+<h4>a) Punto de inflexión en \((1,0)\)</h4>
+Esto implica:
+<p>- \(f(1)=0\)<br>
+- \(f&#x27;&#x27;(1)=0\)</p>
+<h4>b) La recta tangente en ese punto es \(y=-3x+3\)</h4>
+La pendiente de la tangente es \(-3\), luego:
+<p>- \(f&#x27;(1)=-3\)</p>
+<h4>c) Hay un extremo relativo en \(x=0\)</h4>
+Entonces:
+<p>- \(f&#x27;(0)=0\)</p>
+<p>---</p>
+<h3>2) Derivadas</h3>
+<p>\[
+f&#x27;(x)=3ax^2+2bx+c
+\]<br>
+\[
+f&#x27;&#x27;(x)=6ax+2b
+\]</p>
+<p>---</p>
+<h3>3) Ecuaciones</h3>
+<h4>De \(f&#x27;(0)=0\):</h4>
+\[
+c=0
+\]
+<h4>De \(f&#x27;&#x27;(1)=0\):</h4>
+\[
+6a+2b=0 \quad\Rightarrow\quad 3a+b=0
+\]
+<h4>De \(f&#x27;(1)=-3\):</h4>
+\[
+3a+2b+c=-3
+\]
+Como \(c=0\):
+\[
+3a+2b=-3
+\]
+<h4>De \(f(1)=0\):</h4>
+\[
+a+b+c+d=0
+\]
+Como \(c=0\):
+\[
+a+b+d=0
+\]
+<p>---</p>
+<h3>4) Resolución</h3>
+<p>De<br>
+\[
+3a+b=0 \Rightarrow b=-3a
+\]</p>
+<p>Sustituyendo en<br>
+\[
+3a+2b=-3
+\]<br>
+queda:<br>
+\[
+3a+2(-3a)=-3
+\]<br>
+\[
+-3a=-3
+\]<br>
+\[
+a=1
+\]</p>
+<p>Entonces:<br>
+\[
+b=-3
+\]</p>
+<p>Además:<br>
+\[
+c=0
+\]</p>
+<p>Y de<br>
+\[
+a+b+d=0
+\]<br>
+\[
+1-3+d=0
+\]<br>
+\[
+d=2
+\]</p>
+<p>---</p>
+<h3>5) Resultado</h3>
+<p>\[
+\boxed{a=1,\quad b=-3,\quad c=0,\quad d=2}
+\]</p>
+<p>Por tanto,<br>
+\[
+\boxed{f(x)=x^3-3x^2+2}
+\]</p>
+<p>Comprobación rápida:<br>
+\[
+f&#x27;(x)=3x^2-6x=3x(x-2), \quad f&#x27;(0)=0
+\]<br>
+\[
+f&#x27;&#x27;(x)=6x-6,\quad f&#x27;&#x27;(1)=0
+\]<br>
+y la tangente en \(x=1\) tiene pendiente<br>
+\[
+f&#x27;(1)=-3.
+\]</p>
+<p>---</p>
+<h2>Sèrie 5 — Exercici 1</h2>
+<p>Dadas:<br>
+\[
+f(x)=-x^2+x+6,\qquad g(x)=-9x+3x^2
+\]</p>
+<p>---</p>
+<h3>a) Área de la región delimitada por \(f\) y \(g\)</h3>
+<h4>1) Puntos de corte</h4>
+Igualamos:
+\[
+-x^2+x+6=-9x+3x^2
+\]
+\[
+-4x^2+10x+6=0
+\]
+\[
+2x^2-5x-3=0
+\]
+<p>Resolviendo:<br>
+\[
+x=\frac{5\pm\sqrt{25+24}}{4}=\frac{5\pm 7}{4}
+\]<br>
+\[
+x=3,\qquad x=-\frac12
+\]</p>
+<h4>2) Qué función va arriba</h4>
+Tomamos por ejemplo \(x=0\):
+\[
+f(0)=6,\qquad g(0)=0
+\]
+Luego, entre \(-\frac12\) y \(3\), se cumple:
+\[
+f(x)&gt;g(x)
+\]
+<h4>3) Integral del área</h4>
+\[
+A=\int_{-1/2}^{3}\bigl(f(x)-g(x)\bigr)\,dx
+\]
+\[
+A=\int_{-1/2}^{3}\left[(-x^2+x+6)-(-9x+3x^2)\right]dx
+\]
+\[
+A=\int_{-1/2}^{3}(-4x^2+10x+6)\,dx
+\]
+<p>Una primitiva es:<br>
+\[
+-\frac{4}{3}x^3+5x^2+6x
+\]</p>
+<p>Evaluamos:<br>
+\[
+A=\left[-\frac{4}{3}x^3+5x^2+6x\right]_{-1/2}^{3}
+\]</p>
+<p>En \(x=3\):<br>
+\[
+-\frac{4}{3}(27)+5(9)+18=-36+45+18=27
+\]</p>
+<p>En \(x=-\frac12\):<br>
+\[
+-\frac{4}{3}\left(-\frac18\right)+5\left(\frac14\right)+6\left(-\frac12\right)
+=\frac16+\frac54-3
+=-\frac{19}{12}
+\]</p>
+<p>Entonces:<br>
+\[
+A=27-\left(-\frac{19}{12}\right)
+=\frac{324}{12}+\frac{19}{12}
+=\frac{343}{12}
+\]</p>
+<h4>Resultado</h4>
+\[
+\boxed{A=\frac{343}{12}}
+\]
+<p>---</p>
+<h3>b) Recta tangente a \(f(x)\) en \((-2,0)\)</h3>
+<h4>1) Derivada de \(f\)</h4>
+\[
+f&#x27;(x)=-2x+1
+\]
+<h4>2) Pendiente en \(x=-2\)</h4>
+\[
+f&#x27;(-2)=-2(-2)+1=5
+\]
+<h4>3) Ecuación de la tangente</h4>
+Usamos la fórmula punto-pendiente con el punto \((-2,0)\):
+\[
+y-0=5(x+2)
+\]
+\[
+\boxed{y=5x+10}
+\]
+<p>---</p>
+<h3>4) Datos útiles para la representación</h3>
+<h4>Función \(f(x)=-x^2+x+6\)</h4>
+- Parábola cóncava hacia abajo.
+- Corta al eje \(x\) en:
+  \[
+  (-2,0)\quad \text{y}\quad (3,0)
+  \]
+- Corta al eje \(y\) en:
+  \[
+  (0,6)
+  \]
+<h4>Función \(g(x)=3x^2-9x\)</h4>
+- Parábola cóncava hacia arriba.
+- Corta al eje \(x\) en:
+  \[
+  (0,0)\quad \text{y}\quad (3,0)
+  \]
+<h4>Recta tangente</h4>
+\[
+\boxed{y=5x+10}
+\]
+- Pasa por \((-2,0)\)
+- Corta al eje \(y\) en \((0,10)\)
+<p>---</p>
+<p>Si quieres, también puedo dibujar un <strong>esquema de la gráfica</strong> en texto.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los problemas dados en los ejercicios que has proporcionado.</p>
+<h4><strong>Sèrie 1 — Exercici 1</strong></h4>
+<p>#### <strong>Planteamiento del Problema:</strong><br>
+Necesitamos encontrar los coeficientes \(a\), \(b\), \(c\) y \(d\) para la función \(f(x) = ax^3 + bx^2 + cx + d\) teniendo en cuenta que:<br>
+1. La recta tangente en el punto de inflexión \((1, 0)\) es \(y = -3x + 3\).<br>
+2. Hay un extremo relativo cuando \(x = 0\).</p>
+<p><strong>Solución:</strong></p>
+<p>1. <strong>Punto de inflexión y la recta tangente:</strong><br>
+   La recta tangente dada es \(y = -3x + 3\). En el punto de inflexión \((1, 0)\), la derivada primera \(f&#x27;(x)\) debe ser igual a la pendiente de la recta tangente y la derivada segunda \(f&#x27;&#x27;(x)\) debe ser igual a cero (condición de inflexión):<br>
+   \[
+   f&#x27;(x) = 3ax^2 + 2bx + c \quad \text{y} \quad f&#x27;&#x27;(x) = 6ax + 2b
+   \]<br>
+   En \(x = 1\):<br>
+   \[
+   f&#x27;(1) = 3a + 2b + c = -3 \quad \text{(de la pendiente de la recta tangente)}\\
+   f&#x27;&#x27;(1) = 6a + 2b = 0 \quad \text{(ya que es punto de inflexión)}
+   \]</p>
+<p>2. <strong>Condiciones en \(x = 0\):</strong><br>
+   Como hay un extremo relativo en \(x = 0\), y también se pasa por el punto \((0, d)\):<br>
+   \[
+   f(0) = d = 0 \quad \text{(ya que \(f(x)\) debe tener un extremo allí y pasa por el origen)}
+   \]<br>
+   Además:<br>
+   \[
+   f&#x27;(0) = c = 0 \quad \text{(derivada primera es cero en un extremo)}
+   \]</p>
+<p><strong>Resolviendo el sistema de ecuaciones:</strong></p>
+<p>De \(f&#x27;(0) = c = 0\):<br>
+- \(c = 0\)</p>
+<p>De \(f&#x27;&#x27;(1) = 6a + 2b = 0\):<br>
+- \(6a + 2b = 0\)<br>
+- \(b = -3a\)</p>
+<p>De \(f&#x27;(1)\):<br>
+- \(3a + 2b + c = -3\)<br>
+- Como \(b = -3a\) y \(c = 0\), entonces \(3a - 6a = -3\)<br>
+- \(-3a = -3 \rightarrow a = 1\)</p>
+<p>Reemplazando \(a = 1\) en \(b = -3a\):<br>
+- \(b = -3\)</p>
+<p>Si finalmente:<br>
+- \(a = 1\)<br>
+- \(b = -3\)<br>
+- \(c = 0\)<br>
+- \(d = 0\)</p>
+<p><strong>La función queda:</strong><br>
+\[ f(x) = x^3 - 3x^2 \]</p>
+<p>---</p>
+<h4><strong>Sèrie 5 — Exercici 1</strong></h4>
+<p>Este ejercicio contiene dos partes, que incluyen tanto el cálculo de áreas como el de una línea tangente en un punto específico. Procederé a resolver estas en el próximo mensaje para poder mantener el enfoque y la claridad en las soluciones.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_049.html">Anterior</a><a class="button" href="problema_051.html">Siguiente</a></nav>
+</main></body>
+</html>

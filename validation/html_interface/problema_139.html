@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 139: rioja_2023 10</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 139 de 139</h1>
+<div class="meta"><span class="badge">rioja_2023</span> &nbsp; Ejercicio 10</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_138.html">Anterior</a></nav>
+<section class="card"><h2>Enunciado</h2><p>10.- (2 puntos) La edad media de un jugador de la NBA sigue una distribución normal de media 26 años y desviación típica 5 años. Si se elige un jugador al azar, halla:</p>
+<p>(i) La probabilidad de que su edad sea superior o igual a 31 años.  <br>
+(ii) La probabilidad de que su edad esté entre 21 y 31 años.</p>
+<p>(Véase la tabla simplificada de la normal tipificada que aparece al final del examen)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 10. Solución oficial</strong></p>
+<p>X = Edad de un jugador de la NBA.  <br>
+\(X = N(26, 5)\)</p>
+<p><strong>(i)</strong> Nos piden \(P(X \geq 31)\).</p>
+<p>\[
+P(X \geq 31)=P\left(Z \geq \frac{31-26}{5}\right)=P(Z \geq 1)
+\]</p>
+<p>\[
+P(Z \geq 1)=1-P(Z \leq 1)=1-0.8413=0.1587
+\]</p>
+<p><strong>(ii)</strong> Nos piden \(P(21 \leq X \leq 31)\).</p>
+<p>\[
+P(21 \leq X \leq 31)
+=
+P\left(\frac{21-26}{5} \leq Z \leq \frac{31-26}{5}\right)
+=
+P(-1 \leq Z \leq 1)
+\]</p>
+<p>\[
+P(-1 \leq Z \leq 1)
+=
+P(Z \leq 1)-P(Z \leq -1)
+\]</p>
+<p>\[
+= P(Z \leq 1)-\left(1-P(Z \leq 1)\right)
+=2P(Z \leq 1)-1
+\]</p>
+<p>\[
+=2\cdot 0.8413-1=0.6826
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio, primero tenemos que utilizar los datos proporcionados sobre la edad media de los jugadores de la NBA, que sigue una distribución normal con una media (\(\mu\)) de 26 años y una desviación estándar (\(\sigma\)) de 5 años.</p>
+<h4>(i) Probabilidad de que la edad sea superior o igual a 31 años</h4>
+<p>Para encontrar la probabilidad de que un jugador seleccionado al azar tenga una edad superior o igual a 31 años, debemos estandarizar esta edad al transformarla en una variable \( Z \) de la distribución normal estándar (media 0 y desviación estándar 1). Esto se hace utilizando la fórmula:<br>
+\[
+Z = \frac{X - \mu}{\sigma}
+\]<br>
+donde \( X \) es la edad del jugador. Sustituyendo los valores dados:<br>
+\[
+Z = \frac{31 - 26}{5} = 1
+\]<br>
+Ahora se trata de calcular la probabilidad de que \( Z \geq 1 \). Esta probabilidad se puede encontrar como:<br>
+\[
+P(Z \geq 1) = 1 - P(Z &lt; 1)
+\]<br>
+Usando tablas estandarizadas de la distribución normal (o software estadístico), podemos saber que \( P(Z &lt; 1) \) es aproximadamente 0.8413. Entonces, la probabilidad es:<br>
+\[
+P(Z \geq 1) = 1 - 0.8413 = 0.1587
+\]<br>
+Por lo tanto, la probabilidad de que la edad de un jugador seleccionado al azar sea igual o superior a 31 años es aproximadamente 0.1587 o 15.87%.</p>
+<h4>(ii) Probabilidad de que la edad esté entre 21 y 31 años</h4>
+<p>Para calcular la probabilidad de que la edad \( X \) esté entre 21 y 31 años, volvemos a utilizar la estandarización:<br>
+\[
+Z_{21} = \frac{21 - 26}{5} = -1
+\]<br>
+\[
+Z_{31} = \frac{31 - 26}{5} = 1
+\]<br>
+Buscamos ahora la probabilidad de que \( Z \) esté entre -1 y 1. Sabemos:<br>
+\[
+P(-1 \leq Z \leq 1) = P(Z &lt; 1) - P(Z &lt; -1)
+\]<br>
+De la tabla estándar o software estadístico sabemos que \( P(Z &lt; -1) \) también es aproximadamente 0.1587. Entonces, la probabilidad es:<br>
+\[
+P(-1 \leq Z \leq 1) = 0.8413 - 0.1587 = 0.6826
+\]<br>
+Por lo tanto, la probabilidad de que la edad de un jugador seleccionado al azar esté entre 21 y 31 años es aproximadamente 0.6826 o 68.26%.</p>
+<p>Esta metodología permite calcular las probabilidades requeridas utilizando la distribución normal estándar y la transformación de puntuaciones \( Z \). Asumimos la normalidad de la variable edad y usamos los parámetros proporcionados sin necesidad de datos adicionales.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea \(X\) la edad de un jugador de la NBA elegido al azar.</p>
+<p>Como sigue una distribución normal de media \(26\) y desviación típica \(5\), tenemos:</p>
+<p>\[
+X \sim N(26,5^2)
+\]</p>
+<p>Tipificamos con:</p>
+<p>\[
+Z=\frac{X-26}{5}\sim N(0,1)
+\]</p>
+<h3>(i) Probabilidad de que su edad sea superior o igual a 31 años</h3>
+<p>Queremos calcular:</p>
+<p>\[
+P(X\ge 31)
+\]</p>
+<p>Tipificando:</p>
+<p>\[
+P(X\ge 31)=P\left(\frac{X-26}{5}\ge \frac{31-26}{5}\right)=P(Z\ge 1)
+\]</p>
+<p>De la tabla de la normal tipificada:</p>
+<p>\[
+P(Z\le 1)=\Phi(1)\approx 0.8413
+\]</p>
+<p>Luego:</p>
+<p>\[
+P(Z\ge 1)=1-0.8413=0.1587
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(X\ge 31)\approx 0.1587}
+\]</p>
+<p>o bien, aproximadamente, <strong>15.87%</strong>.</p>
+<p>---</p>
+<h3>(ii) Probabilidad de que su edad esté entre 21 y 31 años</h3>
+<p>Queremos:</p>
+<p>\[
+P(21\le X\le 31)
+\]</p>
+<p>Tipificando los dos extremos:</p>
+<p>\[
+P\left(\frac{21-26}{5}\le Z\le \frac{31-26}{5}\right)
+=
+P(-1\le Z\le 1)
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(-1\le Z\le 1)=\Phi(1)-\Phi(-1)
+\]</p>
+<p>Como \(\Phi(1)\approx 0.8413\) y \(\Phi(-1)\approx 0.1587\), resulta:</p>
+<p>\[
+P(-1\le Z\le 1)=0.8413-0.1587=0.6826
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(21\le X\le 31)\approx 0.6826}
+\]</p>
+<p>o bien, aproximadamente, <strong>68.26%</strong>.</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>- <strong>(i)</strong> \(\boxed{0.1587}\)<br>
+- <strong>(ii)</strong> \(\boxed{0.6826}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_138.html">Anterior</a></nav>
+</main></body>
+</html>

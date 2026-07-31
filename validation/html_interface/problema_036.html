@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 36: canarias_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 36 de 139</h1>
+<div class="meta"><span class="badge">canarias_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_035.html">Anterior</a><a class="button" href="problema_037.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p><strong>Bloque 2.- Álgebra (seleccione solo una pregunta)</strong></p>
+<p><strong>2A.</strong> Dado el siguiente sistema de ecuaciones:</p>
+<p>\[
+\begin{cases}
+-x+ky+2z=k\\
+2x+ky-z=2\\
+kx-y+2z=k
+\end{cases}
+\]</p>
+<p>a) Discutir la compatibilidad del sistema según los diversos valores de \(k\).  <br>
+b) Resolver el sistema para \(k=2\).</p>
+<p><strong>2B.</strong> Resolver la ecuación matricial:</p>
+<p>\[
+AX+B^t=A^2
+\]</p>
+<p>siendo:</p>
+<p>\[
+A=
+\begin{pmatrix}
+1&amp;0&amp;0\\
+0&amp;0&amp;1\\
+1&amp;1&amp;0
+\end{pmatrix}
+\quad \text{y} \quad
+B=
+\begin{pmatrix}
+-3&amp;2&amp;1\\
+0&amp;-1&amp;1\\
+1&amp;1&amp;-1
+\end{pmatrix}
+\]</p></section>
+<section class="card"><h2>Solucion oficial</h2><h3>Ejercicio 2A</h3>
+<p>Dado el sistema:<br>
+\[
+\begin{cases}
+-x+ky+2z=k\\
+2x+ky-z=2\\
+kx-y+2z=k
+\end{cases}
+\]</p>
+<h4>a) Discutir la compatibilidad del sistema según los diversos valores de \(k\)</h4>
+<p>Definimos la matriz del sistema:<br>
+\[
+A=
+\begin{pmatrix}
+-1 &amp; k &amp; 2\\
+2 &amp; k &amp; -1\\
+k &amp; -1 &amp; 2
+\end{pmatrix}
+\]<br>
+y la matriz ampliada:<br>
+\[
+T=
+\left(
+\begin{array}{ccc|c}
+-1 &amp; k &amp; 2 &amp; k\\
+2 &amp; k &amp; -1 &amp; 2\\
+k &amp; -1 &amp; 2 &amp; k
+\end{array}
+\right)
+\]</p>
+<p>Estudiamos el rango de \(A\). Para ello calculamos:<br>
+\[
+|A|=
+\begin{vmatrix}
+-1 &amp; k &amp; 2\\
+2 &amp; k &amp; -1\\
+k &amp; -1 &amp; 2
+\end{vmatrix}
+=
+-2k-4-k^2-2k^2+1-4k
+=
+-3k^2-6k-3=0
+\]</p>
+<p>\[
+k=-1
+\]</p>
+<p>Por tanto:</p>
+<p>- Si \(k\neq -1\), \(|A|\neq 0\), luego:<br>
+\[
+\operatorname{rang}(A)=\operatorname{rang}(T)=3
+\]<br>
+Número de incógnitas \(=3\).</p>
+<p>Aplicando el teorema de Rouché-Frobenius, el sistema es un <strong>SCD con solución única</strong>.</p>
+<p>- Si \(k=-1\), \(|A|=0\). Entonces:<br>
+\[
+A=
+\begin{pmatrix}
+-1 &amp; -1 &amp; 2\\
+2 &amp; -1 &amp; -1\\
+-1 &amp; -1 &amp; 2
+\end{pmatrix}
+\]<br>
+y<br>
+\[
+T=
+\left(
+\begin{array}{ccc|c}
+-1 &amp; -1 &amp; 2 &amp; -1\\
+2 &amp; -1 &amp; -1 &amp; 2\\
+-1 &amp; -1 &amp; 2 &amp; -1
+\end{array}
+\right)
+\]</p>
+<p>El rango de \(A\) es 2, pues el menor de orden 2:<br>
+\[
+\begin{vmatrix}
+-1 &amp; -1\\
+2 &amp; -1
+\end{vmatrix}
+=1+2\neq 0
+\]</p>
+<p>Estudiamos el rango de \(T\). Como la 1ª y 3ª filas son iguales:<br>
+\[
+\operatorname{rang}(T)=2
+\]</p>
+<p>Tenemos en este caso:<br>
+\[
+\operatorname{rang}(A)=\operatorname{rang}(T)=2
+\]<br>
+Número de incógnitas \(=3\).</p>
+<p>Aplicando el teorema de Rouché-Frobenius, el sistema es un <strong>SCI con infinitas soluciones</strong>.</p>
+<p>---</p>
+<h4>b) Resolver el sistema para \(k=2\)</h4>
+<p>Si \(k=2\), el sistema es un SCD con:</p>
+<p>\[
+A=
+\begin{pmatrix}
+-1 &amp; 2 &amp; 2\\
+2 &amp; 2 &amp; -1\\
+2 &amp; -1 &amp; 2
+\end{pmatrix}
+\]<br>
+y<br>
+\[
+T=
+\left(
+\begin{array}{ccc|c}
+-1 &amp; 2 &amp; 2 &amp; 2\\
+2 &amp; 2 &amp; -1 &amp; 2\\
+2 &amp; -1 &amp; 2 &amp; 2
+\end{array}
+\right)
+\]</p>
+<p>Aplicamos la regla de Cramer:</p>
+<p>\[
+|A|=
+\begin{vmatrix}
+-1 &amp; 2 &amp; 2\\
+2 &amp; 2 &amp; -1\\
+2 &amp; -1 &amp; 2
+\end{vmatrix}
+=-27
+\]</p>
+<p>\[
+x=
+\frac{
+\begin{vmatrix}
+2 &amp; 2 &amp; 2\\
+2 &amp; 2 &amp; -1\\
+2 &amp; -1 &amp; 2
+\end{vmatrix}
+}{|A|}
+=
+\frac{-18}{-27}
+=
+\frac{2}{3}
+\]</p>
+<p>\[
+y=
+\frac{
+\begin{vmatrix}
+-1 &amp; 2 &amp; 2\\
+2 &amp; 2 &amp; -1\\
+2 &amp; 2 &amp; 2
+\end{vmatrix}
+}{|A|}
+=
+\frac{-18}{-27}
+=
+\frac{2}{3}
+\]</p>
+<p>\[
+z=
+\frac{
+\begin{vmatrix}
+-1 &amp; 2 &amp; 2\\
+2 &amp; 2 &amp; 2\\
+2 &amp; -1 &amp; 2
+\end{vmatrix}
+}{|A|}
+=
+\frac{-18}{-27}
+=
+\frac{2}{3}
+\]</p>
+<p>La solución del sistema es:<br>
+\[
+(x,y,z)=\left(\frac{2}{3},\frac{2}{3},\frac{2}{3}\right)
+\]</p>
+<p>---</p>
+<h3>Ejercicio 2B</h3>
+<p>Resolver la ecuación matricial:<br>
+\[
+AX+B^t=A^2
+\]<br>
+siendo:<br>
+\[
+A=
+\begin{pmatrix}
+0 &amp; 1 &amp; 1\\
+1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]<br>
+y<br>
+\[
+B=
+\begin{pmatrix}
+1 &amp; -1 &amp; 1\\
+1 &amp; -1 &amp; 0\\
+-1 &amp; 2 &amp; 3
+\end{pmatrix}
+\]</p>
+<h4>Solución</h4>
+<p>Resolvemos la ecuación:<br>
+\[
+AX+B^t=A^2
+\]<br>
+\[
+AX=A^2-B^t
+\]<br>
+\[
+X=A^{-1}(A^2-B^t)
+\]</p>
+<p>En primer lugar, hallaremos la matriz inversa de \(A\), la matriz cuadrada de \(A\) y la traspuesta de \(B\):</p>
+<p>\[
+A^{-1}=
+\begin{pmatrix}
+0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>\[
+A^2=
+\begin{pmatrix}
+1 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>\[
+B^t=
+\begin{pmatrix}
+1 &amp; 1 &amp; -1\\
+-1 &amp; -1 &amp; 2\\
+1 &amp; 0 &amp; 3
+\end{pmatrix}
+\]</p>
+<p>Resolvemos:<br>
+\[
+X=A^{-1}(A^2-B^t)
+\]</p>
+<p>\[
+X=
+\begin{pmatrix}
+0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\left[
+\begin{pmatrix}
+1 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+-
+\begin{pmatrix}
+1 &amp; 1 &amp; -1\\
+-1 &amp; -1 &amp; 2\\
+1 &amp; 0 &amp; 3
+\end{pmatrix}
+\right]
+\]</p>
+<p>\[
+X=
+\begin{pmatrix}
+0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+0 &amp; -1 &amp; 2\\
+1 &amp; 2 &amp; -1\\
+-1 &amp; 0 &amp; -2
+\end{pmatrix}
+\]</p>
+<p>\[
+X=
+\begin{pmatrix}
+1 &amp; 2 &amp; -1\\
+1 &amp; -1 &amp; 4\\
+-1 &amp; 0 &amp; -2
+\end{pmatrix}
+\]</p>
+<p>Por tanto:<br>
+\[
+X=
+\begin{pmatrix}
+1 &amp; 2 &amp; -1\\
+1 &amp; -1 &amp; 4\\
+-1 &amp; 0 &amp; -2
+\end{pmatrix}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 2, que contiene dos subpreguntas (2A y 2B), primero me centraré en la primera sección, el apartado <strong>2A</strong> que conforma un sistema de ecuaciones parametrizado por \( k \).</p>
+<h4><strong>2A. Sistema de ecuaciones</strong>:</h4>
+<p>El sistema dado es:</p>
+<p>\[
+\begin{cases}
+-x + ky + 2z = k \\
+2x + ky - z = 2 \\
+kx - y + 2z = k
+\end{cases}
+\]</p>
+<p>#### <strong>a) Discusión de la compatibilidad del sistema según los diversos valores de \( k \)</strong></p>
+<p>Para discutir la compatibilidad, procedemos a escribir la matriz aumentada del sistema e intentamos llevarla a su forma escalonada para encontrar las condiciones en \( k \) que afectan la solución:</p>
+<p>1. <strong>Construcción de la Matriz Aumentada</strong>:<br>
+   \[
+   \begin{pmatrix}
+   -1 &amp; k &amp; 2 &amp; | &amp; k \\
+   2 &amp; k &amp; -1 &amp; | &amp; 2 \\
+   k &amp; -1 &amp; 2 &amp; | &amp; k
+   \end{pmatrix}
+   \]</p>
+<p>2. <strong>Primera transformación (Eliminación de Gauss)</strong>:<br>
+    - Objetivo: Crear ceros debajo del elemento -1 en la primera columna.<br>
+    - Operar: Sumemos dos veces la primera fila a la segunda.<br>
+    - Resultado: <br>
+      \[
+      \begin{pmatrix}
+      -1 &amp; k &amp; 2 &amp; | &amp; k \\
+      0 &amp; k+2k &amp; -1+2*2 &amp; | &amp; k+2*2 \\
+      k &amp; -1 &amp; 2 &amp; | &amp; k
+      \end{pmatrix}
+      \]</p>
+<p>- También afinemos la tercera fila si fuera necesario.</p>
+<p>3. <strong>Segunda transformación</strong>:<br>
+    - Simplificamos la segunda fila dividiendo por el coeficiente relevante y seguimos operando para reducir la segunda y tercera fila.</p>
+<p>4. <strong>Determinación de condiciones de \( k \)</strong>:<br>
+    - Debemos observar los momentos en que operaciones sobre \( k \) podrían llevar a división por cero o inconsistencias (como \( 0 = 1 \)).</p>
+<p>#### <strong>b) Resolución del sistema para \(k = 2\)</strong>:</p>
+<p>Para \( k = 2 \), sustituimos y repetimos el proceso de escalonamiento:<br>
+- Matriz para \( k = 2 \):<br>
+  \[
+  \begin{pmatrix}
+  -1 &amp; 2 &amp; 2 &amp; | &amp; 2 \\
+  2 &amp; 2 &amp; -1 &amp; | &amp; 2 \\
+  2 &amp; -1 &amp; 2 &amp; | &amp; 2
+  \end{pmatrix}
+  \]</p>
+<p>- Procedemos con operaciones similares de eliminación de Gauss para encontrar soluciones específicas.</p>
+<h4><strong>2B. Ecuación Matricial</strong>:</h4>
+<p>La ecuación es:</p>
+<p>\[
+AX + B^t = A^2
+\]</p>
+<p>Dado:</p>
+<p>\[
+A=
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0
+\end{pmatrix},
+\quad 
+B=
+\begin{pmatrix}
+-3 &amp; 2 &amp; 1 \\
+0 &amp; -1 &amp; 1 \\
+1 &amp; 1 &amp; -1
+\end{pmatrix}
+\]</p>
+<p>1. <strong>Calcular \( B^t \) y \( A^2 \)</strong>:</p>
+<p>- \( B^t \) es la transposición de \( B \):<br>
+     \[
+     B^t =
+     \begin{pmatrix}
+     -3 &amp; 0 &amp; 1 \\
+     2 &amp; -1 &amp; 1 \\
+     1 &amp; 1 &amp; -1
+     \end{pmatrix}
+     \]</p>
+<p>- \( A^2 \) es el producto de \( A \) por sí misma.</p>
+<p>2. <strong>Despejar \( X \) en la ecuación original</strong>:<br>
+   \[
+   AX + B^t = A^2 \Rightarrow AX = A^2 - B^t
+   \]</p>
+<p>3. <strong>Solución usando la inversa de \( A \) si existe</strong>:<br>
+   - Calcular \( A^{-1} \) si \( A \) es invertible y luego calcular \( X = A^{-1}(A^2 - B^t) \).</p>
+<p>Procedo por partes con cada subpregunta; primero revisando la compatibilidad del sistema de ecuaciones en <strong>2A</strong> y resolviendo para \( k = 2 \), seguido por resolver la ecuación matricial en <strong>2B</strong>. Para esto, realizaré calculos y simplificaciones de álgebra matricial y sistemas de ecuaciones paso a paso.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Como en el <strong>Bloque 2</strong> hay dos opciones (<strong>2A</strong> y <strong>2B</strong>), resuelvo <strong>ambas</strong>.</p>
+<p>---</p>
+<h2>2A</h2>
+<p>\[
+\begin{cases}
+-x+ky+2z=k\\
+2x+ky-z=2\\
+kx-y+2z=k
+\end{cases}
+\]</p>
+<h3>a) Compatibilidad según \(k\)</h3>
+<p>La matriz de coeficientes es</p>
+<p>\[
+A=
+\begin{pmatrix}
+-1&amp;k&amp;2\\
+2&amp;k&amp;-1\\
+k&amp;-1&amp;2
+\end{pmatrix}
+\]</p>
+<p>Calculamos su determinante:</p>
+<p>\[
+\det(A)=
+\begin{vmatrix}
+-1&amp;k&amp;2\\
+2&amp;k&amp;-1\\
+k&amp;-1&amp;2
+\end{vmatrix}
+\]</p>
+<p>\[
+= -1(2k-1)-k(4+k)+2(-2-k^2)
+\]</p>
+<p>\[
+= -2k+1-4k-k^2-4-2k^2
+= -3k^2-6k-3
+= -3(k+1)^2
+\]</p>
+<h4>Caso 1: \(k\neq -1\)</h4>
+<p>\[
+\det(A)\neq 0
+\]</p>
+<p>Entonces el sistema es <strong>compatible determinado</strong>: tiene <strong>solución única</strong>.</p>
+<h4>Caso 2: \(k=-1\)</h4>
+<p>Sustituyendo:</p>
+<p>\[
+\begin{cases}
+-x-y+2z=-1\\
+2x-y-z=2\\
+-x-y+2z=-1
+\end{cases}
+\]</p>
+<p>La primera y la tercera ecuación son iguales, luego el rango de la matriz de coeficientes es \(2\).  <br>
+Además, el sistema es consistente, así que:</p>
+<p>- \(\operatorname{rg}(A)=2\)<br>
+- \(\operatorname{rg}(A^*)=2\)</p>
+<p>Por tanto, el sistema es <strong>compatible indeterminado</strong>: tiene <strong>infinitas soluciones</strong>.</p>
+<p>No hay ningún valor de \(k\) para el que sea incompatible.</p>
+<h4>Conclusión</h4>
+<p>- Si \(k\neq -1\): <strong>SCD</strong> (única solución).<br>
+- Si \(k=-1\): <strong>SCI</strong> (infinitas soluciones).</p>
+<p>---</p>
+<h3>b) Resolver para \(k=2\)</h3>
+<p>El sistema queda:</p>
+<p>\[
+\begin{cases}
+-x+2y+2z=2\\
+2x+2y-z=2\\
+2x-y+2z=2
+\end{cases}
+\]</p>
+<p>De la primera ecuación:</p>
+<p>\[
+x=2y+2z-2
+\]</p>
+<p>Sustituyendo en la segunda:</p>
+<p>\[
+2(2y+2z-2)+2y-z=2
+\]</p>
+<p>\[
+4y+4z-4+2y-z=2
+\]</p>
+<p>\[
+6y+3z=6
+\]</p>
+<p>\[
+2y+z=2
+\]</p>
+<p>Sustituyendo en la tercera:</p>
+<p>\[
+2(2y+2z-2)-y+2z=2
+\]</p>
+<p>\[
+4y+4z-4-y+2z=2
+\]</p>
+<p>\[
+3y+6z=6
+\]</p>
+<p>\[
+y+2z=2
+\]</p>
+<p>Resolvemos el sistema:</p>
+<p>\[
+\begin{cases}
+2y+z=2\\
+y+2z=2
+\end{cases}
+\]</p>
+<p>Multiplicando la segunda por 2:</p>
+<p>\[
+2y+4z=4
+\]</p>
+<p>Restando la primera:</p>
+<p>\[
+3z=2 \quad\Rightarrow\quad z=\frac23
+\]</p>
+<p>Entonces:</p>
+<p>\[
+y+2\cdot \frac23=2
+\quad\Rightarrow\quad
+y=\frac23
+\]</p>
+<p>Y finalmente:</p>
+<p>\[
+x=2\cdot\frac23+2\cdot\frac23-2=\frac23
+\]</p>
+<h4>Solución para \(k=2\)</h4>
+<p>\[
+\boxed{x=y=z=\frac23}
+\]</p>
+<p>---</p>
+<h2>2B</h2>
+<p>Resolver:</p>
+<p>\[
+AX+B^t=A^2
+\]</p>
+<p>con</p>
+<p>\[
+A=
+\begin{pmatrix}
+1&amp;0&amp;0\\
+0&amp;0&amp;1\\
+1&amp;1&amp;0
+\end{pmatrix},
+\qquad
+B=
+\begin{pmatrix}
+-3&amp;2&amp;1\\
+0&amp;-1&amp;1\\
+1&amp;1&amp;-1
+\end{pmatrix}
+\]</p>
+<h3>Paso 1: Despejar \(X\)</h3>
+<p>\[
+AX=A^2-B^t
+\]</p>
+<p>Si \(A\) es invertible, entonces:</p>
+<p>\[
+X=A^{-1}(A^2-B^t)
+\]</p>
+<p>---</p>
+<h3>Paso 2: Calcular \(A^2\)</h3>
+<p>\[
+A^2=A\cdot A=
+\begin{pmatrix}
+1&amp;0&amp;0\\
+0&amp;0&amp;1\\
+1&amp;1&amp;0
+\end{pmatrix}
+\begin{pmatrix}
+1&amp;0&amp;0\\
+0&amp;0&amp;1\\
+1&amp;1&amp;0
+\end{pmatrix}
+=
+\begin{pmatrix}
+1&amp;0&amp;0\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1
+\end{pmatrix}
+\]</p>
+<p>---</p>
+<h3>Paso 3: Calcular \(B^t\)</h3>
+<p>\[
+B^t=
+\begin{pmatrix}
+-3&amp;0&amp;1\\
+2&amp;-1&amp;1\\
+1&amp;1&amp;-1
+\end{pmatrix}
+\]</p>
+<p>---</p>
+<h3>Paso 4: Restar \(A^2-B^t\)</h3>
+<p>\[
+A^2-B^t=
+\begin{pmatrix}
+1&amp;0&amp;0\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1
+\end{pmatrix}
+-
+\begin{pmatrix}
+-3&amp;0&amp;1\\
+2&amp;-1&amp;1\\
+1&amp;1&amp;-1
+\end{pmatrix}
+=
+\begin{pmatrix}
+4&amp;0&amp;-1\\
+-1&amp;2&amp;-1\\
+0&amp;-1&amp;2
+\end{pmatrix}
+\]</p>
+<p>---</p>
+<h3>Paso 5: Calcular \(A^{-1}\)</h3>
+<p>Se obtiene:</p>
+<p>\[
+A^{-1}=
+\begin{pmatrix}
+1&amp;0&amp;0\\
+-1&amp;0&amp;1\\
+0&amp;1&amp;0
+\end{pmatrix}
+\]</p>
+<p>---</p>
+<h3>Paso 6: Hallar \(X\)</h3>
+<p>\[
+X=A^{-1}(A^2-B^t)
+\]</p>
+<p>\[
+X=
+\begin{pmatrix}
+1&amp;0&amp;0\\
+-1&amp;0&amp;1\\
+0&amp;1&amp;0
+\end{pmatrix}
+\begin{pmatrix}
+4&amp;0&amp;-1\\
+-1&amp;2&amp;-1\\
+0&amp;-1&amp;2
+\end{pmatrix}
+=
+\begin{pmatrix}
+4&amp;0&amp;-1\\
+-4&amp;-1&amp;3\\
+-1&amp;2&amp;-1
+\end{pmatrix}
+\]</p>
+<h4>Solución</h4>
+<p>\[
+\boxed{
+X=
+\begin{pmatrix}
+4&amp;0&amp;-1\\
+-4&amp;-1&amp;3\\
+-1&amp;2&amp;-1
+\end{pmatrix}}
+\]</p>
+<p>---</p>
+<p>Si quieres, puedo también darte la resolución <strong>solo de la opción 2A</strong> o <strong>solo de la 2B</strong> en formato más breve, tipo examen.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_035.html">Anterior</a><a class="button" href="problema_037.html">Siguiente</a></nav>
+</main></body>
+</html>

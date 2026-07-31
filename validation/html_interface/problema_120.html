@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 120: pais_vasco_2023 A1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 120 de 139</h1>
+<div class="meta"><span class="badge">pais_vasco_2023</span> &nbsp; Ejercicio A1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_119.html">Anterior</a><a class="button" href="problema_121.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio A1</p>
+<p>Se considera el sistema de ecuaciones lineales que sigue:</p>
+<p>\[
+\begin{cases}
+3x + y + z = 0,\\
+2x + y + z = 1,\\
+3x + y + z = -1.
+\end{cases}
+\]</p>
+<p>Discute su compatibilidad en función de los valores del parámetro.</p>
+<p>Resuelve el sistema para \(= 0\), si es posible.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio A1 — Solución oficial</strong></p>
+<p>Se considera el sistema de ecuaciones lineales:</p>
+<p>\[
+\begin{cases}
+3x+\lambda y+z=0\\
+2x+y+\lambda z=1\\
+3x+\lambda y+z=-1
+\end{cases}
+\]</p>
+<p>Discute su compatibilidad en función de los valores del parámetro \(\lambda\).  <br>
+Resuelve el sistema para \(\lambda=0\), si es posible.</p>
+<p>---</p>
+<h4>a)</h4>
+<p>La matriz de coeficientes y la matriz ampliada asociadas al sistema son:</p>
+<p>\[
+A=
+\begin{pmatrix}
+3 &amp; \lambda &amp; 1\\
+2 &amp; 1 &amp; \lambda\\
+3 &amp; \lambda &amp; 1
+\end{pmatrix},
+\qquad
+A/B=
+\begin{pmatrix}
+3 &amp; \lambda &amp; 1 &amp; 0\\
+2 &amp; 1 &amp; \lambda &amp; 1\\
+3 &amp; \lambda &amp; 1 &amp; -1
+\end{pmatrix}
+\]</p>
+<p>Averiguamos cuándo se anula el determinante de \(A\):</p>
+<p>\[
+|A|=\lambda^2-1
+\]</p>
+<p>\[
+|A|=0 \Rightarrow \lambda^2-1=0 \Rightarrow \lambda=\pm 1
+\]</p>
+<p>Nos planteamos tres situaciones diferentes:</p>
+<p>---</p>
+<h4>CASO 1. Si \(\lambda\neq -1\) y \(\lambda\neq 1\)</h4>
+<p>En este caso el determinante de \(A\) es no nulo y el rango de \(A\) es 3, al igual que el rango de \(A/B\) y el número de incógnitas.</p>
+<p>El sistema es <strong>compatible determinado</strong>: tiene una única solución.</p>
+<p>---</p>
+<h4>CASO 2. Si \(\lambda=-1\)</h4>
+<p>En este caso el determinante de \(A\) es nulo y el rango de \(A\) no es 3.</p>
+<p>Transformamos la matriz ampliada \(A/B\) mediante Gauss:</p>
+<p>\[
+A/B\sim
+\begin{pmatrix}
+3 &amp; -1 &amp; 1 &amp; 0\\
+0 &amp; 5 &amp; -5 &amp; 3\\
+0 &amp; 0 &amp; 0 &amp; 16
+\end{pmatrix}
+\]</p>
+<p>La matriz \(A\) tiene rango 2, pero la matriz \(A/B\) tiene rango 3.</p>
+<p>Los rangos son distintos y el sistema es <strong>incompatible</strong>, sin solución.</p>
+<p>---</p>
+<h4>CASO 3. Si \(\lambda=1\)</h4>
+<p>En este caso el determinante de \(A\) es nulo y el rango de \(A\) no es 3.</p>
+<p>Transformamos la matriz ampliada \(A/B\):</p>
+<p>\[
+A/B\sim
+\begin{pmatrix}
+3 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 3\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</p>
+<p>La matriz \(A\) tiene rango 2, al igual que la matriz \(A/B\), pero es menor que el número de incógnitas.</p>
+<p>El sistema es <strong>compatible indeterminado</strong>, con infinitas soluciones.</p>
+<p>---</p>
+<h4>Resumen</h4>
+<p>- Si \(\lambda\neq -1\) y \(\lambda\neq 1\), el sistema es <strong>compatible determinado</strong>.<br>
+- Si \(\lambda=-1\), el sistema es <strong>incompatible</strong>.<br>
+- Si \(\lambda=1\), el sistema es <strong>compatible indeterminado</strong>.</p>
+<p>---</p>
+<h4>b) Para \(\lambda=0\)</h4>
+<p>Para \(\lambda=0\), el sistema es compatible determinado. Lo resolvemos:</p>
+<p>\[
+\begin{cases}
+3x+z=0\\
+2x+y=1\\
+3x+z=-1
+\end{cases}
+\]</p>
+<p>La solución del sistema es:</p>
+<p>\[
+x=-2,\qquad y=6,\qquad z=5
+\]</p>
+<p>\[
+\boxed{(x,y,z)=(-2,6,5)}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio A1 y discutir la compatibilidad del sistema de ecuaciones lineales, primero examinamos las ecuaciones proporcionadas:</p>
+<p>1. \(3x + y + z = 0\),<br>
+2. \(2x + y + z = 1\),<br>
+3. \(3x + y + z = -1\).</p>
+<p>Empezamos por observar que la ecuación 1 y la ecuación 3 tienen el mismo término de la izquierda (\(3x+y+z\)), pero diferentes términos constantes en el lado derecho (0 y -1 respectivamente). Esto ya nos indica una incompatibilidad, pues es imposible que el mismo conjunto de valores para \(x\), \(y\), y \(z\) satisfaga ambas ecuaciones al mismo tiempo.</p>
+<p>Podemos verlo también de forma gráfica interpretando cada ecuación como una superficie en el espacio tridimensional. Las superficies definidas por las ecuaciones 1 y 3 son planos paralelos (ya que tienen los mismos coeficientes para \(x\), \(y\) y \(z\)), pero desplazados longitudinalmente a lo largo del eje perpendicular al plano en cuestión dado que sus términos constantes son diferentes. Por lo tanto, estos planos nunca se interceptan.</p>
+<p>Con esto, deducimos que el sistema es incompatible.</p>
+<p>Ahora, si even consideramos el requerimiento de resolver el sistema para \(z=0\), obtenemos las siguientes ecuaciones al sustituir \(z=0\):</p>
+<p>1. \(3x + y = 0\),<br>
+2. \(2x + y = 1\),<br>
+3. \(3x + y = -1\).</p>
+<p>Nuevamente, vemos que las ecuaciones 1 y 3 son incompatibles, ya que no puede ser que \(3x + y\) sea igual a 0 y -1 al mismo tiempo para la misma pareja de valores \(x\) y \(y\).</p>
+<p>Conclusión: el sistema es incompatible, sin importar los valores de \(z\), y no es posible encontrar una solución.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Tal como está transcrito el enunciado, <strong>no aparece ningún parámetro</strong> en el sistema.  <br>
+Por tanto, <strong>no se puede discutir “en función del parámetro”</strong> ni resolver “para \(=0\)” de forma más precisa, porque ese dato falta en el documento copiado.</p>
+<p>Sí podemos resolver <strong>el sistema que aparece escrito</strong>:</p>
+<p>\[
+\begin{cases}
+3x+y+z=0,\\
+2x+y+z=1,\\
+3x+y+z=-1.
+\end{cases}
+\]</p>
+<h3>1) Estudio de compatibilidad</h3>
+<p>Observa que la <strong>primera</strong> y la <strong>tercera</strong> ecuación tienen el mismo miembro izquierdo:</p>
+<p>\[
+3x+y+z
+\]</p>
+<p>pero distintos términos independientes:</p>
+<p>\[
+3x+y+z=0,\qquad 3x+y+z=-1.
+\]</p>
+<p>Si restamos ambas ecuaciones, obtenemos:</p>
+<p>\[
+0=-1,
+\]</p>
+<p>lo cual es una contradicción.</p>
+<h4>Conclusión</h4>
+El sistema es <strong>incompatible</strong>: <strong>no tiene solución</strong>.
+<p>---</p>
+<h3>2) Resolución del sistema</h3>
+<p>Como el sistema es incompatible, <strong>no existe ningún triple \((x,y,z)\)</strong> que satisfaga simultáneamente las tres ecuaciones.</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{\text{El sistema no tiene solución.}}
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>- Con el texto proporcionado, <strong>no hay parámetro visible</strong>, así que no puede hacerse un estudio “en función del parámetro”.<br>
+- El sistema escrito es <strong>incompatible</strong> porque las ecuaciones<br>
+  \[
+  3x+y+z=0 \quad \text{y} \quad 3x+y+z=-1
+  \]<br>
+  son contradictorias.<br>
+- En consecuencia, <strong>no se puede resolver</strong> porque <strong>no tiene solución</strong>.</p>
+<p>Si quieres, también puedo redactarlo en formato de examen, de forma más breve y formal.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_119.html">Anterior</a><a class="button" href="problema_121.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 56: cleon_2023 E1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 56 de 139</h1>
+<div class="meta"><span class="badge">cleon_2023</span> &nbsp; Ejercicio E1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_055.html">Anterior</a><a class="button" href="problema_057.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>E1.- (Álgebra)</p>
+<p>a) Obtener todas las soluciones del sistema  <br>
+\[
+\begin{cases}
+x + y + z = 1\\
+x + 2y - z = 3
+\end{cases}
+\]<br>
+(1 punto)</p>
+<p>b) Determinar todos los \(a, b \in \mathbb{R}\) para que \(x = 5,\ y = -2,\ z = -2\) sea solución del sistema  <br>
+\[
+\begin{cases}
+x + y + z = 1\\
+x + 2y - z = 3\\
+ax + 2ay + bz = b
+\end{cases}
+\]<br>
+Para cuáles de esos valores la solución del sistema es única? (1 punto)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>E1.- (Álgebra)</strong></p>
+<h4>a)</h4>
+<p>\[
+\begin{cases}
+x+y+z=1\\
+x+2y-z=3
+\end{cases}
+\]</p>
+<p>\[
+\begin{cases}
+x=1-y-z\\
+1-y-z+2y-z=3
+\end{cases}
+\Rightarrow y-2z=2 \Rightarrow y=2+2z
+\]</p>
+<p>\[
+x=1-(2+2z)-z=-1-3z
+\]</p>
+<p>Por tanto, todas las soluciones son:</p>
+<p>\[
+(x,y,z)=(-1-3z,\;2+2z,\;z), \quad z\in\mathbb{R}
+\]</p>
+<p>---</p>
+<h4>b)</h4>
+<p>Sustituimos los valores \(x=5,\ y=-2,\ z=-2\) en el sistema:</p>
+<p>\[
+\begin{cases}
+5-2-2=1\\
+5+2(-2)-(-2)=3\\
+5a+4a-2b=2b
+\end{cases}
+\]</p>
+<p>\[
+9a=4b \Rightarrow a=\frac{4b}{9}
+\]</p>
+<p>En el documento se obtiene:</p>
+<p>\[
+a=3b
+\]</p>
+<p>Los valores buscados son:</p>
+<p>\[
+a=3b,\quad b\in\mathbb{R}
+\]</p>
+<p>El sistema queda:</p>
+<p>\[
+\begin{cases}
+x+y+z=1\\
+x+2y-z=3\\
+bx+by+bz=b
+\end{cases}
+\]</p>
+<p>Estudiamos el rango de la matriz de coeficientes:</p>
+<p>\[
+A=
+\begin{pmatrix}
+1&amp;1&amp;1\\
+1&amp;2&amp;-1\\
+b&amp;b&amp;b
+\end{pmatrix}
+\]</p>
+<p>\[
+|A|=-4b
+\]</p>
+<p>Si \(b\neq 0\), el determinante de \(A\) es no nulo y su rango es 3, igual que el rango de la matriz ampliada y que el número de incógnitas. El sistema tiene una única solución.</p>
+<p>Si \(b=0\), entonces el rango de \(A\) es menor que 3 y la solución del sistema, si la hay, no es única.</p>
+<p>Por tanto, para que \(x=5,\ y=-2,\ z=-2\) sea solución del sistema y además sea su única solución debe ser:</p>
+<p>\[
+a=3b,\quad b\neq 0
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>\[
+\textbf{E1}
+\]</p>
+<h3>a) Todas las soluciones del sistema</h3>
+\[
+\begin{cases}
+x+y+z=1\\
+x+2y-z=3
+\end{cases}
+\]
+<p>Restamos la primera ecuación de la segunda:</p>
+<p>\[
+(x+2y-z)-(x+y+z)=3-1
+\]</p>
+<p>\[
+y-2z=2
+\]</p>
+<p>De aquí:</p>
+<p>\[
+y=2+2z
+\]</p>
+<p>Sustituyendo en \(x+y+z=1\):</p>
+<p>\[
+x+(2+2z)+z=1
+\]</p>
+<p>\[
+x+2+3z=1
+\]</p>
+<p>\[
+x=-1-3z
+\]</p>
+<p>Tomando \(z=t\in\mathbb R\), obtenemos:</p>
+<p>\[
+\boxed{
+x=-1-3t,\qquad y=2+2t,\qquad z=t
+\quad (t\in\mathbb R)
+}
+\]</p>
+<p>Por tanto, el conjunto de soluciones es</p>
+<p>\[
+\boxed{
+\{(-1-3t,\;2+2t,\;t)\;:\;t\in\mathbb R\}
+}
+\]</p>
+<p>---</p>
+<h3>b) Valores de \(a,b\) para que \((x,y,z)=(5,-2,-2)\) sea solución</h3>
+<p>El punto \((5,-2,-2)\) ya verifica las dos primeras ecuaciones:</p>
+<p>\[
+5+(-2)+(-2)=1,\qquad 5+2(-2)-(-2)=3
+\]</p>
+<p>Solo hay que imponer la tercera:</p>
+<p>\[
+ax+2ay+bz=b
+\]</p>
+<p>Sustituyendo \(x=5,\ y=-2,\ z=-2\):</p>
+<p>\[
+5a+2a(-2)+b(-2)=b
+\]</p>
+<p>\[
+5a-4a-2b=b
+\]</p>
+<p>\[
+a=3b
+\]</p>
+<p>Luego los valores buscados son exactamente:</p>
+<p>\[
+\boxed{a=3b}
+\]</p>
+<p>o, equivalentemente,</p>
+<p>\[
+\boxed{(a,b)=(3\lambda,\lambda),\ \lambda\in\mathbb R}
+\]</p>
+<p>---</p>
+<h3>¿Para cuáles de esos valores la solución es única?</h3>
+<p>Usamos la solución general del apartado a):</p>
+<p>\[
+x=-1-3t,\qquad y=2+2t,\qquad z=t
+\]</p>
+<p>Si \(a=3b\), la tercera ecuación queda:</p>
+<p>\[
+3bx+6by+bz=b
+\]</p>
+<p>\[
+b(3x+6y+z)=b
+\]</p>
+<h4>Caso 1: \(b=0\)</h4>
+Entonces \(a=0\), y la tercera ecuación es
+<p>\[
+0=0
+\]</p>
+<p>No añade ninguna condición, así que siguen habiendo infinitas soluciones.</p>
+<h4>Caso 2: \(b\neq 0\)</h4>
+Podemos dividir por \(b\):
+<p>\[
+3x+6y+z=1
+\]</p>
+<p>Sustituyendo la parametrización:</p>
+<p>\[
+3(-1-3t)+6(2+2t)+t=1
+\]</p>
+<p>\[
+-3-9t+12+12t+t=1
+\]</p>
+<p>\[
+9+4t=1
+\]</p>
+<p>\[
+4t=-8 \quad\Rightarrow\quad t=-2
+\]</p>
+<p>Esto determina un único valor de \(t\), y por tanto una única solución:</p>
+<p>\[
+x=-1-3(-2)=5,\qquad y=2+2(-2)=-2,\qquad z=-2
+\]</p>
+<p>Así pues, la solución es única exactamente cuando</p>
+<p>\[
+\boxed{b\neq 0 \text{ y } a=3b}
+\]</p>
+<p>equivalentemente,</p>
+<p>\[
+\boxed{(a,b)=(3\lambda,\lambda)\ \text{con}\ \lambda\neq 0}
+\]</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<p>- <strong>a)</strong>  <br>
+\[
+\boxed{(x,y,z)=(-1-3t,\ 2+2t,\ t),\quad t\in\mathbb R}
+\]</p>
+<p>- <strong>b)</strong>  <br>
+\[
+\boxed{a=3b}
+\]</p>
+<p>- <strong>La solución es única</strong> si y solo si  <br>
+\[
+\boxed{a=3b\ \text{y}\ b\neq 0}
+\]<br>
+(en ese caso, la única solución es \((5,-2,-2)\)).</p></section>
+<section class="card"><h2>Respuesta B</h2><p><strong>Solución:</strong></p>
+<h4>Parte a)</h4>
+<p><strong>Paso 1: Expresión de un sistema de ecuaciones</strong></p>
+<p>El sistema de ecuaciones dado es:<br>
+\[
+\begin{cases}
+x + y + z = 1\\
+x + 2y - z = 3
+\end{cases}
+\]</p>
+<p><strong>Paso 2: Despejar una de las variables</strong></p>
+<p>Podemos encontrar una relación entre \(y\) y \(z\) sumando las dos ecuaciones. Sumando ambas:</p>
+<p>\[
+(x + y + z) + (x + 2y - z) = 1 + 3
+\]<br>
+\[
+2x + 3y = 4
+\]<br>
+\[
+x = 2 - \frac{3}{2}y
+\]</p>
+<p><strong>Paso 3: Reemplazar \(x\) en las ecuaciones originales</strong></p>
+<p>Utilizando la ecuación \(x = 2 - \frac{3}{2}y\) en \(x + y + z = 1\), obtenemos:</p>
+<p>\[
+(2 - \frac{3}{2}y) + y + z = 1
+\]<br>
+\[
+2 - \frac{1}{2}y + z = 1
+\]<br>
+\[
+z = -1 + \frac{1}{2}y
+\]</p>
+<p>Así que el sistema tiene las soluciones en términos de \(y\):</p>
+<p>\[
+x = 2 - \frac{3}{2}y, \quad y = y, \quad z = -1 + \frac{1}{2}y
+\]</p>
+<p>Esto representa una línea en el espacio tridimensional, indicando infinidad de soluciones.</p>
+<h4>Parte b)</h4>
+<p><strong>Paso 1: Verificar si \(x = 5,\ y = -2,\ z = -2\) es solución y obtener \(a\) y \(b\)</strong></p>
+<p>Insertar estas soluciones en la tercera ecuación:<br>
+\[
+ax + 2ay + bz = b
+\]<br>
+\[
+5a - 4a - 2b = b
+\]<br>
+\[
+a - 2b = b
+\]<br>
+\[
+a = 3b
+\]</p>
+<p>Los valores \(a\) y \(b\) que son consistentes con \(x = 5, y = -2, z = -2\) son todos aquellos que cumplen \(a = 3b\).</p>
+<p><strong>Paso 2: Determinar unicidad de la solución</strong></p>
+<p>Las soluciones para las primeras dos ecuaciones son:<br>
+\[
+x = 2 - \frac{3}{2}y,\quad y = y, \quad z = -1 + \frac{1}{2}y
+\]</p>
+<p>Si sustituimos \(x\), \(y\), \(z\) en \(ax + 2ay + bz = b\), se debe cumplir:<br>
+\[
+(2-\frac{3}{2}y)3b + 2y3b + (-1 + \frac{1}{2}y)b = b
+\]<br>
+\[
+6b - \frac{9}{2}by + 6by - b + \frac{1}{2}by = b
+\]<br>
+\[
+11b + \frac{1}{2}by = b
+\]</p>
+<p>Para que los coeficientes de &quot;y&quot; se anulen y no se generen contradicciones, \(b\) debe ser cero, y en ese caso \(a = 0\) también. En este caso no hay solución única, ya que los valores de \(b\) y \(a\) deben satisfacer \(a = 3b\).</p>
+<p>La solución es única si \(b \neq 0\), es decir cuando \(a, b \neq 0\) bajo la condición \(a = 3b\). Esto asegura que el sistema solo tenga la solución original indicada \(x = 5,\ y = -2,\ z = -2\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_055.html">Anterior</a><a class="button" href="problema_057.html">Siguiente</a></nav>
+</main></body>
+</html>

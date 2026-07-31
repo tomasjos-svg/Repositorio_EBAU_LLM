@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 37: canarias_2023 3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 37 de 139</h1>
+<div class="meta"><span class="badge">canarias_2023</span> &nbsp; Ejercicio 3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_036.html">Anterior</a><a class="button" href="problema_038.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p><strong>Bloque 3.- Geometría (seleccione solo una pregunta)</strong></p>
+<p><strong>3A.</strong> En el espacio tridimensional tenemos el punto y la recta siguientes:</p>
+<p>\[
+P(1,-2,0);\quad r:\begin{cases}
+x-2y+z=0\\
+x-z=0
+\end{cases}
+\]</p>
+<p>a) Hallar la ecuación del plano tal que, la recta perpendicular al mismo y que pasa por el origen de coordenadas corta al plano buscado en el punto \(P\). Averiguar el ángulo que forma el plano encontrado con la recta \(r\).</p>
+<p>b) Hallar el punto de intersección de la recta \(r\) y</p>
+<p>\[
+s:\frac{x-5}{1}=\frac{y+1}{-2}=\frac{z-9}{3}
+\]</p>
+<p><strong>3B.</strong> En el espacio tridimensional tenemos las ecuaciones de las rectas siguientes:</p>
+<p>\[
+r:\begin{cases}
+8x+2y-3z+12=0\\
+-7x-y+3z=9
+\end{cases}
+\quad;\quad
+s: x=y+1=\frac{z-2}{2}
+\]</p>
+<p>a) Comprobar que \(r\) y \(s\) están contenidas en un mismo plano \(\pi\) y hallar la ecuación de dicho plano.</p>
+<p>b) Averiguar la ecuación de la recta que pasa por el punto \(P(0,-1,2)\) y corta perpendicularmente a la recta \(r\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><h3>Ejercicio 3A</h3>
+<p><strong>a)</strong> Llamemos \(t\) a la recta perpendicular al plano.  <br>
+\(P \in \pi\), \(O \notin \pi\) y \(P \in t\); además: \(\pi \perp t \Rightarrow \vec u_\pi \parallel \vec u_t\).</p>
+<p>El vector se extrae de:</p>
+<p>\[
+\overrightarrow{OP}=(1,-2,0) \Rightarrow \vec u_t=\vec u_\pi
+\]</p>
+<p>Ecuación del plano:</p>
+<p>\[
+x-2y+D=0
+\]</p>
+<p>Como el punto \(P \in \pi\):</p>
+<p>\[
+1-2(-2)+0+D=0
+\]</p>
+<p>\[
+5+D=0 \Rightarrow D=-5
+\]</p>
+<p>\[
+\pi: x-2y-5=0
+\]</p>
+<p>Ángulo que forma la recta \(r\) con el plano encontrado \(\pi\).</p>
+<p>Buscamos el vector director de \(r\):</p>
+<p>\[
+\vec u_r=
+\begin{vmatrix}
+\vec i &amp; \vec j &amp; \vec k\\
+1 &amp; -2 &amp; 1\\
+1 &amp; 0 &amp; -1
+\end{vmatrix}
+=2\vec i+2\vec j+2\vec k=(1,1,1)
+\]</p>
+<p>\[
+(r,\pi)=\arcsen \frac{|\vec u_r\cdot \vec u_\pi|}{|\vec u_r|\cdot |\vec u_\pi|}
+\]</p>
+<p>\[
+(r,\pi)=\arcsen \frac{|(1,1,1)(1,-2,0)|}{\sqrt3\cdot \sqrt5}
+\]</p>
+<p>\[
+=\arcsen \frac{1}{\sqrt{15}}=14{,}9632^\circ
+\]</p>
+<p>\[
+(r,\pi)=14{,}9632^\circ=14^\circ 57&#x27; 47{,}52&#x27;&#x27;
+\]</p>
+<p>---</p>
+<p><strong>b)</strong> La recta \(s\) en paramétrica será:</p>
+<p>\[
+s:
+\begin{cases}
+x=5+\lambda\\
+y=-1-2\lambda\\
+z=9+3\lambda
+\end{cases}
+,\quad \lambda\in\mathbb R
+\]</p>
+<p>Sustituimos los puntos de \(s\) en paramétricas en la recta \(r\):</p>
+<p>\[
+5+\lambda-2(-1-2\lambda)+9+3\lambda=0
+\]</p>
+<p>\[
+5+\lambda+2+4\lambda+9+3\lambda=16+8\lambda=0
+\]</p>
+<p>\[
+5+\lambda-9-3\lambda=-4-2\lambda=0
+\]</p>
+<p>\[
+\lambda=-2
+\]</p>
+<p>\[
+x=5+(-2)=3
+\]</p>
+<p>\[
+y=-1-2(-2)=3
+\]</p>
+<p>\[
+z=9+3(-2)=3
+\]</p>
+<p>Punto de corte:</p>
+<p>\[
+Q(3,3,3)
+\]</p>
+<p>---</p>
+<h3>Ejercicio 3B</h3>
+<p><strong>a)</strong> Para que \(r\) y \(s\) puedan estar contenidas en un mismo plano, deben ser paralelas, coincidentes o cortarse en un punto.</p>
+<p>\[
+\vec v_r=
+\begin{vmatrix}
+\vec i &amp; \vec j &amp; \vec k\\
+8 &amp; 2 &amp; -3\\
+-7 &amp; -1 &amp; 3
+\end{vmatrix}
+=(3,-3,6)=(1,-1,2)
+\]</p>
+<p>\[
+\vec v_s=(1,1,2)
+\]</p>
+<p>Como vemos:</p>
+<p>\[
+\frac{1}{1}\neq \frac{-1}{1}
+\]</p>
+<p>Por tanto, las rectas no son ni coincidentes ni paralelas.</p>
+<p>Veamos si se cortan:</p>
+<p>\[
+s:
+\begin{cases}
+x=\lambda\\
+y=-1+\lambda\\
+z=2+2\lambda
+\end{cases}
+\]</p>
+<p>\[
+r:
+\begin{cases}
+8\lambda+2(-1+\lambda)-3(2+2\lambda)+12=0\\
+-7\lambda-(-1+\lambda)+3(2+2\lambda)=9
+\end{cases}
+\]</p>
+<p>\[
+\lambda=-1
+\]</p>
+<p>Se intersectan en el punto:</p>
+<p>\[
+Q(-1,-2,0)
+\]</p>
+<p>Por tanto, están contenidas en un mismo plano.</p>
+<p>El plano que las contiene tiene como ecuación:</p>
+<p>\[
+\pi:
+\begin{vmatrix}
+x+1 &amp; y+2 &amp; z\\
+1 &amp; -1 &amp; 2\\
+1 &amp; 1 &amp; 2
+\end{vmatrix}
+= -4(x+1)+0(y+2)+2z=0
+\]</p>
+<p>\[
+\pi: 4x-2z+4=0
+\]</p>
+<p>\[
+\pi: 2x-z+2=0
+\]</p>
+<p>---</p>
+<p><strong>b)</strong> Construimos el plano que es perpendicular a \(r\) y que pasa por \(P\). Por tanto:</p>
+<p>\[
+\vec u_\pi=\vec v_r=(1,-1,2)
+\]</p>
+<p>\[
+\pi: x-y+2z+C=0
+\]</p>
+<p>Sustituimos \(P\) en la ecuación del plano:</p>
+<p>\[
+1+4+C=0 \Rightarrow C=-5
+\]</p>
+<p>\[
+\pi: x-y+2z-5=0
+\]</p>
+<p>Ahora calculamos la intersección del plano con la recta \(r\) y obtenemos un punto por donde va a pasar la recta perpendicular que estamos buscando.</p>
+<p>Pasamos la recta \(r\) a ecuación paramétrica:</p>
+<p>\[
+P_r=r\cap s=Q(-1,-2,0), \quad \vec v_r=(1,-1,2)
+\]</p>
+<p>\[
+r:
+\begin{cases}
+x=-1+\lambda\\
+y=-2-\lambda\\
+z=2\lambda
+\end{cases}
+,\quad \lambda\in\mathbb R
+\]</p>
+<p>Sustituyendo las coordenadas de los puntos de \(r\) en el plano \(\pi\), calculamos el punto de intersección:</p>
+<p>\[
+(-1-\lambda)+2+\lambda+2(2\lambda)-5=0
+\]</p>
+<p>\[
+\lambda=\frac{2}{3}
+\]</p>
+<p>\[
+R\left(-\frac13,-\frac83,\frac43\right)
+\]</p>
+<p>La recta \(t\) que buscamos es la recta que pasa por los puntos \(P\) y \(R\), entonces:</p>
+<p>\[
+\vec v_t=\overrightarrow{PR}
+=
+\left(-\frac13,-\frac83,\frac43\right)-(0,-1,2)
+\]</p>
+<p>\[
+=
+\left(-\frac13,-\frac53,-\frac23\right)\sim (1,5,2)
+\]</p>
+<p>\[
+t:(x,y,z)=(0,-1,2)+\lambda(1,5,2),\quad \lambda\in\mathbb R
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>El bloque dice “seleccione solo una pregunta”, pero para cubrir <strong>el ejercicio 3</strong> resuelvo <strong>3A y 3B</strong>.</p>
+<p>---</p>
+<h3>3A</h3>
+<p>Dado<br>
+\[
+P(1,-2,0),\qquad 
+r:\begin{cases}
+x-2y+z=0\\
+x-z=0
+\end{cases}
+\]</p>
+<h4>a) Plano pedido y ángulo con \(r\)</h4>
+<p>La recta perpendicular al plano y que pasa por el origen corta al plano en \(P\).  <br>
+Por tanto, el vector<br>
+\[
+\overrightarrow{OP}=(1,-2,0)
+\]<br>
+es <strong>normal</strong> al plano buscado.</p>
+<p>Así, la ecuación del plano que pasa por \(P\) es:<br>
+\[
+(1,-2,0)\cdot \bigl((x,y,z)-(1,-2,0)\bigr)=0
+\]<br>
+\[
+(x-1)-2(y+2)=0
+\]<br>
+\[
+\boxed{x-2y-5=0}
+\]</p>
+<p>#### Ángulo entre el plano y la recta \(r\)</p>
+<p>Primero hallamos un vector director de \(r\).</p>
+<p>De \(x-z=0\) se obtiene \(x=z\).  <br>
+Sustituyendo en \(x-2y+z=0\):<br>
+\[
+x-2y+x=0 \;\Rightarrow\; 2x-2y=0 \;\Rightarrow\; x=y
+\]<br>
+Luego<br>
+\[
+r:\ (x,y,z)=(t,t,t)
+\]<br>
+y un vector director es<br>
+\[
+\vec v_r=(1,1,1)
+\]</p>
+<p>El vector normal del plano es<br>
+\[
+\vec n=(1,-2,0)
+\]</p>
+<p>Si \(\alpha\) es el ángulo entre la recta y el plano,<br>
+\[
+\sin\alpha=\frac{|\vec n\cdot \vec v_r|}{\|\vec n\|\,\|\vec v_r\|}
+\]<br>
+\[
+\sin\alpha=\frac{|1-2+0|}{\sqrt5\,\sqrt3}=\frac1{\sqrt{15}}
+\]<br>
+\[
+\boxed{\alpha=\arcsin\!\left(\frac1{\sqrt{15}}\right)\approx 14.96^\circ}
+\]</p>
+<p>---</p>
+<h4>b) Intersección de \(r\) y \(s\)</h4>
+<p>La recta \(s\) es<br>
+\[
+\frac{x-5}{1}=\frac{y+1}{-2}=\frac{z-9}{3}=\lambda
+\]<br>
+por tanto<br>
+\[
+s:\begin{cases}
+x=5+\lambda\\
+y=-1-2\lambda\\
+z=9+3\lambda
+\end{cases}
+\]</p>
+<p>Como \(r:(t,t,t)\), igualamos:<br>
+\[
+t=5+\lambda,\qquad t=-1-2\lambda,\qquad t=9+3\lambda
+\]</p>
+<p>De las dos primeras:<br>
+\[
+5+\lambda=-1-2\lambda \Rightarrow 3\lambda=-6 \Rightarrow \lambda=-2
+\]<br>
+Entonces<br>
+\[
+t=5-2=3
+\]</p>
+<p>Punto de intersección:<br>
+\[
+\boxed{(3,3,3)}
+\]</p>
+<p>---</p>
+<h3>3B</h3>
+<p>Dadas<br>
+\[
+r:\begin{cases}
+8x+2y-3z+12=0\\
+-7x-y+3z=9
+\end{cases}
+\qquad;\qquad
+s:\ x=y+1=\frac{z-2}{2}
+\]</p>
+<h4>a) Comprobar que están en un mismo plano y hallar dicho plano</h4>
+<p>#### Parametrización de \(r\)</p>
+<p>Tomamos \(x=t\). Entonces:<br>
+\[
+8t+2y-3z=-12,\qquad -7t-y+3z=9
+\]</p>
+<p>Sumando adecuadamente, resulta:<br>
+\[
+z=2+2t,\qquad y=-t-3
+\]</p>
+<p>Así,<br>
+\[
+r:\ (x,y,z)=(t,-t-3,2+2t)
+\]<br>
+con vector director<br>
+\[
+\vec u=(1,-1,2)
+\]</p>
+<p>#### Parametrización de \(s\)</p>
+<p>Sea<br>
+\[
+x=y+1=\frac{z-2}{2}=\lambda
+\]<br>
+Entonces<br>
+\[
+s:\ (x,y,z)=(\lambda,\lambda-1,2\lambda+2)
+\]<br>
+con vector director<br>
+\[
+\vec v=(1,1,2)
+\]</p>
+<p>#### Comprobación de que son coplanarias</p>
+<p>Buscamos si se cortan:<br>
+\[
+(t,-t-3,2+2t)=(\lambda,\lambda-1,2\lambda+2)
+\]</p>
+<p>De \(x\):<br>
+\[
+t=\lambda
+\]<br>
+De \(y\):<br>
+\[
+-t-3=t-1 \Rightarrow -2t=2 \Rightarrow t=-1
+\]<br>
+Luego \(\lambda=-1\), y el punto común es<br>
+\[
+Q=(-1,-2,0)
+\]</p>
+<p>Como se cortan, están en un mismo plano.</p>
+<p>#### Ecuación del plano \(\pi\)</p>
+<p>Un vector normal del plano es<br>
+\[
+\vec n=\vec u\times \vec v=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+1 &amp; -1 &amp; 2\\
+1 &amp; 1 &amp; 2
+\end{vmatrix}
+=(-4,0,2)
+\]<br>
+Podemos tomar<br>
+\[
+\vec n=(2,0,-1)
+\]</p>
+<p>Plano por \(Q(-1,-2,0)\):<br>
+\[
+(2,0,-1)\cdot\bigl((x,y,z)-(-1,-2,0)\bigr)=0
+\]<br>
+\[
+2(x+1)-z=0
+\]<br>
+\[
+\boxed{2x-z+2=0}
+\]</p>
+<p>---</p>
+<h4>b) Recta que pasa por \(P(0,-1,2)\) y corta perpendicularmente a \(r\)</h4>
+<p>Observamos que \(P=(0,-1,2)\) pertenece a \(s\), luego \(P\in\pi\).</p>
+<p>La recta buscada debe:</p>
+<p>- pasar por \(P\),<br>
+- estar en el plano \(\pi\),<br>
+- ser perpendicular a \(r\).</p>
+<p>Si su vector director es \(\vec w=(a,b,c)\), debe cumplir:</p>
+<p>1. \(\vec w\perp \vec u=(1,-1,2)\):<br>
+\[
+a-b+2c=0
+\]</p>
+<p>2. \(\vec w\) está en \(\pi\), luego \(\vec w\perp \vec n=(2,0,-1)\):<br>
+\[
+2a-c=0
+\]</p>
+<p>De \(2a-c=0\), \(c=2a\).  <br>
+Sustituyendo:<br>
+\[
+a-b+4a=0 \Rightarrow 5a-b=0 \Rightarrow b=5a
+\]</p>
+<p>Tomando \(a=1\):<br>
+\[
+\vec w=(1,5,2)
+\]</p>
+<p>Por tanto, la recta pedida es<br>
+\[
+\boxed{(x,y,z)=(0,-1,2)+\mu(1,5,2)}
+\]<br>
+o bien<br>
+\[
+\boxed{\begin{cases}
+x=\mu\\
+y=-1+5\mu\\
+z=2+2\mu
+\end{cases}}
+\]</p>
+<p>---</p>
+<p>Si quieres, puedo dejarte ahora <strong>solo una de las dos opciones (3A o 3B) redactada como solución de examen</strong>.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el ejercicio 3A del bloque geometría:</p>
+<h4>Parte (a)</h4>
+<p><strong>Datos:</strong><br>
+- Punto \(P(1, -2, 0)\)<br>
+- Recta \(r\) definida por el sistema:<br>
+  \[ 
+  \begin{cases} 
+  x-2y+z=0 \\ 
+  x-z=0 
+  \end{cases} 
+  \]</p>
+<p><strong>Pregunta a resolver:</strong><br>
+- Necesitamos hallar la ecuación del plano que cumple que la recta perpendicular al mismo pasa por el origen \(O(0,0,0)\) y corta a este plano en \(P\).</p>
+<p><strong>Solución:</strong></p>
+<p>1. <strong>Determinar la dirección de \(r\):</strong><br>
+   Dado que \(x = z\), sustituimos \(z\) en la primera ecuación:<br>
+   \[ 
+   x - 2y + x = 0 \implies 2x - 2y = 0 \implies x = y 
+   \]<br>
+   Entonces la recta \(r\) se puede parametrizar como:<br>
+   \[ x = t, \; y = t, \; z = t \]<br>
+   En forma vectorial, la dirección de \(r\) es \( \vec{d} = (1, 1, 1) \).</p>
+<p>2. <strong>Hallar la ecuación del plano que pasa por \(P\) de manera que una recta normal al plano pase por el origen y también por \(P\):</strong><br>
+   Si el plano es normal a la recta que pasa por el origen y el punto \(P\), el vector director de esa recta también será un vector normal al plano. El vector que va del origen a \(P\) es:<br>
+   \[ \vec{OP} = (1 - 0, -2 - 0, 0 - 0) = (1, -2, 0) \]<br>
+   Usando este vector normal, la ecuación del plano es:<br>
+   \[ 1(x - 1) - 2(y + 2) + 0(z - 0) = 0 \]<br>
+   \[ x - 1 - 2y - 4 = 0 \]<br>
+   \[ x - 2y = 5 \]<br>
+   Esta es la ecuación del plano.</p>
+<p>3. <strong>Calcular el ángulo entre la recta \(r\) y el plano:</strong><br>
+   Usando el vector director de \(r\) \(\vec{d} = (1, 1, 1)\) y el vector normal del plano \(\vec{n} = (1, -2, 0)\), el ángulo \(\theta\) entre la recta y el plano se puede encontrar con la fórmula del coseno:<br>
+   \[
+   \cos \theta = \frac{|\vec{d} \cdot \vec{n}|}{|\vec{d}||\vec{n}|}
+   = \frac{|1 \cdot 1 + 1 \cdot (-2) + 1 \cdot 0|}{\sqrt{1^2 + 1^2 + 1^2}\sqrt{1^2 + (-2)^2 + 0^2}}
+   = \frac{|-1|}{\sqrt{3} \cdot \sqrt{5}}
+   = \frac{1}{\sqrt{15}}
+   \]<br>
+   Entonces,<br>
+   \[
+   \theta = \cos^{-1} \left(\frac{1}{\sqrt{15}}\right)
+   \]</p>
+<h4>Parte (b)</h4>
+<p><strong>Pregunta a resolver:</strong><br>
+- Hallar el punto de intersección entre la recta \( r \) dada por:<br>
+  \[
+  \begin{cases}
+  x = z\\
+  x - 2y + x = 0
+  \end{cases}
+  \]<br>
+  y la recta \( s \) dada por:<br>
+  \[
+  \frac{x-5}{1}=\frac{y+1}{-2}=\frac{z-9}{3}
+  \]</p>
+<p><strong>Solución:</strong></p>
+<p>1. <strong>Parametrizar \(s\):</strong><br>
+   \[
+   x = 5 + t, \quad y = -1 - 2t, \quad z = 9 + 3t
+   \]</p>
+<p>2. <strong>Igualar las parametrizaciones e intentar encontrar un valor de \( t \) tal que satisfaga todas las condiciones dadas por \( r \):</strong><br>
+   Se tiene \( x = z \):<br>
+   \[
+   5 + t = 9 + 3t \implies 2t = -4 \implies t = -2
+   \]<br>
+   Sustituimos \( t = -2 \) en \( x \), \( y \), y \( z \):<br>
+   \[
+   x = 5 - 2 = 3, \quad y = -1 + 4 = 3, \quad z = 9 - 6 = 3
+   \]<br>
+   Comprobamos si el punto \( (3, 3, 3) \) satisface \( x - 2y + z = 0 \):<br>
+   \[
+   3 - 2(3) + 3 = 3 - 6 + 3 = 0
+   \]</p>
+<p>El punto de intersección es \( (3, 3, 3) \).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_036.html">Anterior</a><a class="button" href="problema_038.html">Siguiente</a></nav>
+</main></body>
+</html>

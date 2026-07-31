@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 35: canarias_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 35 de 139</h1>
+<div class="meta"><span class="badge">canarias_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_034.html">Anterior</a><a class="button" href="problema_036.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p><strong>Bloque 1.- Análisis (seleccione solo una pregunta)</strong></p>
+<p><strong>1A.</strong> Las ventas de un determinado producto vienen dadas por el siguiente modelo:</p>
+<p>\[
+V(t)=\frac{5t^2}{8+t^2}, \quad t \ge 0
+\]</p>
+<p>Donde \(V(t)\) son las ventas en miles; \(t\) mide el tiempo desde que se inicia la venta del producto, en meses.</p>
+<p>a) Calcular las tasas de variación media del primero y segundo semestre. Comparar e interpretar los resultados.</p>
+<p>b) Se afirma que este modelo es creciente en su dominio. Justificar si esta afirmación es correcta.</p>
+<p>c) ¿En qué momento las ventas alcanzan 4000 unidades?</p>
+<p>d) Si el producto se vende a 2 € la unidad y los ingresos de esta empresa se modelizan teniendo en cuenta las ventas mensuales. ¿Hacia dónde tienden los ingresos con el paso del tiempo? Justificar la respuesta.</p>
+<p>---</p>
+<p><strong>1B.</strong> Resolver los siguientes apartados:</p>
+<p>a) Averiguar el valor de \(k\) para que sea cierta la siguiente igualdad:</p>
+<p>\[
+\lim_{x\to -2} \frac{kx^2-4k}{x^2+6x+8}=\frac{3}{2}
+\]</p>
+<p>b) Resolver la siguiente integral indefinida:</p>
+<p>\[
+\int x\sqrt{2x-1}\,dx
+\]</p></section>
+<section class="card"><h2>Solucion oficial</h2><h3>Ejercicio 1A — Solución oficial</h3>
+<h4>a)</h4>
+<p>\[
+TVM[0,6]=\frac{\frac{5\cdot 36}{8+36}-0}{6-0}
+=\frac{180}{288}
+=\frac{15}{22}
+=0.68
+\]</p>
+<p>\[
+TVM[6,12]=
+\frac{\frac{5\cdot 144}{8+144}-\frac{5\cdot 36}{8+36}}{12-6}
+\simeq 0.107
+\]</p>
+<p>En ambos semestres se produce un incremento medio de las ventas, pero en el primer semestre el aumento de las ventas por mes es casi 6 veces mayor que el incremento por mes del segundo semestre.</p>
+<p>---</p>
+<h4>b)</h4>
+<p>Para valorar el crecimiento de esta función calculamos su primera derivada:</p>
+<p>\[
+V&#x27;(t)=\frac{10t(8+t^2)-5t^2\cdot 2t}{(8+t^2)^2}
+=\frac{80t}{(8+t^2)^2}
+\]</p>
+<p>Por tanto, para \(t\geq 0\) la derivada siempre es positiva y la función crece.</p>
+<p>De lo que se deduce que la afirmación es cierta.</p>
+<p>---</p>
+<h4>c)</h4>
+<p>Igualamos la función a 4:</p>
+<p>\[
+\frac{5t^2}{8+t^2}=4
+\]</p>
+<p>\[
+t^2=32
+\]</p>
+<p>\[
+t=\sqrt{32}\simeq 5.65 \text{ meses}
+\]</p>
+<p>Aproximadamente, 5 meses y 19 días.</p>
+<p>---</p>
+<h4>d)</h4>
+<p>La función ingresos sería:</p>
+<p>\[
+I(t)=\frac{\text{precio}}{\text{unidad}}\cdot \text{unidades}
+=2\cdot \frac{5t^2}{8+t^2}\cdot 1000
+=\frac{10000t^2}{8+t^2}
+\]</p>
+<p>Para poder analizar su tendencia a lo largo del tiempo calculamos el límite cuando \(t\to\infty\):</p>
+<p>\[
+\lim_{t\to\infty}\frac{10000t^2}{8+t^2}=10000
+\]</p>
+<p>Los ingresos tenderían a 10.000 euros.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Como en el <strong>ejercicio 1</strong> aparecen las dos opciones <strong>1A</strong> y <strong>1B</strong>, resuelvo ambas.</p>
+<p>---</p>
+<h2><strong>1A</strong></h2>
+<p>Se da</p>
+<p>\[
+V(t)=\frac{5t^2}{8+t^2},\qquad t\ge 0
+\]</p>
+<p>donde \(V(t)\) son las ventas <strong>en miles de unidades</strong> y \(t\) está en meses.</p>
+<h3>a) Tasas de variación media del primer y segundo semestre</h3>
+<p>La tasa de variación media de \(V\) en \([a,b]\) es</p>
+<p>\[
+\frac{V(b)-V(a)}{b-a}
+\]</p>
+<h4>Primer semestre: \([0,6]\)</h4>
+<p>\[
+V(0)=0
+\]</p>
+<p>\[
+V(6)=\frac{5\cdot 6^2}{8+6^2}=\frac{180}{44}=\frac{45}{11}
+\]</p>
+<p>Entonces,</p>
+<p>\[
+\text{TVM}_{[0,6]}=\frac{V(6)-V(0)}{6}=\frac{45/11}{6}=\frac{15}{22}
+\]</p>
+<p>\[
+\boxed{\text{TVM}_{[0,6]}=\frac{15}{22}\text{ miles de unidades/mes}\approx 0.682}
+\]</p>
+<p>Es decir, unas <strong>682 unidades/mes</strong>.</p>
+<p>---</p>
+<h4>Segundo semestre: \([6,12]\)</h4>
+<p>\[
+V(12)=\frac{5\cdot 12^2}{8+12^2}=\frac{720}{152}=\frac{90}{19}
+\]</p>
+<p>Entonces,</p>
+<p>\[
+\text{TVM}_{[6,12]}=\frac{V(12)-V(6)}{6}
+\]</p>
+<p>\[
+=\frac{\frac{90}{19}-\frac{45}{11}}{6}
+=\frac{\frac{990-855}{209}}{6}
+=\frac{135}{209\cdot 6}
+=\frac{45}{418}
+\]</p>
+<p>\[
+\boxed{\text{TVM}_{[6,12]}=\frac{45}{418}\text{ miles de unidades/mes}\approx 0.108}
+\]</p>
+<p>Es decir, unas <strong>108 unidades/mes</strong>.</p>
+<p>---</p>
+<h4>Comparación e interpretación</h4>
+<p>\[
+\frac{15}{22}\approx 0.682 &gt; \frac{45}{418}\approx 0.108
+\]</p>
+<p>Luego las ventas <strong>siguen creciendo</strong>, pero <strong>mucho más deprisa en el primer semestre</strong> que en el segundo.  <br>
+Interpretación: el producto crece rápidamente al principio y después el crecimiento se va frenando.</p>
+<p>---</p>
+<h3>b) Justificar si el modelo es creciente</h3>
+<p>Derivamos:</p>
+<p>\[
+V(t)=\frac{5t^2}{8+t^2}
+\]</p>
+<p>\[
+V&#x27;(t)=\frac{10t(8+t^2)-5t^2(2t)}{(8+t^2)^2}
+=\frac{80t}{(8+t^2)^2}
+\]</p>
+<p>Para \(t\ge 0\),</p>
+<p>- el denominador es siempre positivo,<br>
+- el numerador \(80t\ge 0\), y es \(&gt;0\) si \(t&gt;0\).</p>
+<p>Por tanto,</p>
+<p>\[
+V&#x27;(t)\ge 0 \quad \text{para todo } t\ge 0
+\]</p>
+<p>y de hecho</p>
+<p>\[
+V&#x27;(t)&gt;0 \quad \text{si } t&gt;0
+\]</p>
+<p>Así que la afirmación es correcta:  <br>
+\[
+\boxed{V(t)\text{ es creciente en }[0,\infty)}
+\]</p>
+<p>---</p>
+<h3>c) ¿Cuándo alcanzan las ventas 4000 unidades?</h3>
+<p>Como \(V(t)\) está en miles, 4000 unidades significa</p>
+<p>\[
+V(t)=4
+\]</p>
+<p>Resolvemos:</p>
+<p>\[
+\frac{5t^2}{8+t^2}=4
+\]</p>
+<p>\[
+5t^2=4(8+t^2)
+\]</p>
+<p>\[
+5t^2=32+4t^2
+\]</p>
+<p>\[
+t^2=32
+\]</p>
+<p>\[
+t=4\sqrt 2
+\]</p>
+<p>Como \(t\ge 0\),</p>
+<p>\[
+\boxed{t=4\sqrt 2\text{ meses}\approx 5.66\text{ meses}}
+\]</p>
+<p>---</p>
+<h3>d) ¿Hacia dónde tienden los ingresos con el tiempo?</h3>
+<p>Si se venden \(V(t)\) miles de unidades y cada unidad vale 2 €, los ingresos mensuales en euros son</p>
+<p>\[
+I(t)=2000\,V(t)
+\]</p>
+<p>porque \(V(t)\) está en miles.</p>
+<p>Entonces</p>
+<p>\[
+I(t)=2000\cdot \frac{5t^2}{8+t^2}
+=\frac{10000t^2}{8+t^2}
+\]</p>
+<p>Estudiamos el límite:</p>
+<p>\[
+\lim_{t\to\infty} I(t)
+=2000\lim_{t\to\infty} \frac{5t^2}{8+t^2}
+=2000\cdot 5
+=10000
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{\lim_{t\to\infty} I(t)=10000\text{ €}}
+\]</p>
+<p>Interpretación: los ingresos mensuales <strong>tienden a 10\,000 €</strong>, porque las ventas tienden a <strong>5000 unidades</strong>.</p>
+<p>---</p>
+<h2><strong>1B</strong></h2>
+<h3>a) Hallar \(k\)</h3>
+<p>\[
+\lim_{x\to -2}\frac{kx^2-4k}{x^2+6x+8}=\frac32
+\]</p>
+<p>Factorizamos:</p>
+<p>\[
+kx^2-4k=k(x^2-4)=k(x-2)(x+2)
+\]</p>
+<p>\[
+x^2+6x+8=(x+2)(x+4)
+\]</p>
+<p>Entonces, para \(x\neq -2\),</p>
+<p>\[
+\frac{kx^2-4k}{x^2+6x+8}
+=\frac{k(x-2)(x+2)}{(x+2)(x+4)}
+=\frac{k(x-2)}{x+4}
+\]</p>
+<p>Ahora calculamos el límite:</p>
+<p>\[
+\lim_{x\to -2}\frac{k(x-2)}{x+4}
+=\frac{k(-4)}{2}
+=-2k
+\]</p>
+<p>Imponiendo que sea \(\frac32\):</p>
+<p>\[
+-2k=\frac32
+\]</p>
+<p>\[
+k=-\frac34
+\]</p>
+<p>\[
+\boxed{k=-\frac34}
+\]</p>
+<p>---</p>
+<h3>b) Resolver</h3>
+<p>\[
+\int x\sqrt{2x-1}\,dx
+\]</p>
+<p>Hacemos el cambio:</p>
+<p>\[
+u=2x-1 \quad \Rightarrow\quad du=2\,dx,\quad dx=\frac{du}{2}
+\]</p>
+<p>Además,</p>
+<p>\[
+x=\frac{u+1}{2}
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+\int x\sqrt{2x-1}\,dx
+=\int \frac{u+1}{2}\sqrt{u}\cdot \frac{du}{2}
+=\frac14\int (u+1)u^{1/2}\,du
+\]</p>
+<p>\[
+=\frac14\int \left(u^{3/2}+u^{1/2}\right)\,du
+\]</p>
+<p>\[
+=\frac14\left(\frac{2}{5}u^{5/2}+\frac{2}{3}u^{3/2}\right)+C
+\]</p>
+<p>\[
+=\frac{1}{10}u^{5/2}+\frac{1}{6}u^{3/2}+C
+\]</p>
+<p>Volviendo a \(x\):</p>
+<p>\[
+\boxed{\int x\sqrt{2x-1}\,dx
+=\frac{1}{10}(2x-1)^{5/2}+\frac{1}{6}(2x-1)^{3/2}+C}
+\]</p>
+<p>Forma factorizada equivalente:</p>
+<p>\[
+\boxed{\int x\sqrt{2x-1}\,dx
+=\frac{3x+1}{15}(2x-1)^{3/2}+C}
+\]</p>
+<p>---</p>
+<p>Si quieres, puedo también pasarlo a <strong>formato examen</strong>, más breve y limpio para entregar.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el ejercicio 1A del bloque 1, que incluye varios apartados.</p>
+<h4>a) Calcular las tasas de variación media del primero y segundo semestre. Comparar e interpretar los resultados.</h4>
+<p>La tasa de variación media de una función $V(t)$ en un intervalo $[a, b]$ se define como:<br>
+\[
+\text{Tasa de variación media} = \frac{V(b) - V(a)}{b - a}
+\]</p>
+<p><strong>Para el primer semestre (de 0 a 6 meses):</strong><br>
+\[
+V(0) = \frac{5 \cdot 0^2}{8 + 0^2} = 0
+\]<br>
+\[
+V(6) = \frac{5 \cdot 6^2}{8 + 6^2} = \frac{5 \cdot 36}{8 + 36} = \frac{180}{44} \approx 4.09 \quad(\text{miles de unidades})
+\]<br>
+\[
+\text{Tasa de variación media} = \frac{4.09 - 0}{6 - 0} = \frac{4.09}{6} \approx 0.68 \quad(\text{miles de unidades por mes})
+\]</p>
+<p><strong>Para el segundo semestre (de 6 a 12 meses):</strong><br>
+\[
+V(12) = \frac{5 \cdot 12^2}{8 + 12^2} = \frac{5 \cdot 144}{8 + 144} = \frac{720}{152} \approx 4.74 \quad(\text{miles de unidades})
+\]<br>
+\[
+\text{Tasa de variación media} = \frac{4.74 - 4.09}{12 - 6} = \frac{0.65}{6} \approx 0.11 \quad(\text{miles de unidades por mes})
+\]</p>
+<p><strong>Interpretación:</strong><br>
+La tasa de variación media disminuyó de 0.68 a 0.11 miles de unidades por mes del primer al segundo semestre, lo que indica que, aunque las ventas aún aumentan, el ritmo de crecimiento se reduce con el tiempo.</p>
+<h4>b) Se afirma que este modelo es creciente en su dominio. Justificar si esta afirmación es correcta.</h4>
+<p>Para verificar si la función es creciente en todo su dominio, calculamos la primera derivada y observamos si es siempre positiva:<br>
+\[
+V(t) = \frac{5t^2}{8+t^2}
+\]<br>
+\[
+V&#x27;(t) = \frac{5 \cdot 2t \cdot (8 + t^2) - 5t^2 \cdot 2t}{(8+t^2)^2} = \frac{10t(8 + t^2) - 10t^3}{(8 + t^2)^2} = \frac{80t}{(8 + t^2)^2}
+\]<br>
+Observamos que \(V&#x27;(t)\) es positiva para todo \(t &gt; 0\) y cero en \(t = 0\). Esto implica que \(V(t)\) es creciente para todo \(t \geq 0\), y la afirmación es correcta.</p>
+<h4>c) ¿En qué momento las ventas alcanzan 4000 unidades?</h4>
+<p>Queremos encontrar \( t \) tal que:<br>
+\[
+V(t) = 4 \quad(\text{ya que 4000 unidades es igual a 4 miles de unidades})
+\]<br>
+\[
+\frac{5t^2}{8+t^2} = 4
+\]<br>
+\[
+5t^2 = 4(8 + t^2)
+\]<br>
+\[
+5t^2 = 32 + 4t^2
+\]<br>
+\[
+t^2 = 32
+\]<br>
+\[
+t = \sqrt{32} \approx 5.66 \, \text{meses}
+\]</p>
+<h4>d) Si el producto se vende a 2 € la unidad y los ingresos de esta empresa se modelizan teniendo en cuenta las ventas mensuales. ¿Hacia dónde tienden los ingresos con el paso del tiempo? Justificar la respuesta.</h4>
+<p>Los ingresos \(I(t)\) serían:<br>
+\[
+I(t) = 2000 \cdot V(t) = 2000 \cdot \frac{5t^2}{8 + t^2}
+\]<br>
+\[
+\lim_{t \to \infty} I(t) = \lim_{t \to \infty} \frac{10000t^2}{8 + t^2} = \lim_{t \to \infty} 10000 \cdot \frac{t^2}{t^2} \cdot \frac{1}{\frac{8}{t^2} + 1} = 10000
+\]<br>
+Esto significa que los ingresos tienden a 10000 € al mes con el tiempo, ya que las ventas se están aproximando a su capacidad máxima y estabilizándose. Esto es consistente con que \(V(t)\) se aproxima, aunque no llega, a 5 (5000 unidades).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_034.html">Anterior</a><a class="button" href="problema_036.html">Siguiente</a></nav>
+</main></body>
+</html>

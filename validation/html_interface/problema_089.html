@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 89: galicia_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 89 de 139</h1>
+<div class="meta"><span class="badge">galicia_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_088.html">Anterior</a><a class="button" href="problema_090.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>6. Geometría:  <br>
+Considérese el plano pi: 2x - y + z = 1. Se pide:  <br>
+a) Calcular la distancia de pi al punto de corte de las rectas r1: {<br>
+x = 2 + ,<br>
+y = 0,<br>
+z = -1 - <br>
+ y r2: {<br>
+x = ,<br>
+y = -1 + ,<br>
+z = 0,<br>
+ ( , R).  <br>
+b) Obtener el punto simétrico de P(1,0,0) con respecto a pi.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>6.</p>
+<p><strong>6.a)</strong> Pídese a distancia de \(\pi: 2x-y+z=1\) ao punto de corte das rectas  <br>
+\[
+r_1:\begin{cases}
+x=2+\lambda,\\
+y=0,\\
+z=-1-\lambda
+\end{cases}
+\quad \text{e} \quad
+r_2:\begin{cases}
+x=\mu,\\
+y=-1+\mu,\\
+z=0
+\end{cases}
+\]</p>
+<p>Podemos dar por feito que \(r_1\) e \(r_2\) se cortan. De \(-1-\lambda=0\) dedúcese que \(\lambda=-1\), conque o punto de corte é  <br>
+\[
+P(1,0,0).
+\]</p>
+<p>A distancia de \(P(1,0,0)\) a \(\pi: 2x-y+z-1=0\) é  <br>
+\[
+d=\frac{|2-1|}{\sqrt{2^2+(-1)^2+1^2}}=\frac{1}{\sqrt{6}}.
+\]</p>
+<p><strong>6.b)</strong> Punto simétrico de \(P(1,0,0)\) con respecto a \(\pi: 2x-y+z=1\):</p>
+<p>Ecuacións paramétricas da recta \(r\) que pasa por \(P(1,0,0)\) e é perpendicular a \(\pi\):  <br>
+\[
+\vec d_r=\vec n_\pi=(2,-1,1),
+\]<br>
+co cal  <br>
+\[
+r:\begin{cases}
+x=1+2\lambda,\\
+y=-\lambda,\\
+z=\lambda
+\end{cases}
+\quad \lambda\in\mathbb R.
+\]</p>
+<p>Corte de \(r\) con \(\pi\):  <br>
+\[
+2(1+2\lambda)+\lambda+\lambda=6\lambda+2=1
+\]<br>
+\[
+\lambda=-\frac16.
+\]</p>
+<p>Posto que  <br>
+\[
+x=1+2\lambda=1-\frac13=\frac23,\quad
+y=-\lambda=\frac16,\quad
+z=\lambda=-\frac16,
+\]<br>
+o punto de corte é  <br>
+\[
+Q\left(\frac23,\frac16,-\frac16\right).
+\]</p>
+<p>Punto simétrico de \(P(1,0,0)\) con respecto a \(\pi: 2x-y+z=1\): se chamamos  <br>
+\[
+P&#x27;(x&#x27;,y&#x27;,z&#x27;)
+\]<br>
+ao punto pedido, temos  <br>
+\[
+\frac{1+x&#x27;}2=\frac23 \Rightarrow x&#x27;=\frac13,
+\]<br>
+\[
+\frac{y&#x27;}2=\frac16 \Rightarrow y&#x27;=\frac13,
+\]<br>
+\[
+\frac{z&#x27;}2=-\frac16 \Rightarrow z&#x27;=-\frac13.
+\]</p>
+<p>Conque  <br>
+\[
+P&#x27;\left(\frac13,\frac13,-\frac13\right).
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea el plano  <br>
+\[
+\pi:\;2x-y+z=1
+\]<br>
+que escribimos también como<br>
+\[
+2x-y+z-1=0.
+\]</p>
+<p>Las rectas son, interpretando los parámetros del enunciado:</p>
+<p>\[
+r_1:\begin{cases}
+x=2+\lambda\\
+y=0\\
+z=-1-\lambda
+\end{cases}
+\qquad
+r_2:\begin{cases}
+x=\mu\\
+y=-1+\mu\\
+z=0
+\end{cases}
+\quad (\lambda,\mu\in\mathbb R)
+\]</p>
+<p>---</p>
+<h3>a) Distancia del plano al punto de corte de \(r_1\) y \(r_2\)</h3>
+<h4>1. Hallamos el punto de intersección</h4>
+En el punto de corte, las coordenadas deben coincidir.
+<p>De \(r_1\) y \(r_2\):</p>
+<p>- en \(y\):  <br>
+  \[
+  0=-1+\mu \Rightarrow \mu=1
+  \]</p>
+<p>- en \(z\):  <br>
+  \[
+  -1-\lambda=0 \Rightarrow \lambda=-1
+  \]</p>
+<p>Comprobamos en \(x\):<br>
+\[
+2+(-1)=1=\mu
+\]<br>
+Luego sí se cortan en</p>
+<p>\[
+A=(1,0,0).
+\]</p>
+<h4>2. Distancia de \(A\) al plano</h4>
+La fórmula de distancia de un punto \((x_0,y_0,z_0)\) al plano
+\[
+ax+by+cz+d=0
+\]
+es
+\[
+d=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}.
+\]
+<p>Aquí:<br>
+\[
+2x-y+z-1=0
+\]<br>
+por tanto \(a=2,\;b=-1,\;c=1,\;d=-1\).</p>
+<p>Para \(A=(1,0,0)\):<br>
+\[
+d=\frac{|2\cdot1-1|}{\sqrt{2^2+(-1)^2+1^2}}
+=\frac{|1|}{\sqrt6}
+=\frac{1}{\sqrt6}.
+\]</p>
+<h3>Resultado del apartado a)</h3>
+\[
+\boxed{d=\frac{1}{\sqrt6}}
+\]
+<p>---</p>
+<h3>b) Punto simétrico de \(P(1,0,0)\) respecto de \(\pi\)</h3>
+<p>Queremos reflejar \(P=(1,0,0)\) respecto del plano \(\pi\).</p>
+<p>El vector normal del plano es<br>
+\[
+\vec n=(2,-1,1).
+\]</p>
+<p>Usamos la fórmula del simétrico respecto del plano:<br>
+\[
+P&#x27;=P-2\frac{ax_0+by_0+cz_0+d}{a^2+b^2+c^2}(a,b,c).
+\]</p>
+<p>Ya hemos calculado:<br>
+\[
+ax_0+by_0+cz_0+d=2\cdot1-1=1,
+\qquad
+a^2+b^2+c^2=6.
+\]</p>
+<p>Entonces<br>
+\[
+P&#x27;=(1,0,0)-2\frac{1}{6}(2,-1,1)
+=(1,0,0)-\frac13(2,-1,1).
+\]</p>
+<p>Calculando:<br>
+\[
+P&#x27;=\left(1-\frac23,\;0+\frac13,\;0-\frac13\right)
+=\left(\frac13,\frac13,-\frac13\right).
+\]</p>
+<h3>Resultado del apartado b)</h3>
+\[
+\boxed{P&#x27;=\left(\frac13,\frac13,-\frac13\right)}
+\]
+<p>---</p>
+<h2>Respuesta final</h2>
+\[
+\boxed{\text{a) } \frac1{\sqrt6}}
+\qquad
+\boxed{\text{b) } \left(\frac13,\frac13,-\frac13\right)}
+\]</section>
+<section class="card"><h2>Respuesta B</h2><h4>Solución de los apartados a) y b) del ejercicio 6</h4>
+<p>#### Parte a) Cálculo de la distancia de pi al punto de corte de las rectas r1 y r2</p>
+<p><strong>Rectas r1 y r2</strong><br>
+- <strong>r1</strong>:   <br>
+  \[ x = 2 + t, \]  <br>
+  \[ y = 0, \]  <br>
+  \[ z = -1 - t. \]</p>
+<p>- <strong>r2</strong>:   <br>
+  \[ x = s, \]  <br>
+  \[ y = -1 + s, \]  <br>
+  \[ z = 0. \]</p>
+<p>Para encontrar el punto de corte, igualamos las ecuaciones:<br>
+\[ 2 + t = s, \]<br>
+\[ 0 = -1 + s, \]<br>
+\[ -1 - t = 0. \]</p>
+<p>Resolvemos las ecuaciones:<br>
+1. \( -1 + s = 0 \) implica \( s = 1 \).<br>
+2. \( x = s = 1 \).<br>
+3. \( -1 - t = 0 \) implica \( t = -1 \) y entonces \( x = 2 - 1 = 1 \).</p>
+<p>Así que reemplazamos \( s = 1 \) en \( y = -1 + s \) obtenemos \( y = 0 \).</p>
+<p>Por lo tanto, el punto de corte es \( (1, 0, 0) \).</p>
+<p><strong>Cálculo de la distancia</strong><br>
+La fórmula para la distancia entre un punto \( P(x_0, y_0, z_0) \) y un plano \( ax + by + cz = d \) es:<br>
+\[ \text{distancia} = \frac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2 + b^2 + c^2}}. \]</p>
+<p>Usando el plano \( 2x - y + z = 1 \) y el punto \( P(1, 0, 0) \):<br>
+\[ \text{distancia} = \frac{|2\cdot1 - 0 + 0 - 1|}{\sqrt{2^2 + (-1)^2 + 1^2}} = \frac{|1|}{\sqrt{6}} = \frac{1}{\sqrt{6}}. \]</p>
+<p>#### Parte b) Punto simétrico de P(1,0,0) respecto a pi</p>
+<p>Para encontrar el punto simétrico \( P&#x27; \) de un punto \( P \) respecto a un plano \( ax + by + cz = d \), usamos la fórmula:<br>
+\[ P&#x27; = P - 2\left(\frac{ax_0 + by_0 + cz_0 - d}{a^2 + b^2 + c^2}\right) \cdot \begin{pmatrix} a \\ b \\ c \end{pmatrix}. \]</p>
+<p>Usando el plano \( 2x - y + z = 1 \) y el punto \( P(1, 0, 0) \), donde \( \frac{1}{\sqrt{6}} \) es la distancia normalizada entre el plano y el punto multiplicado por dos, tenemos:<br>
+\[ P&#x27; = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} - 2\left(\frac{1}{6}\right) \cdot \begin{pmatrix} 2 \\ -1 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} - \begin{pmatrix} \frac{4}{6} \\ -\frac{1}{6} \\ \frac{1}{6} \end{pmatrix}. \]<br>
+\[ P&#x27; = \begin{pmatrix} \frac{3}{6} \\ \frac{1}{6} \\ -\frac{1}{6} \end{pmatrix} = \begin{pmatrix} \frac{1}{2} \\ \frac{1}{6} \\ -\frac{1}{6} \end{pmatrix}. \]</p>
+<p>Por lo tanto, el punto simétrico \( P&#x27; \) de \( P(1,0,0) \) con respecto al plano \( 2x - y + z = 1 \) es \( \left(\frac{1}{2}, \frac{1}{6}, -\frac{1}{6}\right) \).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_088.html">Anterior</a><a class="button" href="problema_090.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 81: extremadura_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 81 de 139</h1>
+<div class="meta"><span class="badge">extremadura_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_080.html">Anterior</a><a class="button" href="problema_082.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>8. Calcular el área de la región encerrada por las gráficas de las funciones \(f(x)=x^3-3x^2+3x\) y \(g(x)=x\). \((2 puntos)\)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>8. Calcular el área de la región encerrada por las gráficas de las funciones  <br>
+\[
+f(x)=x^3-3x^2+3x \quad \text{y} \quad g(x)=x.
+\]</p>
+<p>Hallamos los puntos de corte de las gráficas de  <br>
+\[
+f(x)=x^3-3x^2+3x
+\]<br>
+y  <br>
+\[
+g(x)=x.
+\]</p>
+<p>\[
+x^3-3x^2+3x=x
+\]</p>
+<p>\[
+x^3-3x^2+2x=0
+\]</p>
+<p>\[
+x(x^2-3x+2)=0
+\]</p>
+<p>\[
+x=0,\quad x=1,\quad x=2
+\]</p>
+<p>Existen tres puntos de corte con el eje de abscisas. El recinto del que queremos calcular el área lo dividimos en dos partes y el área de cada una de ellas la determinamos calculando la integral definida correspondiente.</p>
+<p>\[
+\int_0^1 (g(x)-f(x))\,dx
+=
+\int_0^1 \left(x-(x^3-3x^2+3x)\right)\,dx
+\]</p>
+<p>\[
+=
+\int_0^1 (-x^3+3x^2-2x)\,dx
+\]</p>
+<p>\[
+=
+\left[-\frac{x^4}{4}+x^3-x^2\right]_0^1
+=
+-\frac14+1-1=-\frac14
+\]</p>
+<p>Área parte 1:</p>
+<p>\[
+\int_0^1 (f(x)-g(x))\,dx=\frac14
+\]</p>
+<p>unidades cuadradas.</p>
+<p>\[
+\int_1^2 (f(x)-g(x))\,dx
+=
+\int_1^2 \left(x^3-3x^2+3x-x\right)\,dx
+\]</p>
+<p>\[
+=
+\int_1^2 (x^3-3x^2+2x)\,dx
+\]</p>
+<p>\[
+=
+\left[\frac{x^4}{4}-x^3+x^2\right]_1^2
+\]</p>
+<p>\[
+=
+\left(\frac{16}{4}-8+4\right)-\left(\frac14-1+1\right)
+=
+0-\frac14=-\frac14
+\]</p>
+<p>Área parte 2:</p>
+<p>\[
+\int_1^2 (g(x)-f(x))\,dx=\frac14
+\]</p>
+<p>unidades cuadradas.</p>
+<p>El área pedida es la suma del área de las dos partes, es decir,</p>
+<p>\[
+\frac14+\frac14=\frac12=0.5
+\]</p>
+<p>unidades cuadradas.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Queremos el área encerrada entre</p>
+<p>\[
+f(x)=x^3-3x^2+3x,\qquad g(x)=x.
+\]</p>
+<h3>1) Puntos de corte</h3>
+<p>Igualamos ambas funciones:</p>
+<p>\[
+x^3-3x^2+3x=x
+\]</p>
+<p>\[
+x^3-3x^2+2x=0
+\]</p>
+<p>\[
+x(x^2-3x+2)=0
+\]</p>
+<p>\[
+x(x-1)(x-2)=0
+\]</p>
+<p>Luego se cortan en:</p>
+<p>\[
+x=0,\;1,\;2.
+\]</p>
+<h3>2) Qué función va arriba en cada tramo</h3>
+<p>Estudiamos</p>
+<p>\[
+f(x)-g(x)=x(x-1)(x-2).
+\]</p>
+<p>- En \((0,1)\): por ejemplo, en \(x=\tfrac12\),</p>
+<p>\[
+\tfrac12\left(-\tfrac12\right)\left(-\tfrac32\right)&gt;0,
+\]</p>
+<p>así que \(f(x)&gt;g(x)\).</p>
+<p>- En \((1,2)\): por ejemplo, en \(x=\tfrac32\),</p>
+<p>\[
+\tfrac32\left(\tfrac12\right)\left(-\tfrac12\right)&lt;0,
+\]</p>
+<p>así que \(f(x)&lt;g(x)\).</p>
+<p>Por tanto, el área total es</p>
+<p>\[
+A=\int_0^1 (f(x)-g(x))\,dx+\int_1^2 (g(x)-f(x))\,dx.
+\]</p>
+<h3>3) Cálculo de las integrales</h3>
+<p>Como</p>
+<p>\[
+f(x)-g(x)=x^3-3x^2+2x,
+\]</p>
+<p>tenemos una primitiva:</p>
+<p>\[
+\int (x^3-3x^2+2x)\,dx=\frac{x^4}{4}-x^3+x^2.
+\]</p>
+<h4>Primer tramo</h4>
+<p>\[
+A_1=\int_0^1 (x^3-3x^2+2x)\,dx
+\]</p>
+<p>\[
+A_1=\left[\frac{x^4}{4}-x^3+x^2\right]_0^1
+=\left(\frac14-1+1\right)-0=\frac14.
+\]</p>
+<h4>Segundo tramo</h4>
+<p>\[
+A_2=\int_1^2 -(x^3-3x^2+2x)\,dx
+\]</p>
+<p>\[
+A_2=-\left[\frac{x^4}{4}-x^3+x^2\right]_1^2.
+\]</p>
+<p>Calculamos:</p>
+<p>\[
+\left(\frac{2^4}{4}-2^3+2^2\right)=4-8+4=0,
+\]</p>
+<p>\[
+\left(\frac{1^4}{4}-1^3+1^2\right)=\frac14.
+\]</p>
+<p>Entonces</p>
+<p>\[
+A_2=-(0-\tfrac14)=\frac14.
+\]</p>
+<h3>4) Área total</h3>
+<p>\[
+A=A_1+A_2=\frac14+\frac14=\frac12.
+\]</p>
+<h2>Resultado</h2>
+<p>\[
+\boxed{\text{El área encerrada es } \frac12}
+\]</p>
+<p>unidades cuadradas.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio solicitado, calculamos el área de la región encerrada entre las curvas de las funciones \( f(x) = x^3 - 3x^2 + 3x \) y \( g(x) = x \).</p>
+<h4>Paso 1: Determinar los puntos de intersección</h4>
+<p>Primero encontramos los puntos donde las curvas \( f(x) \) y \( g(x) \) se intersectan. Para ello, igualamos las funciones:</p>
+<p>\[ f(x) = g(x) \]<br>
+\[ x^3 - 3x^2 + 3x = x \]</p>
+<p>Simplificando la ecuación, obtenemos:</p>
+<p>\[ x^3 - 3x^2 + 3x - x = 0 \]<br>
+\[ x^3 - 3x^2 + 2x = 0 \]<br>
+\[ x(x^2 - 3x + 2) = 0 \]</p>
+<p>Factorizando el trinomio:</p>
+<p>\[ x(x-1)(x-2) = 0 \]</p>
+<p>De aquí, las soluciones son:</p>
+<p>\[ x = 0, x = 1, x = 2 \]</p>
+<p>Estos valores de \( x \) son los puntos de intersección de las gráficas.</p>
+<h4>Paso 2: Calcular el área entre las curvas</h4>
+<p>Para hallar el área entre las curvas en los intervalos de intersección (\( x = 0 \) a \( x = 1 \) y \( x = 1 \) a \( x = 2 \)), calculamos la integral de la diferencia entre \( f(x) \) y \( g(x) \), en valor absoluto, en los intervalos respectivos. Observamos que entre \( x = 0 \) y \( x = 1 \), \( g(x) \) está por encima de \( f(x) \), y entre \( x = 1 \) y \( x = 2 \), \( f(x) \) está por encima.</p>
+<p>La expresión para la integral del área queda como:</p>
+<p>\[ \text{Área } = \int_{0}^{1} (x - (x^3 - 3x^2 + 3x)) \, dx + \int_{1}^{2} ((x^3 - 3x^2 + 3x) - x) \, dx \]</p>
+<p>Simplificando las integrales:</p>
+<p>\[ = \int_{0}^{1} (-x^3 + 3x^2 - 2x) \, dx + \int_{1}^{2} (x^3 - 3x^2 + 2x) \, dx \]</p>
+<h4>Paso 3: Resolver las integrales</h4>
+<p>Para \(\int_{0}^{1} (-x^3 + 3x^2 - 2x) \, dx\):</p>
+<p>\[
+\int (-x^3 + 3x^2 - 2x) \, dx = -\frac{x^4}{4} + x^3 - x^2 + C
+\]<br>
+Evaluando de \( 0 \) a \( 1 \):<br>
+\[
+(-\frac{1^4}{4} + 1^3 - 1^2) - (0) = -\frac{1}{4} + 1 - 1 = -\frac{1}{4}
+\]</p>
+<p>Para \(\int_{1}^{2} (x^3 - 3x^2 + 2x) \, dx\):</p>
+<p>\[
+\int (x^3 - 3x^2 + 2x) \, dx = \frac{x^4}{4} - x^3 + x^2 + C
+\]<br>
+Evaluando de \( 1 \) a \( 2 \):<br>
+\[
+(\frac{2^4}{4} - 2^3 + 2^2) - (\frac{1^4}{4} - 1^3 + 1^2) = 4 - 8 + 4 - \left(\frac{1}{4}-1+1\right) = 3 - \frac{3}{4} = \frac{9}{4}
+\]</p>
+<h4>Paso 4: Sumar las áreas</h4>
+<p>\[
+\text{Área total} = \left|-\frac{1}{4}\right| + \frac{9}{4} = \frac{1}{4} + \frac{9}{4} = \frac{10}{4} = 2.5
+\]</p>
+<p>Por lo tanto, el área encerrada entre las curvas es de \( 2.5 \) unidades cuadradas.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_080.html">Anterior</a><a class="button" href="problema_082.html">Siguiente</a></nav>
+</main></body>
+</html>

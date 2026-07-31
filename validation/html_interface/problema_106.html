@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 106: murcia_2023 3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 106 de 139</h1>
+<div class="meta"><span class="badge">murcia_2023</span> &nbsp; Ejercicio 3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_105.html">Anterior</a><a class="button" href="problema_107.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>3: [2,5 p.] Descomponga el número 84 como suma de dos números positivos de tal manera que el producto de uno de ellos por el cuadrado del otro sea el mayor valor posible. ¿Cuál es dicho valor máximo?</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 3</strong></p>
+<p>Llamamos \(x\) e \(y\) a cada una de las partes en que descompongo el número 84.</p>
+<p>\[
+x+y=84 \Rightarrow y=84-x
+\]</p>
+<p>La función que deseamos maximizar es el producto de uno de ellos por el cuadrado del otro:</p>
+<p>\[
+f(x,y)=y^2x
+\]</p>
+<p>\[
+f(x)=(84-x)^2x=84^2x-168x^2+x^3
+\]</p>
+<p>Calculamos los extremos de la función usando su derivada:</p>
+<p>\[
+f&#x27;(x)=84^2-336x+3x^2
+\]</p>
+<p>En la solución de referencia se toma:</p>
+<p>\[
+f(x)=84x^2-x^3
+\]</p>
+<p>\[
+f&#x27;(x)=168x-3x^2
+\]</p>
+<p>\[
+168x-3x^2=0 \Rightarrow x(56-x)=0
+\]</p>
+<p>\[
+x=0 \quad \text{o} \quad x=56
+\]</p>
+<p>Sustituimos estos dos valores en la segunda derivada:</p>
+<p>\[
+f&#x27;&#x27;(x)=168-6x
+\]</p>
+<p>\[
+f&#x27;&#x27;(0)=168&gt;0 \Rightarrow \text{mínimo relativo}
+\]</p>
+<p>\[
+f&#x27;&#x27;(56)=168-6\cdot 56&lt;0 \Rightarrow \text{máximo relativo}
+\]</p>
+<p>En \(x=56\) la función tiene un máximo relativo. Para dicho valor:</p>
+<p>\[
+y=84-56=28
+\]</p>
+<p>La descomposición del número 84 que maximiza el valor del producto de uno de ellos por el cuadrado del otro es:</p>
+<p>\[
+56 \text{ y } 28
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea \(x\) e \(y\) los dos números positivos, con</p>
+<p>\[
+x+y=84, \qquad x&gt;0,\ y&gt;0.
+\]</p>
+<p>Queremos maximizar el producto de uno de ellos por el cuadrado del otro.  <br>
+Sin pérdida de generalidad, tomamos</p>
+<p>\[
+P=x\,y^2.
+\]</p>
+<p>Como \(y=84-x\), queda una función de una sola variable:</p>
+<p>\[
+P(x)=x(84-x)^2,\qquad 0&lt;x&lt;84.
+\]</p>
+<h3>1. Derivamos</h3>
+\[
+P&#x27;(x)=(84-x)^2-2x(84-x).
+\]
+<p>Factorizando:</p>
+<p>\[
+P&#x27;(x)=(84-x)\big[(84-x)-2x\big]=(84-x)(84-3x).
+\]</p>
+<h3>2. Puntos críticos</h3>
+\[
+P&#x27;(x)=0 \iff (84-x)(84-3x)=0.
+\]
+<p>De aquí:</p>
+<p>- \(x=84\), que no sirve porque entonces \(y=0\) y los números deben ser positivos.<br>
+- \(x=28\), que sí pertenece al intervalo \((0,84)\).</p>
+<p>Entonces:</p>
+<p>\[
+x=28,\qquad y=84-28=56.
+\]</p>
+<h3>3. Comprobación de máximo</h3>
+En los extremos del intervalo, el producto tiende a \(0\):
+<p>\[
+P(0)=0,\qquad P(84)=0.
+\]</p>
+<p>Como el único punto crítico interior es \(x=28\), ahí se alcanza el máximo.</p>
+<h3>4. Valor máximo</h3>
+\[
+P_{\max}=28\cdot 56^2.
+\]
+<p>Como</p>
+<p>\[
+56^2=3136,
+\]</p>
+<p>resulta</p>
+<p>\[
+P_{\max}=28\cdot 3136=87808.
+\]</p>
+<h2>Respuesta</h2>
+Los dos números son <strong>28</strong> y <strong>56</strong> (siendo <strong>56</strong> el que se eleva al cuadrado), y el valor máximo es
+<p>\[
+\boxed{87808}.
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver este problema, necesitamos descomponer el número 84 como suma de dos números positivos \( x \) y \( y \) tal que \( x + y = 84 \) y el producto \( x \cdot y^2 \) sea máximo.</p>
+<p>Primero, expresamos \( y \) en términos de \( x \): \( y = 84 - x \).</p>
+<p>Dado esto, nuestro objetivo es maximizar la función:<br>
+\[ f(x) = x \cdot (84 - x)^2 \]</p>
+<p>Podemos expandir la expresión dentro de la función:<br>
+\[ f(x) = x \cdot (7056 - 168x + x^2) \]<br>
+\[ f(x) = 7056x - 168x^2 + x^3 \]</p>
+<p>Para encontrar el valor máximo de esta función, necesitamos encontrar su derivada y luego resolver para los ceros de la derivada (puntos críticos). Calculamos la primera derivada de \( f(x) \):<br>
+\[ f&#x27;(x) = 7056 - 336x + 3x^2 \]</p>
+<p>Para encontrar los puntos críticos, establecemos \( f&#x27;(x) = 0 \):<br>
+\[ 3x^2 - 336x + 7056 = 0 \]</p>
+<p>Resolviendo esta ecuación cuadrática usando la fórmula general:<br>
+\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]<br>
+donde \( a = 3 \), \( b = -336 \), y \( c = 7056 \):<br>
+\[ x = \frac{-(-336) \pm \sqrt{(-336)^2 - 4 \cdot 3 \cdot 7056}}{2 \cdot 3} \]<br>
+\[ x = \frac{336 \pm \sqrt{112896 - 84672}}{6} \]<br>
+\[ x = \frac{336 \pm \sqrt{28224}}{6} \]<br>
+\[ x = \frac{336 \pm 168}{6} \]<br>
+\[ x = 84 \text{ y } x = 28 \]</p>
+<p>Evaluemos \( f(x) \) en los puntos críticos para encontrar el máximo:<br>
+- Para \( x = 28 \):<br>
+  \[ y = 84 - 28 = 56 \]<br>
+  \[ f(28) = 28 \cdot 56^2 = 28 \cdot 3136 = 87808 \]</p>
+<p>- Para \( x = 84 \):<br>
+  \[ y = 84 - 84 = 0 \]<br>
+  \[ f(84) = 84 \cdot 0^2 = 0 \]</p>
+<p>El valor \( f(x) = 87808 \) es máximo cuando \( x = 28 \) y \( y = 56 \).</p>
+<p>Por lo tanto, para maximizar \( x \cdot y^2 \) cuando \( x + y = 84 \), debemos elegir \( x = 28 \) y \( y = 56 \). La máxima valor alcanzado bajo estas condiciones es 87808.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_105.html">Anterior</a><a class="button" href="problema_107.html">Siguiente</a></nav>
+</main></body>
+</html>

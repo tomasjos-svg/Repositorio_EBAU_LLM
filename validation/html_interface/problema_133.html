@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 133: rioja_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 133 de 139</h1>
+<div class="meta"><span class="badge">rioja_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_132.html">Anterior</a><a class="button" href="problema_134.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>4.- (2 puntos) Estudia el siguiente sistema de ecuaciones lineales dependiente del parámetro real \(a\) y resuélvelo en los casos en que es compatible determinado e indeterminado.</p>
+<p>\[
+\begin{cases}
+x+(a+1)y+z=a\\
+x+y+(a+1)z=a\\
+(a+1)x+y+z=a
+\end{cases}
+\]</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 4 - Solución oficial</strong></p>
+<p>Consideramos la matriz de coeficientes \(A\) asociada al sistema:</p>
+<p>\[
+A=
+\begin{pmatrix}
+1 &amp; a+1 &amp; 1\\
+1 &amp; 1 &amp; a+1\\
+a+1 &amp; 1 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>y la matriz ampliada:</p>
+<p>\[
+(A/B)=
+\begin{pmatrix}
+1 &amp; a+1 &amp; 1 &amp; a\\
+1 &amp; 1 &amp; a+1 &amp; a\\
+a+1 &amp; 1 &amp; 1 &amp; a
+\end{pmatrix}
+\]</p>
+<p>Calculamos el determinante de \(A\) y comprobamos cuándo se anula:</p>
+<p>\[
+|A|=
+\begin{vmatrix}
+1 &amp; a+1 &amp; 1\\
+1 &amp; 1 &amp; a+1\\
+a+1 &amp; 1 &amp; 1
+\end{vmatrix}
+=a^3+3a^2=a^2(a+3)
+\]</p>
+<p>\[
+|A|=0 \Rightarrow a^2(a+3)=0 \Rightarrow a=0,\; a=-3
+\]</p>
+<p>Estudiamos tres situaciones diferentes.</p>
+<p>---</p>
+<h4>CASO 1. \(a\neq 0,\; a\neq -3\)</h4>
+<p>En este caso el determinante de \(A\) es no nulo y su rango es 3, al igual que el de la matriz ampliada \(A/B\), e igual que el número de incógnitas. El sistema es compatible determinado y tiene una única solución.</p>
+<p>Lo resolvemos utilizando el método de Gauss.</p>
+<p>La solución cuando el sistema es compatible determinado es:</p>
+<p>\[
+x=y=z=\frac{a}{a+3}
+\]</p>
+<p>---</p>
+<h4>CASO 2. \(a=0\)</h4>
+<p>En este caso el determinante de \(A\) es nulo y su rango no es 3.</p>
+<p>Determinamos la compatibilidad del sistema usando el método de Gauss:</p>
+<p>\[
+(A/B)\sim
+\begin{pmatrix}
+1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</p>
+<p>El sistema es compatible indeterminado y tiene infinitas soluciones.</p>
+<p>A partir de la matriz equivalente obtenida seguimos resolviendo el sistema:</p>
+<p>\[
+x+y+z=1
+\]</p>
+<p>\[
+x=1-y-z
+\]</p>
+<p>Las soluciones del sistema compatible indeterminado son:</p>
+<p>\[
+\begin{cases}
+x=1-\lambda-\mu\\
+y=\lambda\\
+z=\mu
+\end{cases}
+\qquad \lambda,\mu\in\mathbb{R}
+\]</p>
+<p>---</p>
+<h4>CASO 3. \(a=-3\)</h4>
+<p>En este caso el determinante de \(A\) es nulo y su rango no es 3.</p>
+<p>Determinamos la compatibilidad del sistema usando el método de Gauss.</p>
+<p>Se obtiene que:</p>
+<p>\[
+\operatorname{rg}(A)=2,\qquad \operatorname{rg}(A/B)=3
+\]</p>
+<p>Tienen rangos distintos.</p>
+<p>El sistema es incompatible.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el sistema de ecuaciones lineales proporcionado que depende del parámetro \(a\), vamos a utilizar el método de eliminación para encontrar los valores de \(x\), \(y\), y \(z\) y determinar las condiciones sobre \(a\) que hacen que el sistema sea compatible determinado o indeterminado.</p>
+<p>El sistema de ecuaciones es:<br>
+\[
+\begin{cases}
+x + (a+1)y + z = a \\
+x + y + (a+1)z = a \\
+(a+1)x + y + z = a
+\end{cases}
+\]</p>
+<p>Empezamos formando la matriz ampliada del sistema:</p>
+<p>\[
+\begin{bmatrix}
+1 &amp; a+1 &amp; 1 &amp; | &amp; a \\
+1 &amp; 1 &amp; a+1 &amp; | &amp; a \\
+a+1 &amp; 1 &amp; 1 &amp; | &amp; a
+\end{bmatrix}
+\]</p>
+<p>Vamos a reducir esta matriz a su forma escalonada para simplificar la solución.</p>
+<p>1. Restamos la primera fila de la segunda y tercera fila:<br>
+\[
+\begin{bmatrix}
+1 &amp; a+1 &amp; 1 &amp; | &amp; a \\
+0 &amp; -a &amp; a &amp; | &amp; 0 \\
+0 &amp; -a &amp; -a &amp; | &amp; 0
+\end{bmatrix}
+\]</p>
+<p>2. Simplifiquemos la segunda y tercera fila si \(a \neq 0\):<br>
+   \[
+   \text{Segunda fila: } \frac{1}{-a} \text{ (fila 2)}
+   \]<br>
+   \[
+   \begin{bmatrix}
+   1 &amp; a+1 &amp; 1 &amp; | &amp; a \\
+   0 &amp; 1 &amp; -1 &amp; | &amp; 0 \\
+   0 &amp; -a &amp; -a &amp; | &amp; 0
+   \end{bmatrix}
+   \]<br>
+   Ahora, reemplazamos en fila 3 agregando \(a\) veces la fila 2:<br>
+   \[
+   \begin{bmatrix}
+   1 &amp; a+1 &amp; 1 &amp; | &amp; a \\
+   0 &amp; 1 &amp; -1 &amp; | &amp; 0 \\
+   0 &amp; 0 &amp; 0 &amp; | &amp; 0
+   \end{bmatrix}
+   \]</p>
+<p>3. Reemplazamos en la primera fila:<br>
+   \[
+   \text{(fila 1) } - (a+1) \times \text{(fila 2)}
+   \]<br>
+   \[
+   \begin{bmatrix}
+   1 &amp; 0 &amp; a+2 &amp; | &amp; a \\
+   0 &amp; 1 &amp; -1 &amp; | &amp; 0 \\
+   0 &amp; 0 &amp; 0 &amp; | &amp; 0
+   \end{bmatrix}
+   \]</p>
+<p>Vamos a analizar los resultados:<br>
+- Si \(a + 2 \neq 0\) (\(a \neq -2\)), podemos despejar \(z\) en términos de \(a\): \(z = \frac{-a}{a+2}\). El sistema es entonces compatible determinado con solución única para cada \(x\), \(y\), y \(z\) dependiendo de \(a\).<br>
+- Si \(a = -2\), tenemos la última fila que dice \(0 = 0\), así que los niveles de libertad se incrementan dependiendo de otros factores para calcular \(x\) y \(y\).</p>
+<p>Por ello, el sistema es compatible indeterminado cuando \(a = -2\) porque proporciona infinitas soluciones ya que una de las variables puede tomar cualquier valor real.</p>
+<p>En conclusión:<br>
+- <strong>Para \(a = -2\)</strong>, el sistema es <strong>compatible indeterminado</strong>.<br>
+- <strong>Para \(a \neq -2\)</strong>, el sistema es <strong>compatible determinado</strong> con solución única para \(x\), \(y\), y \(z\).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Estudiamos el sistema</p>
+<p>\[
+\begin{cases}
+x+(a+1)y+z=a\\
+x+y+(a+1)z=a\\
+(a+1)x+y+z=a
+\end{cases}
+\]</p>
+<h3>1. Matriz del sistema</h3>
+<p>La matriz de coeficientes es</p>
+<p>\[
+A=\begin{pmatrix}
+1 &amp; a+1 &amp; 1\\
+1 &amp; 1 &amp; a+1\\
+a+1 &amp; 1 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>y el término independiente es</p>
+<p>\[
+b=\begin{pmatrix}a\\a\\a\end{pmatrix}.
+\]</p>
+<p>Para saber cuándo el sistema es compatible determinado, calculamos el determinante:</p>
+<p>\[
+\det(A)=
+\begin{vmatrix}
+1 &amp; a+1 &amp; 1\\
+1 &amp; 1 &amp; a+1\\
+a+1 &amp; 1 &amp; 1
+\end{vmatrix}.
+\]</p>
+<p>Hacemos \(R_2\leftarrow R_2-R_1\), \(R_3\leftarrow R_3-R_1\):</p>
+<p>\[
+\det(A)=
+\begin{vmatrix}
+1 &amp; a+1 &amp; 1\\
+0 &amp; -a &amp; a\\
+a &amp; -a &amp; 0
+\end{vmatrix}.
+\]</p>
+<p>Desarrollando,</p>
+<p>\[
+\det(A)=a^2(a+3).
+\]</p>
+<p>Por tanto:</p>
+<p>- si \(a\neq 0\) y \(a\neq -3\), \(\det(A)\neq 0\) y el sistema es <strong>compatible determinado</strong>;<br>
+- si \(a=0\) o \(a=-3\), \(\det(A)=0\), y hay que estudiar aparte.</p>
+<p>---</p>
+<h3>2. Caso \(a\neq 0,-3\): compatible determinado</h3>
+<p>Restamos ecuaciones:</p>
+<p>\[
+(1)-(2)\; \Rightarrow\; a(y-z)=0,
+\]<br>
+\[
+(2)-(3)\; \Rightarrow\; a(z-x)=0.
+\]</p>
+<p>Como \(a\neq 0\), se obtiene</p>
+<p>\[
+y=z,\qquad z=x.
+\]</p>
+<p>Luego</p>
+<p>\[
+x=y=z.
+\]</p>
+<p>Sustituyendo en cualquiera de las ecuaciones:</p>
+<p>\[
+x+(a+1)x+x=a
+\]</p>
+<p>\[
+(a+3)x=a
+\]</p>
+<p>\[
+x=\frac{a}{a+3}.
+\]</p>
+<p>Así,</p>
+<p>\[
+\boxed{x=y=z=\frac{a}{a+3}}
+\qquad (a\neq 0,-3).
+\]</p>
+<p>---</p>
+<h3>3. Caso \(a=0\): compatible indeterminado</h3>
+<p>El sistema queda</p>
+<p>\[
+\begin{cases}
+x+y+z=0\\
+x+y+z=0\\
+x+y+z=0
+\end{cases}
+\]</p>
+<p>Las tres ecuaciones son la misma, luego hay infinitas soluciones.</p>
+<p>La solución general es</p>
+<p>\[
+x+y+z=0
+\]</p>
+<p>o bien, tomando \(y=s,\ z=t\),</p>
+<p>\[
+x=-s-t.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{(x,y,z)=(-s-t,\ s,\ t),\quad s,t\in\mathbb R.}
+\]</p>
+<p>Este caso es <strong>compatible indeterminado</strong>.</p>
+<p>---</p>
+<h3>4. Caso \(a=-3\): incompatible</h3>
+<p>El sistema queda</p>
+<p>\[
+\begin{cases}
+x-2y+z=-3\\
+x+y-2z=-3\\
+-2x+y+z=-3
+\end{cases}
+\]</p>
+<p>Restando ecuaciones como antes:</p>
+<p>\[
+-3(y-z)=0 \Rightarrow y=z,
+\]<br>
+\[
+-3(z-x)=0 \Rightarrow z=x.
+\]</p>
+<p>Luego \(x=y=z\). Sustituyendo en la primera ecuación:</p>
+<p>\[
+x-2x+x=-3 \Rightarrow 0=-3,
+\]</p>
+<p>lo cual es imposible.</p>
+<p>Por tanto, el sistema es <strong>incompatible</strong> para \(a=-3\).</p>
+<p>---</p>
+<h2>Conclusión</h2>
+<p>- <strong>Compatible determinado</strong> si \(\boxed{a\neq 0,-3}\), con solución</p>
+<p>\[
+\boxed{x=y=z=\frac{a}{a+3}}.
+\]</p>
+<p>- <strong>Compatible indeterminado</strong> si \(\boxed{a=0}\), con soluciones</p>
+<p>\[
+\boxed{(x,y,z)=(-s-t,\ s,\ t),\quad s,t\in\mathbb R.}
+\]</p>
+<p>- <strong>Incompatible</strong> si \(\boxed{a=-3}\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_132.html">Anterior</a><a class="button" href="problema_134.html">Siguiente</a></nav>
+</main></body>
+</html>

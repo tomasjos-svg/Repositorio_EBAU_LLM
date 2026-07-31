@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 105: murcia_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 105 de 139</h1>
+<div class="meta"><span class="badge">murcia_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_104.html">Anterior</a><a class="button" href="problema_106.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>2: Considere la matriz \(A=\begin{pmatrix}-1&amp;3\\-1&amp;2\end{pmatrix}\).</p>
+<p>a) [1 p.] Calcule las potencias sucesivas \(A^2, A^3, A^4, A^5\) y \(A^6\).</p>
+<p>b) [0,5 p.] Calcule \(A^{2023}\).</p>
+<p>c) [1 p.] Compruebe que la matriz \(A\) es regular (o invertible) y calcule su matriz inversa.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 2.</strong> Considere la matriz  <br>
+\[
+A=\begin{pmatrix}1&amp;-3\\1&amp;-2\end{pmatrix}.
+\]</p>
+<h4>a) Calcule las potencias sucesivas \(A^2,A^3,A^4,A^5\) y \(A^6\)</h4>
+<p>\[
+A^2=
+\begin{pmatrix}1&amp;-3\\1&amp;-2\end{pmatrix}
+\begin{pmatrix}1&amp;-3\\1&amp;-2\end{pmatrix}
+=
+\begin{pmatrix}-2&amp;3\\-1&amp;1\end{pmatrix}
+\]</p>
+<p>\[
+A^3=A^2A=
+\begin{pmatrix}-2&amp;3\\-1&amp;1\end{pmatrix}
+\begin{pmatrix}1&amp;-3\\1&amp;-2\end{pmatrix}
+=
+\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}=Id
+\]</p>
+<p>\[
+A^4=A^3A=Id\cdot A=A=
+\begin{pmatrix}1&amp;-3\\1&amp;-2\end{pmatrix}
+\]</p>
+<p>\[
+A^5=A^4A=A^2=
+\begin{pmatrix}-2&amp;3\\-1&amp;1\end{pmatrix}
+\]</p>
+<p>\[
+A^6=A^5A=A^3=Id=
+\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}
+\]</p>
+<h4>b) Calcule \(A^{2023}\)</h4>
+<p>Como  <br>
+\[
+2023=6\cdot 337+1
+\]</p>
+<p>entonces</p>
+<p>\[
+A^{2023}=A^{6\cdot 337+1}=(A^6)^{337}A=Id^{337}A=A
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+A^{2023}=
+\begin{pmatrix}1&amp;-3\\1&amp;-2\end{pmatrix}.
+\]</p>
+<h4>c) Compruebe que la matriz \(A\) es regular e inversible y calcule su matriz inversa</h4>
+<p>La matriz \(A\) es regular o invertible si su determinante es no nulo.</p>
+<p>\[
+|A|=\begin{vmatrix}1&amp;-3\\1&amp;-2\end{vmatrix}
+=-2+3=1\neq 0
+\]</p>
+<p>Al ser su determinante no nulo, la matriz \(A\) es regular.</p>
+<p>\[
+A^{-1}=\frac{1}{|A|}\operatorname{Adj}(A)^t
+=
+\begin{pmatrix}-2&amp;3\\-1&amp;1\end{pmatrix}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver el ejercicio 2 paso a paso.</p>
+<h4>Parte (a) - Calculando potencias sucesivas de la matriz</h4>
+Primero, necesitamos la matriz \( A = \begin{pmatrix} -1 &amp; 3 \\ -1 &amp; 2 \end{pmatrix} \).
+<p>Para calcular \( A^2 \), multiplicamos \( A \cdot A \):<br>
+\[
+A^2 = \begin{pmatrix} -1 &amp; 3 \\ -1 &amp; 2 \end{pmatrix} \cdot \begin{pmatrix} -1 &amp; 3 \\ -1 &amp; 2 \end{pmatrix} = \begin{pmatrix} (-1)(-1) + 3(-1) &amp; (-1)3 + 3\cdot2 \\ (-1)(-1) + 2(-1) &amp; (-1)3 + 2\cdot2 \end{pmatrix} = \begin{pmatrix} 1 - 3 &amp; -3 + 6 \\ 1 - 2 &amp; -3 + 4 \end{pmatrix} = \begin{pmatrix} -2 &amp; 3 \\ -1 &amp; 1 \end{pmatrix}
+\]</p>
+<p>Prosigamos calculando las siguientes potencias:</p>
+<p>- Para \( A^3 \):<br>
+\[
+A^3 = A^2 \cdot A = \begin{pmatrix} -2 &amp; 3 \\ -1 &amp; 1 \end{pmatrix} \cdot \begin{pmatrix} -1 &amp; 3 \\ -1 &amp; 2 \end{pmatrix} = \begin{pmatrix} 2 + 3 &amp; -6 + 6 \\ 1 + 1 &amp; -3 + 2 \end{pmatrix} = \begin{pmatrix} 5 &amp; 0 \\ 2 &amp; -1 \end{pmatrix}
+\]</p>
+<p>- Para \( A^4 \):<br>
+\[
+A^4 = A^3 \cdot A = \begin{pmatrix} 5 &amp; 0 \\ 2 &amp; -1 \end{pmatrix} \cdot \begin{pmatrix} -1 &amp; 3 \\ -1 &amp; 2 \end{pmatrix} = \begin{pmatrix} -5 &amp; 15 \\ 2 - 1 &amp; 6 + 2 \end{pmatrix} = \begin{pmatrix} -5 &amp; 15 \\ 1 &amp; 8 \end{pmatrix}
+\]</p>
+<p>- Para \( A^5 \):<br>
+\[
+A^5 = A^4 \cdot A = \begin{pmatrix} -5 &amp; 15 \\ 1 &amp; 8 \end{pmatrix} \cdot \begin{pmatrix} -1 &amp; 3 \\ -1 &amp; 2 \end{pmatrix} = \begin{pmatrix} 5 - 15 &amp; -15 + 30 \\ -1 + 8 &amp; 3 + 16 \end{pmatrix} = \begin{pmatrix} -10 &amp; 15 \\ 7 &amp; 19 \end{pmatrix}
+\]</p>
+<p>- Para \( A^6 \):<br>
+\[
+A^6 = A^5 \cdot A = \begin{pmatrix} -10 &amp; 15 \\ 7 &amp; 19 \end{pmatrix} \cdot \begin{pmatrix} -1 &amp; 3 \\ -1 &amp; 2 \end{pmatrix} = \begin{pmatrix} 10 - 15 &amp; -30 + 30 \\ -7 + 19 &amp; 21 + 38 \end{pmatrix} = \begin{pmatrix} -5 &amp; 0 \\ 12 &amp; 59 \end{pmatrix}
+\]</p>
+<h4>Parte (b) - Calculando \( A^{2023} \)</h4>
+Podemos notar un patrón en las potencias que calculamos antes y conjeturar sobre la periodicidad de las potencias de la matriz si lo hubiera. Para cálculos tan extensos (hasta \( A^{2023} \)), convendría usar un método computacional o técnica algo sofisticada como la diagonalización de matrices o simplificar observando algún patrón; sin embargo, estos métodos no parecen inmediatamente aplicables con sólo las potencias calculadas manualmente.
+<h4>Parte (c) - Comprobar si la matriz es regular (invertible) y calcular su inversa</h4>
+Una matriz es invertible si su determinante es diferente de cero.
+<p>\- Determinante de \( A \):<br>
+\[
+\text{det}(A) = (-1)(2) - (3)(-1) = -2 + 3 = 1
+\]<br>
+Dado que el determinante es diferente de cero, \( A \) es invertible.</p>
+<p>\- Matriz inversa de \( A \):<br>
+\[
+A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} 2 &amp; -3 \\ 1 &amp; -1 \end{pmatrix} = \begin{pmatrix} 2 &amp; -3 \\ 1 &amp; -1 \end{pmatrix}
+\]</p>
+<p>Estas son las soluciones y procedimientos para cada parte del ejercicio 2.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los tres apartados para</p>
+<p>\[
+A=\begin{pmatrix}-1&amp;3\\-1&amp;2\end{pmatrix}.
+\]</p>
+<p>---</p>
+<h3>a) Cálculo de \(A^2,A^3,A^4,A^5,A^6\)</h3>
+<h4>Primero, \(A^2\)</h4>
+<p>\[
+A^2=A\cdot A=
+\begin{pmatrix}-1&amp;3\\-1&amp;2\end{pmatrix}
+\begin{pmatrix}-1&amp;3\\-1&amp;2\end{pmatrix}.
+\]</p>
+<p>Multiplicando:</p>
+<p>\[
+A^2=
+\begin{pmatrix}
+(-1)(-1)+3(-1) &amp; (-1)3+3\cdot2\\[2mm]
+(-1)(-1)+2(-1) &amp; (-1)3+2\cdot2
+\end{pmatrix}
+=
+\begin{pmatrix}
+1-3 &amp; -3+6\\
+1-2 &amp; -3+4
+\end{pmatrix}
+=
+\begin{pmatrix}
+-2&amp;3\\
+-1&amp;1
+\end{pmatrix}.
+\]</p>
+<p>---</p>
+<h4>Ahora, \(A^3\)</h4>
+<p>\[
+A^3=A^2A=
+\begin{pmatrix}-2&amp;3\\-1&amp;1\end{pmatrix}
+\begin{pmatrix}-1&amp;3\\-1&amp;2\end{pmatrix}.
+\]</p>
+<p>\[
+A^3=
+\begin{pmatrix}
+(-2)(-1)+3(-1) &amp; (-2)3+3\cdot2\\
+(-1)(-1)+1(-1) &amp; (-1)3+1\cdot2
+\end{pmatrix}
+=
+\begin{pmatrix}
+2-3 &amp; -6+6\\
+1-1 &amp; -3+2
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1&amp;0\\
+0&amp;-1
+\end{pmatrix}
+=-I.
+\]</p>
+<p>---</p>
+<h4>\(A^4\)</h4>
+<p>\[
+A^4=A^3A=(-I)A=-A=
+\begin{pmatrix}
+1&amp;-3\\
+1&amp;-2
+\end{pmatrix}.
+\]</p>
+<p>---</p>
+<h4>\(A^5\)</h4>
+<p>\[
+A^5=A^4A=(-A)A=-(A^2)
+=
+-\begin{pmatrix}-2&amp;3\\-1&amp;1\end{pmatrix}
+=
+\begin{pmatrix}
+2&amp;-3\\
+1&amp;-1
+\end{pmatrix}.
+\]</p>
+<p>---</p>
+<h4>\(A^6\)</h4>
+<p>\[
+A^6=A^3A^3=(-I)(-I)=I=
+\begin{pmatrix}
+1&amp;0\\
+0&amp;1
+\end{pmatrix}.
+\]</p>
+<p>---</p>
+<h4>Resultado del apartado a)</h4>
+<p>\[
+A^2=\begin{pmatrix}-2&amp;3\\-1&amp;1\end{pmatrix},\qquad
+A^3=\begin{pmatrix}-1&amp;0\\0&amp;-1\end{pmatrix},
+\]</p>
+<p>\[
+A^4=\begin{pmatrix}1&amp;-3\\1&amp;-2\end{pmatrix},\qquad
+A^5=\begin{pmatrix}2&amp;-3\\1&amp;-1\end{pmatrix},
+\]</p>
+<p>\[
+A^6=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}.
+\]</p>
+<p>---</p>
+<h3>b) Cálculo de \(A^{2023}\)</h3>
+<p>Como hemos obtenido que</p>
+<p>\[
+A^6=I,
+\]</p>
+<p>las potencias de \(A\) son periódicas de período 6. Entonces reducimos el exponente módulo 6:</p>
+<p>\[
+2023=6\cdot 337+1.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+A^{2023}=A^{6\cdot337+1}=(A^6)^{337}A=I^{337}A=A.
+\]</p>
+<p>Así,</p>
+<p>\[
+\boxed{A^{2023}=\begin{pmatrix}-1&amp;3\\-1&amp;2\end{pmatrix}}.
+\]</p>
+<p>---</p>
+<h3>c) Comprobar que \(A\) es invertible y calcular \(A^{-1}\)</h3>
+<p>Una matriz \(2\times2\) es invertible si su determinante es distinto de cero.</p>
+<p>\[
+\det(A)=(-1)(2)-3(-1)=-2+3=1\neq 0.
+\]</p>
+<p>Luego \(A\) es <strong>regular</strong> (invertible).</p>
+<p>Para una matriz<br>
+\[
+\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix},
+\]<br>
+su inversa es<br>
+\[
+\frac1{ad-bc}\begin{pmatrix}d&amp;-b\\-c&amp;a\end{pmatrix}.
+\]</p>
+<p>Aplicando esto a \(A\):</p>
+<p>\[
+A^{-1}=\frac1{1}
+\begin{pmatrix}
+2&amp;-3\\
+1&amp;-1
+\end{pmatrix}
+=
+\begin{pmatrix}
+2&amp;-3\\
+1&amp;-1
+\end{pmatrix}.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{A^{-1}=\begin{pmatrix}2&amp;-3\\1&amp;-1\end{pmatrix}}.
+\]</p>
+<p>(De hecho, coincide con \(A^5\), ya que \(A^6=I\).)</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>\[
+\boxed{
+A^2=\begin{pmatrix}-2&amp;3\\-1&amp;1\end{pmatrix},\quad
+A^3=\begin{pmatrix}-1&amp;0\\0&amp;-1\end{pmatrix},\quad
+A^4=\begin{pmatrix}1&amp;-3\\1&amp;-2\end{pmatrix},\quad
+A^5=\begin{pmatrix}2&amp;-3\\1&amp;-1\end{pmatrix},\quad
+A^6=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}
+}
+\]</p>
+<p>\[
+\boxed{A^{2023}=A=\begin{pmatrix}-1&amp;3\\-1&amp;2\end{pmatrix}}
+\]</p>
+<p>\[
+\boxed{\det(A)=1\neq 0,\qquad
+A^{-1}=\begin{pmatrix}2&amp;-3\\1&amp;-1\end{pmatrix}}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_104.html">Anterior</a><a class="button" href="problema_106.html">Siguiente</a></nav>
+</main></body>
+</html>

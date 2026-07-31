@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 60: cleon_2023 E5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 60 de 139</h1>
+<div class="meta"><span class="badge">cleon_2023</span> &nbsp; Ejercicio E5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_059.html">Anterior</a><a class="button" href="problema_061.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>E5.- (Análisis)  <br>
+Sea  <br>
+\[
+f(x)=
+\begin{cases}
+\dfrac{1}{2-x} &amp; \text{si } x&lt;1\\
+\ln(x) &amp; \text{si } x\ge 1
+\end{cases}
+\]</p>
+<p>a) Estudiar su continuidad y derivabilidad en \(x=1\). (1 punto)</p>
+<p>b) Estudiar sus asíntotas verticales y horizontales. (1 punto)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>E5.- (Análisis)</strong></p>
+<p>Sea  <br>
+\[
+f(x)=
+\begin{cases}
+\dfrac{1}{x-2}, &amp; \text{si } x&lt;1\\
+\ln x, &amp; \text{si } x\ge 1
+\end{cases}
+\]</p>
+<h4>a) Estudiar su continuidad y derivabilidad en \(x=1\). (1 punto)</h4>
+<p>Comparamos el valor de la función con el de los límites laterales.</p>
+<p>\[
+f(1)=\ln 1=0
+\]</p>
+<p>\[
+\lim_{x\to 1^-} f(x)=\lim_{x\to 1^-}\frac{1}{x-2}=\frac{1}{1-2}=-1
+\]</p>
+<p>\[
+\lim_{x\to 1^+} f(x)=\lim_{x\to 1^+}\ln x=\ln 1=0
+\]</p>
+<p>La función no es continua en \(x=1\).</p>
+<p>Por lo tanto, tampoco es derivable en \(x=1\).</p>
+<p>---</p>
+<h4>b) Estudiar sus asíntotas verticales y horizontales. (1 punto)</h4>
+<p>El dominio de la función es \(\mathbb{R}\).</p>
+<p>En \((-\infty,1)\) la función es</p>
+<p>\[
+f(x)=\frac{1}{x-2}.
+\]</p>
+<p>El denominador se anula para \(x=2\), que es mayor que 1 y por tanto no está incluido en el dominio.</p>
+<p>En \([1,+\infty)\) la función es</p>
+<p>\[
+f(x)=\ln x,
+\]</p>
+<p>que existe pues \(x&gt;0\).</p>
+<p><strong>Asíntota vertical.</strong></p>
+<p>\[
+x=a.
+\]</p>
+<p>Al ser el dominio todos los números reales no tiene asíntota vertical.</p>
+<p><strong>Asíntota horizontal.</strong></p>
+<p>\[
+y=b.
+\]</p>
+<p>\[
+b=\lim_{x\to+\infty}f(x)=\lim_{x\to+\infty}\ln x=+\infty
+\]</p>
+<p>\[
+b=\lim_{x\to-\infty}f(x)=\lim_{x\to-\infty}\frac{1}{x-2}=0
+\]</p>
+<p>\[
+y=0
+\]</p>
+<p>es asíntota horizontal cuando</p>
+<p>\[
+x\to-\infty.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><h4>Solución:</h4>
+<p>Para el problema planteado, resolveremos los dos apartados a) y b) en orden, utilizando el análisis matemático.</p>
+<p>#### a) Estudio de la continuidad y derivabilidad en \(x=1\):</p>
+<p>Para la función \(f(x)\) definida como:<br>
+\[
+f(x) =
+\begin{cases}
+\dfrac{1}{2-x} &amp; \text{si } x&lt;1\\
+\ln(x) &amp; \text{si } x\ge 1
+\end{cases}
+\]</p>
+<p><strong>Continuidad en \(x=1\):</strong></p>
+<p>La continuidad de una función en un punto implica que el límite de la función cuando \(x\) se aproxima al punto desde cualquier dirección debe ser igual al valor de la función en dicho punto.</p>
+<p>Cálculo del límite cuando \(x\) se aproxima a 1 desde la izquierda (\(x \to 1^-\)):<br>
+\[
+\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} \frac{1}{2-x} = \frac{1}{2-1} = 1.
+\]</p>
+<p>Cálculo del límite cuando \(x\) se aproxima a 1 desde la derecha (\(x \to 1^+\)):<br>
+\[
+\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} \ln(x) = \ln(1) = 0.
+\]</p>
+<p>Ya que estos dos límites son distintos, podemos concluir que:<br>
+\[
+\lim_{x \to 1^-} f(x) \neq \lim_{x \to 1^+} f(x).
+\]<br>
+Por lo tanto, \(f(x)\) <strong>no es continua en \(x=1\)</strong>.</p>
+<p><strong>Derivabilidad en \(x=1\):</strong></p>
+<p>Como la continuidad es un requisito previo para la derivabilidad y \(f(x)\) no es continua en \(x=1\), entonces \(f(x)\) <strong>no es derivable en \(x=1\)</strong>.</p>
+<p>#### b) Estudio de las asíntotas verticales y horizontales:</p>
+<p><strong>Asíntotas verticales:</strong></p>
+<p>Para hallar las asíntotas verticales, buscamos donde la función se vuelve indefinida o tiende a infinito. Notemos que la parte \(\frac{1}{2-x}\) se vuelve indefinida cuando \(x = 2\):<br>
+\[
+\lim_{x \to 2^-} \frac{1}{2-x} = -\infty.
+\]</p>
+<p>Esto sugiere que \(x = 2\) es una asíntota vertical para \(f(x)\).</p>
+<p><strong>Asíntotas horizontales:</strong></p>
+<p>Las asíntotas horizontales se encuentran evaluando los límites de \(f(x)\) conforme \(x\) se aproxima a \(\pm \infty\). Estudiando el comportamiento de \(f(x)\) conforme \(x \to \infty\) (sólo applicable para la rama \(\ln(x)\)):<br>
+\[
+\lim_{x \to \infty} \ln(x) = \infty.
+\]<br>
+Esto implica que <strong>no existen asíntotas horizontales</strong> ya que la función tiende a infinito.</p>
+<p>Para \(x \to -\infty\), la porción relevante es \(\frac{1}{2-x}\):<br>
+\[
+\lim_{x \to -\infty} \frac{1}{2-x} = 0,
+\]<br>
+lo cual indica que \(y = 0\) sirve como una asíntota horizontal cuando \(x\) se aproxima a \(-\infty\).</p>
+<h4>Resumen:</h4>
+<p>- <strong>\(f(x)\) no es continua ni derivable en \(x=1\)</strong>.<br>
+- <strong>\(x = 2\) es una asíntota vertical</strong>.<br>
+- <strong>\(y = 0\) es una asíntota horizontal según \(x \to -\infty\)</strong> y no hay asíntotas horizontales según \(x \to \infty\).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>\[
+f(x)=
+\begin{cases}
+\dfrac{1}{2-x}, &amp; x&lt;1\\[4pt]
+\ln(x), &amp; x\ge 1
+\end{cases}
+\]</p>
+<h3>a) Continuidad y derivabilidad en \(x=1\)</h3>
+<h4>Continuidad</h4>
+Primero, calculamos el valor de la función en \(x=1\):
+\[
+f(1)=\ln(1)=0
+\]
+<p>Límite por la izquierda:<br>
+\[
+\lim_{x\to 1^-}\frac{1}{2-x}=\frac{1}{2-1}=1
+\]</p>
+<p>Límite por la derecha:<br>
+\[
+\lim_{x\to 1^+}\ln(x)=\ln(1)=0
+\]</p>
+<p>Como<br>
+\[
+\lim_{x\to 1^-}f(x)=1 \neq 0=\lim_{x\to 1^+}f(x),
+\]<br>
+los límites laterales no coinciden, luego <strong>no existe el límite en \(x=1\)</strong>.</p>
+<p>Por tanto, <strong>\(f\) no es continua en \(x=1\)</strong>.</p>
+<p>Además, como \(f(1)=0\), coincide con el límite por la derecha pero no con el de la izquierda. Es una <strong>discontinuidad de salto</strong>.</p>
+<h4>Derivabilidad</h4>
+Una función derivable en un punto debe ser continua en ese punto. Como \(f\) <strong>no es continua</strong> en \(x=1\), entonces:
+<p>\[
+\boxed{\text{\(f\) no es derivable en }x=1}
+\]</p>
+<p>---</p>
+<h3>b) Asíntotas verticales y horizontales</h3>
+<h4>Asíntotas verticales</h4>
+Buscamos valores de \(x\) donde la función tienda a \(\pm\infty\).
+<p>- Para \(x&lt;1\), \(f(x)=\dfrac{1}{2-x}\).  <br>
+  La posible singularidad de esta expresión es \(x=2\), pero <strong>\(x=2\) no pertenece al tramo \(x&lt;1\)</strong>, así que no afecta.</p>
+<p>- Para \(x\ge 1\), \(f(x)=\ln x\).  <br>
+  La posible asíntota vertical de \(\ln x\) es \(x=0\), pero <strong>ese tramo solo vale para \(x\ge1\)</strong>.</p>
+<p>En \(x=1\), los límites laterales son finitos, así que tampoco hay asíntota vertical.</p>
+<p>Por tanto:</p>
+<p>\[
+\boxed{\text{No tiene asíntotas verticales}}
+\]</p>
+<h4>Asíntotas horizontales</h4>
+Estudiamos el comportamiento en los infinitos.
+<p>#### Cuando \(x\to -\infty\)<br>
+Aquí usamos el tramo \(x&lt;1\):<br>
+\[
+\lim_{x\to -\infty}\frac{1}{2-x}=0
+\]</p>
+<p>Luego hay asíntota horizontal:<br>
+\[
+\boxed{y=0 \text{ cuando } x\to -\infty}
+\]</p>
+<p>#### Cuando \(x\to +\infty\)<br>
+Aquí usamos el tramo \(x\ge1\):<br>
+\[
+\lim_{x\to +\infty}\ln x=+\infty
+\]</p>
+<p>No existe límite finito, así que <strong>no hay asíntota horizontal</strong> para \(x\to+\infty\).</p>
+<p>---</p>
+<h3>Conclusión final</h3>
+<p>- <strong>En \(x=1\)</strong>:<br>
+  - No es continua.<br>
+  - No es derivable.</p>
+<p>- <strong>Asíntotas</strong>:<br>
+  - <strong>Verticales</strong>: ninguna.<br>
+  - <strong>Horizontales</strong>: \(\boxed{y=0}\) cuando \(x\to -\infty\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_059.html">Anterior</a><a class="button" href="problema_061.html">Siguiente</a></nav>
+</main></body>
+</html>

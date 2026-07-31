@@ -1,0 +1,4 @@
+﻿scenario,metric,reference_condition,comparison_condition,converged,model_status,error
+principal,,,,False,omitted_missing_statsmodels,Modelos mixtos omitidos: statsmodels no está instalado. El resto de la inferencia se ejecutó correctamente.
+estricto,,,,False,omitted_missing_statsmodels,Modelos mixtos omitidos: statsmodels no está instalado. El resto de la inferencia se ejecutó correctamente.
+sensibilidad,,,,False,omitted_missing_statsmodels,Modelos mixtos omitidos: statsmodels no está instalado. El resto de la inferencia se ejecutó correctamente.

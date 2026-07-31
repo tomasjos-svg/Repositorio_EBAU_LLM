@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 44: cantabria_2023 3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 44 de 139</h1>
+<div class="meta"><span class="badge">cantabria_2023</span> &nbsp; Ejercicio 3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_043.html">Anterior</a><a class="button" href="problema_045.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio 3 [2,5 PUNTOS]</p>
+<p>A) [1,5 PUNTOS] Escriba las ecuaciones paramétricas de las rectas que pasan por el punto (2, -1, 0). Es decir, de aquellas que tienen vector director (v1, v2, v3), donde v1, v2, v3 ∈ R son parámetros.</p>
+<p>B) [1 PUNTO] De las rectas anteriores, escriba las ecuaciones paramétricas de la recta que tiene vector director (-1, 4, 1).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 3 [2.5 PUNTOS]</strong></p>
+<p>A)  <br>
+\[
+\begin{cases}
+x=2+v_1\lambda\\
+y=-1+v_2\lambda\\
+z=v_3\lambda
+\end{cases}
+\]</p>
+<p>B) Para vector director \((-1,4,1)\):</p>
+<p>\[
+\begin{cases}
+x=2-\lambda\\
+y=-1+4\lambda\\
+z=\lambda
+\end{cases}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el Ejercicio 3:</p>
+<p><strong>Parte A) [1,5 PUNTOS]</strong></p>
+<p>Debemos escribir las ecuaciones paramétricas de las rectas que pasan por el punto \( (2, -1, 0) \) con un vector director genérico \( (v_1, v_2, v_3) \), donde \( v_1, v_2, v_3 \) son parámetros reales.</p>
+<p>Las ecuaciones paramétricas de una recta en el espacio se pueden expresar de la siguiente manera:<br>
+\[
+x = x_0 + v_1 t
+\]<br>
+\[
+y = y_0 + v_2 t
+\]<br>
+\[
+z = z_0 + v_3 t
+\]<br>
+donde \((x_0, y_0, z_0)\) es un punto por el que pasa la recta, \((v_1, v_2, v_3)\) es el vector director de la recta, y \( t \) es el parámetro.</p>
+<p>En este caso, \((x_0, y_0, z_0) = (2, -1, 0)\). Sustituyendo estos valores en las ecuaciones paramétricas, obtenemos:<br>
+\[
+x = 2 + v_1 t
+\]<br>
+\[
+y = -1 + v_2 t
+\]<br>
+\[
+z = 0 + v_3 t
+\]</p>
+<p>Estas son las ecuaciones paramétricas de las rectas que pasan por el punto \( (2, -1, 0) \) con vector director \( (v_1, v_2, v_3) \).</p>
+<p><strong>Parte B) [1 PUNTO]</strong></p>
+<p>Para esta parte, debemos especificar las ecuaciones paramétricas para una de las rectas encontradas en la parte A, específicamente aquella que tiene el vector director \( (-1, 4, 1) \).</p>
+<p>Sustituyendo \( (v_1, v_2, v_3) = (-1, 4, 1) \) en las ecuaciones obtenidas en la parte A, tenemos:<br>
+\[
+x = 2 - t
+\]<br>
+\[
+y = -1 + 4t
+\]<br>
+\[
+z = 1t
+\]</p>
+<p>Las ecuaciones paramétricas de la recta que pasa por el punto \( (2, -1, 0) \) y tiene vector director \( (-1, 4, 1) \) son:<br>
+\[
+x = 2 - t, \quad y = -1 + 4t, \quad z = t
+\]</p>
+<p>Estas son las respuestas para los apartados A y B del Ejercicio 3, proporcionando las ecuaciones paramétricas buscadas para los casos generales y específicos del vector director.</p></section>
+<section class="card"><h2>Respuesta B</h2><p><strong>Ejercicio 3</strong></p>
+<p>La ecuación paramétrica de una recta que pasa por un punto \(P_0=(x_0,y_0,z_0)\) y tiene como vector director \(\vec v=(a,b,c)\) es</p>
+<p>\[
+\begin{cases}
+x=x_0+at\\
+y=y_0+bt\\
+z=z_0+ct
+\end{cases}
+\qquad t\in\mathbb R
+\]</p>
+<p>---</p>
+<h3>A) Rectas que pasan por \((2,-1,0)\)</h3>
+<p>Aquí el punto es \((2,-1,0)\) y el vector director general es \((v_1,v_2,v_3)\), con \(v_1,v_2,v_3\in\mathbb R\).</p>
+<p>Por tanto, las ecuaciones paramétricas son</p>
+<p>\[
+\boxed{
+\begin{cases}
+x=2+v_1t\\
+y=-1+v_2t\\
+z=v_3t
+\end{cases}
+\qquad t\in\mathbb R
+}
+\]</p>
+<p>donde el vector director debe ser <strong>no nulo</strong>, es decir,</p>
+<p>\[
+(v_1,v_2,v_3)\neq(0,0,0).
+\]</p>
+<p>---</p>
+<h3>B) Recta con vector director \((-1,4,1)\)</h3>
+<p>Sustituyendo \(v_1=-1\), \(v_2=4\), \(v_3=1\) en la expresión anterior, resulta</p>
+<p>\[
+\boxed{
+\begin{cases}
+x=2-t\\
+y=-1+4t\\
+z=t
+\end{cases}
+\qquad t\in\mathbb R
+}
+\]</p>
+<p>Esa es la recta pedida.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_043.html">Anterior</a><a class="button" href="problema_045.html">Siguiente</a></nav>
+</main></body>
+</html>

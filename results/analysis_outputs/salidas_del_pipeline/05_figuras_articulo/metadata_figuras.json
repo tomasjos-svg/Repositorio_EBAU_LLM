@@ -1,0 +1,10 @@
+{
+  "pipeline_version": "3.1",
+  "figures_generated": 8,
+  "formats": [
+    "png",
+    "pdf",
+    "svg"
+  ],
+  "dpi_png": 400
+}

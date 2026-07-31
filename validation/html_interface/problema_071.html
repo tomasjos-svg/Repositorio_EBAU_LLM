@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 71: cvalenciana_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 71 de 139</h1>
+<div class="meta"><span class="badge">cvalenciana_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_070.html">Anterior</a><a class="button" href="problema_072.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Problema 6. Una ventana rectangular está coronada por un semicírculo tal y como se indica en la siguiente figura.</p>
+<p>Sabiendo que el perímetro de la ventana es de 20 metros:</p>
+<p>a) Calcular el área de la ventana en función de su anchura \(x\). (3 puntos)</p>
+<p>b) Calcular las dimensiones que ha de tener la ventana para que permita la máxima entrada de luz. (5 puntos)</p>
+<p>c) Calcular el valor de dicha área máxima. (2 puntos)</p>
+<p>\(x\)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Problema 6. Solución oficial:</strong></p>
+<p>a) Área(x) = \(10x - \left(\frac{1}{2} + \frac{\pi}{8}\right)x^2\).</p>
+<p>b) Dimensiones:  <br>
+\[
+x = \frac{40}{\pi+4} = 5.601\ \text{m}, \quad
+y = \frac{20}{\pi+4} = 2.8005\ \text{m}
+\]<br>
+siendo \(y\) la altura de la parte rectangular.</p>
+<p>c) Área máxima:  <br>
+\[
+\frac{200}{\pi+4} = 28.005\ \text{m}^2
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea \(x\) la anchura de la ventana y \(y\) la altura de la parte rectangular.</p>
+<p>El semicírculo tiene:</p>
+<p>\[
+r=\frac{x}{2}
+\]</p>
+<h3>a) Área en función de \(x\)</h3>
+<h4>Perímetro</h4>
+El perímetro exterior de la ventana es:
+<p>- base del rectángulo: \(x\)<br>
+- dos lados verticales: \(2y\)<br>
+- arco del semicírculo: \(\pi r=\pi \frac{x}{2}\)</p>
+<p>Entonces:</p>
+<p>\[
+x+2y+\frac{\pi x}{2}=20
+\]</p>
+<p>Despejamos \(y\):</p>
+<p>\[
+2y=20-x-\frac{\pi x}{2}
+\]</p>
+<p>\[
+y=10-\frac{x}{2}-\frac{\pi x}{4}
+\]</p>
+<h4>Área</h4>
+El área total es:
+<p>\[
+A(x)=\text{área del rectángulo}+\text{área del semicírculo}
+\]</p>
+<p>\[
+A(x)=xy+\frac{1}{2}\pi r^2
+\]</p>
+<p>\[
+A(x)=x\left(10-\frac{x}{2}-\frac{\pi x}{4}\right)+\frac{1}{2}\pi \left(\frac{x}{2}\right)^2
+\]</p>
+<p>\[
+A(x)=10x-\frac{x^2}{2}-\frac{\pi x^2}{4}+\frac{\pi x^2}{8}
+\]</p>
+<p>\[
+\boxed{A(x)=10x-\frac{4+\pi}{8}\,x^2}
+\]</p>
+<p>---</p>
+<h3>b) Dimensiones para que el área sea máxima</h3>
+<p>Maximizamos:</p>
+<p>\[
+A(x)=10x-\frac{4+\pi}{8}x^2
+\]</p>
+<p>Derivamos:</p>
+<p>\[
+A&#x27;(x)=10-\frac{4+\pi}{4}x
+\]</p>
+<p>Igualamos a cero:</p>
+<p>\[
+10-\frac{4+\pi}{4}x=0
+\]</p>
+<p>\[
+\frac{4+\pi}{4}x=10
+\]</p>
+<p>\[
+\boxed{x=\frac{40}{4+\pi}}
+\]</p>
+<p>Comprobamos que es máximo:</p>
+<p>\[
+A&#x27;&#x27;(x)=-\frac{4+\pi}{4}&lt;0
+\]</p>
+<p>Luego efectivamente da un máximo.</p>
+<p>Ahora calculamos la altura del rectángulo:</p>
+<p>\[
+y=10-\frac{x}{2}-\frac{\pi x}{4}
+\]</p>
+<p>Sustituyendo \(x=\dfrac{40}{4+\pi}\):</p>
+<p>\[
+y=10-\frac{20}{4+\pi}-\frac{10\pi}{4+\pi}
+\]</p>
+<p>\[
+y=10-\frac{20+10\pi}{4+\pi}
+\]</p>
+<p>\[
+y=\frac{10(4+\pi)-(20+10\pi)}{4+\pi}
+\]</p>
+<p>\[
+\boxed{y=\frac{20}{4+\pi}}
+\]</p>
+<p>Además, el radio del semicírculo será:</p>
+<p>\[
+r=\frac{x}{2}=\frac{20}{4+\pi}
+\]</p>
+<h4>Dimensiones óptimas</h4>
+\[
+\boxed{\text{anchura }=\frac{40}{4+\pi}\text{ m}}
+\]
+\[
+\boxed{\text{altura del rectángulo }=\frac{20}{4+\pi}\text{ m}}
+\]
+<p>(Aproximadamente: \(x\approx 5.60\) m, \(y\approx 2.80\) m)</p>
+<p>---</p>
+<h3>c) Área máxima</h3>
+<p>Sustituimos \(x=\dfrac{40}{4+\pi}\) en la función área:</p>
+<p>\[
+A_{\max}=10\cdot \frac{40}{4+\pi}-\frac{4+\pi}{8}\left(\frac{40}{4+\pi}\right)^2
+\]</p>
+<p>\[
+A_{\max}=\frac{400}{4+\pi}-\frac{200}{4+\pi}
+\]</p>
+<p>\[
+\boxed{A_{\max}=\frac{200}{4+\pi}\ \text{m}^2}
+\]</p>
+<p>Aproximadamente:</p>
+<p>\[
+\boxed{A_{\max}\approx 28.0\ \text{m}^2}
+\]</p>
+<p>---</p>
+<h4>Resultado final</h4>
+- <strong>a)</strong> \(\boxed{A(x)=10x-\dfrac{4+\pi}{8}x^2}\)
+- <strong>b)</strong> \(\boxed{x=\dfrac{40}{4+\pi}\text{ m},\quad y=\dfrac{20}{4+\pi}\text{ m}}\)
+- <strong>c)</strong> \(\boxed{A_{\max}=\dfrac{200}{4+\pi}\text{ m}^2}\)</section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el Problema 6 sobre la ventana que combina un rectángulo con un semicírculo, seguiremos los pasos detallados:</p>
+<h4>Apartado (a): Calcular el área de la ventana en función de su anchura \(x\).</h4>
+<p><strong>Datos Iniciales:</strong></p>
+<p>- Perímetro total de la ventana, \(P = 20\) metros.<br>
+- La venta consta de un rectángulo con anchura \(x\) y altura \(y\), y un semicírculo con diámetro igual a \(x\).</p>
+<p><strong>Cálculo del Perímetro del Semirrectángulo:</strong></p>
+<p>Para calcular el perímetro de la ventana, debemos tomar en cuenta dos lados del rectángulo más su base, a la cual añadimos la longitud del semicírculo (que es medio perímetro de un círculo de radio \(x/2\)):</p>
+<p>\[ \text{Perímetro del semicírculo} = \pi \left(\frac{x}{2}\right) \]</p>
+<p>La ecuación del perímetro resultante de toda la ventana sería:<br>
+\[ 2y + x + \pi \left(\frac{x}{2}\right) = 20 \]</p>
+<p>Deseamos expresar \(y\) en términos de \(x\) usando la ecuación anterior:</p>
+<p>\[ 2y = 20 - x - \pi \left(\frac{x}{2}\right) \]<br>
+\[ y = 10 - \frac{x}{2} - \frac{\pi x}{4} \]</p>
+<p><strong>Cálculo del Área Total de la Ventana:</strong></p>
+<p>El área \(A\) de la ventana es la suma del área del rectángulo y el área del semicírculo:</p>
+<p>\[ A = x \cdot y + \frac{1}{2} \pi \left(\frac{x}{2}\right)^2 \]</p>
+<p>Sustituimos \(y\) en la fórmula del área:</p>
+<p>\[ A = x \left(10 - \frac{x}{2} - \frac{\pi x}{4}\right) + \frac{1}{2} \pi \left(\frac{x}{2}\right)^2 \]<br>
+\[ A = 10x - \frac{x^2}{2} - \frac{\pi x^2}{4} + \frac{\pi x^2}{8} \]<br>
+\[ A = 10x - \frac{x^2}{2} - \frac{\pi x^2}{8} \]</p>
+<h4>Apartado (b): Calcular las dimensiones para la máxima entrada de luz.</h4>
+<p>Para hallar las dimensiones que maximizan el área, diferenciamos \(A\) respecto a \(x\) y buscamos los ceros de la derivada \(A&#x27; (x)\):</p>
+<p>\[ A&#x27;(x) = 10 - x - \left(\frac{\pi}{4}x\right) + \left(\frac{\pi}{4}x\right) \]<br>
+\[ A&#x27;(x) = 10 - x - \frac{\pi x}{4} \]</p>
+<p>Igualamos a cero para encontrar \(x\):</p>
+<p>\[ 10 - x - \frac{\pi x}{4} = 0 \]<br>
+\[ 10 = x \left(1 + \frac{\pi}{4}\right) \]<br>
+\[ x = \frac{10}{1 + \frac{\pi}{4}} \]</p>
+<h4>Apartado (c): Calcular el valor del área máxima.</h4>
+<p>Sustituimos el valor de \(x\) hallado en la fórmula del área \(A\):</p>
+<p>\[ x = \frac{40}{4 + \pi} \]<br>
+\[ y = 10 - \frac{40}{2(4+\pi)} - \frac{\pi \cdot 40}{4(4+\pi)} \]</p>
+<p>Calculamos \(A\) sustituyendo \(x\) y \(y\) calculados:</p>
+<p>\[ A(x) = 10 \left(\frac{40}{4 + \pi}\right) - \frac{\left(\frac{40}{4 + \pi}\right)^2}{2} - \frac{\pi \left(\frac{40}{4 + \pi}\right)^2}{8} \]</p>
+<p>Este sería el área máxima que la ventana puede obtener bajo las condiciones dadas.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_070.html">Anterior</a><a class="button" href="problema_072.html">Siguiente</a></nav>
+</main></body>
+</html>

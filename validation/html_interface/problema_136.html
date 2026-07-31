@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 136: rioja_2023 7</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 136 de 139</h1>
+<div class="meta"><span class="badge">rioja_2023</span> &nbsp; Ejercicio 7</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_135.html">Anterior</a><a class="button" href="problema_137.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>7.- (2 puntos) Determina la posición relativa de la recta  <br>
+\[
+\frac{x-3}{0}=\frac{y+1}{1}=\frac{z-5}{1}
+\]<br>
+y el plano de ecuación  <br>
+\[
+3x+2y-z+11=0.
+\]</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 7. Solución oficial</strong></p>
+<p>Obtenemos el vector director de la recta y el vector normal del plano. Comprobamos si son ortogonales o no:</p>
+<p>\[
+\frac{x-3}{0}=\frac{y+1}{1}=\frac{z-5}{1}
+\Rightarrow v=(0,1,1)
+\]</p>
+<p>\[
+3x+2y-11z+3=0
+\Rightarrow n=(3,2,-11)
+\]</p>
+<p>Calculamos el producto escalar:</p>
+<p>\[
+v\cdot n=(0,1,1)\cdot(3,2,-11)=2-11=-9\neq 0
+\]</p>
+<p>Al ser el producto escalar distinto de 0, los vectores no son perpendiculares. Por tanto, plano y recta son <strong>secantes</strong>: coinciden en un punto.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a estudiar la <strong>posición relativa</strong> entre la recta y el plano.</p>
+<h3>1) Datos</h3>
+<p>La recta está dada por</p>
+<p>\[
+\frac{x-3}{0}=\frac{y+1}{1}=\frac{z-5}{1}.
+\]</p>
+<p>Como el denominador de la primera fracción es \(0\), eso significa que:</p>
+<p>\[
+x=3.
+\]</p>
+<p>Tomando un parámetro \(t\), la recta se puede escribir como:</p>
+<p>\[
+x=3,\qquad y=-1+t,\qquad z=5+t.
+\]</p>
+<p>Por tanto:</p>
+<p>- Un punto de la recta es \(P=(3,-1,5)\).<br>
+- Un vector director es \(\vec v=(0,1,1)\).</p>
+<p>El plano es</p>
+<p>\[
+3x+2y-z+11=0,
+\]</p>
+<p>cuyo vector normal es</p>
+<p>\[
+\vec n=(3,2,-1).
+\]</p>
+<p>---</p>
+<h3>2) Comprobamos la posición relativa</h3>
+<p>Para saber si la recta es paralela al plano, calculamos el producto escalar entre el vector director de la recta y el vector normal del plano:</p>
+<p>\[
+\vec v\cdot \vec n=(0,1,1)\cdot(3,2,-1)=0\cdot 3+1\cdot 2+1\cdot(-1)=1.
+\]</p>
+<p>Como</p>
+<p>\[
+\vec v\cdot \vec n \neq 0,
+\]</p>
+<p>la recta <strong>no es paralela</strong> al plano.</p>
+<p>Entonces la recta y el plano se cortan en <strong>un único punto</strong>: la recta es <strong>secante</strong> al plano.</p>
+<p>---</p>
+<h3>3) Hallamos el punto de corte</h3>
+<p>Sustituimos las ecuaciones paramétricas de la recta en el plano:</p>
+<p>\[
+3(3)+2(-1+t)-(5+t)+11=0.
+\]</p>
+<p>Desarrollamos:</p>
+<p>\[
+9-2+2t-5-t+11=0
+\]</p>
+<p>\[
+13+t=0
+\]</p>
+<p>\[
+t=-13.
+\]</p>
+<p>Ahora sustituimos en la recta:</p>
+<p>\[
+x=3,
+\]</p>
+<p>\[
+y=-1+(-13)=-14,
+\]</p>
+<p>\[
+z=5+(-13)=-8.
+\]</p>
+<p>El punto de intersección es:</p>
+<p>\[
+(3,-14,-8).
+\]</p>
+<p>---</p>
+<h3>4) Conclusión</h3>
+<p>La recta y el plano tienen <strong>posición secante</strong>, es decir, <strong>se cortan en un punto</strong>.</p>
+<p>El punto de corte es</p>
+<p>\[
+\boxed{(3,-14,-8)}.
+\]</p>
+<p>Si se quiere afinar más, la recta es <strong>secante oblicua</strong> al plano, porque no es perpendicular a él.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para determinar la posición relativa de la recta y el plano dados en el ejercicio, primero expresaremos de manera más clara la ecuación de la recta y analizaremos su relación con la ecuación del plano.</p>
+<h4>Análisis y Representación de la Recta</h4>
+<p>La ecuación de la recta se da en forma simétrica:<br>
+\[
+\frac{x-3}{0}=\frac{y+1}{1}=\frac{z-5}{1}
+\]</p>
+<p>La forma \(\frac{x - x_0}{a}\) donde el denominador es cero indica que la coordenada correspondiente, en este caso \(x\), es constante. Por tanto, \(x = 3\) siempre. Las otras dos componentes tienen vectores dirección dados por los denominadores, es decir, \(y\) y \(z\) varían libremente  manteniendo una relación lineal a partir de sus respectivos puntos. La ecuación de la recta puede entonces reescribirse parametrizando \(y\) y \(z\) con un parámetro \(t\):<br>
+\[
+x = 3, \quad y = -1 + t, \quad z = 5 + t
+\]<br>
+Por lo tanto, los puntos \((3, -1 + t, 5 + t)\) están en la recta para cualquier valor de \(t\).</p>
+<h4>Análisis del Plano</h4>
+<p>El plano está definido por la ecuación:<br>
+\[
+3x + 2y - z + 11 = 0
+\]</p>
+<h4>Determinar la Intersección de la Recta y el Plano</h4>
+<p>Para averiguar si la recta intersecta el plano, sustituimos las ecuaciones de \(x\), \(y\), \(z\) de la recta en la ecuación del plano:<br>
+\[
+3(3) + 2(-1 + t) - (5 + t) + 11 = 0
+\]<br>
+Simplificando,<br>
+\[
+9 - 2 + 2t - 5 - t + 11 = 0
+\]<br>
+\[
+13 + t = 0
+\]<br>
+\[
+t = -13
+\]</p>
+<p>Con \(t = -13\), se puede encontrar el punto de intersección sustituyendo de vuelta en las ecuaciones paramétricas de la recta:<br>
+\[
+x = 3, \quad y = -1 + (-13), \quad z = 5 - 13
+\]<br>
+\[
+x = 3, \quad y = -14, \quad z = -8
+\]<br>
+Por lo tanto, el único punto de intersección es \( (3, -14, -8) \).</p>
+<h4>Conclusión sobre la Posición Relativa</h4>
+<p>La recta y el plano se intersectan exactamente en un punto, \( (3, -14, -8) \). Esto significa que la recta es <strong>secante</strong> al plano, ya que intersectan en un único punto.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_135.html">Anterior</a><a class="button" href="problema_137.html">Siguiente</a></nav>
+</main></body>
+</html>

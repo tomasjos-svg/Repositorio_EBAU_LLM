@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 52: cataluna_2023 3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 52 de 139</h1>
+<div class="meta"><span class="badge">cataluna_2023</span> &nbsp; Ejercicio 3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_051.html">Anterior</a><a class="button" href="problema_053.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>En el documento aparecen dos ejercicios 3, uno en la <strong>Sèrie 1</strong> y otro en la <strong>Sèrie 5</strong>. Los transcribo/reconstruyo con la máxima fidelidad posible según el texto proporcionado.</p>
+<h3>Sèrie 1 — Exercici 3</h3>
+<p><strong>3.</strong> Sigui la funció derivada d’una funció derivable \(f(x)\) que passa  <br>
+pel punt \(A = (0, 3)\).</p>
+<p><strong>a)</strong> Calculeu la funció \(f(x)\).  <br>
+\[1,5 punts\]</p>
+<p><strong>b)</strong> Calculeu l’equació de la recta tangent a la funció \(f(x)\) en el punt d’abscissa \(x = 3\).  <br>
+\[1 punt\]</p>
+<p>&gt; Nota: en el texto proporcionado falta la expresión de la funció derivada.</p>
+<p>---</p>
+<h3>Sèrie 5 — Exercici 3</h3>
+<p><strong>3.</strong> Considereu les rectes a l’espai \(r : x = -y = z + m\) i , en què \(m\) és un paràmetre real.</p>
+<p><strong>a)</strong> Estudieu la posició relativa per als diferents valors del paràmetre \(m\).  <br>
+\[1,25 punts\]</p>
+<p><strong>b)</strong> Calculeu \(m\) perquè la distància entre les rectes \(r\) i \(s\) sigui de unitats.  <br>
+\[1,25 punts\]</p>
+<p>&gt; Nota: en el texto proporcionado falta la ecuación de la recta \(s\) y también falta el valor numérico de la distancia.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>En el documento aparecen <strong>dos ejercicios 3</strong>: uno de la <strong>Serie 1</strong> y otro de la <strong>Serie 5</strong>. Extraigo ambos.</p>
+<p>---</p>
+<h3>Serie 1 — Ejercicio 3</h3>
+<h4>Resolución</h4>
+<p>#### a)</p>
+<p>Integrando:</p>
+<p>\[
+f&#x27;(x)=
+\begin{cases}
+x-1 &amp; \text{si } x&lt;2\\
+\dfrac{1}{x-1} &amp; \text{si } x&gt;2
+\end{cases}
+\]</p>
+<p>se obtiene:</p>
+<p>\[
+f(x)=
+\begin{cases}
+\dfrac12x^2-x+k &amp; \text{si } x&lt;2\\
+\ln|x-1|+k&#x27; &amp; \text{si } x&gt;2
+\end{cases}
+\]</p>
+<p>Como \(f(x)\) pasa por el punto \(A=(0,3)\):</p>
+<p>\[
+\dfrac12\cdot 0^2-0+k=3 \Rightarrow k=3
+\]</p>
+<p>Como \(f(x)\) es derivable, entonces es continua en \(x=2\). Por tanto, los límites laterales deben coincidir:</p>
+<p>\[
+\dfrac12\cdot 2^2-2+3=\ln|2-1|+k&#x27;
+\]</p>
+<p>\[
+k&#x27;=3
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+f(x)=
+\begin{cases}
+\dfrac12x^2-x+3 &amp; \text{si } x\leq 2\\
+\ln|x-1|+3 &amp; \text{si } x&gt;2
+\end{cases}
+\]</p>
+<p>Observación: se puntúa igual \(\ln|x-1|\) que \(\ln(x-1)\).</p>
+<p>#### b)</p>
+<p>Aplicamos la ecuación de la recta tangente a una función \(g(x)\) en el punto de abscisa \(a\):</p>
+<p>\[
+y-g(a)=g&#x27;(a)(x-a)
+\]</p>
+<p>Ahora:</p>
+<p>\[
+g(x)=f&#x27;(x)=
+\begin{cases}
+x-1 &amp; \text{si } x\leq 2\\
+\dfrac{1}{x-1} &amp; \text{si } x&gt;2
+\end{cases}
+\]</p>
+<p>y \(a=3\).</p>
+<p>Calculamos:</p>
+<p>\[
+g&#x27;(x)=f&#x27;&#x27;(x)=
+\begin{cases}
+1 &amp; \text{si } x&lt;2\\
+-\dfrac{1}{(x-1)^2} &amp; \text{si } x&gt;2
+\end{cases}
+\]</p>
+<p>\[
+g&#x27;(3)=-\dfrac14,\qquad g(3)=\dfrac12
+\]</p>
+<p>Entonces:</p>
+<p>\[
+y-\dfrac12=-\dfrac14(x-3)
+\]</p>
+<p>\[
+y=-\dfrac14x+\dfrac54
+\]</p>
+<p>---</p>
+<h3>Serie 5 — Ejercicio 3</h3>
+<h4>Resolución</h4>
+<p>#### a)</p>
+<p>Determinamos el vector director y un punto de cada recta:</p>
+<p>\[
+r:\quad v_r=(1,1,1),\quad P=(0,0,m)
+\]</p>
+<p>\[
+s:\quad v_s=(1,1,1),\quad Q=(1,0,1)
+\]</p>
+<p>Como \(v_r=v_s\), los vectores directores de \(r\) y \(s\) son linealmente dependientes y las rectas serán coincidentes o paralelas.</p>
+<p>Si fueran coincidentes, tendrían todos los puntos en común, en concreto \(Q\in s\).</p>
+<p>Comprobamos si:</p>
+<p>\[
+Q\in r
+\]</p>
+<p>Esto daría:</p>
+<p>\[
+1=0
+\]</p>
+<p>lo cual no se satisface para ningún valor de \(m\). Por tanto, las rectas siempre son paralelas, independientemente de \(m\).</p>
+<p>#### b)</p>
+<p>Calculamos la distancia entre las dos rectas:</p>
+<p>\[
+d(P,S)=\frac{|PQ\times v_s|}{|v_s|}
+\]</p>
+<p>El resultado obtenido es:</p>
+<p>\[
+d(P,S)=\frac{\sqrt{1+(1-m)^2}}{\sqrt{3}}
+\]</p>
+<p>Queremos que esta distancia sea \(\sqrt{2}\):</p>
+<p>\[
+\frac{\sqrt{1+(1-m)^2}}{\sqrt{3}}=\sqrt{2}
+\]</p>
+<p>Elevando al cuadrado:</p>
+<p>\[
+1+(1-m)^2=6
+\]</p>
+<p>\[
+m^2-2m-4=0
+\]</p>
+<p>De donde se obtienen las soluciones:</p>
+<p>\[
+m=1,\qquad m=-2
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Hay <strong>dos ejercicios 3</strong> en el documento, y <strong>los dos están incompletos</strong>.  <br>
+Por tanto, <strong>no se puede obtener una solución numérica única</strong> sin inventar datos.  <br>
+Aun así, resuelvo <strong>todo lo que sí puede deducirse</strong>.</p>
+<p>---</p>
+<h3>Sèrie 1 — Exercici 3</h3>
+<p>Se sabe que \(f\) es derivable, pasa por \(A=(0,3)\), y falta la expresión de \(f&#x27;(x)\).</p>
+<p>Sea<br>
+\[
+f&#x27;(x)=g(x).
+\]</p>
+<h4>a) Calcular \(f(x)\)</h4>
+<p>Una primitiva de \(g(x)\) es \(G(x)\), con \(G&#x27;(x)=g(x)\). Entonces<br>
+\[
+f(x)=G(x)+C.
+\]</p>
+<p>Como \(f(0)=3\),<br>
+\[
+G(0)+C=3 \quad \Longrightarrow \quad C=3-G(0).
+\]</p>
+<p>Por tanto,<br>
+\[
+\boxed{f(x)=G(x)+3-G(0)}.
+\]</p>
+<p>Equivalentemente,<br>
+\[
+\boxed{f(x)=3+\int_0^x g(t)\,dt}.
+\]</p>
+<p>---</p>
+<h4>b) Recta tangente en \(x=3\)</h4>
+<p>La pendiente de la tangente es<br>
+\[
+f&#x27;(3)=g(3).
+\]</p>
+<p>El punto de tangencia es<br>
+\[
+\left(3,f(3)\right)
+=
+\left(3,\,3+\int_0^3 g(t)\,dt\right).
+\]</p>
+<p>Entonces la recta tangente es<br>
+\[
+y-f(3)=f&#x27;(3)(x-3).
+\]</p>
+<p>O sea,<br>
+\[
+\boxed{
+y=\left(3+\int_0^3 g(t)\,dt\right)+g(3)(x-3)
+}.
+\]</p>
+<p>---</p>
+<h3>Sèrie 5 — Exercici 3</h3>
+<p>Falta la ecuación de la recta \(s\) y también falta el valor numérico de la distancia.  <br>
+Así que <strong>no puede resolverse de forma concreta</strong>, pero sí puede dejarse planteado correctamente.</p>
+<p>La recta<br>
+\[
+r:\ x=-y=z+m
+\]<br>
+se puede parametrizar así:</p>
+<p>Tomamos<br>
+\[
+x=t,\qquad y=-t,\qquad z=t-m.
+\]</p>
+<p>Luego<br>
+\[
+\boxed{r:\ (x,y,z)=(0,0,-m)+t(1,-1,1)}.
+\]</p>
+<p>Su vector director es<br>
+\[
+\boxed{\vec v_r=(1,-1,1)}.
+\]</p>
+<p>---</p>
+<h4>a) Posición relativa con \(s\)</h4>
+<p>Si escribimos la recta faltante como<br>
+\[
+s:\ (x,y,z)=Q+\lambda \vec v_s,
+\]<br>
+con<br>
+\[
+Q=(a,b,c),\qquad \vec v_s=(\alpha,\beta,\gamma),
+\]<br>
+entonces:</p>
+<p>- <strong>Paralelas</strong> si<br>
+  \[
+  \vec v_s=k(1,-1,1).
+  \]</p>
+<p>- <strong>Coincidentes</strong> si además \(Q\in r\), es decir,<br>
+  \[
+  a=-b=c+m.
+  \]</p>
+<p>- <strong>Secantes</strong> si no son paralelas y el sistema<br>
+  \[
+  (0,0,-m)+t(1,-1,1)=Q+\lambda \vec v_s
+  \]<br>
+  tiene solución.</p>
+<p>- <strong>Cruzadas</strong> si no son paralelas y ese sistema no tiene solución.</p>
+<p>Sin la recta \(s\), no se puede decidir cuál de estos casos ocurre.</p>
+<p>---</p>
+<h4>b) Valor de \(m\) para una distancia dada</h4>
+<p>También falta el valor de la distancia pedida. Si lo llamamos \(d_0\):</p>
+<p>#### Si las rectas no son paralelas<br>
+\[
+\boxed{
+d(r,s)=
+\frac{\left|\,\big(Q-(0,0,-m)\big)\cdot\big(\vec v_r\times \vec v_s\big)\right|}
+{\|\vec v_r\times \vec v_s\|}
+}
+\]<br>
+con \(\vec v_r=(1,-1,1)\).</p>
+<p>#### Si son paralelas<br>
+\[
+\boxed{
+d(r,s)=
+\frac{\left\|\big(Q-(0,0,-m)\big)\times(1,-1,1)\right\|}
+{\sqrt3}
+}.
+\]</p>
+<p>Después habría que imponer<br>
+\[
+d(r,s)=d_0
+\]<br>
+y resolver en \(m\).</p>
+<p>---</p>
+<h3>Conclusión</h3>
+<p>Con el enunciado tal como está, <strong>no se puede dar una respuesta numérica final</strong> porque faltan datos en ambos ejercicios:</p>
+<p>- en <strong>Sèrie 1</strong>, falta \(f&#x27;(x)\);<br>
+- en <strong>Sèrie 5</strong>, falta la recta \(s\) y la distancia pedida.</p>
+<p>Si me envías esos datos que faltan, te doy la resolución completa cerrada.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Dado que en el documento proporcionado hay múltiples ejercicios etiquetados como &quot;3&quot; en diferentes series, comenzaremos con la resolución de los problemas planteados en <strong>Sèrie 1 — Exercici 3</strong> y <strong>Sèrie 5 — Exercici 3</strong> en la medida que los datos proporcionados lo permitan.</p>
+<h4><strong>Sèrie 1 — Exercici 3</strong></h4>
+<p>#### <strong>a) Calculeu la funció \(f(x)\)</strong></p>
+<p>El enunciado indica que hay que calcular la función \(f(x)\) a partir de su derivada, pero no proporciona una expresión explícita para \(f&#x27;(x)\). Sin esta información, es imposible calcular \(f(x)\) con rigor. Además, se menciona que la función \(f(x)\) pasa por el punto \(A = (0, 3)\), lo que implica que \(f(0) = 3\). No obstante, sin la forma de \(f&#x27;(x)\), no podemos proceder a la integración o a otro método para hallar \(f(x)\).</p>
+<p>#### <strong>b) Calculeu l’equació de la recta tangent a la funció \(f(x)\) en el punt d’abscissa \(x = 3\)</strong></p>
+<p>Para calcular la ecuación de la recta tangent en \(x = 3\), necesitaríamos conocer \(f&#x27;(3)\) (la pendiente de la tangente) y \(f(3)\) (el valor de la función en \(x = 3\) para calcular el punto por donde pasa la recta). Sin embargo, como no podemos determinar \(f(x)\) desde la información dada, no se puede resolver esta parte del problema.</p>
+<h4><strong>Sèrie 5 — Exercici 3</strong></h4>
+<p>#### <strong>a) Estudieu la posició relativa per als diferents valors del paràmetre \(m\)</strong></p>
+<p>El enunciado proporciona la ecuación de la recta \(r : x = -y = z + m\), pero falta la ecuación para la recta \(s\), así como clarificaciones adicionales sobre si \(s\) está en el mismo sistema de coordenadas o cómo se define exactamente. Sin saber la ecuación de \(s\), es imposible determinar la posición relativa entre \(r\) y \(s\).</p>
+<p>#### <strong>b) Calculeu \(m\) perquè la distància entre les rectes \(r\) y \(s\) sigui de unitats</strong></p>
+<p>Este ítem requiere calcular un valor específico de \(m\) para que la distancia entre las dos rectas sea un valor particular. Desafortunadamente, como faltan tanto el valor de la distancia como la definición de la recta \(s\), este cálculo es igualmente imposible de realizar.</p>
+<h4>Conclusiones</h4>
+<p>Dado la falta de información crítica en ambos ejercicios, no es posible proporcionar una solución matemática completa a ninguno de los subapartados presentados. Estos necesitarían información adicional para poder ser resueltos adecuadamente.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_051.html">Anterior</a><a class="button" href="problema_053.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 20: asturias_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 20 de 139</h1>
+<div class="meta"><span class="badge">asturias_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_019.html">Anterior</a><a class="button" href="problema_021.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Pregunta 2. Dado \(a \in \mathbb{R}\), se considera el sistema de ecuaciones siguiente:</p>
+<p>\[
+\begin{cases}
+x - y + az = -1 \\
+2x + y = 1 \\
+y + 2z = 1
+\end{cases}
+\]</p>
+<p>(a) (1 punto) Discute el sistema según los valores de \(a\).</p>
+<p>(b) (0.75 puntos) Resuelve el sistema para el caso \(a = -3\) si es posible.</p>
+<p>(c) (0.75 puntos) Encuentra, en caso de que exista, un valor de \(a\) que verifique \(x = 1\). Calcula la solución en ese caso.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Pregunta 2.</strong> Dado \(a \in \mathbb{R}\), se considera el sistema de ecuaciones siguiente:</p>
+<p>\[
+\begin{cases}
+x-y+az=-1\\
+2x+y=1\\
+y+2z=1
+\end{cases}
+\]</p>
+<h4>(a) Discute el sistema según los valores de \(a\).</h4>
+<p>Las matrices de coeficientes y ampliada del sistema son</p>
+<p>\[
+A=
+\begin{pmatrix}
+1 &amp; -1 &amp; a\\
+2 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 2
+\end{pmatrix},
+\quad
+A_b=
+\begin{pmatrix}
+1 &amp; -1 &amp; a &amp; -1\\
+2 &amp; 1 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 2 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>como</p>
+<p>\[
+\det(A)=
+\begin{vmatrix}
+1 &amp; -1 &amp; a\\
+2 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 2
+\end{vmatrix}
+=2a+6
+\]</p>
+<p>Si \(a \neq -3\), el determinante es distinto de 0, por lo tanto por el Teorema de Rouché-Frobenius, como</p>
+<p>\[
+\operatorname{rango}(A)=\operatorname{rango}(A_b)=3
+\]</p>
+<p>igual al número de incógnitas, el sistema es compatible determinado.</p>
+<p>Estudiemos el caso en el que \(a=-3\):</p>
+<p>\[
+A_b=
+\begin{pmatrix}
+1 &amp; -1 &amp; -3 &amp; -1\\
+2 &amp; 1 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 2 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>\[
+F_2 \to F_2-2F_1
+\]</p>
+<p>\[
+\begin{pmatrix}
+1 &amp; -1 &amp; -3 &amp; -1\\
+0 &amp; 3 &amp; 6 &amp; 3\\
+0 &amp; 1 &amp; 2 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>\[
+F_2 \to F_2/3
+\]</p>
+<p>\[
+\begin{pmatrix}
+1 &amp; -1 &amp; -3 &amp; -1\\
+0 &amp; 1 &amp; 2 &amp; 1\\
+0 &amp; 1 &amp; 2 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>\[
+F_3 \to F_3-F_2
+\]</p>
+<p>\[
+\begin{pmatrix}
+1 &amp; -1 &amp; -3 &amp; -1\\
+0 &amp; 1 &amp; 2 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</p>
+<p>En este caso</p>
+<p>\[
+\operatorname{rango}(A)=\operatorname{rango}(A_b)=2
+\]</p>
+<p>menor que el número de incógnitas, por lo tanto, también por el Teorema de Rouché-Frobenius, el sistema es compatible indeterminado.</p>
+<p>---</p>
+<h4>(b) Resuelve el sistema para el caso \(a=-3\), si es posible.</h4>
+<p>Resolvamos el sistema para el caso en el que \(a=-3\):</p>
+<p>\[
+\begin{cases}
+x=\lambda\\
+y=1-2\lambda\\
+z=\lambda
+\end{cases}
+\]</p>
+<p>---</p>
+<h4>(c) Encuentra, en caso de que exista, un valor de \(a\) que verifique \(x=1\). Calcula la solución en ese caso.</h4>
+<p>Si \(a=-3\), y tomando \(\lambda=1\), tendríamos el resultado:</p>
+<p>\[
+x=1,\quad y=-1,\quad z=1
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para abordar la Pregunta 2 del documento, procederemos en los apartados solicitados:</p>
+<h4>(a) Discusión del sistema según los valores de \( a \)</h4>
+<p>El sistema de ecuaciones dado es:<br>
+1. \( x - y + az = -1 \)<br>
+2. \( 2x + y = 1 \)<br>
+3. \( y + 2z = 1 \)</p>
+<p>Para discutir este sistema según los valores de \( a \), calculamos el determinante de la matriz de coeficientes asociada al sistema. La matriz del sistema es:<br>
+\[
+A = \begin{bmatrix}
+1 &amp; -1 &amp; a \\
+2 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 2
+\end{bmatrix}
+\]</p>
+<p>Calculamos el determinante utilizando la expansión por cofactores:<br>
+\[
+\det(A) = 1 \cdot \det \begin{bmatrix} 1 &amp; 0 \\ 1 &amp; 2 \end{bmatrix} - (-1) \cdot \det \begin{bmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{bmatrix} + a \cdot \det \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 1 \end{bmatrix}
+\]<br>
+\[
+\det(A) = 1 \cdot (1 \cdot 2 - 0 \cdot 1) + 1 \cdot (2 \cdot 2 - 0 \cdot 0) + a \cdot (2 \cdot 1 - 1 \cdot 0)
+\]<br>
+\[
+\det(A) = 2 + 4 + 2a = 2a + 6
+\]</p>
+<p>El sistema tiene solución única si \( \det(A) \neq 0 \). Por lo tanto, para \( a \neq -3 \), el sistema tiene una solución única. Si \( a = -3 \), el sistema puede ser inconsistente o tener infinitas soluciones dependiendo de las ecuaciones resultantes tras sustituir \( a \).</p>
+<h4>(b) Resolución del sistema para \( a = -3 \)</h4>
+<p>Sustituyendo \( a = -3 \) en las ecuaciones, tenemos:<br>
+1. \( x - y - 3z = -1 \)<br>
+2. \( 2x + y = 1 \)<br>
+3. \( y + 2z = 1 \)</p>
+<p>Utilizamos el método de eliminación o de sustitución. Primero, de la segunda ecuación:<br>
+\[
+y = 1 - 2x
+\]<br>
+Sustituyendo en la tercera ecuación:<br>
+\[
+1 - 2x + 2z = 1 
+\]<br>
+\[
+2z = 2x
+\]<br>
+\[
+z = x
+\]</p>
+<p>Sustituyendo \( z = x \) y \( y = 1 - 2x \) en la primera ecuación:<br>
+\[
+x - (1 - 2x) - 3x = -1
+\]<br>
+\[
+x - 1 + 2x - 3x = -1
+\]<br>
+\[
+0x - 1 = -1
+\]</p>
+<p>Esto es simplemente una identidad (0=0), la información resultante es consistente y tiene muchas soluciones ya que la variable \( x \) no aparece resuelta (los términos de \( x \) se anulan). Por lo tanto, el valor de \( x \) es libre y podemos expresar \( x = t \), \( z = t \), \( y = 1 - 2t \) donde \( t \) es cualquier número real.</p>
+<h4>(c) Encontrar \( a \) tal que \( x=1 \) y calcular la solución</h4>
+<p>Para tener \( x=1 \):<br>
+\[
+2x + y = 1
+\]<br>
+\[
+2 \cdot 1 + y = 1
+\]<br>
+\[
+y = -1
+\]</p>
+<p>Usando \( y = -1 \) en la tercera ecuación:<br>
+\[
+-1 + 2z = 1
+\]<br>
+\[
+2z = 2
+\]<br>
+\[
+z = 1
+\]</p>
+<p>Sustituyendo \( x=1, y=-1, z=1 \) en la primera ecuación:<br>
+\[
+1 - (-1) + a \cdot 1 = -1
+\]<br>
+\[
+2 + a = -1
+\]<br>
+\[
+a = -3
+\]</p>
+<p>Con \( a = -3 \), la solución como ya mostramos es \( x = t \), \( y = 1 - 2t \), \( z = t \) para cualquier \( t \) real. Específicamente, para \( x=1 \), \( z=1 \) y \( y=-1 \).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el sistema</p>
+<p>\[
+\begin{cases}
+x-y+az=-1\\
+2x+y=1\\
+y+2z=1
+\end{cases}
+\]</p>
+<h3>(a) Discusión según \(a\)</h3>
+<p>De la segunda ecuación:</p>
+<p>\[
+y=1-2x
+\]</p>
+<p>De la tercera:</p>
+<p>\[
+y+2z=1 \;\Rightarrow\; (1-2x)+2z=1 \;\Rightarrow\; z=x
+\]</p>
+<p>Sustituimos en la primera:</p>
+<p>\[
+x-(1-2x)+a(x)=-1
+\]</p>
+<p>\[
+x-1+2x+ax=-1
+\]</p>
+<p>\[
+(a+3)x-1=-1
+\]</p>
+<p>\[
+(a+3)x=0
+\]</p>
+<p>Ahora distinguimos casos:</p>
+<h4>Si \(a\neq -3\)</h4>
+<p>Entonces \(a+3\neq 0\), luego</p>
+<p>\[
+x=0
+\]</p>
+<p>y por tanto</p>
+<p>\[
+z=x=0,\qquad y=1-2x=1
+\]</p>
+<p>La solución es única:</p>
+<p>\[
+\boxed{(x,y,z)=(0,1,0)}
+\]</p>
+<p>Por tanto, el sistema es <strong>compatible determinado</strong>.</p>
+<p>---</p>
+<h4>Si \(a=-3\)</h4>
+<p>La ecuación queda</p>
+<p>\[
+0\cdot x=0
+\]</p>
+<p>o sea, no impone condición nueva. Entonces \(x\) es libre. Tomando \(x=\lambda\), con \(\lambda\in\mathbb R\),</p>
+<p>\[
+z=\lambda,\qquad y=1-2\lambda
+\]</p>
+<p>Así, las soluciones son</p>
+<p>\[
+\boxed{(x,y,z)=(\lambda,\,1-2\lambda,\,\lambda),\quad \lambda\in\mathbb R}
+\]</p>
+<p>Por tanto, el sistema es <strong>compatible indeterminado</strong>.</p>
+<p>---</p>
+<h4>Conclusión</h4>
+<p>- Si \(\boxed{a\neq -3}\): sistema <strong>compatible determinado</strong>.<br>
+- Si \(\boxed{a=-3}\): sistema <strong>compatible indeterminado</strong>.<br>
+- <strong>No hay ningún valor de \(a\)</strong> para el que el sistema sea incompatible.</p>
+<p>---</p>
+<h3>(b) Resolver para \(a=-3\)</h3>
+<p>Sustituyendo \(a=-3\), el sistema tiene infinitas soluciones:</p>
+<p>\[
+\boxed{(x,y,z)=(\lambda,\,1-2\lambda,\,\lambda),\quad \lambda\in\mathbb R}
+\]</p>
+<p>---</p>
+<h3>(c) Hallar un valor de \(a\) que verifique \(x=1\)</h3>
+<p>Imponemos \(x=1\).</p>
+<p>De la segunda ecuación:</p>
+<p>\[
+2(1)+y=1 \Rightarrow y=-1
+\]</p>
+<p>De la tercera:</p>
+<p>\[
+-1+2z=1 \Rightarrow z=1
+\]</p>
+<p>Sustituimos en la primera:</p>
+<p>\[
+1-(-1)+a(1)=-1
+\]</p>
+<p>\[
+2+a=-1
+\]</p>
+<p>\[
+a=-3
+\]</p>
+<p>Luego el valor buscado es</p>
+<p>\[
+\boxed{a=-3}
+\]</p>
+<p>y la solución que verifica \(x=1\) es</p>
+<p>\[
+\boxed{(x,y,z)=(1,-1,1)}
+\]</p>
+<p>---</p>
+<p>Si quieres, también puedo escribir la solución con matrices y método de Gauss.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_019.html">Anterior</a><a class="button" href="problema_021.html">Siguiente</a></nav>
+</main></body>
+</html>

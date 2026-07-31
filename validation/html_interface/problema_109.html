@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 109: murcia_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 109 de 139</h1>
+<div class="meta"><span class="badge">murcia_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_108.html">Anterior</a><a class="button" href="problema_110.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>6: Considere los puntos \(A(-1,2,2)\), \(B(1,0,2)\) y \(C(0,0,1)\).</p>
+<p>a) [1 p.] Justifique que los tres puntos están contenidos en un único plano (sin calcular el plano). Calcule la ecuación general (o implícita) de dicho plano.</p>
+<p>b) [1 p.] Determine las coordenadas del cuarto vértice \(D\) del paralelogramo determinado por los vectores \(\overrightarrow{AB}\) y \(\overrightarrow{AC}\).</p>
+<p>c) [0,5 p.] Calcule el área de dicho paralelogramo.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 6</strong></p>
+<p>Considere los puntos \(A(1,2,2)\), \(B(1,0,2)\) y \(C(0,0,1)\).</p>
+<h4>a)</h4>
+<p>Tres puntos definen un único plano salvo que estén alineados. Comprobamos que los tres puntos no están alineados comprobando que los vectores \(\overrightarrow{AB}\) y \(\overrightarrow{AC}\) no indican la misma dirección, es decir, no tienen coordenadas proporcionales.</p>
+<p>\[
+\overrightarrow{AB}=(1,0,2)-(1,2,2)=(0,-2,0)
+\]</p>
+<p>\[
+\overrightarrow{AC}=(0,0,1)-(1,2,2)=(-1,-2,-1)
+\]</p>
+<p>Como no tienen coordenadas proporcionales, los puntos no están alineados y determinan un único plano.</p>
+<p>Calculamos la ecuación del plano que contiene los tres puntos:</p>
+<p>\[
+\pi:
+\begin{vmatrix}
+x &amp; y &amp; z-1\\
+0 &amp; -2 &amp; 0\\
+-1 &amp; -2 &amp; -1
+\end{vmatrix}=0
+\]</p>
+<p>De donde se obtiene:</p>
+<p>\[
+\pi: x-y-z+1=0
+\]</p>
+<p>---</p>
+<h4>b)</h4>
+<p>El cuarto punto se puede obtener sumando al punto \(C\) el vector \(\overrightarrow{AB}\) y también sumando al punto \(B\) el vector \(\overrightarrow{AC}\).</p>
+<p>\[
+D=C+\overrightarrow{AB}=(0,0,1)+(0,-2,0)=(0,-2,1)
+\]</p>
+<p>O bien:</p>
+<p>\[
+D=B+\overrightarrow{AC}=(1,0,2)+(-1,-2,-1)=(0,-2,1)
+\]</p>
+<p>---</p>
+<h4>c)</h4>
+<p>El área del paralelogramo \(ABCD\) es el módulo del producto vectorial de los vectores \(\overrightarrow{AB}\) y \(\overrightarrow{AC}\).</p>
+<p>\[
+\overrightarrow{AB}\times \overrightarrow{AC}
+=
+\begin{vmatrix}
+\vec i &amp; \vec j &amp; \vec k\\
+0 &amp; -2 &amp; 0\\
+-1 &amp; -2 &amp; -1
+\end{vmatrix}
+=(2,0,-2)
+\]</p>
+<p>\[
+\text{Área}=|\overrightarrow{AB}\times \overrightarrow{AC}|
+=\sqrt{2^2+0^2+(-2)^2}
+=\sqrt{8}=2\sqrt{2}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><h4>a) Justificación de los puntos en un plano</h4>
+<p>Para justificar si los puntos \(A(-1,2,2)\), \(B(1,0,2)\) y \(C(0,0,1)\) están contenidos en un único plano, debemos considerar los vectores \(\overrightarrow{AB}\) y \(\overrightarrow{AC}\):</p>
+<p>- \(\overrightarrow{AB} = B - A = (1 - (-1), 0 - 2, 2 - 2) = (2, -2, 0)\)<br>
+- \(\overrightarrow{AC} = C - A = (0 - (-1), 0 - 2, 1 - 2) = (1, -2, -1)\)</p>
+<p>Si el vector producto cruz \(\overrightarrow{AB} \times \overrightarrow{AC}\) es no nulo, entonces los vectores son linealmente independientes y definen un plano. Calculamos el producto cruz:</p>
+<p>\[
+\overrightarrow{AB} \times \overrightarrow{AC} = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+2 &amp; -2 &amp; 0 \\
+1 &amp; -2 &amp; -1 
+\end{vmatrix} = \mathbf{i}(-2 \times -1 - 0 \times -2) - \mathbf{j}(2 \times -1 - 0 \times 1) + \mathbf{k}(2 \times -2 - (-2) \times 1)
+\]<br>
+\[
+= \mathbf{i}(2) - \mathbf{j}(-2) + \mathbf{k}(-4 + 2) = (2, 2, -2)
+\]</p>
+<p>Este vector es no nulo, lo que confirma que los puntos están en un único plano.</p>
+<p>Usando cualquiera de los puntos, la ecuación del plano se puede expresar como:</p>
+<p>\[
+2(x + 1) + 2(y - 2) - 2(z - 2) = 0 \quad \Rightarrow \quad 2x + 2 + 2y - 4 - 2z + 4 = 0 \quad \Rightarrow \quad 2x + 2y - 2z + 2 = 0
+\]</p>
+<p>Simplificando:</p>
+<p>\[
+x + y - z + 1 = 0
+\]</p>
+<h4>b) Coordenadas del vértice \(D\) del paralelogramo</h4>
+<p>Para encontrar el cuarto vértice \(D\) del paralelogramo, deberíamos considerar que \(\overrightarrow{AD}\) debe ser igual a \(\overrightarrow{BC}\) (dado que en un paralelogramo los lados opuestos son iguales y paralelos):<br>
+- \(\overrightarrow{BC} = C - B = (0-1, 0-0, 1-2) = (-1, 0, -1)\)</p>
+<p>Dado \(A(-1, 2, 2)\) más el vector \(\overrightarrow{BC} = (-1, 0, -1)\), el punto \(D\) es:<br>
+- \(D = A + \overrightarrow{BC} = (-1 - 1, 2 + 0, 2 - 1) = (-2, 2, 1)\)</p>
+<h4>c) Área del paralelogramo</h4>
+<p>La área del paralelogramo es el módulo del vector producto cruz de \(\overrightarrow{AB}\) y \(\overrightarrow{AC}\) que ya hemos calculado:<br>
+- \(\overrightarrow{AB} \times \overrightarrow{AC} = (2, 2, -2)\)</p>
+<p>\[
+\text{Área} = \|\overrightarrow{AB} \times \overrightarrow{AC}\| = \sqrt{2^2 + 2^2 + (-2)^2} = \sqrt{4 + 4 + 4} = \sqrt{12} = 2\sqrt{3}
+\]</p>
+<p>Estos pasos resuelven cada una de las subsecciones del problema detailedo, culminando en las soluciones matemáticas requeridas sin mencionar datos adicionales o consultar soluciones oficiales.</p></section>
+<section class="card"><h2>Respuesta B</h2><p><strong>Ejercicio 6</strong></p>
+<p>Dados los puntos  <br>
+\[
+A(-1,2,2),\quad B(1,0,2),\quad C(0,0,1).
+\]</p>
+<h3>a) Plano que contiene a \(A,B,C\)</h3>
+<p>Tres puntos determinan un único plano <strong>si no están alineados</strong>.  <br>
+Para comprobarlo, calculamos:</p>
+<p>\[
+\overrightarrow{AB}=B-A=(1-(-1),\,0-2,\,2-2)=(2,-2,0)
+\]</p>
+<p>\[
+\overrightarrow{AC}=C-A=(0-(-1),\,0-2,\,1-2)=(1,-2,-1)
+\]</p>
+<p>Como \(\overrightarrow{AB}\) y \(\overrightarrow{AC}\) <strong>no son proporcionales</strong>, los puntos no están en una misma recta.  <br>
+Por tanto, <strong>existe un único plano</strong> que contiene a \(A,B,C\).</p>
+<h4>Ecuación del plano</h4>
+Un vector normal al plano es:
+<p>\[
+\overrightarrow{AB}\times \overrightarrow{AC}
+=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+2 &amp; -2 &amp; 0\\
+1 &amp; -2 &amp; -1
+\end{vmatrix}
+=(2,2,-2)
+\]</p>
+<p>Podemos tomar como vector normal:</p>
+<p>\[
+\vec n=(1,1,-1)
+\]</p>
+<p>La ecuación del plano que pasa por \(A(-1,2,2)\) es:</p>
+<p>\[
+1(x+1)+1(y-2)-1(z-2)=0
+\]</p>
+<p>\[
+x+1+y-2-z+2=0
+\]</p>
+<p>\[
+\boxed{x+y-z+1=0}
+\]</p>
+<p>---</p>
+<h3>b) Cuarto vértice \(D\) del paralelogramo</h3>
+<p>El paralelogramo está determinado por los vectores \(\overrightarrow{AB}\) y \(\overrightarrow{AC}\), ambos con origen en \(A\).  <br>
+Entonces el cuarto vértice es:</p>
+<p>\[
+D=A+\overrightarrow{AB}+\overrightarrow{AC}
+\]</p>
+<p>o equivalentemente,</p>
+<p>\[
+D=B+C-A
+\]</p>
+<p>Calculamos:</p>
+<p>\[
+D=(1,0,2)+(0,0,1)-(-1,2,2)=(2,-2,1)
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{D=(2,-2,1)}
+\]</p>
+<p>---</p>
+<h3>c) Área del paralelogramo</h3>
+<p>El área del paralelogramo generado por \(\overrightarrow{AB}\) y \(\overrightarrow{AC}\) es:</p>
+<p>\[
+\left|\overrightarrow{AB}\times \overrightarrow{AC}\right|
+\]</p>
+<p>Ya tenemos:</p>
+<p>\[
+\overrightarrow{AB}\times \overrightarrow{AC}=(2,2,-2)
+\]</p>
+<p>Entonces:</p>
+<p>\[
+\text{Área}=\sqrt{2^2+2^2+(-2)^2}
+=\sqrt{4+4+4}
+=\sqrt{12}
+=2\sqrt{3}
+\]</p>
+<p>\[
+\boxed{2\sqrt{3}}
+\]</p>
+<p>---</p>
+<h3>Resultados finales</h3>
+<p>- <strong>a)</strong> Plano: \(\boxed{x+y-z+1=0}\)<br>
+- <strong>b)</strong> Cuarto vértice: \(\boxed{D=(2,-2,1)}\)<br>
+- <strong>c)</strong> Área del paralelogramo: \(\boxed{2\sqrt{3}}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_108.html">Anterior</a><a class="button" href="problema_110.html">Siguiente</a></nav>
+</main></body>
+</html>

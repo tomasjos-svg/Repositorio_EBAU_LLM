@@ -1,0 +1,17 @@
+{
+  "pipeline_version": "3.1",
+  "generated_utc": "2026-07-30T16:53:31.623101+00:00",
+  "bootstrap_iterations": 10000,
+  "bootstrap_seed": 20260716,
+  "primary_unit": "problem",
+  "mixed_model_unit": "replica_nested_in_problem",
+  "multiple_testing": "Holm within each family and scenario",
+  "minimum_stratum_pairs": 5,
+  "primary_scenario": "principal",
+  "strict_scenario": "estricto",
+  "sensitivity_scenario": "sensibilidad",
+  "statsmodels_optional": true,
+  "mixed_models_status": [
+    "omitted_missing_statsmodels"
+  ]
+}

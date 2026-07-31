@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 4: andalucia_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 4 de 139</h1>
+<div class="meta"><span class="badge">andalucia_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_003.html">Anterior</a><a class="button" href="problema_005.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>EJERCICIO 4. (2,5 puntos)</p>
+<p>Considera las funciones \(f : \mathbb{R} \to \mathbb{R}\) y \(g : \mathbb{R}-\{0\} \to \mathbb{R}\) definidas por \(f(x)=5-x^2\) y \(g(x)=\dfrac{4}{x^2}\).</p>
+<p>a) [1,25 puntos] Esboza las gráficas de las dos funciones y calcula los puntos de corte entre ellas.</p>
+<p>b) [1,25 puntos] Calcula la suma de las áreas de los recintos limitados por las gráficas de \(f\) y \(g\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>EJERCICIO 4 (2.5 puntos)</strong></p>
+<p>Considera las funciones \(f:\mathbb{R}\to\mathbb{R}\) y \(g:\mathbb{R}-\{0\}\to\mathbb{R}\) definidas por  <br>
+\[
+f(x)=5-x^2 \quad \text{y} \quad g(x)=\frac{4}{x^2}.
+\]</p>
+<h4>a) [1,25 puntos]</h4>
+<p>Hallamos los puntos de corte de las gráficas de las dos funciones:</p>
+<p>\[
+f(x)=g(x)\Rightarrow 5-x^2=\frac{4}{x^2}
+\]</p>
+<p>\[
+x^2(5-x^2)=4 \Rightarrow 5x^2-x^4=4
+\]</p>
+<p>\[
+x^4-5x^2+4=0
+\]</p>
+<p>\[
+(x^2-1)(x^2-4)=0
+\]</p>
+<p>\[
+x=-2,\,-1,\,1,\,2
+\]</p>
+<p>Las gráficas tienen 4 puntos de corte:</p>
+<p>\[
+x=-2,\quad x=-1,\quad x=1,\quad x=2.
+\]</p>
+<p>La función \(f(x)=5-x^2\) es una parábola con vértice en</p>
+<p>\[
+x=\frac{-b}{2a}=0.
+\]</p>
+<p>Hacemos una tabla de valores y la representamos:</p>
+<p>\[
+\begin{array}{c|c}
+x &amp; y=5-x^2 \\ \hline
+-2 &amp; 1\\
+-1 &amp; 4\\
+0 &amp; 5\\
+1 &amp; 4\\
+2 &amp; 1
+\end{array}
+\]</p>
+<p>La función</p>
+<p>\[
+g(x)=\frac{4}{x^2}
+\]</p>
+<p>tiene una asíntota vertical en \(x=0\).</p>
+<p>Hacemos una tabla de valores de la función \(g(x)=\frac{4}{x^2}\) y la representamos:</p>
+<p>\[
+\begin{array}{c|c}
+x &amp; y=\frac{4}{x^2} \\ \hline
+-2 &amp; 1\\
+-1 &amp; 4\\
+-0.5 &amp; 16\\
+0.5 &amp; 16\\
+1 &amp; 4\\
+2 &amp; 1
+\end{array}
+\]</p>
+<h4>b) [1,25 puntos]</h4>
+<p>Hay dos recintos limitados por las gráficas. Dibujamos los recintos y vemos que tienen el mismo valor de área, dada la simetría de las funciones.</p>
+<p>Calculamos una de las áreas:</p>
+<p>\[
+\text{Área}=\int_{-2}^{-1}\left(5-x^2-\frac{4}{x^2}\right)\,dx
+\]</p>
+<p>\[
+=\left[5x-\frac{x^3}{3}+\frac{4}{x}\right]_{-2}^{-1}
+\]</p>
+<p>\[
+=\left(-5+\frac{1}{3}-4\right)-\left(-10+\frac{8}{3}-2\right)
+\]</p>
+<p>\[
+=-9+\frac{1}{3}+12-\frac{8}{3}
+\]</p>
+<p>\[
+=3-\frac{7}{3}=\frac{2}{3}\,u^2
+\]</p>
+<p>El área total es</p>
+<p>\[
+2\cdot \frac{2}{3}=\frac{4}{3}\,u^2.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el <strong>Ejercicio 4</strong> del Examen de Matemáticas II de Andalucía 2023, abordaremos ambos apartados, comenzando por el esbozo de las gráficas y el cálculo de los puntos de intersección de las funciones f y g, seguido del cálculo de la suma de las áreas de los recintos que limitan.</p>
+<h4>Parte (a)</h4>
+<strong>Funciones Dadas:</strong>
+- \( f(x) = 5 - x^2 \)
+- \( g(x) = \frac{4}{x^2} \) (definida para \( x \neq 0 \))
+<p>Para <strong>encontrar los puntos de corte</strong> entre \( f(x) \) y \( g(x) \), necesitamos igualar las dos funciones y resolver para \( x \):</p>
+<p>\[ 5 - x^2 = \frac{4}{x^2} \]</p>
+<p>Multiplicamos ambos lados por \( x^2 \) para eliminar el denominador:</p>
+<p>\[ 5x^2 - x^4 = 4 \]</p>
+<p>Reordenando los términos obtenemos:</p>
+<p>\[ x^4 - 5x^2 + 4 = 0 \]</p>
+<p>Estableciendo \( u = x^2 \), tenemos una ecuación cuadrática en \( u \):</p>
+<p>\[ u^2 - 5u + 4 = 0 \]</p>
+<p>Resolviendo esta ecuación cuadrática mediante la fórmula cuadrática:</p>
+<p>\[ u = \frac{-(-5) \pm \sqrt{(-5)^2 - 4 \cdot 1 \cdot 4}}{2 \cdot 1} = \frac{5 \pm \sqrt{9}}{2} = 4 \text{ o } 1 \]</p>
+<p>De aquí, \( u = x^2 \), así que \( x^2 = 4 \) o \( x^2 = 1 \), lo que implica:</p>
+<p>\[ x = \pm 2 \text{ o } x = \pm 1 \]</p>
+<p>Estos son los puntos de intersección.</p>
+<h4>Parte (b)</h4>
+Para <strong>calcular la suma de las áreas de los recintos limitados</strong> por las gráficas de \( f(x) \) y \( g(x) \), observamos los rangos de intersección encontrados: de \( -2 \) a \( -1 \) y de \( 1 \) a \( 2 \). Debido a la simetría alrededor del origen, podemos calcular el área de uno de estos intervalos y multiplicarlo por 2.
+<p>La diferencia de las funciones en el intervalo [1, 2] es:</p>
+<p>\[ f(x) - g(x) = (5 - x^2) - \frac{4}{x^2} \]</p>
+<p>El área entre las curvas se calcula como:</p>
+<p>\[ \text{Área} = 2 \times \int_{1}^{2} \left[ (5 - x^2) - \frac{4}{x^2} \right] \,dx \]</p>
+<p>Esta integral se calcula y proporciona la suma de las áreas requeridas. Es importante tener en cuenta que podríamos hacer uso de la función integral definida y calcular este valor, pero se necesita una calculadora científica o software para obtener la respuesta precisa. Asumiendo que se calcula correctamente, este valor representará el área total limitada.</p>
+<p>En resumen, primero determinamos los puntos de corte entre las dos funciones, y luego empleamos la integral para encontrar el área entre las curvas en los intervalos específicos derivados de estos puntos de corte【4:0†Examen Matemáticas II Andalucia 2023 enunciado】.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el <strong>Ejercicio 4</strong>.</p>
+<p>Se consideran  <br>
+\[
+f(x)=5-x^2,\qquad g(x)=\frac{4}{x^2}\quad (x\neq 0).
+\]</p>
+<p>---</p>
+<h3>a) Esbozo de las gráficas y puntos de corte</h3>
+<h4>1. Forma de las gráficas</h4>
+<p>- \(\;f(x)=5-x^2\) es una <strong>parábola cóncava hacia abajo</strong>, con:<br>
+  - vértice en \((0,5)\),<br>
+  - simetría respecto del eje \(y\),<br>
+  - cortes con el eje \(x\) en<br>
+    \[
+    5-x^2=0 \Rightarrow x=\pm \sqrt5.
+    \]</p>
+<p>- \(\;g(x)=\dfrac{4}{x^2}\) es una curva positiva, también simétrica respecto del eje \(y\), con:<br>
+  - asíntota vertical \(x=0\),<br>
+  - asíntota horizontal \(y=0\).</p>
+<p>---</p>
+<h4>2. Puntos de intersección</h4>
+<p>Buscamos \(f(x)=g(x)\):<br>
+\[
+5-x^2=\frac{4}{x^2}.
+\]</p>
+<p>Multiplicamos por \(x^2\) (\(x\neq 0\)):<br>
+\[
+(5-x^2)x^2=4
+\]<br>
+\[
+5x^2-x^4=4
+\]<br>
+\[
+x^4-5x^2+4=0.
+\]</p>
+<p>Hacemos \(u=x^2\):<br>
+\[
+u^2-5u+4=0=(u-1)(u-4).
+\]</p>
+<p>Entonces:<br>
+\[
+x^2=1 \quad \text{o} \quad x^2=4.
+\]</p>
+<p>Por tanto:<br>
+\[
+x=\pm 1,\ \pm 2.
+\]</p>
+<p>Calculamos las ordenadas:</p>
+<p>- Si \(x=\pm 1\),<br>
+  \[
+  y=5-1=4.
+  \]</p>
+<p>- Si \(x=\pm 2\),<br>
+  \[
+  y=5-4=1.
+  \]</p>
+<h4>Puntos de corte:</h4>
+\[
+(-2,1),\;(-1,4),\;(1,4),\;(2,1).
+\]
+<p>---</p>
+<h3>b) Suma de las áreas de los recintos limitados</h3>
+<p>Por simetría respecto del eje \(y\), habrá dos recintos iguales: uno entre \(x=1\) y \(x=2\), y otro entre \(x=-2\) y \(x=-1\).</p>
+<h4>1. Qué función está por encima</h4>
+<p>Tomamos, por ejemplo, \(x=\frac32\):<br>
+\[
+f\!\left(\frac32\right)=5-\frac94=\frac{11}{4},
+\qquad
+g\!\left(\frac32\right)=\frac{4}{(3/2)^2}=\frac{16}{9}.
+\]</p>
+<p>Se cumple:<br>
+\[
+f\!\left(\frac32\right)&gt;g\!\left(\frac32\right),
+\]<br>
+así que en \([1,2]\) la parábola está por encima.</p>
+<p>---</p>
+<h4>2. Área de un recinto</h4>
+<p>\[
+A_1=\int_1^2 \left[\left(5-x^2\right)-\frac{4}{x^2}\right]dx.
+\]</p>
+<p>Calculamos:<br>
+\[
+\int \left(5-x^2-\frac{4}{x^2}\right)dx
+=5x-\frac{x^3}{3}+\frac{4}{x}.
+\]</p>
+<p>Entonces<br>
+\[
+A_1=\left[5x-\frac{x^3}{3}+\frac{4}{x}\right]_1^2.
+\]</p>
+<p>En \(x=2\):<br>
+\[
+10-\frac{8}{3}+2=12-\frac{8}{3}=\frac{28}{3}.
+\]</p>
+<p>En \(x=1\):<br>
+\[
+5-\frac13+4=9-\frac13=\frac{26}{3}.
+\]</p>
+<p>Así,<br>
+\[
+A_1=\frac{28}{3}-\frac{26}{3}=\frac{2}{3}.
+\]</p>
+<p>---</p>
+<h4>3. Suma de las dos áreas</h4>
+<p>Como hay dos recintos iguales,<br>
+\[
+A=2A_1=2\cdot \frac{2}{3}=\frac{4}{3}.
+\]</p>
+<p>---</p>
+<h2>Resultado final</h2>
+<h4>a) Puntos de corte:</h4>
+\[
+\boxed{(-2,1),\;(-1,4),\;(1,4),\;(2,1)}
+\]
+<h4>b) Suma de las áreas de los recintos limitados:</h4>
+\[
+\boxed{\frac{4}{3}}
+\]</section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_003.html">Anterior</a><a class="button" href="problema_005.html">Siguiente</a></nav>
+</main></body>
+</html>

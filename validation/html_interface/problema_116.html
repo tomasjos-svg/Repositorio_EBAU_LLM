@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 116: navarra_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 116 de 139</h1>
+<div class="meta"><span class="badge">navarra_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_115.html">Anterior</a><a class="button" href="problema_117.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P5) Calcula las derivadas de las siguientes funciones y sus valores en el punto \(x = 0\):</p>
+<p>a) \(f(x)=\ln\left[\cos(\pi x)\cdot e^{x^2+2x}\right]\)  <br>
+(1,25 puntos)</p>
+<p>b) \(g(x)=\arctan\sqrt{1+2x+e^{2x}}\)  <br>
+(1,25 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>P5) Calcula las derivadas de las siguientes funciones y sus valores en el punto \(x=0\).</p>
+<p>a)  <br>
+\[
+f(x)=\ln\left(\cos^2 x \cdot e^{x^2+\pi}\right)
+\]</p>
+<p>\[
+f&#x27;(x)=\frac{\cos^2 x \cdot e^{x^2+\pi}\cdot(-2\sin x)+(2x e^{x^2+\pi})\cos^2 x}{\cos^2 x \cdot e^{x^2+\pi}}
+\]</p>
+<p>\[
+f&#x27;(x)=\frac{-2\sin x\cos x+2x\cos^2 x}{\cos^2 x}
+\]</p>
+<p>\[
+f&#x27;(0)=\frac{-2\sin 0\cos 0+2\cdot 0\cdot \cos^2 0}{\cos^2 0}=0
+\]</p>
+<p><strong>Otra forma de hacerlo:</strong></p>
+<p>\[
+f(x)=\ln\left(\cos^2 x\cdot e^{x^2+\pi}\right)
+=\ln(\cos^2 x)+\ln(e^{x^2+\pi})
+\]</p>
+<p>\[
+f(x)=2\ln(\cos x)+x^2+\pi
+\]</p>
+<p>\[
+f&#x27;(x)=-2\tan x+2x
+\]</p>
+<p>\[
+f&#x27;(0)=-2\tan 0+2\cdot 0=0
+\]</p>
+<p>---</p>
+<p>b)  <br>
+\[
+g(x)=\arctan\left(1+2xe^{x^2}\right)
+\]</p>
+<p>\[
+g&#x27;(x)=\frac{2e^{x^2}+4x^2e^{x^2}}{1+\left(1+2xe^{x^2}\right)^2}
+\]</p>
+<p>\[
+g&#x27;(x)=\frac{2e^{x^2}(1+2x^2)}{1+\left(1+2xe^{x^2}\right)^2}
+\]</p>
+<p>\[
+g&#x27;(0)=\frac{2e^0(1+2\cdot 0^2)}{1+(1+2\cdot 0\cdot e^0)^2}
+=\frac{2}{2}=1
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Resolvemos <strong>P5</strong>.</p>
+<h3>a) \(f(x)=\ln\!\big(\cos(\pi x)\,e^{x^2+2x}\big)\)</h3>
+<p>Usamos que \(\ln(ab)=\ln a+\ln b\):</p>
+<p>\[
+f(x)=\ln(\cos(\pi x))+\ln(e^{x^2+2x})
+=\ln(\cos(\pi x))+x^2+2x
+\]</p>
+<p>Derivamos:</p>
+<p>\[
+f&#x27;(x)=\frac{-\pi\sin(\pi x)}{\cos(\pi x)}+2x+2
+=-\pi\tan(\pi x)+2x+2
+\]</p>
+<p>Valor en \(x=0\):</p>
+<p>\[
+f&#x27;(0)=-\pi\tan(0)+0+2=2
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{f&#x27;(x)=-\pi\tan(\pi x)+2x+2},\qquad
+\boxed{f&#x27;(0)=2}
+\]</p>
+<p>---</p>
+<h3>b) \(g(x)=\arctan\!\big(\sqrt{\,1+2x+e^{2x}\,}\big)\)</h3>
+<p><strong>(Tomo esta lectura, que es la más natural del OCR.)</strong></p>
+<p>Sea</p>
+<p>\[
+u(x)=1+2x+e^{2x}
+\]</p>
+<p>Entonces</p>
+<p>\[
+g(x)=\arctan(\sqrt{u(x)})
+\]</p>
+<p>Aplicamos regla de la cadena:</p>
+<p>\[
+g&#x27;(x)=\frac{1}{1+(\sqrt{u})^2}\cdot \frac{u&#x27;}{2\sqrt{u}}
+\]</p>
+<p>Como</p>
+<p>\[
+u&#x27;(x)=2+2e^{2x}
+\quad\text{y}\quad
+(\sqrt{u})^2=u,
+\]</p>
+<p>queda</p>
+<p>\[
+g&#x27;(x)=\frac{2+2e^{2x}}{2\sqrt{1+2x+e^{2x}}\,(1+1+2x+e^{2x})}
+\]</p>
+<p>o, simplificando,</p>
+<p>\[
+g&#x27;(x)=\frac{1+e^{2x}}{\sqrt{1+2x+e^{2x}}\,(2+2x+e^{2x})}
+\]</p>
+<p>Valor en \(x=0\):</p>
+<p>\[
+g&#x27;(0)=\frac{1+1}{\sqrt{1+0+1}\,(2+0+1)}
+=\frac{2}{3\sqrt2}
+=\frac{\sqrt2}{3}
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{
+g&#x27;(x)=\frac{1+e^{2x}}{\sqrt{1+2x+e^{2x}}\,(2+2x+e^{2x})}
+},\qquad
+\boxed{g&#x27;(0)=\frac{\sqrt2}{3}}
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>\[
+\boxed{f&#x27;(x)=-\pi\tan(\pi x)+2x+2,\qquad f&#x27;(0)=2}
+\]</p>
+<p>\[
+\boxed{
+g&#x27;(x)=\frac{1+e^{2x}}{\sqrt{1+2x+e^{2x}}\,(2+2x+e^{2x})},
+\qquad
+g&#x27;(0)=\frac{\sqrt2}{3}
+}
+\]</p>
+<p>Si quieres, también puedo escribir la solución <strong>suponiendo que en b) no hay raíz</strong>, por si el OCR hubiera omitido ese símbolo.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>El ejercicio número 5 del documento proporcionado pide calcular las derivadas de dos funciones y sus valores en el punto \( x = 0 \). Aquí tienes los pasos esenciales y las soluciones:</p>
+<h4>Parte (a) </h4>
+<p><strong>Función:</strong><br>
+\[ f(x) = \ln[\cos(\pi x) \cdot e^{x^2+2x}] \]</p>
+<p><strong>Derivada de \( f(x) \):</strong></p>
+<p>1. Aplica la regla de la cadena a la función logarítmica:<br>
+\[ f&#x27;(x) = \frac{1}{\cos(\pi x) \cdot e^{x^2+2x}} \cdot \frac{d}{dx}[\cos(\pi x) \cdot e^{x^2+2x}] \]</p>
+<p>2. Utiliza la regla del producto para derivar \( \cos(\pi x) \cdot e^{x^2+2x} \):<br>
+   \[ \frac{d}{dx}[\cos(\pi x) \cdot e^{x^2+2x}] = \cos(\pi x) \cdot \frac{d}{dx}[e^{x^2+2x}] + e^{x^2+2x} \cdot \frac{d}{dx}[\cos(\pi x)] \]</p>
+<p>3. Derivadas individuales:<br>
+   \[ \frac{d}{dx}[e^{x^2+2x}] = (2x + 2)e^{x^2+2x} \]<br>
+   \[ \frac{d}{dx}[\cos(\pi x)] = -\pi \sin(\pi x) \]</p>
+<p>4. Sustituye y simplifica:<br>
+   \[ f&#x27;(x) = \frac{\cos(\pi x) \cdot (2x + 2)e^{x^2+2x} - \pi \sin(\pi x) \cdot e^{x^2+2x}}{\cos(\pi x) \cdot e^{x^2+2x}} \]<br>
+   \[ f&#x27;(x) = 2x + 2 - \frac{\pi \sin(\pi x)}{\cos(\pi x)} \]<br>
+   \[ f&#x27;(x) = 2x + 2 - \pi \tan(\pi x) \]</p>
+<p>5. <strong>Evaluar en</strong> \( x = 0 \):<br>
+\[ f&#x27;(0) = 2(0) + 2 - \pi \tan(0) = 2 \]</p>
+<h4>Parte (b)</h4>
+<strong>Función:</strong>
+\[ g(x) = \arctan\sqrt{1 + 2x + e^{2x}} \]
+<p><strong>Derivada de \( g(x) \):</strong></p>
+<p>1. Aplica la regla de la cadena a la función arcotangente:<br>
+\[ g&#x27;(x) = \frac{1}{1 + (1 + 2x + e^{2x})} \cdot \frac{d}{dx}[1 + 2x + e^{2x}] \]</p>
+<p>2. Deriva el interior:<br>
+   \[ \frac{d}{dx}[1 + 2x + e^{2x}] = 2 + 2e^{2x} \]</p>
+<p>3. Sustituye y simplifica:<br>
+   \[ g&#x27;(x) = \frac{2 + 2e^{2x}}{2(1 + 2x + e^{2x})} \]</p>
+<p>4. <strong>Evaluar en</strong> \( x = 0 \):<br>
+\[ g&#x27;(0) = \frac{2 + 2e^0}{2(1 + 0 + e^0)} = \frac{4}{2(1+1)} = 1 \]</p>
+<h4>Respuestas:</h4>
+- \( f&#x27;(0) = 2 \)
+- \( g&#x27;(0) = 1 \)
+<p>Esto completa la derivación y evaluación de las funciones en el enunciado del ejercicio proporcionado【4:0†Examen matematicas II Navarra 2023 enunciado】.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_115.html">Anterior</a><a class="button" href="problema_117.html">Siguiente</a></nav>
+</main></body>
+</html>

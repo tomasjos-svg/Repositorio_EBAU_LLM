@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 94: lamancha_2023 3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 94 de 139</h1>
+<div class="meta"><span class="badge">lamancha_2023</span> &nbsp; Ejercicio 3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_093.html">Anterior</a><a class="button" href="problema_095.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>3. a) Tenemos dos urnas con bolas. La urna A tiene 6 bolas rojas y 8 negras y la urna B tiene 8 bolas rojas y 10 bolas negras. Disponemos de un dado de 12 caras numeradas del 1 al 12. Lanzamos el dado y si sale un número múltiplo de 4 se extrae una bola de la urna A. Si sale otro número se extrae una bola de la urna B. Calcula razonadamente:</p>
+<p>a.1) [0,5 puntos] La probabilidad de obtener una bola roja.</p>
+<p>a.2) [0,75 puntos] Sabiendo que la bola extraída es roja, la probabilidad de que haya sido extraída de la urna A.</p>
+<p>b) Una empresa de mensajería sabe que la probabilidad de que el destinatario esté ausente (y no se pueda hacer la entrega) durante el reparto es del 25 %. Un repartidor de esta empresa ha de entregar 6 paquetes.</p>
+<p>b.1) [0,5 puntos] ¿Cuál es la probabilidad de que no pueda entregar uno de ellos porque el destinatario esté ausente?</p>
+<p>b.2) [0,75 puntos] ¿Cuál es la probabilidad de que pueda entregar al menos uno de los paquetes?</p>
+<p>| n | k | p=0.05 | 0.15 | 0.25 | 0.35 | 0.45 | 0.55 | 0.65 | 0.75 | 0.85 | 0.95 |<br>
+|---|---|--------|------|------|------|------|------|------|------|------|------|<br>
+| 6 | 0 | 0.7351 | 0.3771 | 0.1780 | 0.0754 | 0.0277 | 0.0083 | 0.0018 | 0.0002 | 0.0000 | 0.0000 |<br>
+|   | 1 | 0.2321 | 0.3993 | 0.3560 | 0.2437 | 0.1359 | 0.0609 | 0.0205 | 0.0044 | 0.0004 | 0.0000 |<br>
+|   | 2 | 0.0305 | 0.1762 | 0.2966 | 0.3280 | 0.2780 | 0.1861 | 0.0951 | 0.0330 | 0.0055 | 0.0001 |<br>
+|   | 3 | 0.0021 | 0.0415 | 0.1318 | 0.2355 | 0.3032 | 0.3032 | 0.2355 | 0.1318 | 0.0415 | 0.0021 |<br>
+|   | 4 | 0.0001 | 0.0055 | 0.0330 | 0.0951 | 0.1861 | 0.2780 | 0.3280 | 0.2966 | 0.1762 | 0.0305 |<br>
+|   | 5 | 0.0000 | 0.0004 | 0.0044 | 0.0205 | 0.0609 | 0.1359 | 0.2437 | 0.3560 | 0.3993 | 0.2321 |<br>
+|   | 6 | 0.0000 | 0.0000 | 0.0002 | 0.0018 | 0.0083 | 0.0277 | 0.0754 | 0.1780 | 0.3771 | 0.7351 |</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 3. Solución oficial</strong></p>
+<p><strong>a)</strong> Sea \(M4\) el suceso que representa sacar un múltiplo de 4 en la tirada de dado y \(\overline{M4}\) su complementario. El suceso \(A\) representa sacar una bola de la urna A y el suceso \(B\) sacar una bola de la urna B. Claramente, \(P(M4)=P(A)\) y \(P(\overline{M4})=P(B)\).</p>
+<p>Las probabilidades son:</p>
+<p>- \(P(M4)=\frac{3}{12}\), \(P(\overline{M4})=\frac{9}{12}\)<br>
+- Urna A: \(P(\text{Roja})=\frac{6}{14}\), \(P(\text{Negra})=\frac{8}{14}\)<br>
+- Urna B: \(P(\text{Roja})=\frac{8}{18}\), \(P(\text{Negra})=\frac{10}{18}\)</p>
+<p><strong>a.1)</strong>  <br>
+\[
+P(\text{Roja})=P(\text{Roja}\cap M4)+P(\text{Roja}\cap \overline{M4})
+\]</p>
+<p>\[
+=\frac{3}{12}\cdot\frac{6}{14}+\frac{9}{12}\cdot\frac{8}{18}
+=\frac{3}{28}+\frac{1}{3}
+=\frac{9}{84}+\frac{28}{84}
+=\frac{37}{84}\simeq 0,44.
+\]</p>
+<p><strong>a.2)</strong> Utilizando la regla de Bayes:</p>
+<p>\[
+P(A\mid \text{Roja})=
+\frac{P(A\cap \text{Roja})}{P(\text{Roja})}
+=
+\frac{\frac{3}{28}}{\frac{37}{84}}
+=
+\frac{252}{1036}\simeq 0,24.
+\]</p>
+<p>---</p>
+<p><strong>b)</strong> Sea \(X\) la variable aleatoria que representa el número de paquetes que no se han podido entregar. Se trata de una binomial con \(p=0,25\) y \(n=6\).</p>
+<p><strong>b.1)</strong>  <br>
+\[
+P(X=1)=0,3560.
+\]</p>
+<p><strong>b.2)</strong> Que se pueda entregar al menos uno de los paquetes es equivalente a que no se puedan entregar 5 o menos paquetes, es decir,</p>
+<p>\[
+P(X\leq 5)=1-P(X=6)=1-0,0002=0,9998.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos por apartados.</p>
+<h3>a) Urnas y dado</h3>
+<p>Sea:</p>
+<p>- \(A\): “se extrae de la urna A”<br>
+- \(B\): “se extrae de la urna B”<br>
+- \(R\): “la bola extraída es roja”</p>
+<h4>Probabilidades de elegir urna</h4>
+En un dado de 12 caras, los múltiplos de 4 son \(4,8,12\), es decir, 3 resultados.
+<p>\[
+P(A)=\frac{3}{12}=\frac14, \qquad P(B)=\frac{9}{12}=\frac34
+\]</p>
+<h4>Probabilidades de roja en cada urna</h4>
+- Urna A: 6 rojas y 8 negras, total 14
+<p>\[
+P(R\mid A)=\frac{6}{14}=\frac37
+\]</p>
+<p>- Urna B: 8 rojas y 10 negras, total 18</p>
+<p>\[
+P(R\mid B)=\frac{8}{18}=\frac49
+\]</p>
+<p>---</p>
+<h4>a.1) Probabilidad de obtener una bola roja</h4>
+<p>Por la fórmula de la probabilidad total:</p>
+<p>\[
+P(R)=P(A)P(R\mid A)+P(B)P(R\mid B)
+\]</p>
+<p>\[
+P(R)=\frac14\cdot\frac37+\frac34\cdot\frac49
+\]</p>
+<p>\[
+P(R)=\frac{3}{28}+\frac{1}{3}
+\]</p>
+<p>\[
+P(R)=\frac{9+28}{84}=\frac{37}{84}
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(\text{roja})=\frac{37}{84}\approx 0.4405}
+\]</p>
+<p>---</p>
+<h4>a.2) Sabiendo que la bola es roja, probabilidad de que sea de la urna A</h4>
+<p>Aplicamos Bayes:</p>
+<p>\[
+P(A\mid R)=\frac{P(A\cap R)}{P(R)}
+\]</p>
+<p>y</p>
+<p>\[
+P(A\cap R)=P(A)P(R\mid A)=\frac14\cdot\frac37=\frac{3}{28}
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(A\mid R)=\frac{\frac{3}{28}}{\frac{37}{84}}
+\]</p>
+<p>\[
+P(A\mid R)=\frac{3}{28}\cdot\frac{84}{37}=\frac{9}{37}
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(A\mid \text{roja})=\frac{9}{37}\approx 0.2432}
+\]</p>
+<p>---</p>
+<h3>b) Reparto de 6 paquetes</h3>
+<p>La probabilidad de que un destinatario esté ausente es \(0.25\).  <br>
+Si \(X\) es el número de paquetes que no se pueden entregar por ausencia, entonces:</p>
+<p>\[
+X\sim \text{Binomial}(n=6,p=0.25)
+\]</p>
+<p>---</p>
+<h4>b.1) Probabilidad de que no pueda entregar uno de ellos</h4>
+<p>Interpretamos “uno de ellos” como <strong>exactamente uno</strong>.</p>
+<p>\[
+P(X=1)=\binom61 (0.25)^1(0.75)^5
+\]</p>
+<p>\[
+P(X=1)=6\cdot 0.25\cdot 0.75^5
+\]</p>
+<p>\[
+P(X=1)=0.35595703125 \approx 0.3560
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(X=1)\approx 0.3560}
+\]</p>
+<p>---</p>
+<h4>b.2) Probabilidad de que pueda entregar al menos uno de los paquetes</h4>
+<p>“Al menos uno entregado” es el complementario de “no entrega ninguno”, es decir, de que los 6 destinatarios estén ausentes.</p>
+<p>\[
+P(\text{al menos uno entregado})=1-P(X=6)
+\]</p>
+<p>\[
+P(X=6)=(0.25)^6=\frac{1}{4096}\approx 0.000244
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+P(\text{al menos uno entregado})=1-0.25^6
+\]</p>
+<p>\[
+P(\text{al menos uno entregado})=\frac{4095}{4096}\approx 0.9998
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(\text{entregar al menos uno})=\frac{4095}{4096}\approx 0.9998}
+\]</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<p>\[
+\boxed{a.1)\ \frac{37}{84}\approx 0.4405}
+\]</p>
+<p>\[
+\boxed{a.2)\ \frac{9}{37}\approx 0.2432}
+\]</p>
+<p>\[
+\boxed{b.1)\ 0.3560}
+\]</p>
+<p>\[
+\boxed{b.2)\ \frac{4095}{4096}\approx 0.9998}
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Empecemos resolviendo el ejercicio 3 con cada parte detallada:</p>
+<h4>Parte a.1: Probabilidad de obtener una bola roja</h4>
+<p>Para calcular la probabilidad de extraer una bola roja debemos tener en cuenta:<br>
+1. Probabilidad de elegir la urna A o B basada en el resultado del lanzamiento del dado de 12 caras.<br>
+2. Probabilidad de sacar una bola roja de la urna elegida.</p>
+<p><strong>Cálculos:</strong><br>
+- <strong>Urna A:</strong> Se escoge si el resultado del dado es múltiplo de 4 (hay 3 múltiplos de 4 en los números del 1 al 12, que son 4, 8 y 12).<br>
+  - Probabilidad de escoger la urna A = \( \frac{3}{12} = \frac{1}{4} \).<br>
+  - Probabilidad de sacar una bola roja de la urna A = \( \frac{6}{6 + 8} = \frac{6}{14} = \frac{3}{7} \).</p>
+<p>- <strong>Urna B:</strong> Se escoge si el resultado del dado no es múltiplo de 4.<br>
+  - Probabilidad de escoger la urna B = \( \frac{9}{12} = \frac{3}{4} \).<br>
+  - Probabilidad de sacar una bola roja de la urna B = \( \frac{8}{8 + 10} = \frac{8}{18} = \frac{4}{9} \).</p>
+<p>La probabilidad total de sacar una bola roja, utilizando la regla de probabilidad total, es:<br>
+\[ P(\text{Roja}) = P(\text{Roja|A}) \times P(\text{A}) + P(\text{Roja|B}) \times P(\text{B}) \]<br>
+\[ P(\text{Roja}) = \left(\frac{3}{7}\right) \left(\frac{1}{4}\right) + \left(\frac{4}{9}\right) \left(\frac{3}{4}\right) \]<br>
+\[ P(\text{Roja}) = \frac{3}{28} + \frac{12}{36} = \frac{3}{28} + \frac{1}{3} \]<br>
+\[ P(\text{Roja}) = \frac{3}{28} + \frac{28}{84} = \frac{31}{84} = \frac{31}{84} \approx 0.369 \]</p>
+<h4>Parte a.2: Dado que la bola extraída es roja, la probabilidad de que haya sido extraída de la urna A</h4>
+<p>Utilizando el teorema de Bayes:<br>
+\[ P(\text{A|Roja}) = \frac{P(\text{Roja|A}) \times P(\text{A})}{P(\text{Roja})} \]<br>
+\[ P(\text{A|Roja}) = \frac{\left(\frac{3}{7}\right) \left(\frac{1}{4}\right)}{\frac{31}{84}} \]<br>
+\[ P(\text{A|Roja}) = \frac{\frac{3}{28}}{\frac{31}{84}} = \frac{3}{28} \times \frac{84}{31} = \frac{9}{31} \approx 0.290 \]</p>
+<h4>Parte b.1: Probabilidad de que no pueda entregar uno de los paquetes porque el destinatario esté ausente</h4>
+<p>Utilizamos la tabla binomial dada, correspondiente a \( p = 0.25 \) y \( n = 6 \), \( k = 1 \):<br>
+\[ P(k=1) = 0.3560 \]</p>
+<h4>Parte b.2: Probabilidad de que pueda entregar al menos uno de los paquetes</h4>
+<p>Utilizando la tabla dada:<br>
+\[ P(\text{al menos uno}) = 1 - P(k=0) \]<br>
+\[ P(\text{al menos uno}) = 1 - 0.1780 = 0.8220 \]</p>
+<p>Estos son los cálculos y resultados para el ejercicio 3, siguiendo rigurosamente los datos proporcionados en el enunciado del problema.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_093.html">Anterior</a><a class="button" href="problema_095.html">Siguiente</a></nav>
+</main></body>
+</html>

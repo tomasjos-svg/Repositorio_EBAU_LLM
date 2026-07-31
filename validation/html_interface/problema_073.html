@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 73: cvalenciana_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 73 de 139</h1>
+<div class="meta"><span class="badge">cvalenciana_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_072.html">Anterior</a><a class="button" href="problema_074.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Problema 8. Una empresa tiene dos plantas de producción de teléfonos móviles. La primera planta produce móviles defectuosos con probabilidad 0,02 y la segunda planta con probabilidad 0,06. Al comprar un móvil de esa empresa, la probabilidad de que sea de la primera planta es de 0,7. Compramos un móvil. Se pide determinar:</p>
+<p>a) La probabilidad de que proceda de la segunda planta de producción y sea defectuoso. (4 puntos)</p>
+<p>b) Sabiendo que el móvil comprado es defectuoso, la probabilidad de que lo haya fabricado la primera planta de producción. (6 puntos)</p>
+<p>Los resultados han de expresarse en forma de fracción o en forma decimal con cuatro decimales de aproximación.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>Problema 8.</p>
+<p>Solución:</p>
+<p>a) \(P(\text{segunda planta y defectuoso})=\frac{9}{500}=0.018\).</p>
+<p>b) \(P(\text{primera planta} \mid \text{defectuoso})=\frac{7}{16}=0.4375\).</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el problema emplearemos conceptos básicos de probabilidad, incluyendo la probabilidad total y la regla de Bayes.</p>
+<h4>Inciso a) Probabilidad de que el móvil provenga de la segunda planta y sea defectuoso</h4>
+<p>Denotaremos los eventos de interés como sigue:<br>
+- \( A_1 \): El móvil proviene de la primera planta.<br>
+- \( A_2 \): El móvil proviene de la segunda planta.<br>
+- \( D \): El móvil es defectuoso.</p>
+<p>Sabemos que:<br>
+- \( P(A_1) = 0.7 \) (probabilidad de que un móvil provenga de la primera planta).<br>
+- \( P(A_2) = 0.3 \) (probabilidad complementaria de \( A_1 \), pues debe sumar 1 junto con \( P(A_1) \)).<br>
+- \( P(D \mid A_1) = 0.02 \) (probabilidad de que el móvil sea defectuoso dado que proviene de la primera planta).<br>
+- \( P(D \mid A_2) = 0.06 \) (probabilidad de que el móvil sea defectuoso dado que proviene de la segunda planta).</p>
+<p>La probabilidad de que un móvil provenga de la segunda planta y sea defectuoso se calcula utilizando la probabilidad conjunta:<br>
+\[ P(D \cap A_2) = P(D \mid A_2) \cdot P(A_2) = 0.06 \cdot 0.3 = 0.018. \]<br>
+Esto nos da \( P(D \cap A_2) = 0.018 \).</p>
+<h4>Inciso b) Probabilidad de que un móvil defectuoso haya sido fabricado en la primera planta</h4>
+<p>Para resolver este inciso, utilizaremos la fórmula de Bayes:<br>
+\[ P(A_1 \mid D) = \frac{P(D \mid A_1) \cdot P(A_1)}{P(D)}. \]</p>
+<p>Primero necesitamos calcular \( P(D) \), la probabilidad total de que un móvil sea defectuoso, usando la ley de probabilidad total:<br>
+\[ P(D) = P(D \mid A_1) \cdot P(A_1) + P(D \mid A_2) \cdot P(A_2) = 0.02 \cdot 0.7 + 0.06 \cdot 0.3 = 0.014 + 0.018 = 0.032. \]</p>
+<p>Ahora aplicamos la fórmula de Bayes:<br>
+\[ P(A_1 \mid D) = \frac{0.02 \cdot 0.7}{0.032} = \frac{0.014}{0.032} = 0.4375. \]</p>
+<p>Este resultado indica que, dado que el móvil comprado es defectuoso, la probabilidad de que haya sido fabricado en la primera planta es aproximadamente 0.4375 o, lo que es lo mismo, \( \frac{7}{16} \).</p>
+<h4>Conclusiones</h4>
+<p>- <strong>Respuesta al inciso a):</strong> \( P(D \cap A_2) = 0.018 \).<br>
+- <strong>Respuesta al inciso b):</strong> \( P(A_1 \mid D) \approx 0.4375 \) o \( \frac{7}{16} \).</p>
+<p>Ambos resultados están expresados en forma decimal y fraccional, respectivamente, como se solicitó en el enunciado.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea:</p>
+<p>- \(P_1\): “el móvil procede de la primera planta”<br>
+- \(P_2\): “el móvil procede de la segunda planta”<br>
+- \(D\): “el móvil es defectuoso”</p>
+<p>Datos del enunciado:</p>
+<p>\[
+P(P_1)=0,7,\qquad P(P_2)=1-0,7=0,3
+\]</p>
+<p>\[
+P(D\mid P_1)=0,02,\qquad P(D\mid P_2)=0,06
+\]</p>
+<h3>a) Probabilidad de que proceda de la segunda planta y sea defectuoso</h3>
+<p>Usamos la regla del producto:</p>
+<p>\[
+P(P_2\cap D)=P(P_2)\,P(D\mid P_2)
+\]</p>
+<p>\[
+P(P_2\cap D)=0,3\cdot 0,06=0,018
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{P(P_2\cap D)=0,0180}
+\]</p>
+<p>En forma de fracción:</p>
+<p>\[
+0,018=\frac{18}{1000}=\frac{9}{500}
+\]</p>
+<p>\[
+\boxed{P(P_2\cap D)=\frac{9}{500}}
+\]</p>
+<p>---</p>
+<h3>b) Sabiendo que el móvil es defectuoso, probabilidad de que lo haya fabricado la primera planta</h3>
+<p>Queremos calcular:</p>
+<p>\[
+P(P_1\mid D)
+\]</p>
+<p>Aplicamos la fórmula de Bayes:</p>
+<p>\[
+P(P_1\mid D)=\frac{P(P_1\cap D)}{P(D)}
+\]</p>
+<h4>Paso 1: calcular \(P(P_1\cap D)\)</h4>
+<p>\[
+P(P_1\cap D)=P(P_1)\,P(D\mid P_1)=0,7\cdot 0,02=0,014
+\]</p>
+<h4>Paso 2: calcular \(P(D)\)</h4>
+<p>La probabilidad total de que un móvil sea defectuoso es:</p>
+<p>\[
+P(D)=P(P_1\cap D)+P(P_2\cap D)
+\]</p>
+<p>\[
+P(D)=0,014+0,018=0,032
+\]</p>
+<h4>Paso 3: aplicar Bayes</h4>
+<p>\[
+P(P_1\mid D)=\frac{0,014}{0,032}=\frac{14}{32}=\frac{7}{16}=0,4375
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{P(P_1\mid D)=0,4375}
+\]</p>
+<p>En forma de fracción:</p>
+<p>\[
+\boxed{P(P_1\mid D)=\frac{7}{16}}
+\]</p>
+<p>---</p>
+<h3>Respuestas finales</h3>
+<p><strong>a)</strong> \(\boxed{\frac{9}{500}=0,0180}\)</p>
+<p><strong>b)</strong> \(\boxed{\frac{7}{16}=0,4375}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_072.html">Anterior</a><a class="button" href="problema_074.html">Siguiente</a></nav>
+</main></body>
+</html>

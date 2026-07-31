@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 124: pais_vasco_2023 A5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 124 de 139</h1>
+<div class="meta"><span class="badge">pais_vasco_2023</span> &nbsp; Ejercicio A5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_123.html">Anterior</a><a class="button" href="problema_125.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio A5</p>
+<p>Tenemos dos dados, uno normal y otro trucado. En el trucado hay 4 unos y 2 doses. Se elige un dado al azar y se tira dos veces.</p>
+<p>a) ¿Cuál es la probabilidad de obtener un 1 en la primera tirada y un 2 en la segunda?</p>
+<p>b) Sabiendo que el resultado de la primera tirada ha sido un 1 y el de la segunda ha sido un 2, calcula la probabilidad de que se haya escogido el dado trucado.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio A5</strong></p>
+<p>Tenemos dos dados, uno normal y otro trucado. En el trucado hay 4 unos y 2 doses. Se elige un dado al azar y se tira dos veces.</p>
+<p>a) ¿Cuál es la probabilidad de obtener un 1 en la primera tirada y un 2 en la segunda?  <br>
+b) Sabiendo que el resultado de la primera tirada ha sido un 1 y el de la segunda ha sido un 2, calcula la probabilidad de que se haya escogido el dado trucado.</p>
+<p>---</p>
+<p>Realizamos un diagrama de árbol para aclarar cómo funciona el experimento aleatorio.</p>
+<p>Llamamos \(N\) al suceso “elegir dado normal” y \(N_C\) al suceso “elegir dado trucado”.</p>
+<p>Llamamos \(A_1\) al suceso “sacar 1 en la primera tirada”, \(B_1\) al suceso “sacar 1 en la segunda tirada”, \(A_2\) al suceso “sacar 2 en la primera tirada” y \(B_2\) a “sacar 2 en la 2ª tirada”.</p>
+<p>La primera tirada y la segunda son experimentos independientes.</p>
+<p>\[
+P(N)=\frac12;\qquad P(N_C)=\frac12
+\]</p>
+<p>\[
+P(A_1/N)=P(B_1/N)=\frac16;\qquad P(A_2/N)=P(B_2/N)=\frac16
+\]</p>
+<p>\[
+P(A_1/N_C)=P(B_1/N_C)=\frac46;\qquad P(A_2/N_C)=P(B_2/N_C)=\frac26
+\]</p>
+<p>---</p>
+<h4>a)</h4>
+<p>Nos piden calcular \(P(1\text{ en 1ª y }2\text{ en 2ª})\). Este suceso puede ocurrir lanzando la moneda normal o la moneda trucada.</p>
+<p>\[
+P(1\text{ en 1ª y }2\text{ en 2ª})
+= P(N\cap A_1\cap B_2)+P(N_C\cap A_1\cap B_2)
+\]</p>
+<p>\[
+= P(N)P(A_1/N)P(B_2/N)+P(N_C)P(A_1/N_C)P(B_2/N_C)
+\]</p>
+<p>\[
+= \frac12\cdot\frac16\cdot\frac16+\frac12\cdot\frac46\cdot\frac26
+\]</p>
+<p>\[
+= \frac1{72}+\frac19=\frac18=0.125
+\]</p>
+<p>---</p>
+<h4>b)</h4>
+<p>Nos piden calcular:</p>
+<p>\[
+P(N_C/(1\text{ en 1ª y }2\text{ en 2ª}))
+\]</p>
+<p>Es una probabilidad a posteriori. Aplicamos el teorema de Bayes.</p>
+<p>\[
+P(N_C/(1\text{ en 1ª y }2\text{ en 2ª}))
+=
+\frac{P(N_C\cap A_1\cap B_2)}
+{P(N\cap A_1\cap B_2)+P(N_C\cap A_1\cap B_2)}
+\]</p>
+<p>\[
+=
+\frac{\frac12\cdot\frac46\cdot\frac26}
+{\frac18}
+=
+\frac{\frac19}{\frac18}
+=
+\frac89
+=
+0.888
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio A5 identifiquemos primero las características de los dados y las situaciones descritas:</p>
+<p><strong>Dado normal</strong> (Dado A): 1, 2, 3, 4, 5, 6 (cada número con probabilidad \( \frac{1}{6} \))<br>
+<strong>Dado trucado</strong> (Dado B): 1, 1, 1, 1, 2, 2 (4 unos y 2 doses)</p>
+<p>Se elige un dado al azar y se tira dos veces.</p>
+<h4>Parte a)</h4>
+<p><strong>Pregunta</strong>: ¿Cuál es la probabilidad de obtener un 1 en la primera tirada y un 2 en la segunda?</p>
+<p>Para resolver esto, consideremos que la probabilidad de que ocurra un resultado específico (1 en la primera tirada y 2 en la segunda) es el producto de las probabilidades seleccionando un dado específico y luego multiplicando por la probabilidad de haber seleccionado ese dado.</p>
+<p>1. <strong>Probabilidad de seleccionar un dado (cualquiera que sea)</strong><br>
+   - Probabilidad de elegir el dado normal (Dado A): \( \frac{1}{2} \)<br>
+   - Probabilidad de elegir el dado trucado (Dado B): \( \frac{1}{2} \)</p>
+<p>2. <strong>Probabilidad condicional de los resultados dados los dados</strong><br>
+   - Dado A:<br>
+     - Sacar un 1 en la primera tirada: \( \frac{1}{6} \)<br>
+     - Sacar un 2 en la segunda tirada: \( \frac{1}{6} \)<br>
+     - Probabilidad conjunta para el dado A: \( \frac{1}{6} \times \frac{1}{6} = \frac{1}{36} \)<br>
+   - Dado B:<br>
+     - Sacar un 1 en la primera tirada: \( \frac{4}{6} = \frac{2}{3} \)<br>
+     - Sacar un 2 en la segunda tirada: \( \frac{2}{6} = \frac{1}{3} \)<br>
+     - Probabilidad conjunta para el dado B: \( \frac{2}{3} \times \frac{1}{3} = \frac{2}{9} \)</p>
+<p>3. <strong>Probabilidad total combinada</strong><br>
+   - \( P(Evento) = P(Dado A) \times P(Evento | Dado A) + P(Dado B) \times P(Evento | Dado B) \)<br>
+   - \( P(Evento) = \frac{1}{2} \times \frac{1}{36} + \frac{1}{2} \times \frac{2}{9} \)<br>
+   - \( P(Evento) = \frac{1}{72} + \frac{1}{9} \)<br>
+   - \( P(Evento) = \frac{1}{72} + \frac{8}{72} = \frac{9}{72} = \frac{1}{8} \)</p>
+<p>Entonces, la probabilidad de sacar un 1 y luego un 2 es \( \frac{1}{8} \).</p>
+<h4>Parte b)</h4>
+<p><strong>Pregunta</strong>: Sabiendo que el resultado de la primera tirada ha sido un 1 y el de la segunda ha sido un 2, calcula la probabilidad de que se haya escogido el dado trucado.</p>
+<p>Utilizamos el teorema de Bayes para calcular esta probabilidad:</p>
+<p>- \( P(Dado B | Evento) = \frac{P(Evento | Dado B) \times P(Dado B)}{P(Evento)} \)<br>
+- \( P(Evento | Dado B) = \frac{2}{9} \), ya calculada anteriormente.<br>
+- \( P(Dado B) = \frac{1}{2} \), probabilidad a priori de elegir el dado B.<br>
+- \( P(Evento) = \frac{1}{8} \), ya calculada.</p>
+<p>Al sustituir:<br>
+- \( P(Dado B | Evento) = \frac{\frac{2}{9} \times \frac{1}{2}}{\frac{1}{8}} = \frac{\frac{2}{18}}{\frac{1}{8}} = \frac{2}{18} \times 8 = \frac{16}{18} = \frac{8}{9} \)</p>
+<p>Así que la probabilidad de que se haya escogido el dado trucado dado que el resultado fue un 1 seguido de un 2 es \( \frac{8}{9} \).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea:</p>
+<p>- \(N\): escoger el dado normal.<br>
+- \(T\): escoger el dado trucado.</p>
+<p>Como se elige un dado al azar,</p>
+<p>\[
+P(N)=P(T)=\frac12
+\]</p>
+<p>Además:</p>
+<p>- Dado normal: \(\;P(1|N)=\frac16,\; P(2|N)=\frac16\)<br>
+- Dado trucado: tiene 4 unos y 2 doses, luego</p>
+<p>\[
+P(1|T)=\frac46=\frac23,\qquad P(2|T)=\frac26=\frac13
+\]</p>
+<p>Las dos tiradas son independientes una vez fijado el dado.</p>
+<p>---</p>
+<h3>a) Probabilidad de obtener \(1\) en la primera y \(2\) en la segunda</h3>
+<p>\[
+P(1\text{ luego }2)=P(N)\,P(1,2|N)+P(T)\,P(1,2|T)
+\]</p>
+<p>Calculamos cada caso:</p>
+<h4>Si se escogió el dado normal</h4>
+\[
+P(1,2|N)=\frac16\cdot\frac16=\frac1{36}
+\]
+<h4>Si se escogió el dado trucado</h4>
+\[
+P(1,2|T)=\frac23\cdot\frac13=\frac29
+\]
+<p>Sustituyendo:</p>
+<p>\[
+P(1,2)=\frac12\cdot\frac1{36}+\frac12\cdot\frac29
+\]</p>
+<p>\[
+P(1,2)=\frac1{72}+\frac19=\frac1{72}+\frac8{72}=\frac9{72}=\frac18
+\]</p>
+<h4>Resultado del apartado a)</h4>
+\[
+\boxed{\frac18}
+\]
+<p>---</p>
+<h3>b) Probabilidad de que el dado escogido haya sido el trucado</h3>
+<p>Queremos:</p>
+<p>\[
+P(T\,|\,1,2)
+\]</p>
+<p>Aplicamos la fórmula de Bayes:</p>
+<p>\[
+P(T\,|\,1,2)=\frac{P(T)\,P(1,2|T)}{P(1,2)}
+\]</p>
+<p>Ya sabemos que:</p>
+<p>\[
+P(T)=\frac12,\qquad P(1,2|T)=\frac29,\qquad P(1,2)=\frac18
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(T\,|\,1,2)=\frac{\frac12\cdot\frac29}{\frac18}
+\]</p>
+<p>\[
+P(T\,|\,1,2)=\frac19\cdot 8=\frac89
+\]</p>
+<h4>Resultado del apartado b)</h4>
+\[
+\boxed{\frac89}
+\]
+<p>---</p>
+<h3>Respuestas finales</h3>
+<p><strong>a)</strong> \(\boxed{\frac18}\)</p>
+<p><strong>b)</strong> \(\boxed{\frac89}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_123.html">Anterior</a><a class="button" href="problema_125.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 101: madrid_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 101 de 139</h1>
+<div class="meta"><span class="badge">madrid_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_100.html">Anterior</a><a class="button" href="problema_102.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>B.1. Calificación máxima: 2.5 puntos.</p>
+<p>Dadas las matrices reales:</p>
+<p>\[
+A=\begin{pmatrix}
+m &amp; -1 &amp; 1\\
+-2 &amp; 0 &amp; m
+\end{pmatrix},\quad
+B=\begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix}
+\quad \text{y} \quad
+C=\begin{pmatrix}
+0 &amp; -1\\
+-2 &amp; 1\\
+3 &amp; -1
+\end{pmatrix},
+\]</p>
+<p>se pide:</p>
+<p>a) (0.75 puntos) Calcular, si existe, el valor de \(m\) para el cual se verifica que \(A^tB=C\).</p>
+<p>b) (1 punto) Calcular, si existen, los valores de \(m\) para los que existe la inversa de \(AC\) y calcular para \(m=0\) la inversa de \(AC\).</p>
+<p>c) (0.75 puntos) Calcular, si existe, el valor de \(m\) para el cual se cumple que \(B^2=B-I\), siendo \(I\) la matriz identidad de orden 2.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>B.1.</p>
+<p>a)  <br>
+\[
+A^tB=
+\begin{pmatrix}
+2m^2-2 &amp; -m\\
+-2m &amp; 1\\
+3m &amp; -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 &amp; -1\\
+-2 &amp; 1\\
+3 &amp; -1
+\end{pmatrix}
+\Rightarrow m=1.
+\]</p>
+<p>b)  <br>
+\[
+AC=
+\begin{pmatrix}
+5 &amp; -m-2\\
+3m &amp; -m+2
+\end{pmatrix}
+\]</p>
+<p>\[
+|AC|=3m^2+m+10=0.
+\]</p>
+<p>Esta ecuación no tiene solución. Por lo tanto, \(\forall m\in \mathbb{R}\) existe la matriz inversa de \(AC\).</p>
+<p>Para \(m=0\), se tiene que</p>
+<p>\[
+(AC)^{-1}=
+\begin{pmatrix}
+\frac15 &amp; \frac15\\
+0 &amp; \frac12
+\end{pmatrix}.
+\]</p>
+<p>c)  <br>
+\[
+B^2=
+\begin{pmatrix}
+4m^2-1 &amp; -2m\\
+2m &amp; -1
+\end{pmatrix}
+\]</p>
+<p>y</p>
+<p>\[
+B-I=
+\begin{pmatrix}
+2m-1 &amp; -1\\
+1 &amp; -1
+\end{pmatrix}.
+\]</p>
+<p>Por lo tanto,</p>
+<p>\[
+m=\frac12.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Resolvemos los tres apartados.</p>
+<p>---</p>
+<h3>Datos</h3>
+<p>\[
+A=\begin{pmatrix}
+m &amp; -1 &amp; 1\\
+-2 &amp; 0 &amp; m
+\end{pmatrix},\qquad
+B=\begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix},\qquad
+C=\begin{pmatrix}
+0 &amp; -1\\
+-2 &amp; 1\\
+3 &amp; -1
+\end{pmatrix}.
+\]</p>
+<p>---</p>
+<h2>a) Hallar \(m\) para que \(A^tB=C\)</h2>
+<p>Primero calculamos la traspuesta de \(A\):</p>
+<p>\[
+A^t=\begin{pmatrix}
+m &amp; -2\\
+-1 &amp; 0\\
+1 &amp; m
+\end{pmatrix}.
+\]</p>
+<p>Ahora multiplicamos \(A^tB\):</p>
+<p>\[
+A^tB=
+\begin{pmatrix}
+m &amp; -2\\
+-1 &amp; 0\\
+1 &amp; m
+\end{pmatrix}
+\begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+2m^2-2 &amp; -m\\
+-2m &amp; 1\\
+3m &amp; -1
+\end{pmatrix}.
+\]</p>
+<p>Imponemos que sea igual a \(C\):</p>
+<p>\[
+\begin{pmatrix}
+2m^2-2 &amp; -m\\
+-2m &amp; 1\\
+3m &amp; -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 &amp; -1\\
+-2 &amp; 1\\
+3 &amp; -1
+\end{pmatrix}.
+\]</p>
+<p>Igualando elementos:</p>
+<p>- \(-m=-1 \Rightarrow m=1\)<br>
+- \(-2m=-2 \Rightarrow m=1\)<br>
+- \(3m=3 \Rightarrow m=1\)</p>
+<p>Todo es compatible, y además<br>
+\[
+2m^2-2=0 \quad \text{para } m=1.
+\]</p>
+<h4>Resultado del apartado a)</h4>
+\[
+\boxed{m=1}
+\]
+<p>---</p>
+<h2>b) Valores de \(m\) para los que existe \((AC)^{-1}\) y cálculo para \(m=0\)</h2>
+<p>Calculamos primero \(AC\):</p>
+<p>\[
+AC=
+\begin{pmatrix}
+m &amp; -1 &amp; 1\\
+-2 &amp; 0 &amp; m
+\end{pmatrix}
+\begin{pmatrix}
+0 &amp; -1\\
+-2 &amp; 1\\
+3 &amp; -1
+\end{pmatrix}.
+\]</p>
+<p>Producto:</p>
+<p>\[
+AC=
+\begin{pmatrix}
+5 &amp; -m-2\\
+3m &amp; 2-m
+\end{pmatrix}.
+\]</p>
+<p>Para que exista la inversa de \(AC\), debe cumplirse:</p>
+<p>\[
+\det(AC)\neq 0.
+\]</p>
+<p>Calculamos el determinante:</p>
+<p>\[
+\det(AC)=5(2-m)-(-m-2)(3m).
+\]</p>
+<p>\[
+\det(AC)=10-5m+3m(m+2)=10-5m+3m^2+6m
+\]</p>
+<p>\[
+\det(AC)=3m^2+m+10.
+\]</p>
+<p>Estudiamos cuándo vale 0:</p>
+<p>\[
+3m^2+m+10=0.
+\]</p>
+<p>Su discriminante es</p>
+<p>\[
+\Delta=1-4\cdot 3\cdot 10=1-120=-119&lt;0.
+\]</p>
+<p>Como no tiene raíces reales, el determinante nunca se anula.</p>
+<h4>Luego \(AC\) es invertible para todo \(m\in\mathbb R\).</h4>
+<p>\[
+\boxed{\text{\((AC)^{-1}\) existe para todo } m\in\mathbb R}
+\]</p>
+<p>---</p>
+<h3>Inversa de \(AC\) para \(m=0\)</h3>
+<p>Si \(m=0\),</p>
+<p>\[
+AC=
+\begin{pmatrix}
+5 &amp; -2\\
+0 &amp; 2
+\end{pmatrix}.
+\]</p>
+<p>Su determinante es</p>
+<p>\[
+\det(AC)=5\cdot 2-(-2)\cdot 0=10.
+\]</p>
+<p>La inversa de una matriz \(2\times 2\),<br>
+\[
+\begin{pmatrix}a&amp;b\\ c&amp;d\end{pmatrix}^{-1}
+=
+\frac1{ad-bc}
+\begin{pmatrix}d&amp;-b\\ -c&amp;a\end{pmatrix},
+\]<br>
+da:</p>
+<p>\[
+(AC)^{-1}
+=
+\frac1{10}
+\begin{pmatrix}
+2 &amp; 2\\
+0 &amp; 5
+\end{pmatrix}.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{
+(AC)^{-1}_{\,|\,m=0}
+=
+\begin{pmatrix}
+\frac15 &amp; \frac15\\[2mm]
+0 &amp; \frac12
+\end{pmatrix}
+}
+\]</p>
+<p>---</p>
+<h2>c) Hallar \(m\) para que \(B^2=B-I\)</h2>
+<p>Calculamos \(B^2\):</p>
+<p>\[
+B^2=
+\begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+4m^2-1 &amp; -2m\\
+2m &amp; -1
+\end{pmatrix}.
+\]</p>
+<p>Ahora,</p>
+<p>\[
+B-I=
+\begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix}
+-
+\begin{pmatrix}
+1&amp;0\\
+0&amp;1
+\end{pmatrix}
+=
+\begin{pmatrix}
+2m-1 &amp; -1\\
+1 &amp; -1
+\end{pmatrix}.
+\]</p>
+<p>Imponemos</p>
+<p>\[
+B^2=B-I.
+\]</p>
+<p>Entonces</p>
+<p>\[
+\begin{pmatrix}
+4m^2-1 &amp; -2m\\
+2m &amp; -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+2m-1 &amp; -1\\
+1 &amp; -1
+\end{pmatrix}.
+\]</p>
+<p>Igualando elementos:</p>
+<p>- \(-2m=-1 \Rightarrow m=\frac12\)<br>
+- \(2m=1 \Rightarrow m=\frac12\)</p>
+<p>Y además:</p>
+<p>\[
+4m^2-1=2m-1
+\Rightarrow 4m^2=2m
+\Rightarrow 2m(2m-1)=0,
+\]<br>
+que también se cumple para \(m=\frac12\).</p>
+<h4>Resultado del apartado c)</h4>
+\[
+\boxed{m=\frac12}
+\]
+<p>---</p>
+<h2>Resumen final</h2>
+<p>- <strong>a)</strong> \(\boxed{m=1}\)<br>
+- <strong>b)</strong> \(\boxed{AC \text{ es invertible para todo } m\in\mathbb R}\)</p>
+<p>Para \(m=0\),<br>
+  \[
+  \boxed{
+  (AC)^{-1}=
+  \begin{pmatrix}
+  \frac15 &amp; \frac15\\[2mm]
+  0 &amp; \frac12
+  \end{pmatrix}}
+  \]</p>
+<p>- <strong>c)</strong> \(\boxed{m=\frac12}\)</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el enunciado, primero identificamos que el ejercicio que se nos pide resolver es el 5, que contiene tres apartados a, b y c, que vamos a resolver uno a uno.</p>
+<h4>a) Calcular el valor de \(m\) para el cual se verifica que \(A^tB=C\)</h4>
+<p>Primero, calculamos la matriz transpuesta de \(A\), \(A^t\), y luego el producto \(A^tB\), para compararlo con \(C\).</p>
+<p>\[
+A=\begin{pmatrix}
+m &amp; -1 &amp; 1\\
+-2 &amp; 0 &amp; m
+\end{pmatrix}
+\]</p>
+<p>La transpuesta de \(A\) es:</p>
+<p>\[
+A^t=\begin{pmatrix}
+m &amp; -2\\
+-1 &amp; 0\\
+1 &amp; m
+\end{pmatrix}
+\]</p>
+<p>Calculamos ahora el producto \(A^tB\):</p>
+<p>\[
+B=\begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix}
+\]</p>
+<p>\[
+A^tB=\begin{pmatrix}
+m &amp; -2\\
+-1 &amp; 0\\
+1 &amp; m
+\end{pmatrix}
+\begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+2m^2 - 2 &amp; -m\\
+-2m &amp; 1\\
+2m + 1 &amp; -1
+\end{pmatrix}
+\]</p>
+<p>Necesitamos que esta matriz sea igual a \(C\):</p>
+<p>\[
+C=\begin{pmatrix}
+0 &amp; -1\\
+-2 &amp; 1\\
+3 &amp; -1
+\end{pmatrix}
+\]</p>
+<p>Igualando término a término, obtenemos el sistema de ecuaciones:</p>
+<p>1. \(2m^2 - 2 = 0\)<br>
+2. \(-m = -1\) <br>
+3. \(-2m = -2\)<br>
+4. \(2m + 1 = 3\)</p>
+<p>Las ecuaciones más sencillas y que nos permiten encontrar \(m\) son \( -m = -1\) y \(-2m = -2\), de las cuales ambas nos dan \(m = 1\).</p>
+<p>Incluiremos la validación de \(m = 1\) en \(2m^2 - 2 = 0\):</p>
+<p>\[
+2(1)^2 - 2 = 0 \quad \text{verdadero}
+\]</p>
+<p>Y \(2m + 1 = 3\):</p>
+<p>\[
+2(1) + 1 = 3 \quad \text{verdadero}
+\]</p>
+<p>Por lo tanto, el valor de \(m\) que hace que \(A^tB = C\) es \(m = 1\).</p>
+<h4>b) Calcular los valores de \(m\) para los que existe la inversa de \(AC\) y calcular para \(m=0\) la inversa de \(AC\)</h4>
+<p>Para que la matriz \(AC\) tenga inversa, el determinante de \(AC\) no debe ser cero. La matriz \(A\) es de tamaño \(2 \times 3\) y \(C\) es \(3 \times 2\), de modo que \(AC\) será de tamaño \(2 \times 2\):</p>
+<p>\[
+AC = A C = \begin{pmatrix}
+m &amp; -1 &amp; 1\\
+-2 &amp; 0 &amp; m
+\end{pmatrix}
+\begin{pmatrix}
+0 &amp; -1\\
+-2 &amp; 1\\
+3 &amp; -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1-2+3 &amp; m-1-1\\
+-6-3m &amp; 2+m
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 &amp; m-2\\
+-6-3m &amp; 2+m
+\end{pmatrix}
+\]</p>
+<p>Calculamos el determinante de \(AC\):</p>
+<p>\[
+\det(AC) = (0)(2+m) - (-6-3m)(m-2) = -6m + 12 + 3m^2 - 12m = 3m^2 - 18m
+\]</p>
+<p>\[
+3m^2 - 18m = 3m(m - 6)
+\]</p>
+<p>Establecemos \(3m(m - 6) = 0\), las soluciones son \(m = 0\) y \(m = 6\).</p>
+<p>Ahora, para \(m=0\), evaluamos \(AC\) y calculamos su inversa:</p>
+<p>\[
+AC = \begin{pmatrix}
+0 &amp; -2\\
+-6 &amp; 2
+\end{pmatrix}
+\]</p>
+<p>\[
+\det(AC) = (0)(2) - (-2)(-6) = -12 \neq 0
+\]</p>
+<p>Por tanto, la inversa de \(AC\) existe y se calcula como:</p>
+<p>\[
+(AC)^{-1} = \frac{1}{\det(AC)} \begin{pmatrix}
+2 &amp; 2\\
+6 &amp; 0
+\end{pmatrix}
+= \frac{1}{-12} \begin{pmatrix}
+2 &amp; 2\\
+6 &amp; 0
+\end{pmatrix}
+= \begin{pmatrix}
+-\frac{1}{6} &amp; -\frac{1}{6}\\
+-\frac{1}{2} &amp; 0
+\end{pmatrix}
+\]</p>
+<h4>c) Calcular el valor de \(m\) para \(B^2=B-I\)</h4>
+<p>Expresamos \(B^2\):</p>
+<p>\[
+B^2 = \begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+2m &amp; -1\\
+1 &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+4m^2-1 &amp; -2m\\
+2m &amp; -1
+\end{pmatrix}
+\]</p>
+<p>Aquí, \(I\) es la matriz identidad:</p>
+<p>\[
+I = \begin{pmatrix}
+1 &amp; 0\\
+0 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>Establecemos \(B^2 = B - I\):</p>
+<p>\[
+\begin{pmatrix}
+4m^2-1 &amp; -2m\\
+2m &amp; -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+2m-1 &amp; -1\\
+1 &amp; -1
+\end{pmatrix}
+\]</p>
+<p>Comparando términos, obtenemos:</p>
+<p>\(4m^2-1 = 2m-1\) y \(-2m = -1\), entre otras. De \( -2m = -1\), tenemos \( m = \frac{1}{2} \).</p>
+<p>Verificamos si \( m = \frac{1}{2} \):</p>
+<p>\(4m^2 - 1 = 2m - 1 \Rightarrow 4(\frac{1}{2})^2 - 1 = 2(\frac{1}{2}) - 1 \Rightarrow 1 - 1 = 1 - 1, \text{verdadero}\).</p>
+<p>Por tanto, el valor de \(m\) que satisface \(B^2 = B-I\) es \( m = \frac{1}{2} \).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_100.html">Anterior</a><a class="button" href="problema_102.html">Siguiente</a></nav>
+</main></body>
+</html>

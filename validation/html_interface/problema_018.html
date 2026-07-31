@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 18: aragon_2023 10</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 18 de 139</h1>
+<div class="meta"><span class="badge">aragon_2023</span> &nbsp; Ejercicio 10</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_017.html">Anterior</a><a class="button" href="problema_019.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>10) El contenido total en sulfitos (medido en mg/l) del vino que se produce en una bodega, sigue una distribución normal de media 150 mg/l y desviación típica 30 mg/l. La bodega se compromete a vender solamente vinos con un contenido total en sulfitos inferior a 200 mg/l, por lo que se desechan para la venta aquellos que superen esta cantidad. Se pide,</p>
+<p>a) (1 punto) ¿Cuál es probabilidad de que un vino producido en la bodega se deseche por la elevada cantidad total de sulfitos?</p>
+<p>b) (1 punto) ¿Qué porcentaje de los vinos producidos en esta bodega tienen un contenido total en sulfitos entre 110 y 150 mg/l?</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 10 — Solución oficial</strong></p>
+<p>\(X=\) El contenido total en sulfitos, medido en mg/l, del vino.</p>
+<p>\[
+X=N(150,30)
+\]</p>
+<p><strong>a)</strong> Nos piden determinar \(P(X&gt;200)\).</p>
+<p>\[
+P(X&gt;200)=P\left(Z&gt;\frac{200-150}{30}\right)=P(Z&gt;1.67)
+\]</p>
+<p>\[
+P(Z&gt;1.67)=1-P(Z\leq 1.67)=1-0.9525=0.0475
+\]</p>
+<p>La probabilidad de que un vino producido en la bodega se deseche por la elevada cantidad total de sulfitos es:</p>
+<p>\[
+0.0475
+\]</p>
+<p>---</p>
+<p><strong>b)</strong></p>
+<p>\[
+P(110&lt;X&lt;150)=P\left(\frac{110-150}{30}&lt;Z&lt;\frac{150-150}{30}\right)
+\]</p>
+<p>\[
+=P(-1.33&lt;Z&lt;0)=P(Z&lt;0)-P(Z&lt;-1.33)
+\]</p>
+<p>\[
+=0.5-\left(1-P(Z&lt;1.33)\right)
+\]</p>
+<p>Mirando en la tabla \(N(0,1)\):</p>
+<p>\[
+=0.5-(1-0.9082)=0.4082
+\]</p>
+<p>El porcentaje de los vinos producidos en esta bodega que tienen un contenido total en sulfitos entre 110 y 150 mg/l es del:</p>
+<p>\[
+40.82\%
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 10 del documento, utilizaremos los conceptos y métodos de la distribución normal. Se nos da una variable aleatoria \(X\) que representa el contenido de sulfitos en vinos (medido en mg/l) y sigue una distribución normal \(N(150, 30^2)\), con una media (\(\mu\)) de 150 mg/l y una desviación típica (\(\sigma\)) de 30 mg/l.</p>
+<h4>a) Probabilidad de desechar un vino por alta cantidad de sulfitos</h4>
+<p>Queremos calcular la probabilidad de que un vino tenga más de 200 mg/l de sulfitos, es decir, deseamos hallar \(P(X &gt; 200)\).</p>
+<p>Para esto, normalizamos \(X\) y utilizamos la función de distribución acumulada estándar (\(Z\)).</p>
+<p>\[
+Z = \frac{X - \mu}{\sigma} = \frac{X - 150}{30}
+\]</p>
+<p>Calculamos \(Z\) para \(X = 200\):</p>
+<p>\[
+Z = \frac{200 - 150}{30} = \frac{50}{30} \approx 1.67
+\]</p>
+<p>La probabilidad de que \(Z\) sea mayor que 1.67 se obtiene como:</p>
+<p>\[
+P(Z &gt; 1.67) = 1 - P(Z \leq 1.67)
+\]</p>
+<p>Consultando tablas de la distribución normal estándar, encontramos \(P(Z \leq 1.67) \approx 0.9525\).</p>
+<p>Por lo tanto,</p>
+<p>\[
+P(Z &gt; 1.67) = 1 - 0.9525 = 0.0475
+\]</p>
+<p>Así, la probabilidad de desechar un vino debido al alto contenido de sulfitos es aproximadamente 0.0475, o un 4.75%.</p>
+<h4>b) Porcentaje de vinos con sulfitos entre 110 y 150 mg/l</h4>
+<p>Ahora deseamos encontrar el porcentaje de vinos con un contenido de sulfitos entre 110 mg/l y 150 mg/l, es decir, \(P(110 \leq X \leq 150)\).</p>
+<p>Calculamos los valores \(Z\) correspondientes a \(X = 110\) y \(X = 150\):</p>
+<p>\[
+Z_1 = \frac{110 - 150}{30} = \frac{-40}{30} \approx -1.33
+\]<br>
+\[
+Z_2 = \frac{150 - 150}{30} = 0
+\]</p>
+<p>Usando la tabla de la distribución normal estándar:</p>
+<p>\[
+P(-1.33 \leq Z \leq 0) = P(Z \leq 0) - P(Z \leq -1.33)
+\]<br>
+\[
+= 0.5 - (1 - P(Z \leq 1.33)) = 0.5 - (1 - 0.9082) = 0.5 - 0.0918 = 0.4082
+\]</p>
+<p>Por lo tanto, aproximadamente el 40.82% de los vinos producidos en la bodega tienen un contenido de sulfitos entre 110 mg/l y 150 mg/l.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea \(X\) el contenido total en sulfitos (mg/l) de un vino.</p>
+<p>\[
+X \sim N(150,\;30^2)
+\]</p>
+<p>Es decir, media \(\mu=150\) y desviación típica \(\sigma=30\).</p>
+<p>Para calcular probabilidades, tipificamos:</p>
+<p>\[
+Z=\frac{X-\mu}{\sigma}=\frac{X-150}{30}\sim N(0,1)
+\]</p>
+<p>---</p>
+<h3>a) Probabilidad de que un vino se deseche</h3>
+<p>Se desecha si su contenido en sulfitos supera 200 mg/l. Por tanto:</p>
+<p>\[
+P(\text{desechado})=P(X&gt;200)
+\]</p>
+<p>Tipificando:</p>
+<p>\[
+P(X&gt;200)=P\left(Z&gt;\frac{200-150}{30}\right)=P\left(Z&gt;\frac{50}{30}\right)=P(Z&gt;1.67)
+\]</p>
+<p>Usando la tabla de la normal estándar:</p>
+<p>\[
+P(Z&gt;1.67)=1-\Phi(1.67)\approx 1-0.9525=0.0475
+\]</p>
+<h4>Resultado apartado a)</h4>
+<p>\[
+\boxed{P(X&gt;200)\approx 0.0475}
+\]</p>
+<p>Es decir, la probabilidad es aproximadamente del</p>
+<p>\[
+\boxed{4.75\%}
+\]</p>
+<p>---</p>
+<h3>b) Porcentaje de vinos con contenido entre 110 y 150 mg/l</h3>
+<p>Queremos:</p>
+<p>\[
+P(110\le X\le 150)
+\]</p>
+<p>Tipificando los extremos:</p>
+<p>\[
+P(110\le X\le 150)=P\left(\frac{110-150}{30}\le Z\le \frac{150-150}{30}\right)
+\]</p>
+<p>\[
+= P(-1.33\le Z\le 0)
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+P(-1.33\le Z\le 0)=\Phi(0)-\Phi(-1.33)
+\]</p>
+<p>Como \(\Phi(0)=0.5\) y, por simetría, \(\Phi(-1.33)=1-\Phi(1.33)\approx 1-0.9082=0.0918\),</p>
+<p>\[
+P(-1.33\le Z\le 0)=0.5-0.0918=0.4082
+\]</p>
+<p>Más ajustadamente, usando \(1.333\), se obtiene aproximadamente \(0.4088\).</p>
+<h4>Resultado apartado b)</h4>
+<p>\[
+\boxed{P(110\le X\le 150)\approx 0.408}
+\]</p>
+<p>Por tanto, el porcentaje es aproximadamente</p>
+<p>\[
+\boxed{40.8\%}
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>- <strong>a)</strong> La probabilidad de que un vino se deseche es aproximadamente  <br>
+  \[
+  \boxed{0.0475 \text{ ó } 4.75\%}
+  \]</p>
+<p>- <strong>b)</strong> El porcentaje de vinos con contenido en sulfitos entre 110 y 150 mg/l es aproximadamente  <br>
+  \[
+  \boxed{40.8\%}
+  \]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_017.html">Anterior</a><a class="button" href="problema_019.html">Siguiente</a></nav>
+</main></body>
+</html>

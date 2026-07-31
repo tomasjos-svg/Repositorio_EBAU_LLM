@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 112: navarra_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 112 de 139</h1>
+<div class="meta"><span class="badge">navarra_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_111.html">Anterior</a><a class="button" href="problema_113.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P1) Estudia el siguiente sistema de ecuaciones lineales dependiente del parámetro real \(a\) y resuélvelo en los casos en que sea compatible:</p>
+<p>\[
+\begin{cases}
+ax+y-2z=1\\
+3ax+a^2y-2a^2z=3\\
+-ax-y+(a^2-1)z=a^3-1
+\end{cases}
+\]</p>
+<p>Menciona el resultado teórico empleado y justifica su uso.  <br>
+\((2,5\ \text{puntos})\)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>P1) Estudia el siguiente sistema de ecuaciones lineales dependiente del parámetro real \(a\) y resuélvelo en los casos en que sea compatible:</p>
+<p>\[
+\begin{cases}
+ax+y-2z=1\\
+3ax+2ay+(a^2-3)z=2\\
+ax-y-(a^2-1)z=a+3
+\end{cases}
+\]</p>
+<p>Menciona el resultado teórico empleado y justifica su uso.</p>
+<p>---</p>
+<p>La matriz de coeficientes es</p>
+<p>\[
+A=
+\begin{pmatrix}
+a&amp;1&amp;-2\\
+3a&amp;2a&amp;a^2-3\\
+a&amp;-1&amp;1-a^2
+\end{pmatrix}
+\]</p>
+<p>La matriz ampliada es</p>
+<p>\[
+(A|B)=
+\begin{pmatrix}
+a&amp;1&amp;-2&amp;1\\
+3a&amp;2a&amp;a^2-3&amp;2\\
+a&amp;-1&amp;1-a^2&amp;a+3
+\end{pmatrix}
+\]</p>
+<p>Utilizamos el método de Gauss para obtener un sistema triangular equivalente más sencillo.</p>
+<p>\[
+\begin{pmatrix}
+a&amp;1&amp;-2&amp;1\\
+3a&amp;2a&amp;a^2-3&amp;2\\
+a&amp;-1&amp;1-a^2&amp;a+3
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+a&amp;1&amp;-2&amp;1\\
+0&amp;3a-2a&amp;a^2+3&amp;0\\
+0&amp;0&amp;3-a^2&amp;3+a
+\end{pmatrix}
+\]</p>
+<p>Averiguamos cuándo se anula la matriz de coeficientes del sistema equivalente obtenido.</p>
+<p>\[
+\begin{vmatrix}
+a&amp;1&amp;-2\\
+0&amp;3a-2&amp;a^2+3\\
+0&amp;0&amp;3-a^2
+\end{vmatrix}
+=
+a(3a-2)(3-a^2)
+\]</p>
+<p>Se anula cuando</p>
+<p>\[
+a=0,\quad a=3,\quad a=-3
+\]</p>
+<p>Nos surgen 4 situaciones distintas que analizamos por separado.</p>
+<p>---</p>
+<h4>CASO 1. \(a\neq 0,\ a\neq 3,\ a\neq -3\)</h4>
+<p>El determinante de \(A\) es no nulo, por lo cual su rango es 3, al igual que el rango de la matriz ampliada y el número de incógnitas.</p>
+<p>Aplicando el teorema de Rouché, el sistema es compatible determinado, es decir, tiene solución única.</p>
+<p>Resolvemos el sistema equivalente obtenido aplicando el método de Gauss:</p>
+<p>\[
+z=\frac{1}{3-a}
+\]</p>
+<p>\[
+y=\frac{2}{a-3}
+\]</p>
+<p>\[
+x=1
+\]</p>
+<p>La solución es</p>
+<p>\[
+\boxed{x=1,\quad y=\frac{2}{a-3},\quad z=\frac{1}{3-a}}
+\]</p>
+<p>---</p>
+<h4>CASO 2. \(a=0\)</h4>
+<p>La matriz ampliada queda</p>
+<p>\[
+(A|B)=
+\begin{pmatrix}
+0&amp;1&amp;-2&amp;1\\
+0&amp;-3&amp;6&amp;0\\
+0&amp;0&amp;3&amp;3
+\end{pmatrix}
+\]</p>
+<p>y la matriz de coeficientes queda</p>
+<p>\[
+A=
+\begin{pmatrix}
+0&amp;1&amp;-2\\
+0&amp;-3&amp;6\\
+0&amp;0&amp;3
+\end{pmatrix}
+\]</p>
+<p>El rango de \(A\) es 2, pues tiene la primera columna nula. Comprobamos que el rango de \((A|B)\) es 3 tomando el menor de orden 3 que resulta de quitar la primera columna:</p>
+<p>\[
+\begin{vmatrix}
+1&amp;-2&amp;1\\
+-3&amp;6&amp;0\\
+0&amp;3&amp;3
+\end{vmatrix}
+\neq 0
+\]</p>
+<p>El rango de \(A\) es 2 y el de la ampliada es 3. Por el teorema de Rouché, el sistema es incompatible.</p>
+<p>---</p>
+<h4>CASO 3. \(a=3\)</h4>
+<p>La matriz ampliada queda</p>
+<p>\[
+(A|B)=
+\begin{pmatrix}
+3&amp;1&amp;-2&amp;1\\
+0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;23
+\end{pmatrix}
+\]</p>
+<p>Por lo que el rango de \(A\) es 1 y el de la ampliada \((A|B)\) es 2. Los rangos son distintos.</p>
+<p>Por el teorema de Rouché, el sistema es incompatible, sin solución.</p>
+<p>---</p>
+<h4>CASO 4. \(a=-3\)</h4>
+<p>La matriz ampliada queda</p>
+<p>\[
+(A|B)=
+\begin{pmatrix}
+-3&amp;1&amp;-2&amp;1\\
+0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0
+\end{pmatrix}
+\]</p>
+<p>y la matriz de coeficientes queda</p>
+<p>\[
+A=
+\begin{pmatrix}
+-3&amp;1&amp;-2\\
+0&amp;0&amp;0\\
+0&amp;0&amp;0
+\end{pmatrix}
+\]</p>
+<p>Por lo que el rango de \(A\) es 1 y el de la ampliada también es 1, pero es menor que el número de incógnitas, 3.</p>
+<p>Por el teorema de Rouché, el sistema es compatible indeterminado, con infinitas soluciones.</p>
+<p>Lo resolvemos:</p>
+<p>\[
+-3x+y-2z=1
+\]</p>
+<p>Tomando</p>
+<p>\[
+x=\lambda,\qquad z=\mu
+\]</p>
+<p>se obtiene</p>
+<p>\[
+y=3\lambda+2\mu+1
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{x=\lambda,\quad y=3\lambda+2\mu+1,\quad z=\mu}
+\]</p>
+<p>---</p>
+<h4>Resumen</h4>
+<p>Si</p>
+<p>\[
+a\neq 0,\quad a\neq 3,\quad a\neq -3
+\]</p>
+<p>el sistema es compatible determinado, siendo su solución</p>
+<p>\[
+\boxed{x=1,\quad y=\frac{2}{a-3},\quad z=\frac{1}{3-a}}
+\]</p>
+<p>Si</p>
+<p>\[
+a=3 \quad \text{o} \quad a=0
+\]</p>
+<p>el sistema es incompatible.</p>
+<p>Si</p>
+<p>\[
+a=-3
+\]</p>
+<p>el sistema es compatible indeterminado, con soluciones</p>
+<p>\[
+\boxed{x=\lambda,\quad y=3\lambda+2\mu+1,\quad z=\mu}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>El Ejercicio 1 del &quot;Examen matemáticas II Navarra 2023&quot; pide analizar y resolver un sistema de ecuaciones lineales dependiente de un parámetro real \( a \). Vamos a resolver el sistema paso a paso:</p>
+<h4>Enunciado del ejercicio</h4>
+<p>Dado el sistema paramétrico:</p>
+<p>\[
+\begin{cases}
+a x + y - 2z = 1 \\
+3a x + a^2 y - 2a^2 z = 3 \\
+-a x - y + (a^2 - 1) z = a + \sqrt{3} - 1
+\end{cases}
+\]</p>
+<h4>Paso 1: Forma Matricial del Sistema</h4>
+<p>Convertimos el sistema a forma matricial:</p>
+<p>\[
+\begin{pmatrix}
+a &amp; 1 &amp; -2 \\
+3a &amp; a^2 &amp; -2a^2 \\
+-a &amp; -1 &amp; a^2 - 1
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y \\
+z
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 \\
+3 \\
+a + \sqrt{3} - 1
+\end{pmatrix}
+\]</p>
+<h4>Paso 2: Determinante de la Matriz</h4>
+<p>Para examinar la compatibilidad del sistema, calculamos el determinante \( \Delta \) de la matriz de coeficientes:</p>
+<p>\[
+\Delta = \begin{vmatrix}
+a &amp; 1 &amp; -2 \\
+3a &amp; a^2 &amp; -2a^2 \\
+-a &amp; -1 &amp; a^2 - 1
+\end{vmatrix}
+\]</p>
+<p>Expandimos el determinante:</p>
+<p>\[
+\Delta = a \begin{vmatrix}
+a^2 &amp; -2a^2 \\
+-1 &amp; a^2 - 1
+\end{vmatrix}
+- 1 \begin{vmatrix}
+3a &amp; -2a^2 \\
+-a &amp; a^2 - 1
+\end{vmatrix}
+- 2 \begin{vmatrix}
+3a &amp; a^2 \\
+-a &amp; -1
+\end{vmatrix}
+\]</p>
+<p>Calculamos cada sub-determinante y simplificamos para obtener la forma de \( \Delta \).</p>
+<h4>Paso 3: Condiciones de Compatibilidad (Rouché-Capelli)</h4>
+<p>El sistema es compatible si el rango de la matriz de coeficientes es igual al rango de la matriz ampliada (incluye el vector del lado derecho), y esto depende completamente del valor de \( a \) y de \( \Delta \). Específicamente necesitamos examinar si:<br>
+- \( \Delta \neq 0 \): El sistema tiene una única solución.<br>
+- \( \Delta = 0 \): El sistema podría tener o no soluciones, y se necesita un análisis más detallado.</p>
+<h4>Paso 4: Resultados Posibles</h4>
+<p>- Si \( a \) y \( \Delta \) permiten una solución única, especificamos la solución.<br>
+- Si el sistema es compatible indeterminado, encontramos la familia de soluciones paramétricas.<br>
+- Si el sistema es incompatible, indicamos que no hay solución.</p>
+<h4>Conclusión</h4>
+<p>Este análisis proporciona el primer paso hacia la resolución del sistema. Para una solución completa, necesitamos:<br>
+1. Calcular efectivamente \( \Delta \).<br>
+2. Examinar más de cerca los casos donde \( \Delta = 0 \) y \( a \) toma valores críticos que podrían alterar el rango de las matrices mencionadas【4:1†Examen matematicas II Navarra 2023 enunciado.pdf】.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Tomando el sistema del enunciado como</p>
+<p>\[
+\begin{cases}
+ax+y-2z=1\\
+3ax+a^2y-2a^2z=3\\
+-ax-y+(a^2-1)z=a^3-1
+\end{cases}
+\]</p>
+<p>lo estudiamos con el <strong>teorema de Rouché–Frobenius</strong>:</p>
+<p>- si \(\operatorname{rg}(A)=\operatorname{rg}(A^*)\), el sistema es compatible;<br>
+- si además ese rango es \(3\), la solución es única;<br>
+- si \(\operatorname{rg}(A)\ne \operatorname{rg}(A^*)\), es incompatible.</p>
+<p>Aquí \(A\) es la matriz de coeficientes y \(A^*\) la ampliada.</p>
+<p>---</p>
+<h3>1) Matriz ampliada y reducción</h3>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+a&amp;1&amp;-2&amp;1\\
+3a&amp;a^2&amp;-2a^2&amp;3\\
+-a&amp;-1&amp;a^2-1&amp;a^3-1
+\end{array}
+\right)
+\]</p>
+<p>Hacemos operaciones elementales:</p>
+<p>- \(F_2\leftarrow F_2-3F_1\)<br>
+- \(F_3\leftarrow F_3+F_1\)</p>
+<p>y queda</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+a&amp;1&amp;-2&amp;1\\
+0&amp;a^2-3&amp;-2(a^2-3)&amp;0\\
+0&amp;0&amp;a^2-3&amp;a^3
+\end{array}
+\right).
+\]</p>
+<p>---</p>
+<h3>2) Discusión según \(a\)</h3>
+<h4>Caso 1: \(a\neq 0\) y \(a^2-3\neq 0\)  </h4>
+Es decir, \(a\neq 0,\pm\sqrt3\).
+<p>Entonces en la matriz reducida hay tres filas no nulas en la parte de coeficientes:</p>
+<p>\[
+\operatorname{rg}(A)=\operatorname{rg}(A^*)=3.
+\]</p>
+<p>Por Rouché–Frobenius, el sistema es <strong>compatible determinado</strong>.</p>
+<p>Resolviendo:</p>
+<p>\[
+(a^2-3)z=a^3 \quad\Rightarrow\quad z=\frac{a^3}{a^2-3}
+\]</p>
+<p>\[
+(a^2-3)(y-2z)=0 \quad\Rightarrow\quad y=2z=\frac{2a^3}{a^2-3}
+\]</p>
+<p>\[
+ax+y-2z=1 \quad\Rightarrow\quad ax=1 \quad\Rightarrow\quad x=\frac1a.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{
+x=\frac1a,\qquad
+y=\frac{2a^3}{a^2-3},\qquad
+z=\frac{a^3}{a^2-3}
+}
+\qquad (a\neq 0,\pm\sqrt3).
+\]</p>
+<p>---</p>
+<h4>Caso 2: \(a=0\)</h4>
+<p>El sistema queda</p>
+<p>\[
+\begin{cases}
+y-2z=1\\
+0=3\\
+-y-z=-1
+\end{cases}
+\]</p>
+<p>La segunda ecuación es imposible, luego el sistema es <strong>incompatible</strong>.</p>
+<p>Equivalentemente,</p>
+<p>\[
+\operatorname{rg}(A)=2,\qquad \operatorname{rg}(A^*)=3.
+\]</p>
+<p>---</p>
+<h4>Caso 3: \(a^2-3=0\), es decir, \(a=\pm\sqrt3\)</h4>
+<p>En la matriz reducida aparece</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+a&amp;1&amp;-2&amp;1\\
+0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;a^3
+\end{array}
+\right).
+\]</p>
+<p>Como \(a=\pm\sqrt3\neq 0\), se tiene \(a^3\neq 0\), luego la última fila representa</p>
+<p>\[
+0=a^3,
+\]</p>
+<p>que es imposible. Por tanto,</p>
+<p>\[
+\operatorname{rg}(A)=1,\qquad \operatorname{rg}(A^*)=2,
+\]</p>
+<p>y el sistema es <strong>incompatible</strong>.</p>
+<p>---</p>
+<h2>Conclusión</h2>
+<p>- <strong>Compatible determinado</strong> si \(\boxed{a\neq 0,\pm\sqrt3}\), con solución</p>
+<p>\[
+\boxed{
+x=\frac1a,\qquad
+y=\frac{2a^3}{a^2-3},\qquad
+z=\frac{a^3}{a^2-3}
+}
+\]</p>
+<p>- <strong>Incompatible</strong> si \(\boxed{a=0}\) o \(\boxed{a=\pm\sqrt3}\).</p>
+<p>No hay ningún caso de sistema compatible indeterminado.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_111.html">Anterior</a><a class="button" href="problema_113.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 46: cantabria_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 46 de 139</h1>
+<div class="meta"><span class="badge">cantabria_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_045.html">Anterior</a><a class="button" href="problema_047.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio 5 [2,5 PUNTOS]</p>
+<p>Considere la matriz</p>
+<p>\[
+A =
+\begin{pmatrix}
+1 &amp; 2 \\
+2 &amp; b
+\end{pmatrix}
+\]</p>
+<p>en función del parámetro \(b \in \mathbb{R}\).</p>
+<p>A) [0,75 PUNTOS] Calcule el rango de \(A\) para los distintos valores del parámetro \(b \in \mathbb{R}\).</p>
+<p>B) [0,75 PUNTOS] Determine para qué valores de \(b \in \mathbb{R}\) la matriz \(A\) tiene inversa.</p>
+<p>C) [1 PUNTO] Sea \(B\) el conjunto formado por los \(b \in \mathbb{R}\) tales que \(A\) tiene inversa. Calcule la inversa de \(A\) para los diferentes valores del parámetro \(b \in B\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 5 [2.5 PUNTOS]</strong></p>
+<p>Considere la matriz</p>
+<p>\[
+A=\begin{pmatrix}
+1 &amp; 2\\
+2 &amp; b
+\end{pmatrix}
+\]</p>
+<p>en función del parámetro \(b\).</p>
+<p>---</p>
+<h4>A) [0,75 PUNTOS]</h4>
+<p>Calculamos el determinante de \(A\) y comprobamos cuándo se anula.</p>
+<p>\[
+|A|=\begin{vmatrix}
+1 &amp; 2\\
+2 &amp; b
+\end{vmatrix}=b-4
+\]</p>
+<p>\[
+|A|=0 \Rightarrow b-4=0 \Rightarrow b=4
+\]</p>
+<p>Si \(b=4\), el determinante de \(A\) es nulo y su rango no es 2, por lo que su rango es 1, pues tiene elementos no nulos.</p>
+<p>Si \(b\neq 4\), el determinante de \(A\) es no nulo y su rango es 2.</p>
+<p>---</p>
+<h4>B) [0,75 PUNTOS]</h4>
+<p>La matriz \(A\) tiene inversa cuando su determinante es no nulo y, por lo visto en el apartado anterior, eso ocurre cuando</p>
+<p>\[
+b\neq 4
+\]</p>
+<p>---</p>
+<h4>C) [1 PUNTO]</h4>
+<p>Calculamos la inversa de la matriz \(A\) cuando \(b\neq 4\).</p>
+<p>\[
+A^{-1}=\frac{1}{|A|}\operatorname{Adj}(A)^T
+\]</p>
+<p>\[
+A^{-1}
+=
+\frac{1}{b-4}
+\begin{pmatrix}
+b &amp; -2\\
+-2 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>Es decir,</p>
+<p>\[
+A^{-1}
+=
+\begin{pmatrix}
+\dfrac{b}{b-4} &amp; \dfrac{-2}{b-4}\\[6pt]
+\dfrac{-2}{b-4} &amp; \dfrac{1}{b-4}
+\end{pmatrix},
+\quad b\neq 4
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver el Ejercicio 5, siguiendo cada uno de sus apartados paso por paso.</p>
+<h4>A) Cálculo del rango de \(A\)</h4>
+<p>Para calcular el rango de la matriz \(A\), primero necesitamos saber si su determinante es diferente de cero, ya que una matriz 2x2 tiene pleno rango si y solo si su determinante no es cero.</p>
+<p>La matriz \(A\) está dada por: <br>
+\[
+A =
+\begin{pmatrix}
+1 &amp; 2 \\
+2 &amp; b
+\end{pmatrix}
+\]</p>
+<p>El determinante de \(A\) es:<br>
+\[
+\text{det}(A) = 1 \cdot b - 2 \cdot 2 = b - 4
+\]</p>
+<p>El rango de una matriz es máximo si el determinante no es cero. Por tanto:<br>
+- Si \(b - 4 \neq 0\) (es decir, \(b \neq 4\)), entonces \(\text{det}(A) \neq 0\) y el rango de \(A\) es 2.<br>
+- Si \(b = 4\), entonces \(\text{det}(A) = 0\) y el rango de \(A\) es menor que 2. En este caso, podemos calcular el rango examinando si las filas (o columnas) son linealmente independientes. Cuando \(b = 4\),</p>
+<p>\[
+A =
+\begin{pmatrix}
+1 &amp; 2 \\
+2 &amp; 4
+\end{pmatrix}
+\]<br>
+notamos que la segunda fila es el doble de la primera, indicando dependencia lineal entre estas, por lo tanto, el rango de \(A\) es 1.</p>
+<p><strong>Conclusión para A)</strong>:<br>
+- \( \text{rango}(A) = 2 \) si \(b \neq 4\).<br>
+- \( \text{rango}(A) = 1 \) si \(b = 4\).</p>
+<h4>B) Valores de \(b\) para los cuales \(A\) tiene inversa</h4>
+<p>Una matriz tiene inversa si y solo si es de rango completo, es decir, si su determinante es diferente de cero. Dado que el determinante de \(A\) es \(b - 4\), la matriz \(A\) es invertible si y solo si \(b - 4 \neq 0\). Por tanto:</p>
+<p><strong>Conclusión para B)</strong>:<br>
+- La matriz \(A\) tiene inversa para todos los valores \(b \neq 4\).</p>
+<h4>C) Cálculo de la inversa de \(A\) para \(b \in B\)</h4>
+<p>Dado que \(b \in B\) implica que \(b \neq 4\), podemos calcular la inversa de \(A\) cuando \(b \neq 4\). Para una matriz 2x2:<br>
+\[
+A =
+\begin{pmatrix}
+a &amp; c \\
+b &amp; d
+\end{pmatrix}
+\]<br>
+la inversa se calcula como:<br>
+\[
+A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} d &amp; -c \\ -b &amp; a \end{pmatrix}
+\]</p>
+<p>Aplicando esto a nuestra matriz \(A\), tenemos:<br>
+\[
+A^{-1} = \frac{1}{b - 4} \begin{pmatrix} b &amp; -2 \\ -2 &amp; 1 \end{pmatrix}
+\]</p>
+<p><strong>Conclusión para C)</strong>:<br>
+- La inversa de \(A\) para \(b \in B\) (es decir, \(b \neq 4\)) es \(A^{-1} = \frac{1}{b - 4} \begin{pmatrix} b &amp; -2 \\ -2 &amp; 1 \end{pmatrix}\).</p>
+<p>Este proceso proporciona la solución completa y coherente para el ejercicio 5 que nos fue presentado.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los tres apartados para la matriz</p>
+<p>\[
+A=\begin{pmatrix}1&amp;2\\2&amp;b\end{pmatrix},\qquad b\in\mathbb R.
+\]</p>
+<p>---</p>
+<h3>A) Rango de \(A\) según \(b\)</h3>
+<p>Para una matriz \(2\times 2\), el rango es 2 si su determinante es distinto de 0.</p>
+<p>Calculamos el determinante:</p>
+<p>\[
+\det(A)=
+\begin{vmatrix}
+1&amp;2\\
+2&amp;b
+\end{vmatrix}
+=1\cdot b-2\cdot 2=b-4.
+\]</p>
+<h4>Caso 1: \(b\neq 4\)</h4>
+<p>Si \(b-4\neq 0\), entonces \(\det(A)\neq 0\), y por tanto:</p>
+<p>\[
+\operatorname{rg}(A)=2.
+\]</p>
+<h4>Caso 2: \(b=4\)</h4>
+<p>Si \(b=4\), la matriz queda:</p>
+<p>\[
+A=\begin{pmatrix}1&amp;2\\2&amp;4\end{pmatrix}.
+\]</p>
+<p>La segunda fila es el doble de la primera, luego las filas son dependientes y la matriz no es nula. Por tanto:</p>
+<p>\[
+\operatorname{rg}(A)=1.
+\]</p>
+<h4>Conclusión</h4>
+<p>\[
+\operatorname{rg}(A)=
+\begin{cases}
+2, &amp; \text{si } b\neq 4,\\[2mm]
+1, &amp; \text{si } b=4.
+\end{cases}
+\]</p>
+<p>---</p>
+<h3>B) Valores de \(b\) para los que \(A\) tiene inversa</h3>
+<p>Una matriz cuadrada tiene inversa si y solo si su determinante es distinto de 0.</p>
+<p>Como</p>
+<p>\[
+\det(A)=b-4,
+\]</p>
+<p>la matriz \(A\) es invertible cuando</p>
+<p>\[
+b-4\neq 0 \quad\Longleftrightarrow\quad b\neq 4.
+\]</p>
+<h4>Conclusión</h4>
+<p>\[
+A \text{ tiene inversa } \iff b\neq 4.
+\]</p>
+<p>---</p>
+<h3>C) Conjunto \(B\) e inversa de \(A\)</h3>
+<p>El conjunto pedido es</p>
+<p>\[
+B=\{b\in\mathbb R:\ A \text{ tiene inversa}\}=\mathbb R\setminus\{4\}.
+\]</p>
+<p>Para \(b\in B\), es decir, para \(b\neq 4\), usamos la fórmula de la inversa de una matriz \(2\times 2\):</p>
+<p>Si</p>
+<p>\[
+\begin{pmatrix}a&amp;c\\ d&amp;e\end{pmatrix},
+\]</p>
+<p>entonces</p>
+<p>\[
+\left(\begin{pmatrix}a&amp;c\\ d&amp;e\end{pmatrix}\right)^{-1}
+=
+\frac{1}{ae-cd}
+\begin{pmatrix}
+e&amp;-c\\
+-d&amp;a
+\end{pmatrix},
+\]</p>
+<p>siempre que \(ae-cd\neq 0\).</p>
+<p>Aplicando esto a</p>
+<p>\[
+A=\begin{pmatrix}1&amp;2\\2&amp;b\end{pmatrix},
+\]</p>
+<p>obtenemos:</p>
+<p>\[
+A^{-1}
+=
+\frac{1}{b-4}
+\begin{pmatrix}
+b&amp;-2\\
+-2&amp;1
+\end{pmatrix},
+\qquad b\neq 4.
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p>\[
+\boxed{
+\operatorname{rg}(A)=
+\begin{cases}
+2,&amp; b\neq 4,\\
+1,&amp; b=4,
+\end{cases}}
+\]</p>
+<p>\[
+\boxed{A \text{ es invertible si y solo si } b\neq 4}
+\]</p>
+<p>\[
+\boxed{B=\mathbb R\setminus\{4\}}
+\]</p>
+<p>\[
+\boxed{
+A^{-1}=\frac{1}{b-4}
+\begin{pmatrix}
+b&amp;-2\\
+-2&amp;1
+\end{pmatrix}
+\quad \text{para todo } b\in B
+}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_045.html">Anterior</a><a class="button" href="problema_047.html">Siguiente</a></nav>
+</main></body>
+</html>

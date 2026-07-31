@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 75: extremadura_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 75 de 139</h1>
+<div class="meta"><span class="badge">extremadura_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_074.html">Anterior</a><a class="button" href="problema_076.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>2. Discutir el sistema para los distintos valores del parámetro \(a \in \mathbb{R}\). \((1,5\) puntos)</p>
+<p>\[
+\begin{cases}
+x+y+z=2a-1\\
+2x+y+az=a\\
+x+ay+z=1
+\end{cases}
+\]</p>
+<p>Resolver el sistema en el caso \(a=1\). \((0,5\) puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 2. Solución oficial</strong></p>
+<p>La matriz de coeficientes asociada al sistema es</p>
+<p>\[
+A=\begin{pmatrix}
+1&amp;1&amp;1\\
+2&amp;1&amp;a\\
+1&amp;a&amp;1
+\end{pmatrix}
+\]</p>
+<p>y la matriz ampliada es</p>
+<p>\[
+(A/B)=
+\begin{pmatrix}
+1&amp;1&amp;1&amp;|&amp;a^2-1\\
+2&amp;1&amp;a&amp;|&amp;a\\
+1&amp;a&amp;1&amp;|&amp;1
+\end{pmatrix}
+\]</p>
+<p>Estudiamos cuándo se anula el determinante de \(A\):</p>
+<p>\[
+|A|=\begin{vmatrix}
+1&amp;1&amp;1\\
+2&amp;1&amp;a\\
+1&amp;a&amp;1
+\end{vmatrix}
+=1+2a+a-a-2-a^2=-a^2+3a-2
+\]</p>
+<p>\[
+|A|=0 \Rightarrow -a^2+3a-2=0
+\Rightarrow a^2-3a+2=0
+\Rightarrow a=1,\ a=2
+\]</p>
+<p>Estudiamos tres situaciones diferentes.</p>
+<p>---</p>
+<h4>CASO 1. Si \(a\neq 1\) y \(a\neq 2\)</h4>
+<p>El determinante de \(A\) es no nulo y su rango es 3, al igual que el rango de la matriz ampliada e igual que el número de incógnitas (3).</p>
+<p>El sistema es <strong>compatible determinado</strong>.</p>
+<p>---</p>
+<h4>CASO 2. Si \(a=1\)</h4>
+<p>El determinante de \(A\) es nulo. El rango de \(A\) no es 3. Estudiamos su rango utilizando el método de Gauss.</p>
+<p>\[
+(A/B)=
+\begin{pmatrix}
+1&amp;1&amp;1&amp;|&amp;0\\
+2&amp;1&amp;1&amp;|&amp;1\\
+1&amp;1&amp;1&amp;|&amp;1
+\end{pmatrix}
+\]</p>
+<p>Aplicando operaciones elementales:</p>
+<p>\[
+\begin{pmatrix}
+1&amp;1&amp;1&amp;|&amp;0\\
+0&amp;-1&amp;-1&amp;|&amp;1\\
+0&amp;0&amp;0&amp;|&amp;0
+\end{pmatrix}
+\]</p>
+<p>El rango de \(A\) es 2, al igual que el rango de \(A/B\), pero es menor que el número de incógnitas (3).</p>
+<p>El sistema es <strong>compatible indeterminado</strong>.</p>
+<p>---</p>
+<h4>CASO 3. Si \(a=2\)</h4>
+<p>El determinante de \(A\) es nulo. El rango de \(A\) no es 3. Estudiamos su rango utilizando el método de Gauss.</p>
+<p>\[
+(A/B)=
+\begin{pmatrix}
+1&amp;1&amp;1&amp;|&amp;3\\
+2&amp;1&amp;2&amp;|&amp;2\\
+1&amp;2&amp;1&amp;|&amp;1
+\end{pmatrix}
+\]</p>
+<p>Aplicando operaciones elementales:</p>
+<p>\[
+\begin{pmatrix}
+1&amp;1&amp;1&amp;|&amp;3\\
+0&amp;-1&amp;0&amp;|&amp;-4\\
+0&amp;1&amp;0&amp;|&amp;-2
+\end{pmatrix}
+\]</p>
+<p>\[
+\begin{pmatrix}
+1&amp;1&amp;1&amp;|&amp;3\\
+0&amp;-1&amp;0&amp;|&amp;-4\\
+0&amp;0&amp;0&amp;|&amp;-6
+\end{pmatrix}
+\]</p>
+<p>El rango de \(A\) es 2, pero el rango de \(A/B\) es 3. Tienen rangos distintos y el sistema es <strong>incompatible</strong>.</p>
+<p>---</p>
+<p>Resumiendo:</p>
+<p>- Si \(a\neq 1\) y \(a\neq 2\), el sistema es <strong>compatible determinado</strong>.<br>
+- Si \(a=1\), el sistema es <strong>compatible indeterminado</strong>.<br>
+- Si \(a=2\), el sistema es <strong>incompatible</strong>.</p>
+<p>---</p>
+<p>Resolvemos el sistema para \(a=1\). Sabemos que el sistema es compatible indeterminado. Lo resolvemos a partir del sistema triangular equivalente obtenido en el estudio anterior.</p>
+<p>\[
+\begin{cases}
+x+y+z=0\\
+-y-z=1
+\end{cases}
+\]</p>
+<p>De la segunda ecuación:</p>
+<p>\[
+y=-z-1
+\]</p>
+<p>Sustituyendo en la primera:</p>
+<p>\[
+x+(-z-1)+z=0 \Rightarrow x=1
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{x=1,\quad y=-z-1,\quad z\in\mathbb{R}}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea el sistema<br>
+\[
+\begin{cases}
+x+y+z=2a-1\\
+2x+y+az=a\\
+x+ay+z=1
+\end{cases}
+\]</p>
+<h3>1) Discusión según \(a\)</h3>
+<p>La matriz de coeficientes es<br>
+\[
+A=\begin{pmatrix}
+1&amp;1&amp;1\\
+2&amp;1&amp;a\\
+1&amp;a&amp;1
+\end{pmatrix}
+\]<br>
+y<br>
+\[
+\det A=
+\begin{vmatrix}
+1&amp;1&amp;1\\
+2&amp;1&amp;a\\
+1&amp;a&amp;1
+\end{vmatrix}
+=1(1-a^2)-1(2-a)+1(2a-1)
+=-(a-1)(a-2).
+\]</p>
+<p>Por tanto, los valores críticos son \(a=1\) y \(a=2\).</p>
+<p>---</p>
+<h4>Caso \(a\neq 1,2\)</h4>
+<p>Restamos la primera ecuación a la segunda y a la tercera:</p>
+<p>\[
+(2)-(1):\quad x+(a-1)z=1-a=-(a-1)
+\]<br>
+\[
+(3)-(1):\quad (a-1)y=2-2a=-2(a-1)
+\]</p>
+<p>Como \(a\neq 1\), de la segunda:<br>
+\[
+y=-2.
+\]</p>
+<p>Sustituyendo en la primera ecuación:<br>
+\[
+x+z=2a+1.
+\]</p>
+<p>Junto con<br>
+\[
+x+(a-1)z=-(a-1),
+\]<br>
+restamos ambas:<br>
+\[
+(a-2)z=-3a.
+\]</p>
+<p>Como \(a\neq 2\),<br>
+\[
+z=-\frac{3a}{a-2}.
+\]</p>
+<p>Entonces<br>
+\[
+x=2a+1-z
+=2a+1+\frac{3a}{a-2}
+=\frac{2(a^2-1)}{a-2}.
+\]</p>
+<p>Así, si \(a\neq 1,2\), el sistema es <strong>compatible determinado</strong> y su solución es<br>
+\[
+\boxed{
+x=\frac{2(a^2-1)}{a-2},\qquad
+y=-2,\qquad
+z=-\frac{3a}{a-2}.
+}
+\]</p>
+<p>---</p>
+<h4>Caso \(a=1\)</h4>
+<p>El sistema queda<br>
+\[
+\begin{cases}
+x+y+z=1\\
+2x+y+z=1\\
+x+y+z=1
+\end{cases}
+\]</p>
+<p>La primera y la tercera ecuación coinciden. Restando la primera a la segunda:<br>
+\[
+x=0.
+\]</p>
+<p>Entonces<br>
+\[
+y+z=1.
+\]</p>
+<p>Por tanto hay infinitas soluciones:<br>
+\[
+\boxed{(x,y,z)=(0,t,1-t),\quad t\in\mathbb R.}
+\]</p>
+<p>Luego para \(a=1\) el sistema es <strong>compatible indeterminado</strong>.</p>
+<p>---</p>
+<h4>Caso \(a=2\)</h4>
+<p>El sistema queda<br>
+\[
+\begin{cases}
+x+y+z=3\\
+2x+y+2z=2\\
+x+2y+z=1
+\end{cases}
+\]</p>
+<p>Restando la primera a la tercera:<br>
+\[
+y=-2.
+\]</p>
+<p>Sustituyendo en la primera:<br>
+\[
+x+z=5.
+\]</p>
+<p>Pero en la segunda:<br>
+\[
+2x-2+2z=2 \;\Rightarrow\; x+z=2.
+\]</p>
+<p>Contradicción:<br>
+\[
+x+z=5 \quad \text{y} \quad x+z=2.
+\]</p>
+<p>Así que para \(a=2\) el sistema es <strong>incompatible</strong> (no tiene solución).</p>
+<p>---</p>
+<h3>Conclusión</h3>
+<p>\[
+\boxed{
+\begin{cases}
+a\neq 1,2 &amp;\Rightarrow \text{SCD (una única solución)}\\[2mm]
+a=1 &amp;\Rightarrow \text{SCI (infinitas soluciones)}\\[2mm]
+a=2 &amp;\Rightarrow \text{SI (sin solución)}
+\end{cases}
+}
+\]</p>
+<h3>2) Resolución para \(a=1\)</h3>
+<p>\[
+\boxed{(x,y,z)=(0,t,1-t),\quad t\in\mathbb R.}
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio 2 que se compone de un sistema de ecuaciones lineales, usaremos primeramente un enfoque general explorando cómo varía la solución con diferentes valores del parámetro \(a\). Posteriormente resolveremos el sistema para el caso específico cuando \(a = 1\).</p>
+<h4>Análisis general del sistema</h4>
+<p>El sistema dado es:</p>
+<p>\[
+\begin{cases}
+x + y + z = 2a - 1 \\
+2x + y + az = a \\
+x + ay + z = 1
+\end{cases}
+\]</p>
+<p>Para discernir información sobre el número de soluciones o la compatibilidad del sistema con \(a\), se puede optar por escribir el sistema en forma matricial \(A \vec{x} = \vec{b}\), donde</p>
+<p>\[
+A = \begin{bmatrix}
+1 &amp; 1 &amp; 1 \\
+2 &amp; 1 &amp; a \\
+1 &amp; a &amp; 1
+\end{bmatrix}
+\quad \text{y} \quad
+\vec{b} = \begin{bmatrix}
+2a - 1 \\
+a \\
+1
+\end{bmatrix}.
+\]</p>
+<p>#### Determinante de \(A\)</p>
+<p>Calcular \( \det(A) \) para verificar si el sistema tiene una única solución (det(A) \(\neq 0\)) o si hay que considerar otros casos (det(A) \(= 0\)).</p>
+<p>\[
+\det(A) = 1 \cdot(1 \cdot 1 - a \cdot a) - 1 \cdot(2 \cdot 1 - 1 \cdot a) + 1 \cdot(2 \cdot a - 1 \cdot 1)
+= 1 - a^2 - 2 + a + 2a - 1
+= -a^2 + 3a - 2.
+\]</p>
+<p>#### Factorización de \(\det(A)\)</p>
+<p>\[
+\det(A) = -a^2 + 3a - 2 = -(a^2 - 3a + 2) = -(a-1)(a-2).
+\]</p>
+<h4>Casos particulares</h4>
+1. Si \(a = 1\) o \(a = 2\), el determinante es cero. Necesitaremos entonces analizar más a fondo cada situación.
+2. Si \(a \neq 1\) y \(a \neq 2\), el sistema tiene una única solución dado que \(\det(A) \neq 0\).
+<h4>Caso \(a = 1\)</h4>
+<p>Reemplazando \(a = 1\) en las ecuaciones, obtenemos:</p>
+<p>\[
+\begin{cases}
+x + y + z = 1 \\
+2x + y + z = 1 \\
+x + y + z = 1
+\end{cases}
+\]</p>
+<p>Las ecuaciones 1 y 3 son idénticas, y la 2 implica las mismas variables con los mismos coeficientes, así que efectivamente solo tenemos:</p>
+<p>\[
+x + y + z = 1.
+\]</p>
+<p>La solución no es única; cualquier conjunto \((x, y, z)\) que satisfaga la ecuación dada es una solución válida. Ejemplos de soluciones podrían ser:</p>
+<p>- \(x = 0, y = 0, z = 1\),<br>
+- \(x = 0, y = 1, z = 0\),<br>
+- \(x = 1, y = 0, z = 0\),<br>
+- y muchas combinaciones más donde \(x + y + z = 1\).</p>
+<p>Esta indeterminación es típica cuando el determinante es cero y se confirma que las ecuaciones no son independientes.</p>
+<h4>Resumen</h4>
+Para \(a \neq 1\) y \(a \neq 2\), el sistema tiene una solución única. Para \(a = 1\) y \(a = 2\), existen múltiples soluciones (o ninguna, dependiendo de la compatibilidad de \(\vec{b}\)) y el sistema debe ser analizado más detalladamente en base a la reducción de filas de la matriz ampliada. Aquí hemos demostrado que para \(a=1\) el sistema tiene infinitas soluciones.</section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_074.html">Anterior</a><a class="button" href="problema_076.html">Siguiente</a></nav>
+</main></body>
+</html>

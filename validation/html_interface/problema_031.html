@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 31: baleares_2023 P5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 31 de 139</h1>
+<div class="meta"><span class="badge">baleares_2023</span> &nbsp; Ejercicio P5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_030.html">Anterior</a><a class="button" href="problema_032.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P5. - La reproducció d’un insecte al llarg del temps segueix la funció \(f(x)=e^{-x}(2x+1)\) sent \(x \geq 0\) el temps en mesos i \(f(x)\) el nombre d’insectes en milions.</p>
+<p>(a) [4 punts] Quants de milions d’insectes hi havia en l’instant inicial? Cap a on tendeix la quantitat d’insectes al llarg dels anys? Interpreta els resultats.</p>
+<p>(b) [4 punts] Quin és el màxim nombre d’insectes que hi arriba a haver? En quin instant de temps s’assoleix aquest valor?</p>
+<p>(c) [2 punts] Hi ha algun moment en què la població supera els 2 milions d’insectes? Justifica la resposta.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>P5. - La reproducció d’un insecte al llarg del temps segueix la funció \(f(x)=e^{-x}(2x+1)\), sent \(x\ge 0\) el temps en mesos i \(f(x)\) el nombre d’insectes en milions.</p>
+<p><strong>(a)</strong>  <br>
+- Inicialment hi ha \(f(0)=1\) milió d’insectes.  <br>
+- Tenim que \(\lim_{x\to +\infty} e^{-x}(2x+1)=0\) (per De L’Hôpital). Llavors la població d’insectes tendeix a extingir-se.</p>
+<p><strong>(b)</strong>  <br>
+- Cercam el màxim de la funció:<br>
+\[
+f&#x27;(x)=-e^{-x}(2x+1)+2e^{-x}=e^{-x}(-2x+1)=0
+\]<br>
+quan \(-2x+1=0\). És a dir, a<br>
+\[
+x=\frac12
+\]<br>
+mes.</p>
+<p>- En aquest moment hi ha un total de<br>
+\[
+f\left(\frac12\right)=e^{-\frac12}\left(2\cdot \frac12+1\right)=2e^{-\frac12}=1.213
+\]<br>
+milions d’insectes.</p>
+<p><strong>(c)</strong>  <br>
+No, perquè el màxim s’assoleix quan hi ha \(1.213061319425267\) milions d’insectes.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver el ejercicio P5 paso a paso para cada uno de sus apartados.</p>
+<h4>(a) Instante inicial y tendencia</h4>
+<p>#### Instante Inicial<br>
+Para encontrar el número de insectos en el instante inicial (\(x=0\)), simplemente sustituimos \(x\) por 0 en la función:<br>
+\[ f(0) = e^{-0}(2 \times 0 + 1) = 1 \]<br>
+Por tanto, en el instante inicial había 1 millón de insectos.</p>
+<p>#### Tendencia a lo largo de los años<br>
+Para ver hacia dónde tiende la cantidad de insectes conforme \(x\) crece hacia el infinito:<br>
+\[ \lim_{x \to \infty} f(x) = \lim_{x \to \infty} e^{-x}(2x + 1) \]<br>
+Sabemos que \( e^{-x} \) tiende a 0 bastante rápidamente a medida que \( x \) aumenta y que \( 2x+1 \), aunque crece, no puede superar la tasa a la que \( e^{-x} \) se aproxima a cero. Utilizando la regla del producto para límites donde un factor tiende a infinito y el otro a cero, el límite es cero:<br>
+\[ \lim_{x \to \infty} e^{-x}(2x + 1) = 0 \]<br>
+Esto implica que la cantidad de insectos tiende a 0 a medida que \(x\), el tiempo en meses, crece infinitamente, indicando una extinción eventual de la especie.</p>
+<h4>(b) Punto Máximo</h4>
+<p>Para encontrar el máximo de \( f(x) \), calculamos la primera derivada \( f&#x27;(x) \) y luego encontramos los puntos críticos:<br>
+\[ f&#x27;(x) = \frac{d}{dx}\left(e^{-x}(2x + 1)\right) = e^{-x} \cdot (2) + (2x + 1) \cdot (-e^{-x}) = e^{-x}(2 - 2x) \]<br>
+Igualamos a cero y resolvemos para \(x\):<br>
+\[ e^{-x}(2 - 2x) = 0 \]<br>
+\[
+2 - 2x = 0 \implies x = 1
+\]</p>
+<p>Verificamos si \(x=1\) corresponde a un máximo calculando la segunda derivada:<br>
+\[ f&#x27;&#x27;(x) = \frac{d}{dx} \left(e^{-x}(2 - 2x)\right) = -e^{-x}(2 - 2x) + e^{-x} \cdot (-2) = e^{-x}(-4 + 2x) \]<br>
+Evaluamos en \(x = 1\):<br>
+\[ f&#x27;&#x27;(1) = e^{-1}(-4 + 2 \cdot 1) = e^{-1}(-2) = -\frac{2}{e} &lt; 0 \]<br>
+Por lo tanto, hay un máximo en \(x = 1\) mes.</p>
+<p>Calculamos \(f(1)\) para encontrar el número máximo de insectos:<br>
+\[ f(1) = e^{-1}(2 \cdot 1 + 1) = 3e^{-1} \approx 1.103 \text{ millones} \]</p>
+<h4>(c) Población mayor a 2 millones de insectos</h4>
+Para verificar si la población supera los 2 millones, encontramos donde \( f(x) &gt; 2 \):
+\[ e^{-x}(2x + 1) &gt; 2 \]
+<p>Es posible analizarlo numéricamente o gráficamente dada la complejidad de resolverlo analíticamente. Sin embargo, dado que el máximo calculado es aproximadamente 1.103 millones y ocurre en \(x = 1\), la población no llega a superar los 2 millones de insectos en ningún momento.</p>
+<h4>Conclusión</h4>
+- En \(t=0\) hay 1 millón de insectos.
+- La población tiende a cero, indicando extinción eventual.
+- El máximo de insectos es aproximadamente 1.1 millones al cabo de un mes.
+- La población no supera los 2 millones de insectos en ningún momento.</section>
+<section class="card"><h2>Respuesta B</h2><p>Sea  <br>
+\[
+f(x)=e^{-x}(2x+1),\qquad x\ge 0,
+\]<br>
+donde \(x\) es el tiempo en meses y \(f(x)\) el número de insectos en millones.</p>
+<p>---</p>
+<h3>(a) Valor inicial y comportamiento a largo plazo</h3>
+<h4>Instante inicial</h4>
+En \(x=0\):
+\[
+f(0)=e^{0}(2\cdot 0+1)=1.
+\]
+Por tanto, <strong>inicialmente había 1 millón de insectos</strong>.
+<h4>Límite cuando pasa mucho tiempo</h4>
+Estudiamos
+\[
+\lim_{x\to\infty} e^{-x}(2x+1)=\lim_{x\to\infty}\frac{2x+1}{e^x}.
+\]
+Como la exponencial crece mucho más rápido que la función lineal,
+\[
+\lim_{x\to\infty}\frac{2x+1}{e^x}=0.
+\]
+Luego,
+\[
+\lim_{x\to\infty} f(x)=0.
+\]
+<h4>Interpretación</h4>
+La población <strong>empieza en 1 millón</strong>, luego evoluciona, pero <strong>a largo plazo tiende a 0 millones</strong>. Es decir, con el paso de los años, la población acaba desapareciendo.
+<p>---</p>
+<h3>(b) Máximo número de insectos y cuándo se alcanza</h3>
+<p>Buscamos el máximo de \(f\) en \(x\ge 0\).</p>
+<h4>Derivada</h4>
+\[
+f(x)=e^{-x}(2x+1)
+\]
+\[
+f&#x27;(x)=(-e^{-x})(2x+1)+e^{-x}\cdot 2
+= e^{-x}(2-(2x+1))
+= e^{-x}(1-2x).
+\]
+<p>Como \(e^{-x}&gt;0\) para todo \(x\), el signo de \(f&#x27;(x)\) depende de \(1-2x\):</p>
+<p>- Si \(0\le x&lt;\frac12\), entonces \(1-2x&gt;0\) y \(f&#x27;(x)&gt;0\): la función crece.<br>
+- Si \(x&gt;\frac12\), entonces \(1-2x&lt;0\) y \(f&#x27;(x)&lt;0\): la función decrece.</p>
+<p>Por tanto, \(f\) alcanza un <strong>máximo</strong> en<br>
+\[
+x=\frac12.
+\]</p>
+<h4>Valor máximo</h4>
+\[
+f\!\left(\frac12\right)=e^{-1/2}\left(2\cdot\frac12+1\right)=e^{-1/2}(2)=\frac{2}{\sqrt e}.
+\]
+<p>Así, el máximo número de insectos es<br>
+\[
+\boxed{\frac{2}{\sqrt e}\text{ millones}}
+\]<br>
+(aproximadamente \(1.213\) millones),</p>
+<p>y se alcanza en<br>
+\[
+\boxed{x=\frac12\text{ mes}}.
+\]</p>
+<p>---</p>
+<h3>(c) ¿Supera alguna vez los 2 millones?</h3>
+<p>No, porque el valor máximo de la población es<br>
+\[
+\frac{2}{\sqrt e}.
+\]<br>
+Y como \(\sqrt e&gt;1\), se tiene<br>
+\[
+\frac{2}{\sqrt e}&lt;2.
+\]</p>
+<p>Por tanto, la población <strong>nunca supera los 2 millones de insectos</strong>.</p>
+<p>\[
+\boxed{\text{No existe ningún momento en que }f(x)&gt;2.}
+\]</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<p>- <strong>(a)</strong> Inicialmente hay \(\boxed{1}\) millón de insectos.  <br>
+  A largo plazo, \(\boxed{f(x)\to 0}\), así que la población tiende a desaparecer.</p>
+<p>- <strong>(b)</strong> El máximo se alcanza en \(\boxed{x=\tfrac12}\) mes, y vale  <br>
+  \[
+  \boxed{\frac{2}{\sqrt e}\text{ millones}\approx 1.213\text{ millones}}.
+  \]</p>
+<p>- <strong>(c)</strong> <strong>No</strong>, porque el máximo es menor que \(2\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_030.html">Anterior</a><a class="button" href="problema_032.html">Siguiente</a></nav>
+</main></body>
+</html>

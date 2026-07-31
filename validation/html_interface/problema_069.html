@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 69: cvalenciana_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 69 de 139</h1>
+<div class="meta"><span class="badge">cvalenciana_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_068.html">Anterior</a><a class="button" href="problema_070.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Problema 4. Dada la recta \(r: (x, y, z) = (1,1,0)+\lambda(-1, -1,2)\) y el plano \(\pi: 5x + my + z = 2\):</p>
+<p>a) Obtener la posición relativa de \(r\) y \(\pi\) en función de \(m\). (6 puntos)</p>
+<p>b) Para \(m = 1\), calcular el plano \(\pi\) que contiene a \(r\) y es perpendicular a \(\pi\). (4 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Problema 4. Solución oficial:</strong></p>
+<p>a) Si \(m \neq -3\), \(r\) y \(\pi\) se cortan en un punto, y si \(m = -3\), la recta \(r\) está contenida en el plano \(\pi\).</p>
+<p>b) \(\pi&#x27;:\ 3x - 11y - 4z + 8 = 0\).</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver el <strong>ejercicio 4</strong>.</p>
+<h3>Datos</h3>
+<p>La recta es</p>
+<p>\[
+r:\ (x,y,z)=(1,1,0)+\lambda(-1,-1,2)
+\]</p>
+<p>por tanto:</p>
+<p>- un punto de \(r\) es \(A=(1,1,0)\),<br>
+- un vector director de \(r\) es</p>
+<p>\[
+\vec v=(-1,-1,2).
+\]</p>
+<p>El plano es</p>
+<p>\[
+\pi:\ 5x+my+z=2
+\]</p>
+<p>y su vector normal es</p>
+<p>\[
+\vec n_\pi=(5,m,1).
+\]</p>
+<p>---</p>
+<h3>a) Posición relativa de \(r\) y \(\pi\) según \(m\)</h3>
+<p>Para estudiar la posición relativa, miramos el producto escalar entre el vector director de la recta y el normal del plano:</p>
+<p>\[
+\vec v\cdot \vec n_\pi=(-1,-1,2)\cdot(5,m,1)=-5-m+2=-m-3.
+\]</p>
+<h4>Caso 1: \(m=-3\)</h4>
+<p>Entonces</p>
+<p>\[
+\vec v\cdot \vec n_\pi=0,
+\]</p>
+<p>o sea, la recta es paralela al plano.</p>
+<p>Ahora comprobamos si un punto de la recta pertenece al plano. Tomamos \(A=(1,1,0)\):</p>
+<p>\[
+5\cdot 1+(-3)\cdot 1+0=5-3=2.
+\]</p>
+<p>Sí pertenece al plano. Por tanto,</p>
+<p>\[
+\boxed{r\subset \pi \quad \text{si } m=-3.}
+\]</p>
+<p>---</p>
+<h4>Caso 2: \(m\neq -3\)</h4>
+<p>Entonces</p>
+<p>\[
+\vec v\cdot \vec n_\pi\neq 0,
+\]</p>
+<p>así que la recta <strong>corta</strong> al plano en un único punto.</p>
+<p>Para hallarlo, sustituimos la recta en el plano. La recta en paramétricas es:</p>
+<p>\[
+x=1-\lambda,\qquad y=1-\lambda,\qquad z=2\lambda.
+\]</p>
+<p>Sustituyendo en \(5x+my+z=2\):</p>
+<p>\[
+5(1-\lambda)+m(1-\lambda)+2\lambda=2.
+\]</p>
+<p>\[
+5+m-(5+m)\lambda+2\lambda=2
+\]</p>
+<p>\[
+5+m-(m+3)\lambda=2
+\]</p>
+<p>\[
+m+3-(m+3)\lambda=0
+\]</p>
+<p>\[
+(m+3)(1-\lambda)=0.
+\]</p>
+<p>Si \(m\neq -3\), entonces</p>
+<p>\[
+\lambda=1.
+\]</p>
+<p>El punto de corte es</p>
+<p>\[
+(1-1,\,1-1,\,2\cdot1)=(0,0,2).
+\]</p>
+<p>Luego</p>
+<p>\[
+\boxed{r\cap \pi=\{(0,0,2)\}\quad \text{si } m\neq -3.}
+\]</p>
+<p>---</p>
+<h4>Conclusión del apartado a)</h4>
+<p>\[
+\boxed{
+\begin{cases}
+m=-3 &amp;\Rightarrow r\subset \pi,\\[2mm]
+m\neq -3 &amp;\Rightarrow r \text{ es secante a } \pi \text{ en }(0,0,2).
+\end{cases}
+}
+\]</p>
+<p>No hay ningún caso en que sean paralelos sin cortarse.</p>
+<p>---</p>
+<h3>b) Para \(m=1\), calcular el plano que contiene a \(r\) y es perpendicular a \(\pi\)</h3>
+<p>Para \(m=1\), el plano dado es</p>
+<p>\[
+\pi:\ 5x+y+z=2,
+\]</p>
+<p>con normal</p>
+<p>\[
+\vec n_\pi=(5,1,1).
+\]</p>
+<p>Como el enunciado ya usa \(\pi\) para el plano dado, llamemos \(\sigma\) al plano buscado.</p>
+<p>Buscamos \(\sigma\) tal que:</p>
+<p>1. <strong>contenga a la recta \(r\)</strong>, luego su normal \(\vec n_\sigma\) debe ser perpendicular a \(\vec v=(-1,-1,2)\);<br>
+2. <strong>sea perpendicular a \(\pi\)</strong>, luego \(\vec n_\sigma\) debe ser perpendicular a \(\vec n_\pi=(5,1,1)\).</p>
+<p>Por tanto, \(\vec n_\sigma\) debe ser perpendicular a ambos vectores, así que podemos tomar</p>
+<p>\[
+\vec n_\sigma=\vec v\times \vec n_\pi.
+\]</p>
+<p>Calculamos:</p>
+<p>\[
+\vec v\times \vec n_\pi=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+-1 &amp; -1 &amp; 2\\
+5 &amp; 1 &amp; 1
+\end{vmatrix}
+=(-3,11,4).
+\]</p>
+<p>Así, un vector normal del plano buscado es</p>
+<p>\[
+\vec n_\sigma=(-3,11,4).
+\]</p>
+<p>Como \(\sigma\) contiene a la recta \(r\), pasa por el punto \(A=(1,1,0)\). Su ecuación es</p>
+<p>\[
+-3(x-1)+11(y-1)+4(z-0)=0.
+\]</p>
+<p>Desarrollando:</p>
+<p>\[
+-3x+3+11y-11+4z=0
+\]</p>
+<p>\[
+-3x+11y+4z-8=0.
+\]</p>
+<p>Por tanto, el plano pedido es</p>
+<p>\[
+\boxed{\sigma:\ -3x+11y+4z=8.}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<h4>a)</h4>
+\[
+\boxed{
+\begin{cases}
+m=-3 &amp;\Rightarrow r\subset \pi,\\[2mm]
+m\neq -3 &amp;\Rightarrow r \text{ secante a } \pi \text{ en }(0,0,2).
+\end{cases}
+}
+\]
+<h4>b) Para \(m=1\)</h4>
+\[
+\boxed{-3x+11y+4z=8.}
+\]
+<p>Si quieres, también puedo escribir la solución en formato más “de examen”, lista para entregar.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el problema presentado, comencemos con el apartado (a):</p>
+<h4>Parte (a)</h4>
+Debemos encontrar la posición relativa de la recta \((r)\) y el plano \((\pi)\) en función de \(m\).
+<p>1. <strong>Ecuación de la recta \(r\)</strong>:<br>
+   La recta \(r\) está dada en forma paramétrica:<br>
+   \[
+   x = 1 - \lambda, \quad y = 1 - \lambda, \quad z = 2\lambda
+   \]</p>
+<p>2. <strong>Ecuación del plano \(\pi\)</strong>:<br>
+   La ecuación del plano \(\pi\) es:<br>
+   \[
+   5x + my + z = 2
+   \]</p>
+<p>3. <strong>Sustitución de \(r\) en \(\pi\)</strong>:<br>
+   Sustituimos las ecuaciones paramétricas de \(r\) en la ecuación de \(\pi\):<br>
+   \[
+   5(1 - \lambda) + m(1 - \lambda) + 2\lambda = 2
+   \]<br>
+   Simplificando:<br>
+   \[
+   5 + 5\lambda + m - m\lambda + 2\lambda = 2
+   \]<br>
+   \[
+   (5 + m - 3\lambda) = 2
+   \]<br>
+   \[
+   m\lambda = 3 + m
+   \]<br>
+   Esto se convierte en un problema de encontrar los valores de \(m\) que satisfagan esta ecuación sin importar el valor de \(\lambda\).</p>
+<p>4. <strong>Análisis de la solución</strong>:<br>
+   La solución de esta ecuación depende del factor \(\lambda\) y \(m\):</p>
+<p>- Si \(m \neq 3\), entonces \(\lambda = \frac{3 + m}{m}\).<br>
+   - Si \(m = 3\), entonces existe una contradicción a menos que \(3 = 3 + 3\), lo cual es falso. Por lo tanto, para \(m = 3\), cualquier valor de \(\lambda\) satisface la ecuación, implicando que \(r\) está contenido en \(\pi\).</p>
+<p>Esto nos indica que:<br>
+   - Para \(m \neq 3\), \(r\) y \(\pi\) se intersectan en un único punto determinado por \(\lambda = \frac{3 + m}{m}\).<br>
+   - Para \(m = 3\), \(r\) está completamente contenida en \(\pi\).</p>
+<h4>Parte (b)</h4>
+Ahora que \(m = 1\), encontraremos un plano que contiene a \(r\) y es perpendicular a \(\pi\) para dicho valor de \(m\).
+<p>1. <strong>Plano dado \(\pi\) para \(m = 1\)</strong>:<br>
+   \[
+   \pi: 5x + y + z = 2
+   \]</p>
+<p>2. <strong>Plano perpendicular requerido \(\sigma\)</strong>:<br>
+   Para encontrar \(\sigma\), necesitamos que su vector normal sea perpendicular al vector normal de \(\pi\), que es \((5, 1, 1)\). Un vector en \(\sigma\) puede escogerse como el producto cruz de \((5, 1, 1)\) y el director de \(r\) \((-1, -1, 2)\):<br>
+   \[
+   (5, 1, 1) \times (-1, -1, 2) = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 5 &amp; 1 &amp; 1 \\ -1 &amp; -1 &amp; 2 \end{vmatrix} = \mathbf{i}(1 \cdot 2 - 1 \cdot (-1)) - \mathbf{j}(5 \cdot 2 - 1 \cdot (-1)) + \mathbf{k}(5 \cdot (-1) - 1 \cdot (-1))
+   \]<br>
+   \[
+   = 3\mathbf{i} -11\mathbf{j} -4\mathbf{k}
+   \]</p>
+<p>3. <strong>Ecuación de \(\sigma\)</strong> usando punto de \(r\) y su vector director:<br>
+   Sabemos que \((1, 1, 0)\) está en \(r\), entonces:<br>
+   \[
+   3(x-1) - 11(y-1) - 4z = 0
+   \]<br>
+   \[
+   3x - 11y - 4z = -3 + 11 = 8
+   \]<br>
+   \[
+   3x - 11y - 4z = 8
+   \]</p>
+<p>Conclusión:<br>
+El plano \(\sigma\) que contiene a \(r\) y es perpendicular a \(\pi\) cuando \(m=1\) es:<br>
+\[
+3x - 11y - 4z = 8
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_068.html">Anterior</a><a class="button" href="problema_070.html">Siguiente</a></nav>
+</main></body>
+</html>

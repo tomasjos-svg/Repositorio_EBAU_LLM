@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 42: canarias_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 42 de 139</h1>
+<div class="meta"><span class="badge">canarias_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_041.html">Anterior</a><a class="button" href="problema_043.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>4B. La probabilidad de que un coche de carreras sufra un reventón en un neumático durante una competición es de 0.04. En una competición en la que participan 10 coches:</p>
+<p>a) ¿Cuál es la probabilidad de que se produzcan 2 reventones?</p>
+<p>b) Se afirma que existe como mucho un 1% de posibilidades de que ocurran más de 2 reventones durante la carrera. ¿Es cierta esta afirmación? Justifícalo.</p>
+<p>c) Estudiamos las competiciones realizadas en una temporada con un total de 250 coches ¿qué probabilidad hay de que se produzcan más de 12 reventones en total? (Suponiendo la independencia de los sucesos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>El <strong>ejercicio 8</strong> corresponde al <strong>4B</strong>.</p>
+<p><strong>4B. Solución oficial:</strong></p>
+<p>a) \(p\) es la proporción de coches que tienen un reventón en la carrera: \(p=0.04\).</p>
+<p>Llamamos \(X\) al número de coches que sufren un reventón en la carrera.</p>
+<p>Como cada coche sólo tiene dos posibles situaciones: que haya tenido un reventón o no, siendo sucesos independientes, se puede afirmar que:</p>
+<p>\[
+X \sim B(n=10,\ p=0.04), \quad q=0.96
+\]</p>
+<p>\[
+P(X=2)=\binom{10}{2}0.04^2\cdot 0.96^8=0.0519
+\]</p>
+<p>La probabilidad de que sólo dos coches sufran un reventón es aproximadamente del 5%.</p>
+<p>---</p>
+<p>b)</p>
+<p>\[
+P(X&gt;2)=1-P(X\leq 2)=1-(P(X=0)+P(X=1)+P(X=2))
+\]</p>
+<p>\[
+P(X=0)=\binom{10}{0}0.04^0 0.96^{10}=0.6648
+\]</p>
+<p>\[
+P(X=1)=\binom{10}{1}0.04^1 0.96^9=0.2770
+\]</p>
+<p>\[
+P(X&gt;2)=1-(0.6648+0.2770+0.0519)=0.0063
+\]</p>
+<p>Es cierta la afirmación porque la probabilidad no llega al 1%.</p>
+<p>---</p>
+<p>c) \(n=250\). Como:</p>
+<p>\[
+np=250\cdot 0.04=10
+\]</p>
+<p>\[
+nq=250\cdot 0.96=240\geq 5
+\]</p>
+<p>podemos aproximar esta binomial a una normal de media:</p>
+<p>\[
+\mu=np=10
+\]</p>
+<p>y desviación típica:</p>
+<p>\[
+\sigma=\sqrt{npq}=3.1
+\]</p>
+<p>\[
+X \sim N(10,3.1)
+\]</p>
+<p>\[
+P(X&gt;12)=P\left(Z&gt;\frac{12-10}{3.1}\right)=P(Z&gt;0.65)
+\]</p>
+<p>\[
+P(Z&gt;0.65)=1-P(Z&lt;0.65)=1-0.7422=0.2578
+\]</p>
+<p>Existe una probabilidad de \(0.2578\) de que haya más de 12 reventones en la competición.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea \(p=0.04\) la probabilidad de reventón de un coche, y \(q=1-p=0.96\).</p>
+<p>Si \(X\) es el número de reventones entre 10 coches, entonces</p>
+<p>\[
+X\sim \text{Binomial}(n=10,p=0.04).
+\]</p>
+<h3>a) Probabilidad de que se produzcan 2 reventones</h3>
+<p>\[
+P(X=2)=\binom{10}{2}(0.04)^2(0.96)^8
+\]</p>
+<p>\[
+P(X=2)=45\cdot 0.0016\cdot 0.96^8
+\]</p>
+<p>\[
+P(X=2)\approx 0.05194
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(X=2)\approx 0.05194}
+\]</p>
+<p>o sea, aproximadamente un <strong>5.19%</strong>.</p>
+<p>---</p>
+<h3>b) ¿Es cierto que hay como mucho un 1% de probabilidad de que ocurran más de 2 reventones?</h3>
+<p>Queremos calcular:</p>
+<p>\[
+P(X&gt;2)=1-P(X\le 2)=1-[P(X=0)+P(X=1)+P(X=2)]
+\]</p>
+<p>Calculamos:</p>
+<p>\[
+P(X=0)=\binom{10}{0}(0.04)^0(0.96)^{10}=0.96^{10}\approx 0.66483
+\]</p>
+<p>\[
+P(X=1)=\binom{10}{1}(0.04)(0.96)^9
+=10\cdot 0.04\cdot 0.96^9
+\approx 0.27701
+\]</p>
+<p>\[
+P(X=2)\approx 0.05194
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(X&gt;2)=1-(0.66483+0.27701+0.05194)
+\]</p>
+<p>\[
+P(X&gt;2)\approx 1-0.99379=0.00621
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(X&gt;2)\approx 0.00621}
+\]</p>
+<p>es decir, aproximadamente <strong>0.62%</strong>.</p>
+<p>Como</p>
+<p>\[
+0.62\% &lt; 1\%
+\]</p>
+<p>la afirmación <strong>sí es cierta</strong>.</p>
+<p>---</p>
+<h3>c) En una temporada con 250 coches, probabilidad de más de 12 reventones</h3>
+<p>Sea \(Y\) el número total de reventones en 250 coches. Entonces</p>
+<p>\[
+Y\sim \text{Binomial}(250,0.04)
+\]</p>
+<p>y queremos:</p>
+<p>\[
+P(Y&gt;12)=1-P(Y\le 12)
+\]</p>
+<p>\[
+P(Y&gt;12)=1-\sum_{k=0}^{12}\binom{250}{k}(0.04)^k(0.96)^{250-k}
+\]</p>
+<p>Evaluando esa suma:</p>
+<p>\[
+P(Y&gt;12)\approx 0.2045
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(Y&gt;12)\approx 0.2045}
+\]</p>
+<p>o sea, aproximadamente un <strong>20.45%</strong>.</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<p>- <strong>a)</strong> \(\boxed{0.05194}\)<br>
+- <strong>b)</strong> \(\boxed{0.00621}\), luego <strong>sí</strong> es cierta la afirmación.<br>
+- <strong>c)</strong> \(\boxed{0.2045}\)</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para abordar este problema, utilizaremos la distribución binomial, la cual es adecuada cuando tenemos un número fijo $n$ de ensayos independientes con solo dos posibles resultados (éxito y fracaso) y una probabilidad constante $p$ de éxito en cada ensayo.</p>
+<p><strong>Inciso a) ¿Cuál es la probabilidad de que se produzcan 2 reventones?</strong></p>
+<p>Los parámetros relevantes son:<br>
+- $n = 10$ coches (número de ensayos)<br>
+- $p = 0.04$ (probabilidad de un reventón en un neumático por coche)</p>
+<p>Un &quot;éxito&quot; en este contexto es que se produce un reventón. Queremos encontrar la probabilidad de 2 éxitos (2 reventones), lo que en términos de la distribución binomial se exprime como:<br>
+\[ P(X = 2) = \binom{n}{k} p^k (1-p)^{n-k} \]<br>
+donde $X$ es la variable aleatoria que representa el número de éxitos, $k=2$ es el número de éxitos que buscamos, $\binom{n}{k}$ es el coeficiente binomial, $p$ la probabilidad de éxito y $1-p$ la probabilidad de fracaso.</p>
+<p>Calculamos:<br>
+\[ P(X = 2) = \binom{10}{2} (0.04)^2 (0.96)^8 \]<br>
+\[ P(X = 2) = 45 \times 0.0016 \times 0.6636 = 0.04774656 \]</p>
+<p><strong>Inciso b) ¿Es cierta la afirmación de que hay un máximo del 1% de posibilidades de más de 2 reventones?</strong></p>
+<p>Para verificar esta afirmación, sumaremos las probabilidades de obtener 3 o más reventones y comprobamos si es ciertamente menor o igual al 1%. Para ello encadenamos:<br>
+\[ P(X &gt; 2) = 1 - P(X \leq 2) = 1 - (P(X=0) + P(X=1) + P(X=2)) \]<br>
+Calculamos los términos individuales.<br>
+\[ P(X=0) = \binom{10}{0} (0.04)^0 (0.96)^{10} = 0.665832 \]<br>
+\[ P(X=1) = \binom{10}{1} (0.04)^1 (0.96)^9 = 0.282425 \]<br>
+\[ P(X=2) \text{ ya calculado } = 0.04774656 \]<br>
+Sumando:<br>
+\[ P(X \leq 2) = 0.665832 + 0.282425 + 0.04774656 = 0.99600356 \]<br>
+\[ P(X &gt; 2) = 1 - 0.99600356 = 0.00399644 \]</p>
+<p>Con un valor de aproximadamente 0.4%, esta es afirmación es cierta.</p>
+<p><strong>Inciso c) ¿Qué probabilidad hay de que se produzcan más de 12 reventones entre 250 coches?</strong></p>
+<p>Esta pregunta también se maneja con la distribución binomial, pero ahora con $n = 250$ y aún $p = 0.04$. Nos interesa calcular $P(X &gt; 12)$ para $X \sim \text{Binomial}(250, 0.04)$.</p>
+<p>Podemos calcular individualmente para $P(X &gt; 12)$ o calcular la suma de las probabilidades hasta 12 inclusivo y después restarla de 1. Sin embargo, esto puede ser muy laborioso manualmente o requeriría el uso de software estadístico o una calculadora con funciones estadísticas.</p>
+<p>Dado que la suma de probabilidades individualmente de $k=13$ hasta $k=250$ puede tomar tiempo considerable, se recomienda el uso de software o tablas estadísticas, pero podemos anticipar que la probabilidad resultante sería una suma de términos cada vez más pequeños, y seguramente la probabilidad de más de 12 reventones será baja, pero sin la herramienta correcta, calcularlo exactamente aquí es impracticable.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_041.html">Anterior</a><a class="button" href="problema_043.html">Siguiente</a></nav>
+</main></body>
+</html>

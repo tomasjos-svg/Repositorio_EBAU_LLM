@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, data, or results, please cite the associated article and this repository."
+title: "Repositorio del protocolo reproducible para evaluar LLM en problemas matemáticos EBAU"
+type: dataset
+authors:
+  - family-names: "Hombreiro"
+    given-names: "Tomás"
+repository-code: "https://github.com/tomasjos-svg/Repositorio_EBAU_LLM"
+license: "CC-BY-4.0"
+version: "1.0.0"
+date-released: "2026-08-01"
+# Zenodo añadirá el DOI al publicar el depósito. Añádalo entonces como: doi: 10.5281/zenodo.xxxxxxx

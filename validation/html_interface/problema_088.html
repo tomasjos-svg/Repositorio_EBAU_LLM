@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 88: galicia_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 88 de 139</h1>
+<div class="meta"><span class="badge">galicia_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_087.html">Anterior</a><a class="button" href="problema_089.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>5. Geometría:  <br>
+a) Considérense el plano pi: ax + y + z = 1, donde a es un parámetro real, y la recta r:<br>
+\[
+\frac{x-1}{2}=\frac{y}{3}=\frac{z+1}{3}.
+\]<br>
+Estudie la posición relativa de pi y r en función de a y obtenga el valor de a que hace que pi y r sean perpendiculares. Por último, razone si r puede estar contenida en pi o no.</p>
+<p>b) Si pi: -3x + y + z = 1, diga que valor tiene que tomar b para que r:<br>
+\[
+\frac{x-1}{2}=\frac{y-b}{3}=\frac{z+1}{3}
+\]<br>
+este contenida en pi.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>5.</p>
+<p><strong>5.a)</strong> Temos \(\pi: ax+y+z=1\) e \(r:\dfrac{x-1}{2}=\dfrac{y}{3}=\dfrac{z+1}{3}\).</p>
+<p>\(\vec n_\pi=(a,1,1)\) é normal a \(\pi\) e \(\vec d_r=(2,3,3)\) ten a dirección de \(r\). Como</p>
+<p>\[
+\vec n_\pi\cdot \vec d_r=2a+6=0 \iff a=-3,
+\]</p>
+<p>a recta é paralela ao plano se \(a=-3\) e corta ao plano nun punto se \(a\neq -3\).</p>
+<p>Para que \(r\) e \(\pi\) sexan perpendiculares, \(\vec n_\pi=(a,1,1)\) ten que ser paralelo a \(\vec d_r=(2,3,3)\):</p>
+<p>\[
+\frac{a}{2}=\frac{1}{3}\iff 3a=2 \iff a=\frac{2}{3}.
+\]</p>
+<p>\(P(1,0,-1)\) é un punto de \(r\). Para que \(r\) estea contida en \(\pi\) ten que ser \(a=-3\) e, á vez, \(P\in \pi\), o que non é certo:</p>
+<p>\[
+-3+0-1=-4\neq 1.
+\]</p>
+<p>Logo \(r\) non pode estar contida en \(\pi\).</p>
+<p>---</p>
+<p><strong>5.b)</strong> Se \(\pi:-3x+y+z=1\), pídese o valor de \(b\) para que</p>
+<p>\[
+r:\frac{x-1}{2}=\frac{y-b}{3}=\frac{z+1}{3}
+\]</p>
+<p>estea contida en \(\pi\). Xa sabemos polo apartado anterior que \(\vec n_\pi=(-3,1,1)\) e \(\vec d_r=(2,3,3)\) son perpendiculares, de xeito que \(r\) estará contida en \(\pi\) se, e só se, un punto calquera da recta pertence tamén ao plano \(\pi\). Tomando \(P(1,b,-1)\),</p>
+<p>\[
+P(1,b,-1)\in \pi \iff -3+b-1=1 \iff b=5.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 5, procederemos en dos partes, una para cada apartado (a) y (b).</p>
+<h4>Parte (a)</h4>
+<p><strong>Enunciado:</strong><br>
+Debemos estudiar la posición relativa del plano \(\pi: ax + y + z = 1\) y la recta \(r: \frac{x-1}{2} = \frac{y}{3} = \frac{z+1}{3}\), determinar cuándo son perpendiculares y si la recta puede estar contenida en el plano.</p>
+<p><strong>Solución:</strong></p>
+<p>1. <strong>Parámetros de la recta \(r\):</strong><br>
+   La recta \(r\) está dada en forma paramétrica:<br>
+   \[
+   x = 2t + 1, \quad y = 3t, \quad z = 3t - 1
+   \]<br>
+   Donde \(t\) es el parámetro. Su vector director es \(\mathbf{v} = (2, 3, 3)\).</p>
+<p>2. <strong>Normal del plano \(\pi\):</strong><br>
+   El vector normal al plano es \(\mathbf{n}_\pi = (a, 1, 1)\).</p>
+<p>3. <strong>Condición de perpendicularidad:</strong><br>
+   Dos elementos geométricos son perpendiculares si el producto escalar de sus vectores de dirección (en el caso de recta y plano, el vector director de la recta y el vector normal del plano) es cero:<br>
+   \[
+   \mathbf{v} \cdot \mathbf{n}_\pi = 2a + 3 + 3 = 2a + 6 = 0
+   \]<br>
+   Resolviendo para \(a\):<br>
+   \[
+   2a + 6 = 0 \Rightarrow a = -3
+   \]</p>
+<p>4. <strong>Condición de contención:</strong><br>
+   Para determinar si la recta puede estar contenida en el plano, sustituyamos las parametrizaciones de la recta en la ecuación del plano:<br>
+   \[
+   a(2t+1) + 3t + (3t-1) = 1
+   \]<br>
+   Simplificando:<br>
+   \[
+   (2a + 6)t + a = 1
+   \]<br>
+   Para que la recta esté contenida, esta ecuación debe ser válida para todo \(t\). Esto es solo posible si \(2a + 6 = 0\), pero ya hemos encontrado que \(a = -3\) satisface esta condición. Sin embargo, sustituyendo \(a = -3\) no da un valor constante para \(t\), indicando que para ese \(a\), la recta no puede estar contenida en el plano.</p>
+<p><strong>Conclusión para (a):</strong><br>
+El valor de \(a\) que hace que el plano \(\pi\) y la recta \(r\) sean perpendiculares es \(a = -3\). La recta \(r\) no puede estar contenida en el plano \(\pi\) para ningún valor de \(a\).</p>
+<h4>Parte (b)</h4>
+<p><strong>Enunciado:</strong><br>
+Si \(\pi: -3x + y + z = 1\), necesitamos encontrar el valor de \(b\) para que la recta \(r: \frac{x-1}{2} = \frac{y-b}{3} = \frac{z+1}{3}\) esté contenida en \(\pi\).</p>
+<p><strong>Solución:</strong></p>
+<p>Usando la misma formulación paramétrica para \(r\) y sustituyendo en el plano \(\pi\),<br>
+\[
+-3(2t+1) + (3t+b) + (3t-1) = 1
+\]<br>
+Simplificamos:<br>
+\[
+-6t - 3 + 6t + b - 1 = 1
+\]<br>
+\[
+b - 4 = 1 \Rightarrow b = 5
+\]</p>
+<p><strong>Conclusión para (b):</strong><br>
+El valor de \(b\) que hace que la recta \(r\) esté contenida en el plano \(\pi\) es \(b = 5\).</p></section>
+<section class="card"><h2>Respuesta B</h2><p><strong>Ejercicio 5</strong></p>
+<h3>a) Plano \(\pi: ax+y+z=1\) y recta  </h3>
+\[
+r:\quad \frac{x-1}{2}=\frac{y}{3}=\frac{z+1}{3}.
+\]
+<h4>1. Parametrizamos la recta</h4>
+Tomando
+\[
+\frac{x-1}{2}=\frac{y}{3}=\frac{z+1}{3}=t,
+\]
+queda
+\[
+x=1+2t,\qquad y=3t,\qquad z=-1+3t.
+\]
+<p>Un punto de \(r\) es \(P=(1,0,-1)\) y un vector director es<br>
+\[
+\vec d=(2,3,3).
+\]</p>
+<p>El plano \(\pi\) tiene vector normal<br>
+\[
+\vec n=(a,1,1).
+\]</p>
+<p>---</p>
+<h4>2. Posición relativa de \(\pi\) y \(r\)</h4>
+<p>Sustituimos la recta en la ecuación del plano:<br>
+\[
+a(1+2t)+3t+(-1+3t)=1.
+\]<br>
+Desarrollando:<br>
+\[
+a+2at+6t-1=1
+\]<br>
+\[
+(2a+6)t+a-2=0.
+\]</p>
+<p>#### Caso 1: \(2a+6\neq 0\)  (es decir, \(a\neq -3\))<br>
+Entonces existe un único valor de \(t\), luego <strong>la recta corta al plano en un único punto</strong>.</p>
+<p>Por tanto, si  <br>
+\[
+a\neq -3,
+\]<br>
+\[
+\boxed{r \text{ es secante a } \pi.}
+\]</p>
+<p>#### Caso 2: \(2a+6=0\)  (es decir, \(a=-3\))<br>
+La ecuación queda<br>
+\[
+0\cdot t+(-3)-2=0 \quad\Rightarrow\quad -5=0,
+\]<br>
+que es imposible.</p>
+<p>Por tanto, no hay ningún punto de corte: la recta es <strong>paralela</strong> al plano.</p>
+<p>Así, si  <br>
+\[
+a=-3,
+\]<br>
+\[
+\boxed{r \parallel \pi \text{ y no se cortan}.}
+\]</p>
+<p>---</p>
+<h4>3. Valor de \(a\) para que \(r\) y \(\pi\) sean perpendiculares</h4>
+<p>Una recta es perpendicular a un plano cuando su vector director es paralelo al vector normal del plano.</p>
+<p>Por tanto, debe cumplirse<br>
+\[
+(2,3,3)\parallel (a,1,1).
+\]</p>
+<p>Entonces existe \(\lambda\) tal que<br>
+\[
+(a,1,1)=\lambda(2,3,3).
+\]</p>
+<p>De<br>
+\[
+1=3\lambda \Rightarrow \lambda=\frac13,
+\]<br>
+y por tanto<br>
+\[
+a=2\lambda=\frac23.
+\]</p>
+<p>Así,<br>
+\[
+\boxed{a=\frac23.}
+\]</p>
+<p>---</p>
+<h4>4. ¿Puede \(r\) estar contenida en \(\pi\)?</h4>
+<p>Para que \(r\subset \pi\), la igualdad<br>
+\[
+(2a+6)t+a-2=0
+\]<br>
+debería cumplirse <strong>para todo</strong> \(t\). Eso exige<br>
+\[
+\begin{cases}
+2a+6=0\\
+a-2=0
+\end{cases}
+\]<br>
+es decir,<br>
+\[
+a=-3 \quad \text{y} \quad a=2,
+\]<br>
+lo cual es imposible.</p>
+<p>Luego,<br>
+\[
+\boxed{r \text{ no puede estar contenida en } \pi \text{ para ningún valor de } a.}
+\]</p>
+<p>---</p>
+<h3>b) Plano \(\pi: -3x+y+z=1\) y recta</h3>
+\[
+r:\quad \frac{x-1}{2}=\frac{y-b}{3}=\frac{z+1}{3}.
+\]
+<p>Queremos que \(r\) esté contenida en \(\pi\).</p>
+<h4>1. Vector director de la recta</h4>
+La recta tiene vector director
+\[
+\vec d=(2,3,3).
+\]
+<p>El vector normal del plano es<br>
+\[
+\vec n=(-3,1,1).
+\]</p>
+<p>Comprobamos si la recta es paralela al plano:<br>
+\[
+\vec n\cdot \vec d=(-3)\cdot 2+1\cdot 3+1\cdot 3=-6+3+3=0.
+\]<br>
+Luego la dirección de la recta es paralela al plano.</p>
+<p>---</p>
+<h4>2. Un punto de la recta debe pertenecer al plano</h4>
+Un punto de la recta es
+\[
+P=(1,b,-1).
+\]
+<p>Imponemos que esté en el plano:<br>
+\[
+-3(1)+b+(-1)=1
+\]<br>
+\[
+-3+b-1=1
+\]<br>
+\[
+b-4=1
+\]<br>
+\[
+b=5.
+\]</p>
+<p>Por tanto,<br>
+\[
+\boxed{b=5.}
+\]</p>
+<p>---</p>
+<h2>Resultado final</h2>
+<h4>a)</h4>
+- Si \(\boxed{a\neq -3}\), \(r\) y \(\pi\) son <strong>secantes</strong>.
+- Si \(\boxed{a=-3}\), \(r\) y \(\pi\) son <strong>paralelas</strong>.
+- \(r\perp \pi\) cuando \(\boxed{a=\frac23}\).
+- \(r\) <strong>no puede estar contenida</strong> en \(\pi\) para ningún valor de \(a\).
+<h4>b)</h4>
+Para que \(r\subset \pi\),
+\[
+\boxed{b=5.}
+\]</section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_087.html">Anterior</a><a class="button" href="problema_089.html">Siguiente</a></nav>
+</main></body>
+</html>

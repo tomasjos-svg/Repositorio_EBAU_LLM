@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 41: canarias_2023 7</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 41 de 139</h1>
+<div class="meta"><span class="badge">canarias_2023</span> &nbsp; Ejercicio 7</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_040.html">Anterior</a><a class="button" href="problema_042.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>4A. Aythami tiene un sobre donde guarda el dinero que ha podido reunir, el sobre contiene: 4 billetes de 5, 6 billetes de 10 y 2 billetes de 50. Quiere comprar algunas cosas y decide dejar al azar cuánto dinero va a coger del sobre. Para ello, saca aleatoriamente, sin reemplazamiento y de forma consecutiva, dos billetes del sobre.</p>
+<p>a) Expresar el espacio muestral del experimento que va a realizar Aythami.  <br>
+b) Si se quiere comprar un videojuego que cuesta 57, ¿qué probabilidad hay de que pueda hacerlo con los billetes que saca del sobre?  <br>
+c) Si al final obtiene, con este experimento, 60 del sobre ¿qué probabilidad hay de que el primer billete fuera de 10?</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>El <strong>ejercicio 7</strong> corresponde al <strong>4A</strong>.</p>
+<p><strong>Solución oficial:</strong></p>
+<p>a) Si definimos el experimento como sacar dos billetes del sobre sin reemplazamiento y  <br>
+\(X=\) la cantidad de euros obtenida.</p>
+<p>Entonces:</p>
+<p>\[
+E=\{10,15,20,55,60,100\}
+\]</p>
+<p>b)</p>
+<p>\[
+P(A\geq 57)=P(A=60)+P(A=100)
+\]</p>
+<p>\[
+P(A=60)=\frac{6}{12}\frac{2}{11}+\frac{2}{12}\frac{6}{11}=\frac{2}{11}
+\]</p>
+<p>\[
+P(A=100)=\frac{2}{12}\frac{1}{11}=\frac{1}{66}
+\]</p>
+<p>\[
+P(A\geq 57)=\frac{2}{11}+\frac{1}{66}=\frac{13}{66}\approx 0.1970
+\]</p>
+<p>Tendría una probabilidad aproximada del 20% de comprarse el videojuego con el dinero que obtiene del sobre.</p>
+<p>c) Aplicando el Teorema de Bayes:</p>
+<p>\[
+P(1^\circ 10 \mid A=60)=
+\frac{P(1^\circ 10)\,P(X=60\mid 1^\circ 10)}{P(X=60)}
+\]</p>
+<p>\[
+=
+\frac{\frac{6}{12}\frac{2}{11}}
+{\frac{6}{12}\frac{2}{11}+\frac{2}{12}\frac{6}{11}}
+=
+\frac{\frac{1}{11}}{\frac{2}{11}}
+=
+\frac{1}{2}=0.5
+\]</p>
+<p>La probabilidad de que habiendo obtenido 60 con este experimento, el primer billete fuese de 10 es de 0.5.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Resolvemos el ejercicio mostrado.</p>
+<p>Hay en total \(4+6+2=12\) billetes:<br>
+- 4 de \(5\),<br>
+- 6 de \(10\),<br>
+- 2 de \(50\).</p>
+<p>Se extraen <strong>dos billetes, sin reemplazamiento y en orden</strong>.</p>
+<p>---</p>
+<h3>a) Espacio muestral</h3>
+<p>Si describimos cada resultado por <strong>el valor del primer y del segundo billete</strong>, el espacio muestral es:</p>
+<p>\[
+\Omega=\{(5,5),(5,10),(5,50),(10,5),(10,10),(10,50),(50,5),(50,10),(50,50)\}
+\]</p>
+<p>Son pares ordenados porque la extracción es consecutiva.</p>
+<p>&gt; Observación: estos 9 resultados <strong>no son equiprobables</strong>.  <br>
+&gt; Si se quisiera un espacio muestral equiprobable, habría que distinguir los 12 billetes individualmente, dando \(12\cdot 11=132\) resultados posibles.</p>
+<p>---</p>
+<h3>b) Probabilidad de poder comprar el videojuego de 57</h3>
+<p>Para poder pagarlo, la suma de los dos billetes debe ser al menos \(57\).</p>
+<p>Las únicas sumas posibles con dos billetes son:</p>
+<p>\[
+10,\ 15,\ 20,\ 55,\ 60,\ 100
+\]</p>
+<p>Por tanto, solo sirven:<br>
+- \(60\): con \((10,50)\) o \((50,10)\),<br>
+- \(100\): con \((50,50)\).</p>
+<p>Calculamos:</p>
+<p>\[
+P(10,50)=\frac{6}{12}\cdot\frac{2}{11}=\frac{1}{11}
+\]</p>
+<p>\[
+P(50,10)=\frac{2}{12}\cdot\frac{6}{11}=\frac{1}{11}
+\]</p>
+<p>\[
+P(50,50)=\frac{2}{12}\cdot\frac{1}{11}=\frac{1}{66}
+\]</p>
+<p>Sumando:</p>
+<p>\[
+P(\text{poder comprarlo})=\frac{1}{11}+\frac{1}{11}+\frac{1}{66}
+\]</p>
+<p>\[
+=\frac{6}{66}+\frac{6}{66}+\frac{1}{66}
+=\frac{13}{66}
+\]</p>
+<h4>Resultado:</h4>
+\[
+\boxed{\frac{13}{66}}
+\]
+<p>---</p>
+<h3>c) Si la suma obtenida es 60, probabilidad de que el primer billete fuera de 10</h3>
+<p>Queremos:</p>
+<p>\[
+P(\text{primer billete}=10 \mid \text{suma}=60)
+\]</p>
+<p>La suma \(60\) solo puede obtenerse de dos formas:</p>
+<p>- \((10,50)\)<br>
+- \((50,10)\)</p>
+<p>Entonces:</p>
+<p>\[
+P(\text{primer billete}=10 \mid \text{suma}=60)
+=
+\frac{P(10,50)}{P(10,50)+P(50,10)}
+\]</p>
+<p>Como</p>
+<p>\[
+P(10,50)=\frac{1}{11}, \qquad P(50,10)=\frac{1}{11},
+\]</p>
+<p>resulta:</p>
+<p>\[
+\frac{\frac{1}{11}}{\frac{1}{11}+\frac{1}{11}}
+=
+\frac{\frac{1}{11}}{\frac{2}{11}}
+=
+\frac{1}{2}
+\]</p>
+<h4>Resultado:</h4>
+\[
+\boxed{\frac{1}{2}}
+\]
+<p>---</p>
+<h3>Respuestas finales</h3>
+<p><strong>a)</strong>  <br>
+\[
+\Omega=\{(5,5),(5,10),(5,50),(10,5),(10,10),(10,50),(50,5),(50,10),(50,50)\}
+\]</p>
+<p><strong>b)</strong>  <br>
+\[
+\boxed{\frac{13}{66}}
+\]</p>
+<p><strong>c)</strong>  <br>
+\[
+\boxed{\frac{1}{2}}
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio 4A del documento proporcionado, vamos a abordar cada uno de los apartados solicitados:</p>
+<h4>a) Expresar el espacio muestral del experimento que va a realizar Aythami.</h4>
+<p><strong>Paso 1: Análisis de los billetes disponibles</strong></p>
+<p>Aythami tiene:<br>
+- 4 billetes de 5 euros<br>
+- 6 billetes de 10 euros<br>
+- 2 billetes de 50 euros</p>
+<p><strong>Paso 2: Descripción de las combinaciones posibles al extraer dos billetes</strong></p>
+<p>Como extrae dos billetes de manera aleatoria, sin reemplazo, Aythami tiene varias combinaciones posibles. El espacio muestral se compone de todas las combinaciones posibles de dos billetes en cualquier orden. Debemos considerar cada billete de una denominación como distinto a pesar de tener el mismo valor monetario para contar correctamente las combinaciones.</p>
+<p>Las combinaciones posibles de dos billetes son:<br>
+1. \( (5, 5) \)<br>
+2. \( (5, 10) \)<br>
+3. \( (5, 50) \)<br>
+4. \( (10, 5) \)<br>
+5. \( (10, 10) \)<br>
+6. \( (10, 50) \)<br>
+7. \( (50, 5) \)<br>
+8. \( (50, 10) \)</p>
+<p><strong>Calculamos el total de eventos posibles en el espacio muestral:</strong><br>
+- Combinaciones de sacar dos billetes de 5: \( \binom{4}{2} = 6 \) <br>
+- Combinaciones de sacar uno de 5 y uno de 10: \( 4 \times 6 = 24 \)<br>
+- Combinaciones de sacar uno de 5 y uno de 50: \( 4 \times 2 = 8 \)<br>
+- Combinaciones de sacar dos billetes de 10: \( \binom{6}{2} = 15 \)<br>
+- Combinaciones de sacar uno de 10 y uno de 50: \( 6 \times 2 = 12 \)<br>
+- Combinaciones de sacar dos billetes de 50: \( \binom{2}{2} = 1 \)</p>
+<p>Total de eventos en el espacio muestral = \( 6 + 24 + 8 + 15 + 12 + 1 = 66 \) combinaciones.</p>
+<h4>b) Si se quiere comprar un videojuego que cuesta 57, ¿qué probabilidad hay de que pueda hacerlo con los billetes que saca del sobre?</h4>
+<p><strong>Paso 1: Identificar combinaciones válidas que sumen 57 euros</strong></p>
+<p>Las únicas combinaciones de billetes que suman 57 euros son:<br>
+- Un billete de 7 euros y un billete de 50 euros (no posible con los billetes disponibles).</p>
+<p>Dado que no hay combinaciones válidas, la probabilidad es 0.</p>
+<h4>c) Si al final obtiene, con este experimento, 60 del sobre, ¿qué probabilidad hay de que el primer billete fuera de 10?</h4>
+<p><strong>Paso 1: Identificar combinaciones válidas que sumen 60 euros</strong><br>
+- Un billete de 10 euros y un billete de 50 euros.</p>
+<p><strong>Paso 2: Calculo de la probabilidad</strong></p>
+<p>Combinaciones válidas que suman 60 y el primer billete es de 10:<br>
+- Elegir un billete de 10 primero: \( 6 \times 2 = 12 \) (todas las combinaciones válidas para sumar 60 implican seleccionar primero un billete de 10 y luego un billete de 50).</p>
+<p>Dado que todas las combinaciones válidas para llegar a 60 implican sacar primero un billete de 10, la probabilidad de que el primer billete sea de 10, dado que la suma es 60, es 1 (o 100%).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_040.html">Anterior</a><a class="button" href="problema_042.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,12 @@
+﻿Tipo de error,GPT-4 Turbo + Assistants,GPT-5.4 + Responses
+Alucinación,"16 (1,38 %)","0 (0,00 %)"
+Error algebraico,"100 (8,64 %)","1 (0,09 %)"
+Error de cálculo,"210 (18,13 %)","3 (0,26 %)"
+Error de formato,"1 (0,09 %)","2 (0,17 %)"
+Error de notación,"13 (1,12 %)","1 (0,09 %)"
+Error de razonamiento,"138 (11,92 %)","4 (0,35 %)"
+Interpretación incorrecta,"56 (4,84 %)","38 (3,28 %)"
+Referencia insuficiente para la evaluación,"2 (0,17 %)","3 (0,26 %)"
+Sin error,"359 (31,00 %)","1056 (91,19 %)"
+Sin respuesta,"8 (0,69 %)","1 (0,09 %)"
+Solución incompleta,"255 (22,02 %)","49 (4,23 %)"

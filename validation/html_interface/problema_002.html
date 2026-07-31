@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 2: andalucia_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 2 de 139</h1>
+<div class="meta"><span class="badge">andalucia_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_001.html">Anterior</a><a class="button" href="problema_003.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>EJERCICIO 2. (2,5 puntos)</p>
+<p>Sea \(f : (0, +\infty) \to \mathbb{R}\) la función definida por \(f(x) = x(\ln(x))^2\) (\(\ln\) denota la función logaritmo neperiano).</p>
+<p>a) [1,25 puntos] Calcula, si existen, sus extremos relativos (abscisas donde se obtienen y valores que se alcanzan).</p>
+<p>b) [1,25 puntos] Calcula, si existen, sus extremos absolutos (abscisas donde se obtienen y valores que se alcanzan).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>EJERCICIO 2 (2.5 puntos)</p>
+<p>Sea \(f:(0,+\infty)\to \mathbb{R}\) la función definida por  <br>
+\[
+f(x)=x(\ln x)^2
+\]<br>
+(\(\ln\) denota la función logaritmo neperiano).</p>
+<h4>a) Extremos relativos</h4>
+<p>Averiguamos cuándo se anula la función derivada:</p>
+<p>\[
+f&#x27;(x)=(\ln x)^2+2\ln x
+\]</p>
+<p>\[
+f&#x27;(x)=0 \Longleftrightarrow \ln x(\ln x+2)=0
+\]</p>
+<p>\[
+\ln x=0 \Rightarrow x=1
+\]</p>
+<p>\[
+\ln x+2=0 \Rightarrow \ln x=-2 \Rightarrow x=e^{-2}
+\]</p>
+<p>Sustituimos estos valores en la segunda derivada:</p>
+<p>\[
+f&#x27;&#x27;(x)=\frac{2\ln x+2}{x}
+\]</p>
+<p>\[
+f&#x27;&#x27;(1)=2&gt;0 \Rightarrow x=1 \text{ es mínimo}
+\]</p>
+<p>\[
+f&#x27;&#x27;(e^{-2})=\frac{2(-2)+2}{e^{-2}}=-2e^2&lt;0 \Rightarrow x=e^{-2} \text{ es máximo}
+\]</p>
+<p>Obtenemos el valor de la función en estos dos puntos críticos:</p>
+<p>\[
+f(1)=1\cdot(\ln 1)^2=0
+\]</p>
+<p>\[
+f(e^{-2})=e^{-2}(\ln e^{-2})^2=e^{-2}\cdot 4=4e^{-2}
+\]</p>
+<p>El mínimo relativo tiene coordenadas:</p>
+<p>\[
+(1,0)
+\]</p>
+<p>y el máximo relativo tiene coordenadas:</p>
+<p>\[
+(e^{-2},4e^{-2})
+\]</p>
+<h4>b) Extremos absolutos</h4>
+<p>Como la función</p>
+<p>\[
+f(x)=x(\ln x)^2
+\]</p>
+<p>en su dominio \((0,+\infty)\) siempre es mayor o igual que cero, el mínimo absoluto de la función es el mínimo relativo:</p>
+<p>\[
+(1,0)
+\]</p>
+<p>Para decidir el máximo absoluto necesitamos conocer la evolución de la función cuando \(x\to+\infty\):</p>
+<p>\[
+\lim_{x\to+\infty} f(x)=\lim_{x\to+\infty} x(\ln x)^2=+\infty
+\]</p>
+<p>Por lo que la función no tiene máximo absoluto.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 2 del Examen de Matemáticas II ubicado en el documento proporcionado, procedemos con las siguientes partes según el enunciado:</p>
+<h4>Ejercicio 2 - Función \( f(x) = x (\ln(x))^2 \) en el dominio \( (0, +\infty) \)</h4>
+<p>#### a) Extremos relativos:</p>
+<p>1. <strong>Primero calculamos la derivada primera</strong>, \( f&#x27;(x) \), para encontrar los puntos críticos donde podrían ocurrir extremos relativos:</p>
+<p>Utilizando la regla del producto y derivada de logaritmica:<br>
+   \[
+   f&#x27;(x) = (\ln(x))^2 + 2\ln(x) \cdot \frac{1}{x}
+   \]<br>
+   Simplificando la expresión:<br>
+   \[
+   f&#x27;(x) = (\ln(x))^2 + 2\frac{\ln(x)}{x}
+   \]</p>
+<p>2. <strong>Igualamos la derivada a cero</strong> para encontrar los puntos críticos:<br>
+   \[
+   (\ln(x))^2 + 2\frac{\ln(x)}{x} = 0
+   \]<br>
+   Simplificamos agrupando términos comunes:<br>
+   \[
+   \ln(x) \left( \ln(x) + \frac{2}{x} \right) = 0
+   \]<br>
+   Lo que lleva a dos escenarios:<br>
+   - \(\ln(x) = 0\) lo cual implica que \(x = e^0 = 1\)<br>
+   - \(\ln(x) + \frac{2}{x} = 0\) cuya solución no es evidente de forma simplificada y necesitaría métodos numéricos para su resolución exacta. Sin embargo, estimaremos analíticamente que no proporciona otra solución relevante en el dominio \( (0, +\infty) \).</p>
+<p>3. <strong>Determinamos la naturaleza de los puntos críticos</strong> usando la segunda derivada, \( f&#x27;&#x27;(x) \):<br>
+   \[
+   f&#x27;&#x27;(x) = \frac{d}{dx} \left[ (\ln(x))^2 + 2\frac{\ln(x)}{x} \right]
+   \]<br>
+   La cual se complica considerablemente bajo derivación directa.</p>
+<p>4. <strong>Conclusión sobre extremo relativo</strong>:<br>
+   - \(x = 1\) es el único punto crítico discernible analíticamente. Utilizando el criterio de la segunda derivada o pruebas de valores, se puede concluir que \(x = 1\) es un <strong>punto de mínimo</strong> para la función dado que la función tiene comportamiento creciente para valores mayores y menores de 1. Esto debe ser confirmado a través de más métodos analíticos o numéricos para detalles exactos.</p>
+<p>#### b) Extremos absolutos:</p>
+<p>Dado que la función es definida y continua en \( (0, +\infty) \), debemos considerar su comportamiento asintótico:<br>
+- Al <strong>aproximarse a 0</strong>, \( f(x) \) tiende a 0, dado que \( \ln(x) \) tiende a \(-\infty\) pero el productor por \(x\) anula este efecto.<br>
+- Al <strong>tender hacia infinito</strong>, el término \(x\) domina con \( \ln(x) \) incrementando a un ritmo más lento, haciendo que \( f(x) \) tienda a infinito.</p>
+<p>Como \(x = 1\) es un mínimo en el dominio estudiado, y la función se aleja desde dicho valor hacia infinito en ambos extremos del dominio, <strong>no hay extremos absolutos</strong>, exceptuando el mínimo relativo en \(x = 1\) que actúa como mínimo absoluto en todo el dominio abierto considerado.</p>
+<p>Esta solución demuestra cómo examinar los extremos de la función \( f(x) = x (\ln(x))^2 \) mediante el análisis del cálculo diferencial y el comportamiento de límite【4:0†source】.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea  <br>
+\[
+f:(0,+\infty)\to \mathbb R,\qquad f(x)=x(\ln x)^2.
+\]</p>
+<p>Vamos a estudiar sus extremos.</p>
+<p>---</p>
+<h3>a) Extremos relativos</h3>
+<p>Derivamos:<br>
+\[
+f&#x27;(x)=1\cdot (\ln x)^2+x\cdot 2\ln x\cdot \frac1x
+=(\ln x)^2+2\ln x
+=\ln x\,(\ln x+2).
+\]</p>
+<p>Los puntos críticos se obtienen de \(f&#x27;(x)=0\):<br>
+\[
+\ln x=0 \quad \text{o} \quad \ln x+2=0.
+\]<br>
+Por tanto,<br>
+\[
+x=1 \quad \text{o} \quad x=e^{-2}.
+\]</p>
+<h4>Estudio del signo de \(f&#x27;(x)\)</h4>
+<p>- Si \(0&lt;x&lt;e^{-2}\), entonces \(\ln x&lt;-2\), así que<br>
+  \[
+  \ln x&lt;0,\qquad \ln x+2&lt;0 \Rightarrow f&#x27;(x)&gt;0.
+  \]</p>
+<p>- Si \(e^{-2}&lt;x&lt;1\), entonces<br>
+  \[
+  \ln x&lt;0,\qquad \ln x+2&gt;0 \Rightarrow f&#x27;(x)&lt;0.
+  \]</p>
+<p>- Si \(x&gt;1\), entonces<br>
+  \[
+  \ln x&gt;0,\qquad \ln x+2&gt;0 \Rightarrow f&#x27;(x)&gt;0.
+  \]</p>
+<p>Luego:</p>
+<p>- en \(x=e^{-2}\), \(f&#x27;\) pasa de \(+\) a \(-\): <strong>máximo relativo</strong>;<br>
+- en \(x=1\), \(f&#x27;\) pasa de \(-\) a \(+\): <strong>mínimo relativo</strong>.</p>
+<h4>Valores</h4>
+<p>\[
+f(e^{-2})=e^{-2}\bigl(\ln(e^{-2})\bigr)^2=e^{-2}\cdot (-2)^2=\frac{4}{e^2}.
+\]</p>
+<p>\[
+f(1)=1\cdot (\ln 1)^2=0.
+\]</p>
+<h4>Resultado del apartado a)</h4>
+<p>- <strong>Máximo relativo</strong> en \(x=e^{-2}\), con valor \(\displaystyle \frac{4}{e^2}\).<br>
+- <strong>Mínimo relativo</strong> en \(x=1\), con valor \(0\).</p>
+<p>---</p>
+<h3>b) Extremos absolutos</h3>
+<p>Estudiamos el comportamiento en los extremos del dominio:</p>
+<h4>Cuando \(x\to 0^+\)</h4>
+<p>\[
+f(x)=x(\ln x)^2.
+\]<br>
+Haciendo \(x=\frac1t\), con \(t\to+\infty\),<br>
+\[
+f(x)=\frac{(\ln t)^2}{t}\to 0.
+\]<br>
+Así,<br>
+\[
+\lim_{x\to 0^+} x(\ln x)^2=0.
+\]</p>
+<h4>Cuando \(x\to+\infty\)</h4>
+<p>\[
+x(\ln x)^2\to +\infty.
+\]</p>
+<p>Además, como \((\ln x)^2\ge 0\) y \(x&gt;0\), se tiene<br>
+\[
+f(x)\ge 0 \quad \text{para todo }x&gt;0.
+\]<br>
+Y en \(x=1\),<br>
+\[
+f(1)=0.
+\]</p>
+<p>Por tanto:</p>
+<p>- el <strong>mínimo absoluto</strong> existe y se alcanza en \(x=1\), con valor \(0\);<br>
+- <strong>no existe máximo absoluto</strong>, porque \(f(x)\to +\infty\) cuando \(x\to+\infty\).</p>
+<p>---</p>
+<h3>Conclusión final</h3>
+<h4>a) Extremos relativos</h4>
+- Máximo relativo en \(\boxed{x=e^{-2}}\), con valor \(\boxed{\frac{4}{e^2}}\).
+- Mínimo relativo en \(\boxed{x=1}\), con valor \(\boxed{0}\).
+<h4>b) Extremos absolutos</h4>
+- Mínimo absoluto en \(\boxed{x=1}\), con valor \(\boxed{0}\).
+- \(\boxed{\text{No existe máximo absoluto}}\).</section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_001.html">Anterior</a><a class="button" href="problema_003.html">Siguiente</a></nav>
+</main></body>
+</html>

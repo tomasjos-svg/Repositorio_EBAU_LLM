@@ -1,0 +1,15 @@
+Figura 1. Diseño experimental y flujo analítico del estudio.
+
+Figura 2. Distribución de la puntuación global media por problema en el escenario principal.
+
+Figura 3. Comparación pareada de la puntuación global media para los 386 problemas del escenario principal.
+
+Figura 4. Diferencias medias entre configuraciones e intervalos bootstrap del 95 % para las seis métricas.
+
+Figura 5. Compromiso entre puntuación global, coste medio y tokens consumidos por problema-condición.
+
+Figura 6. Distribución porcentual de las categorías de error por configuración en el escenario principal.
+
+Figura 7. Distribución del rango entre las tres réplicas en el escenario estricto.
+
+Figura 8. Comparación de las diferencias medias en los escenarios principal, estricto y de sensibilidad.

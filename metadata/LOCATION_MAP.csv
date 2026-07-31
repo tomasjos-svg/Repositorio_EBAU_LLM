@@ -1,0 +1,13 @@
+﻿logical_group,relative_location,exists,file_count,bytes
+EBAU source documents,Documentos EBAU articulo,False,0,0
+EBAU source documents,data/source_documents/EBAU_PDF,True,108,67290606
+Experimental raw outputs,Resultados experimento,True,529,1358589684
+Experimental raw outputs,data/raw_outputs,True,57,180189
+Human-validation interface,Evaluacion_HTML_2023,False,0,0
+Human-validation interface,validation/html_interface,True,141,2506557
+Human-validation data and scripts,script_y_excel_validacion_humana,True,3,536520
+Human-validation data and scripts,validation/human,True,0,0
+Original analytical pipeline,pipeline,True,13,238760
+Original analytical pipeline,code/analysis,True,8,138299
+Original analytical pipeline,code/experiment,True,1,95971
+Original analytical pipeline,docs/pipeline_original,False,0,0

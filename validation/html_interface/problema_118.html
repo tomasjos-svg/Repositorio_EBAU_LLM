@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 118: navarra_2023 7</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 118 de 139</h1>
+<div class="meta"><span class="badge">navarra_2023</span> &nbsp; Ejercicio 7</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_117.html">Anterior</a><a class="button" href="problema_119.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P7) Se considera la función  <br>
+\[
+f(x)=\frac{1}{2-\sin\left(\frac{\pi x}{6}\right)}.
+\]</p>
+<p>a) Demuestra que la función es continua en el intervalo \([7,11]\) y derivable en \((7,11)\).  <br>
+(1,25 puntos)</p>
+<p>b) Comprueba que existe un valor \(\alpha \in (7,11)\) tal que \(f&#x27;(\alpha)=0\). Enuncia el/los resultado(s) teórico(s) utilizado(s), y justifica su uso.  <br>
+(1,25 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>P7)</strong> Se considera la función  <br>
+\[
+f(x)=\sqrt{1-\sin\left(\frac{x\pi}{6}\right)^2}
+\]</p>
+<h4>a) Demuestra que la función es continua en el intervalo \([7,11]\) y derivable en \((7,11)\).</h4>
+<p>La función es suma y composición de funciones continuas.  <br>
+Solo falta comprobar que el radicando es positivo en el intervalo \([7,11]\).</p>
+<p>\[
+x\in[7,11]\Rightarrow \frac{7\pi}{6}\leq \frac{x\pi}{6}\leq \frac{11\pi}{6}
+\]</p>
+<p>\[
+\Rightarrow -1\leq \sin\left(\frac{x\pi}{6}\right)\leq 0
+\]</p>
+<p>\[
+\Rightarrow 0\leq \sin^2\left(\frac{x\pi}{6}\right)\leq 1
+\]</p>
+<p>Por tanto, el radicando es no negativo y la función es continua en \([7,11]\).</p>
+<p>La derivada de la función es</p>
+<p>\[
+f&#x27;(x)=\frac{-\frac{\pi}{6}\cos\left(\frac{x\pi}{6}\right)}
+{2\sqrt{1-\sin\left(\frac{x\pi}{6}\right)}}=
+\frac{-\pi\cos\left(\frac{x\pi}{6}\right)}
+{12\sqrt{1-\sin\left(\frac{x\pi}{6}\right)}}
+\]</p>
+<p>Esta derivada existe en el intervalo \((7,11)\), pues hemos comprobado que el denominador nunca se anula.</p>
+<p>La función es derivable en \((7,11)\).</p>
+<p>---</p>
+<h4>b) Comprueba que existe un valor \(\alpha\in(7,11)\) tal que \(f&#x27;(\alpha)=0\). Enuncia el/los resultado(s) teórico(s) utilizado(s), y justifica su uso.</h4>
+<p>Utilizamos el teorema de Rolle:</p>
+<p>Sea \(f\) continua en \([a,b]\) y derivable en \((a,b)\), siendo \(f(a)=f(b)\), entonces existe \(\alpha\in(a,b)\) tal que</p>
+<p>\[
+f&#x27;(\alpha)=0
+\]</p>
+<p>Consideramos la función</p>
+<p>\[
+f(x)=\sqrt{1-\sin\left(\frac{x\pi}{6}\right)}
+\]</p>
+<p>que es continua en \([7,11]\) y derivable en \((7,11)\), como</p>
+<p>\[
+f(7)=\sqrt{1-\sin\left(\frac{7\pi}{6}\right)}=1
+\]</p>
+<p>\[
+f(11)=\sqrt{1-\sin\left(\frac{11\pi}{6}\right)}=1
+\]</p>
+<p>\[
+f(7)=f(11)
+\]</p>
+<p>Aplicando el teorema de Rolle, existe \(\alpha\in(7,11)\) tal que</p>
+<p>\[
+f&#x27;(\alpha)=0
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Tomando  <br>
+\[
+f(x)=\frac{1}{\,2-\sin\left(\frac{\pi x}{6}\right)}.
+\]</p>
+<h3>a) Continuidad en \([7,11]\) y derivabilidad en \((7,11)\)</h3>
+<p>La función<br>
+\[
+x\mapsto \frac{\pi x}{6}
+\]<br>
+es continua y derivable en \(\mathbb R\).  <br>
+También lo es<br>
+\[
+x\mapsto \sin\left(\frac{\pi x}{6}\right).
+\]</p>
+<p>Además, para todo \(x\),<br>
+\[
+-1\le \sin\left(\frac{\pi x}{6}\right)\le 1
+\]<br>
+y por tanto<br>
+\[
+1\le 2-\sin\left(\frac{\pi x}{6}\right)\le 3.
+\]<br>
+En particular,<br>
+\[
+2-\sin\left(\frac{\pi x}{6}\right)\neq 0
+\]<br>
+para todo \(x\).</p>
+<p>Así, \(f\) es cociente de funciones continuas, con denominador nunca nulo, luego es continua en \([7,11]\).  <br>
+Además, al ser composición y cociente de funciones derivables con denominador no nulo, \(f\) es derivable en \((7,11)\).</p>
+<h3>b) Existencia de un \(\xi\in(7,11)\) tal que \(f&#x27;(\xi)=0\)</h3>
+<p>Usamos el <strong>teorema de Rolle</strong>:</p>
+<p>Si una función es continua en \([a,b]\), derivable en \((a,b)\) y cumple \(f(a)=f(b)\), entonces existe \(\xi\in(a,b)\) tal que \(f&#x27;(\xi)=0\).</p>
+<p>Ya hemos probado en el apartado anterior que \(f\) es continua en \([7,11]\) y derivable en \((7,11)\).  <br>
+Comprobamos ahora que toma el mismo valor en los extremos:</p>
+<p>\[
+f(7)=\frac{1}{2-\sin\left(\frac{7\pi}{6}\right)}
+=\frac{1}{2-(-\frac12)}
+=\frac{1}{\frac52}
+=\frac25.
+\]</p>
+<p>\[
+f(11)=\frac{1}{2-\sin\left(\frac{11\pi}{6}\right)}
+=\frac{1}{2-(-\frac12)}
+=\frac25.
+\]</p>
+<p>Como \(f(7)=f(11)\), por el teorema de Rolle <strong>existe</strong> \(\xi\in(7,11)\) tal que<br>
+\[
+f&#x27;(\xi)=0.
+\]</p>
+<h4>Comprobación directa (opcional)</h4>
+Derivando,
+\[
+f&#x27;(x)=\frac{\frac{\pi}{6}\cos\left(\frac{\pi x}{6}\right)}
+{\left(2-\sin\left(\frac{\pi x}{6}\right)\right)^2}.
+\]
+Luego \(f&#x27;(x)=0\) cuando
+\[
+\cos\left(\frac{\pi x}{6}\right)=0.
+\]
+Por ejemplo, para \(x=9\),
+\[
+\cos\left(\frac{9\pi}{6}\right)=\cos\left(\frac{3\pi}{2}\right)=0,
+\]
+así que
+\[
+f&#x27;(9)=0.
+\]
+<h3>Conclusión</h3>
+- \(f\) es continua en \([7,11]\) y derivable en \((7,11)\).
+- Por el teorema de Rolle, existe \(\xi\in(7,11)\) tal que \(f&#x27;(\xi)=0\) (de hecho, \(\xi=9\)).</section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el ejercicio 7 del examen. Según el enunciado, este ejercicio consiste en dos partes:</p>
+<h4>Parte a: Continuidad y Derivabilidad</h4>
+Se pide demostrar que la función \( f(x) = \sqrt{\frac{1}{2} - \sin\left(\frac{\pi x}{6}\right)} \) es continua en el intervalo \([7, 11]\) y derivable en \( (7, 11) \)【4:0†source】.
+<p><strong>Continuidad:</strong><br>
+Para que una función sea continua en un intervalo cerrado, debe ser continua en cada punto de ese intervalo. La función \( f(x) \) es la composición de las funciones \( \sin \left(\frac{\pi x}{6}\right) \) y \( \sqrt{\cdot} \). Ambas funciones son continuas en sus dominios respectivos. El seno es continuo en todo \(\mathbb{R}\), y la función raíz cuadrada es continua en \([0, \infty)\).</p>
+<p>Para asegurar que \( f(x) \) no tenga discontinuidades, debemos verificar que el argumento de la raíz cuadrada sea no negativo en \([7, 11]\). El argumento es \( \frac{1}{2} - \sin\left(\frac{\pi x}{6}\right) \), que alcanza su valor mínimo cuando \( \sin\left(\frac{\pi x}{6}\right) \) es máximo, es decir, igual a 1. Incluso entonces, el valor mínimo es \( \frac{1}{2} - 1 = -\frac{1}{2} \), lo cual es negativo y fuera del dominio de la raíz cuadrada. Sin embargo, esto requiere un examen más detallado, porque el máximo de seno, \( \sin\left(\frac{\pi x}{6}\right) = 1 \), ocurre cuando \( \frac{\pi x}{6} = \frac{\pi}{2} + 2k\pi \) (para cualquier entero \( k \)). Este conjunto de valores de \( x \) no intersecta con el intervalo \( [7, 11] \), por lo que no hay discontinuidades, y \( f(x) \) es continua en \( [7, 11] \).</p>
+<p><strong>Derivabilidad:</strong><br>
+Para la derivabilidad en \( (7, 11) \), considerando que los componentes básicos de \( f(x) \) son diferenciables en sus respectivos dominios, \( f(x) \) será diferenciable siempre que el argumento de la raíz cuadrada sea positivo, lo que ya hemos verificado excepto en los límites donde se alcanza cero. Así que \( f(x) \) es diferenciable en \( (7, 11) \).</p>
+<h4>Parte b: Cálculo de la derivada y punto crítico</h4>
+Se pide verificar la existencia de un valor \( \alpha \in (7, 11) \) tal que \( f&#x27;(\alpha) = 0 \)【4:0†source】.
+<p><strong>Cálculo de la derivada y aplicación del Teorema del Valor Medio:</strong><br>
+La derivada de \( f(x) \), usando la regla de la cadena, es:<br>
+\[
+f&#x27;(x) = \frac{-\frac{\pi}{6} \cos\left(\frac{\pi x}{6}\right)}{2\sqrt{\frac{1}{2} - \sin\left(\frac{\pi x}{6}\right)}}
+\]<br>
+Para encontrar \( \alpha \) tal que \( f&#x27;(\alpha) = 0 \), necesitamos \( \cos\left(\frac{\pi x}{6}\right) = 0 \). Esto ocurre cuando \( \frac{\pi x}{6} = \frac{\pi}{2} + k\pi \) para \( k \) entero. El menor \( x &gt; 7 \) que satisface esto es \( x = 9 \), que está dentro del intervalo \( (7, 11) \).</p>
+<p>Por el teorema del valor medio, dado que \( f(x) \) es continua en \( [7, 11] \) y diferenciable en \( (7, 11) \), y por los valores calculados \( \cos\left(\frac{\pi x}{6}\right) = 0 \) dentro de este intervalo, existe al menos un punto \( \alpha \in (7, 11) \) donde \( f&#x27;(\alpha) = 0 \).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_117.html">Anterior</a><a class="button" href="problema_119.html">Siguiente</a></nav>
+</main></body>
+</html>

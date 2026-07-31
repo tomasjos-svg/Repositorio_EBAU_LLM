@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 119: navarra_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 119 de 139</h1>
+<div class="meta"><span class="badge">navarra_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_118.html">Anterior</a><a class="button" href="problema_120.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P8) La curva de la imagen corresponde a la función \(f(x)=x\cdot \sin x\). Tal y como se intuye, la curva corta el eje \(OX\) en infinitos puntos:</p>
+<p>Encuentra los puntos \(P\) y \(Q\), y, a continuación, calcula el área de la región del plano sombreada.  <br>
+(2,5 puntos)</p>
+<p>No se incluye la imagen en el documento proporcionado.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>P8)</strong></p>
+<p>Hallamos los puntos de corte de la gráfica con el eje OX.</p>
+<p>\[
+f(x)=x\sin x=0 \Rightarrow 
+\begin{cases}
+x=0\\
+\sin x=0
+\end{cases}
+\Rightarrow x=0,\pi,2\pi,\ldots
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+P=(\pi,0), \qquad Q=(2\pi,0)
+\]</p>
+<p>El área la calculamos en dos partes que luego sumaremos.</p>
+<p>Calculamos primero la primitiva de la función:</p>
+<p>\[
+\int x\sin x\,dx
+\]</p>
+<p>Integración por partes:</p>
+<p>\[
+u=x \Rightarrow du=dx
+\]</p>
+<p>\[
+dv=\sin x\,dx \Rightarrow v=\int \sin x\,dx=-\cos x
+\]</p>
+<p>\[
+\int x\sin x\,dx=-x\cos x+\int \cos x\,dx
+\]</p>
+<p>\[
+=-x\cos x+\sin x+K
+\]</p>
+<p>El área entre \(x=0\) y \(x=\pi\):</p>
+<p>\[
+\text{Área}_1=\int_0^\pi x\sin x\,dx
+\]</p>
+<p>\[
+=\left[-x\cos x+\sin x\right]_0^\pi
+\]</p>
+<p>\[
+=-\pi\cos\pi+\sin\pi-(-0\cos0+\sin0)=\pi
+\]</p>
+<p>El área entre \(x=\pi\) y \(x=2\pi\):</p>
+<p>\[
+\text{Área}_2=\int_\pi^{2\pi} x\sin x\,dx
+\]</p>
+<p>\[
+=\left[-x\cos x+\sin x\right]_\pi^{2\pi}
+\]</p>
+<p>\[
+=-2\pi\cos2\pi+\sin2\pi-(-\pi\cos\pi+\sin\pi)
+\]</p>
+<p>\[
+=-2\pi-\pi=-3\pi
+\]</p>
+<p>Como es un área, se toma el valor positivo:</p>
+<p>\[
+\text{Área}_2=3\pi
+\]</p>
+<p>El área total es:</p>
+<p>\[
+\pi+3\pi=4\pi
+\]</p>
+<p>\[
+\boxed{4\pi\ \text{u}^2}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>El Ejercicio 8 del documento pide resolver las siguientes tareas:<br>
+1. <strong>Encontrar los puntos P y Q</strong> donde la función \( f(x) = x \cdot \sin(x) \) corta el eje OX.<br>
+2. <strong>Calcular el área de la región del plano sombreada</strong> determinada por los puntos encontrados y la función.</p>
+<h4>Paso 1: Encuentra los puntos P y Q</h4>
+La función \( f(x) = x \cdot \sin(x) \) corta el eje OX en los puntos donde \( f(x) = 0 \). Esto sucede cuando \( \sin(x) = 0 \) porque x multiplicado por cualquier número es 0 solo si ese número es 0. Los puntos donde \( \sin(x) = 0 \) son múltiplos de \( \pi \), es decir \( x = k\pi \) para \( k \in \mathbb{Z} \). 
+Necesitamos más información específica sobre el rango o los límites de x en los cuales debemos encontrar P y Q; como no se proporciona en el enunciado, no podemos identificar exactamente cuáles son los puntos P y Q sin más información visual o numérica.
+<h4>Paso 2: Cálculo del Área de la Región Sombreada</h4>
+Suponiendo que la región sombreada está entre dos múltiplos consecutivos de \( \pi \), es decir, entre \( n\pi \) y \( (n+1)\pi \) para algún \( n \) entero, la integral que calcula el área entre la curva \( f(x) = x \cdot \sin(x) \) y el eje x es:
+\[ A = \int_{n\pi}^{(n+1)\pi} |x \cdot \sin(x)| \, dx \]
+<p>Por la simetría y la periodicidad de \( \sin(x) \), la integral de medio ciclo de \( \sin(x) \) (de \( n\pi \) a \( (n+1)\pi) donde n \) es par (para asegurar que comienza desde el eje x) sería un primer paso hacia el cálculo exacto. Sin embargo, este integral no es trivial y generalmente no produce una forma cerrada simple sin técnicas de cálculo avanzadas o herramientas de software.</p>
+<h4>Conclusión</h4>
+Para resolver completamente este problema necesitamos al menos:
+- La <strong>imagen</strong> o una descripción más detallada que especifique los límites exactos sobre \( x \) para los puntos P y Q.
+- Uso de <strong>técnicas de cálculo numérico o simbólico</strong> para evaluar la integral en un rango específico.
+<p>El paso adelante podría ser realizar estos cálculos con software adecuado o obtener más información gráfica sobre la región mencionada【4:1†Examen matematicas II Navarra 2023 enunciado】.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Falta la <strong>imagen</strong> del apartado 8, así que no se puede saber con certeza <strong>qué dos cortes concretos</strong> del eje \(OX\) son \(P\) y \(Q\).  <br>
+Aun así, sí se puede resolver <strong>en general</strong>.</p>
+<h3>1) Cortes de \(f(x)=x\sin x\) con el eje \(OX\)</h3>
+<p>Los puntos del eje \(OX\) cumplen \(y=0\), luego:</p>
+<p>\[
+x\sin x=0
+\]</p>
+<p>Esto ocurre cuando:</p>
+<p>\[
+x=n\pi,\qquad n\in\mathbb Z
+\]</p>
+<p>Por tanto, <strong>todos</strong> los puntos de corte con \(OX\) son</p>
+<p>\[
+(n\pi,\,0),\qquad n\in\mathbb Z.
+\]</p>
+<p>Así, los puntos \(P\) y \(Q\) que aparezcan en la figura serán de la forma</p>
+<p>\[
+P=(m\pi,0),\qquad Q=(n\pi,0).
+\]</p>
+<p>---</p>
+<h3>2) Área de la región sombreada</h3>
+<p>Si la región sombreada está comprendida entre dos cortes consecutivos</p>
+<p>\[
+P=(k\pi,0),\qquad Q=((k+1)\pi,0),
+\]</p>
+<p>entonces el área es</p>
+<p>\[
+A=\int_{k\pi}^{(k+1)\pi}|x\sin x|\,dx.
+\]</p>
+<p>Como entre dos ceros consecutivos la función no cambia de signo, basta calcular el valor absoluto de la integral:</p>
+<p>\[
+\int x\sin x\,dx
+\]</p>
+<p>Por partes:</p>
+<p>\[
+\int x\sin x\,dx=-x\cos x+\sin x + C
+\]</p>
+<p>Entonces:</p>
+<p>\[
+\int_{k\pi}^{(k+1)\pi}x\sin x\,dx
+=
+\left[-x\cos x+\sin x\right]_{k\pi}^{(k+1)\pi}
+\]</p>
+<p>Como \(\sin(k\pi)=0\) y \(\cos(k\pi)=(-1)^k\),</p>
+<p>\[
+\int_{k\pi}^{(k+1)\pi}x\sin x\,dx=(2k+1)\pi(-1)^k
+\]</p>
+<p>y por tanto el área vale</p>
+<p>\[
+\boxed{A=|2k+1|\pi}
+\]</p>
+<p>---</p>
+<h3>Resultado general</h3>
+<p>- Los cortes con \(OX\) son:</p>
+<p>\[
+\boxed{(n\pi,0),\ n\in\mathbb Z}
+\]</p>
+<p>- Si el recinto sombreado está entre dos cortes consecutivos \(k\pi\) y \((k+1)\pi\), su área es:</p>
+<p>\[
+\boxed{A=|2k+1|\pi}
+\]</p>
+<p>---</p>
+<h3>Si la figura fuese la más habitual</h3>
+Si el recinto sombreado fuese el central, entre
+<p>\[
+P=(-\pi,0),\qquad Q=(\pi,0),
+\]</p>
+<p>entonces el área sería la suma de dos lóbulos:</p>
+<p>\[
+A=\int_{-\pi}^{\pi}|x\sin x|\,dx=2\pi.
+\]</p>
+<p>---</p>
+<p>Si quieres, te doy también la <strong>respuesta numérica exacta</strong> en cuanto me pases la imagen del ejercicio 8.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_118.html">Anterior</a><a class="button" href="problema_120.html">Siguiente</a></nav>
+</main></body>
+</html>

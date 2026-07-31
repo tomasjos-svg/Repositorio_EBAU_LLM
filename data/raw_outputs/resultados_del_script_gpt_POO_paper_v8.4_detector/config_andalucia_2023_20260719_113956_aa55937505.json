@@ -1,0 +1,107 @@
+{
+  "experiment_config": {
+    "n_runs": 3,
+    "poll_seconds": 2,
+    "max_retries": 3,
+    "retry_delay_seconds": 5,
+    "max_questions_for_test": null,
+    "unstable_std_threshold": 25.0,
+    "alpha": 0.05,
+    "judge_model": "gpt-5.5",
+    "reasoning_effort_solver": "high",
+    "reasoning_effort_reference": "low",
+    "reasoning_effort_judge": "low",
+    "text_verbosity": "low",
+    "experiment_matrix": [
+      {
+        "api": "assistants",
+        "model": "gpt-4-turbo",
+        "enabled": true
+      },
+      {
+        "api": "responses",
+        "model": "gpt-4-turbo",
+        "enabled": true
+      },
+      {
+        "api": "assistants",
+        "model": "gpt-5.4",
+        "enabled": true
+      },
+      {
+        "api": "responses",
+        "model": "gpt-5.4",
+        "enabled": true
+      }
+    ],
+    "model_pricing_usd_per_token": {
+      "gpt-4-turbo": {
+        "input": 1e-05,
+        "output": 3e-05
+      },
+      "gpt-5.5": {
+        "input": 2e-06,
+        "output": 8e-06
+      },
+      "gpt-5.4": {
+        "input": 5e-06,
+        "output": 1.5e-05
+      }
+    },
+    "error_types": [
+      "none",
+      "algebraic_error",
+      "reasoning_error",
+      "hallucination",
+      "incomplete_solution",
+      "notation_error",
+      "wrong_interpretation",
+      "calculation_error",
+      "formatting_error",
+      "no_answer",
+      "technical_error",
+      "weak_reference"
+    ]
+  },
+  "experiment_hash": "aa55937505a7fe9f971853960a85255263971986f6ead3595779ec38336bbe4a",
+  "environment": {
+    "captured_at_utc": "2026-07-19T10:31:22Z",
+    "python_version": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:29:09) [MSC v.1943 64 bit (AMD64)]",
+    "python_executable": "C:\\ProgramData\\spyder-6\\envs\\spyder-runtime\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+    "machine": "AMD64",
+    "system": "Windows",
+    "release": "11",
+    "script_file": "gpt_poo_paper_v8_1.py",
+    "script_path": "c:\\users\\tomas\\downloads\\gpt_poo_paper_v8_1.py",
+    "script_sha256": "f16ea2d12940aa7c6b746231de460a57ff9537f38d6084579a796443ec029ccc",
+    "openai_python_sdk": "2.37.0",
+    "numpy_version": "2.4.2",
+    "pandas_version": "3.0.0",
+    "scipy_version": "1.17.0",
+    "pypdf_version": "6.11.0",
+    "openpyxl_version": "3.1.5",
+    "experiment_hash": "aa55937505a7fe9f971853960a85255263971986f6ead3595779ec38336bbe4a",
+    "log_path": "logs_experimento\\experiment_20260719_113948.log"
+  },
+  "dataset_name": "andalucia_2023",
+  "base_name": "examen_matematicas_ii_andalucia_2023_enunciado",
+  "timestamp": "20260719_113956",
+  "generated_at_utc": "2026-07-19T10:31:22Z",
+  "problem_pdf_sha256": "3c73d7569c1433d92a94cc59d448ac36b1ef461888db782ababda36489d9f359",
+  "solution_pdf_sha256": "4b05ce2ac6d2a6131db0b11c35fa385a9e3e4f825604711712c3c241072eb88a",
+  "api_endpoints": {
+    "responses": "client.responses.create",
+    "assistants": "client.beta.assistants / threads / runs"
+  },
+  "inference_parameters": {
+    "temperature": "provider_default_not_explicitly_set",
+    "top_p": "provider_default_not_explicitly_set",
+    "seed": "not_set_or_not_exposed",
+    "text_verbosity": "low",
+    "reasoning_effort_solver": "high",
+    "reasoning_effort_reference": "low",
+    "reasoning_effort_judge": "low"
+  }
+}

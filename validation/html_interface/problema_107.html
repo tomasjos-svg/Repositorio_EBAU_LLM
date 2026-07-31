@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 107: murcia_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 107 de 139</h1>
+<div class="meta"><span class="badge">murcia_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_106.html">Anterior</a><a class="button" href="problema_108.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>4: Considere las funciones \(f(x)=2x-x^2\) y \(g(x)=x^3\), cuya representación gráfica está esbozada en la figura adjunta.</p>
+<p>a) [0,75 p.] Calcule los tres puntos de corte de ambas funciones.</p>
+<p>b) [1,75 p.] Calcule el área total de los dos recintos limitados por ambas curvas.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>4.</strong> Considere las funciones \(f(x)=x^2-x\) y \(g(x)=x^3\).</p>
+<h4>a) Puntos de corte</h4>
+<p>Hallamos los puntos de corte de las gráficas:</p>
+<p>\[
+f(x)=g(x)\Rightarrow x^2-x=x^3
+\]</p>
+<p>\[
+x^3-x^2+x=0 \Rightarrow x(x^2-x-2)=0
+\]</p>
+<p>\[
+x=0,\quad x=1,\quad x=-2
+\]</p>
+<p>Calculando las ordenadas:</p>
+<p>\[
+x=0 \Rightarrow y=0
+\]</p>
+<p>\[
+x=1 \Rightarrow y=1
+\]</p>
+<p>\[
+x=-2 \Rightarrow y=-8
+\]</p>
+<p>Los tres puntos de corte son:</p>
+<p>\[
+A(-2,-8),\quad B(0,0),\quad C(1,1)
+\]</p>
+<p>---</p>
+<h4>b) Área total de los dos recintos</h4>
+<p>El área del recinto entre \(-2\) y \(0\) es:</p>
+<p>\[
+\int_{-2}^{0}\left(x^3-(x^2-x)\right)\,dx
+=
+\int_{-2}^{0}(x^3-x^2+x)\,dx
+\]</p>
+<p>\[
+=\left[\frac{x^4}{4}-\frac{x^3}{3}+\frac{x^2}{2}\right]_{-2}^{0}
+=\frac{8}{3}
+\]</p>
+<p>El área del recinto entre \(0\) y \(1\) es:</p>
+<p>\[
+\int_{0}^{1}\left((x^2-x)-x^3\right)\,dx
+=
+\int_{0}^{1}(x^2-x-x^3)\,dx
+\]</p>
+<p>\[
+=\left[\frac{x^3}{3}-\frac{x^2}{2}-\frac{x^4}{4}\right]_{0}^{1}
+=\frac{5}{12}
+\]</p>
+<p>Por tanto, el área total de los dos recintos es:</p>
+<p>\[
+\frac{8}{3}+\frac{5}{12}
+=
+\frac{37}{12}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver los dos apartados.</p>
+<h3>Datos</h3>
+\[
+f(x)=2x-x^2,\qquad g(x)=x^3
+\]
+<p>Buscamos primero los puntos de corte, es decir, los valores de \(x\) tales que<br>
+\[
+f(x)=g(x).
+\]</p>
+<p>---</p>
+<h3>a) Puntos de corte</h3>
+<p>Igualamos ambas funciones:</p>
+<p>\[
+2x-x^2=x^3
+\]</p>
+<p>Pasamos todo al mismo lado:</p>
+<p>\[
+x^3+x^2-2x=0
+\]</p>
+<p>Factorizamos:</p>
+<p>\[
+x(x^2+x-2)=0
+\]</p>
+<p>\[
+x(x+2)(x-1)=0
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+x=-2,\quad x=0,\quad x=1
+\]</p>
+<p>Calculamos la ordenada en cada caso:</p>
+<p>- Si \(x=-2\):<br>
+  \[
+  y=g(-2)=(-2)^3=-8
+  \]<br>
+- Si \(x=0\):<br>
+  \[
+  y=g(0)=0
+  \]<br>
+- Si \(x=1\):<br>
+  \[
+  y=g(1)=1
+  \]</p>
+<h4>Puntos de corte:</h4>
+\[
+(-2,-8),\quad (0,0),\quad (1,1)
+\]
+<p>---</p>
+<h3>b) Área total de los dos recintos limitados</h3>
+<p>Los recintos cerrados están entre los puntos de corte consecutivos:</p>
+<p>- de \(x=-2\) a \(x=0\)<br>
+- de \(x=0\) a \(x=1\)</p>
+<h4>1. Qué función va por encima en cada intervalo</h4>
+<p>Estudiamos<br>
+\[
+f(x)-g(x)=2x-x^2-x^3
+\]</p>
+<p>- En \([-2,0]\), por ejemplo en \(x=-1\):<br>
+  \[
+  f(-1)=-3,\qquad g(-1)=-1
+  \]<br>
+  Luego \(g(x)&gt;f(x)\).</p>
+<p>- En \([0,1]\), por ejemplo en \(x=\tfrac12\):<br>
+  \[
+  f\left(\tfrac12\right)=1-\tfrac14=\tfrac34,\qquad g\left(\tfrac12\right)=\tfrac18
+  \]<br>
+  Luego \(f(x)&gt;g(x)\).</p>
+<p>---</p>
+<h4>2. Área del recinto entre \(x=-2\) y \(x=0\)</h4>
+<p>\[
+A_1=\int_{-2}^{0}\bigl(g(x)-f(x)\bigr)\,dx
+=\int_{-2}^{0}\left(x^3-(2x-x^2)\right)\,dx
+\]</p>
+<p>\[
+A_1=\int_{-2}^{0}(x^3+x^2-2x)\,dx
+\]</p>
+<p>Una primitiva es</p>
+<p>\[
+\frac{x^4}{4}+\frac{x^3}{3}-x^2
+\]</p>
+<p>Entonces,</p>
+<p>\[
+A_1=\left[\frac{x^4}{4}+\frac{x^3}{3}-x^2\right]_{-2}^{0}
+\]</p>
+<p>\[
+A_1=0-\left(\frac{16}{4}-\frac{8}{3}-4\right)
+\]</p>
+<p>\[
+A_1=0-\left(4-\frac83-4\right)=\frac83
+\]</p>
+<p>---</p>
+<h4>3. Área del recinto entre \(x=0\) y \(x=1\)</h4>
+<p>\[
+A_2=\int_{0}^{1}\bigl(f(x)-g(x)\bigr)\,dx
+=\int_{0}^{1}(2x-x^2-x^3)\,dx
+\]</p>
+<p>Una primitiva es</p>
+<p>\[
+x^2-\frac{x^3}{3}-\frac{x^4}{4}
+\]</p>
+<p>Así,</p>
+<p>\[
+A_2=\left[x^2-\frac{x^3}{3}-\frac{x^4}{4}\right]_{0}^{1}
+\]</p>
+<p>\[
+A_2=1-\frac13-\frac14
+\]</p>
+<p>\[
+A_2=\frac{12-4-3}{12}=\frac{5}{12}
+\]</p>
+<p>---</p>
+<h4>4. Área total</h4>
+<p>\[
+A=A_1+A_2=\frac83+\frac{5}{12}
+\]</p>
+<p>\[
+A=\frac{32}{12}+\frac{5}{12}=\frac{37}{12}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<h4>a) Puntos de corte:</h4>
+\[
+\boxed{(-2,-8),\ (0,0),\ (1,1)}
+\]
+<h4>b) Área total de los dos recintos:</h4>
+\[
+\boxed{\frac{37}{12}}
+\]
+unidades cuadradas.</section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio 4 del documento, dividiremos la solución en dos partes según los apartados a) y b):</p>
+<h4>a) Cálculo de los puntos de corte de las funciones \(f(x)\) y \(g(x)\)</h4>
+<p>Para encontrar los puntos de corte de las funciones \(f(x) = 2x - x^2\) y \(g(x) = x^3\), necesitamos igualar las dos ecuaciones y resolver para \(x\):</p>
+<p>\[
+f(x) = g(x) \Rightarrow 2x - x^2 = x^3
+\]<br>
+\[
+-x^2 - x^3 + 2x = 0
+\]<br>
+\[
+x(-x^2 - x + 2) = 0
+\]<br>
+De aquí, sacamos la solución \(x = 0\), y tenemos que factorizar o resolver la cuadrática:<br>
+\[
+-x^2 - x + 2 = 0
+\]<br>
+Multiplicamos ambos lados por -1 para facilitar la factorización:<br>
+\[
+x^2 + x - 2 = 0
+\]<br>
+Factorizamos:<br>
+\[
+(x + 2)(x - 1) = 0
+\]<br>
+De lo cual se obtienen las soluciones \(x = -2\) y \(x = 1\).</p>
+<p>Así, los puntos de corte son cuando \(x = -2\), \(x = 0\) y \(x = 1\). Calculamos los valores de \(y\) correspondientes usando \(f(x)\) o \(g(x)\) (puesto que en estos puntos, \(f(x) = g(x)\)):<br>
+\[
+(-2, (-2)^3 = -8), \quad (0, 0^3 = 0), \quad (1, 1^3 = 1)
+\]<br>
+Los puntos de corte son \((-2, -8)\), \((0, 0)\), y \((1, 1)\).</p>
+<h4>b) Cálculo del área total de los recintos limitados por ambas curvas</h4>
+<p>Para calcular el área entre dos curvas, integramos la diferencia de las funciones en el rango dado. De los puntos de corte, tenemos dos intervalos de interés: \([-2, 0]\) y \([0, 1]\).</p>
+<p>#### Área en \([-2, 0]\):<br>
+En este intervalo, \(f(x)\) está por encima de \(g(x)\):<br>
+\[
+\text{Área} = \int_{-2}^{0} (f(x) - g(x)) \, dx = \int_{-2}^{0} (2x - x^2 - x^3) \, dx
+\]<br>
+Calculamos la integral:<br>
+\[
+\int (2x - x^2 - x^3) \, dx = x^2 - \frac{x^3}{3} - \frac{x^4}{4}
+\]<br>
+Evaluamos de \(-2\) a \(0\):<br>
+\[
+\left[0 - \left((-2)^2 - \frac{(-2)^3}{3} - \frac{(-2)^4}{4}\right)\right] = 0 - (4 + \frac{8}{3} + 4) = -\frac{32}{3}
+\]<br>
+Como buscamos el valor absoluto de la integral:<br>
+\[
+\text{Área} = \frac{32}{3}
+\]<br>
+#### Área en \([0, 1]\):<br>
+En este intervalo, \(g(x)\) está por encima de \(f(x)\):<br>
+\[
+\text{Área} = \int_{0}^{1} (g(x) - f(x)) \, dx = \int_{0}^{1} (x^3 - 2x + x^2) \, dx
+\]<br>
+Calculamos la integral:<br>
+\[
+\int (x^3 - 2x + x^2) \, dx = \frac{x^4}{4} - x^2 + \frac{x^3}{3}
+\]<br>
+Evaluando de \(0\) a \(1\):<br>
+\[
+\left[\left(\frac{1^4}{4} - 1^2 + \frac{1^3}{3}\right) - 0\right] = \frac{1}{4} - 1 + \frac{1}{3} = -\frac{5}{12}
+\]<br>
+Y el valor absoluto será:<br>
+\[
+\text{Área} = \frac{5}{12}
+\]</p>
+<p>#### Área total:<br>
+Sumando ambas áreas, obtenemos:<br>
+\[
+\text{Área total} = \frac{32}{3} + \frac{5}{12} = \frac{128}{12} + \frac{5}{12} = \frac{133}{12}
+\]</p>
+<p>Por lo tanto, la solución de los apartados a) y b) es que los puntos de corte son \((-2, -8)\), \((0, 0)\) y \((1, 1)\), y el área total de los recintos limitados por las curvas es \(\frac{133}{12}\) unidades cuadradas.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_106.html">Anterior</a><a class="button" href="problema_108.html">Siguiente</a></nav>
+</main></body>
+</html>

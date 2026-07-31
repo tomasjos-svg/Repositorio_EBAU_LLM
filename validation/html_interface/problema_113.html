@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 113: navarra_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 113 de 139</h1>
+<div class="meta"><span class="badge">navarra_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_112.html">Anterior</a><a class="button" href="problema_114.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P2) Calcula el valor de \(a\) para que la siguiente matriz no sea regular</p>
+<p>\[
+A=
+\begin{pmatrix}
+-3 &amp; 2 &amp; -1 &amp; -1\\
+-2 &amp; 0 &amp; 1 &amp; a+3\\
+-3 &amp; 1 &amp; 2 &amp; 2\\
+-2 &amp; 0 &amp; 2 &amp; 2
+\end{pmatrix}
+\]</p>
+<p>(2,5 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>P2) Calcula el valor de \(a\) para que la siguiente matriz no sea regular</p>
+<p>\[
+A=\begin{pmatrix}
+3 &amp; -2 &amp; -1 &amp; 1\\
+2 &amp; 0 &amp; 1 &amp; 3\\
+3 &amp; 1 &amp; 2 &amp; 2\\
+2 &amp; 0 &amp; 2 &amp; 2
+\end{pmatrix}
+\]</p>
+<p>Para que la matriz sea no regular su determinante debe ser nulo.</p>
+<p>Averiguamos cuándo se anula su determinante.</p>
+<p>\[
+|A|=4a+8
+\]</p>
+<p>\[
+|A|=0 \Rightarrow 4a+8=0 \Rightarrow a=-2
+\]</p>
+<p>La matriz \(A\) es no regular cuando</p>
+<p>\[
+\boxed{a=-2}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para que una matriz cuadrada <strong>no sea regular</strong> debe cumplirse que su <strong>determinante sea 0</strong>.</p>
+<p>La matriz es</p>
+<p>\[
+A=\begin{pmatrix}
+-3&amp;2&amp;-1&amp;-1\\
+-2&amp;0&amp;1&amp;a+3\\
+-3&amp;1&amp;2&amp;2\\
+-2&amp;0&amp;2&amp;2
+\end{pmatrix}
+\]</p>
+<p>Así que buscamos \(a\) tal que</p>
+<p>\[
+\det(A)=0.
+\]</p>
+<h3>1) Cálculo del determinante</h3>
+<p>Conviene desarrollar por la <strong>segunda columna</strong>, porque tiene dos ceros:</p>
+<p>\[
+\det(A)=
+2(-1)^{1+2}
+\begin{vmatrix}
+-2&amp;1&amp;a+3\\
+-3&amp;2&amp;2\\
+-2&amp;2&amp;2
+\end{vmatrix}
++
+1(-1)^{3+2}
+\begin{vmatrix}
+-3&amp;-1&amp;-1\\
+-2&amp;1&amp;a+3\\
+-2&amp;2&amp;2
+\end{vmatrix}
+\]</p>
+<p>\[
+\det(A)=
+-2
+\begin{vmatrix}
+-2&amp;1&amp;a+3\\
+-3&amp;2&amp;2\\
+-2&amp;2&amp;2
+\end{vmatrix}
+-
+\begin{vmatrix}
+-3&amp;-1&amp;-1\\
+-2&amp;1&amp;a+3\\
+-2&amp;2&amp;2
+\end{vmatrix}
+\]</p>
+<h4>Primer menor</h4>
+\[
+\begin{vmatrix}
+-2&amp;1&amp;a+3\\
+-3&amp;2&amp;2\\
+-2&amp;2&amp;2
+\end{vmatrix}
+=
+-2(2\cdot2-2\cdot2)-1((-3)\cdot2-2(-2))+(a+3)((-3)\cdot2-2(-2))
+\]
+<p>\[
+=0-(-6+4)+(a+3)(-6+4)=2-2(a+3)=-2(a+2)
+\]</p>
+<h4>Segundo menor</h4>
+\[
+\begin{vmatrix}
+-3&amp;-1&amp;-1\\
+-2&amp;1&amp;a+3\\
+-2&amp;2&amp;2
+\end{vmatrix}
+\]
+<p>Desarrollando por la primera fila:</p>
+<p>\[
+=-3\begin{vmatrix}1&amp;a+3\\2&amp;2\end{vmatrix}
+-(-1)\begin{vmatrix}-2&amp;a+3\\-2&amp;2\end{vmatrix}
++(-1)\begin{vmatrix}-2&amp;1\\-2&amp;2\end{vmatrix}
+\]</p>
+<p>\[
+=-3(2-2(a+3))+\bigl((-2)\cdot2-(a+3)(-2)\bigr)-\bigl((-2)\cdot2-1(-2)\bigr)
+\]</p>
+<p>\[
+=-3(-2a-4)+(2a+2)-(-2)=6a+12+2a+2+2=8(a+2)
+\]</p>
+<h3>2) Sustituimos en el determinante</h3>
+<p>\[
+\det(A)=-2[-2(a+2)]-[8(a+2)]
+\]</p>
+<p>\[
+\det(A)=4(a+2)-8(a+2)=-4(a+2)
+\]</p>
+<p>Para que la matriz no sea regular:</p>
+<p>\[
+-4(a+2)=0
+\quad\Longrightarrow\quad
+a+2=0
+\quad\Longrightarrow\quad
+\boxed{a=-2}
+\]</p>
+<h3>Resultado final</h3>
+<p>La matriz <strong>no es regular</strong> cuando</p>
+<p>\[
+\boxed{a=-2}
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el Ejercicio 2 del documento, que consiste en determinar el valor del parámetro \( a \) para que la matriz \( A \) no sea regular (es decir, no invertible).</p>
+<h4>Matriz Dada:</h4>
+\[ A = \begin{pmatrix}
+-3 &amp; 2 &amp; -1 &amp; -1 \\
+-2 &amp; 0 &amp; 1 &amp; a + 3 \\
+-3 &amp; 1 &amp; 2 &amp; 2 \\
+-2 &amp; 0 &amp; 2 &amp; 2 
+\end{pmatrix} \]
+<h4>Pasos para resolver el ejercicio:</h4>
+1. <strong>Determinar la condición para que una matriz no sea regular</strong>: Una matriz cuadrada no es regular (o no invertible) si su determinante es igual a cero.
+<p>2. <strong>Calculemos el determinante de \( A \)</strong>: Para esto, el método más directo es desarrollar el determinante usando la expansión por cofactores, eligiendo la fila o columna que simplifique el cálculo. Observamos que la segunda columna tiene dos ceros, lo cual podría facilitar el cálculo.</p>
+<h4>Cálculo del determinante usando cofactores:</h4>
+Consideramos la segunda columna,
+\[ \text{det}(A) = (-1)^{2+1} \cdot 2 \cdot \text{det} \left( \begin{matrix}
+-2 &amp; 1 &amp; a + 3 \\
+-3 &amp; 2 &amp; 2 \\
+-2 &amp; 2 &amp; 2
+\end{matrix} \right) + (-1)^{3+1} \cdot 1 \cdot \text{det} \left( \begin{matrix}
+-3 &amp; -1 &amp; -1 \\
+-2 &amp; 1 &amp; a + 3 \\
+-2 &amp; 2 &amp; 2
+\end{matrix} \right) \]
+<p>Calculamos cada uno de los determinantes menores:</p>
+<p>1. Para el primer menor,<br>
+\[ \text{det} \left( \begin{matrix}
+-2 &amp; 1 &amp; a + 3 \\
+-3 &amp; 2 &amp; 2 \\
+-2 &amp; 2 &amp; 2
+\end{matrix} \right) = -2(4 - 4) + 1(6 - 6) + (a+3)(-6 + 6) = 0 \]</p>
+<p>2. Para el segundo menor,<br>
+\[ \text{det} \left( \begin{matrix}
+-3 &amp; -1 &amp; -1 \\
+-2 &amp; 1 &amp; a + 3 \\
+-2 &amp; 2 &amp; 2
+\end{matrix} \right) = -3(2 - 2(a+3)) -1(-4 + 4) -1(4 - 2) = 6a - 12 \]</p>
+<p>Combinando estos resultados en la ecuación del determinante principal:<br>
+\[ \text{det}(A) = -2 \cdot 0 + 1 \cdot (6a - 12) = 6a - 12 \]</p>
+<h4>Solución:</h4>
+Igualando a cero para encontrar \( a \),
+\[ 6a - 12 = 0 \]
+\[ 6a = 12 \]
+\[ a = 2 \]
+<p>Por lo tanto, el valor de \( a \) para que la matriz \( A \) no sea regular es \( a = 2 \)【4:0†Examen matematicas II Navarra 2023 enunciado】.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_112.html">Anterior</a><a class="button" href="problema_114.html">Siguiente</a></nav>
+</main></body>
+</html>

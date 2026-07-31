@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 77: extremadura_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 77 de 139</h1>
+<div class="meta"><span class="badge">extremadura_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_076.html">Anterior</a><a class="button" href="problema_078.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>4. Dados los puntos \(A=(0,0,2)\) y \(B=(1,1,0)\) y la recta  <br>
+\[
+r:\begin{cases}
+x=1\\
+y=z
+\end{cases}
+\]</p>
+<p>a) Hallar el plano que contiene a \(r\) y es paralelo al vector \(\overrightarrow{AB}\). \((1,25\ \text{puntos})\)</p>
+<p>b) Hallar la distancia del punto \(A\) a la recta \(r\). \((0,75\ \text{puntos})\)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 4. Solución oficial</strong></p>
+<p>Dados los puntos \((0,0,2)\) y \((1,1,0)\), y la recta \(r: x=1,\ y=z\).</p>
+<h4>a) Hallar el plano que contiene a \(r\) y es paralelo al vector \(\overrightarrow{AB}\)</h4>
+<p>Obtenemos las ecuaciones paramétricas de la recta \(r\):</p>
+<p>\[
+r:\begin{cases}
+x=1\\
+y=\lambda\\
+z=\lambda
+\end{cases}
+\]</p>
+<p>Por tanto, un punto de la recta es</p>
+<p>\[
+P_r=(1,0,0)
+\]</p>
+<p>y un vector director de \(r\) es</p>
+<p>\[
+\vec v_r=(0,1,1)
+\]</p>
+<p>El plano que contiene a \(r\) y es paralelo al vector \(\overrightarrow{AB}\) tiene como vectores directores el vector director de la recta \(r\) y el vector \(\overrightarrow{AB}\), y contiene el punto \(P_r\).</p>
+<p>\[
+\overrightarrow{AB}=(1,1,0)-(0,0,2)=(1,1,-2)
+\]</p>
+<p>\[
+\pi:
+\begin{vmatrix}
+x-1 &amp; y &amp; z\\
+0 &amp; 1 &amp; 1\\
+1 &amp; 1 &amp; -2
+\end{vmatrix}=0
+\]</p>
+<p>Desarrollando:</p>
+<p>\[
+-3x+y-z+3=0
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{\pi:\ -3x+y-z+3=0}
+\]</p>
+<p>---</p>
+<h4>b) Hallar la distancia del punto \(A\) a la recta \(r\)</h4>
+<p>Hallamos la ecuación del plano \(\pi\) perpendicular a la recta \(r\) que pasa por el punto \(A\).</p>
+<p>Como el vector director de \(r\) es \((0,1,1)\), será vector normal del plano:</p>
+<p>\[
+\pi: y+z+D=0
+\]</p>
+<p>Pasa por \(A=(0,0,2)\):</p>
+<p>\[
+0+2+D=0 \Rightarrow D=-2
+\]</p>
+<p>Luego:</p>
+<p>\[
+\pi: y+z-2=0
+\]</p>
+<p>Hallamos el punto \(P\) de intersección de plano y recta:</p>
+<p>\[
+\begin{cases}
+y+z-2=0\\
+x=1\\
+y=z
+\end{cases}
+\]</p>
+<p>\[
+z+z-2=0 \Rightarrow z=1
+\]</p>
+<p>\[
+y=1,\quad x=1
+\]</p>
+<p>\[
+P=(1,1,1)
+\]</p>
+<p>La distancia del punto \(A\) a la recta es la distancia del punto \(A\) al punto \(P\), es decir, el módulo del vector \(\overrightarrow{AP}\).</p>
+<p>\[
+\overrightarrow{AP}=(1,1,1)-(0,0,2)=(1,1,-1)
+\]</p>
+<p>\[
+D(A,r)=D(A,P)=|\overrightarrow{AP}|
+\]</p>
+<p>\[
+D(A,r)=\sqrt{1^2+1^2+(-1)^2}=\sqrt{3}
+\]</p>
+<p>\[
+\boxed{D(A,r)=\sqrt{3}\text{ unidades}}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver los dos apartados.</p>
+<h3>Datos</h3>
+\[
+A=(0,0,2), \qquad B=(1,1,0)
+\]
+y la recta
+\[
+r:\begin{cases}
+x=1\\
+y=z
+\end{cases}
+\]
+<p>Una parametrización de \(r\) es:<br>
+\[
+r:\ (x,y,z)=(1,0,0)+t(0,1,1)
+\]<br>
+Así, un punto de la recta es<br>
+\[
+P=(1,0,0)
+\]<br>
+y un vector director de \(r\) es<br>
+\[
+\vec v=(0,1,1).
+\]</p>
+<p>Además,<br>
+\[
+\overrightarrow{AB}=B-A=(1,1,-2).
+\]</p>
+<p>---</p>
+<h3>a) Plano que contiene a \(r\) y es paralelo a \(\overrightarrow{AB}\)</h3>
+<p>El plano debe contener la recta \(r\), así que contiene el vector director \(\vec v=(0,1,1)\).</p>
+<p>Además, debe ser paralelo a \(\overrightarrow{AB}=(1,1,-2)\), así que ese vector también pertenece al plano.</p>
+<p>Por tanto, dos vectores directores del plano son:<br>
+\[
+\vec v=(0,1,1), \qquad \vec w=(1,1,-2).
+\]</p>
+<p>Un vector normal del plano se obtiene con el producto vectorial:<br>
+\[
+\vec n=\vec v\times \vec w=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+0&amp;1&amp;1\\
+1&amp;1&amp;-2
+\end{vmatrix}
+=(-3,1,-1).
+\]</p>
+<p>Tomando el punto \(P=(1,0,0)\), la ecuación del plano es:<br>
+\[
+-3(x-1)+1(y-0)-1(z-0)=0
+\]<br>
+es decir,<br>
+\[
+-3x+3+y-z=0.
+\]</p>
+<p>Equivalentemente,<br>
+\[
+\boxed{3x-y+z-3=0}.
+\]</p>
+<p>---</p>
+<h3>b) Distancia del punto \(A\) a la recta \(r\)</h3>
+<p>Usamos la fórmula:<br>
+\[
+d(A,r)=\frac{\| \overrightarrow{PA}\times \vec v\|}{\|\vec v\|}
+\]<br>
+donde \(P=(1,0,0)\in r\), \(\vec v=(0,1,1)\), y<br>
+\[
+\overrightarrow{PA}=A-P=(0,0,2)-(1,0,0)=(-1,0,2).
+\]</p>
+<p>Calculamos el producto vectorial:<br>
+\[
+\overrightarrow{PA}\times \vec v=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+-1&amp;0&amp;2\\
+0&amp;1&amp;1
+\end{vmatrix}
+=(-2,1,-1).
+\]</p>
+<p>Su norma es:<br>
+\[
+\|(-2,1,-1)\|=\sqrt{4+1+1}=\sqrt6.
+\]</p>
+<p>Y<br>
+\[
+\|\vec v\|=\sqrt{0^2+1^2+1^2}=\sqrt2.
+\]</p>
+<p>Entonces,<br>
+\[
+d(A,r)=\frac{\sqrt6}{\sqrt2}=\sqrt3.
+\]</p>
+<p>Por tanto,<br>
+\[
+\boxed{d(A,r)=\sqrt3}.
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p><strong>a)</strong> El plano pedido es  <br>
+\[
+\boxed{3x-y+z-3=0}.
+\]</p>
+<p><strong>b)</strong> La distancia del punto \(A\) a la recta \(r\) es  <br>
+\[
+\boxed{\sqrt3}.
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio 4, abordemos cada apartado por separado:</p>
+<h4>Apartado a) Hallar el plano que contiene a \(r\) y es paralelo al vector \(\overrightarrow{AB}\)</h4>
+<p>Primero, calculemos el vector \(\overrightarrow{AB}\) usando las coordenadas de los puntos \(A\) y \(B\):<br>
+\[
+\overrightarrow{AB} = B - A = (1-0, 1-0, 0-2) = (1, 1, -2)
+\]</p>
+<p>Sabemos que la recta \(r\) tiene las ecuaciones paramétricas:<br>
+\[
+x=1, \quad y=z
+\]</p>
+<p>Podemos reescribir la ecuación \(y=z\) de manera paramétrica como \(y=t\) y \(z=t\). Así, un vector director de la recta \(r\) es \((0, 1, 1)\).</p>
+<p>Para encontrar un plano que contenga a la recta \(r\) y sea paralelo al vector \(\overrightarrow{AB}\), necesitamos un vector normal al plano, el cual podemos obtener hallando el producto cruz entre el vector director de \(r\) y \(\overrightarrow{AB}\):<br>
+\[
+\vec{n} = (0, 1, 1) \times (1, 1, -2) = \begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -2 \end{vmatrix} = \hat{i}(1\cdot(-2) - 1\cdot(1)) - \hat{j}(0\cdot(-2) - 1\cdot(1)) + \hat{k}(0\cdot(1) - 1\cdot(1))
+        = -3\hat{i} + \hat{j} - \hat{k}
+        = (-3, 1, -1)
+\]</p>
+<p>Sabemos que un punto por el que pasa la recta \(r\) es \( (1, 0, 0) \) cuando \( t = 0 \). Así que la ecuación del plano que contiene a \(r\) y es paralelo a \(\overrightarrow{AB}\), usando el vector normal encontrado y el punto mencionado, es:<br>
+\[
+-3(x-1) + 1y - 1z = 0 \quad \Rightarrow \quad -3x + 3 + y - z = 0 \quad \Rightarrow \quad -3x + y - z + 3 = 0
+\]</p>
+<h4>Apartado b) Hallar la distancia del punto \(A\) a la recta \(r\)</h4>
+<p>La distancia \(D\) de un punto a una recta en el espacio se puede calcular utilizando la fórmula:<br>
+\[
+D = \frac{\left\| (\text{Punto} - \text{Punto en recta}) \times \text{Vector director} \right\| }{\left\| \text{Vector director} \right\|}
+\]</p>
+<p>Usando \(A = (0,0,2)\) y un punto sobre la recta \(r\) que podemos tomar como \((1,0,0)\) (para \(t=0\)), y el vector director \((0,1,1)\):<br>
+\[
+\overrightarrow{PA} = A - (1,0,0) = (0-1, 0-0, 2-0) = (-1,0,2)
+\]</p>
+<p>El producto cruz entre \(\overrightarrow{PA}\) y el vector director \((0,1,1)\) es:<br>
+\[
+\begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ -1 &amp; 0 &amp; 2 \\ 0 &amp; 1 &amp; 1 \end{vmatrix} = \hat{i}(0\cdot1 - 2\cdot1) - \hat{j}(-1\cdot1 - 2\cdot0) + \hat{k}(-1\cdot1 - 0\cdot0) = -2\hat{i} + \hat{j} - \hat{k}
+\]</p>
+<p>Calculando la norma del vector resultante:<br>
+\[
+\| \vec{v} \| = \sqrt{(-2)^2 + 1^2 + (-1)^2} = \sqrt{4 + 1 + 1} = \sqrt{6}
+\]</p>
+<p>La norma del vector director de \(r\) es:<br>
+\[
+\| (0,1,1) \| = \sqrt{0^2 + 1^2 + 1^2} = \sqrt{2}
+\]</p>
+<p>Finalmente, la distancia de \(A\) a \(r\) es:<br>
+\[
+D = \frac{\sqrt{6}}{\sqrt{2}} = \sqrt{3}
+\]</p>
+<p>Así, los resultados son el plano con ecuación \(-3x + y - z + 3 = 0\) y la distancia de \(A\) a \(r\) que es \(\sqrt{3}\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_076.html">Anterior</a><a class="button" href="problema_078.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 38: canarias_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 38 de 139</h1>
+<div class="meta"><span class="badge">canarias_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_037.html">Anterior</a><a class="button" href="problema_039.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p><strong>Bloque 4.- Probabilidad (seleccione solo una pregunta)</strong></p>
+<p><strong>4A.</strong> Aythami tiene un sobre donde guarda el dinero que ha podido reunir, el sobre contiene: 4 billetes de 5 €, 6 billetes de 10 € y 2 billetes de 50 €. Quiere comprar algunas cosas y decide dejar al azar cuánto dinero va a coger del sobre. Para ello, saca aleatoriamente, sin reemplazamiento y de forma consecutiva, dos billetes del sobre.</p>
+<p>a) Expresar el espacio muestral del experimento que va a realizar Aythami.  <br>
+b) Si se quiere comprar un videojuego que cuesta 57 €, ¿qué probabilidad hay de que pueda hacerlo con los billetes que saca del sobre?  <br>
+c) Si al final obtiene, con este experimento, 60 € del sobre, ¿qué probabilidad hay de que el primer billete fuera de 10 €?</p>
+<p><strong>4B.</strong> La probabilidad de que un coche de carreras sufra un reventón en un neumático durante una competición es de 0.04. En una competición en la que participan 10 coches:</p>
+<p>a) ¿Cuál es la probabilidad de que se produzcan 2 reventones?  <br>
+b) Se afirma que existe como mucho un 1% de posibilidades de que ocurran más de 2 reventones durante la carrera. ¿Es cierta esta afirmación? Justifícalo.  <br>
+c) Estudiamos las competiciones realizadas en una temporada con un total de 250 coches, ¿qué probabilidad hay de que se produzcan más de 12 reventones en total? (Suponiendo la independencia de los sucesos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><h3>Ejercicio 4A</h3>
+<p><strong>a)</strong> Si definimos el experimento como sacar dos billetes del sobre sin reemplazamiento y \(X=\) la cantidad de euros obtenida.</p>
+<p>Entonces:</p>
+<p>\[
+E=\{10,15,20,55,60,100\}
+\]</p>
+<p><strong>b)</strong></p>
+<p>\[
+P(A\ge 57)=P(A=60)+P(A=100)
+\]</p>
+<p>\[
+P(A=60)=\frac{6}{12}\frac{2}{11}+\frac{2}{12}\frac{6}{11}=\frac{2}{11}
+\]</p>
+<p>\[
+P(A=100)=\frac{2}{12}\frac{1}{11}=\frac{1}{66}
+\]</p>
+<p>\[
+P(A\ge 57)=\frac{2}{11}+\frac{1}{66}=\frac{13}{66}\approx 0.1970
+\]</p>
+<p>Tendría una probabilidad aproximada del 20% de comprarse el videojuego con el dinero que obtiene del sobre.</p>
+<p><strong>c)</strong> Aplicando el Teorema de Bayes:</p>
+<p>\[
+P(1^\circ 10 \mid A=60)=
+\frac{P(1^\circ 10)\,P(X=60\mid 1^\circ 10)}{P(X=60)}
+\]</p>
+<p>\[
+=
+\frac{\frac{6}{12}\frac{2}{11}}
+{\frac{6}{12}\frac{2}{11}+\frac{2}{12}\frac{6}{11}}
+=
+\frac{\frac{1}{11}}{\frac{2}{11}}
+=
+\frac{1}{2}=0.5
+\]</p>
+<p>La probabilidad de que habiendo obtenido 60 con este experimento, el primer billete fuese de 10 es de 0.5.</p>
+<p>---</p>
+<h3>Ejercicio 4B</h3>
+<p><strong>a)</strong> \(p\) es la proporción de coches que tienen un reventón en la carrera: \(p=0.04\).</p>
+<p>Llamamos \(X\) al número de coches que sufren un reventón en la carrera.</p>
+<p>Como cada coche sólo tiene dos posibles situaciones: que haya tenido un reventón o no, siendo sucesos independientes, se puede afirmar que:</p>
+<p>\[
+X
+\]</p>
+<p>sigue una distribución binomial de parámetros:</p>
+<p>\[
+n=10,\quad p=0.04,\quad q=0.96
+\]</p>
+<p>\[
+P(A=2)=\binom{10}{2}0.04^2 0.96^8=0.0519
+\]</p>
+<p>La probabilidad de que sólo dos coches sufran un reventón es aproximadamente del 5%.</p>
+<p><strong>b)</strong></p>
+<p>\[
+P(A&gt;2)=1-P(A\le 2)=1-(P(A=0)+P(A=1)+P(A=2))
+\]</p>
+<p>\[
+P(A=0)=\binom{10}{0}0.04^0 0.96^{10}=0.6648
+\]</p>
+<p>\[
+P(A=1)=\binom{10}{1}0.04^1 0.96^9=0.2770
+\]</p>
+<p>\[
+P(A&gt;2)=1-P(A\le 2)
+\]</p>
+<p>\[
+=1-(0.6648+0.2770+0.0519)=0.0063
+\]</p>
+<p>Es cierta la afirmación porque la probabilidad no llega al 1%.</p>
+<p><strong>c)</strong></p>
+<p>\[
+n=250
+\]</p>
+<p>Como:</p>
+<p>\[
+n\cdot p=250\cdot 0.04=10
+\]</p>
+<p>y</p>
+<p>\[
+n\cdot q=250\cdot 0.96=240\ge 5
+\]</p>
+<p>podemos aproximar esta binomial a una normal de media:</p>
+<p>\[
+\mu=np=10
+\]</p>
+<p>y desviación típica:</p>
+<p>\[
+\sigma=\sqrt{npq}=3.1
+\]</p>
+<p>\[
+A\sim N(10,3.1)
+\]</p>
+<p>\[
+P(A&gt;12)=P\left(Z&gt;\frac{12-10}{3.1}\right)
+=P(Z&gt;0.65)
+\]</p>
+<p>\[
+=1-P(Z&lt;0.65)=1-0.7422=0.2578
+\]</p>
+<p>Existe una probabilidad de 0.2578 de que haya más de 12 reventones en la competición.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Como en el bloque pone “seleccione solo una pregunta”, pero me pides <strong>resolver el ejercicio 4 completo</strong>, resuelvo <strong>4A y 4B</strong>.</p>
+<p>---</p>
+<h2><strong>4A</strong></h2>
+<p>Hay 12 billetes en total:</p>
+<p>- 4 billetes de 5 €<br>
+- 6 billetes de 10 €<br>
+- 2 billetes de 50 €</p>
+<p>Se extraen <strong>2 billetes consecutivos y sin reemplazamiento</strong>.</p>
+<h3>a) Espacio muestral</h3>
+<p>Si distinguimos los billetes individualmente, el espacio muestral son todos los <strong>pares ordenados</strong> de dos billetes distintos.</p>
+<p>Por ejemplo, llamando:</p>
+<p>- \(C_1,C_2,C_3,C_4\): billetes de 5 €<br>
+- \(D_1,\dots,D_6\): billetes de 10 €<br>
+- \(E_1,E_2\): billetes de 50 €</p>
+<p>entonces</p>
+<p>\[
+\Omega=\{(x,y): x,y\in \{C_1,\dots,C_4,D_1,\dots,D_6,E_1,E_2\},\ x\neq y\}
+\]</p>
+<p>y su cardinal es</p>
+<p>\[
+|\Omega|=12\cdot 11=132.
+\]</p>
+<p>Si solo atendemos al <strong>valor</strong> de los billetes, los posibles resultados son:</p>
+<p>\[
+\{(5,5),(5,10),(5,50),(10,5),(10,10),(10,50),(50,5),(50,10),(50,50)\}.
+\]</p>
+<p>---</p>
+<h3>b) Probabilidad de poder comprar un videojuego de 57 €</h3>
+<p>Para poder pagarlo, la suma de los dos billetes debe ser al menos 57 €.</p>
+<p>Las sumas posibles son:</p>
+<p>- \(5+5=10\)<br>
+- \(5+10=15\)<br>
+- \(10+10=20\)<br>
+- \(5+50=55\)<br>
+- \(10+50=60\)<br>
+- \(50+50=100\)</p>
+<p>Solo sirven:</p>
+<p>- un billete de 10 € y uno de 50 €<br>
+- dos billetes de 50 €</p>
+<p>Número total de extracciones de 2 billetes (sin importar orden):</p>
+<p>\[
+\binom{12}{2}=66
+\]</p>
+<p>Casos favorables:</p>
+<p>- 1 de 10 € y 1 de 50 €: \(6\cdot 2=12\)<br>
+- 2 de 50 €: \(\binom{2}{2}=1\)</p>
+<p>Total favorables:</p>
+<p>\[
+12+1=13
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+P(\text{poder comprarlo})=\frac{13}{66}\approx 0.197
+\]</p>
+<p><strong>Respuesta:</strong></p>
+<p>\[
+\boxed{\frac{13}{66}\approx 19.7\%}
+\]</p>
+<p>---</p>
+<h3>c) Si obtiene 60 €, probabilidad de que el primer billete fuera de 10 €</h3>
+<p>Queremos:</p>
+<p>\[
+P(\text{primer billete de 10 } \mid \text{suma}=60)
+\]</p>
+<p>Para sumar 60 €, necesariamente los billetes deben ser:</p>
+<p>- 10 € y 50 €, o<br>
+- 50 € y 10 €</p>
+<p>Entonces:</p>
+<p>\[
+P(\text{primer billete de 10 } \mid \text{suma}=60)
+=
+\frac{P(10,50)}{P(10,50)+P(50,10)}
+\]</p>
+<p>Ahora,</p>
+<p>\[
+P(10,50)=\frac{6}{12}\cdot\frac{2}{11}
+\]</p>
+<p>\[
+P(50,10)=\frac{2}{12}\cdot\frac{6}{11}
+\]</p>
+<p>Son iguales, luego</p>
+<p>\[
+P(\text{primer billete de 10 } \mid \text{suma}=60)=\frac{1}{2}
+\]</p>
+<p><strong>Respuesta:</strong></p>
+<p>\[
+\boxed{\frac12=50\%}
+\]</p>
+<p>---</p>
+<h2><strong>4B</strong></h2>
+<p>Sea \(X\) = número de coches que sufren reventón.</p>
+<p>Cada coche tiene probabilidad \(p=0.04\), y hay independencia, así que:</p>
+<p>\[
+X\sim \text{Binomial}(n=10,p=0.04)
+\]</p>
+<p>---</p>
+<h3>a) Probabilidad de que se produzcan 2 reventones</h3>
+<p>\[
+P(X=2)=\binom{10}{2}(0.04)^2(0.96)^8
+\]</p>
+<p>\[
+P(X=2)=45\cdot 0.0016\cdot 0.96^8 \approx 0.05194
+\]</p>
+<p><strong>Respuesta:</strong></p>
+<p>\[
+\boxed{P(X=2)\approx 0.05194}
+\]</p>
+<p>es decir, aproximadamente <strong>5.19 %</strong>.</p>
+<p>---</p>
+<h3>b) ¿Es cierto que hay como mucho un 1 % de posibilidades de que ocurran más de 2 reventones?</h3>
+<p>Queremos:</p>
+<p>\[
+P(X&gt;2)=1-[P(X=0)+P(X=1)+P(X=2)]
+\]</p>
+<p>Calculamos:</p>
+<p>\[
+P(X=0)=0.96^{10}\approx 0.66483
+\]</p>
+<p>\[
+P(X=1)=\binom{10}{1}(0.04)(0.96)^9\approx 0.27701
+\]</p>
+<p>\[
+P(X=2)\approx 0.05194
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(X&gt;2)=1-(0.66483+0.27701+0.05194)\approx 0.00621
+\]</p>
+<p>\[
+0.00621 = 0.621\%
+\]</p>
+<p>Como</p>
+<p>\[
+0.621\% &lt; 1\%
+\]</p>
+<p>la afirmación es <strong>verdadera</strong>.</p>
+<p><strong>Respuesta:</strong></p>
+<p>\[
+\boxed{P(X&gt;2)\approx 0.00621}
+\]</p>
+<p>Sí, <strong>es cierta</strong> la afirmación.</p>
+<p>---</p>
+<h3>c) En una temporada con 250 coches, probabilidad de que haya más de 12 reventones</h3>
+<p>Ahora:</p>
+<p>\[
+Y\sim \text{Binomial}(250,0.04)
+\]</p>
+<p>Queremos:</p>
+<p>\[
+P(Y&gt;12)=1-\sum_{k=0}^{12}\binom{250}{k}(0.04)^k(0.96)^{250-k}
+\]</p>
+<p>Evaluando:</p>
+<p>\[
+P(Y&gt;12)\approx 0.205
+\]</p>
+<p><strong>Respuesta:</strong></p>
+<p>\[
+\boxed{P(Y&gt;12)\approx 0.205}
+\]</p>
+<p>es decir, aproximadamente <strong>20.5 %</strong>.</p>
+<p>---</p>
+<p>Si quieres, también puedo pasarte la solución <strong>solo de 4A</strong> o <strong>solo de 4B</strong> en formato de examen, más breve y lista para copiar.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver paso a paso cada apartado del ejercicio seleccionado <strong>Bloque 4A.</strong> Este ejercicio se centra en la probabilidad y el conteo, con un escenario específico relacionado con la selección de billetes de diferentes denominaciones.</p>
+<h4>4A. Probabilidad con Billetes de Aythami</h4>
+<p><strong>a) Espacio muestral del experimento</strong></p>
+<p>Aythami tiene 4 billetes de 5 €, 6 billetes de 10 €, y 2 billetes de 50 €. Selecciona dos billetes uno tras otro, sin reemplazamiento. Necesitamos listar todas las combinaciones posibles de dos billetes sacados de este conjunto.</p>
+<p>Total de billetes = 4 + 6 + 2 = 12 billetes</p>
+<p>Combinaciones de sacar 2 billetes de 12 (en cualquier orden, sin reemplazamiento):<br>
+- $C_{total} = \binom{12}{2} = \frac{12 \times 11}{2} = 66$ combinaciones posibles.</p>
+<p>Para visualizar el espacio muestral, consideraremos las combinaciones posibles basadas en las denominaciones:<br>
+- 5 € y 5 €<br>
+- 5 € y 10 €<br>
+- 5 € y 50 €<br>
+- 10 € y 10 €<br>
+- 10 € y 50 €<br>
+- 50 € y 50 €</p>
+<p>Estas combinaciones representan los pares de billetes que Aythami podría sacar. Sin embargo, las repeticiones de cada tipo de billete (ej. cuántas formas puedes escoger dos billetes de 5 € entre los cuatro disponibles) afectan el conteo exacto dentro de estas categorías.</p>
+<p><strong>b) Probabilidad de comprar un videojuego que cuesta 57 €</strong></p>
+<p>Para que Aythami pueda comprar un videojuego de 57 €, necesita sacar exactamente:<br>
+- Un billete de 10 € y uno de 50 €<br>
+Cantidad de formas de escoger un billete de 10 € de 6 disponibles: 6<br>
+Cantidad de formas de escoger un billete de 50 € de 2 disponibles: 2<br>
+Por lo tanto, el número de resultados favorables es $6 \times 2 = 12$</p>
+<p>La probabilidad es entonces:<br>
+- $P(\text{sumar 57 €}) = \frac{12}{66} = \frac{2}{11}$</p>
+<p><strong>c) Probabilidad de que el primer billete sea de 10 € si se obtienen 60 € en total</strong></p>
+<p>Si Aythami obtiene un total de 60 €, las combinaciones para lograr esto son dos billetes de 50 € o un billete de 10 € seguido de uno de 50 €, y viceversa. Obviamente, dos billetes de 50 € no suman 60 €, nos queda:<br>
+- Un billete de 10 € y uno de 50 €</p>
+<p>Número de formas de sacar un billete de 10 € primero: 6<br>
+Número de formas de sacar un billete de 50 € después: 2</p>
+<p>Por lo tanto, la probabilidad de que el primer billete sea de 10 €, dado que la suma es 60 €, es ciertamente 1, ya que <strong>la única forma</strong> de obtener 60 € es sacando un billete de 10 € seguido de uno de 50 €.</p>
+<p>Todos los cálculos anteriores se basan en el entendimiento claro de las posibilidades y combinaciones de los billetes sin reemplazar al sacar dos consecutivamente. Este proceso implica un conocimiento básico de combinatoria y probabilidad condicional.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_037.html">Anterior</a><a class="button" href="problema_039.html">Siguiente</a></nav>
+</main></body>
+</html>

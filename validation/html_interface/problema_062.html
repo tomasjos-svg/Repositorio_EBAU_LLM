@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 62: cleon_2023 E7</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 62 de 139</h1>
+<div class="meta"><span class="badge">cleon_2023</span> &nbsp; Ejercicio E7</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_061.html">Anterior</a><a class="button" href="problema_063.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>E7.- (Análisis)  <br>
+Calcular:</p>
+<p>a) \(\displaystyle \lim_{x \to 0} \frac{\sen x^2}{x^3+4x^2}\) (1 punto)</p>
+<p>b) \(\displaystyle \int_{0}^{\pi/2} \sen(x)\cos^3(x)\, dx\) (1 punto)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>E7.- (Análisis)</strong>  <br>
+Calcular:</p>
+<p>a) \[
+\lim_{x\to 0}\frac{\sen^2 x}{x^3+4x^2}
+\]</p>
+<p>b) \[
+\int_0^{\pi/2}\sen^3 x \cos x \, dx
+\]</p>
+<p>---</p>
+<h4>a)</h4>
+<p>\[
+\lim_{x\to 0}\frac{\sen^2 x}{x^3+4x^2}
+\]</p>
+<p>\[
+=\frac{0}{0}\quad \text{Indeterminación (L’Hôpital)}
+\]</p>
+<p>\[
+\lim_{x\to 0}\frac{2\sen x \cos x}{3x^2+8x}
+\]</p>
+<p>\[
+=\frac{0}{0}\quad \text{Indeterminación (L’Hôpital)}
+\]</p>
+<p>\[
+\lim_{x\to 0}\frac{2\cos^2 x-2\sen^2 x}{6x+8}
+=
+\frac{2\cos^2 0-2\sen^2 0}{8}
+=
+\frac{2}{8}
+=
+\frac14
+\]</p>
+<p>---</p>
+<h4>b)</h4>
+<p>Calculamos primero la integral indefinida.</p>
+<p>\[
+\int \sen^3 x \cos x\,dx
+\]</p>
+<p>Cambio de variable:</p>
+<p>\[
+t=\sen x,\qquad dt=\cos x\,dx
+\]</p>
+<p>\[
+\int \sen^3 x\cos x\,dx
+=
+\int t^3\,dt
+=
+\frac{t^4}{4}+K
+=
+\frac{\sen^4 x}{4}+K
+\]</p>
+<p>Aplicamos este resultado al cálculo de la integral definida pedida:</p>
+<p>\[
+\int_0^{\pi/2}\sen^3 x\cos x\,dx
+=
+\left[\frac{\sen^4 x}{4}\right]_0^{\pi/2}
+\]</p>
+<p>\[
+=
+\frac{\sen^4(\pi/2)}{4}
+-
+\frac{\sen^4(0)}{4}
+=
+\frac14
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio E7, analizaremos cada uno de los incisos proporcionados en el enunciado:</p>
+<h4>Apartado a)</h4>
+<p>#### Problema:<br>
+\[
+\lim_{x \to 0} \frac{\sin(x^2)}{x^3 + 4x^2}
+\]</p>
+<p>#### Solución:</p>
+<p>1. <strong>Análisis del comportamiento en \( x = 0 \)</strong>:<br>
+   - Al intentar sustituir \( x = 0 \) en la expresión, obtenemos una forma indeterminada \(\frac{0}{0}\).</p>
+<p>2. <strong>Simplificación usando la serie de Taylor para \( \sin(x) \) cerca de 0</strong>:<br>
+   - \( \sin(x^2) \approx x^2 \) cuando \( x \) es pequeño, porque el término líder en la expansión de Taylor de \( \sin(x) \) es \( x \).<br>
+   - Sustituyendo esto en el límite, tenemos:<br>
+     \[
+     \lim_{x \to 0} \frac{x^2}{x^3 + 4x^2} = \lim_{x \to 0} \frac{x^2}{x^2(x + 4)}
+     \]</p>
+<p>3. <strong>Simplificación adicional</strong>:<br>
+   - Factorizar \( x^2 \) en el numerador y el denominador:<br>
+     \[
+     = \lim_{x \to 0} \frac{1}{x + 4}
+     \]<br>
+   - Como \( x \to 0 \), la expresión se simplifica a:<br>
+     \[
+     = \frac{1}{4}
+     \]</p>
+<p>#### Resultado:<br>
+\[
+\lim_{x \to 0} \frac{\sin(x^2)}{x^3 + 4x^2} = \frac{1}{4}
+\]</p>
+<h4>Apartado b)</h4>
+<p>#### Problema:<br>
+\[
+\int_{0}^{\frac{\pi}{2}} \sin(x) \cos^3(x) \, dx
+\]</p>
+<p>#### Solución:</p>
+<p>1. <strong>Uso de la sustitución trigonométrica</strong>:<br>
+   - Hacemos \( u = \sin(x) \), entonces \( du = \cos(x) dx \).<br>
+   - Cuando \( x = 0 \), \( u = 0 \); cuando \( x = \frac{\pi}{2} \), \( u = 1 \).<br>
+   - Convertimos \( \cos^2(x) \) usando la identidad \( \cos^2(x) = 1 - \sin^2(x) = 1 - u^2 \), resultando en:<br>
+     \[
+     \int_{0}^{1} u (1-u^2) \, du  
+     \]</p>
+<p>2. <strong>Evaluación de la integral</strong>:<br>
+   - Desarrollar el término:<br>
+     \[
+     \int_{0}^{1} (u - u^3) \, du
+     \]<br>
+   - Separar las integrales:<br>
+     \[
+     \int_{0}^{1} u \, du - \int_{0}^{1} u^3 \, du
+     \]<br>
+   - Integrar cada término:<br>
+     \[
+     \left[ \frac{1}{2}u^2 \right]_0^1 - \left[ \frac{1}{4}u^4 \right]_0^1 = \frac{1}{2} - \frac{1}{4} = \frac{1}{4}
+     \]</p>
+<p>#### Resultado:<br>
+\[
+\int_{0}^{\frac{\pi}{2}} \sin(x) \cos^3(x) \, dx = \frac{1}{4}
+\]</p>
+<h4>Conclusión:</h4>
+Los resultados de los incisos (a) y (b) son ambos \(\frac{1}{4}\), y los pasos clave en la resolución de estos problemas involucraron el uso de la serie de Taylor y técnicas de integración con sustitución trigonométrica y fraccionamiento de la integral.</section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los dos apartados del ejercicio <strong>E7</strong>.</p>
+<p>---</p>
+<h3>a) \(\displaystyle \lim_{x\to 0}\frac{\sen x^2}{x^3+4x^2}\)</h3>
+<p>Primero factorizamos el denominador:</p>
+<p>\[
+x^3+4x^2=x^2(x+4)
+\]</p>
+<p>Entonces:</p>
+<p>\[
+\frac{\sen x^2}{x^3+4x^2}
+=
+\frac{\sen x^2}{x^2(x+4)}
+=
+\left(\frac{\sen x^2}{x^2}\right)\left(\frac{1}{x+4}\right)
+\]</p>
+<p>Ahora usamos el límite notable:</p>
+<p>\[
+\lim_{u\to 0}\frac{\sen u}{u}=1
+\]</p>
+<p>Tomando \(u=x^2\), cuando \(x\to 0\), también \(x^2\to 0\), luego:</p>
+<p>\[
+\lim_{x\to 0}\frac{\sen x^2}{x^2}=1
+\]</p>
+<p>Y además:</p>
+<p>\[
+\lim_{x\to 0}\frac{1}{x+4}=\frac14
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+\lim_{x\to 0}\frac{\sen x^2}{x^3+4x^2}
+=
+1\cdot \frac14
+=
+\boxed{\frac14}
+\]</p>
+<p>---</p>
+<h3>b) \(\displaystyle \int_0^{\pi/2}\sen(x)\cos^3(x)\,dx\)</h3>
+<p>Hacemos el cambio de variable:</p>
+<p>\[
+u=\cos x
+\qquad\Rightarrow\qquad
+du=-\sen x\,dx
+\]</p>
+<p>Entonces:</p>
+<p>- si \(x=0\), \(u=\cos 0=1\)<br>
+- si \(x=\frac{\pi}{2}\), \(u=\cos \frac{\pi}{2}=0\)</p>
+<p>La integral queda:</p>
+<p>\[
+\int_0^{\pi/2}\sen(x)\cos^3(x)\,dx
+=
+-\int_1^0 u^3\,du
+=
+\int_0^1 u^3\,du
+\]</p>
+<p>Calculamos:</p>
+<p>\[
+\int_0^1 u^3\,du=\left[\frac{u^4}{4}\right]_0^1=\frac14
+\]</p>
+<p>Así,</p>
+<p>\[
+\boxed{\int_0^{\pi/2}\sen(x)\cos^3(x)\,dx=\frac14}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p>\[
+\boxed{a)\ \frac14}
+\qquad
+\boxed{b)\ \frac14}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_061.html">Anterior</a><a class="button" href="problema_063.html">Siguiente</a></nav>
+</main></body>
+</html>

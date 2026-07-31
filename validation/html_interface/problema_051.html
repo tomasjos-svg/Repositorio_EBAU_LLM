@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 51: cataluna_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 51 de 139</h1>
+<div class="meta"><span class="badge">cataluna_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_050.html">Anterior</a><a class="button" href="problema_052.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>En el documento aparecen dos “ejercicio 2”, uno en la <strong>Sèrie 1</strong> y otro en la <strong>Sèrie 5</strong>. En ambos casos faltan datos en el texto proporcionado.</p>
+<h3>Sèrie 1 — Exercici 2</h3>
+<p><strong>2. Considereu les dues matrius següents:</strong></p>
+<p>*[En el texto proporcionado no aparecen las matrices.]*</p>
+<p><strong>a)</strong> Calculeu les matrius <strong>A * B</strong> i <strong>B * A</strong>.  <br>
+<strong>[1,5 punts]</strong></p>
+<p><strong>b)</strong> Siguin <strong>C</strong> i <strong>D</strong> dues matrius quadrades del mateix ordre que satisfan <strong>C * D = C</strong> i <strong>D * C = D</strong>. Comproveu que les dues matrius, <strong>C</strong> i <strong>D</strong>, són idempotents.  <br>
+<strong>[1 punt]</strong></p>
+<p><strong>Nota:</strong> Una matriu quadrada s’anomena idempotent si coincideix amb el seu quadrat.</p>
+<p>---</p>
+<h3>Sèrie 5 — Exercici 2</h3>
+<p><strong>2. Considereu el sistema d’equacions lineals</strong></p>
+<p>*[En el texto proporcionado no aparece el sistema de ecuaciones.]*</p>
+<p><strong>en què k és un paràmetre real.</strong></p>
+<p><strong>a)</strong> Discutiu el sistema en funció del valor de <strong>k</strong>.  <br>
+<strong>[1,5 punts]</strong></p>
+<p><strong>b)</strong> Resoleu el sistema per a <strong>k = 0</strong> i per a <strong>k = 1</strong>.  <br>
+<strong>[1 punt]</strong></p></section>
+<section class="card"><h2>Solucion oficial</h2><p>En el documento aparecen <strong>dos “ejercicio 2”</strong>, uno en <strong>Serie 1</strong> y otro en <strong>Serie 5</strong>. Extraigo ambos.</p>
+<h3>Serie 1 — Ejercicio 2</h3>
+<h4>Resolución</h4>
+<p>#### a)</p>
+<p>\[
+A \cdot B =
+\begin{pmatrix}
+2 &amp; -3 &amp; -5\\
+-1 &amp; 4 &amp; 5\\
+1 &amp; -3 &amp; -4
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+2 &amp; 2 &amp; 0\\
+-1 &amp; -1 &amp; 0\\
+1 &amp; 2 &amp; 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 &amp; -3 &amp; -5\\
+-1 &amp; 4 &amp; 5\\
+1 &amp; -3 &amp; -4
+\end{pmatrix}
+= A
+\]</p>
+<p>\[
+B \cdot A =
+\begin{pmatrix}
+2 &amp; 2 &amp; 0\\
+-1 &amp; -1 &amp; 0\\
+1 &amp; 2 &amp; 1
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+2 &amp; -3 &amp; -5\\
+-1 &amp; 4 &amp; 5\\
+1 &amp; -3 &amp; -4
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 &amp; 2 &amp; 0\\
+-1 &amp; -1 &amp; 0\\
+1 &amp; 2 &amp; 1
+\end{pmatrix}
+= B
+\]</p>
+<p>Observación: la resolución se dará por buena aunque no aparezcan los cálculos intermedios.</p>
+<p>#### b)</p>
+<p>Sabemos que \(C \cdot D = C\) y \(D \cdot C = D\).</p>
+<p>\[
+C^2 = C \cdot C = (C \cdot D)\cdot C = C \cdot (D \cdot C) = C \cdot D = C
+\]</p>
+<p>\[
+D^2 = D \cdot D = (D \cdot C)\cdot D = D \cdot (C \cdot D) = D \cdot C = D
+\]</p>
+<p>Por tanto, efectivamente las dos matrices \(C\) y \(D\) son idempotentes.</p>
+<p>---</p>
+<h3>Serie 5 — Ejercicio 2</h3>
+<h4>Resolución</h4>
+<p>#### a)</p>
+<p>Aplicamos el método de Gauss:</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; k &amp; -1\\
+1 &amp; k &amp; 1 &amp; 3\\
+2 &amp; k-1 &amp; 2 &amp; 2
+\end{array}
+\right)
+\]</p>
+<p>Sustituimos la fila 2, \(F_2\), por \(F_2-F_1\), y la fila 3, \(F_3\), por \(F_3-2F_1\):</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; k &amp; -1\\
+0 &amp; k+1 &amp; 1-k &amp; 4\\
+0 &amp; k+1 &amp; 2-2k &amp; 4
+\end{array}
+\right)
+\]</p>
+<p>Sustituimos \(F_3\) por \(F_3-F_2\):</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; k &amp; -1\\
+0 &amp; k+1 &amp; 1-k &amp; 4\\
+0 &amp; 0 &amp; 1-k &amp; 0
+\end{array}
+\right)
+\]</p>
+<p>Distinguimos casos:</p>
+<p>- Si \(k \neq -1, k \neq 1\), tenemos:</p>
+<p>\[
+\operatorname{rang} M = \operatorname{rang} M_A = \text{número de incógnitas} = 3
+\]</p>
+<p>Por tanto, es un sistema compatible determinado.</p>
+<p>- Si \(k = 1\), obtenemos:</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; 1 &amp; -1\\
+0 &amp; 2 &amp; 0 &amp; 4\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right)
+\]</p>
+<p>Tenemos:</p>
+<p>\[
+\operatorname{rang} M = \operatorname{rang} M_A = 2
+\]</p>
+<p>Por tanto, es un sistema compatible indeterminado con un grado de libertad.</p>
+<p>- Si \(k = -1\), obtenemos:</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; -1 &amp; -1\\
+0 &amp; 0 &amp; 2 &amp; 4\\
+0 &amp; 0 &amp; 2 &amp; 0
+\end{array}
+\right)
+\]</p>
+<p>Hacemos un paso más, cambiando \(F_3\) por \(F_3-F_2\):</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; -1 &amp; -1\\
+0 &amp; 0 &amp; 2 &amp; 4\\
+0 &amp; 0 &amp; 0 &amp; -4
+\end{array}
+\right)
+\]</p>
+<p>Corresponde a un sistema incompatible, ya que:</p>
+<p>\[
+\operatorname{rang} M_A = 3 &gt; \operatorname{rang} M = 2
+\]</p>
+<p>#### b)</p>
+<p>Recuperamos los cálculos del apartado anterior.</p>
+<p>Para \(k = 1\), obtenemos:</p>
+<p>\[
+y = 2,\qquad x = 1-z
+\]</p>
+<p>Por tanto, las soluciones son de la forma:</p>
+<p>\[
+(x,y,z) = (1-z,2,z)
+\]</p>
+<p>o bien:</p>
+<p>\[
+(x,y,z) = (x,2,1-x)
+\]</p>
+<p>Para \(k = 0\), obtenemos la matriz:</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; 0 &amp; -1\\
+1 &amp; 0 &amp; 1 &amp; 3\\
+2 &amp; -1 &amp; 2 &amp; 2
+\end{array}
+\right)
+\]</p>
+<p>Y después de hacer Gauss:</p>
+<p>\[
+\left(
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; 0 &amp; -1\\
+0 &amp; 1 &amp; 1 &amp; 4\\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{array}
+\right)
+\]</p>
+<p>Por tanto, la solución es:</p>
+<p>\[
+z = 0,\qquad y = 4,\qquad x = 3
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Hay <strong>dos “ejercicio 2”</strong> en el documento. Con el texto que has dado, <strong>solo se puede resolver completamente el apartado b de la Sèrie 1</strong>, porque en los demás faltan datos.</p>
+<h3>Sèrie 1 — Exercici 2</h3>
+<h4>a) Calcular \(A\cdot B\) y \(B\cdot A\)</h4>
+<p>No se puede resolver, porque <strong>no aparecen las matrices \(A\) y \(B\)</strong> en el enunciado proporcionado.</p>
+<p>---</p>
+<h4>b) Demostrar que \(C\) y \(D\) son idempotentes</h4>
+<p>Dado que<br>
+\[
+CD=C,\qquad DC=D,
+\]<br>
+queremos probar que<br>
+\[
+C^2=C,\qquad D^2=D.
+\]</p>
+<p>#### Para \(C\)</p>
+<p>Multiplicamos la igualdad \(CD=C\) por la derecha por \(C\):<br>
+\[
+(CD)C=C^2.
+\]<br>
+Por asociatividad,<br>
+\[
+CDC=C^2.
+\]</p>
+<p>Ahora multiplicamos la igualdad \(DC=D\) por la izquierda por \(C\):<br>
+\[
+C(DC)=CD.
+\]<br>
+Por asociatividad,<br>
+\[
+CDC=CD.
+\]<br>
+Pero como \(CD=C\), resulta<br>
+\[
+CDC=C.
+\]</p>
+<p>Comparando con lo anterior:<br>
+\[
+C^2=CDC=C.
+\]<br>
+Luego \(C\) es idempotente.</p>
+<p>#### Para \(D\)</p>
+<p>Multiplicamos la igualdad \(DC=D\) por la derecha por \(D\):<br>
+\[
+(DC)D=D^2.
+\]<br>
+Por asociatividad,<br>
+\[
+DCD=D^2.
+\]</p>
+<p>Ahora multiplicamos la igualdad \(CD=C\) por la izquierda por \(D\):<br>
+\[
+D(CD)=DC.
+\]<br>
+Por asociatividad,<br>
+\[
+DCD=DC.
+\]<br>
+Pero como \(DC=D\), obtenemos<br>
+\[
+DCD=D.
+\]</p>
+<p>Por tanto,<br>
+\[
+D^2=DCD=D.
+\]<br>
+Luego \(D\) también es idempotente.</p>
+<h4>Conclusión</h4>
+\[
+\boxed{C^2=C \quad \text{y} \quad D^2=D}
+\]
+Así, <strong>\(C\) y \(D\) son idempotentes</strong>.
+<p>---</p>
+<h3>Sèrie 5 — Exercici 2</h3>
+<h4>a) Discutir el sistema según \(k\)</h4>
+<p>No se puede resolver, porque <strong>no aparece el sistema de ecuaciones</strong>.</p>
+<h4>b) Resolver para \(k=0\) y \(k=1\)</h4>
+<p>Tampoco se puede resolver, por la misma razón: <strong>faltan las ecuaciones del sistema</strong>.</p>
+<p>---</p>
+<p>Si quieres, puedo resolverlo <strong>completo</strong> en cuanto me pases:<br>
+- las matrices \(A\) y \(B\) de la <strong>Sèrie 1</strong>, y<br>
+- el sistema de la <strong>Sèrie 5</strong>.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver los problemas presentados en el enunciado del documento, procederé en orden, abordando cada apartado siguiendo las directivas recibidas. Sin embargo, como algunos datos esenciales faltan, mi solución se centrará en explicar cómo abordar los problemas en general.</p>
+<h3>Sèrie 1 — Exercici 2</h3>
+<h4>Apartado a)</h4>
+El problema solicita calcular el producto de dos matrices, <strong>A\*B</strong> y <strong>B\*A</strong>. Sin embargo, las matrices específicas <strong>A</strong> y <strong>B</strong> no se proporcionan en el enunciado. Así que, explicaré cómo calcular estos productos si se hubieran proporcionado las matrices:
+<p>Para multiplicar dos matrices, <strong>A</strong> de tamaño \( m \times n \) y <strong>B</strong> de tamaño \( n \times p \):<br>
+1. El número de columnas de <strong>A</strong> debe coincidir con el número de filas de <strong>B</strong>.<br>
+2. El resultado será una matriz de \( m \times p \).<br>
+3. Cada elemento del producto, \( (AB)_{ij} \), se calcula como la suma de los productos de los elementos correspondientes de la fila \( i \) de <strong>A</strong> y la columna \( j \) de <strong>B</strong>:<br>
+   \[
+   (AB)_{ij} = \sum_{k=1}^n A_{ik} \cdot B_{kj}
+   \]<br>
+4. Para \( B\*A \), el proceso es similar pero intercambiando los roles de <strong>A</strong> y <strong>B</strong>.</p>
+<p>Sin las matrices concretas, no podemos realizar estos cálculos específicos.</p>
+<h4>Apartado b)</h4>
+Las matrices <strong>C</strong> y <strong>D</strong> son tales que \( C\*D = C \) y \( D\*C = D \). Para demostrar que ambas son idempotentes:
+1. Una matriz <strong>X</strong> es idempotente si \( X^2 = X \).
+2. Dado que \( C\*D = C \) y además por la condición dada \( D\*C = D \):
+   - Suponemos que \( C = D \) (aunque no necesariamente debe ser así en el contexto general, esta función puede servir para algunos casos particulares),
+   - Entonces \( C^2 = C \) y \( D^2 = D \), confirmándose que son idempotentes.
+<p>Este es un análisis teórico simplificado y asumido para un caso particular. Para un resultado certero es necesario conocer las propiedades específicas de las matrices.</p>
+<h3>Sèrie 5 — Exercici 2</h3>
+<h4>Apartado a)</h4>
+Para discutir el sistema de ecuaciones lineales según el parámetro real \( k \), generalmente se utiliza el determinante de la matriz del sistema para determinar:
+- Si el determinante no es cero, el sistema es consistente y tiene solución única.
+- Si el determinante es cero, el sistema podría ser inconsistente o tener infinitas soluciones, dependiendo del resto del sistema.
+<h4>Apartado b)</h4>
+La resolución del sistema para \( k = 0 \) y \( k = 1 \) implica sustituir \( k \) en las ecuaciones y analizar o resolver el sistema resultante para estas sustituciones. El método específico depende de la estructura del sistema. Los métodos comunes incluyen:
+- Reducción de Gauss,
+- Sustitución, y
+- Aplicación de métodos matriciales como la inversión de matrices.
+<p>Dada la falta de información específica del sistema, estos son métodos generales para abordar el problema.</p>
+<h4>Conclusión</h4>
+Para poder resolver completamente los problemas, necesitaríamos tener los datos faltantes como las matrices en la <strong>Sèrie 1</strong> y el sistema de ecuaciones en la <strong>Sèrie 5</strong>. La discusión teórica proporcionada ofrece una guía general para abordar estos ejercicios si se proveen dichos datos.</section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_050.html">Anterior</a><a class="button" href="problema_052.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,27 @@
+VALIDACIÓN HUMANA DEL JUEZ LLM
+
+Método
+
+Se realizó una validación humana ciega de las respuestas correspondientes a la réplica 1 del conjunto de 2023. La identidad de las condiciones experimentales se reconstruyó mediante la clave de cegamiento y cada valoración se emparejó con el resultado original mediante dataset, número de pregunta, condición experimental y réplica.
+
+Para cada una de las seis métricas se calcularon las correlaciones de Pearson y Spearman. El acuerdo absoluto de las puntuaciones continuas se estimó mediante ICC(A,1), modelo bidireccional de acuerdo absoluto y medida individual. Las puntuaciones se discretizaron en 0-49, 50-69, 70-89, 90-100 para calcular la kappa de Cohen con ponderación cuadrática. También se calcularon la diferencia media juez-humano, el error absoluto medio, la raíz del error cuadrático medio, los límites de acuerdo de Bland-Altman y las pruebas pareadas t y Wilcoxon, con corrección de Holm entre métricas.
+
+Resultados
+
+Se emparejaron 276 de las 276 valoraciones humanas disponibles (100.0%).
+
+En score global (n = 275), la media humana fue 67.35 (DE = 39.71) y la media del juez fue 81.57 (DE = 27.61). La diferencia media juez-humano fue 14.23 puntos y el MAE fue 19.21. La asociación fue fuerte (Pearson r = 0.603, p < .001; Spearman ρ = 0.579, p < .001). El acuerdo absoluto fue moderado (ICC(A,1) = 0.521; IC95% bootstrap [0.415, 0.627]) y la kappa ponderada fue κ = 0.603. La prueba de Wilcoxon, corregida mediante Holm, produjo p < .001.
+
+En completitud (n = 274), la media humana fue 52.85 (DE = 49.94) y la media del juez fue 85.13 (DE = 25.81). La diferencia media juez-humano fue 32.28 puntos y el MAE fue 34.76. La asociación fue fuerte (Pearson r = 0.513, p < .001; Spearman ρ = 0.558, p < .001). El acuerdo absoluto fue pobre (ICC(A,1) = 0.315; IC95% bootstrap [0.247, 0.389]) y la kappa ponderada fue κ = 0.401. La prueba de Wilcoxon, corregida mediante Holm, produjo p < .001.
+
+En corrección simbólica (n = 275), la media humana fue 71.86 (DE = 37.83) y la media del juez fue 84.21 (DE = 25.82). La diferencia media juez-humano fue 12.35 puntos y el MAE fue 19.59. La asociación fue moderada (Pearson r = 0.484, p < .001; Spearman ρ = 0.501, p < .001). El acuerdo absoluto fue pobre (ICC(A,1) = 0.421; IC95% bootstrap [0.306, 0.531]) y la kappa ponderada fue κ = 0.498. La prueba de Wilcoxon, corregida mediante Holm, produjo p < .001.
+
+En calidad pedagógica (n = 275), la media humana fue 69.30 (DE = 37.60) y la media del juez fue 85.95 (DE = 20.63). La diferencia media juez-humano fue 16.65 puntos y el MAE fue 20.52. La asociación fue fuerte (Pearson r = 0.592, p < .001; Spearman ρ = 0.606, p < .001). El acuerdo absoluto fue pobre (ICC(A,1) = 0.435; IC95% bootstrap [0.340, 0.531]) y la kappa ponderada fue κ = 0.522. La prueba de Wilcoxon, corregida mediante Holm, produjo p < .001.
+
+En fidelidad al problema (n = 275), la media humana fue 84.74 (DE = 33.74) y la media del juez fue 92.83 (DE = 16.16). La diferencia media juez-humano fue 8.08 puntos y el MAE fue 17.33. La asociación fue débil (Pearson r = 0.179, p 0.003; Spearman ρ = 0.171, p 0.004). El acuerdo absoluto fue pobre (ICC(A,1) = 0.134; IC95% bootstrap [0.018, 0.266]) y la kappa ponderada fue κ = 0.151. La prueba de Wilcoxon, corregida mediante Holm, produjo p 0.019.
+
+En precisión por apartados (n = 274), la media humana fue 67.47 (DE = 39.77) y la media del juez fue 81.42 (DE = 28.77). La diferencia media juez-humano fue 13.95 puntos y el MAE fue 17.84. La asociación fue fuerte (Pearson r = 0.644, p < .001; Spearman ρ = 0.618, p < .001). El acuerdo absoluto fue moderado (ICC(A,1) = 0.567; IC95% bootstrap [0.465, 0.665]) y la kappa ponderada fue κ = 0.634. La prueba de Wilcoxon, corregida mediante Holm, produjo p < .001.
+
+Para el tipo de error se dispuso de 21 pares no vacíos. El acuerdo exacto fue del 4.8% y la kappa de Cohen fue κ = 0.021.
+
+La correlación se interpretó como asociación, no como acuerdo. Por ello, la valoración principal de la validez operativa del juez debe basarse conjuntamente en ICC, kappa, sesgo medio, MAE y límites de Bland-Altman.

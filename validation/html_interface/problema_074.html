@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 74: extremadura_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 74 de 139</h1>
+<div class="meta"><span class="badge">extremadura_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_073.html">Anterior</a><a class="button" href="problema_075.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>1. Estudiar el rango de la matriz \(A-\lambda I\) según los valores de \(\lambda \in \mathbb{R}\), donde</p>
+<p>\[
+A=
+\begin{pmatrix}
+0 &amp; 0 &amp; 2\\
+1 &amp; 0 &amp; 1\\
+-1 &amp; 0 &amp; 3
+\end{pmatrix}
+\]</p>
+<p>e \(I\) es la matriz identidad de orden 3. \((2\ \text{puntos})\)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 1. Solución oficial</strong></p>
+<p>Estudiar el rango de la matriz \(A-\lambda I\) según los valores de \(\lambda\), donde</p>
+<p>\[
+A=\begin{pmatrix}
+0&amp;0&amp;2\\
+1&amp;0&amp;1\\
+1&amp;0&amp;3
+\end{pmatrix}
+\]</p>
+<p>e \(I\) es la matriz identidad de orden 3.</p>
+<p>\[
+A-\lambda I=
+\begin{pmatrix}
+-\lambda&amp;0&amp;2\\
+1&amp;-\lambda&amp;1\\
+1&amp;0&amp;3-\lambda
+\end{pmatrix}
+\]</p>
+<p>Esta matriz tiene rango 1, 2 o 3. Veamos cuándo se anula el determinante de \(A-\lambda I\):</p>
+<p>\[
+\left|A-\lambda I\right|
+=
+\begin{vmatrix}
+-\lambda&amp;0&amp;2\\
+1&amp;-\lambda&amp;1\\
+1&amp;0&amp;3-\lambda
+\end{vmatrix}
+\]</p>
+<p>\[
+= -\lambda^3+3\lambda^2-2\lambda
+\]</p>
+<p>\[
+-\lambda^3+3\lambda^2-2\lambda=0
+\]</p>
+<p>\[
+-\lambda(\lambda^2-3\lambda+2)=0
+\]</p>
+<p>\[
+\lambda=0,\quad \lambda=1,\quad \lambda=2
+\]</p>
+<p>Distinguimos cuatro situaciones diferentes que estudiamos por separado.</p>
+<p>---</p>
+<p><strong>CASO 1. Si \(\lambda\neq 0,1,2\).</strong></p>
+<p>En este caso el determinante de \(A-\lambda I\) es no nulo y, por tanto, su rango es 3.</p>
+<p>---</p>
+<p><strong>CASO 2. Si \(\lambda=0\).</strong></p>
+<p>En este caso el determinante de \(A-\lambda I\) es nulo y su rango es menor de 3.</p>
+<p>La matriz queda</p>
+<p>\[
+A-0I=
+\begin{pmatrix}
+0&amp;0&amp;2\\
+1&amp;0&amp;1\\
+1&amp;0&amp;3
+\end{pmatrix}
+\]</p>
+<p>Si tomamos el menor de orden 2 que resulta de quitar la primera fila y la segunda columna:</p>
+<p>\[
+\begin{vmatrix}
+1&amp;1\\
+1&amp;3
+\end{vmatrix}
+=3-1=2\neq 0
+\]</p>
+<p>El rango de la matriz \(A-0I=A\) es 2.</p>
+<p>---</p>
+<p><strong>CASO 3. Si \(\lambda=1\).</strong></p>
+<p>En este caso el determinante de \(A-\lambda I\) es nulo y su rango es menor de 3.</p>
+<p>La matriz queda</p>
+<p>\[
+A-I=
+\begin{pmatrix}
+-1&amp;0&amp;2\\
+1&amp;-1&amp;1\\
+1&amp;0&amp;2
+\end{pmatrix}
+\]</p>
+<p>Si tomamos el menor de orden 2 que resulta de quitar la primera fila y la segunda columna:</p>
+<p>\[
+\begin{vmatrix}
+1&amp;1\\
+1&amp;2
+\end{vmatrix}
+=2-1=1\neq 0
+\]</p>
+<p>El rango de la matriz \(A-I\) es 2.</p>
+<p>---</p>
+<p><strong>CASO 4. Si \(\lambda=2\).</strong></p>
+<p>En este caso el determinante de \(A-\lambda I\) es nulo y su rango es menor de 3.</p>
+<p>La matriz queda</p>
+<p>\[
+A-2I=
+\begin{pmatrix}
+-2&amp;0&amp;2\\
+1&amp;-2&amp;1\\
+1&amp;0&amp;1
+\end{pmatrix}
+\]</p>
+<p>Si tomamos el menor de orden 2 que resulta de quitar la primera fila y la segunda columna:</p>
+<p>\[
+\begin{vmatrix}
+1&amp;1\\
+1&amp;1
+\end{vmatrix}
+\neq 0
+\]</p>
+<p>El rango de la matriz \(A-2I\) es 2.</p>
+<p>---</p>
+<p><strong>Resumiendo:</strong></p>
+<p>Si \(\lambda\neq 0,1,2\), el rango de \(A-\lambda I\) es 3.</p>
+<p>Si \(\lambda=0\), \(\lambda=1\) o \(\lambda=2\), el rango de \(A-\lambda I\) es 2.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio propuesto, empezaremos por encontrar la matriz \(A - \lambda I\). La matriz \(I\) es la matriz identidad de orden 3, que es una matriz diagonal con todos sus elementos diagonales iguales a 1:</p>
+<p>\[
+I = \begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>El siguiente paso es calcular \(A - \lambda I\):<br>
+\[
+A - \lambda I = \begin{pmatrix} 0 &amp; 0 &amp; 2 \\ 1 &amp; 0 &amp; 1 \\ -1 &amp; 0 &amp; 3 \end{pmatrix} - \lambda \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix} = \begin{pmatrix} 0-\lambda &amp; 0 &amp; 2 \\ 1 &amp; 0-\lambda &amp; 1 \\ -1 &amp; 0 &amp; 3-\lambda \end{pmatrix} = \begin{pmatrix} -\lambda &amp; 0 &amp; 2 \\ 1 &amp; -\lambda &amp; 1 \\ -1 &amp; 0 &amp; 3-\lambda \end{pmatrix}
+\]</p>
+<p>Nos interesa estudiar el rango de esta matriz en función de \(\lambda\). Una forma de entender cómo cambia el rango es observando si la matriz es singular o no en función de \(\lambda\), lo que significa investigar cuando el determinante de \(A - \lambda I\) es cero. Esto nos dará los valores de \(\lambda\) para los cuales la matriz pierde rango.</p>
+<p>Calculamos el determinante de \(A - \lambda I\):<br>
+\[
+\text{det}(A - \lambda I) = \text{det}\begin{pmatrix} -\lambda &amp; 0 &amp; 2 \\ 1 &amp; -\lambda &amp; 1 \\ -1 &amp; 0 &amp; 3-\lambda \end{pmatrix}
+\]</p>
+<p>Utilizando la expansión de Laplace por la primera columna:<br>
+\[
+\text{det}(A - \lambda I) = -\lambda \text{det}\begin{pmatrix} -\lambda &amp; 1 \\ 0 &amp; 3 - \lambda \end{pmatrix} - 0 + 2 \text{det}\begin{pmatrix} 1 &amp; -\lambda \\ -1 &amp; 0 \end{pmatrix}
+\]<br>
+\[
+= -\lambda ((-\lambda)(3-\lambda) - 0) + 2(1 \cdot 0 + \lambda)
+\]<br>
+\[
+= -\lambda (\lambda^2 - 3\lambda) + 2\lambda
+\]<br>
+\[
+= -\lambda^3 + 3\lambda^2 + 2\lambda
+\]<br>
+\[
+= \lambda(-\lambda^2 + 3\lambda + 2)
+\]<br>
+\[
+= \lambda(-\lambda^2 + 3\lambda + 2) = \lambda(-(\lambda - 1)(\lambda - 2))
+\]<br>
+\[
+= -\lambda(\lambda - 1)(\lambda - 2)
+\]</p>
+<p>Los ceros del polinomio son \(\lambda = 0, 1, 2\). Esto implica que el determinante es cero y, por lo tanto, la matriz \(A - \lambda I\) es singular (y pierde rango) para esos valores de \(\lambda\).</p>
+<p>Para determinar el rango de \(A - \lambda I\) en esos puntos, realizamos una reducción de la matriz para esos valores específicos: \(\lambda = 0\), \(\lambda = 1\), y \(\lambda = 2\). Además, el rango de una matriz \(3 \times 3\) es 3 si el determinante no es cero, lo que ocurre cuando \(\lambda \neq 0, 1, 2\). Esto último se puede deducir por la forma factorizada del polinomio característico encontrado anteriormente y por la expansión por menores que utilizamos.</p>
+<p>En resumen, el rango de la matriz \(A - \lambda I\) es completo (rango 3) cuando \(\lambda \neq 0, 1, 2\) y pierde rango (rango menor que 3) cuando \(\lambda = 0, 1, 2\). Determinar el rango específico en \(\lambda = 0, 1, 2\) requeriría más cálculos específicos o análisis más detallados de la matriz reducida para ver cómo los vectores se hacen linealmente dependientes.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea</p>
+<p>\[
+A-\lambda I=
+\begin{pmatrix}
+-\lambda &amp; 0 &amp; 2\\
+1 &amp; -\lambda &amp; 1\\
+-1 &amp; 0 &amp; 3-\lambda
+\end{pmatrix}.
+\]</p>
+<p>Queremos estudiar su rango según \(\lambda\in\mathbb R\).</p>
+<h3>1) Determinante de \(A-\lambda I\)</h3>
+<p>Calculamos el determinante desarrollando por la segunda columna:</p>
+<p>\[
+\det(A-\lambda I)
+=
+(-\lambda)\,
+\det
+\begin{pmatrix}
+-\lambda &amp; 2\\
+-1 &amp; 3-\lambda
+\end{pmatrix}.
+\]</p>
+<p>Entonces</p>
+<p>\[
+\det
+\begin{pmatrix}
+-\lambda &amp; 2\\
+-1 &amp; 3-\lambda
+\end{pmatrix}
+=
+(-\lambda)(3-\lambda)-2(-1)
+=
+-3\lambda+\lambda^2+2
+=
+\lambda^2-3\lambda+2.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\det(A-\lambda I)
+=
+-\lambda(\lambda^2-3\lambda+2)
+=
+-\lambda(\lambda-1)(\lambda-2).
+\]</p>
+<h3>2) Caso general</h3>
+<p>Si \(\lambda\neq 0,1,2\), entonces</p>
+<p>\[
+\det(A-\lambda I)\neq 0,
+\]</p>
+<p>y por tanto la matriz es invertible. Luego</p>
+<p>\[
+\operatorname{rg}(A-\lambda I)=3.
+\]</p>
+<h3>3) Casos singulares</h3>
+<h4>a) \(\lambda=0\)</h4>
+<p>\[
+A=
+\begin{pmatrix}
+0&amp;0&amp;2\\
+1&amp;0&amp;1\\
+-1&amp;0&amp;3
+\end{pmatrix}.
+\]</p>
+<p>La segunda columna es nula, así que \(\operatorname{rg}(A)\le 2\).</p>
+<p>Además, el menor de orden 2 formado por filas 1,2 y columnas 1,3 es</p>
+<p>\[
+\begin{vmatrix}
+0&amp;2\\
+1&amp;1
+\end{vmatrix}
+=-2\neq 0.
+\]</p>
+<p>Luego \(\operatorname{rg}(A)\ge 2\). Por tanto,</p>
+<p>\[
+\operatorname{rg}(A)=2.
+\]</p>
+<h4>b) \(\lambda=1\)</h4>
+<p>\[
+A-I=
+\begin{pmatrix}
+-1&amp;0&amp;2\\
+1&amp;-1&amp;1\\
+-1&amp;0&amp;2
+\end{pmatrix}.
+\]</p>
+<p>Como el determinante es 0, el rango es menor que 3.</p>
+<p>Tomamos el menor de orden 2 de filas 1,2 y columnas 1,2:</p>
+<p>\[
+\begin{vmatrix}
+-1&amp;0\\
+1&amp;-1
+\end{vmatrix}
+=1\neq 0.
+\]</p>
+<p>Luego el rango es al menos 2, así que</p>
+<p>\[
+\operatorname{rg}(A-I)=2.
+\]</p>
+<h4>c) \(\lambda=2\)</h4>
+<p>\[
+A-2I=
+\begin{pmatrix}
+-2&amp;0&amp;2\\
+1&amp;-2&amp;1\\
+-1&amp;0&amp;1
+\end{pmatrix}.
+\]</p>
+<p>De nuevo, como el determinante es 0, el rango es menor que 3.</p>
+<p>Tomamos el menor de orden 2 de filas 1,2 y columnas 1,2:</p>
+<p>\[
+\begin{vmatrix}
+-2&amp;0\\
+1&amp;-2
+\end{vmatrix}
+=4\neq 0.
+\]</p>
+<p>Así, el rango es al menos 2, y por tanto</p>
+<p>\[
+\operatorname{rg}(A-2I)=2.
+\]</p>
+<h3>Conclusión</h3>
+<p>\[
+\boxed{
+\operatorname{rg}(A-\lambda I)=
+\begin{cases}
+3, &amp; \lambda\neq 0,1,2,\\[2mm]
+2, &amp; \lambda=0,1,2.
+\end{cases}
+}
+\]</p>
+<p>No hay ningún valor de \(\lambda\) para el que el rango sea 1 o 0.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_073.html">Anterior</a><a class="button" href="problema_075.html">Siguiente</a></nav>
+</main></body>
+</html>

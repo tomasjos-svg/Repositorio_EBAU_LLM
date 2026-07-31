@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 61: cleon_2023 E6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 61 de 139</h1>
+<div class="meta"><span class="badge">cleon_2023</span> &nbsp; Ejercicio E6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_060.html">Anterior</a><a class="button" href="problema_062.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>E6.- (Análisis)  <br>
+Dada la función \(f(x)=x^2(x+3)\), determinar su dominio de definición, puntos de corte de su gráfica con los ejes, intervalos de crecimiento y decrecimiento y extremos relativos.  <br>
+(2 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>E6.- (Análisis)</strong></p>
+<p>Dada la función  <br>
+\[
+f(x)=x^2(x+3),
+\]<br>
+determinar su dominio de definición, puntos de corte de su gráfica con los ejes, intervalos de crecimiento y decrecimiento y extremos relativos.</p>
+<p>\[
+f(x)=x^2(x+3)=x^3+3x^2
+\]</p>
+<p>Es una función polinómica, por lo que el dominio es:</p>
+<p>\[
+\text{Dominio}=\mathbb{R}
+\]</p>
+<p><strong>Puntos de corte con los ejes</strong></p>
+<p>\[
+f(0)=0^2(0+3)=0
+\]</p>
+<p>Luego corta al eje \(OY\) en:</p>
+<p>\[
+A(0,0)
+\]</p>
+<p>Para el eje \(OX\):</p>
+<p>\[
+f(x)=0 \Rightarrow x^2(x+3)=0
+\]</p>
+<p>\[
+x=0 \quad \text{o} \quad x=-3
+\]</p>
+<p>Por tanto, los puntos de corte con los ejes son:</p>
+<p>\[
+A(0,0), \quad B(-3,0)
+\]</p>
+<p><strong>Intervalos de crecimiento y decrecimiento y extremos relativos</strong></p>
+<p>Usamos la derivada:</p>
+<p>\[
+f&#x27;(x)=3x^2+6x
+\]</p>
+<p>\[
+3x^2+6x=0 \Rightarrow 3x(x+2)=0
+\]</p>
+<p>\[
+x=0, \quad x=-2
+\]</p>
+<p>Estudiamos el signo de la derivada:</p>
+<p>- En \((-\infty,-2)\), tomando \(x=-3\):</p>
+<p>\[
+f&#x27;(-3)=3(-3)^2+6(-3)=9&gt;0
+\]</p>
+<p>La función crece en \((-\infty,-2)\).</p>
+<p>- En \((-2,0)\), tomando \(x=-1\):</p>
+<p>\[
+f&#x27;(-1)=3(-1)^2+6(-1)=-3&lt;0
+\]</p>
+<p>La función decrece en \((-2,0)\).</p>
+<p>- En \((0,+\infty)\), tomando \(x=1\):</p>
+<p>\[
+f&#x27;(1)=3\cdot 1^2+6\cdot 1=9&gt;0
+\]</p>
+<p>La función crece en \((0,+\infty)\).</p>
+<p>La función decrece en:</p>
+<p>\[
+(-2,0)
+\]</p>
+<p>y crece en:</p>
+<p>\[
+(-\infty,-2)\cup(0,+\infty)
+\]</p>
+<p>La función tiene un máximo relativo en \(x=-2\) y un mínimo relativo en \(x=0\).</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio E6 acerca de la función \( f(x) = x^2 (x + 3) \), procedemos a determinar:</p>
+<p>1. <strong>Dominio de definición</strong><br>
+2. <strong>Puntos de corte con los ejes</strong><br>
+3. <strong>Intervalos de crecimiento y decrecimiento</strong><br>
+4. <strong>Extremos relativos</strong></p>
+<h4>1. Dominio de definición</h4>
+El dominio de una función son todos los valores de \( x \) para los cuales la función está definida. Dado que \( f(x) = x^2 (x + 3) \) es un polinomio, está definido para todos los valores reales de \( x \). Así,
+<p>\[
+\text{Dominio} = (-\infty, \infty)
+\]</p>
+<h4>2. Puntos de corte con los ejes</h4>
+#### Puntos de corte con el eje \( y \) (cuando \( x = 0 \))
+\[
+f(0) = 0^2 (0 + 3) = 0
+\]
+Entonces el punto de corte con el eje \( y \) es \( (0, 0) \).
+<p>#### Puntos de corte con el eje \( x \) (resolver \( f(x) = 0 \))<br>
+\[
+x^2 (x + 3) = 0
+\]<br>
+Para que el producto sea cero, \( x^2 = 0 \) o \( x + 3 = 0 \), así que<br>
+\[
+x = 0 \quad \text{o} \quad x = -3
+\]<br>
+Los puntos de corte con el eje \( x \) son \( (0, 0) \) y \( (-3, 0) \).</p>
+<h4>3. Intervalos de crecimiento y decrecimiento</h4>
+<p>Para determinar los intervalos de crecimiento y decrecimiento calculamos \( f&#x27;(x) \):<br>
+\[
+f(x) = x^3 + 3x^2
+\]<br>
+\[
+f&#x27;(x) = 3x^2 + 6x = 3x(x + 2)
+\]<br>
+\[
+f&#x27;(x) = 0 \quad \Rightarrow \quad x = 0 \quad \text{o} \quad x = -2
+\]</p>
+<p>Examinamos el signo de la derivada:</p>
+<p>- <strong>Para \( x &lt; -2 \),</strong> \( f&#x27;(x) \) es positivo (producto de dos negativos).<br>
+- <strong>Entre \( -2 \) y \( 0 \),</strong> \( f&#x27;(x) \) es negativo (producto de un negativo y un positivo).<br>
+- <strong>Para \( x &gt; 0 \),</strong> \( f&#x27;(x) \) es positivo (producto de dos positivos).</p>
+<p>Así que la función está:</p>
+<p>- <strong>Creciendo</strong> en \( (-\infty, -2) \) y \( (0, \infty) \).<br>
+- <strong>Decreciendo</strong> en \( (-2, 0) \).</p>
+<h4>4. Extremos relativos</h4>
+<p>Utilizando los resultados de \( f&#x27;(x) \):</p>
+<p>- En \( x = -2 \), \( f&#x27;(x) \) cambia de positivo a negativo, lo que indica un máximo relativo en \( x = -2 \). Calculamos este máximo:<br>
+\[
+f(-2) = (-2)^3 + 3(-2)^2 = -8 + 12 = 4
+\]</p>
+<p>- En \( x = 0 \), \( f&#x27;(x) \) cambia de negativo a positivo, lo que indica un mínimo relativo en \( x = 0 \). Ya sabemos que \( f(0) = 0 \).</p>
+<p>Por lo tanto, los extremos relativos son:</p>
+<p>- Máximo relativo en \( (-2, 4) \)<br>
+- Mínimo relativo en \( (0, 0) \)</p>
+<p>Con esta información, hemos completado la resolución del ejercicio tal como lo solicita el enunciado.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a analizar la función  <br>
+\[
+f(x)=x^2(x+3)=x^3+3x^2.
+\]</p>
+<h3>1. Dominio</h3>
+Es una función polinómica, por lo que está definida para todo número real.
+<p>\[
+\boxed{D_f=\mathbb{R}}
+\]</p>
+<p>---</p>
+<h3>2. Puntos de corte con los ejes</h3>
+<h4>Corte con el eje \(X\)</h4>
+Hay que resolver:
+\[
+f(x)=0 \quad \Longrightarrow \quad x^2(x+3)=0
+\]
+De aquí:
+\[
+x^2=0 \Rightarrow x=0, \qquad x+3=0 \Rightarrow x=-3
+\]
+<p>Por tanto, los puntos de corte con el eje \(X\) son:<br>
+\[
+\boxed{(0,0)\text{ y }(-3,0)}
+\]</p>
+<h4>Corte con el eje \(Y\)</h4>
+Se toma \(x=0\):
+\[
+f(0)=0
+\]
+Luego el punto de corte con el eje \(Y\) es:
+\[
+\boxed{(0,0)}
+\]
+<p>---</p>
+<h3>3. Intervalos de crecimiento y decrecimiento</h3>
+<p>Calculamos la derivada:<br>
+\[
+f&#x27;(x)=\frac{d}{dx}(x^3+3x^2)=3x^2+6x=3x(x+2)
+\]</p>
+<p>Los puntos críticos son las soluciones de \(f&#x27;(x)=0\):<br>
+\[
+3x(x+2)=0 \quad \Longrightarrow \quad x=0,\,-2
+\]</p>
+<p>Estudiamos el signo de \(f&#x27;(x)\):</p>
+<p>- Si \(x&lt;-2\), por ejemplo \(x=-3\):<br>
+  \[
+  f&#x27;(-3)=3(-3)(-1)&gt;0
+  \]<br>
+  Entonces \(f\) <strong>crece</strong> en \((-\infty,-2)\).</p>
+<p>- Si \(-2&lt;x&lt;0\), por ejemplo \(x=-1\):<br>
+  \[
+  f&#x27;(-1)=3(-1)(1)&lt;0
+  \]<br>
+  Entonces \(f\) <strong>decrece</strong> en \((-2,0)\).</p>
+<p>- Si \(x&gt;0\), por ejemplo \(x=1\):<br>
+  \[
+  f&#x27;(1)=3(1)(3)&gt;0
+  \]<br>
+  Entonces \(f\) <strong>crece</strong> en \((0,\infty)\).</p>
+<p>Por tanto:</p>
+<p>\[
+\boxed{\text{Crece en }(-\infty,-2)\cup(0,\infty)}
+\]<br>
+\[
+\boxed{\text{Decrece en }(-2,0)}
+\]</p>
+<p>---</p>
+<h3>4. Extremos relativos</h3>
+<p>- En \(x=-2\), la derivada pasa de positiva a negativa, así que hay un <strong>máximo relativo</strong>:<br>
+  \[
+  f(-2)=(-2)^2((-2)+3)=4\cdot1=4
+  \]<br>
+  \[
+  \boxed{\text{Máximo relativo en }(-2,4)}
+  \]</p>
+<p>- En \(x=0\), la derivada pasa de negativa a positiva, así que hay un <strong>mínimo relativo</strong>:<br>
+  \[
+  f(0)=0
+  \]<br>
+  \[
+  \boxed{\text{Mínimo relativo en }(0,0)}
+  \]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p>- <strong>Dominio</strong>:<br>
+  \[
+  \boxed{\mathbb{R}}
+  \]</p>
+<p>- <strong>Cortes con los ejes</strong>:<br>
+  - Eje \(X\): \(\boxed{(-3,0)\text{ y }(0,0)}\)<br>
+  - Eje \(Y\): \(\boxed{(0,0)}\)</p>
+<p>- <strong>Crecimiento</strong>:<br>
+  \[
+  \boxed{(-\infty,-2)\cup(0,\infty)}
+  \]</p>
+<p>- <strong>Decrecimiento</strong>:<br>
+  \[
+  \boxed{(-2,0)}
+  \]</p>
+<p>- <strong>Extremos relativos</strong>:<br>
+  - Máximo relativo: \(\boxed{(-2,4)}\)<br>
+  - Mínimo relativo: \(\boxed{(0,0)}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_060.html">Anterior</a><a class="button" href="problema_062.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 90: galicia_2023 7</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 90 de 139</h1>
+<div class="meta"><span class="badge">galicia_2023</span> &nbsp; Ejercicio 7</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_089.html">Anterior</a><a class="button" href="problema_091.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>7. Estadística y Probabilidad:  <br>
+a) Calcule P(A|B) si B ⊂ A. Luego, si P(C) = 0.5 y P(D) = 0.6, explique si C y D pueden ser incompatibles. Por último, obtenga P(E ∪ F) y P(E ∩ F) si E y F son independientes, P(E) = 0.3 y P(F) = 0.2.  <br>
+b) Se tira un dado siete veces. Calcule la probabilidad de que salgan exactamente dos seises.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>7.</strong></p>
+<p><strong>7.a)</strong></p>
+<p>- Si \(A \subseteq B\), entonces \(A \cap B = A\), con lo cual</p>
+<p>\[
+P(A|B)=\frac{P(A\cap B)}{P(B)}=\frac{P(A)}{P(B)}.
+\]</p>
+<p>*(En el documento aparece una expresión con posibles errores de transcripción, pero la solución indica el resultado \(1\) para el caso planteado.)*</p>
+<p>- Si \(P(C)=0.5\) y \(P(D)=0.6\), entonces \(C\) y \(D\) no pueden ser incompatibles, ya que, si lo fuesen,</p>
+<p>\[
+P(C\cap D)=0
+\]</p>
+<p>y, consecuentemente,</p>
+<p>\[
+P(C\cup D)=P(C)+P(D)-P(C\cap D)=0.5+0.6=1.1,
+\]</p>
+<p>lo que no es posible.</p>
+<p>- Se piden \(P(E\cup F)\) y \(P(E\cap F&#x27;)\), si \(E\) y \(F\) son independientes, \(P(E)=0.3\) y \(P(F)=0.2\).</p>
+<p>\[
+P(E\cup F)=P(E)+P(F)-P(E\cap F)
+\]</p>
+<p>Por ser \(E\) y \(F\) independientes,</p>
+<p>\[
+P(E\cap F)=P(E)P(F)=0.3\cdot 0.2=0.06
+\]</p>
+<p>con lo cual</p>
+<p>\[
+P(E\cup F)=0.5-0.06=0.44.
+\]</p>
+<p>Además,</p>
+<p>\[
+P(E\cap F&#x27;)=P(E)-P(E\cap F)=0.3-0.06=0.24.
+\]</p>
+<p>O, de otro modo,</p>
+<p>\[
+P(E\cap F&#x27;)=P(E)P(F&#x27;)=0.3\cdot 0.8=0.24.
+\]</p>
+<p>---</p>
+<p><strong>7.b)</strong></p>
+<p>\[
+X=\text{n.º de seises obtenidos en las siete tiradas}.
+\]</p>
+<p>\[
+X\sim B(n,p), \quad n=7,\quad p=\frac16,\quad q=\frac56.
+\]</p>
+<p>\[
+P(X=2)=\binom72\left(\frac16\right)^2\left(\frac56\right)^5
+\]</p>
+<p>\[
+=\frac{7\cdot 6\cdot 5^5}{2!\,6^7}
+=\frac{7\cdot 5^5}{2\cdot 6^6}
+=\frac{21875}{93312}\approx 0.2344.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver los ejercicios presentados en el documento proporcionado bajo la sección 7 de &quot;Estadística y Probabilidad&quot;, vamos a abordar cada apartado uno por uno:</p>
+<h4>Apartado a)</h4>
+1. <strong>Calcular \( P(A|B) \) si \( B \subset A \)</strong>  
+   Cuando \( B \) es un subconjunto de \( A \), significa que todos los eventos en \( B \) también ocurren en \( A \). Por lo tanto, la probabilidad condicional de \( A \) dado \( B \), denotada como \( P(A|B) \), se calcula usando la fórmula de la probabilidad condicional:
+   \[
+   P(A|B) = \frac{P(A \cap B)}{P(B)}
+   \]
+   Sin embargo, dado que \( B \subset A \), tenemos que \( A \cap B = B \). Por lo tanto, la fórmula se convierte en:
+   \[
+   P(A|B) = \frac{P(B)}{P(B)} = 1
+   \]
+<p>2. <strong>Explicar si \( C \) y \( D \) pueden ser incompatibles si \( P(C) = 0.5 \) y \( P(D) = 0.6 \)</strong>  <br>
+   Dos eventos \( C \) y \( D \) son incompatibles (o mutuamente excluyentes) si no pueden ocurrir al mismo tiempo, es decir, \( P(C \cap D) = 0 \). Sin embargo, la suma de sus probabilidades es:<br>
+   \[
+   P(C) + P(D) = 0.5 + 0.6 = 1.1
+   \]<br>
+   Dado que la suma de las probabilidades de los eventos es mayor que 1, es posible que estos eventos no sean incompatibles. Esto indica que pueden tener una intersección no nula.</p>
+<p>3. <strong>Calcular \( P(E \cup F) \) y \( P(E \cap F) \) si \( E \) y \( F \) son independientes y \( P(E) = 0.3 \), \( P(F) = 0.2 \)</strong>  <br>
+   La probabilidad de la unión de dos eventos independientes \( E \) y \( F \), y su intersección, se calcula como:<br>
+   \[
+   P(E \cup F) = P(E) + P(F) - P(E \cap F)
+   \]<br>
+   \[
+   P(E \cap F) = P(E) \cdot P(F) = 0.3 \times 0.2 = 0.06
+   \]<br>
+   Entonces, la probabilidad de la unión es:<br>
+   \[
+   P(E \cup F) = 0.3 + 0.2 - 0.06 = 0.44
+   \]</p>
+<h4>Apartado b)</h4>
+<strong>Calcular la probabilidad de sacar exactamente dos 6s al lanzar un dado siete veces</strong>  
+La probabilidad de obtener un 6 en una sola tirada de un dado es \( \frac{1}{6} \), mientras que la probabilidad de no obtener un 6 en una tirada es \( \frac{5}{6} \). Este es un problema de distribución binomial donde se realizan n = 7 ensayos, se busca obtener k = 2 éxitos, y la probabilidad de éxito (sacar un 6) en cada ensayo es \( p = \frac{1}{6} \). La fórmula de la distribución binomial es:
+\[
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+\]
+Sustituyendo los valores:
+\[
+P(X = 2) = \binom{7}{2} \left(\frac{1}{6}\right)^2 \left(\frac{5}{6}\right)^{7-2} = 21 \times \left(\frac{1}{36}\right) \times \left(\frac{5}{6}\right)^5
+\]
+Calculamos esa expresión para obtener la probabilidad buscada:
+\[
+P(X = 2) = 21 \times \frac{1}{36} \times \left(\frac{15625}{7776}\right) \approx 0.231
+\]
+<p>Estos cálculos proporcionan las soluciones solicitadas para los problemas planteados en el documento adjunto.</p></section>
+<section class="card"><h2>Respuesta B</h2><p><strong>Ejercicio 7</strong></p>
+<h3>a)</h3>
+<h4>1) Calcular \(P(A\mid B)\) si \(B\subset A\)</h4>
+<p>Por definición de probabilidad condicionada,</p>
+<p>\[
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}, \qquad \text{si } P(B)&gt;0.
+\]</p>
+<p>Como \(B\subset A\), entonces</p>
+<p>\[
+A\cap B = B.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+P(A\mid B)=\frac{P(B)}{P(B)}=1.
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(A\mid B)=1}
+\quad (\text{si } P(B)&gt;0).
+\]</p>
+<p>---</p>
+<h4>2) Si \(P(C)=0.5\) y \(P(D)=0.6\), ¿pueden ser incompatibles?</h4>
+<p>Dos sucesos incompatibles cumplen</p>
+<p>\[
+P(C\cap D)=0.
+\]</p>
+<p>En ese caso,</p>
+<p>\[
+P(C\cup D)=P(C)+P(D)=0.5+0.6=1.1.
+\]</p>
+<p>Pero una probabilidad no puede ser mayor que 1. Luego esto es imposible.</p>
+<p><strong>Conclusión:</strong></p>
+<p>\[
+\boxed{C \text{ y } D \text{ no pueden ser incompatibles}.}
+\]</p>
+<p>---</p>
+<h4>3) Hallar \(P(E\cup F)\) y \(P(E\cap F)\) si \(E\) y \(F\) son independientes, \(P(E)=0.3\), \(P(F)=0.2\)</h4>
+<p>Si son independientes,</p>
+<p>\[
+P(E\cap F)=P(E)\,P(F)=0.3\cdot 0.2=0.06.
+\]</p>
+<p>Luego, por la fórmula de la unión,</p>
+<p>\[
+P(E\cup F)=P(E)+P(F)-P(E\cap F).
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+P(E\cup F)=0.3+0.2-0.06=0.44.
+\]</p>
+<p><strong>Resultados:</strong></p>
+<p>\[
+\boxed{P(E\cap F)=0.06}
+\]<br>
+\[
+\boxed{P(E\cup F)=0.44}
+\]</p>
+<p>---</p>
+<h3>b) Se tira un dado siete veces. Calcular la probabilidad de que salgan exactamente dos seises</h3>
+<p>Cada lanzamiento es independiente y la probabilidad de obtener un seis es</p>
+<p>\[
+p=\frac16.
+\]</p>
+<p>La probabilidad de obtener exactamente 2 seises en 7 lanzamientos sigue una distribución binomial:</p>
+<p>\[
+P(X=2)=\binom{7}{2}\left(\frac16\right)^2\left(\frac56\right)^5.
+\]</p>
+<p>Calculamos:</p>
+<p>\[
+\binom{7}{2}=21
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+P(X=2)=21\left(\frac16\right)^2\left(\frac56\right)^5.
+\]</p>
+<p>Si se quiere en forma exacta:</p>
+<p>\[
+P(X=2)=21\cdot \frac{1}{36}\cdot \frac{3125}{7776}
+= \frac{65625}{279936}.
+\]</p>
+<p>Aproximadamente,</p>
+<p>\[
+P(X=2)\approx 0.2344.
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{P(\text{exactamente 2 seises})=\binom{7}{2}\left(\frac16\right)^2\left(\frac56\right)^5\approx 0.2344}
+\]</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<p>- \(\boxed{P(A\mid B)=1}\) si \(B\subset A\) y \(P(B)&gt;0\).<br>
+- \(\boxed{C \text{ y } D \text{ no pueden ser incompatibles}}\), porque \(0.5+0.6&gt;1\).<br>
+- \(\boxed{P(E\cap F)=0.06}\)<br>
+- \(\boxed{P(E\cup F)=0.44}\)<br>
+- \(\boxed{P(\text{exactamente 2 seises en 7 lanzamientos})=\binom{7}{2}(1/6)^2(5/6)^5\approx 0.2344}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_089.html">Anterior</a><a class="button" href="problema_091.html">Siguiente</a></nav>
+</main></body>
+</html>

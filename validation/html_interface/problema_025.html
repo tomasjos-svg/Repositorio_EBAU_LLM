@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 25: asturias_2023 7</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 25 de 139</h1>
+<div class="meta"><span class="badge">asturias_2023</span> &nbsp; Ejercicio 7</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_024.html">Anterior</a><a class="button" href="problema_026.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Pregunta 7. Una imprenta compra la tinta a dos empresas distintas. En la empresa A compra el 60 % de sus pedidos, y el resto a la empresa B. Se observa que el 1.6 % de las cajas de tinta de la empresa A llegan con defecto, mientras que de la empresa B sólo el 0.9 % son defectuosas. Se toma una caja al azar:</p>
+<p>(a) (1.25 punto) Calcula la probabilidad de que la caja sea defectuosa.</p>
+<p>(b) (1.25 puntos) Si la caja seleccionada no es defectuosa, calcule la probabilidad de que se haya comprado a la empresa A.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Pregunta 7. Solución oficial</strong></p>
+<p>Una imprenta compra la tinta a dos empresas distintas. En la empresa A compra el 60 % de sus pedidos, y el resto a la empresa B. Se observa que el 1.6 % de las cajas de tinta de la empresa A llegan con defecto, mientras que de la empresa B sólo el 0.9 %. Se toma una caja al azar.</p>
+<p><strong>(a) ¿Qué porcentaje de cajas serán defectuosas?</strong></p>
+<p><strong>(b) Si la caja seleccionada no es defectuosa, calcule la probabilidad de que se haya comprado a la empresa A.</strong></p>
+<p>Llamaremos \(A\) al suceso “caja comprada en la empresa A”, \(B\) al suceso “caja comprada en la empresa B” y \(D\) al suceso “caja defectuosa”.</p>
+<p>Los datos del enunciado son:</p>
+<p>\[
+P(A)=0.6,\quad P(D/A)=0.016,\quad P(D/B)=0.009
+\]</p>
+<p>Además, como la imprenta sólo compra a las empresas A y B, se tiene que:</p>
+<p>\[
+P(B)=1-P(A)=1-0.6=0.4
+\]</p>
+<h4>(a)</h4>
+<p>\[
+P(D)=P(D\cap A)+P(D\cap B)
+\]</p>
+<p>\[
+P(D)=P(D/A)P(A)+P(D/B)P(B)
+\]</p>
+<p>\[
+P(D)=0.016\cdot 0.6+0.009\cdot 0.4=0.0132
+\]</p>
+<p>Es decir, el <strong>1.32 %</strong> de las cajas serán defectuosas.</p>
+<h4>(b)</h4>
+<p>\[
+P(\overline{D})=1-P(D)=1-0.0132=0.9868
+\]</p>
+<p>\[
+P(A/\overline{D})=\frac{P(A\cap \overline{D})}{P(\overline{D})}
+=\frac{P(\overline{D}/A)P(A)}{P(\overline{D})}
+\]</p>
+<p>Como:</p>
+<p>\[
+P(\overline{D}/A)=1-P(D/A)=1-0.016=0.984
+\]</p>
+<p>entonces:</p>
+<p>\[
+P(A/\overline{D})=\frac{0.984\cdot 0.6}{0.9868}=0.5983
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea:</p>
+<p>- \(A\): “la caja procede de la empresa A”<br>
+- \(B\): “la caja procede de la empresa B”<br>
+- \(D\): “la caja es defectuosa”</p>
+<p>Datos del enunciado:</p>
+<p>\[
+P(A)=0.60,\qquad P(B)=0.40
+\]</p>
+<p>\[
+P(D\mid A)=0.016,\qquad P(D\mid B)=0.009
+\]</p>
+<p>---</p>
+<h3>(a) Probabilidad de que la caja sea defectuosa</h3>
+<p>Aplicamos la <strong>fórmula de la probabilidad total</strong>:</p>
+<p>\[
+P(D)=P(A)\,P(D\mid A)+P(B)\,P(D\mid B)
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+P(D)=0.60\cdot 0.016+0.40\cdot 0.009
+\]</p>
+<p>\[
+P(D)=0.0096+0.0036=0.0132
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{P(D)=0.0132}
+\]</p>
+<p>es decir, la probabilidad de que la caja sea defectuosa es:</p>
+<p>\[
+\boxed{1.32\%}
+\]</p>
+<p>---</p>
+<h3>(b) Si la caja no es defectuosa, probabilidad de que sea de la empresa A</h3>
+<p>Queremos calcular:</p>
+<p>\[
+P(A\mid \overline D)
+\]</p>
+<p>donde \(\overline D\) significa “no defectuosa”.</p>
+<h4>Paso 1: Probabilidades de no defecto</h4>
+<p>\[
+P(\overline D\mid A)=1-0.016=0.984
+\]</p>
+<p>\[
+P(\overline D\mid B)=1-0.009=0.991
+\]</p>
+<p>Además,</p>
+<p>\[
+P(\overline D)=1-P(D)=1-0.0132=0.9868
+\]</p>
+<h4>Paso 2: Aplicamos Bayes</h4>
+<p>\[
+P(A\mid \overline D)=\frac{P(A)\,P(\overline D\mid A)}{P(\overline D)}
+\]</p>
+<p>\[
+P(A\mid \overline D)=\frac{0.60\cdot 0.984}{0.9868}
+\]</p>
+<p>\[
+P(A\mid \overline D)=\frac{0.5904}{0.9868}\approx 0.5983
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{P(A\mid \overline D)\approx 0.5983}
+\]</p>
+<p>es decir,</p>
+<p>\[
+\boxed{59.83\%}
+\]</p>
+<p>---</p>
+<h3>Respuestas finales</h3>
+<p><strong>(a)</strong> La probabilidad de que la caja sea defectuosa es:</p>
+<p>\[
+\boxed{1.32\%}
+\]</p>
+<p><strong>(b)</strong> Si la caja no es defectuosa, la probabilidad de que proceda de la empresa A es:</p>
+<p>\[
+\boxed{59.83\%}
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio 7, primero identificamos las siguientes probabilidades basadas en la información que se nos proporciona:</p>
+<p>- \(P(A)\): La probabilidad de que una caja seleccionada sea de la empresa A es del 60%, o \(0.60\).<br>
+- \(P(B)\): La probabilidad de que una caja seleccionada sea de la empresa B es del 40%, o \(0.40\) (que es \(100\% - 60\%\)).</p>
+<p>- \(P(D | A)\): La probabilidad de que una caja de la empresa A sea defectuosa es del 1.6%, o \(0.016\).<br>
+- \(P(D | B)\): La probabilidad de que una caja de la empresa B sea defectuosa es del 0.9%, o \(0.009\).</p>
+<h4>Parte (a) </h4>
+<strong>Calcular la probabilidad de que la caja sea defectuosa.</strong>
+<p>Para esto, usamos la ley total de probabilidad. La probabilidad de que una caja esté defectuosa \(P(D)\) es calculada así:<br>
+\[ P(D) = P(D | A)P(A) + P(D | B)P(B) \]<br>
+\[ P(D) = (0.016)(0.60) + (0.009)(0.40) \]<br>
+\[ P(D) = 0.0096 + 0.0036 = 0.0132 \]</p>
+<p>Así, la probabilidad de seleccionar una caja defectuosa es \(0.0132\) o \(1.32\%\).</p>
+<h4>Parte (b) </h4>
+<strong>Si la caja seleccionada no es defectuosa, calcule la probabilidad de que se haya comprado a la empresa A.</strong>
+<p>Primero, calculamos \(P(\neg D)\), la probabilidad de que una caja no sea defectuosa:<br>
+\[ P(\neg D) = 1 - P(D) = 1 - 0.0132 = 0.9868. \]</p>
+<p>Ahora utilizamos la fórmula de Bayes para calcular \(P(A | \neg D)\), la probabilidad de que una caja que no es defectuosa venga de la empresa A:<br>
+\[ P(A | \neg D) = \frac{P(\neg D | A)P(A)}{P(\neg D)} \]<br>
+Donde \(P(\neg D | A) = 1 - P(D | A) = 1 - 0.016 = 0.984\).</p>
+<p>Insertando los valores,<br>
+\[ P(A | \neg D) = \frac{(0.984)(0.60)}{0.9868} \]<br>
+\[ P(A | \neg D) = \frac{0.5904}{0.9868} ≈ 0.5986. \]</p>
+<p>Así, la probabilidad de que una caja no defectuosa provenga de la empresa A es aproximadamente \(0.5986\) o \(59.86\%\).</p>
+<p>Esto resuelve los dos partes del problema empleando sus datos disponibles y aplicando la probabilidad total y probabilidad condicional de manera apropiada.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_024.html">Anterior</a><a class="button" href="problema_026.html">Siguiente</a></nav>
+</main></body>
+</html>

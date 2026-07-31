@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 84: galicia_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 84 de 139</h1>
+<div class="meta"><span class="badge">galicia_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_083.html">Anterior</a><a class="button" href="problema_085.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>1. Números y Álgebra:  <br>
+a) Calcule A si \((AB)^T = \begin{pmatrix}1 &amp; 0\\ 2 &amp; 1\end{pmatrix}\) y \(B = \begin{pmatrix}1 &amp; 1\\ -1 &amp; 1\end{pmatrix}\).</p>
+<p>b) Si \(A = \begin{pmatrix}3 &amp; x\\ y &amp; z\end{pmatrix}\) es invertible, obtenga los valores de \(x\), \(y\) y \(z\) sabiendo que \(\det(A - 3I) = 0\), que \(y = 0\) y que  <br>
+\[
+(3z)A^{-1} + I = \begin{pmatrix}2 &amp; 0\\ -1 &amp; 4\end{pmatrix}.
+\]  <br>
+Entiéndase que \(I\) es la matriz identidad.</p></section>
+<section class="card"><h2>Solucion oficial</h2><h3>1.</h3>
+<h4>1.a)</h4>
+<p>\[
+AB=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix},
+\]<br>
+de donde</p>
+<p>\[
+A=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}B^{-1}.
+\]</p>
+<p>Como</p>
+<p>\[
+B=\begin{pmatrix}1&amp;1\\-1&amp;1\end{pmatrix},
+\]</p>
+<p>tenemos que \(\det B=1+1=2\) y, por tanto,</p>
+<p>\[
+B^{-1}=\frac12
+\begin{pmatrix}
+1&amp;-1\\
+1&amp;1
+\end{pmatrix}.
+\]</p>
+<p>Finalmente,</p>
+<p>\[
+A=\frac12
+\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}
+\begin{pmatrix}1&amp;-1\\1&amp;1\end{pmatrix}
+=
+\begin{pmatrix}
+\frac32&amp;\frac12\\
+\frac12&amp;\frac12
+\end{pmatrix}.
+\]</p>
+<p><strong>Solución alternativa:</strong></p>
+<p>Si</p>
+<p>\[
+A=\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix},
+\]</p>
+<p>\[
+AB=
+\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}
+\begin{pmatrix}1&amp;1\\-1&amp;1\end{pmatrix}
+=
+\begin{pmatrix}
+a-b&amp;a+b\\
+c-d&amp;c+d
+\end{pmatrix},
+\]</p>
+<p>\[
+(AB)^T=
+\begin{pmatrix}
+a-b&amp;c-d\\
+a+b&amp;c+d
+\end{pmatrix}
+=
+\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix}.
+\]</p>
+<p>Así,</p>
+<p>\[
+a-b=1,\quad a+b=2,\quad c-d=0,\quad c+d=1.
+\]</p>
+<p>De donde</p>
+<p>\[
+a=\frac32,\quad b=\frac12,\quad c=\frac12,\quad d=\frac12.
+\]</p>
+<p>Luego,</p>
+<p>\[
+A=
+\begin{pmatrix}
+\frac32&amp;\frac12\\
+\frac12&amp;\frac12
+\end{pmatrix}.
+\]</p>
+<p>---</p>
+<h4>1.b)</h4>
+<p>Como</p>
+<p>\[
+A=\begin{pmatrix}3&amp;x\\y&amp;z\end{pmatrix}
+\]</p>
+<p>es invertible, sabemos que</p>
+<p>\[
+\det A=3z-xy\neq 0.
+\]</p>
+<p>\[
+A-3I=
+\begin{pmatrix}
+0&amp;x\\
+y&amp;z-3
+\end{pmatrix}.
+\]</p>
+<p>Al ser</p>
+<p>\[
+\det(A-3I)=-xy=0
+\]</p>
+<p>y \(y\neq 0\), necesariamente tiene que ser \(x=0\). En consecuencia, también tendremos \(z\neq 0\), porque</p>
+<p>\[
+\det A=3z-xy=3z\neq 0.
+\]</p>
+<p>En este punto, se sabe que</p>
+<p>\[
+A=\begin{pmatrix}3&amp;0\\y&amp;z\end{pmatrix}
+\]</p>
+<p>con \(y\) y \(z\) no nulos. Obtenemos los valores de \(y\) y \(z\) de la igualdad</p>
+<p>\[
+(3z)A^{-1}+I=
+\begin{pmatrix}
+2&amp;0\\
+-1&amp;4
+\end{pmatrix}.
+\]</p>
+<p>Puesto que \(\det A=3z\),</p>
+<p>\[
+A^{-1}=\frac1{3z}
+\begin{pmatrix}
+z&amp;0\\
+-y&amp;3
+\end{pmatrix},
+\]</p>
+<p>conque</p>
+<p>\[
+(3z)A^{-1}+I=
+\begin{pmatrix}
+z+1&amp;0\\
+-y&amp;4
+\end{pmatrix}
+=
+\begin{pmatrix}
+2&amp;0\\
+-1&amp;4
+\end{pmatrix}.
+\]</p>
+<p>De donde se deduce que</p>
+<p>\[
+y=1,\qquad z=1.
+\]</p>
+<p>En resumen, los valores pedidos son</p>
+<p>\[
+x=0,\qquad y=1,\qquad z=1.
+\]</p>
+<p>Equivalentemente,</p>
+<p>\[
+A=\begin{pmatrix}3&amp;0\\1&amp;1\end{pmatrix}.
+\]</p>
+<p><strong>Solución alternativa:</strong></p>
+<p>Se procede como en la resolución anterior hasta llegar a que</p>
+<p>\[
+A=\begin{pmatrix}3&amp;0\\y&amp;z\end{pmatrix}
+\]</p>
+<p>con \(y\) y \(z\) no nulos. Ahora nótese que la igualdad</p>
+<p>\[
+(3z)A^{-1}+I=
+\begin{pmatrix}
+2&amp;0\\
+-1&amp;4
+\end{pmatrix}
+\]</p>
+<p>implica que</p>
+<p>\[
+(3z)A^{-1}=
+\begin{pmatrix}
+1&amp;0\\
+-1&amp;3
+\end{pmatrix}.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\begin{pmatrix}
+3z&amp;0\\
+0&amp;3z
+\end{pmatrix}
+=
+(3z)I
+=
+\begin{pmatrix}
+1&amp;0\\
+-1&amp;3
+\end{pmatrix}A
+=
+\begin{pmatrix}
+1&amp;0\\
+-1&amp;3
+\end{pmatrix}
+\begin{pmatrix}
+3&amp;0\\
+y&amp;z
+\end{pmatrix}
+=
+\begin{pmatrix}
+3&amp;0\\
+-3+3y&amp;3z
+\end{pmatrix}.
+\]</p>
+<p>De donde</p>
+<p>\[
+y=1,\qquad z=1.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 1 del documento, abordaremos cada parte por separado.</p>
+<h4>Parte a)</h4>
+Se nos pide calcular la matriz \( A \) sabiendo que \( (AB)^T = \begin{pmatrix}1 &amp; 0\\ 2 &amp; 1\end{pmatrix} \) y \( B = \begin{pmatrix}1 &amp; 1\\ -1 &amp; 1\end{pmatrix} \).
+<p>Recordar que la propiedad de la transposición de un producto de matrices establece:</p>
+<p>\[
+(AB)^T = B^T A^T
+\]</p>
+<p>Dado que se conoce \( (AB)^T \) y \( B \), podemos utilizar esta propiedad para encontrar \( A \).</p>
+<p>1. Calculemos \( B^T \) primero:<br>
+   \[
+   B^T = \begin{pmatrix} 1 &amp; -1 \\ 1 &amp; 1 \end{pmatrix}
+   \]<br>
+2. Igualamos \( B^T A^T \) con la matriz dada y resolvemos para \( A^T \):<br>
+   \[
+   B^T A^T = \begin{pmatrix}1 &amp; 0\\ 2 &amp; 1\end{pmatrix}
+   \]<br>
+3. Resolución de \( A^T \) usando la multiplicación de matrices y el sistema de ecuaciones:<br>
+   \[
+   \begin{pmatrix} 1 &amp; -1 \\ 1 &amp; 1 \end{pmatrix} A^T = \begin{pmatrix}1 &amp; 0\\ 2 &amp; 1\end{pmatrix}
+   \]<br>
+   El sistema de ecuaciones resultante para las columnas de \( A^T \) sería:<br>
+   \[
+   \text{Columna 1: } \begin{cases} a - c = 1 \\ a + c = 2 \end{cases} \quad \Rightarrow a = 1.5, \; c = 0.5
+   \]<br>
+   \[
+   \text{Columna 2: } \begin{cases} b - d = 0 \\ b + d = 1 \end{cases} \quad \Rightarrow b = 0.5, \; d = 0.5
+   \]<br>
+4. Así, la matriz \( A^T \) es:<br>
+   \[
+   A^T = \begin{pmatrix} 1.5 &amp; 0.5 \\ 0.5 &amp; 0.5 \end{pmatrix}
+   \]<br>
+5. Finalmente, transponemos para obtener \( A \):<br>
+   \[
+   A = \begin{pmatrix} 1.5 &amp; 0.5 \\ 0.5 &amp; 0.5 \end{pmatrix}^T = \begin{pmatrix} 1.5 &amp; 0.5 \\ 0.5 &amp; 0.5 \end{pmatrix}
+   \]</p>
+<h4>Parte b)</h4>
+Dada la matriz \( A = \begin{pmatrix}3 &amp; x\\ y &amp; z\end{pmatrix} \), con \( y = 0 \), debemos determinar los valores de \( x \) y \( z \) bajo las condiciones dadas:
+1. \( A \) es invertible (\( \det(A) \neq 0 \)).
+2. \(\det(A - 3I) = 0\).
+3. \((3z)A^{-1} + I = \begin{pmatrix}2 &amp; 0\\ -1 &amp; 4\end{pmatrix}\).
+<p>Procedamos con los cálculos:</p>
+<p>1. <strong>Calculemos \( \det(A - 3I) \):</strong><br>
+   \[
+   A - 3I = \begin{pmatrix}0 &amp; x\\ 0 &amp; z-3\end{pmatrix} \Rightarrow \det(A - 3I) = 0 \cdot (z - 3) = 0
+   \]<br>
+   Esto no implica necesariamente nada sobre \( x \) o \( z \) ya que es redundante (cualquier \( x \) y \( z = 3 \) satisface la ecuación).</p>
+<p>2. <strong>Uso de \((3z)A^{-1} + I = \begin{pmatrix}2 &amp; 0\\ -1 &amp; 4\end{pmatrix}\):</strong><br>
+   Primero, encontramos \( A^{-1} \) si \( A = \begin{pmatrix}3 &amp; x\\ 0 &amp; 3\end{pmatrix} \):<br>
+   \[
+   A^{-1} = \frac{1}{\det(A)} \begin{pmatrix}3 &amp; -x\\ 0 &amp; 3\end{pmatrix}^T = \frac{1}{9} \begin{pmatrix}3 &amp; 0\\ -x &amp; 3\end{pmatrix}
+   \]<br>
+   Substituimos en la ecuación que tenemos:<br>
+   \[
+   \left(3 \times 3 \times \begin{pmatrix}1/9 &amp; 0\\ -x/9 &amp; 1/9\end{pmatrix}\right) + \begin{pmatrix}1 &amp; 0\\ 0 &amp; 1\end{pmatrix} = \begin{pmatrix}2 &amp; 0\\ -1 &amp; 4\end{pmatrix}
+   \]<br>
+   Resolviendo, encontramos:<br>
+   \[
+   x = 0
+   \]</p>
+<p>Conclusión: \( x = 0 \) y \( z = 3 \).</p>
+<p>Estas soluciones cumplen con los requisitos establecidos para la matriz \( A \) y sus operaciones relacionadas.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Resolvemos el <strong>ejercicio 1</strong>.</p>
+<p>---</p>
+<h3>a) Cálculo de \(A\)</h3>
+<p>Se sabe que</p>
+<p>\[
+(AB)^T=\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix}.
+\]</p>
+<p>Entonces, trasponiendo ambos lados,</p>
+<p>\[
+AB=\left((AB)^T\right)^T=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}.
+\]</p>
+<p>Además,</p>
+<p>\[
+B=\begin{pmatrix}1&amp;1\\-1&amp;1\end{pmatrix},\qquad
+\det(B)=1\cdot1-1(-1)=2\neq 0,
+\]</p>
+<p>así que \(B\) es invertible y</p>
+<p>\[
+B^{-1}=\frac1{2}\begin{pmatrix}1&amp;-1\\1&amp;1\end{pmatrix}.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+A=(AB)B^{-1}
+=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}
+\frac12\begin{pmatrix}1&amp;-1\\1&amp;1\end{pmatrix}.
+\]</p>
+<p>Multiplicando:</p>
+<p>\[
+A=\frac12
+\begin{pmatrix}
+1\cdot1+2\cdot1 &amp; 1(-1)+2\cdot1\\
+0\cdot1+1\cdot1 &amp; 0(-1)+1\cdot1
+\end{pmatrix}
+=
+\frac12
+\begin{pmatrix}
+3&amp;1\\
+1&amp;1
+\end{pmatrix}.
+\]</p>
+<p>Luego,</p>
+<p>\[
+\boxed{
+A=\begin{pmatrix}
+\frac32 &amp; \frac12\\[2mm]
+\frac12 &amp; \frac12
+\end{pmatrix}}
+\]</p>
+<p>---</p>
+<h3>b) Valores de \(x,y,z\)</h3>
+<p>Se tiene</p>
+<p>\[
+A=\begin{pmatrix}3&amp;x\\ y&amp;z\end{pmatrix},
+\qquad y=0,
+\qquad
+(3z)A^{-1}+I=
+\begin{pmatrix}2&amp;0\\-1&amp;4\end{pmatrix}.
+\]</p>
+<p>Restamos \(I\) en ambos lados:</p>
+<p>\[
+(3z)A^{-1}
+=
+\begin{pmatrix}2&amp;0\\-1&amp;4\end{pmatrix}
+-
+\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}
+=
+\begin{pmatrix}1&amp;0\\-1&amp;3\end{pmatrix}.
+\]</p>
+<p>Así,</p>
+<p>\[
+A^{-1}=\frac1{3z}\begin{pmatrix}1&amp;0\\-1&amp;3\end{pmatrix}.
+\]</p>
+<p>Invertimos para obtener \(A\):</p>
+<p>\[
+A
+=
+3z\left(\begin{pmatrix}1&amp;0\\-1&amp;3\end{pmatrix}\right)^{-1}.
+\]</p>
+<p>Como</p>
+<p>\[
+\det\begin{pmatrix}1&amp;0\\-1&amp;3\end{pmatrix}=3,
+\]</p>
+<p>su inversa es</p>
+<p>\[
+\left(\begin{pmatrix}1&amp;0\\-1&amp;3\end{pmatrix}\right)^{-1}
+=
+\frac13\begin{pmatrix}3&amp;0\\1&amp;1\end{pmatrix}.
+\]</p>
+<p>Luego,</p>
+<p>\[
+A
+=
+3z\cdot \frac13
+\begin{pmatrix}3&amp;0\\1&amp;1\end{pmatrix}
+=
+\begin{pmatrix}3z&amp;0\\ z&amp;z\end{pmatrix}.
+\]</p>
+<p>Comparando con</p>
+<p>\[
+A=\begin{pmatrix}3&amp;x\\ y&amp;z\end{pmatrix},
+\]</p>
+<p>se obtiene</p>
+<p>\[
+3z=3,\qquad x=0,\qquad y=z.
+\]</p>
+<p>De \(3z=3\), sale</p>
+<p>\[
+z=1.
+\]</p>
+<p>Entonces</p>
+<p>\[
+x=0,\qquad y=1.
+\]</p>
+<p>Pero el enunciado también impone que \(y=0\), lo cual contradice \(y=1\).</p>
+<h4>Conclusión del apartado b)</h4>
+<p>Las condiciones dadas son <strong>incompatibles</strong>:  <br>
+no existen valores de \(x,y,z\) que satisfagan simultáneamente todas ellas.</p>
+<p>Si se usa solo la ecuación matricial, sale</p>
+<p>\[
+x=0,\quad y=1,\quad z=1,
+\]</p>
+<p>pero eso contradice \(y=0\).</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{\text{el apartado b) no tiene solución}}
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>- <strong>a)</strong> \(\displaystyle \boxed{A=\begin{pmatrix}\frac32&amp;\frac12\\[1mm]\frac12&amp;\frac12\end{pmatrix}}\)<br>
+- <strong>b)</strong> \(\displaystyle \boxed{\text{no existe solución, pues las condiciones son contradictorias}}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_083.html">Anterior</a><a class="button" href="problema_085.html">Siguiente</a></nav>
+</main></body>
+</html>

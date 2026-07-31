@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 126: pais_vasco_2023 B2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 126 de 139</h1>
+<div class="meta"><span class="badge">pais_vasco_2023</span> &nbsp; Ejercicio B2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_125.html">Anterior</a><a class="button" href="problema_127.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p><strong>Ejercicio B2</strong></p>
+<p>Se consideran tres planos de ecuaciones:</p>
+<p>\[
+\pi_1:\ 4x + 2y - 4z = 2,\quad \pi_2:\ x - y - z = 2 \quad \text{y} \quad \pi_3:\ x + ay + z = b.
+\]</p>
+<p>¿Existen valores de los parámetros \(a\) y \(b\) para los cuales los tres planos se cortan en una recta? En caso de que la respuesta sea negativa, razónala. En el caso de que la respuesta sea positiva, calcula dichos valores.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio B2</strong></p>
+<p>Se consideran tres planos de ecuaciones:  <br>
+\[
+\pi_1:\;4x+2y-4z=2,\qquad 
+\pi_2:\;x-y-z=2,\qquad 
+\pi_3:\;x+ay+z=b.
+\]</p>
+<p>Planteamos el sistema formado por las ecuaciones de los tres planos que nos permite hallar los puntos de corte de los tres planos:</p>
+<p>\[
+\begin{cases}
+4x+2y-4z=2\\
+x-y-z=2\\
+x+ay+z=b
+\end{cases}
+\]</p>
+<p>La matriz de coeficientes y la matriz ampliada asociada al sistema son:</p>
+<p>\[
+A=
+\begin{pmatrix}
+2&amp;1&amp;-2\\
+1&amp;-1&amp;-1\\
+1&amp;a&amp;1
+\end{pmatrix},
+\qquad
+A/B=
+\begin{pmatrix}
+2&amp;1&amp;-2&amp;1\\
+1&amp;-1&amp;-1&amp;2\\
+1&amp;a&amp;1&amp;b
+\end{pmatrix}.
+\]</p>
+<p>Vemos cuándo se anula el determinante de la matriz \(A\):</p>
+<p>\[
+|A|=
+\begin{vmatrix}
+2&amp;1&amp;-2\\
+1&amp;-1&amp;-1\\
+1&amp;a&amp;1
+\end{vmatrix}
+=
+-6.
+\]</p>
+<p>Al no anularse el determinante de \(A\), el rango de \(A\) es 3, así como el de la matriz ampliada \(A/B\), e igual que el número de incógnitas (3). El sistema es compatible determinado, es decir, tiene una única solución, por lo que los planos se cortan en un punto sean cuáles sean los valores de \(a\) y \(b\).</p>
+<p><strong>No existen valores de \(a\) y \(b\) para los que los planos se corten en una recta.</strong></p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio B2, debemos determinar si los tres planos dados se cortan en una recta y, si es así, encontrar los valores de los parámetros \( a \) y \( b \) que permiten que esto suceda.</p>
+<h4><strong>1. Ecuaciones de los Planos</strong></h4>
+<p>Las ecuaciones de los planos son:<br>
+\[ \pi_1: 4x + 2y - 4z = 2, \]<br>
+\[ \pi_2: x - y - z = 2, \]<br>
+\[ \pi_3: x + ay + z = b. \]</p>
+<h4><strong>2. Condición para la Intersección en una Recta</strong></h4>
+<p>Para que tres planos se corten en una recta, necesitamos que haya intersección, pero no solamente en puntos aislados. Esto implica que hay dependencia lineal entre las ecuaciones que definen los planos.</p>
+<h4><strong>3. Transformación de las Ecuaciones</strong></h4>
+<p>Expresamos las ecuaciones de los planos en la forma matricial. Las normales a los planos se pueden representar como vectores fila de una matriz \( A \):</p>
+<p>\[ A = \begin{bmatrix} 4 &amp; 2 &amp; -4 \\ 1 &amp; -1 &amp; -1 \\ 1 &amp; a &amp; 1 \end{bmatrix}. \]</p>
+<h4><strong>4. Rango de la Matriz \( A \)</strong></h4>
+<p>Necesitamos que el rango de la matriz \( A \) sea 2, lo que sugiere que debe haber exactamente una relación de dependencia lineal entre las filas de \( A \) (es decir, deben existir dos vectores linealmente independientes y uno dependiente de los otros dos).</p>
+<p>Calculamos el determinante de \( A \) para ver si el sistema tiene rango completo:<br>
+\[ \text{det}(A) = 4 (a + 1) + 2 (1) - 4 (-1 - 1) = 4a + 4 + 2 + 8 = 4a + 14.\]<br>
+Si \(\text{det}(A) \neq 0\), entonces el rango es 3 y los planos no se intersecan en una recta. Calculamos cuando el determinante es cero para encontrar condiciones sobre \( a \) y \( b \):</p>
+<p>\[ 4a + 14 = 0 \]<br>
+\[ a = -\frac{14}{4} = -3.5. \]</p>
+<h4><strong>5. Condición sobre \( b \)</strong></h4>
+<p>Si \( a = -3.5 \), entonces la dependencia entre las filas implica que el sistema tiene infinitas soluciones con parámetros libres. Para mantener la consistencia con la dependencia lineal y la intersección en una recta, necesitamos verificar la tercera ecuación para \( b \) dado que \( a = -3.5 \).</p>
+<p>Con \( a = -3.5 \), sustituimos en la ecuación de \( \pi_3 \) y junto con otras dos ecuaciones en forma matricial, analizamos su consistencia usando métodos de eliminación para conocer el rango de la matriz ampliada (que incluye el vector columna de los términos independientes: [2, 2, b]).</p>
+<p>Después de la sustitución y las operaciones de fila, podemos determinar un valor específico de \( b \) (si existe) para que el sistema sea consistente. Sin embargo, en este punto, notamos que el valor de \( b \) solo determinará la ubicación específica de la recta de intersección, mientras que la existencia de tal recta se garantiza cuando \( a = -3.5 \).</p>
+<h4><strong>Conclusión</strong></h4>
+<p>- <strong>Si \( a = -3.5 \)</strong>, entonces los tres planos se intersecarán en una recta.<br>
+- <strong>Para encontrar \( b \) específico</strong> que haga que la intersección sea una recta, necesitamos resolver el sistema paramétricamente para los valores de \( x, y, \) y \( z \) utilizando la eliminación de Gauss en el sistema con \( a = -3.5 \) y verificar la consistencia del sistema de ecuaciones.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a estudiar primero la intersección de los dos primeros planos:</p>
+<p>\[
+\pi_1:\ 4x+2y-4z=2 \qquad \pi_2:\ x-y-z=2
+\]</p>
+<p>Simplificamos \(\pi_1\):</p>
+<p>\[
+2x+y-2z=1
+\]</p>
+<h3>1. Intersección de \(\pi_1\) y \(\pi_2\)</h3>
+<p>Resolvemos el sistema</p>
+<p>\[
+\begin{cases}
+2x+y-2z=1\\
+x-y-z=2
+\end{cases}
+\]</p>
+<p>Tomamos \(z=t\) como parámetro. De la segunda ecuación:</p>
+<p>\[
+x=2+y+z
+\]</p>
+<p>Sustituyendo en la primera:</p>
+<p>\[
+2(2+y+z)+y-2z=1
+\]</p>
+<p>\[
+4+2y+2z+y-2z=1
+\]</p>
+<p>\[
+4+3y=1
+\]</p>
+<p>\[
+y=-1
+\]</p>
+<p>Entonces</p>
+<p>\[
+x=2+(-1)+t=1+t
+\]</p>
+<p>Por tanto, la recta de intersección de \(\pi_1\) y \(\pi_2\) es</p>
+<p>\[
+r:\ (x,y,z)=(1+t,-1,t),\qquad t\in\mathbb R
+\]</p>
+<h3>2. Condición para que los tres planos se corten en una recta</h3>
+<p>Si los tres planos se cortan en una recta, esa recta tiene que ser precisamente la intersección de \(\pi_1\) y \(\pi_2\), es decir, la recta \(r\).  <br>
+Por tanto, \(\pi_3\) debe contener a \(r\).</p>
+<p>El tercer plano es</p>
+<p>\[
+\pi_3:\ x+ay+z=b
+\]</p>
+<p>Sustituimos los puntos de \(r\):</p>
+<p>\[
+(1+t)+a(-1)+t=b
+\]</p>
+<p>\[
+1-a+2t=b
+\]</p>
+<p>Para que <strong>todos</strong> los puntos de la recta pertenezcan a \(\pi_3\), esta igualdad debe cumplirse para todo \(t\).  <br>
+Pero aparece el término \(2t\), y su coeficiente es \(2\neq 0\), luego eso es imposible.</p>
+<h3>Conclusión</h3>
+<p><strong>No existen valores de \(a\) y \(b\)</strong> para los que los tres planos se corten en una recta.</p>
+<p>\[
+\boxed{\text{No existen tales valores de }a\text{ y }b}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_125.html">Anterior</a><a class="button" href="problema_127.html">Siguiente</a></nav>
+</main></body>
+</html>

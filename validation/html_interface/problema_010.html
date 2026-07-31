@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 10: aragon_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 10 de 139</h1>
+<div class="meta"><span class="badge">aragon_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_009.html">Anterior</a><a class="button" href="problema_011.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>2) Calcula el siguiente límite</p>
+<p>\[
+\lim_{x\to +\infty}\left(\frac{(x+1)^2}{x^2+3x+1}\right)^{\ln x}.
+\]</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 2)</strong> Calcula el siguiente límite:</p>
+<p>\[
+\lim_{x\to +\infty}\left(\frac{x^2+x+1}{x^2+3x+1}\right)^{x^2\ln 2}
+\]</p>
+<p>Solución oficial:</p>
+<p>\[
+\lim_{x\to+\infty}\left(\frac{x^2+x+1}{x^2+3x+1}\right)^{x^2\ln2}
+=
+e^{\lim_{x\to+\infty} x^2\ln2\cdot \ln\left(\frac{x^2+x+1}{x^2+3x+1}\right)}
+\]</p>
+<p>\[
+=
+e^{\ln2\cdot \lim_{x\to+\infty} x^2 \ln\left(1+\frac{-2x}{x^2+3x+1}\right)}
+\]</p>
+<p>Se obtiene una indeterminación de tipo número \(e\). Aplicando el procedimiento indicado en la solución:</p>
+<p>\[
+\lim_{x\to+\infty} x^2\ln\left(1-\frac{2x}{x^2+3x+1}\right)
+\]</p>
+<p>\[
+=
+\lim_{x\to+\infty}
+\frac{\ln\left(1-\frac{2x}{x^2+3x+1}\right)}{1/x^2}
+\]</p>
+<p>Aplicando L’Hôpital:</p>
+<p>\[
+=
+\lim_{x\to+\infty}
+\frac{\frac{-2(x^2+3x+1)+2x(2x+3)}{(x^2+3x+1)^2}}{-2/x^3}
+\]</p>
+<p>Finalmente, el límite del exponente es:</p>
+<p>\[
+\ln 2 \cdot (-2)
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+\lim_{x\to+\infty}\left(\frac{x^2+x+1}{x^2+3x+1}\right)^{x^2\ln2}
+=
+e^{-2\ln2}
+=
+\frac{1}{4}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 2 del documento, debemos calcular el límite propuesto:</p>
+<p>\[
+\lim_{x\to +\infty}\left(\frac{(x+1)^2}{x^2+3x+1}\right)^{\ln x}.
+\]</p>
+<h4>Paso 1: Simplificación de la Función Base</h4>
+Primero simplificamos la expresión dentro del paréntesis:
+<p>\[
+\frac{(x+1)^2}{x^2+3x+1} = \frac{x^2 + 2x + 1}{x^2 + 3x + 1}.
+\]</p>
+<p>Para \(x \to +\infty\), podemos ignorar los términos de menor grado en el numerador y el denominador:</p>
+<p>\[
+\frac{x^2 + 2x + 1}{x^2 + 3x + 1} \approx \frac{x^2}{x^2} = 1.
+\]</p>
+<p>Por lo tanto, a medida que \(x \to +\infty\), la expresión tiende a 1. Sin embargo, para ser más precisos en nuestra aproximación, consideramos los términos lineales y separamos \(x^2\) tanto en el numerador como en el denominador:</p>
+<p>\[
+\frac{(x+1)^2}{x^2+3x+1} = \frac{x^2(1 + 2/x + 1/x^2)}{x^2(1 + 3/x + 1/x^2)} = \frac{1 + 2/x + 1/x^2}{1 + 3/x + 1/x^2}.
+\]</p>
+<p>Dado que 1/x y 1/x² tienden a 0 a medida que \(x\) tiende a infinito, se puede decir que:</p>
+<p>\[
+\frac{(x+1)^2}{x^2+3x+1} \approx 1 - \frac{1}{x},
+\]</p>
+<p>ya que el término 1/x domina sobre 1/x².</p>
+<h4>Paso 2: Tratar el Exponente y Aplicar la Propiedad Límite</h4>
+Ahora evaluamos el límite original:
+<p>\[
+\lim_{x\to +\infty}\left(1 - \frac{1}{x}\right)^{\ln x}.
+\]</p>
+<p>Usamos la aproximación de que \( \left(1 + \frac{1}{y}\right)^y \approx e \) para \(y \to \infty\). Para nuestro caso, reemplazamos \(1/x\) por \(-1/x\), y el signo negativo sale con el exponente de \(e\):</p>
+<p>\[
+\lim_{x\to +\infty}\left(1 - \frac{1}{x}\right)^x = e^{-1}.
+\]</p>
+<p>Sin embargo, el exponente es \(\ln x\) en vez de \(x\), entonces, aplicamos una aproximación más:</p>
+<p>\[
+\lim_{x\to +\infty}\left(1 - \frac{1}{x}\right)^{\ln x} = \left( e^{-1} \right) \approx 1 - \frac{1}{x} = e^{- \ln x / x}.
+\]</p>
+<p>Para \(x \to +\infty\), el término \(\ln x / x\) tiende a 0 porque el logaritmo crece mucho más lento que el término lineal, mostrando que:</p>
+<p>\[
+e^{- \ln x / x} \to e^{0} = 1.
+\]</p>
+<h4>Conclusión</h4>
+El valor del límite es:
+<p>\[
+\lim_{x\to +\infty}\left(\frac{(x+1)^2}{x^2+3x+1}\right)^{\ln x} = 1.
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea</p>
+<p>\[
+L=\lim_{x\to +\infty}\left(\frac{(x+1)^2}{x^2+3x+1}\right)^{\ln x}.
+\]</p>
+<h3>1. Indeterminación</h3>
+Cuando \(x\to+\infty\),
+<p>\[
+\frac{(x+1)^2}{x^2+3x+1}
+=\frac{x^2+2x+1}{x^2+3x+1}\to 1,
+\qquad
+\ln x\to +\infty.
+\]</p>
+<p>Luego estamos ante una indeterminación del tipo \(1^\infty\).</p>
+<h3>2. Tomamos logaritmos</h3>
+Definimos
+<p>\[
+y=\left(\frac{(x+1)^2}{x^2+3x+1}\right)^{\ln x}.
+\]</p>
+<p>Entonces</p>
+<p>\[
+\ln y=\ln x\cdot \ln\!\left(\frac{(x+1)^2}{x^2+3x+1}\right).
+\]</p>
+<p>Estudiamos este límite.</p>
+<h3>3. Simplificamos la base</h3>
+Observamos que
+<p>\[
+\frac{(x+1)^2}{x^2+3x+1}
+=\frac{x^2+2x+1}{x^2+3x+1}
+=1-\frac{x}{x^2+3x+1}.
+\]</p>
+<p>Sea</p>
+<p>\[
+u_x=\frac{x}{x^2+3x+1}.
+\]</p>
+<p>Entonces \(u_x\to 0\) cuando \(x\to+\infty\), y</p>
+<p>\[
+\ln y=\ln x\cdot \ln(1-u_x).
+\]</p>
+<p>Usamos el equivalente notable:</p>
+<p>\[
+\ln(1-u)\sim -u \qquad (u\to 0).
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\ln y \sim -\ln x\cdot \frac{x}{x^2+3x+1}.
+\]</p>
+<p>Y como</p>
+<p>\[
+\frac{x}{x^2+3x+1}\sim \frac1x,
+\]</p>
+<p>resulta</p>
+<p>\[
+\ln y \sim -\frac{\ln x}{x}.
+\]</p>
+<p>Pero</p>
+<p>\[
+\lim_{x\to+\infty}\frac{\ln x}{x}=0.
+\]</p>
+<p>Así,</p>
+<p>\[
+\lim_{x\to+\infty}\ln y=0.
+\]</p>
+<h3>4. Volvemos a la función original</h3>
+Si \(\ln y\to 0\), entonces
+<p>\[
+y\to e^0=1.
+\]</p>
+<p>Por consiguiente,</p>
+<p>\[
+\boxed{\lim_{x\to +\infty}\left(\frac{(x+1)^2}{x^2+3x+1}\right)^{\ln x}=1.}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_009.html">Anterior</a><a class="button" href="problema_011.html">Siguiente</a></nav>
+</main></body>
+</html>

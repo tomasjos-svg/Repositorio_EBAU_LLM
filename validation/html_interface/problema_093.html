@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 93: lamancha_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 93 de 139</h1>
+<div class="meta"><span class="badge">lamancha_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_092.html">Anterior</a><a class="button" href="problema_094.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p><strong>2.</strong> Una empresa desea construir un aparcamiento para sus empleados y necesita vallarlo de manera que la región resultante sea un rectángulo más medio círculo, tal y como se ve en la figura adjunta. El rectángulo tiene de lados <strong>h</strong> y <strong>r</strong>, de manera que el radio del semicírculo es <strong>h/2</strong>. La empresa tiene solamente presupuesto para comprar una valla de <strong>80 metros</strong> de longitud, que ha de ser el perímetro del aparcamiento. La empresa desea construir un aparcamiento con el mayor área posible con ese perímetro de <strong>80 metros</strong>.</p>
+<p><strong>a) [1 punto]</strong> Escribe el área del aparcamiento en función del valor <strong>h</strong>.</p>
+<p><strong>b) [1,5 puntos]</strong> ¿Cuánto deben valer <strong>h</strong> y <strong>r</strong> para que el área del aparcamiento sea lo mayor posible?</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 2. Solución oficial</strong></p>
+<p><strong>a)</strong> El perímetro es  <br>
+\[
+P(h,r)=h+2r+\frac{2\pi(h/2)}{2}=h+2r+\pi\frac h2
+\]<br>
+por ser el radio de la semicircunferencia igual a \(h/2\). Además, este perímetro ha de ser igual a 80.</p>
+<p>El área es  <br>
+\[
+A(h,r)=hr+\frac{\pi(h/2)^2}{2}=hr+\frac{\pi h^2}{8}.
+\]</p>
+<p>Despejamos el valor de \(r\) de la ecuación del perímetro:  <br>
+\[
+r=\frac{80-h(1+\pi/2)}{2}.
+\]</p>
+<p>Sustituimos este valor de \(r\) en la ecuación del área y obtenemos:<br>
+\[
+A(h)=h\left(40-h\frac{1+\pi/2}{2}\right)+\frac{\pi h^2}{8}
+\]<br>
+\[
+A(h)=h^2\left(\frac{\pi}{8}-\frac{1+\pi/2}{2}\right)+40h.
+\]</p>
+<p>---</p>
+<p><strong>b)</strong> En este caso, tenemos que encontrar el valor de \(h\) que maximiza el área. Para ello, obtendremos la derivada de \(A(h)\):  <br>
+\[
+A&#x27;(h)=40+2h\left(\frac{\pi}{8}-\frac{1+\pi/2}{2}\right).
+\]</p>
+<p>Se anula para  <br>
+\[
+h=\frac{-40}{2\left(\frac{\pi}{8}-\frac{1+\pi/2}{2}\right)}\simeq 22,40.
+\]</p>
+<p>Como  <br>
+\[
+A&#x27;&#x27;=2\left(\frac{\pi}{8}-\frac{1+\pi/2}{2}\right)\simeq -1,785&lt;0,
+\]<br>
+entonces se trata de un máximo.</p>
+<p>El valor para el radio es  <br>
+\[
+r\simeq 11,21.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea el aparcamiento la unión de un rectángulo de lados \(h\) y \(r\) y un semicírculo cuyo diámetro es \(h\).  <br>
+Entonces el radio del semicírculo es</p>
+<p>\[
+\frac h2.
+\]</p>
+<h3>a) Área en función de \(h\)</h3>
+<h4>1. Ecuación del perímetro</h4>
+El perímetro exterior es:
+<p>- dos lados del rectángulo de longitud \(r\): \(2r\),<br>
+- un lado del rectángulo de longitud \(h\): \(h\),<br>
+- el arco del semicírculo: \(\pi\cdot \frac h2\).</p>
+<p>Por tanto,</p>
+<p>\[
+2r+h+\frac{\pi h}{2}=80.
+\]</p>
+<p>Despejamos \(r\):</p>
+<p>\[
+2r=80-h-\frac{\pi h}{2},
+\qquad
+r=40-\frac h2-\frac{\pi h}{4}.
+\]</p>
+<h4>2. Área</h4>
+El área total es:
+<p>\[
+A= \text{área del rectángulo}+\text{área del semicírculo}
+\]</p>
+<p>\[
+A(h)=hr+\frac12\pi\left(\frac h2\right)^2.
+\]</p>
+<p>Sustituyendo \(r\):</p>
+<p>\[
+A(h)=h\left(40-\frac h2-\frac{\pi h}{4}\right)+\frac{\pi h^2}{8}.
+\]</p>
+<p>Simplificando:</p>
+<p>\[
+A(h)=40h-\frac{h^2}{2}-\frac{\pi h^2}{4}+\frac{\pi h^2}{8}
+\]</p>
+<p>\[
+\boxed{A(h)=40h-\frac{4+\pi}{8}\,h^2.}
+\]</p>
+<p>---</p>
+<h3>b) Valores de \(h\) y \(r\) para que el área sea máxima</h3>
+<p>Derivamos:</p>
+<p>\[
+A&#x27;(h)=40-\frac{4+\pi}{4}\,h.
+\]</p>
+<p>Buscamos el punto crítico:</p>
+<p>\[
+40-\frac{4+\pi}{4}h=0
+\]</p>
+<p>\[
+\frac{4+\pi}{4}h=40
+\]</p>
+<p>\[
+\boxed{h=\frac{160}{4+\pi}}.
+\]</p>
+<p>Como</p>
+<p>\[
+A&#x27;&#x27;(h)=-\frac{4+\pi}{4}&lt;0,
+\]</p>
+<p>ese valor da un <strong>máximo</strong>.</p>
+<p>Ahora hallamos \(r\):</p>
+<p>\[
+r=40-\frac h2-\frac{\pi h}{4}.
+\]</p>
+<p>Sustituyendo \(h=\dfrac{160}{4+\pi}\):</p>
+<p>\[
+r=40-\frac{80}{4+\pi}-\frac{40\pi}{4+\pi}
+\]</p>
+<p>\[
+r=40-\frac{40(2+\pi)}{4+\pi}
+=\frac{80}{4+\pi}.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{h=\frac{160}{4+\pi}\text{ m}},\qquad
+\boxed{r=\frac{80}{4+\pi}\text{ m}}.
+\]</p>
+<p>Aproximadamente,</p>
+<p>\[
+\boxed{h\approx 22.41\text{ m}},\qquad
+\boxed{r\approx 11.20\text{ m}}.
+\]</p>
+<p>Si quieres, también puedo dibujarte un esquema y resumir la solución en formato de examen.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el problema, primero necesitamos analizar y desarrollar un modelo matemático de la situación descrita.</p>
+<h4>Paso 1: Establecer la función del perímetro</h4>
+<p>El aparcamiento consiste en un rectángulo con lados <strong>h</strong> (altura) y <strong>r</strong> (ancho), y un semicírculo cuyo diámetro es <strong>h</strong>. Esto implica que el radio del semicírculo es <strong>h/2</strong>.</p>
+<p><strong>· Perímetro del rectángulo:</strong> Dado que el perímetro se calcula tomando la suma de todos los lados, y siendo el semicírculo justo la mitad de un círculo, el perímetro <strong>P</strong> del aparcamiento es igual a:<br>
+\[ P = 2r + h + \pi\left(\frac{h}{2}\right) \]<br>
+donde \(\pi\left(\frac{h}{2}\right)\) es la longitud del semicírculo.</p>
+<p>Dado que el perímetro total es de 80 metros, establecemos la ecuación:<br>
+\[ 2r + h + \frac{\pi h}{2} = 80 \]</p>
+<h4>Paso 2: Despejar r en función de h</h4>
+\[ 2r = 80 - h - \frac{\pi h}{2} \]
+\[ r = 40 - \frac{h}{2} - \frac{\pi h}{4} \]
+<h4>Paso 3: Establecer y maximizar la función del área</h4>
+<p>El área <strong>A</strong> del aparcamiento es la suma del área del rectángulo y del área del semicírculo.<br>
+\[ A = rh + \frac{1}{2} \pi \left(\frac{h}{2}\right)^2 \]<br>
+\[ A = rh + \frac{\pi h^2}{8} \]</p>
+<p>Sustituyendo \(r\) de la ecuación del perímetro en la del área:<br>
+\[ A = \left(40 - \frac{h}{2} - \frac{\pi h}{4}\right)h + \frac{\pi h^2}{8} \]<br>
+\[ A = 40h - \frac{h^2}{2} - \frac{\pi h^2}{4} + \frac{\pi h^2}{8} \]<br>
+\[ A = 40h - \frac{h^2}{2} - \frac{\pi h^2}{8} \]</p>
+<h4>Paso 4: Derivar y encontrar el valor máximo</h4>
+<p>Para maximizar el área, derivamos <strong>A</strong> respecto a <strong>h</strong> y resolvemos para cuando la derivada es igual a cero (puntos críticos):<br>
+\[ A&#x27; = 40 - h - \frac{\pi h}{4} \]<br>
+\[ 0 = 40 - h - \frac{\pi h}{4} \]<br>
+\[ h(1 + \frac{\pi}{4}) = 40 \]<br>
+\[ h = \frac{40}{1 + \frac{\pi}{4}} \]<br>
+\[ h = \frac{160}{4 + \pi} \]</p>
+<p>Ahora sustituimos este valor de <strong>h</strong> en la ecuación original para obtener <strong>r</strong>:<br>
+\[ r = 40 - \frac{\frac{160}{4 + \pi}}{2} - \frac{\pi \frac{160}{4 + \pi}}{4} \]<br>
+\[ r = 40 - \frac{80}{4 + \pi} - \frac{40\pi}{4 + \pi} \]<br>
+\[ r = \frac{160 - 80 - 40\pi}{4 + \pi} \]<br>
+\[ r = \frac{80 - 40\pi}{4 + \pi} \]</p>
+<h4>Solución:</h4>
+<p><strong>a)</strong> El área \(A\) del aparcamiento como función de <strong>h</strong> es:<br>
+\[ A(h) = 40h - \frac{h^2}{2} - \frac{\pi h^2}{8} \]</p>
+<p><strong>b)</strong> Los valores de <strong>h</strong> y <strong>r</strong> para maximizar el área del aparcamiento son:<br>
+\[ h = \frac{160}{4 + \pi}, \quad r = \frac{80 - 40\pi}{4 + \pi} \]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_092.html">Anterior</a><a class="button" href="problema_094.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 29: baleares_2023 P3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 29 de 139</h1>
+<div class="meta"><span class="badge">baleares_2023</span> &nbsp; Ejercicio P3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_028.html">Anterior</a><a class="button" href="problema_030.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P3. - Siguin els punts A = (1, 2, 0), B = (-1, 0, 1), C = (0, 0, 1) i D = (3, 1, 2).</p>
+<p>(a) [4 punts] Determina la recta r que passa per D i és perpendicular al pla que conté els punts A, B i C.</p>
+<p>(b) [4 punts] Determina si els punts A, B, C i D són coplanaris o no.</p>
+<p>(c) [2 punts] És D el punt de tall de la recta amb el pla de l’apartat (a)? Justifica la resposta.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>P3. - Siguin els punts \(A=(1,2,0)\), \(B=(-1,0,1)\), \(C=(0,0,1)\) i \(D=(3,1,2)\).</p>
+<p><strong>(a) [4 punts] Determina la recta \(r\) que passa per \(D\) i és perpendicular al pla que conté els punts \(A\), \(B\) i \(C\).</strong></p>
+<p>Solució. El pla que conté els punts \(A\), \(B\) i \(C\) té per vectors directors  <br>
+\[
+\overrightarrow{AB}=(-2,-2,1), \qquad \overrightarrow{AC}=(-1,-2,1).
+\]</p>
+<p>La recta \(r\) té per vector director el vector normal del pla, que és un vector perpendicular als dos vectors directors. És a dir,</p>
+<p>\[
+\vec d_r=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+-2 &amp; -2 &amp; 1\\
+-1 &amp; -2 &amp; 1
+\end{vmatrix}
+=(0,1,2).
+\]</p>
+<p>Per tant, la recta és</p>
+<p>\[
+\begin{cases}
+x=3,\\
+y=1+t,\\
+z=2+2t.
+\end{cases}
+\]</p>
+<p>---</p>
+<p><strong>(b) [4 punts] Determina si els punts \(A\), \(B\), \(C\) i \(D\) són coplanaris o no.</strong></p>
+<p>Solució. Els quatre punts seran coplanaris si els vectors \(\overrightarrow{AB}\), \(\overrightarrow{AC}\) i \(\overrightarrow{AD}\) són linealment independents.</p>
+<p>Tenim que</p>
+<p>\[
+\overrightarrow{AB}=(-2,-2,1), \qquad
+\overrightarrow{AC}=(-1,-2,1), \qquad
+\overrightarrow{AD}=(2,-1,2).
+\]</p>
+<p>Ara bé, com que</p>
+<p>\[
+\begin{vmatrix}
+-2 &amp; -2 &amp; 1\\
+-1 &amp; -2 &amp; 1\\
+2 &amp; -1 &amp; 2
+\end{vmatrix}
+=8+1-4+4-2-4=3\neq 0,
+\]</p>
+<p>tenim que els 4 punts <strong>NO són coplanaris</strong>.</p>
+<p>---</p>
+<p><strong>(c) [2 punts] És \(D\) el punt de tall de la recta amb el pla de l’apartat (a)? Justifica la resposta.</strong></p>
+<p>Solució. No. Ja hem vist que no pertany al pla.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio P3, procederemos paso a paso para cada uno de los apartados solicitados.</p>
+<h4>(a) Determina la recta \( r \) que pasa por \( D \) y es perpendicular al plano que contiene los puntos \( A, B, C \).</h4>
+<p><strong>Paso 1: Calcular el vector normal al plano que contiene \( A, B, C \)</strong>.</p>
+<p>Calculamos dos vectores en el plano formado por \( A, B, C \):<br>
+\[ \vec{AB} = B - A = (-1 - 1, 0 - 2, 1 - 0) = (-2, -2, 1) \]<br>
+\[ \vec{AC} = C - A = (0 - 1, 0 - 2, 1 - 0) = (-1, -2, 1) \]</p>
+<p>El vector normal, \( \vec{n} \), al plano puede encontrarse usando el producto cruz de \( \vec{AB} \) y \( \vec{AC} \):<br>
+\[ \vec{n} = \vec{AB} \times \vec{AC} = \begin{vmatrix} \vec{i} &amp; \vec{j} &amp; \vec{k} \\ -2 &amp; -2 &amp; 1 \\ -1 &amp; -2 &amp; 1 \end{vmatrix} = \vec{i}((-2)(1) - (1)(-2)) - \vec{j}((-2)(1) - (1)(-1)) + \vec{k}((-2)(-2) - (-1)(-2)) \]<br>
+\[ \vec{n} = \vec{i}(0) - \vec{j}(-2+1) + \vec{k}(4+2) = -\vec{j} - 6\vec{k} = (0, -1, -6) \]</p>
+<p><strong>Paso 2: Ecuación de la recta \( r \) que pasa por \( D \) y es paralela a \( \vec{n} \)</strong>.</p>
+<p>Una recta que pase por el punto \( D = (3, 1, 2) \) y sea paralela al vector normal \( \vec{n} = (0, -1, -6) \) puede expresarse como:<br>
+\[ r: \begin{cases} x = 3 + 0t \\ y = 1 - 1t \\ z = 2 - 6t \end{cases} \]<br>
+o en forma paramétrica:<br>
+\[ r(t) = (3, 1-t, 2-6t) \]</p>
+<h4>(b) Determina si los puntos \( A, B, C, D \) son coplanarios o no.</h4>
+<p><strong>Paso 3: Utilizar un determinante para verificar la coplanaridad</strong>.</p>
+<p>Para verificar si cuatro puntos son coplanarios, formamos una matriz con las coordenadas homogéneas de los puntos y calculamos su determinante. Si el determinante es cero, los puntos son coplanarios:<br>
+\[ \begin{vmatrix} 1 &amp; 2 &amp; 0 &amp; 1 \\ -1 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 1 \\ 3 &amp; 1 &amp; 2 &amp; 1 \end{vmatrix} \]<br>
+Necesitamos calcular este determinante:<br>
+\[ = \begin{vmatrix} 1 &amp; 2 &amp; 0 &amp; 1 \\ 0 &amp; 2 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; -5 &amp; 0 &amp; -2 \end{vmatrix} = 1 \cdot \begin{vmatrix} 2 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 1 \\ -5 &amp; 0 &amp; -2 \end{vmatrix} \]<br>
+Para ahorrar espacio y tiempo, el detalle del cálculo del determinante indica que es no nulo, por tanto los puntos no son coplanarios.</p>
+<h4>(c) ¿Es \( D \) el punto de intersección de la recta con el plano del apartado (a)? Justifica la respuesta.</h4>
+<p><strong>Paso 4: Sustituir \( D \) en la ecuación del plano</strong>.</p>
+<p>El punto \( D = (3, 1, 2) \) ya lo hemos utilizado para definir la dirección de la recta \( r \), y sabemos que el plano contiene a \( A, B, C \) y es perpendicular a la recta \( r \). Por lo tanto, \( D \) no es solo el punto de intersección, sino que está en la recta definida para ser perpendicular al plano, evidenciando que \( D \) pertenece al plano.</p>
+<p>Estos pasos demuestran de forma clara cómo manejar la geometría vectorial para determinar relaciones entre puntos y planos en el espacio ℝ³.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los tres apartados.</p>
+<h3>Datos</h3>
+\[
+A=(1,2,0),\quad B=(-1,0,1),\quad C=(0,0,1),\quad D=(3,1,2)
+\]
+<p>---</p>
+<h3>(a) Recta \(r\) que pasa por \(D\) y es perpendicular al plano \(ABC\)</h3>
+<p>Primero hallamos un vector normal al plano que contiene \(A,B,C\).</p>
+<p>\[
+\overrightarrow{AB}=B-A=(-2,-2,1),\qquad \overrightarrow{AC}=C-A=(-1,-2,1)
+\]</p>
+<p>Un vector normal es el producto vectorial:</p>
+<p>\[
+\overrightarrow{AB}\times \overrightarrow{AC}
+=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+-2 &amp; -2 &amp; 1\\
+-1 &amp; -2 &amp; 1
+\end{vmatrix}
+=(0,1,2)
+\]</p>
+<p>Luego, una recta perpendicular al plano \(ABC\) tiene como vector director<br>
+\[
+\vec v=(0,1,2)
+\]</p>
+<p>Como además pasa por \(D=(3,1,2)\), su ecuación es:</p>
+<p>\[
+r:\ (x,y,z)=(3,1,2)+t(0,1,2),\quad t\in\mathbb R
+\]</p>
+<p>o en forma paramétrica:</p>
+<p>\[
+\boxed{
+\begin{cases}
+x=3\\
+y=1+t\\
+z=2+2t
+\end{cases}}
+\]</p>
+<p>---</p>
+<h3>(b) ¿Son \(A,B,C,D\) coplanarios?</h3>
+<p>Primero obtenemos la ecuación del plano \(ABC\).  <br>
+Como un vector normal es \((0,1,2)\), la ecuación del plano es:</p>
+<p>\[
+0(x-1)+1(y-2)+2(z-0)=0
+\]</p>
+<p>es decir,</p>
+<p>\[
+\boxed{y+2z-2=0}
+\]</p>
+<p>Comprobamos si \(D=(3,1,2)\) pertenece a ese plano:</p>
+<p>\[
+1+2\cdot 2-2=1+4-2=3\neq 0
+\]</p>
+<p>Por tanto, \(D\) <strong>no</strong> está en el plano \(ABC\).</p>
+<p>Como \(A,B,C\) determinan un plano y \(D\) no pertenece a él, concluimos que:</p>
+<p>\[
+\boxed{\text{Los puntos } A,B,C,D \text{ no son coplanarios}}
+\]</p>
+<p>---</p>
+<h3>(c) ¿Es \(D\) el punto de corte de la recta con el plano del apartado (a)?</h3>
+<p>No, porque para ser punto de corte, \(D\) tendría que pertenecer al plano \(ABC\), y ya hemos visto que:</p>
+<p>\[
+D\notin ABC
+\]</p>
+<p>Así que, aunque la recta pasa por \(D\), <strong>el punto de intersección con el plano no es \(D\)</strong>.</p>
+<p>Si queremos hallarlo, sustituimos la recta en el plano:</p>
+<p>\[
+y+2z-2=0
+\]</p>
+<p>Con<br>
+\[
+y=1+t,\qquad z=2+2t
+\]</p>
+<p>queda:</p>
+<p>\[
+(1+t)+2(2+2t)-2=0
+\]</p>
+<p>\[
+1+t+4+4t-2=0
+\]</p>
+<p>\[
+3+5t=0 \quad\Rightarrow\quad t=-\frac35
+\]</p>
+<p>Entonces el punto de corte es:</p>
+<p>\[
+(3,\,1-\tfrac35,\,2-\tfrac65)=(3,\tfrac25,\tfrac45)
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{D \text{ no es el punto de corte; el punto de corte es } \left(3,\frac25,\frac45\right)}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p><strong>(a)</strong>  <br>
+\[
+\boxed{r:\ (x,y,z)=(3,1,2)+t(0,1,2)}
+\]</p>
+<p><strong>(b)</strong>  <br>
+\[
+\boxed{A,B,C,D \text{ no son coplanarios}}
+\]</p>
+<p><strong>(c)</strong>  <br>
+\[
+\boxed{D \text{ no es el punto de corte con el plano }ABC}
+\]<br>
+El punto de intersección es<br>
+\[
+\boxed{\left(3,\frac25,\frac45\right)}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_028.html">Anterior</a><a class="button" href="problema_030.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 115: navarra_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 115 de 139</h1>
+<div class="meta"><span class="badge">navarra_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_114.html">Anterior</a><a class="button" href="problema_116.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P4) Halla el plano paralelo a r y s que se encuentra a 3u de r y 6u de s siendo</p>
+<p>\[
+r \equiv 
+\begin{cases}
+2x-y+2z+7=0\\
+5x+2y+2z-2=0
+\end{cases}
+\quad \text{y} \quad
+s \equiv \frac{x-1}{2}=\frac{y+3}{0}=\frac{z-5}{-1}
+\]</p>
+<p>(2,5 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>P4) Halla el plano paralelo a \(r\) y \(s\) que se encuentra a \(3u\) de \(r\) y \(6u\) de \(s\), siendo</p>
+<p>\[
+r\equiv
+\begin{cases}
+2x-y+2z+7=0\\
+5x+2y+2z-2=0
+\end{cases}
+\qquad
+s\equiv \frac{x+1}{2}=\frac{y-3}{0}=\frac{z-5}{1}.
+\]</p>
+<p>Estudiamos previamente la posición relativa de las dos rectas.</p>
+<p>Para \(r\):</p>
+<p>\[
+\begin{cases}
+2x-y+2z+7=0\\
+5x+2y+2z-2=0
+\end{cases}
+\]</p>
+<p>Se obtiene:</p>
+<p>\[
+x=-\frac43-\frac23 z,\qquad y=\frac{13}{3}+\frac{2}{3}z
+\]</p>
+<p>Tomando \(z=1+3\lambda\):</p>
+<p>\[
+r:\ (x,y,z)=(-2,5,1)+\lambda(-2,2,3)
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+P_r=(-2,5,1),\qquad \vec w_r=(-2,2,3).
+\]</p>
+<p>Para \(s\):</p>
+<p>\[
+s:\ \frac{x+1}{2}=\frac{y-3}{0}=\frac{z-5}{1}
+\]</p>
+<p>\[
+s:\ (x,y,z)=(-1,3,5)+\mu(2,0,1)
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+Q_s=(-1,3,5),\qquad \vec v_s=(2,0,1).
+\]</p>
+<p>Las coordenadas de los vectores directores de las rectas no son proporcionales, por lo que las rectas no son paralelas ni coincidentes.</p>
+<p>\[
+\vec w_r=(-2,2,3),\qquad \vec v_s=(2,0,1)
+\]</p>
+<p>Las rectas son secantes o se cruzan. Realizamos el producto mixto de los vectores directores \(\vec w_r\), \(\vec v_s\) y el vector \(\overrightarrow{P_rQ_s}\).</p>
+<p>\[
+\overrightarrow{P_rQ_s}=(-1,3,5)-(-2,5,1)=(1,-2,4)
+\]</p>
+<p>\[
+\begin{vmatrix}
+-2 &amp; 2 &amp; 3\\
+2 &amp; 0 &amp; 1\\
+1 &amp; -2 &amp; 4
+\end{vmatrix}
+\neq 0
+\]</p>
+<p>Como el producto mixto es no nulo, las rectas se cruzan.</p>
+<p>El plano paralelo a \(r\) y \(s\) tiene como vector normal el producto vectorial de los vectores directores de las rectas.</p>
+<p>\[
+\vec n=\vec w_r\times \vec v_s
+=
+\begin{vmatrix}
+\vec i &amp; \vec j &amp; \vec k\\
+-2 &amp; 2 &amp; 3\\
+2 &amp; 0 &amp; 1
+\end{vmatrix}
+=(2,8,-4)
+\]</p>
+<p>Tomamos como vector normal dividido por 2:</p>
+<p>\[
+\vec n=(1,4,-2)
+\]</p>
+<p>La solución oficial toma el plano:</p>
+<p>\[
+\pi:\ x+2y-2z+D=0
+\]</p>
+<p>Aplicamos que se encuentra a \(3u\) de \(r\) y \(6u\) de \(s\). Como las rectas y el plano son paralelos, la distancia de cualquiera de las rectas al plano es la distancia de uno de sus puntos al plano.</p>
+<p>\[
+d(r,\pi)=d(P_r,\pi)=
+\frac{| -2+10-2+D |}{\sqrt{1^2+2^2+(-2)^2}}
+=
+\frac{|6+D|}{3}=3
+\]</p>
+<p>\[
+|6+D|=9
+\]</p>
+<p>\[
+D=3 \quad \text{o} \quad D=-15
+\]</p>
+<p>\[
+d(s,\pi)=d(Q_s,\pi)=
+\frac{| -1+6-10+D |}{3}
+=
+\frac{|D-5|}{3}=6
+\]</p>
+<p>\[
+|D-5|=18
+\]</p>
+<p>\[
+D=23 \quad \text{o} \quad D=-13
+\]</p>
+<p>Las dos condiciones se cumplen simultáneamente para:</p>
+<p>\[
+D=-1
+\]</p>
+<p>Por tanto, el plano buscado tiene ecuación:</p>
+<p>\[
+\boxed{\pi:\ x+2y-2z-1=0}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 4, primero identificaremos las ecuaciones de los planos dados y las distancias requeridas. Luego, hallaremos el plano que es paralelo a ambos planos r y s y que cumple con las distancias especificadas desde r y s respectivamente.</p>
+<h4>Enunciado:</h4>
+Se tienen dos planos r y s con las siguientes ecuaciones:
+- r: \(2x - y + 2z + 7 = 0\) y \(5x + 2y + 2z - 2 = 0\)
+- s: \(x - 1 = 0\), \(y + 3 = 0\), \(z - 5 = 0\)
+<p>Se requiere encontrar un plano paralelo a r y s, que esté a 3 unidades de distancia de r y a 6 unidades de s.</p>
+<h4>Proceso de Solución:</h4>
+<p><strong>Paso 1: Verificación de paralelismo y obtención de lo normal a r y s</strong><br>
+Primero comprobamos que r y s son realmente paralelos. Los planos r y s son paralelos si tienen vectores normales paralelos o proporcionales.</p>
+<p>Veamos los vectores normales:<br>
+\- Para r, los coeficientes de (x, y, z) dan el vector normal \( \vec{n}_r = (2, -1, 2) \).<br>
+\- Para s, aunque dada en forma paramétrica, todas las coordenadas están definidas, lo que implica que es un punto específico, no un plano. Hay un error en el enunciado al considerar s como un plano. Sin embargo, considerando que necesita un plano, podemos interpretar que queremos un plano paralelo a r a una cierta distancia.</p>
+<p><strong>Paso 2: Ecuación del plano paralelo</strong><br>
+Si un plano es paralelo a otro y a cierta distancia, compartirá el mismo vector normal. Entonces, si el vector normal común es \( \vec{n} = (2, -1, 2) \), la ecuación del plano paralelo p buscado es de la forma:<br>
+\[ 2x - y + 2z + D = 0 \]<br>
+donde \( D \) es una constante por determinar.</p>
+<p><strong>Paso 3: Determinación de la constante D usando las distancias</strong><br>
+La distancia desde un punto \( (x_0, y_0, z_0) \) al plano \( Ax + By + Cz + D = 0 \) es:<br>
+\[ \text{Distancia} = \frac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}} \]</p>
+<p>Para ajustar \( D \) de manera que la distancia entre r y el nuevo plano p sea 3 unidades, al ser un valor relativo, podemos adicionar o sustraer la distancia ponderada sobre la norma del vector normal a la constante original del plano r. Así:<br>
+\[ D = -7 \pm 3 \sqrt{2^2 + (-1)^2 + 2^2} \]<br>
+\[ D = -7 \pm 3 \times 3 \]<br>
+\[ D = -16 \text{ o } 2 \]</p>
+<p><strong>Paso 4: Elegimos la solución más adecuada</strong><br>
+Verificamos cuál constante nos da la relación adecuada:</p>
+<p>Probamos con \( D = -16 \) y \( D = 2 \) para también cumplir la relación con s, aunque este requerimiento no es claro debido al posible error en el enunciado.</p>
+<h4>Conclusión:</h4>
+Dos posibles soluciones para el plano buscado son:
+\[ 2x - y + 2z - 16 = 0 \]
+\[ 2x - y + 2z + 2 = 0 \]
+<p>Hay cierta ambigüedad en el enunciado referente al plano s. Si se necesitan ajustes adicionales dependiendo de detalles adicionales de s, se debe revisar el enunciado o la interpretación del problema.【4:0†Examen matematicas II Navarra 2023 enunciado.pdf】.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea el plano buscado \(\pi\).</p>
+<h3>1) Direcciones de \(r\) y \(s\)</h3>
+<p>La recta \(r\) es intersección de los planos</p>
+<p>\[
+2x-y+2z+7=0,\qquad 5x+2y+2z-2=0.
+\]</p>
+<p>Sus vectores normales son</p>
+<p>\[
+n_1=(2,-1,2),\qquad n_2=(5,2,2).
+\]</p>
+<p>Por tanto, un vector director de \(r\) es</p>
+<p>\[
+v_r=n_1\times n_2=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+2 &amp; -1 &amp; 2\\
+5 &amp; 2 &amp; 2
+\end{vmatrix}
+=(-2,2,3).
+\]</p>
+<p>La recta \(s\) viene dada por</p>
+<p>\[
+\frac{x-1}{2}=\frac{y+3}{0}=\frac{z-5}{-1},
+\]</p>
+<p>luego un punto de \(s\) es</p>
+<p>\[
+S=(1,-3,5)
+\]</p>
+<p>y un vector director es</p>
+<p>\[
+v_s=(2,0,-1).
+\]</p>
+<p>---</p>
+<h3>2) Ecuación general del plano</h3>
+<p>Como \(\pi\) es paralelo a \(r\) y a \(s\), su vector normal debe ser perpendicular a \(v_r\) y a \(v_s\). Luego</p>
+<p>\[
+n_\pi=v_r\times v_s=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+-2 &amp; 2 &amp; 3\\
+2 &amp; 0 &amp; -1
+\end{vmatrix}
+=(-2,4,-4).
+\]</p>
+<p>Podemos simplificar y tomar</p>
+<p>\[
+n_\pi=(1,-2,2).
+\]</p>
+<p>Así, la familia de planos paralelos a \(r\) y \(s\) es</p>
+<p>\[
+\pi_\lambda:\ x-2y+2z+\lambda=0.
+\]</p>
+<p>---</p>
+<h3>3) Imponer las distancias</h3>
+<p>Tomamos un punto de \(r\). Por ejemplo, si \(z=1\), del sistema de \(r\) se obtiene</p>
+<p>\[
+x=-2,\qquad y=5,
+\]</p>
+<p>así que</p>
+<p>\[
+R=(-2,5,1)\in r.
+\]</p>
+<p>Como el plano es paralelo a la recta, la distancia de la recta al plano es la distancia de cualquiera de sus puntos al plano.</p>
+<h4>Distancia de \(r\) a \(\pi_\lambda\)</h4>
+<p>\[
+d(r,\pi_\lambda)=d(R,\pi_\lambda)
+=\frac{|(-2)-2\cdot 5+2\cdot 1+\lambda|}{\sqrt{1^2+(-2)^2+2^2}}
+=\frac{|\lambda-10|}{3}.
+\]</p>
+<p>Debe valer \(3\), luego</p>
+<p>\[
+\frac{|\lambda-10|}{3}=3
+\quad\Rightarrow\quad
+|\lambda-10|=9.
+\]</p>
+<h4>Distancia de \(s\) a \(\pi_\lambda\)</h4>
+<p>\[
+d(s,\pi_\lambda)=d(S,\pi_\lambda)
+=\frac{|1-2(-3)+2\cdot 5+\lambda|}{3}
+=\frac{|\lambda+17|}{3}.
+\]</p>
+<p>Debe valer \(6\), luego</p>
+<p>\[
+\frac{|\lambda+17|}{3}=6
+\quad\Rightarrow\quad
+|\lambda+17|=18.
+\]</p>
+<p>---</p>
+<h3>4) Resolver</h3>
+<p>\[
+|\lambda-10|=9 \Rightarrow \lambda=19 \text{ o } \lambda=1,
+\]</p>
+<p>\[
+|\lambda+17|=18 \Rightarrow \lambda=1 \text{ o } \lambda=-35.
+\]</p>
+<p>El único valor común es</p>
+<p>\[
+\lambda=1.
+\]</p>
+<p>---</p>
+<h2>Plano pedido</h2>
+<p>\[
+\boxed{x-2y+2z+1=0}
+\]</p>
+<p>Ese es el plano paralelo a \(r\) y \(s\), situado a \(3\) unidades de \(r\) y a \(6\) unidades de \(s\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_114.html">Anterior</a><a class="button" href="problema_116.html">Siguiente</a></nav>
+</main></body>
+</html>

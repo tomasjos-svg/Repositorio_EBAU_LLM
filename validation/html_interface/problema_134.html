@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 134: rioja_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 134 de 139</h1>
+<div class="meta"><span class="badge">rioja_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_133.html">Anterior</a><a class="button" href="problema_135.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>5.- (2 puntos) Dada una matriz de tamaño \(4\times 4\) cuyo determinante es igual a 2. Calcula el valor del determinante de la matriz resultante al realizar las siguientes operaciones:</p>
+<p>(i) Se traspone la matriz.  <br>
+(ii) Se cambian entre sí la primera y la cuarta columna.  <br>
+(iii) Se multiplica la tercera columna por -4.  <br>
+(iv) Se multiplica toda la matriz por 4.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>5.- Dada una matriz de tamaño \(4 \times 4\) cuyo determinante es igual a 2. Calcula el valor del determinante de la matriz resultante al realizar las siguientes operaciones:</p>
+<p>Si llamamos \(A\) a la matriz del ejercicio tenemos que \(|A|=2\).</p>
+<p><strong>(i) Se traspone la matriz.</strong></p>
+<p>Por las propiedades de los determinantes tenemos que:</p>
+<p>\[
+|A^T|=|A|
+\]</p>
+<p>El determinante de la matriz traspuesta es <strong>2</strong>.</p>
+<p><strong>(ii) Se cambian entre sí la primera y la cuarta columna.</strong></p>
+<p>Por las propiedades de los determinantes sabemos que el determinante cambia de signo.  <br>
+El determinante valdría <strong>-2</strong>.</p>
+<p><strong>(iii) Se multiplica la tercera columna por -4.</strong></p>
+<p>Por las propiedades de los determinantes tenemos que el determinante de la nueva matriz es el determinante de \(A\) multiplicado por \(-4\), es decir, vale <strong>-8</strong>.</p>
+<p><strong>(iv) Se multiplica toda la matriz por 4.</strong></p>
+<p>Por las propiedades de los determinantes tenemos que el determinante de la nueva matriz es el determinante de \(A\) multiplicado por \(4^4\), por ser la matriz \(A\) de orden 4.</p>
+<p>El determinante vale:</p>
+<p>\[
+4^4 \cdot 2 = 512
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 5 de manera correcta, es necesario aplicar diversas propiedades de determinantes y realizar las operaciones especificadas en el enunciado sobre la matriz original de tamaño \(4 \times 4\) con determinante igual a 2. Vamos a analizar cada operación por separado y calcular el efecto sobre el determinante.</p>
+<h4>Operación (i): Transponer la matriz</h4>
+El determinante de una matriz \(A\) es igual al determinante de su transpuesta \(A^T\). Por lo tanto, traspasar la matriz no cambia el valor del determinante.
+\[ \det(A^T) = \det(A) = 2 \]
+<h4>Operación (ii): Cambiar entre sí la primera y la cuarta columna</h4>
+El intercambio de dos columnas de una matriz resulta en el cambio de signo del determinante. Como estamos intercambiando dos columnas:
+\[ \det(A&#x27;) = -\det(A^T) = -2 \]
+<h4>Operación (iii): Multiplicar la tercera columna por -4</h4>
+Multiplicar una columna de una matriz por una constante \(k\) multiplica el determinante de la matriz por \(k\). Al multiplicar la tercera columna por -4:
+\[ \det(A&#x27;&#x27;) = -4 \det(A&#x27;) = -4(-2) = 8 \]
+<h4>Operación (iv): Multiplicar toda la matriz por 4</h4>
+Multiplicar todas las columnas de una matriz de tamaño \(n \times n\) por un escalar \(k\) multiplica el determinante de esa matriz por \(k^n\). Aquí, \(n = 4\) y \(k = 4\):
+\[ \det(A&#x27;&#x27;&#x27;) = 4^4 \det(A&#x27;&#x27;) = 256 \cdot 8 = 2048 \]
+<h4>Conclusión</h4>
+Después de realizar las operaciones especificadas en la matriz inicial, el determinante de la matriz resultante es \(\boxed{2048}\). Este es el resultado final teniendo en cuenta las transformaciones solicitadas del determinante a través de las operaciones efectuadas.</section>
+<section class="card"><h2>Respuesta B</h2><p>Sea \(A\) una matriz \(4\times 4\) con</p>
+<p>\[
+\det(A)=2.
+\]</p>
+<p>Usamos las propiedades del determinante:</p>
+<p>1. <strong>Traspuesta</strong>:  <br>
+   \[
+   \det(A^T)=\det(A)
+   \]<br>
+   Luego, tras (i):<br>
+   \[
+   \det=2.
+   \]</p>
+<p>2. <strong>Intercambiar dos columnas</strong> cambia el signo del determinante.  <br>
+   Tras (ii):<br>
+   \[
+   \det=-2.
+   \]</p>
+<p>3. <strong>Multiplicar una columna por \(-4\)</strong> multiplica el determinante por \(-4\).  <br>
+   Tras (iii):<br>
+   \[
+   \det=(-2)\cdot(-4)=8.
+   \]</p>
+<p>4. <strong>Multiplicar toda la matriz por \(4\)</strong>, al ser una matriz \(4\times 4\), multiplica el determinante por \(4^4\):  <br>
+   \[
+   \det(4A)=4^4\det(A)=256\det(A).
+   \]<br>
+   Aplicado al resultado anterior:<br>
+   \[
+   \det=256\cdot 8=2048.
+   \]</p>
+<h3>Resultado final</h3>
+Si las operaciones se realizan <strong>sucesivamente</strong>, el determinante final es
+<p>\[
+\boxed{2048}.
+\]</p>
+<p>Y los valores tras cada apartado son:</p>
+<p>- (i) \(\boxed{2}\)<br>
+- (ii) \(\boxed{-2}\)<br>
+- (iii) \(\boxed{8}\)<br>
+- (iv) \(\boxed{2048}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_133.html">Anterior</a><a class="button" href="problema_135.html">Siguiente</a></nav>
+</main></body>
+</html>

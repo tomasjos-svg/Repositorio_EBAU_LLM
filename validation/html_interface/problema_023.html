@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 23: asturias_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 23 de 139</h1>
+<div class="meta"><span class="badge">asturias_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_022.html">Anterior</a><a class="button" href="problema_024.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Pregunta 5. Sea \(s\) la recta de ecuación \(x-2=\dfrac{y-2}{-1}=z\), y \(r\) la recta que pasa por los puntos \(A=(1,0,1)\) y \(B=(2,1,2)\).</p>
+<p>(a) (1 punto) Indica la posición relativa de \(r\) y \(s\).</p>
+<p>(b) (0.75 puntos) Calcula el plano paralelo a \(r\) y que contiene a \(s\).</p>
+<p>(c) (0.75 puntos) Calcula la distancia entre las rectas \(r\) y \(s\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Pregunta 5.</strong> Sea \(s\) la recta de ecuación  <br>
+\[
+x-2=\frac{y-2}{-1}=z,
+\]<br>
+y \(r\) la recta que pasa por los puntos \(A=(1,0,1)\) y \(B=(2,1,2)\).</p>
+<h4>(a) Posición relativa de \(r\) y \(s\)</h4>
+<p>La recta \(r\) es<br>
+\[
+\frac{x-1}{2-1}=\frac{y}{1}=\frac{z-1}{2-1}.
+\]</p>
+<p>Por lo tanto, se trata de discutir el sistema formado por las dos ecuaciones lineales de cada recta:</p>
+<p>\[
+r\begin{cases}
+x-1=y\\
+z-1=2y
+\end{cases}
+\qquad
+s\begin{cases}
+x-2=z\\
+2-y=z
+\end{cases}
+\]</p>
+<p>es decir, el sistema:</p>
+<p>\[
+\begin{cases}
+x-y=1\\
+2y-z=-1\\
+x-z=2\\
+y+z=1
+\end{cases}
+\]</p>
+<p>que es incompatible, por lo que las rectas no tienen puntos en común. Para ver si son paralelas se estudian los vectores directores: \((1,-1,1)\) de \(s\), y \((1,1,1)\) de \(r\). Como los vectores no son proporcionales, no son paralelas, por lo tanto las dos rectas se cruzan.</p>
+<p>---</p>
+<h4>(b) Plano paralelo a \(r\) y que contiene a \(s\)</h4>
+<p>El vector normal al plano es el producto vectorial de unos directores de \(r\) y \(s\):</p>
+<p>\[
+\begin{vmatrix}
+\vec i &amp; \vec j &amp; \vec k\\
+1 &amp; -1 &amp; 1\\
+1 &amp; 1 &amp; 1
+\end{vmatrix}
+= -2\vec i + 2\vec k
+\]</p>
+<p>por lo que el plano pedido es de la forma</p>
+<p>\[
+-2x+2z+D=0.
+\]</p>
+<p>Como pasa por un punto de \(s\), por ejemplo \((2,2,0)\), entonces</p>
+<p>\[
+-4+D=0
+\]</p>
+<p>y \(D=4\). Luego el plano pedido es</p>
+<p>\[
+-2x+2z+4=0.
+\]</p>
+<p>---</p>
+<h4>(c) Distancia entre las rectas \(r\) y \(s\)</h4>
+<p>La recta \(r\) pasa por \(P=(1,0,1)\) y un vector director es \(\vec u=(1,1,1)\), la recta \(s\) pasa por \(Q=(2,2,0)\) y un vector director es \(\vec v=(1,-1,1)\).</p>
+<p>Como</p>
+<p>\[
+\vec v \times \vec u=-2\vec i+2\vec k
+\]</p>
+<p>entonces</p>
+<p>\[
+|\vec v \times \vec u|=\sqrt{2^2+2^2}=\sqrt 8=2\sqrt 2.
+\]</p>
+<p>Además el vector</p>
+<p>\[
+\overrightarrow{PQ}=(2,2,0)-(1,0,1)=(1,2,-1).
+\]</p>
+<p>Haciendo</p>
+<p>\[
+\det
+\begin{pmatrix}
+1 &amp; 2 &amp; -1\\
+1 &amp; 1 &amp; 1\\
+1 &amp; -1 &amp; 1
+\end{pmatrix}
+=4
+\]</p>
+<p>entonces</p>
+<p>\[
+d(r,s)=\frac{|4|}{2\sqrt 2}=\frac{2}{\sqrt 2}=\sqrt 2.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a escribir ambas rectas en forma paramétrica.</p>
+<h3>Recta \(r\)</h3>
+<p>Pasa por \(A=(1,0,1)\) y \(B=(2,1,2)\), luego su vector director es</p>
+<p>\[
+\vec v_r=B-A=(1,1,1).
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+r:\ (x,y,z)=(1,0,1)+\lambda(1,1,1),
+\]</p>
+<p>es decir,</p>
+<p>\[
+r:\begin{cases}
+x=1+\lambda\\
+y=\lambda\\
+z=1+\lambda
+\end{cases}
+\]</p>
+<p>---</p>
+<h3>Recta \(s\)</h3>
+<p>De</p>
+<p>\[
+x-2=\frac{y-2}{-1}=z
+\]</p>
+<p>tomamos el parámetro \(\mu\), de modo que</p>
+<p>\[
+x-2=\mu,\qquad \frac{y-2}{-1}=\mu,\qquad z=\mu.
+\]</p>
+<p>Así,</p>
+<p>\[
+x=2+\mu,\qquad y=2-\mu,\qquad z=\mu.
+\]</p>
+<p>Luego</p>
+<p>\[
+s:\ (x,y,z)=(2,2,0)+\mu(1,-1,1).
+\]</p>
+<p>Su vector director es</p>
+<p>\[
+\vec v_s=(1,-1,1).
+\]</p>
+<p>---</p>
+<h2>(a) Posición relativa de \(r\) y \(s\)</h2>
+<p>Los vectores directores son</p>
+<p>\[
+\vec v_r=(1,1,1),\qquad \vec v_s=(1,-1,1).
+\]</p>
+<p>No son proporcionales, luego <strong>no son paralelas</strong>.</p>
+<p>Veamos si se cortan. Igualamos las paramétricas:</p>
+<p>\[
+(1+\lambda,\lambda,1+\lambda)=(2+\mu,2-\mu,\mu).
+\]</p>
+<p>Sistema:</p>
+<p>\[
+\begin{cases}
+1+\lambda=2+\mu\\
+\lambda=2-\mu\\
+1+\lambda=\mu
+\end{cases}
+\]</p>
+<p>De la tercera, \(\mu=1+\lambda\). Sustituyendo en la primera:</p>
+<p>\[
+1+\lambda=2+(1+\lambda)=3+\lambda,
+\]</p>
+<p>lo cual es imposible.</p>
+<p>Por tanto, <strong>no se cortan</strong>.</p>
+<p>Como no son paralelas y no se cortan, las rectas son <strong>reversas</strong> (o <strong>cruzadas</strong>).</p>
+<p>---</p>
+<h2>(b) Plano paralelo a \(r\) y que contiene a \(s\)</h2>
+<p>El plano debe:</p>
+<p>- contener a la recta \(s\),<br>
+- ser paralelo a \(r\).</p>
+<p>Así, el plano queda determinado por:</p>
+<p>- un punto de \(s\), por ejemplo \(P=(2,2,0)\),<br>
+- el vector director de \(s\): \((1,-1,1)\),<br>
+- un vector paralelo a \(r\): \((1,1,1)\).</p>
+<p>Entonces dos vectores directores del plano son</p>
+<p>\[
+\vec u=(1,-1,1),\qquad \vec v=(1,1,1).
+\]</p>
+<p>Un vector normal del plano es</p>
+<p>\[
+\vec n=\vec u\times \vec v=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+1 &amp; -1 &amp; 1\\
+1 &amp; 1 &amp; 1
+\end{vmatrix}
+=(-2,0,2).
+\]</p>
+<p>Podemos simplificar:</p>
+<p>\[
+\vec n=(1,0,-1).
+\]</p>
+<p>Ecuación del plano:</p>
+<p>\[
+(1,0,-1)\cdot \bigl((x,y,z)-(2,2,0)\bigr)=0.
+\]</p>
+<p>Esto da</p>
+<p>\[
+(x-2)-z=0.
+\]</p>
+<p>Por tanto, el plano es</p>
+<p>\[
+\boxed{x-z-2=0}.
+\]</p>
+<p>---</p>
+<h2>(c) Distancia entre \(r\) y \(s\)</h2>
+<p>Como el plano hallado en (b):</p>
+<p>- contiene a \(s\),<br>
+- es paralelo a \(r\),</p>
+<p>la distancia entre las rectas es igual a la distancia de cualquier punto de \(r\) a ese plano.</p>
+<p>Tomamos \(A=(1,0,1)\in r\).  <br>
+Plano: \(x-z-2=0\).</p>
+<p>La distancia de un punto \((x_0,y_0,z_0)\) al plano \(ax+by+cz+d=0\) es</p>
+<p>\[
+d=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}.
+\]</p>
+<p>Aquí:</p>
+<p>\[
+a=1,\quad b=0,\quad c=-1,\quad d=-2.
+\]</p>
+<p>Entonces</p>
+<p>\[
+d(r,s)=\frac{|1\cdot 1+0\cdot 0+(-1)\cdot 1-2|}{\sqrt{1^2+0^2+(-1)^2}}
+=\frac{|-2|}{\sqrt2}
+=\frac{2}{\sqrt2}
+=\sqrt2.
+\]</p>
+<p>\[
+\boxed{d(r,s)=\sqrt2}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p><strong>(a)</strong> Las rectas \(r\) y \(s\) son <strong>reversas</strong> (cruzadas).</p>
+<p><strong>(b)</strong> El plano pedido es</p>
+<p>\[
+\boxed{x-z-2=0}.
+\]</p>
+<p><strong>(c)</strong> La distancia entre las rectas es</p>
+<p>\[
+\boxed{\sqrt2}.
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><h4>Solución al ejercicio 5</h4>
+<p>#### (a) Posición relativa de las rectas \(r\) y \(s\)</p>
+<p>Para determinar la posición relativa, primero obtenemos los vectores director de cada recta.</p>
+<p><strong>Recta \(s\):</strong><br>
+Dada por la ecuación \(x-2=\dfrac{y-2}{-1}=z\).<br>
+Podemos expresar \(s\) paramétricamente:<br>
+- \(x = 2 + t\)<br>
+- \(y = 2 - t\)<br>
+- \(z = t\)</p>
+<p>El vector director de \(s\) es \(\mathbf{v}_s = (1, -1, 1)\).</p>
+<p><strong>Recta \(r\):</strong><br>
+Pasa por los puntos \(A = (1, 0, 1)\) y \(B = (2, 1, 2)\).<br>
+Calculamos el vector director de \(r\):<br>
+- \(\mathbf{v}_r = B - A = (2-1, 1-0, 2-1) = (1, 1, 1)\).</p>
+<p><strong>Comparación:</strong><br>
+Observando \(\mathbf{v}_s\) y \(\mathbf{v}_r\), notamos que no son paralelos ni proporcionales. Por lo tanto, se concluye que las rectas no son paralelas.</p>
+<p>Para determinar si se intersectan, parametrizamos cada ecuación y resolvemos el sistema resultante:<br>
+\[
+\begin{cases}
+2 + t = 1 + u \\
+2 - t = u \\
+t = 1 + u
+\end{cases}
+\]</p>
+<p>Sustituimos \(t = 1+u\) en las otras ecuaciones:<br>
+\[
+\begin{cases}
+2 + 1 + u = 1 + u \\
+2 - (1 + u) = u
+\end{cases}
+\]<br>
+\[
+\begin{cases}
+3 + u = 1 + u \\
+1 - u = u
+\end{cases}
+\]</p>
+<p>De aquí, \(1 - u = u \implies 2u = 1 \implies u = \frac{1}{2}, t = 1 + \frac{1}{2} = \frac{3}{2}\).</p>
+<p>Sustituimos para verificar la primera ecuación:<br>
+\[
+2 + \frac{3}{2} = 1 + \frac{1}{2}
+\]<br>
+\[
+3.5 \neq 1.5
+\]</p>
+<p>Las cuentas no concuerdan, por lo tanto, las rectas no se intersectan y son <strong>rectas cruzadas</strong>.</p>
+<p>#### (b) Plano paralelo a \(r\) y que contiene a \(s\)</p>
+<p>El vector normal de un plano que contiene a \(s\) y es paralelo a \(r\) es el producto cruz entre los vectores directores de \(s\) y \(r\) (ya que los vectores directores están en el plano y el producto cruz da un vector perpendicular a ambos).</p>
+<p>Operamos el producto cruz \(\mathbf{v}_s \times \mathbf{v}_r\):<br>
+\[
+\mathbf{n} = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+1 &amp; -1 &amp; 1 \\
+1 &amp; 1 &amp; 1 \\
+\end{vmatrix}
+= \mathbf{i}(1 \cdot 1 - 1 \cdot 1) - \mathbf{j}(1 \cdot 1 - 1 \cdot 1) + \mathbf{k}(1 \cdot 1 - (-1) \cdot 1)
+= 0\mathbf{i} - 0\mathbf{j} + 2\mathbf{k} = 2k
+\]</p>
+<p>Tomamos el vector normal \(\mathbf{n} = (0, 0, 2)\) y simplificamos a \(\mathbf{n} = (0, 0, 1)\).</p>
+<p>Utilizamos un punto de \(s\), por ejemplo, \( (2, 2, 0) \), para hallar el plano:<br>
+\[
+0(x - 2) + 0(y - 2) + 1(z - 0) = 0
+\]<br>
+\[
+z = 0
+\]</p>
+<p>El plano es \(z = 0\).</p>
+<p>#### (c) Distancia entre las rectas \(r\) y \(s\)</p>
+<p>Para calcular la distancia entre rectas cruzadas, utilizamos la fórmula:<br>
+\[
+d = \frac{|(\mathbf{p}_r - \mathbf{p}_s) \cdot (\mathbf{v}_r \times \mathbf{v}_s)|}{|\mathbf{v}_r \times \mathbf{v}_s|}
+\]<br>
+Donde \(\mathbf{p}_r = (1, 0, 1)\) y \(\mathbf{p}_s = (2, 2, 0)\), y \(\mathbf{v}_r \times \mathbf{v}_s = (0, 0, 2)\).</p>
+<p>Calculamos \(\mathbf{p}_r - \mathbf{p}_s = (1-2, 0-2, 1-0) = (-1, -2, 1)\).</p>
+<p>Proyectamos \(\mathbf{p}_r - \mathbf{p}_s\) en \(\mathbf{v}_r \times \mathbf{v}_s\):<br>
+\[
+(-1, -2, 1) \cdot (0, 0, 2) = 2
+\]</p>
+<p>La distancia es:<br>
+\[
+d = \frac{|2|}{|2|} = 1
+\]</p>
+<p>La distancia entre \(r\) y \(s\) es 1 unidad.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_022.html">Anterior</a><a class="button" href="problema_024.html">Siguiente</a></nav>
+</main></body>
+</html>

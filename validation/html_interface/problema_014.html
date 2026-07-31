@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 14: aragon_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 14 de 139</h1>
+<div class="meta"><span class="badge">aragon_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_013.html">Anterior</a><a class="button" href="problema_015.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>6) Dado el siguiente sistema:</p>
+<p>\[
+\begin{cases}
+-x + my = 0\\
+my + 2z = 2 + m^2\\
+x + z = 2m
+\end{cases}
+\]</p>
+<p>a) (1,2 puntos) Discute según los valores de \(m \in \mathbb{R}\), qué tipo de sistema es atendiendo a las posibles soluciones (compatible determinado o indeterminado, incompatible).</p>
+<p>b) (0,8 puntos) Resuelve el sistema para el valor \(m = 2\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><h4>Ejercicio 6</h4>
+<p>Dado el siguiente sistema:</p>
+<p>\[
+\begin{cases}
+x-mz+2=0\\
+my+z=m+2\\
+x+y=2m
+\end{cases}
+\]</p>
+<p>#### a) Discute según los valores de \(m\), qué tipo de sistema es atendiendo a sus posibles soluciones.</p>
+<p>La matriz de coeficientes es</p>
+<p>\[
+A=
+\begin{pmatrix}
+1&amp;0&amp;-m\\
+0&amp;m&amp;2\\
+1&amp;1&amp;0
+\end{pmatrix}
+\]</p>
+<p>y la matriz ampliada es</p>
+<p>\[
+(A/B)=
+\begin{pmatrix}
+1&amp;0&amp;-m&amp;0\\
+0&amp;m&amp;2&amp;m+2\\
+1&amp;1&amp;0&amp;2m
+\end{pmatrix}
+\]</p>
+<p>Vemos cuándo se anula el determinante de la matriz \(A\):</p>
+<p>\[
+|A|=
+\begin{vmatrix}
+1&amp;0&amp;-m\\
+0&amp;m&amp;2\\
+1&amp;1&amp;0
+\end{vmatrix}
+= -m^2+4
+\]</p>
+<p>\[
+|A|=0 \Rightarrow -m^2+4=0 \Rightarrow m^2=4 \Rightarrow m=\pm 2
+\]</p>
+<p>Estudiamos tres casos distintos.</p>
+<p>---</p>
+<p><strong>CASO 1. \(m\neq \pm 2\)</strong></p>
+<p>En este caso el determinante de \(A\) es no nulo y su rango es 3, al igual que el rango de \(A/B\) e igual que el número de incógnitas.</p>
+<p>El sistema es <strong>compatible determinado</strong>.</p>
+<p>---</p>
+<p><strong>CASO 2. \(m=2\)</strong></p>
+<p>En este caso el determinante de \(A\) es nulo y su rango no es 3.</p>
+<p>Las matrices quedan:</p>
+<p>\[
+A=
+\begin{pmatrix}
+1&amp;0&amp;-2\\
+0&amp;2&amp;2\\
+1&amp;1&amp;0
+\end{pmatrix}
+\]</p>
+<p>\[
+(A/B)=
+\begin{pmatrix}
+1&amp;0&amp;-2&amp;0\\
+0&amp;2&amp;2&amp;4\\
+1&amp;1&amp;0&amp;22
+\end{pmatrix}
+\]</p>
+<p>Estudiamos el rango de ambas utilizando el método de Gauss:</p>
+<p>\[
+\begin{pmatrix}
+1&amp;0&amp;-2&amp;0\\
+0&amp;2&amp;2&amp;4\\
+1&amp;1&amp;0&amp;22
+\end{pmatrix}
+\]</p>
+<p>Tras las operaciones elementales se obtiene que la matriz \(A\) tiene rango 2, al igual que la matriz ampliada \(A/B\), siendo menor que el número de incógnitas.</p>
+<p>El sistema es <strong>compatible indeterminado</strong>.</p>
+<p>---</p>
+<p><strong>CASO 3. \(m=-2\)</strong></p>
+<p>En este caso el determinante de \(A\) es nulo y su rango no es 3.</p>
+<p>Las matrices quedan:</p>
+<p>\[
+A=
+\begin{pmatrix}
+1&amp;0&amp;2\\
+0&amp;-2&amp;2\\
+1&amp;1&amp;0
+\end{pmatrix}
+\]</p>
+<p>\[
+(A/B)=
+\begin{pmatrix}
+1&amp;0&amp;2&amp;0\\
+0&amp;-2&amp;2&amp;4\\
+1&amp;1&amp;0&amp;-22
+\end{pmatrix}
+\]</p>
+<p>Estudiamos el rango de ambas utilizando el método de Gauss.</p>
+<p>La matriz \(A\) tiene rango 2, al igual que la matriz \(A/B\), siendo menor que el número de incógnitas.</p>
+<p>El sistema es <strong>compatible indeterminado</strong>.</p>
+<p>---</p>
+<p>#### b) Resuelve el sistema para el valor \(m=2\).</p>
+<p>Para \(m=2\), el sistema es compatible determinado según el CASO 1.</p>
+<p>Lo resolvemos:</p>
+<p>\[
+\begin{cases}
+x-z=0\\
+2y+z=6\\
+x+y=4
+\end{cases}
+\]</p>
+<p>De la primera ecuación:</p>
+<p>\[
+x=z
+\]</p>
+<p>De la tercera:</p>
+<p>\[
+x+y=4
+\]</p>
+<p>Y resolviendo el sistema se obtiene:</p>
+<p>\[
+z=1,\qquad x=2,\qquad y=2
+\]</p>
+<p>La solución es:</p>
+<p>\[
+\boxed{x=2,\ y=2,\ z=1}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio, comenzaremos con el primer requerimiento.</p>
+<h4>a) Discusión del sistema según los valores de \( m \)</h4>
+<p>Para evaluar las posibilidades del sistema, lo primero que vamos a hacer es ponerlo en forma matricial:</p>
+<p>\[
+A = \begin{bmatrix}
+-1 &amp; m &amp; 0 \\
+0 &amp; m &amp; 2 \\
+1 &amp; 0 &amp; 1
+\end{bmatrix}, \quad \vec{b} = \begin{bmatrix}
+0 \\
+2 + m^2 \\
+2m
+\end{bmatrix}
+\]</p>
+<p>La matriz ampliada quedaría así:</p>
+<p>\[
+\left[ A | \vec{b} \right] = \begin{bmatrix}
+-1 &amp; m &amp; 0 &amp; | &amp; 0 \\
+0 &amp; m &amp; 2 &amp; | &amp; 2 + m^2 \\
+1 &amp; 0 &amp; 1 &amp; | &amp; 2m
+\end{bmatrix}
+\]</p>
+<p>Aplicamos el método de eliminación de Gauss-Jordan para reducir la matriz. Comenzaremos intercambiando la primera y la tercera fila para eliminar los elementos por debajo y por encima del primer elemento de la primera columna:</p>
+<p>\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 2m \\
+0 &amp; m &amp; 2 &amp; | &amp; 2 + m^2 \\
+-1 &amp; m &amp; 0 &amp; | &amp; 0
+\end{bmatrix}
+\]</p>
+<p>Sumar la primera fila a la tercera fila:</p>
+<p>\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 2m \\
+0 &amp; m &amp; 2 &amp; | &amp; 2 + m^2 \\
+0 &amp; m &amp; 1 &amp; | &amp; 2m
+\end{bmatrix}
+\]</p>
+<p>A partir de aquí, continuamos reduciendo la matriz. Asumiendo \(m \neq 0\), dividimos la segunda fila por \(m\):</p>
+<p>\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 2m \\
+0 &amp; 1 &amp; 2/m &amp; | &amp; (2 + m^2)/m \\
+0 &amp; m &amp; 1 &amp; | &amp; 2m
+\end{bmatrix}
+\]</p>
+<p>Desde la segunda fila, sustraemos \(m\) veces esa fila de la tercera:</p>
+<p>\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 2m \\
+0 &amp; 1 &amp; 2/m &amp; | &amp; (2 + m^2)/m \\
+0 &amp; 0 &amp; 1 - 2 &amp; | &amp; 2m - m(2 + m^2)/m
+\end{bmatrix}
+= 
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 2m \\
+0 &amp; 1 &amp; 2/m &amp; | &amp; (2 + m^2)/m \\
+0 &amp; 0 &amp; -1 &amp; | &amp; 0
+\end{bmatrix}
+\]</p>
+<p>Multiplicamos la tercera fila por -1:</p>
+<p>\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 2m \\
+0 &amp; 1 &amp; 2/m &amp; | &amp; (2 + m^2)/m \\
+0 &amp; 0 &amp; 1 &amp; | &amp; 0
+\end{bmatrix}
+\]</p>
+<p>Restamos esta tercera fila de la primera para eliminar el término en \(z\):</p>
+<p>\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; | &amp; 2m \\
+0 &amp; 1 &amp; 2/m &amp; | &amp; (2 + m^2)/m \\
+0 &amp; 0 &amp; 1 &amp; | &amp; 0
+\end{bmatrix}
+\]</p>
+<p>Velocidad de reducción para la segunda fila:</p>
+<p>\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; | &amp; 2m \\
+0 &amp; 1 &amp; 0 &amp; | &amp; (2 + m^2)/m - 4/m \\
+0 &amp; 0 &amp; 1 &amp; | &amp; 0
+\end{bmatrix}
+\]</p>
+<p>El sistema será <strong>compatible determinado</strong> siempre que \(m \neq 0\). Cuando \(m = 0\), el sistema requeriría más evaluación ya que el término en la segunda fila se convertiría en división por cero.</p>
+<h4>b) Resolución para \(m = 2\)</h4>
+<p>Podemos directamente sustituir \(m = 2\) en nuestras últimas expresiones reducidas:</p>
+<p>\[
+\vec{x} = \begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} = \begin{bmatrix}
+2m \\
+(2 + m^2)/m - 4/m \\
+0
+\end{bmatrix} = \begin{bmatrix}
+4 \\
+(2 + 4)/2 - 4/2 \\
+0
+\end{bmatrix} = \begin{bmatrix}
+4 \\
+1 \\
+0
+\end{bmatrix}
+\]</p>
+<p>Entonces, las soluciones del sistema cuando \(m = 2\) son \(x = 4\), \(y = 1\) y \(z = 0\).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a estudiar el sistema</p>
+<p>\[
+\begin{cases}
+-x + my = 0\\
+my + 2z = 2 + m^2\\
+x + z = 2m
+\end{cases}
+\]</p>
+<h3>a) Discusión según \(m\)</h3>
+<p>La matriz de coeficientes es</p>
+<p>\[
+A=\begin{pmatrix}
+-1 &amp; m &amp; 0\\
+0 &amp; m &amp; 2\\
+1 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</p>
+<p>y su determinante:</p>
+<p>\[
+\det(A)=
+\begin{vmatrix}
+-1 &amp; m &amp; 0\\
+0 &amp; m &amp; 2\\
+1 &amp; 0 &amp; 1
+\end{vmatrix}
+= -1\cdot
+\begin{vmatrix}
+m &amp; 2\\
+0 &amp; 1
+\end{vmatrix}
+- m\cdot
+\begin{vmatrix}
+0 &amp; 2\\
+1 &amp; 1
+\end{vmatrix}
+= -m - m(-2)=m
+\]</p>
+<h4>Caso 1: \(m\neq 0\)</h4>
+<p>\[
+\det(A)=m\neq 0
+\]</p>
+<p>Luego el sistema es <strong>compatible determinado</strong> (tiene una única solución).</p>
+<p>Además, si queremos la solución general para \(m\neq 0\):</p>
+<p>De la primera ecuación,</p>
+<p>\[
+x=my
+\]</p>
+<p>De la tercera,</p>
+<p>\[
+z=2m-x=2m-my
+\]</p>
+<p>Sustituimos en la segunda:</p>
+<p>\[
+my+2(2m-my)=2+m^2
+\]</p>
+<p>\[
+my+4m-2my=2+m^2
+\]</p>
+<p>\[
+4m-my=2+m^2
+\]</p>
+<p>\[
+y=\frac{4m-2-m^2}{m}=4-\frac{2}{m}-m
+\]</p>
+<p>Entonces,</p>
+<p>\[
+x=my=4m-2-m^2
+\]</p>
+<p>y</p>
+<p>\[
+z=2m-x=2m-(4m-2-m^2)=m^2-2m+2
+\]</p>
+<p>Por tanto, para \(m\neq 0\),</p>
+<p>\[
+\boxed{
+x=4m-2-m^2,\qquad
+y=4-\frac{2}{m}-m,\qquad
+z=m^2-2m+2
+}
+\]</p>
+<p>---</p>
+<h4>Caso 2: \(m=0\)</h4>
+<p>El sistema queda:</p>
+<p>\[
+\begin{cases}
+-x=0\\
+2z=2\\
+x+z=0
+\end{cases}
+\]</p>
+<p>De aquí:</p>
+<p>\[
+x=0,\qquad z=1
+\]</p>
+<p>pero la tercera ecuación exige</p>
+<p>\[
+x+z=0 \;\Rightarrow\; 0+1=0
+\]</p>
+<p>lo cual es imposible.</p>
+<p>Luego para \(m=0\) el sistema es <strong>incompatible</strong>.</p>
+<p>---</p>
+<h3>Conclusión del apartado a)</h3>
+<p>- Si \(\boxed{m\neq 0}\): sistema <strong>compatible determinado</strong>.<br>
+- Si \(\boxed{m=0}\): sistema <strong>incompatible</strong>.<br>
+- No hay ningún valor de \(m\) para el que sea <strong>compatible indeterminado</strong>.</p>
+<p>---</p>
+<h3>b) Resolver el sistema para \(m=2\)</h3>
+<p>Sustituimos \(m=2\):</p>
+<p>\[
+\begin{cases}
+-x+2y=0\\
+2y+2z=6\\
+x+z=4
+\end{cases}
+\]</p>
+<p>De la primera:</p>
+<p>\[
+x=2y
+\]</p>
+<p>De la tercera:</p>
+<p>\[
+z=4-x=4-2y
+\]</p>
+<p>Sustituimos en la segunda:</p>
+<p>\[
+2y+2(4-2y)=6
+\]</p>
+<p>\[
+2y+8-4y=6
+\]</p>
+<p>\[
+-2y=-2
+\]</p>
+<p>\[
+y=1
+\]</p>
+<p>Entonces:</p>
+<p>\[
+x=2y=2,\qquad z=4-2y=2
+\]</p>
+<h3>Solución para \(m=2\)</h3>
+<p>\[
+\boxed{(x,y,z)=(2,1,2)}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_013.html">Anterior</a><a class="button" href="problema_015.html">Siguiente</a></nav>
+</main></body>
+</html>

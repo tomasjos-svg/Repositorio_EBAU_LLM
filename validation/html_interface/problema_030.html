@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 30: baleares_2023 P4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 30 de 139</h1>
+<div class="meta"><span class="badge">baleares_2023</span> &nbsp; Ejercicio P4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_029.html">Anterior</a><a class="button" href="problema_031.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P4. - Sigui el pla π : 3x + y + z = 2 i els punts P = (0, 1, 1) i Q = (2, -1, -3).</p>
+<p>(a) [2 punts] Són P i Q punts del pla π? Justifica la resposta.</p>
+<p>(b) [4 punts] Calcula el punt S situat sobre la recta PQ que es troba a 3/4 parts de P i a 1/4 part de Q.</p>
+<p>(c) [4 punts] Determina l’equació implícita (també anomenada cartesiana) de la recta que passa per P i és perpendicular al pla π.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>P4. - Sigui el pla \(\pi: 3x + y + z = 2\) i els punts \(P = (0, 1, 1)\) i \(Q = (2, -1, -3)\).</p>
+<p><strong>(a) [2 punts]</strong> Són \(P\) i \(Q\) punts del pla \(\pi\)? Justifica la resposta.</p>
+<p><strong>Solució.</strong> Sí, perquè verifiquen l’equació:  <br>
+\[
+0 + 1 + 1 = 2
+\]<br>
+i<br>
+\[
+6 - 1 - 3 = 2.
+\]</p>
+<p><strong>(b) [4 punts]</strong> Calcula el punt \(S\) situat sobre la recta \(PQ\) que es troba a \(3/4\) parts de \(P\) i a \(1/4\) part de \(Q\).</p>
+<p><strong>Solució.</strong> Si no ho saben fer directament, basta fer dues vegades el punt mitjà:</p>
+<p>- punt mitjà de \(P\) i \(Q\):  <br>
+\[
+M = (1, 0, -1).
+\]</p>
+<p>- punt mitjà de \(M\) i \(Q\):  <br>
+\[
+S = \left(\frac{3}{2}, -\frac{1}{2}, -2\right).
+\]</p>
+<p><strong>(c) [4 punts]</strong> Determina l’equació implícita (també anomenada cartesiana) de la recta que passa per \(P\) i és perpendicular al pla \(\pi\).</p>
+<p><strong>Solució.</strong> El vector director d’aquesta recta ha de ser el vector normal del pla \(\vec n = (3, 1, 1)\). Per tant, l’equació contínua és  <br>
+\[
+\frac{x}{3} = \frac{y - 1}{1} = \frac{z - 1}{1}.
+\]</p>
+<p>D’on tenim que l’equació implícita és  <br>
+\[
+\begin{cases}
+x - 3y + 3 = 0, \\
+y - z = 0.
+\end{cases}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos apartado por apartado.</p>
+<h3>Datos</h3>
+\[
+\pi: 3x+y+z=2,\qquad P=(0,1,1),\qquad Q=(2,-1,-3)
+\]
+<p>---</p>
+<h3>(a) ¿P y Q pertenecen al plano \(\pi\)?</h3>
+<p>Un punto pertenece al plano si sus coordenadas verifican la ecuación \(3x+y+z=2\).</p>
+<h4>Para \(P=(0,1,1)\):</h4>
+\[
+3\cdot 0+1+1=2
+\]
+Se cumple, luego:
+\[
+P\in \pi
+\]
+<h4>Para \(Q=(2,-1,-3)\):</h4>
+\[
+3\cdot 2+(-1)+(-3)=6-1-3=2
+\]
+También se cumple, luego:
+\[
+Q\in \pi
+\]
+<h4>Conclusión</h4>
+\[
+\boxed{P\in\pi \quad \text{y} \quad Q\in\pi}
+\]
+<p>---</p>
+<h3>(b) Punto \(S\) de la recta \(PQ\) que está a \(\tfrac34\) de \(P\) y a \(\tfrac14\) de \(Q\)</h3>
+<p>Tomamos la combinación afín:<br>
+\[
+S=\frac34 P+\frac14 Q
+\]</p>
+<p>Sustituyendo:<br>
+\[
+S=\frac34(0,1,1)+\frac14(2,-1,-3)
+\]</p>
+<p>Calculamos coordenada a coordenada:<br>
+\[
+S=\left(\frac34\cdot 0+\frac14\cdot 2,\ \frac34\cdot 1+\frac14\cdot(-1),\ \frac34\cdot 1+\frac14\cdot(-3)\right)
+\]</p>
+<p>\[
+S=\left(\frac12,\ \frac12,\ 0\right)
+\]</p>
+<h4>Resultado</h4>
+\[
+\boxed{S=\left(\frac12,\frac12,0\right)}
+\]
+<p>---</p>
+<h3>(c) Ecuación implícita de la recta que pasa por \(P\) y es perpendicular al plano \(\pi\)</h3>
+<p>Una recta perpendicular a un plano tiene como vector director un vector normal del plano.</p>
+<p>El plano<br>
+\[
+3x+y+z=2
+\]<br>
+tiene vector normal<br>
+\[
+\vec n=(3,1,1)
+\]</p>
+<p>Por tanto, la recta buscada pasa por \(P=(0,1,1)\) y tiene dirección \((3,1,1)\).</p>
+<h4>Ecuación paramétrica</h4>
+\[
+(x,y,z)=(0,1,1)+t(3,1,1)
+\]
+es decir:
+\[
+x=3t,\qquad y=1+t,\qquad z=1+t
+\]
+<p>Ahora eliminamos \(t\):</p>
+<p>De \(y=1+t\) y \(z=1+t\), se obtiene:<br>
+\[
+y-z=0
+\]</p>
+<p>Y como \(t=y-1\), de \(x=3t\):<br>
+\[
+x=3(y-1)\quad \Rightarrow\quad x-3y+3=0
+\]</p>
+<h4>Ecuación implícita (cartesiana)</h4>
+\[
+\boxed{
+\begin{cases}
+x-3y+3=0\\
+y-z=0
+\end{cases}}
+\]
+<p>---</p>
+<h3>Resumen final</h3>
+<h4>(a)</h4>
+\[
+\boxed{P\in\pi \text{ y } Q\in\pi}
+\]
+<h4>(b)</h4>
+\[
+\boxed{S=\left(\frac12,\frac12,0\right)}
+\]
+<h4>(c)</h4>
+\[
+\boxed{
+\begin{cases}
+x-3y+3=0\\
+y-z=0
+\end{cases}}
+\]</section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio P4, procederemos en los diferentes apartados de la siguiente manera:</p>
+<h4>(a) Verificar si los puntos \( P \) y \( Q \) pertenecen al plano \( \pi \)</h4>
+<p>La ecuación del plano \( \pi \) es:<br>
+\[ 3x + y + z = 2 \]</p>
+<p><strong>Para el punto \( P = (0, 1, 1) \):</strong><br>
+Sustituyendo las coordenadas en la ecuación del plano:<br>
+\[ 3(0) + 1 + 1 = 2 \]<br>
+\[ 2 = 2 \]<br>
+Como la igualdad se cumple, el punto \( P \) pertenece al plano \( \pi \).</p>
+<p><strong>Para el punto \( Q = (2, -1, -3) \):</strong><br>
+Sustituyendo las coordenadas en la ecuación del plano:<br>
+\[ 3(2) + (-1) + (-3) = 6 - 1 - 3 = 2 \]<br>
+\[ 2 = 2 \]<br>
+Como la igualdad se cumple, el punto \( Q \) también pertenece al plano \( \pi \).</p>
+<h4>(b) Calcular el punto \( S \) sobre la recta \( PQ \) que es \( \frac{3}{4} \) parte de \( P \) y \( \frac{1}{4} \) parte de \( Q \)</h4>
+<p>Para encontrar este punto se utiliza la forma paramétrica para puntos en una línea que son combinaciones lineales de los dos puntos:<br>
+\[ S = \lambda P + (1 - \lambda) Q \]<br>
+Donde:<br>
+\[ \lambda = \frac{3}{4}, \]<br>
+\[ 1 - \lambda = \frac{1}{4}. \]</p>
+<p><strong>Sustituyendo \( P \) y \( Q \) y los valores de \( \lambda \):</strong><br>
+\[ S = \frac{3}{4}(0, 1, 1) + \frac{1}{4}(2, -1, -3) \]<br>
+Sumando componentes:<br>
+\[ S = \left(\frac{3}{4} \cdot 0 + \frac{1}{4} \cdot 2, \frac{3}{4} \cdot 1 + \frac{1}{4} \cdot (-1), \frac{3}{4} \cdot 1 + \frac{1}{4} \cdot (-3)\right) \]<br>
+\[ S = \left(\frac{2}{4}, \frac{3}{4} - \frac{1}{4}, \frac{3}{4} - \frac{3}{4}\right) \]<br>
+\[ S = \left(\frac{1}{2}, \frac{2}{4}, 0\right) \]<br>
+\[ S = \left(\frac{1}{2}, \frac{1}{2}, 0\right) \]</p>
+<h4>(c) Determinar la ecuación implícita de la recta que pasa por \( P \) y es perpendicular al plano \( \pi \)</h4>
+<p>Los planos y rectas perpendiculares comparten el mismo vector normal. Dado que el vector normal al plano \( \pi \) es \( (3, 1, 1) \), este será también un vector director para la recta que buscamos.</p>
+<p>La recta que pasa por \( P \) con el vector director \( (3, 1, 1) \) se puede describir paramétricamente como:<br>
+\[ x = 3t, \]<br>
+\[ y = 1 + t, \]<br>
+\[ z = 1 + t, \]<br>
+donde \( t \) es el parámetro.</p>
+<p>Transformándola a su forma implícita, empezamos con:<br>
+\[ x = 3t \Rightarrow t = \frac{x}{3} \]<br>
+Sustituimos \( t \) en las ecuaciones para \( y \) y \( z \):<br>
+\[ y = 1 + \frac{x}{3}, \]<br>
+\[ z = 1 + \frac{x}{3}. \]</p>
+<p>Eliminando el parámetro \( t \) de la ecuación, restamos a \( y \) y \( z \) la fracción \( \frac{x}{3} \) y los \( 1 \):<br>
+\[ y - \frac{x}{3} = 1, \]<br>
+\[ z - \frac{x}{3} = 1. \]</p>
+<p>Finalmente, la forma simplificada de ambas sería:<br>
+\[ y - z = 0, \]<br>
+\[ x - 3(y - 1) = 0. \]</p>
+<p>Con esto, hemos completado el ejercicio P4.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_029.html">Anterior</a><a class="button" href="problema_031.html">Siguiente</a></nav>
+</main></body>
+</html>

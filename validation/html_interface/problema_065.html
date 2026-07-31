@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 65: cleon_2023 E10</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 65 de 139</h1>
+<div class="meta"><span class="badge">cleon_2023</span> &nbsp; Ejercicio E10</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_064.html">Anterior</a><a class="button" href="problema_066.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>E10.- (Probabilidad y Estadística)  <br>
+De las camionetas que recogen los envases reciclados de una localidad el 45% son de la marca C1, el 30% de la marca C2 y el 25% de la marca C3. La probabilidad de que una camioneta se averíe es: 0,02 si es de la marca C1, 0,05 si es de la marca C2 y 0,04 si es de la marca C3.</p>
+<p>a) Indicar las 6 probabilidades que aparecen en el enunciado (0,6 puntos)  <br>
+b) Si se selecciona una de esas camionetas al azar ¿qué probabilidad tiene de averiarse? (0,7 puntos)  <br>
+c) Suponiendo que una de esas camionetas se ha averiado, ¿cuál es la probabilidad de que haya sido una camioneta de la marca C3? (0,7 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>E10.- (Probabilidad y estadística)</strong></p>
+<p>De las camionetas que recogen los envases reciclados de una localidad el 45% son de la marca C1, el 30% de la marca C2 y el 25% de la marca C3. La probabilidad de que una camioneta se averíe es: 0,02 si es de la marca C1, 0,05 si es de la marca C2 y 0,04 si es de la marca C3.</p>
+<h4>a)</h4>
+<p>\[
+P(C_1)=0.45;\quad P(C_2)=0.30;\quad P(C_3)=0.25
+\]</p>
+<p>Si llamamos \(A\) al suceso “La camioneta se avería”:</p>
+<p>\[
+P(A/C_1)=0.02;\quad P(A/C_2)=0.05;\quad P(A/C_3)=0.04
+\]</p>
+<h4>b)</h4>
+<p>Nos piden calcular \(P(A)\). Aplicamos el teorema de la probabilidad total.</p>
+<p>\[
+P(A)=P(A\cap C_1)+P(A\cap C_2)+P(A\cap C_3)
+\]</p>
+<p>\[
+P(A)=P(C_1)P(A/C_1)+P(C_2)P(A/C_2)+P(C_3)P(A/C_3)
+\]</p>
+<p>\[
+P(A)=0.45\cdot 0.02+0.30\cdot 0.05+0.25\cdot 0.04=0.034
+\]</p>
+<h4>c)</h4>
+<p>Nos piden calcular \(P(C_3/A)\). Es una probabilidad a posteriori. Aplicamos el teorema de Bayes.</p>
+<p>\[
+P(C_3/A)=\frac{P(C_3\cap A)}{P(A)}
+=\frac{P(C_3)P(A/C_3)}{P(A)}
+\]</p>
+<p>\[
+P(C_3/A)=\frac{0.25\cdot 0.04}{0.034}
+=\frac{5}{17}=0.2941
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio E10, vamos a abordar los tres subapartados (a, b y c) uno por uno:</p>
+<h4>a) Indicar las 6 probabilidades que aparecen en el enunciado</h4>
+<p>Las probabilidades mencionadas en el enunciado son:<br>
+1. Probabilidad de que la camioneta sea de la marca C1: \( P(C1) = 0.45 \)<br>
+2. Probabilidad de que la camioneta sea de la marca C2: \( P(C2) = 0.30 \)<br>
+3. Probabilidad de que la camioneta sea de la marca C3: \( P(C3) = 0.25 \)<br>
+4. Probabilidad de avería si la camioneta es de la marca C1: \( P(A|C1) = 0.02 \)<br>
+5. Probabilidad de avería si la camioneta es de la marca C2: \( P(A|C2) = 0.05 \)<br>
+6. Probabilidad de avería si la camioneta es de la marca C3: \( P(A|C3) = 0.04 \)</p>
+<h4>b) Si se selecciona una de esas camionetas al azar ¿qué probabilidad tiene de averiarse?</h4>
+<p>Para calcular esta probabilidad, necesitamos usar la ley de probabilidad total. La probabilidad total de avería \( P(A) \) es la suma de las probabilidades de avería para cada marca, ponderada por la probabilidad de que una camioneta sea de esa marca. Matemáticamente se representa como:<br>
+\[ P(A) = P(A|C1)P(C1) + P(A|C2)P(C2) + P(A|C3)P(C3) \]</p>
+<p>Sustituyendo los valores:<br>
+\[ P(A) = (0.02)(0.45) + (0.05)(0.30) + (0.04)(0.25) \]<br>
+\[ P(A) = 0.009 + 0.015 + 0.01 \]<br>
+\[ P(A) = 0.034 \]</p>
+<p>Por lo tanto, la probabilidad de que una camioneta seleccionada al azar se averíe es \( P(A) = 0.034 \) o 3.4%.</p>
+<h4>c) Suponiendo que una de esas camionetas se ha averiado, ¿cuál es la probabilidad de que haya sido una camioneta de la marca C3?</h4>
+<p>Para este cálculo, utilizamos el teorema de Bayes, que se formula como:<br>
+\[ P(C3|A) = \frac{P(A|C3)P(C3)}{P(A)} \]</p>
+<p>Ya calculamos \( P(A) \) en el apartado anterior y conocemos \( P(A|C3) \) y \( P(C3) \) del enunciado.</p>
+<p>Así que:<br>
+\[ P(C3|A) = \frac{(0.04)(0.25)}{0.034} \]<br>
+\[ P(C3|A) = \frac{0.01}{0.034} \approx 0.2941 \]</p>
+<p>Por lo tanto, la probabilidad de que, dado que una camioneta se ha averiado, esta sea de la marca C3 es aproximadamente 0.2941 o 29.41%.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea:</p>
+<p>- \(C_1\): “la camioneta es de la marca C1”<br>
+- \(C_2\): “la camioneta es de la marca C2”<br>
+- \(C_3\): “la camioneta es de la marca C3”<br>
+- \(A\): “la camioneta se avería”</p>
+<h3>a) Las 6 probabilidades del enunciado</h3>
+<p>Las probabilidades de marca son:</p>
+<p>\[
+P(C_1)=0{,}45,\qquad P(C_2)=0{,}30,\qquad P(C_3)=0{,}25
+\]</p>
+<p>Las probabilidades de avería condicionadas a la marca son:</p>
+<p>\[
+P(A\mid C_1)=0{,}02,\qquad P(A\mid C_2)=0{,}05,\qquad P(A\mid C_3)=0{,}04
+\]</p>
+<p>---</p>
+<h3>b) Probabilidad de que una camioneta elegida al azar se averíe</h3>
+<p>Aplicamos la <strong>probabilidad total</strong>:</p>
+<p>\[
+P(A)=P(C_1)P(A\mid C_1)+P(C_2)P(A\mid C_2)+P(C_3)P(A\mid C_3)
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+P(A)=0{,}45\cdot 0{,}02+0{,}30\cdot 0{,}05+0{,}25\cdot 0{,}04
+\]</p>
+<p>\[
+P(A)=0{,}009+0{,}015+0{,}010=0{,}034
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{P(A)=0{,}034}
+\]</p>
+<p>es decir, la probabilidad de avería es del</p>
+<p>\[
+\boxed{3{,}4\%}
+\]</p>
+<p>---</p>
+<h3>c) Probabilidad de que, si se ha averiado, sea de la marca C3</h3>
+<p>Aplicamos el <strong>teorema de Bayes</strong>:</p>
+<p>\[
+P(C_3\mid A)=\frac{P(C_3)\,P(A\mid C_3)}{P(A)}
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+P(C_3\mid A)=\frac{0{,}25\cdot 0{,}04}{0{,}034}
+=\frac{0{,}01}{0{,}034}
+\approx 0{,}2941
+\]</p>
+<p>Luego,</p>
+<p>\[
+\boxed{P(C_3\mid A)\approx 0{,}2941}
+\]</p>
+<p>es decir,</p>
+<p>\[
+\boxed{29{,}41\%}
+\]</p>
+<p>---</p>
+<h3>Respuestas finales</h3>
+<p>- <strong>a)</strong>  <br>
+  \[
+  P(C_1)=0{,}45,\; P(C_2)=0{,}30,\; P(C_3)=0{,}25,\;
+  P(A\mid C_1)=0{,}02,\; P(A\mid C_2)=0{,}05,\; P(A\mid C_3)=0{,}04
+  \]</p>
+<p>- <strong>b)</strong>  <br>
+  \[
+  \boxed{P(A)=0{,}034=3{,}4\%}
+  \]</p>
+<p>- <strong>c)</strong>  <br>
+  \[
+  \boxed{P(C_3\mid A)\approx 0{,}2941=29{,}41\%}
+  \]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_064.html">Anterior</a><a class="button" href="problema_066.html">Siguiente</a></nav>
+</main></body>
+</html>

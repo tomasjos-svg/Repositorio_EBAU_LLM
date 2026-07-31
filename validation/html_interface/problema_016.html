@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 16: aragon_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 16 de 139</h1>
+<div class="meta"><span class="badge">aragon_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_015.html">Anterior</a><a class="button" href="problema_017.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>8) El plano \(\pi: 2x + by - 2z + 4 = 0\), \(b \in \mathbb{R}\) y \(b \ne 0\), corta a los ejes de coordenadas en tres puntos \(A\), \(B\) y \(C\). Calcula los valores de \(b \in \mathbb{R}\) tal que el área del triángulo que determinan estos tres puntos \(A\), \(B\) y \(C\) sea \(6\ \text{u}^2\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 8</strong></p>
+<p>El plano  <br>
+\[
+x+by-2z+4=0,\quad b\in\mathbb{R},\ b\neq 0
+\]<br>
+corta a los ejes de coordenadas en tres puntos \(A\), \(B\) y \(C\). Calcula los valores de \(b\in\mathbb{R}\) tal que el área del triángulo que determinan estos tres puntos \(A\), \(B\) y \(C\) sea \(6\ u^2\).</p>
+<p>Hallamos los puntos de corte con cada uno de los ejes de coordenadas.</p>
+<p>\[
+x+by-2z+4=0
+\]</p>
+<p>\[
+OX:\ y=0,\ z=0 \Rightarrow x+4=0 \Rightarrow x=-4
+\]<br>
+\[
+A=(-4,0,0)
+\]</p>
+<p>\[
+OY:\ x=0,\ z=0 \Rightarrow by+4=0 \Rightarrow y=\frac{-4}{b}
+\]<br>
+\[
+B=\left(0,\frac{-4}{b},0\right)
+\]</p>
+<p>\[
+OZ:\ x=0,\ y=0 \Rightarrow -2z+4=0 \Rightarrow z=2
+\]<br>
+\[
+C=(0,0,2)
+\]</p>
+<p>El área del triángulo \(ABC\) es la mitad del módulo del producto vectorial:</p>
+<p>\[
+\text{Área}=\frac{1}{2}\left|\overrightarrow{AB}\times \overrightarrow{AC}\right|
+\]</p>
+<p>\[
+\overrightarrow{AB}=B-A=\left(4,\frac{-4}{b},0\right)
+\]</p>
+<p>\[
+\overrightarrow{AC}=C-A=(4,0,2)
+\]</p>
+<p>\[
+\overrightarrow{AB}\times \overrightarrow{AC}
+=
+\begin{vmatrix}
+\vec i &amp; \vec j &amp; \vec k\\
+4 &amp; \frac{-4}{b} &amp; 0\\
+4 &amp; 0 &amp; 2
+\end{vmatrix}
+=
+\left(\frac{-8}{b},-8,\frac{16}{b}\right)
+\]</p>
+<p>\[
+\text{Área}
+=
+\frac{1}{2}
+\sqrt{
+\frac{64}{b^2}+64+\frac{256}{b^2}
+}
+=
+\frac{1}{2}
+\sqrt{
+64+\frac{320}{b^2}
+}
+\]</p>
+<p>Igualamos el valor del área a 6 y obtenemos el valor de \(b\).</p>
+<p>\[
+\frac{1}{2}\sqrt{64+\frac{320}{b^2}}=6
+\]</p>
+<p>\[
+64+\frac{320}{b^2}=144
+\]</p>
+<p>\[
+\frac{320}{b^2}=80
+\]</p>
+<p>\[
+b^2=4
+\]</p>
+<p>\[
+b=\pm 2
+\]</p>
+<p>Los valores de \(b\) buscados son:</p>
+<p>\[
+\boxed{-2 \text{ y } 2}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver el ejercicio paso a paso.</p>
+<p>El plano es</p>
+<p>\[
+\pi:\; 2x+by-2z+4=0,\qquad b\in\mathbb R,\; b\neq 0.
+\]</p>
+<p>Corta a los ejes coordenados en los puntos \(A\), \(B\) y \(C\).</p>
+<p>---</p>
+<h3>1. Hallar los puntos de corte con los ejes</h3>
+<h4>Punto \(A\): corte con el eje \(x\)</h4>
+En el eje \(x\), se cumple \(y=0\) y \(z=0\). Sustituyendo en el plano:
+<p>\[
+2x+4=0 \quad\Rightarrow\quad x=-2
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+A=(-2,0,0)
+\]</p>
+<p>---</p>
+<h4>Punto \(B\): corte con el eje \(y\)</h4>
+En el eje \(y\), se cumple \(x=0\) y \(z=0\). Sustituyendo:
+<p>\[
+by+4=0 \quad\Rightarrow\quad y=-\frac{4}{b}
+\]</p>
+<p>Luego,</p>
+<p>\[
+B=\left(0,-\frac{4}{b},0\right)
+\]</p>
+<p>---</p>
+<h4>Punto \(C\): corte con el eje \(z\)</h4>
+En el eje \(z\), se cumple \(x=0\) y \(y=0\). Sustituyendo:
+<p>\[
+-2z+4=0 \quad\Rightarrow\quad z=2
+\]</p>
+<p>Así,</p>
+<p>\[
+C=(0,0,2)
+\]</p>
+<p>---</p>
+<h3>2. Calcular el área del triángulo \(ABC\)</h3>
+<p>Tomamos los vectores:</p>
+<p>\[
+\overrightarrow{AB}=B-A=\left(2,-\frac{4}{b},0\right)
+\]</p>
+<p>\[
+\overrightarrow{AC}=C-A=(2,0,2)
+\]</p>
+<p>El área del triángulo es</p>
+<p>\[
+\text{Área}=\frac12\left\|\overrightarrow{AB}\times \overrightarrow{AC}\right\|
+\]</p>
+<p>Calculamos el producto vectorial:</p>
+<p>\[
+\overrightarrow{AB}\times \overrightarrow{AC}
+=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+2 &amp; -\frac{4}{b} &amp; 0\\
+2 &amp; 0 &amp; 2
+\end{vmatrix}
+\]</p>
+<p>\[
+=
+\left(-\frac{8}{b},\,-4,\,\frac{8}{b}\right)
+\]</p>
+<p>Su módulo es:</p>
+<p>\[
+\left\|\overrightarrow{AB}\times \overrightarrow{AC}\right\|
+=
+\sqrt{\left(-\frac{8}{b}\right)^2+(-4)^2+\left(\frac{8}{b}\right)^2}
+\]</p>
+<p>\[
+=
+\sqrt{\frac{64}{b^2}+16+\frac{64}{b^2}}
+=
+\sqrt{16+\frac{128}{b^2}}
+\]</p>
+<p>Entonces,</p>
+<p>\[
+\text{Área}
+=
+\frac12\sqrt{16+\frac{128}{b^2}}
+\]</p>
+<p>Como el área debe ser \(6\),</p>
+<p>\[
+\frac12\sqrt{16+\frac{128}{b^2}}=6
+\]</p>
+<p>\[
+\sqrt{16+\frac{128}{b^2}}=12
+\]</p>
+<p>Elevando al cuadrado:</p>
+<p>\[
+16+\frac{128}{b^2}=144
+\]</p>
+<p>\[
+\frac{128}{b^2}=128
+\]</p>
+<p>\[
+b^2=1
+\]</p>
+<p>\[
+b=\pm 1
+\]</p>
+<p>---</p>
+<h3>Resultado</h3>
+<p>Los valores de \(b\) para que el área del triángulo \(ABC\) sea \(6\,\text{u}^2\) son:</p>
+<p>\[
+\boxed{b=1 \quad \text{o} \quad b=-1}
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver este problema, comenzaremos encontrando las coordenadas de los puntos \(A\), \(B\), y \(C\) en los que el plano \(\pi: 2x + by - 2z + 4 = 0\) corta los ejes coordenados. Estos puntos se determinan poniendo a cero dos de las variables en la ecuación del plano en cada caso.</p>
+<p>1. <strong>Corte con el eje \(x\)</strong> (poniendo \(y = 0\) y \(z = 0\)):<br>
+   \[
+   2x + 4 = 0 \implies x = -2
+   \]<br>
+   Por lo tanto, \(A = (-2, 0, 0)\).</p>
+<p>2. <strong>Corte con el eje \(y\)</strong> (poniendo \(x = 0\) y \(z = 0\)):<br>
+   \[
+   by + 4 = 0 \implies y = -\frac{4}{b}
+   \]<br>
+   Por lo tanto, \(B = (0, -\frac{4}{b}, 0)\).</p>
+<p>3. <strong>Corte con el eje \(z\)</strong> (poniendo \(x = 0\) y \(y = 0\)):<br>
+   \[
+   -2z + 4 = 0 \implies z = 2
+   \]<br>
+   Por lo tanto, \(C = (0, 0, 2)\).</p>
+<p>Ahora, para calcular el área del triángulo \(ABC\) formado por los puntos \(A\), \(B\), y \(C\), utilizamos la fórmula del área del triángulo en el espacio 3D utilizando coordenadas de vértices:<br>
+\[
+\text{Área} = \frac{1}{2} |\vec{AB} \times \vec{AC}|
+\]<br>
+Calculamos los vectores \(\vec{AB}\) y \(\vec{AC}\):<br>
+\[
+\vec{AB} = B - A = \left(0 - (-2), -\frac{4}{b} - 0, 0 - 0\right) = (2, -\frac{4}{b}, 0)
+\]<br>
+\[
+\vec{AC} = C - A = \left(0 - (-2), 0 - 0, 2 - 0\right) = (2, 0, 2)
+\]<br>
+Calculamos el producto cruz \(\vec{AB} \times \vec{AC}\):<br>
+\[
+\vec{AB} \times \vec{AC} = \left| 
+\begin{matrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+2 &amp; -\frac{4}{b} &amp; 0 \\
+2 &amp; 0 &amp; 2
+\end{matrix}
+\right| = \mathbf{i}\left(-\frac{4}{b} \times 2 - 0\right) - \mathbf{j}(2 \times 2 - 0) + \mathbf{k}(2 \times 0 - (-\frac{4}{b} \times 2))
+\]<br>
+\[
+= -\frac{8}{b} \mathbf{i} - 4 \mathbf{j} + \frac{8}{b} \mathbf{k}
+\]<br>
+El módulo de este vector es:<br>
+\[
+\left| \vec{AB} \times \vec{AC} \right| = \sqrt{\left(-\frac{8}{b}\right)^2 + (-4)^2 + \left(\frac{8}{b}\right)^2} = \sqrt{2 \cdot \left(\frac{8}{b}\right)^2 + 16}
+\]<br>
+\[
+= \sqrt{\frac{128}{b^2} + 16} = \sqrt{\frac{128 + 16b^2}{b^2}} = \frac{\sqrt{128 + 16b^2}}{b}
+\]<br>
+Ahora, igualamos al doble del área deseada (dado que el área es \(6\ \text{u}^2\)):<br>
+\[
+\frac{1}{2} \cdot \frac{\sqrt{128 + 16b^2}}{b} = 6
+\]<br>
+\[
+\frac{\sqrt{128 + 16b^2}}{b} = 12
+\]<br>
+\[
+\sqrt{128 + 16b^2} = 12b
+\]<br>
+\[
+128 + 16b^2 = 144b^2
+\]<br>
+\[
+128b^2 - 16b^2 = 128
+\]<br>
+\[
+128b^2 = 128
+\]<br>
+\[
+b^2 = 1 \implies b = \pm1
+\]</p>
+<p>Dado que \(b \neq 0\), los posibles valores de \(b\) son \(b = 1\) o \(b = -1\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_015.html">Anterior</a><a class="button" href="problema_017.html">Siguiente</a></nav>
+</main></body>
+</html>

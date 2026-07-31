@@ -1,0 +1,18 @@
+DIAGNOSTICO DEL DETECTOR - ENUNCIADOS
+================================================================================
+Patron elegido: named
+Ejercicios aceptados: 1, 3, 4
+
+ADVERTENCIAS
+- Numeracion no continua; faltan: 2
+
+CANDIDATOS
+L0019 | named | 1 | Problema 1A.
+L0032 | named | 1 | Problema 1B.
+L0063 | named | 3 | Problema 3A.
+L0080 | named | 3 | Problema 3B.
+L0090 | named | 4 | Problema 4A.
+L0098 | named | 4 | Problema 4B.
+
+DESCARTADOS
+L0049 | sin_contenido | Problema 2. 

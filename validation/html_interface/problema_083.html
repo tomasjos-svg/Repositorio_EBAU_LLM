@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 83: extremadura_2023 10</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 83 de 139</h1>
+<div class="meta"><span class="badge">extremadura_2023</span> &nbsp; Ejercicio 10</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_082.html">Anterior</a><a class="button" href="problema_084.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>10. Los relojes de cierta marca tienen una vida útil que se ajusta a una distribución normal de media 10 años y desviación típica de 2 años. Si compramos un reloj de esta marca:</p>
+<p>a) Calcular la probabilidad de que dure entre 9 y 12 años. (1 punto)</p>
+<p>b) ¿Cuánto tiempo tendrá que durar el reloj si queremos que el 90 % de los relojes de esa marca duren menos que el nuestro? (1 punto)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>10.</strong> Los relojes de cierta marca tienen una vida útil que se ajusta a una distribución normal de media 10 años y desviación típica de 2 años. Si compramos un reloj de esta marca:</p>
+<p>Sea \(X=\) vida útil de un reloj de cierta marca en años.</p>
+<p>\[
+X=N(10,2)
+\]</p>
+<h4>a) Calcular la probabilidad de que dure entre 9 y 12 años.</h4>
+<p>Nos piden calcular:</p>
+<p>\[
+P(9&lt;X&lt;12)
+\]</p>
+<p>\[
+P(9&lt;X&lt;12)=P(X&lt;12)-P(X&lt;9)
+\]</p>
+<p>Tipificamos:</p>
+<p>\[
+P\left(Z&lt;\frac{12-10}{2}\right)-P\left(Z&lt;\frac{9-10}{2}\right)
+=
+P(Z&lt;1)-P(Z&lt;-0.5)
+\]</p>
+<p>\[
+=P(Z&lt;1)-\left[1-P(Z&lt;0.5)\right]
+\]</p>
+<p>Mirando en la tabla \(N(0,1)\):</p>
+<p>\[
+=0.8413-(1-0.6915)=0.5328
+\]</p>
+<p>---</p>
+<h4>b) ¿Cuánto tiempo tendrá que durar el reloj si queremos que el 90% de los relojes de esa marca duren menos que el nuestro?</h4>
+<p>Nos piden hallar el valor de \(a\) para que:</p>
+<p>\[
+P(X&lt;a)=0.9
+\]</p>
+<p>Tipificamos:</p>
+<p>\[
+P\left(Z&lt;\frac{a-10}{2}\right)=0.9
+\]</p>
+<p>Mirando en la tabla \(N(0,1)\):</p>
+<p>\[
+\frac{a-10}{2}=1.28
+\]</p>
+<p>\[
+a=1.28\cdot 2+10=12.56
+\]</p>
+<p>Por tanto, deberá durar:</p>
+<p>\[
+\boxed{12.56 \text{ años}}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 10 presentado en el enunciado, seguiremos los siguientes procedimientos matemáticos y teóricos. Empezaremos por el apartado (a) y seguiremos con el apartado (b).</p>
+<h4>Apartado (a)</h4>
+<p><strong>Pregunta</strong>: Calcular la probabilidad de que un reloj dure entre 9 y 12 años.</p>
+<p><strong>Datos</strong>:<br>
+- Media (\(\mu\)) = 10 años<br>
+- Desviación estándar (\(\sigma\)) = 2 años</p>
+<p><strong>Distribución</strong>: Normal</p>
+<p><strong>Solución</strong>:<br>
+Para calcular la probabilidad de que el reloj dure entre 9 y 12 años en una distribución normal, primero transformamos los límites de años a z-scores, usando la fórmula:<br>
+\[ z = \frac{X - \mu}{\sigma} \]</p>
+<p>- Para \(X = 9\) años:<br>
+\[ z = \frac{9 - 10}{2} = -0.5 \]</p>
+<p>- Para \(X = 12\) años:<br>
+\[ z = \frac{12 - 10}{2} = 1 \]</p>
+<p>Luego, usando una tabla estándar de distribución normal o una calculadora de funciones normales, buscamos las probabilidades correspondientes a estos z-scores y las usamos para encontrar la probabilidad acumulada entre estos dos puntos.</p>
+<p>- Probabilidad de \(Z \leq 1\)<br>
+- Probabilidad de \(Z \leq -0.5\)</p>
+<p>La probabilidad buscada se encuentra al calcular:<br>
+\[ P(9 \leq X \leq 12) = P(Z \leq 1) - P(Z \leq -0.5) \]</p>
+<p>Siendo más específicos, usando valores estándar de la tabla:<br>
+\[ P(Z \leq 1) \approx 0.8413 \]<br>
+\[ P(Z \leq -0.5) \approx 0.3085 \]</p>
+<p>Por lo tanto:<br>
+\[ P(9 \leq X \leq 12) \approx 0.8413 - 0.3085 = 0.5328 \]</p>
+<p><strong>Respuesta</strong>: La probabilidad de que el reloj dure entre 9 y 12 años es aproximadamente \(0.5328\) o \(53.28\%\).</p>
+<h4>Apartado (b)</h4>
+<p><strong>Pregunta</strong>: ¿Cuánto tiempo tendrá que durar el reloj si queremos que el 90% de los relojes de esa marca duren menos que el nuestro?</p>
+<p><strong>Datos</strong>:<br>
+- \(P(X &lt; x) = 0.90\)</p>
+<p><strong>Solución</strong>:<br>
+Para encontrar este valor, buscamos el percentil 90 de una distribución normal con media 10 y desviación estándar 2. Esto se hace encontrando el z-score correspondiente al 90% en una tabla de probabilidad acumulada de la distribución normal estándar, luego convertimos este z-score a un valor \(X\) utilizando la media y la desviación estándar dadas.</p>
+<p>- Buscamos \(z\) para el cual \(P(Z &lt; z) = 0.90\). Aproximadamente \(z = 1.28\), según tablas estándar.</p>
+<p>- Aplicamos la transformación inversa:<br>
+\[ x = \mu + z \cdot \sigma = 10 + 1.28 \cdot 2 = 12.56 \]</p>
+<p><strong>Respuesta</strong>: El reloj deberá durar más de 12.56 años para que el 90% de los relojes dure menos que el nuestro.</p>
+<p>Estos cálculos proporcionan las respuestas requeridas utilizando la teoría de distribuciones normales y el manejo de probabilidades y z-scores en este contexto.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea \(X\) la vida útil del reloj. Según el enunciado,</p>
+<p>\[
+X \sim N(\mu=10,\sigma=2)
+\]</p>
+<p>es decir, sigue una distribución normal de media \(10\) años y desviación típica \(2\) años.</p>
+<p>---</p>
+<h3>a) Probabilidad de que dure entre 9 y 12 años</h3>
+<p>Queremos calcular:</p>
+<p>\[
+P(9 \le X \le 12)
+\]</p>
+<p>Estandarizamos usando</p>
+<p>\[
+Z=\frac{X-\mu}{\sigma}
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(9 \le X \le 12)=P\left(\frac{9-10}{2}\le Z \le \frac{12-10}{2}\right)
+\]</p>
+<p>\[
+= P(-0.5 \le Z \le 1)
+\]</p>
+<p>Usando la tabla de la normal estándar:</p>
+<p>\[
+\Phi(1)=0.8413,\qquad \Phi(-0.5)=0.3085
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+P(-0.5 \le Z \le 1)=\Phi(1)-\Phi(-0.5)
+\]</p>
+<p>\[
+=0.8413-0.3085=0.5328
+\]</p>
+<h4>Resultado del apartado a)</h4>
+\[
+\boxed{P(9\le X\le 12)\approx 0.5328}
+\]
+<p>Es decir, la probabilidad es aproximadamente del</p>
+<p>\[
+\boxed{53.28\%}
+\]</p>
+<p>---</p>
+<h3>b) Tiempo para que el 90% duren menos que el nuestro</h3>
+<p>Buscamos un valor \(x\) tal que:</p>
+<p>\[
+P(X&lt;x)=0.90
+\]</p>
+<p>Esto corresponde al percentil 90 de la distribución normal.</p>
+<p>En la normal estándar, el valor \(z\) que deja a su izquierda el 90% es:</p>
+<p>\[
+z_{0.90}\approx 1.28
+\]</p>
+<p>Entonces:</p>
+<p>\[
+x=\mu+z\sigma
+\]</p>
+<p>\[
+x=10+1.28\cdot 2
+\]</p>
+<p>\[
+x=10+2.56=12.56
+\]</p>
+<h4>Resultado del apartado b)</h4>
+\[
+\boxed{x\approx 12.56\text{ años}}
+\]
+<p>Es decir, el reloj tendría que durar aproximadamente</p>
+<p>\[
+\boxed{12.6\text{ años}}
+\]</p>
+<p>para que el \(90\%\) de los relojes de esa marca duren menos que él.</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<p>- <strong>a)</strong> \(\boxed{P(9\le X\le 12)\approx 0.5328}\)<br>
+- <strong>b)</strong> \(\boxed{12.56\text{ años}\approx 12.6\text{ años}}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_082.html">Anterior</a><a class="button" href="problema_084.html">Siguiente</a></nav>
+</main></body>
+</html>

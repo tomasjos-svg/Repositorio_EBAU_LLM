@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 47: cantabria_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 47 de 139</h1>
+<div class="meta"><span class="badge">cantabria_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_046.html">Anterior</a><a class="button" href="problema_048.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio 6 [2,5 PUNTOS]</p>
+<p>Considere la función \(f(x)=\sin(x)\).</p>
+<p>A) [0,75 PUNTOS] Calcule una primitiva de \(f(x)\).</p>
+<p>B) [1,75 PUNTOS] Calcule el área del recinto del plano limitado por \(f(x)\) y el eje OX de abscisas para \(x \in [0, 2\pi]\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 6 [2.5 PUNTOS]</strong></p>
+<p>Considere la función  <br>
+\[
+f(x)=\sin(x).
+\]</p>
+<p><strong>A) [0,75 PUNTOS] Calcule una primitiva de \(f(x)\).</strong></p>
+<p>\[
+F(x)=\int f(x)\,dx=\int \sin(x)\,dx=-\cos(x)+K
+\]</p>
+<p>Una primitiva puede ser, con \(K=0\):</p>
+<p>\[
+F(x)=-\cos(x)
+\]</p>
+<p>---</p>
+<p><strong>B) [1,75 PUNTOS] Calcule el área del recinto del plano limitado por \(f(x)\) y el eje OX de abscisas para \(0\le x\le 2\pi\).</strong></p>
+<p>Averiguamos los puntos de corte de la función con el eje OX.</p>
+<p>\[
+f(x)=\sin(x)=0 \Rightarrow x=0,\ \pi,\ 2\pi
+\]</p>
+<p>El recinto lo dividimos en dos partes: una entre \(x=0\) y \(x=\pi\), la otra entre \(x=\pi\) y \(x=2\pi\). Calculamos cada una de las áreas y luego las sumamos.</p>
+<p>\[
+\int_0^\pi \sin(x)\,dx=\left[-\cos(x)\right]_0^\pi
+=-\cos(\pi)+\cos(0)=1+1=2
+\]</p>
+<p>\[
+\int_\pi^{2\pi} \sin(x)\,dx=\left[-\cos(x)\right]_\pi^{2\pi}
+=-\cos(2\pi)+\cos(\pi)=-1-1=-2
+\]</p>
+<p>El área correspondiente es:</p>
+<p>\[
+A_1=2,\qquad A_2=2
+\]</p>
+<p>Por tanto, el área del recinto del plano limitado por \(f(x)\) y el eje OX de abscisas para \(0\le x\le 2\pi\) tiene un valor de:</p>
+<p>\[
+2+2=4
+\]</p>
+<p><strong>Área = 4 unidades cuadradas.</strong></p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el Ejercicio 6, procedamos por partes:</p>
+<h4>Parte A</h4>
+Si queremos calcular una primitiva de la función \(f(x) = \sin(x)\), necesitamos encontrar una función \(F(x)\) tal que \(F&#x27;(x) = \sin(x)\).
+<p>Sabemos que la derivada del coseno negativo es igual al seno, es decir, si tomamos \(F(x) = -\cos(x)\), entonces:<br>
+\[
+F&#x27;(x) = -(-\sin(x)) = \sin(x)
+\]</p>
+<p>Por lo tanto, una primitiva de \(f(x) = \sin(x)\) es:<br>
+\[
+F(x) = -\cos(x) + C
+\]<br>
+donde \(C\) es una constante de integración.</p>
+<h4>Parte B</h4>
+Para calcular el área del recinto plano limitado por la función \(f(x) = \sin(x)\) y el eje \(OX\) entre \(x = 0\) y \(x = 2\pi\), necesitamos evaluar la integral definida de \(|\sin(x)|\) en ese intervalo, ya que el seno toma valores negativos y positivos en [0, 2π].
+<p>La función \(\sin(x)\) es positiva en el intervalo \([0, \pi]\) y negativa en \([\pi, 2\pi]\). Para encontrar el área total bajo la curva de \(\sin(x)\) y por encima del eje \(OX\), integramos el valor absoluto de \(\sin(x)\):</p>
+<p>\[
+\text{Área} = \int_{0}^{2\pi} |\sin(x)| \, dx
+\]</p>
+<p>Podemos dividir esto en dos partes, donde \(\sin(x)\) es positivo y negativo:<br>
+\[
+\text{Área} = \int_{0}^{\pi} \sin(x) \, dx + \int_{\pi}^{2\pi} -\sin(x) \, dx
+\]</p>
+<p>Calculamos cada integral:<br>
+1. \(\int_{0}^{\pi} \sin(x) \, dx\)<br>
+   - La integración de \(\sin(x)\) respecto a \(x\) desde 0 a \(\pi\) es:<br>
+     \[
+     -\cos(x) \bigg|_{0}^{\pi} = -\cos(\pi) - (-\cos(0)) = -(-1) - (-1) = 2
+     \]</p>
+<p>2. \(\int_{\pi}^{2\pi} -\sin(x) \, dx\)<br>
+   - La integración de \(-\sin(x)\) respecto a \(x\) desde \(\pi\) a \(2\pi\) es:<br>
+     \[
+     \cos(x) \bigg|_{\pi}^{2\pi} = \cos(2\pi) - \cos(\pi) = 1 - (-1) = 2
+     \]</p>
+<p>Sumamos las dos áreas:<br>
+\[
+\text{Área total} = 2 + 2 = 4
+\]</p>
+<p>Así, el área del recinto plano limitado por la función \(f(x) = \sin(x)\) y el eje \(OX\) en el intervalo \([0, 2\pi]\) es \(4\) unidades cuadradas.</p></section>
+<section class="card"><h2>Respuesta B</h2><p><strong>Ejercicio 6</strong></p>
+<p>Dada la función  <br>
+\[
+f(x)=\sin(x),
+\]<br>
+resolvemos:</p>
+<p>---</p>
+<h3>A) Una primitiva de \(f(x)\)</h3>
+<p>Buscamos una función \(F(x)\) tal que<br>
+\[
+F&#x27;(x)=\sin(x).
+\]</p>
+<p>Como<br>
+\[
+\frac{d}{dx}(-\cos x)=\sin x,
+\]<br>
+una primitiva es<br>
+\[
+\boxed{F(x)=-\cos x + C}
+\]<br>
+donde \(C\) es una constante real.</p>
+<p>---</p>
+<h3>B) Área limitada por \(f(x)\) y el eje OX en \([0,2\pi]\)</h3>
+<p>El área pedida es<br>
+\[
+\int_0^{2\pi} |\sin x|\,dx.
+\]</p>
+<h4>1. Estudiamos el signo de \(\sin x\)</h4>
+<p>- En \([0,\pi]\), \(\sin x \ge 0\).<br>
+- En \([\pi,2\pi]\), \(\sin x \le 0\).</p>
+<p>Por tanto,<br>
+\[
+\int_0^{2\pi} |\sin x|\,dx
+=
+\int_0^\pi \sin x\,dx
++
+\int_\pi^{2\pi} (-\sin x)\,dx.
+\]</p>
+<h4>2. Calculamos las integrales</h4>
+<p>Sabemos que una primitiva de \(\sin x\) es \(-\cos x\).</p>
+<p>#### Primer tramo:<br>
+\[
+\int_0^\pi \sin x\,dx
+=
+[-\cos x]_0^\pi
+=
+(-\cos\pi)-(-\cos0)
+=
+1-(-1)=2.
+\]</p>
+<p>#### Segundo tramo:<br>
+\[
+\int_\pi^{2\pi} (-\sin x)\,dx
+=
+[\cos x]_\pi^{2\pi}
+=
+\cos(2\pi)-\cos(\pi)
+=
+1-(-1)=2.
+\]</p>
+<h4>3. Sumamos</h4>
+<p>\[
+A=2+2=4.
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p>- <strong>A)</strong> Una primitiva de \(f(x)=\sin x\) es  <br>
+  \[
+  \boxed{-\cos x + C}
+  \]</p>
+<p>- <strong>B)</strong> El área pedida es  <br>
+  \[
+  \boxed{4}
+  \]<br>
+  unidades cuadradas.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_046.html">Anterior</a><a class="button" href="problema_048.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,3 @@
+﻿condition,replicate_count,n_problem_conditions,pct_problem_conditions,variability_estimable
+gpt-4-turbo + Assistants API,3,386,100.0,True
+gpt-5.4 + Responses API,3,386,100.0,True

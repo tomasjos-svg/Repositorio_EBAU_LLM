@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 82: extremadura_2023 9</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 82 de 139</h1>
+<div class="meta"><span class="badge">extremadura_2023</span> &nbsp; Ejercicio 9</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_081.html">Anterior</a><a class="button" href="problema_083.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>9. Un club de montaña organiza dos tipos de actividades para sus afiliados. El 70% de ellos se apuntan a escalada, el 60% a barranquismo y el 45% de ellos practica las dos. Si se elige al azar un afiliado,</p>
+<p>a) calcular la probabilidad de que practique sólo una de las dos actividades. (0,75 puntos)</p>
+<p>b) calcular la probabilidad de que no practique ninguna. (0,5 puntos)</p>
+<p>c) sabiendo que hace barranquismo, calcular la probabilidad de que no haga escalada. (0,75 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 9. Solución oficial</strong></p>
+<p>Realizamos una tabla de contingencia.</p>
+<p>|  | Barranquismo (B) | No barranquismo (Bᶜ) |  |<br>
+|---|---:|---:|---:|<br>
+| Escalada (A) | 45 | 25 | 70 |<br>
+| No escalada (Aᶜ) | 15 | 15 | 30 |<br>
+|  | 60 | 40 | 100 |</p>
+<p><strong>a)</strong> Sabemos que hay un 15 por ciento de afiliados que practica barranquismo y no escalada y un 25 % de afiliados que practica escalada y no barranquismo.</p>
+<p>Aplicamos la regla de Laplace:</p>
+<p>\[
+P(\text{practique solo una de las dos actividades})=\frac{25+15}{100}=0.4
+\]</p>
+<p><strong>b)</strong> Hay un 15 % de afiliados que no practica ninguna de las dos actividades.</p>
+<p>\[
+P(\text{No practica ni escalada ni barranquismo})=\frac{15}{100}=0.15
+\]</p>
+<p><strong>c)</strong> El 60 % practica barranquismo y sólo el 15 % practica barranquismo y no escalada.</p>
+<p>Aplicamos el teorema de Bayes.</p>
+<p>\[
+P(\text{No practique escalada / practica barranquismo})
+=
+\frac{P(\text{Practica barranquismo y no practica escalada})}
+{P(\text{Practica barranquismo})}
+=
+\frac{15}{60}=0.25
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea:</p>
+<p>- \(E\): “practica escalada”<br>
+- \(B\): “practica barranquismo”</p>
+<p>Datos del enunciado:</p>
+<p>\[
+P(E)=0{,}70,\qquad P(B)=0{,}60,\qquad P(E\cap B)=0{,}45
+\]</p>
+<h3>a) Probabilidad de que practique <strong>sólo una</strong> de las dos actividades</h3>
+<p>“Sólo una” significa:</p>
+<p>- escalada y no barranquismo, o<br>
+- barranquismo y no escalada.</p>
+<p>Calculamos cada parte:</p>
+<p>\[
+P(E\setminus B)=P(E)-P(E\cap B)=0{,}70-0{,}45=0{,}25
+\]</p>
+<p>\[
+P(B\setminus E)=P(B)-P(E\cap B)=0{,}60-0{,}45=0{,}15
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(\text{sólo una})=0{,}25+0{,}15=0{,}40
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{0{,}40}
+\]</p>
+<p>o bien, <strong>40%</strong>.</p>
+<p>---</p>
+<h3>b) Probabilidad de que no practique ninguna</h3>
+<p>Primero calculamos la probabilidad de que practique <strong>al menos una</strong>:</p>
+<p>\[
+P(E\cup B)=P(E)+P(B)-P(E\cap B)
+\]</p>
+<p>\[
+P(E\cup B)=0{,}70+0{,}60-0{,}45=0{,}85
+\]</p>
+<p>Por tanto, la probabilidad de que no practique ninguna es:</p>
+<p>\[
+P(\text{ninguna})=1-P(E\cup B)=1-0{,}85=0{,}15
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{0{,}15}
+\]</p>
+<p>o bien, <strong>15%</strong>.</p>
+<p>---</p>
+<h3>c) Sabiendo que hace barranquismo, probabilidad de que no haga escalada</h3>
+<p>Se pide una probabilidad condicionada:</p>
+<p>\[
+P(\overline{E}\mid B)=\frac{P(B\cap \overline{E})}{P(B)}
+\]</p>
+<p>Sabemos que:</p>
+<p>\[
+P(B\cap \overline{E})=P(B)-P(E\cap B)=0{,}60-0{,}45=0{,}15
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(\overline{E}\mid B)=\frac{0{,}15}{0{,}60}=0{,}25
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{0{,}25}
+\]</p>
+<p>o bien, <strong>25%</strong>.</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<p>- <strong>a)</strong> \( \boxed{0{,}40} \)  (40%)<br>
+- <strong>b)</strong> \( \boxed{0{,}15} \)  (15%)<br>
+- <strong>c)</strong> \( \boxed{0{,}25} \)  (25%)</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver este ejercicio, utilizaremos la teoría de probabilidad y el principio de inclusión-exclusión.</p>
+<p>Definamos:<br>
+- $P(E)$ como la probabilidad de que un afiliado practique escalada.<br>
+- $P(B)$ como la probabilidad de que un afiliado practique barranquismo.<br>
+- $P(E \cap B)$ como la probabilidad de que un afiliado practique ambas actividades, escalada y barranquismo.</p>
+<p>Según el enunciado:<br>
+- $P(E) = 0.70$<br>
+- $P(B) = 0.60$<br>
+- $P(E \cap B) = 0.45$</p>
+<h4>Apartado a) calcular la probabilidad de que practique solo una de las dos actividades.</h4>
+<p>Para el cálculo de la probabilidad de que un afiliado practique solo una de las dos actividades, necesitamos calcular la probabilidad de que participe en escalada pero no en barranquismo o en barranquismo pero no en escalada. Esto es:</p>
+<p>\[ P(E \cap B^c) + P(B \cap E^c) \]</p>
+<p>donde $B^c$ y $E^c$ son los complementos de $B$ y $E$, respectivamente. <br>
+Podemos calcularlo usando las fórmulas:<br>
+\[ P(E \cap B^c) = P(E) - P(E \cap B) \]<br>
+\[ P(B \cap E^c) = P(B) - P(E \cap B) \]</p>
+<p>Entonces:<br>
+\[ P(E \cap B^c) = 0.70 - 0.45 = 0.25 \]<br>
+\[ P(B \cap E^c) = 0.60 - 0.45 = 0.15 \]</p>
+<p>Sumando estas probabilidades obtenemos la probabilidad total de que un afiliado participe sólo en una actividad:<br>
+\[ 0.25 + 0.15 = 0.40 \]</p>
+<h4>Apartado b) calcular la probabilidad de que no practique ninguna.</h4>
+<p>Para encontrar la probabilidad de que un afiliado no practique ninguna actividad, usamos la fórmula del complemento de la unión de ambos eventos:<br>
+\[ P((E \cup B)^c) = 1 - P(E \cup B) \]</p>
+<p>La probabilidad de la unión de dos eventos se puede calcular como:<br>
+\[ P(E \cup B) = P(E) + P(B) - P(E \cap B) = 0.70 + 0.60 - 0.45 = 0.85 \]</p>
+<p>Por lo tanto, la probabilidad de que un afiliado no participe en ninguna de las actividades es:<br>
+\[ P((E \cup B)^c) = 1 - 0.85 = 0.15 \]</p>
+<h4>Apartado c) sabiendo que hace barranquismo, calcular la probabilidad de que no haga escalada.</h4>
+<p>Esta es una probabilidad condicional y la fórmula para calcularla es:<br>
+\[ P(E^c | B) = \frac{P(E^c \cap B)}{P(B)} \]</p>
+<p>Sabemos que:<br>
+\[ P(E^c \cap B) = P(B) - P(E \cap B) = 0.60 - 0.45 = 0.15 \]<br>
+\[ P(B) = 0.60 \]</p>
+<p>Así que:<br>
+\[ P(E^c | B) = \frac{0.15}{0.60} = 0.25 \]</p>
+<p>Por lo tanto, la probabilidad de que un afiliado haga barranquismo, pero no escalada, es de 0.25.</p>
+<p>Esto concluye el análisis de las tres partes del ejercicio según las condiciones dadas en el problema.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_081.html">Anterior</a><a class="button" href="problema_083.html">Siguiente</a></nav>
+</main></body>
+</html>

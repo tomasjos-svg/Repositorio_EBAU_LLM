@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 13: aragon_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 13 de 139</h1>
+<div class="meta"><span class="badge">aragon_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_012.html">Anterior</a><a class="button" href="problema_014.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>5) Sean las siguientes matrices:</p>
+<p>\[
+A=\begin{pmatrix}
+-2 &amp; 1\\
+2 &amp; 0\\
+1 &amp; -1
+\end{pmatrix},\quad
+B=\begin{pmatrix}
+1 &amp; 0\\
+1 &amp; 1\\
+-2 &amp; 0
+\end{pmatrix},\quad
+C=\begin{pmatrix}
+2 &amp; 3\\
+1 &amp; 0
+\end{pmatrix},\quad
+D=AB^T-2I,
+\]</p>
+<p>donde \(B^T\) es la matriz traspuesta de \(B\), e \(I\) es la matriz identidad de orden 3.</p>
+<p>a) (1 punto) Estudia si la matriz \(D\) tiene inversa y, en caso afirmativo, calcúlala.</p>
+<p>b) (1 punto) Resuelve la ecuación matricial \(CX=A^TB\), donde \(A^T\) es la matriz traspuesta de \(A\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 5</strong></p>
+<p>Sean las siguientes matrices:</p>
+<p>\[
+A=\begin{pmatrix}
+2&amp;1\\
+3&amp;2\\
+1&amp;1
+\end{pmatrix},\quad
+B^T=\begin{pmatrix}
+1&amp;0&amp;2\\
+1&amp;1&amp;2
+\end{pmatrix},\quad
+C=\begin{pmatrix}
+3&amp;2&amp;0\\
+1&amp;1&amp;2\\
+2&amp;0&amp;0
+\end{pmatrix},\quad
+D=A*B-I
+\]</p>
+<p>donde \(B^T\) es la matriz traspuesta de \(B\), e \(I\) es la matriz identidad de orden 3.</p>
+<p>---</p>
+<h4>a) Estudia si la matriz \(D\) tiene inversa y, en caso afirmativo, calcúlala.</h4>
+<p>Calculamos la expresión de la matriz \(D\):</p>
+<p>\[
+D=A*B-I=
+\begin{pmatrix}
+2&amp;1\\
+3&amp;2\\
+1&amp;1
+\end{pmatrix}
+\begin{pmatrix}
+1&amp;1\\
+0&amp;1\\
+2&amp;2
+\end{pmatrix}
+-I
+\]</p>
+<p>\[
+D=
+\begin{pmatrix}
+4&amp;1&amp;4\\
+2&amp;0&amp;4\\
+1&amp;0&amp;4
+\end{pmatrix}
+\]</p>
+<p>Comprobamos que su determinante es no nulo:</p>
+<p>\[
+|D|=
+\begin{vmatrix}
+4&amp;1&amp;4\\
+2&amp;0&amp;4\\
+1&amp;0&amp;4
+\end{vmatrix}
+=-4\neq 0
+\]</p>
+<p>Existe la inversa de la matriz \(D\). La calculamos:</p>
+<p>\[
+D^{-1}=
+\begin{pmatrix}
+0&amp;0&amp;1\\
+-1&amp;-1&amp;2\\
+0&amp;\frac14&amp;-\frac12
+\end{pmatrix}
+\]</p>
+<p>---</p>
+<h4>b) Resuelve la ecuación matricial</h4>
+<p>\[
+C X=A^T*B
+\]</p>
+<p>Despejamos \(X\) en la ecuación matricial:</p>
+<p>\[
+CX=A^T*B \Rightarrow X=C^{-1}A^T*B
+\]</p>
+<p>Determinamos la expresión de la matriz \(X\):</p>
+<p>\[
+X=
+\begin{pmatrix}
+0&amp;1&amp;0\\
+0&amp;-1&amp;1\\
+\frac12&amp;0&amp;-\frac12
+\end{pmatrix}
+\begin{pmatrix}
+2&amp;3&amp;1\\
+1&amp;2&amp;1
+\end{pmatrix}
+B
+\]</p>
+<p>\[
+X=
+\begin{pmatrix}
+0&amp;1\\
+-1&amp;0\\
+\frac32&amp;1
+\end{pmatrix}
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{
+X=
+\begin{pmatrix}
+0&amp;1\\
+-1&amp;0\\
+\frac32&amp;1
+\end{pmatrix}
+}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver el ejercicio 5 paso a paso.</p>
+<h4>Parte a) Estudio de D y cálculo de su inversa</h4>
+<p>Primero debemos calcular la matriz \( B^T \), que es la traspuesta de \( B \):<br>
+\[
+B = \begin{pmatrix}
+1 &amp; 1 &amp; -2\\
+0 &amp; 1 &amp; 0
+\end{pmatrix}
+\]</p>
+<p>Ahora calculemos \( D = AB^T - 2I \).</p>
+<p>Multiplicamos \( A \) por \( B^T \):<br>
+\[
+A \cdot B^T = \begin{pmatrix}
+-2 &amp; 1\\
+2 &amp; 0\\
+1 &amp; -1
+\end{pmatrix} \cdot \begin{pmatrix}
+1 &amp; 0 &amp; -2\\
+0 &amp; 1 &amp; 0
+\end{pmatrix} = \begin{pmatrix}
+-2 &amp; 1 &amp; 4\\
+2 &amp; 0 &amp; -4\\
+1 &amp; -1 &amp; -2
+\end{pmatrix}
+\]</p>
+<p>Restamos \( 2I \), donde \( I \) es la matriz identidad de orden 3:<br>
+\[
+I = \begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}, \quad 2I = \begin{pmatrix}
+2 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 2
+\end{pmatrix}
+\]<br>
+\[
+D = \begin{pmatrix}
+-2 &amp; 1 &amp; 4\\
+2 &amp; 0 &amp; -4\\
+1 &amp; -1 &amp; -2
+\end{pmatrix} - \begin{pmatrix}
+2 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 2
+\end{pmatrix} = \begin{pmatrix}
+-4 &amp; 1 &amp; 4\\
+2 &amp; -2 &amp; -4\\
+1 &amp; -1 &amp; -4
+\end{pmatrix}
+\]</p>
+<p>Para determinar si \( D \) tiene inversa, calculamos su determinante.<br>
+Calculamos el determinante usando la expansión de cofactores en la primera fila:<br>
+\[
+\text{det}(D) = -4((-2)(-4) - (-4)(-1)) + 1(2(-4) - (-4)(1)) + 4(2(-1) - 1(-2))
+\]<br>
+\[
+= -4(8 - 4) + 1(-8 + 4) + 4(-2 + 2)
+\]<br>
+\[
+= -4(4) + 1(-4) + 4(0)
+\]<br>
+\[
+= -16 - 4 + 0 = -20
+\]</p>
+<p>Dado que el determinante de \( D \) es diferente de cero, la matriz \( D \) tiene inversa.</p>
+<h4>Parte b) Resolución de la ecuación matricial \( CX = A^TB \)</h4>
+<p>Calculamos \( A^T \):<br>
+\[
+A^T = \begin{pmatrix}
+-2 &amp; 2 &amp; 1\\
+1 &amp; 0 &amp; -1
+\end{pmatrix}
+\]</p>
+<p>Luego, multiplicamos \( A^T \) por \( B \):<br>
+\[
+A^TB = \begin{pmatrix}
+-2 &amp; 2 &amp; 1\\
+1 &amp; 0 &amp; -1
+\end{pmatrix} \cdot \begin{pmatrix}
+1 &amp; 0\\
+1 &amp; 1\\
+-2 &amp; 0
+\end{pmatrix} = \begin{pmatrix}
+0 &amp; 2\\
+3 &amp; 0
+\end{pmatrix}
+\]</p>
+<p>Ahora debemos hallar \( X \) tal que \( CX = A^TB \). Sabemos:<br>
+\[
+C = \begin{pmatrix}
+2 &amp; 3\\
+1 &amp; 0
+\end{pmatrix}, \quad A^TB = \begin{pmatrix}
+0 &amp; 2\\
+3 &amp; 0
+\end{pmatrix}
+\]</p>
+<p>Podemos intentar resolver este sistema usando la inversa de \( C \), pero procederemos con otro camino si es necesario. Multplicando ambos lados de \( CX = A^TB \) por \( C^{-1} \) (una vez calculada), obtendríamos \( X \). Sin embargo, el procedimiento detallado de cálculo de la inversa de \( C \) y posterior multiplicación puede ser bastante extenso y me gustaría hacerlo paso a paso si es de tu interés.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Resolvemos los dos apartados.</p>
+<p>---</p>
+<h3>a) Estudiar si \(D\) es invertible y calcular \(D^{-1}\)</h3>
+<p>Primero, hallamos \(B^T\):</p>
+<p>\[
+B^T=\begin{pmatrix}
+1&amp;1&amp;-2\\
+0&amp;1&amp;0
+\end{pmatrix}
+\]</p>
+<p>Entonces</p>
+<p>\[
+AB^T=
+\begin{pmatrix}
+-2&amp;1\\
+2&amp;0\\
+1&amp;-1
+\end{pmatrix}
+\begin{pmatrix}
+1&amp;1&amp;-2\\
+0&amp;1&amp;0
+\end{pmatrix}
+=
+\begin{pmatrix}
+-2&amp;-1&amp;4\\
+2&amp;2&amp;-4\\
+1&amp;0&amp;-2
+\end{pmatrix}
+\]</p>
+<p>y por tanto</p>
+<p>\[
+D=AB^T-2I=
+\begin{pmatrix}
+-2&amp;-1&amp;4\\
+2&amp;2&amp;-4\\
+1&amp;0&amp;-2
+\end{pmatrix}
+-
+\begin{pmatrix}
+2&amp;0&amp;0\\
+0&amp;2&amp;0\\
+0&amp;0&amp;2
+\end{pmatrix}
+=
+\begin{pmatrix}
+-4&amp;-1&amp;4\\
+2&amp;0&amp;-4\\
+1&amp;0&amp;-4
+\end{pmatrix}.
+\]</p>
+<h4>Determinante de \(D\)</h4>
+<p>Desarrollando por la segunda columna:</p>
+<p>\[
+\det(D)=
+\begin{vmatrix}
+-4&amp;-1&amp;4\\
+2&amp;0&amp;-4\\
+1&amp;0&amp;-4
+\end{vmatrix}
+=
+\begin{vmatrix}
+2&amp;-4\\
+1&amp;-4
+\end{vmatrix}
+=2(-4)-(-4)(1)=-8+4=-4.
+\]</p>
+<p>Como \(\det(D)\neq 0\), <strong>\(D\) tiene inversa</strong>.</p>
+<h4>Cálculo de la inversa</h4>
+<p>La matriz de cofactores de \(D\) es</p>
+<p>\[
+\operatorname{Cof}(D)=
+\begin{pmatrix}
+0&amp;4&amp;0\\
+-4&amp;12&amp;-1\\
+4&amp;-8&amp;2
+\end{pmatrix}.
+\]</p>
+<p>Luego la adjunta es</p>
+<p>\[
+\operatorname{Adj}(D)=
+\begin{pmatrix}
+0&amp;-4&amp;4\\
+4&amp;12&amp;-8\\
+0&amp;-1&amp;2
+\end{pmatrix}.
+\]</p>
+<p>Así,</p>
+<p>\[
+D^{-1}=\frac{1}{\det(D)}\operatorname{Adj}(D)
+=
+-\frac14
+\begin{pmatrix}
+0&amp;-4&amp;4\\
+4&amp;12&amp;-8\\
+0&amp;-1&amp;2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0&amp;1&amp;-1\\
+-1&amp;-3&amp;2\\
+0&amp;\frac14&amp;-\frac12
+\end{pmatrix}.
+\]</p>
+<h4>Resultado del apartado a)</h4>
+<p>\[
+\boxed{
+D^{-1}=
+\begin{pmatrix}
+0&amp;1&amp;-1\\
+-1&amp;-3&amp;2\\
+0&amp;\frac14&amp;-\frac12
+\end{pmatrix}
+}
+\]</p>
+<p>---</p>
+<h3>b) Resolver \(CX=A^TB\)</h3>
+<p>Primero calculamos \(A^T\):</p>
+<p>\[
+A^T=
+\begin{pmatrix}
+-2&amp;2&amp;1\\
+1&amp;0&amp;-1
+\end{pmatrix}
+\]</p>
+<p>Entonces</p>
+<p>\[
+A^TB=
+\begin{pmatrix}
+-2&amp;2&amp;1\\
+1&amp;0&amp;-1
+\end{pmatrix}
+\begin{pmatrix}
+1&amp;0\\
+1&amp;1\\
+-2&amp;0
+\end{pmatrix}
+=
+\begin{pmatrix}
+-2&amp;2\\
+3&amp;0
+\end{pmatrix}.
+\]</p>
+<p>La ecuación queda</p>
+<p>\[
+CX=
+\begin{pmatrix}
+-2&amp;2\\
+3&amp;0
+\end{pmatrix},
+\qquad
+C=
+\begin{pmatrix}
+2&amp;3\\
+1&amp;0
+\end{pmatrix}.
+\]</p>
+<p>Como</p>
+<p>\[
+\det(C)=2\cdot 0-3\cdot 1=-3\neq 0,
+\]</p>
+<p>\(C\) es invertible y</p>
+<p>\[
+C^{-1}=\frac1{-3}
+\begin{pmatrix}
+0&amp;-3\\
+-1&amp;2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0&amp;1\\
+\frac13&amp;-\frac23
+\end{pmatrix}.
+\]</p>
+<p>Multiplicando por \(C^{-1}\) a la izquierda:</p>
+<p>\[
+X=C^{-1}A^TB
+=
+\begin{pmatrix}
+0&amp;1\\
+\frac13&amp;-\frac23
+\end{pmatrix}
+\begin{pmatrix}
+-2&amp;2\\
+3&amp;0
+\end{pmatrix}
+=
+\begin{pmatrix}
+3&amp;0\\
+-\frac83&amp;\frac23
+\end{pmatrix}.
+\]</p>
+<h4>Resultado del apartado b)</h4>
+<p>\[
+\boxed{
+X=
+\begin{pmatrix}
+3&amp;0\\
+-\frac83&amp;\frac23
+\end{pmatrix}
+}
+\]</p>
+<p>---</p>
+<h3>Solución final</h3>
+<p>\[
+\boxed{
+D^{-1}=
+\begin{pmatrix}
+0&amp;1&amp;-1\\
+-1&amp;-3&amp;2\\
+0&amp;\frac14&amp;-\frac12
+\end{pmatrix}
+}
+\qquad
+\boxed{
+X=
+\begin{pmatrix}
+3&amp;0\\
+-\frac83&amp;\frac23
+\end{pmatrix}
+}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_012.html">Anterior</a><a class="button" href="problema_014.html">Siguiente</a></nav>
+</main></body>
+</html>

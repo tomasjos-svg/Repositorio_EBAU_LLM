@@ -1,0 +1,16 @@
+{
+  "pipeline_version": "3.1",
+  "generated_utc": "2026-07-30T16:53:17.500951+00:00",
+  "input_dir": "C:\\Users\\tomas\\Downloads\\pipeline_analisis_v3_0_1\\pipeline_v3\\salidas\\02_dataset_maestro",
+  "unit_primary_descriptives": "problem",
+  "resource_and_error_unit": "replicate",
+  "principal_unique_problems": 386,
+  "principal_problem_condition_rows": 772,
+  "principal_replicate_rows": 2316,
+  "estricto_unique_problems": 386,
+  "estricto_problem_condition_rows": 772,
+  "estricto_replicate_rows": 2316,
+  "sensibilidad_unique_problems": 387,
+  "sensibilidad_problem_condition_rows": 774,
+  "sensibilidad_replicate_rows": 2322
+}

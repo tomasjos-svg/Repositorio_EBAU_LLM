@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 64: cleon_2023 E9</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 64 de 139</h1>
+<div class="meta"><span class="badge">cleon_2023</span> &nbsp; Ejercicio E9</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_063.html">Anterior</a><a class="button" href="problema_065.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>E9.- (Probabilidad y Estadística)  <br>
+Sean A, B y C sucesos de un experimento aleatorio con probabilidades P(A) = 0,3, P(B) = 0,4 y P(C) = 0,5 tales que A y B son independientes y A y C son incompatibles. Calcular las probabilidades P(A ∩ B), P(A ∩ C), P(A ∩ C̄), P(A ∪ B) y P(A ∪ B̄) siendo Ā, B̄ y C̄ los sucesos complementarios de A, B y C respectivamente. (2 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>E9- (Probabilidad y estadística)</strong></p>
+<p>Sean A, B y C sucesos de un experimento aleatorio con probabilidades \(P(A)=0,3\), \(P(B)=0,4\) y \(P(C)=0,5\), tales que A y B son independientes y A y C son incompatibles. Calcular las probabilidades \(P(A \cap B)\), \(P(A \cap C)\), \(P(A \cup B)\) y \(P(\overline{A \cup B})\), siendo \(\overline{A}, \overline{B}\) y \(\overline{C}\) los sucesos complementarios de A, B y C respectivamente. (2 puntos)</p>
+<p>A y B son independientes:</p>
+<p>\[
+P(A \cap B)=P(A)P(B)
+\]</p>
+<p>\[
+P(A \cap B)=P(A)P(B)=0.3 \cdot 0.4=0.12
+\]</p>
+<p>A y C son incompatibles:</p>
+<p>\[
+P(A \cap C)=0
+\]</p>
+<p>\[
+P(A)=P(A \cap C)+P(A \cap \overline{C}) \Rightarrow 0.3=0+P(A \cap \overline{C})
+\]</p>
+<p>\[
+P(A \cap \overline{C})=0.3
+\]</p>
+<p>\[
+P(A \cup B)=P(A)+P(B)-P(A \cap B)=0.3+0.4-0.12=0.58
+\]</p>
+<p>\[
+P(\overline{A \cup B})=1-P(A \cup B)=1-0.12=0.88
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio E9 que se nos ha presentado, procederemos a calcular las probabilidades de los diferentes eventos dados los datos iniciales y las relaciones entre los sucesos A, B, y C. Usaremos las definiciones y propiedades de eventos independientes, incompatibles y los complementos de los eventos. Aquí están los detalles para cada probabilidad solicitada:</p>
+<p>1. <strong>P(A ∩ B):</strong> Ya que A y B son eventos independientes, la probabilidad de la intersección de dos eventos independientes se calcula con el producto de sus probabilidades individuales.<br>
+   \[
+   P(A \cap B) = P(A)P(B) = 0.3 \times 0.4 = 0.12.
+   \]</p>
+<p>2. <strong>P(A ∩ C):</strong> Dado que A y C son sucesos incompatibles (mutuamente excluyentes), la intersección de estos sucesos es el suceso imposible (no pueden ocurrir simultáneamente).<br>
+   \[
+   P(A \cap C) = 0.
+   \]</p>
+<p>3. <strong>P(A ∩ C̄):</strong> Para calcular esto, usamos el hecho de que C y su complemento C̄ son exhaustivos y mutuamente excluyentes, lo que implica que \( P(A \cap C) + P(A \cap C̄) = P(A) \).<br>
+   \[
+   P(A \cap C̄) = P(A) - P(A \cap C) = 0.3 - 0 = 0.3.
+   \]</p>
+<p>4. <strong>P(A ∪ B):</strong> Utilizando la fórmula de la unión para dos sucesos cualesquiera, que también funciona para sucesos independientes:<br>
+   \[
+   P(A \cup B) = P(A) + P(B) - P(A \cap B).
+   \]<br>
+   Substituyendo los valores dados y calculados:<br>
+   \[
+   P(A \cup B) = 0.3 + 0.4 - 0.12 = 0.58.
+   \]</p>
+<p>5. <strong>P(A ∪ B̄):</strong> Para calcular el evento unión de A con el complemento de B, usamos la fórmula similar, sabiendo que \( P(B) + P(B̄) = 1 \), por lo tanto \( P(B̄) = 1 - P(B) = 0.6 \).<br>
+   \[
+   P(A \cup B̄) = P(A) + P(B̄) - P(A \cap B̄).
+   \]<br>
+   Y como \( P(A \cap B̄) = P(A) - P(A \cap B) = 0.3 - 0.12 = 0.18 \):<br>
+   \[
+   P(A \cup B̄) = 0.3 + 0.6 - 0.18 = 0.72.
+   \]</p>
+<p>Con estos cálculos hemos respondido al apartado pedido en el ejercicio E9, utilizando los principios fundamentales de la probabilidad y la información dada sobre la independencia e incompatibilidad de los eventos.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a calcular cada probabilidad usando los datos:</p>
+<p>\[
+P(A)=0,3,\quad P(B)=0,4,\quad P(C)=0,5
+\]</p>
+<p>y además:</p>
+<p>- \(A\) y \(B\) son <strong>independientes</strong><br>
+- \(A\) y \(C\) son <strong>incompatibles</strong></p>
+<p>---</p>
+<h3>1) \(P(A\cap B)\)</h3>
+<p>Como \(A\) y \(B\) son independientes:</p>
+<p>\[
+P(A\cap B)=P(A)\,P(B)=0,3\cdot 0,4=0,12
+\]</p>
+<p>---</p>
+<h3>2) \(P(A\cap C)\)</h3>
+<p>Como \(A\) y \(C\) son incompatibles, no pueden ocurrir a la vez:</p>
+<p>\[
+P(A\cap C)=0
+\]</p>
+<p>---</p>
+<h3>3) \(P(A\cap \overline C)\)</h3>
+<p>El suceso \(A\) se descompone en:</p>
+<p>\[
+A=(A\cap C)\cup(A\cap \overline C)
+\]</p>
+<p>y como son disjuntos:</p>
+<p>\[
+P(A)=P(A\cap C)+P(A\cap \overline C)
+\]</p>
+<p>Entonces:</p>
+<p>\[
+0,3=0+P(A\cap \overline C)
+\]</p>
+<p>\[
+P(A\cap \overline C)=0,3
+\]</p>
+<p>---</p>
+<h3>4) \(P(A\cup B)\)</h3>
+<p>Usamos la fórmula de la unión:</p>
+<p>\[
+P(A\cup B)=P(A)+P(B)-P(A\cap B)
+\]</p>
+<p>\[
+P(A\cup B)=0,3+0,4-0,12=0,58
+\]</p>
+<p>---</p>
+<h3>5) \(P(A\cup \overline B)\)</h3>
+<p>Primero:</p>
+<p>\[
+P(\overline B)=1-P(B)=1-0,4=0,6
+\]</p>
+<p>Además, si \(A\) y \(B\) son independientes, también lo son \(A\) y \(\overline B\). Por tanto:</p>
+<p>\[
+P(A\cap \overline B)=P(A)\,P(\overline B)=0,3\cdot 0,6=0,18
+\]</p>
+<p>Ahora aplicamos la fórmula de la unión:</p>
+<p>\[
+P(A\cup \overline B)=P(A)+P(\overline B)-P(A\cap \overline B)
+\]</p>
+<p>\[
+P(A\cup \overline B)=0,3+0,6-0,18=0,72
+\]</p>
+<p>---</p>
+<h3>Resultados finales</h3>
+<p>\[
+\boxed{P(A\cap B)=0,12}
+\]</p>
+<p>\[
+\boxed{P(A\cap C)=0}
+\]</p>
+<p>\[
+\boxed{P(A\cap \overline C)=0,3}
+\]</p>
+<p>\[
+\boxed{P(A\cup B)=0,58}
+\]</p>
+<p>\[
+\boxed{P(A\cup \overline B)=0,72}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_063.html">Anterior</a><a class="button" href="problema_065.html">Siguiente</a></nav>
+</main></body>
+</html>

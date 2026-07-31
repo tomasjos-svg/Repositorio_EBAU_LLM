@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 137: rioja_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 137 de 139</h1>
+<div class="meta"><span class="badge">rioja_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_136.html">Anterior</a><a class="button" href="problema_138.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>8.- (2 puntos) Halla el punto simétrico del punto A(0, 2, 3) respecto al plano pi de ecuación  <br>
+4x y z+ - =</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 8</strong></p>
+<p>Halla el punto simétrico del punto \(A(0,2,3)\) respecto al plano \(\pi\) de ecuación:</p>
+<p>\[
+x+y-z=4
+\]</p>
+<p>Nos piden hallar las coordenadas del punto \(A&#x27;\).</p>
+<p>Hallamos la recta \(r\) perpendicular al plano que pasa por el punto \(A\). Esta recta tendrá como vector director el vector normal del plano.</p>
+<p>\[
+\pi: x+y-z=4 \Rightarrow \vec n=(1,1,-1)
+\]</p>
+<p>\[
+A(0,2,3), \quad \vec v_r=\vec n=(1,1,-1)
+\]</p>
+<p>\[
+r:\begin{cases}
+x=t\\
+y=2+t\\
+z=3-t
+\end{cases}
+\]</p>
+<p>El punto \(M\) es la intersección de la recta \(r\) con el plano \(\pi\).</p>
+<p>\[
+t+(2+t)-(3-t)=4
+\]</p>
+<p>\[
+3t-1=4 \Rightarrow 3t=5 \Rightarrow t=\frac{5}{3}
+\]</p>
+<p>\[
+M=\left(\frac{5}{3},\frac{11}{3},\frac{4}{3}\right)
+\]</p>
+<p>El punto \(A&#x27;\), simétrico de \(A\) respecto del plano, es el resultado de sumar al punto \(M\) el vector \(\overrightarrow{AM}\).</p>
+<p>\[
+\overrightarrow{AM}=M-A=
+\left(\frac{5}{3},\frac{11}{3},\frac{4}{3}\right)-(0,2,3)
+=
+\left(\frac{5}{3},\frac{5}{3},-\frac{5}{3}\right)
+\]</p>
+<p>\[
+A&#x27;=M+\overrightarrow{AM}
+\]</p>
+<p>\[
+A&#x27;=
+\left(\frac{5}{3},\frac{11}{3},\frac{4}{3}\right)
++
+\left(\frac{5}{3},\frac{5}{3},-\frac{5}{3}\right)
+=
+\left(\frac{10}{3},\frac{16}{3},-\frac{1}{3}\right)
+\]</p>
+<p>El punto simétrico es:</p>
+<p>\[
+\boxed{A&#x27;\left(\frac{10}{3},\frac{16}{3},-\frac{1}{3}\right)}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>El enunciado está <strong>incompleto</strong>: la ecuación del plano aparece como</p>
+<p>\[
+\pi:\;4x+y-z=\;?
+\]</p>
+<p>y <strong>falta el término del segundo miembro</strong>.  <br>
+Por tanto, <strong>no se puede obtener un punto simétrico único</strong> sin ese dato.</p>
+<h3>Resolución general</h3>
+Si el plano fuese
+<p>\[
+\pi:\;4x+y-z=c,
+\]</p>
+<p>entonces su vector normal es</p>
+<p>\[
+\vec n=(4,1,-1).
+\]</p>
+<p>El punto dado es</p>
+<p>\[
+A=(0,2,3).
+\]</p>
+<h4>1) Recta perpendicular al plano que pasa por \(A\)</h4>
+\[
+r:\ (x,y,z)=(0,2,3)+t(4,1,-1)
+\]
+<p>es decir,</p>
+<p>\[
+x=4t,\qquad y=2+t,\qquad z=3-t.
+\]</p>
+<h4>2) Hallar el pie de la perpendicular \(H\)</h4>
+Como \(H\in \pi\), sustituimos en \(4x+y-z=c\):
+<p>\[
+4(4t)+(2+t)-(3-t)=c
+\]</p>
+<p>\[
+16t+2+t-3+t=c
+\]</p>
+<p>\[
+18t-1=c
+\]</p>
+<p>\[
+t=\frac{c+1}{18}.
+\]</p>
+<p>Entonces</p>
+<p>\[
+H=\left(4\cdot \frac{c+1}{18},\ 2+\frac{c+1}{18},\ 3-\frac{c+1}{18}\right).
+\]</p>
+<h4>3) Obtener el simétrico \(A&#x27;\)</h4>
+El punto \(H\) es el punto medio de \(AA&#x27;\), así que
+<p>\[
+A&#x27;=2H-A.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+A&#x27;=\left(\frac{4(c+1)}{9},\ \frac{c+19}{9},\ \frac{26-c}{9}\right).
+\]</p>
+<p>---</p>
+<h3>Resultado</h3>
+Si el plano es \(\pi:4x+y-z=c\), el simétrico de \(A(0,2,3)\) es
+<p>\[
+\boxed{A&#x27;=\left(\frac{4(c+1)}{9},\ \frac{c+19}{9},\ \frac{26-c}{9}\right)}.
+\]</p>
+<h4>Caso particular más probable</h4>
+Si en realidad el plano era
+<p>\[
+\pi:\;4x+y-z=0,
+\]</p>
+<p>entonces \(c=0\) y</p>
+<p>\[
+\boxed{A&#x27;=\left(\frac49,\frac{19}{9},\frac{26}{9}\right)}.
+\]</p>
+<p>Si quieres, puedo dejar la respuesta en formato de examen, lista para copiar.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio 8, primero necesitamos establecer correctamente la ecuación del plano \(\pi\). El enunciado menciona que el plano tiene la ecuación \(4x - y + z + \ldots = 0\), pero parece que falta un término constante para completar la ecuación. Si asumimos que la ecuación completa es \(4x - y + z + d = 0\), donde \(d\) es un número que desconocemos, pero comúnmente en este tipo de problemas, si no se especifica, es típico asumir \(d = 0\), resultando en que la ecuación del plano es \(4x - y + z = 0\).</p>
+<p>Para hallar el punto simétrico del punto A respecto al plano, utilizaremos la fórmula para el cálculo del punto simétrico respecto a un plano:</p>
+<p>El punto simétrico \(A&#x27;\) de \(A(x_0, y_0, z_0)\) respecto al plano \(ax + by + cz + d = 0\) se encuentra en:</p>
+<p>\[
+x&#x27; = x_0 - 2 \frac{ax_0 + by_0 + cz_0 + d}{a^2 + b^2 + c^2} a
+\]<br>
+\[
+y&#x27; = y_0 - 2 \frac{ax_0 + by_0 + cz_0 + d}{a^2 + b^2 + c^2} b
+\]<br>
+\[
+z&#x27; = z_0 - 2 \frac{ax_0 + by_0 + cz_0 + d}{a^2 + b^2 + c^2} c
+\]</p>
+<p>Sustituimos \(A(0, 2, 3)\) y los coeficientes del plano \(4x - y + z = 0\) (\(a = 4\), \(b = -1\), \(c = 1\), \(d = 0\)) en las fórmulas:</p>
+<p>\[
+x&#x27; = 0 - 2 \frac{(4 \cdot 0) + (-1 \cdot 2) + (1 \cdot 3)}{4^2 + (-1)^2 + 1^2} \cdot 4 = 0 - 2 \frac{1}{18} \cdot 4 = 0 - \frac{8}{18} = 0 - \frac{4}{9}
+\]<br>
+\[
+y&#x27; = 2 - 2 \frac{(4 \cdot 0) + (-1 \cdot 2) + (1 \cdot 3)}{4^2 + (-1)^2 + 1^2} \cdot (-1) = 2 - 2 \frac{1}{18} \cdot (-1) = 2 + \frac{2}{18} = 2 + \frac{1}{9}
+\]<br>
+\[
+z&#x27; = 3 - 2 \frac{(4 \cdot 0) + (-1 \cdot 2) + (1 \cdot 3)}{4^2 + (-1)^2 + 1^2} \cdot 1 = 3 - 2 \frac{1}{18} \cdot 1 = 3 - \frac{2}{18} = 3 - \frac{1}{9}
+\]</p>
+<p>Redondeando estas expresiones:</p>
+<p>\[
+x&#x27; = -\frac{4}{9}, \quad y&#x27; = \frac{19}{9}, \quad z&#x27; = \frac{26}{9}
+\]</p>
+<p>Por lo tanto, el punto simétrico de \(A(0, 2, 3)\) respecto al plano \(4x - y + z = 0\) es \(\left(-\frac{4}{9}, \frac{19}{9}, \frac{26}{9}\right)\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_136.html">Anterior</a><a class="button" href="problema_138.html">Siguiente</a></nav>
+</main></body>
+</html>

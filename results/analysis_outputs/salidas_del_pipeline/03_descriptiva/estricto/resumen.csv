@@ -1,0 +1,11 @@
+﻿indicator,value
+scenario,estricto
+description,Análisis estricto: problemas con las dos condiciones y tres réplicas no débiles completas por condición.
+problem_condition_rows,772
+unique_problems,386
+conditions,2
+condition_names,gpt-4-turbo + Assistants API | gpt-5.4 + Responses API
+replicate_rows,2316
+datasets,51
+domains,2
+education_levels,2

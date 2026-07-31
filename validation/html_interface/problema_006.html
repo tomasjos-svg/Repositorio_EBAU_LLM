@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 6: andalucia_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 6 de 139</h1>
+<div class="meta"><span class="badge">andalucia_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_005.html">Anterior</a><a class="button" href="problema_007.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>EJERCICIO 6. (2,5 puntos)</p>
+<p>El dueño de un bar ha comprado refrescos, cerveza y vino por un importe de 500 euros sin incluir impuestos. El gasto en vino es 60 euros menos que los gastos en refrescos y cerveza conjuntamente, sin incluir impuestos. Teniendo en cuenta que los impuestos de los refrescos, la cerveza y el vino son el 6 %, el 12 % y el 30 %, respectivamente, entonces el importe total de la factura incluyendo impuestos ha ascendido a 592,4 euros. Calcula el importe, incluyendo impuestos, invertido en cada una de las bebidas.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>EJERCICIO 6 (2.5 puntos)</strong></p>
+<p>Llamamos \(x\) el gasto en refrescos sin impuestos, \(y\) al gasto en cerveza sin impuestos y \(z\) al gasto en vino sin impuestos.</p>
+<p>El gasto total es de un importe de 500 euros sin incluir impuestos:</p>
+<p>\[
+x+y+z=500
+\]</p>
+<p>El gasto en vino es 60 euros menos que los gastos en refrescos y cerveza conjuntamente, sin incluir impuestos:</p>
+<p>\[
+z=x+y-60
+\]</p>
+<p>Teniendo en cuenta que los impuestos de los refrescos, la cerveza y el vino son el 6%, el 12% y el 30%, respectivamente, entonces el importe total de la factura incluyendo impuestos ha ascendido a 592,4 euros. Los impuestos son:</p>
+<p>\[
+592.4-500=92.4
+\]</p>
+<p>\[
+0.06x+0.12y+0.30z=92.4
+\]</p>
+<p>Reunimos las ecuaciones obtenidas en un sistema y lo resolvemos:</p>
+<p>\[
+\begin{cases}
+x+y+z=500\\
+0.06x+0.12y+0.30z=92.4\\
+z=x+y-60
+\end{cases}
+\]</p>
+<p>Resolviendo se obtiene:</p>
+<p>\[
+x=120,\qquad y=160,\qquad z=220
+\]</p>
+<p>Sin incluir impuestos se ha gastado <strong>120 euros en refrescos</strong>, <strong>160 en cerveza</strong> y <strong>220 en vino</strong>.</p>
+<p>Incluyendo impuestos el gasto es:</p>
+<p>\[
+120\cdot 1.06=127.2
+\]</p>
+<p>en refrescos,</p>
+<p>\[
+160\cdot 1.12=179.2
+\]</p>
+<p>en cerveza, y</p>
+<p>\[
+220\cdot 1.30=286
+\]</p>
+<p>en vino.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea</p>
+<p>- \(x\): importe <strong>sin impuestos</strong> en refrescos,<br>
+- \(y\): importe <strong>sin impuestos</strong> en cerveza,<br>
+- \(z\): importe <strong>sin impuestos</strong> en vino.</p>
+<h3>1. Planteamiento del sistema</h3>
+<p>Del enunciado:</p>
+<p>1. La compra total sin impuestos es 500 euros:<br>
+\[
+x+y+z=500
+\]</p>
+<p>2. El gasto en vino es 60 euros menos que el gasto conjunto en refrescos y cerveza:<br>
+\[
+z=x+y-60
+\]</p>
+<p>3. El total con impuestos es 592,4 euros:<br>
+\[
+1{,}06x+1{,}12y+1{,}30z=592{,}4
+\]</p>
+<p>---</p>
+<h3>2. Resolución</h3>
+<p>Sustituimos \(z=x+y-60\) en la primera ecuación:</p>
+<p>\[
+x+y+(x+y-60)=500
+\]</p>
+<p>\[
+2x+2y=560
+\]</p>
+<p>\[
+x+y=280
+\]</p>
+<p>Entonces, usando \(z=x+y-60\):</p>
+<p>\[
+z=280-60=220
+\]</p>
+<p>Ahora sustituimos \(z=220\) en la ecuación del total con impuestos:</p>
+<p>\[
+1{,}06x+1{,}12y+1{,}30\cdot220=592{,}4
+\]</p>
+<p>\[
+1{,}06x+1{,}12y+286=592{,}4
+\]</p>
+<p>\[
+1{,}06x+1{,}12y=306{,}4
+\]</p>
+<p>Como \(x+y=280\), tenemos \(x=280-y\). Sustituimos:</p>
+<p>\[
+1{,}06(280-y)+1{,}12y=306{,}4
+\]</p>
+<p>\[
+296{,}8-1{,}06y+1{,}12y=306{,}4
+\]</p>
+<p>\[
+296{,}8+0{,}06y=306{,}4
+\]</p>
+<p>\[
+0{,}06y=9{,}6
+\]</p>
+<p>\[
+y=160
+\]</p>
+<p>Entonces:</p>
+<p>\[
+x=280-160=120
+\]</p>
+<p>y ya teníamos</p>
+<p>\[
+z=220
+\]</p>
+<p>---</p>
+<h3>3. Importes con impuestos</h3>
+<p>- Refrescos:<br>
+\[
+1{,}06\cdot120=127{,}2
+\]</p>
+<p>- Cerveza:<br>
+\[
+1{,}12\cdot160=179{,}2
+\]</p>
+<p>- Vino:<br>
+\[
+1{,}30\cdot220=286
+\]</p>
+<p>---</p>
+<h3>4. Respuesta</h3>
+<p>El importe <strong>incluyendo impuestos</strong> invertido en cada bebida es:</p>
+<p>- <strong>Refrescos:</strong> \(\boxed{127{,}2\text{ €}}\)<br>
+- <strong>Cerveza:</strong> \(\boxed{179{,}2\text{ €}}\)<br>
+- <strong>Vino:</strong> \(\boxed{286\text{ €}}\)</p>
+<p>Comprobación:<br>
+\[
+127{,}2+179{,}2+286=592{,}4
+\]<br>
+Correcto.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>El ejercicio 6 del examen de Matemáticas II plantea un problema de distribución de gasto con impuestos incluidos. Procederemos a resolver este problema detallando cada paso y utilizando las ecuaciones relevantes.</p>
+<h4>Descripción del problema:</h4>
+El dueño de un bar compró refrescos, cerveza y vino por un importe total de 500 euros sin incluir impuestos. El gasto en vino es 60 euros menos que los gastos en refrescos y cerveza juntos. Los impuestos para refrescos, cerveza y vino son del 6%, 12% y 30%, respectivamente. El importe total de la factura, con impuestos, fue de 592,4 euros. La tarea es calcular el importe invertido en cada bebida, incluyendo impuestos.
+<h4>Planteamiento del problema:</h4>
+Definimos:
+- \( R \) = gasto en refrescos sin impuestos
+- \( C \) = gasto en cerveza sin impuestos
+- \( V \) = gasto en vino sin impuestos
+<p>Según el enunciado, tenemos las siguientes relaciones:<br>
+1. \( R + C + V = 500 \) euros<br>
+2. \( V = R + C - 60 \)</p>
+<p>Incorporando los impuestos (que son porcentajes del costo inicial), el costo total de cada ítem incluyendo impuestos es:<br>
+- Total refrescos con impuestos: \( R \times 1.06 \)<br>
+- Total cerveza con impuestos: \( C \times 1.12 \)<br>
+- Total vino con impuestos: \( V \times 1.30 \)</p>
+<p>El total pagado (con impuestos) es \( 592.4 \) euros, entonces la ecuación correspondiente es:<br>
+\[ 1.06R + 1.12C + 1.30V = 592.4 \]</p>
+<h4>Solución del sistema:</h4>
+Del sistema de ecuaciones:
+1. \( R + C + V = 500 \)
+2. \( V = R + C - 60 \)
+3. \( 1.06R + 1.12C + 1.30V = 592.4 \)
+<p>Usamos la ecuación (2) para reemplazar \( V \) en las otras ecuaciones:<br>
+- Sustituyendo en (1): \( R + C + (R + C - 60) = 500 \)<br>
+- Simplificando: \( 2R + 2C = 560 \)<br>
+- \( R + C = 280 \)</p>
+<p>Reemplazando \( R + C = 280 \) y \( V = 280 - 60 = 220 \) en la ecuación (3):<br>
+- \( 1.06R + 1.12(280 - R) + 1.30 \times 220 = 592.4 \)<br>
+- Simplificamos y resolvemos para \( R \):<br>
+- \( 1.06R + 313.6 - 1.12R + 286 = 592.4 \)<br>
+- \(-0.06R = -7.2 \)<br>
+- \( R = 120 \)</p>
+<p>Así, \( C = 280 - R = 280 - 120 = 160 \).</p>
+<h4>Cálculos finales:</h4>
+- Refrescos con impuestos: \( 120 \times 1.06 = 127.2 \) euros
+- Cerveza con impuestos: \( 160 \times 1.12 = 179.2 \) euros
+- Vino con impuestos: \( 220 \times 1.30 = 286 \) euros
+<p>Por lo tanto, los gastos totales fueron de 127.2 euros en refrescos, 179.2 euros en cerveza, y 286 euros en vino, validando que la suma es \( 127.2 + 179.2 + 286 = 592.4 \) euros, que coincide con el total dado en el ejercicio【4:0†Examen Matemáticas II Andalucia 2023 enunciado】.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_005.html">Anterior</a><a class="button" href="problema_007.html">Siguiente</a></nav>
+</main></body>
+</html>

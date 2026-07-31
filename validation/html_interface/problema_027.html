@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 27: baleares_2023 P1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 27 de 139</h1>
+<div class="meta"><span class="badge">baleares_2023</span> &nbsp; Ejercicio P1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_026.html">Anterior</a><a class="button" href="problema_028.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P1. - Sigui el sistema</p>
+<p>\[
+\begin{cases}
+mx + y - z = 1\\
+2x + my = 1\\
+x + mz = 0
+\end{cases}
+\]</p>
+<p>(a) [7 punts] Discuteix el nombre de solucions que té el sistema segons el paràmetre \(m\).</p>
+<p>(b) [3 punts] Resol el sistema per al cas \(m = 1\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>P1.</strong> Sigui el sistema</p>
+<p>\[
+\begin{cases}
+mx+y-z=1\\
+2x+my=1\\
+x+mz=0
+\end{cases}
+\]</p>
+<h4>(a) Discussió del nombre de solucions segons el paràmetre \(m\)</h4>
+<p>Sigui el sistema escrit en forma matricial \(Ax=b\), on</p>
+<p>\[
+A=
+\begin{pmatrix}
+m&amp;1&amp;-1\\
+2&amp;m&amp;0\\
+1&amp;0&amp;m
+\end{pmatrix},
+\quad
+x=
+\begin{pmatrix}
+x\\y\\z
+\end{pmatrix},
+\quad
+b=
+\begin{pmatrix}
+1\\1\\0
+\end{pmatrix}.
+\]</p>
+<p>Tenim que</p>
+<p>\[
+\det(A)=m^3+m-2m=m(m^2-1)=0
+\]</p>
+<p>si i només si \(m=0,\ m=1,\ m=-1\).</p>
+<p>- <strong>Cas general:</strong> si \(m\neq 0,1,-1\),</p>
+<p>\[
+\operatorname{Rang}(A)=3
+\]</p>
+<p>i el sistema és <strong>compatible determinat</strong>, amb <strong>1 solució</strong>.</p>
+<p>- <strong>Si \(m=0\):</strong></p>
+<p>\[
+A=
+\begin{pmatrix}
+0&amp;1&amp;-1\\
+2&amp;0&amp;0\\
+1&amp;0&amp;0
+\end{pmatrix}
+\]</p>
+<p>\[
+\begin{vmatrix}
+0&amp;1\\
+2&amp;0
+\end{vmatrix}
+=-2\neq 0
+\Rightarrow \operatorname{Rang}(A)=2.
+\]</p>
+<p>\[
+(A|b)=
+\begin{pmatrix}
+0&amp;1&amp;-1&amp;1\\
+2&amp;0&amp;0&amp;1\\
+1&amp;0&amp;0&amp;0
+\end{pmatrix}
+\]</p>
+<p>\[
+\begin{vmatrix}
+0&amp;1&amp;1\\
+2&amp;0&amp;1\\
+1&amp;0&amp;0
+\end{vmatrix}
+=1\neq 0
+\Rightarrow \operatorname{Rang}(A|b)=3.
+\]</p>
+<p>Per tant, el sistema és <strong>incompatible</strong>, amb <strong>0 solucions</strong>.</p>
+<p>- <strong>Si \(m=1\):</strong></p>
+<p>\[
+A=
+\begin{pmatrix}
+1&amp;1&amp;-1\\
+2&amp;1&amp;0\\
+1&amp;0&amp;1
+\end{pmatrix}
+\]</p>
+<p>\[
+\begin{vmatrix}
+1&amp;1\\
+2&amp;1
+\end{vmatrix}
+=-1\neq 0
+\Rightarrow \operatorname{Rang}(A)=2.
+\]</p>
+<p>\[
+(A|b)=
+\begin{pmatrix}
+1&amp;1&amp;-1&amp;1\\
+2&amp;1&amp;0&amp;1\\
+1&amp;0&amp;1&amp;0
+\end{pmatrix}
+\]</p>
+<p>\[
+\operatorname{Rang}(A|b)=2.
+\]</p>
+<p>Per tant, el sistema és <strong>compatible indeterminat</strong>, amb infinites solucions.</p>
+<p>- <strong>Si \(m=-1\):</strong></p>
+<p>\[
+A=
+\begin{pmatrix}
+-1&amp;1&amp;-1\\
+2&amp;-1&amp;0\\
+1&amp;0&amp;-1
+\end{pmatrix}
+\]</p>
+<p>\[
+\begin{vmatrix}
+-1&amp;1\\
+2&amp;-1
+\end{vmatrix}
+=-1\neq 0
+\Rightarrow \operatorname{Rang}(A)=2.
+\]</p>
+<p>\[
+(A|b)=
+\begin{pmatrix}
+-1&amp;1&amp;-1&amp;1\\
+2&amp;-1&amp;0&amp;1\\
+1&amp;0&amp;-1&amp;0
+\end{pmatrix}
+\]</p>
+<p>\[
+\begin{vmatrix}
+-1&amp;1&amp;1\\
+2&amp;-1&amp;1\\
+1&amp;0&amp;0
+\end{vmatrix}
+=2\neq 0
+\Rightarrow \operatorname{Rang}(A|b)=3.
+\]</p>
+<p>Per tant, el sistema és <strong>incompatible</strong>, amb <strong>0 solucions</strong>.</p>
+<p>Quadre solució:</p>
+<p>\[
+\begin{array}{c|c|c}
+\text{Cas} &amp; \text{Rangs} &amp; \text{Conclusió}\\
+\hline
+m\neq 0,1,-1 &amp; \operatorname{Rang}(A)=3=\operatorname{Rang}(A|b) &amp; \text{SCD, 1 solució}\\
+m=0 &amp; \operatorname{Rang}(A)=2\neq 3=\operatorname{Rang}(A|b) &amp; \text{SI, 0 solucions}\\
+m=1 &amp; \operatorname{Rang}(A)=2=\operatorname{Rang}(A|b) &amp; \text{SCI, infinites solucions}\\
+m=-1 &amp; \operatorname{Rang}(A)=2\neq 3=\operatorname{Rang}(A|b) &amp; \text{SI, 0 solucions}
+\end{array}
+\]</p>
+<h4>(b) Resolució del sistema per al cas \(m=1\)</h4>
+<p>Com que el sistema és compatible indeterminat, sigui \(z=t\in\mathbb{R}\). Aleshores,</p>
+<p>\[
+\begin{cases}
+x+y=1+t\\
+2x+y=1
+\end{cases}
+\]</p>
+<p>D’aquí,</p>
+<p>\[
+y=1-2x
+\]</p>
+<p>i</p>
+<p>\[
+x+1-2x=1+t \Rightarrow x=-t.
+\]</p>
+<p>Per tant,</p>
+<p>\[
+y=1+2t.
+\]</p>
+<p>Aleshores,</p>
+<p>\[
+(x,y,z)=(-t,\;1+2t,\;t),\quad t\in\mathbb{R}.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea el sistema<br>
+\[
+\begin{cases}
+mx+y-z=1\\
+2x+my=1\\
+x+mz=0
+\end{cases}
+\]</p>
+<h3>(a) Discusión según el parámetro \(m\)</h3>
+<p>La matriz de coeficientes es<br>
+\[
+A=\begin{pmatrix}
+m&amp;1&amp;-1\\
+2&amp;m&amp;0\\
+1&amp;0&amp;m
+\end{pmatrix}.
+\]</p>
+<p>Calculamos su determinante:<br>
+\[
+\det(A)=
+\begin{vmatrix}
+m&amp;1&amp;-1\\
+2&amp;m&amp;0\\
+1&amp;0&amp;m
+\end{vmatrix}
+= m^3-m
+= m(m-1)(m+1).
+\]</p>
+<h4>1. Caso \(m\neq -1,0,1\)</h4>
+<p>Entonces<br>
+\[
+\det(A)\neq 0,
+\]<br>
+y por tanto el sistema tiene <strong>una única solución</strong>.</p>
+<p>Si además se quiere, esa solución es:<br>
+\[
+x=\frac1{m+1},\qquad
+y=\frac{m-1}{m(m+1)},\qquad
+z=-\frac1{m(m+1)}.
+\]</p>
+<p>---</p>
+<h4>2. Caso \(m=0\)</h4>
+<p>El sistema queda:<br>
+\[
+\begin{cases}
+y-z=1\\
+2x=1\\
+x=0
+\end{cases}
+\]</p>
+<p>De la segunda ecuación:<br>
+\[
+x=\frac12,
+\]<br>
+pero de la tercera:<br>
+\[
+x=0.
+\]</p>
+<p>Contradicción. Luego el sistema es <strong>incompatible</strong>: <strong>no tiene solución</strong>.</p>
+<p>---</p>
+<h4>3. Caso \(m=1\)</h4>
+<p>El sistema queda:<br>
+\[
+\begin{cases}
+x+y-z=1\\
+2x+y=1\\
+x+z=0
+\end{cases}
+\]</p>
+<p>De la tercera:<br>
+\[
+z=-x.
+\]<br>
+Sustituyendo en la primera:<br>
+\[
+x+y-(-x)=1 \;\Longrightarrow\; 2x+y=1,
+\]<br>
+que coincide con la segunda ecuación.</p>
+<p>Por tanto solo hay dos ecuaciones independientes con tres incógnitas, y el sistema tiene <strong>infinitas soluciones</strong>.</p>
+<p>---</p>
+<h4>4. Caso \(m=-1\)</h4>
+<p>El sistema queda:<br>
+\[
+\begin{cases}
+-x+y-z=1\\
+2x-y=1\\
+x-z=0
+\end{cases}
+\]</p>
+<p>De la tercera:<br>
+\[
+z=x.
+\]<br>
+Sustituyendo en la primera:<br>
+\[
+-x+y-x=1 \;\Longrightarrow\; y=2x+1.
+\]<br>
+Pero de la segunda:<br>
+\[
+2x-y=1 \;\Longrightarrow\; y=2x-1.
+\]</p>
+<p>Contradicción, luego el sistema es <strong>incompatible</strong>: <strong>no tiene solución</strong>.</p>
+<p>---</p>
+<h3>Conclusión del apartado (a)</h3>
+<p>- <strong>Una única solución</strong> si \(\boxed{m\neq -1,0,1}\).<br>
+- <strong>Infinitas soluciones</strong> si \(\boxed{m=1}\).<br>
+- <strong>Ninguna solución</strong> si \(\boxed{m=0 \text{ o } m=-1}\).</p>
+<p>---</p>
+<h3>(b) Resolución para \(m=1\)</h3>
+<p>El sistema es<br>
+\[
+\begin{cases}
+x+y-z=1\\
+2x+y=1\\
+x+z=0
+\end{cases}
+\]</p>
+<p>De<br>
+\[
+x+z=0 \;\Longrightarrow\; z=-x.
+\]<br>
+Y de<br>
+\[
+2x+y=1 \;\Longrightarrow\; y=1-2x.
+\]</p>
+<p>Tomando \(x=t\) como parámetro libre, obtenemos<br>
+\[
+y=1-2t,\qquad z=-t.
+\]</p>
+<p>Por tanto, el conjunto de soluciones es<br>
+\[
+\boxed{(x,y,z)=(t,\,1-2t,\,-t),\quad t\in\mathbb R.}
+\]</p>
+<p>Si quieres, también puedo presentar la discusión con el criterio de Rouché–Frobenius (rangos).</p></section>
+<section class="card"><h2>Respuesta B</h2><h4>Solución Completa del Ejercicio P1:</h4>
+<p>El ejercicio consta de un sistema de ecuaciones lineales con un parámetro \( m \), y se pide discutir el número de soluciones según los valores de \( m \) y resolver el sistema para \( m = 1 \).</p>
+<p>#### Parte (a): Discusión del número de soluciones según \( m \)</p>
+<p>Para determinar el número de soluciones del sistema, examinamos el determinante de la matriz de coeficientes. Si este determinante es no cero (diferente de cero), entonces el sistema tiene una única solución; si es cero, el sistema podría ser dependiente o inconsistente, dependiendo de los términos independientes y las ecuaciones resultantes subsecuentes al aplicar reducción de fila.</p>
+<p>El sistema dado es:<br>
+\[
+\begin{cases}
+mx + y - z = 1\\
+2x + my = 1\\
+x + mz = 0
+\end{cases}
+\]</p>
+<p>La matriz de coeficientes correspondiente es:<br>
+\[
+A = \begin{bmatrix}
+m &amp; 1 &amp; -1 \\
+2 &amp; m &amp; 0 \\
+1 &amp; 0 &amp; m
+\end{bmatrix}
+\]</p>
+<p>Calculamos su determinante (\(\det(A)\)):<br>
+\[
+\det(A) = m \begin{vmatrix} m &amp; 0 \\ 0 &amp; m \end{vmatrix} - 1 \begin{vmatrix} 2 &amp; 0 \\ 1 &amp; m \end{vmatrix} + (-1) \begin{vmatrix} 2 &amp; m \\ 1 &amp; 0 \end{vmatrix}
+\]<br>
+\[
+= m(m^2) - 1(2m) - (2m)
+\]<br>
+\[
+= m^3 - 4m
+\]<br>
+\[
+= m(m^2 - 4)
+\]<br>
+\[
+= m(m-2)(m+2)
+\]</p>
+<p>Este determinante se anula cuando \( m = 0, 2, -2 \).</p>
+<p>- Si \( m \neq 0, 2, -2 \), el sistema tiene una única solución.<br>
+- Si \( m = 0, 2, -2 \), necesitamos investigar más para determinar si el sistema es dependiente o inconsistente.</p>
+<p><strong>Para \(m = 0, 2, -2\)</strong>, podemos realizar la reducción de fila para encontrar soluciones particulares o mostrar la inconsistencia.</p>
+<p>#### Parte (b): Resolución del sistema para \( m = 1 \)</p>
+<p>Sustituyendo \( m = 1 \) en el sistema original obtenemos:<br>
+\[
+\begin{cases}
+1x + y - z = 1\\
+2x + 1y = 1\\
+1x + 1z = 0
+\end{cases}
+\]</p>
+<p>Este sistema se puede escribir como:<br>
+\[
+\begin{bmatrix}
+1 &amp; 1 &amp; -1 &amp; | &amp; 1 \\
+2 &amp; 1 &amp; 0 &amp; | &amp; 1 \\
+1 &amp; 0 &amp; 1 &amp; | &amp; 0
+\end{bmatrix}
+\]</p>
+<p>Reducimos esta matriz para encontrar la solución:<br>
+\[
+R_2 - 2R_1:
+\begin{bmatrix}
+1 &amp; 1 &amp; -1 &amp; | &amp; 1 \\
+0 &amp; -1 &amp; 2 &amp; | &amp; -1 \\
+1 &amp; 0 &amp; 1 &amp; | &amp; 0
+\end{bmatrix}
+\]<br>
+\[
+R_3 - R_1:
+\begin{bmatrix}
+1 &amp; 1 &amp; -1 &amp; | &amp; 1 \\
+0 &amp; -1 &amp; 2 &amp; | &amp; -1 \\
+0 &amp; -1 &amp; 2 &amp; | &amp; -1
+\end{bmatrix}
+\]<br>
+\[
+\text{(Eliminamos la tercer fila porque es redundante)}
+\]<br>
+\[
+R_2 \times (-1):
+\begin{bmatrix}
+1 &amp; 1 &amp; -1 &amp; | &amp; 1 \\
+0 &amp; 1 &amp; -2 &amp; | &amp; 1 \\
+\end{bmatrix}
+\]<br>
+\[
+R_1 - R_2:
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 0 \\
+0 &amp; 1 &amp; -2 &amp; | &amp; 1 \\
+\end{bmatrix}
+\]</p>
+<p>De la fila 2:<br>
+\[ y - 2z = 1 \]</p>
+<p>De la fila 1:<br>
+\[ x + z = 0 \]</p>
+<p>Resolviendo estas ecuaciones, encontramos que:<br>
+\[ y = 1 + 2z \]<br>
+\[ x = -z \]</p>
+<p>Ya que el sistema es indeterminado para \(m = 1\), establecemos \( z = t \) donde \( t \) es un parámetro, obtenemos:<br>
+\[ x = -t, \ y = 1 + 2t, \ z = t \]</p>
+<p>Por lo tanto, la solución general para \( m = 1 \) es:<br>
+\[ (x, y, z) = (-t, 1 + 2t, t) \]</p>
+<p>Así hemos resuelto completamente el ejercicio P1.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_026.html">Anterior</a><a class="button" href="problema_028.html">Siguiente</a></nav>
+</main></body>
+</html>

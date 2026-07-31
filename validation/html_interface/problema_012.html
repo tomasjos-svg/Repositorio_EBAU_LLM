@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 12: aragon_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 12 de 139</h1>
+<div class="meta"><span class="badge">aragon_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_011.html">Anterior</a><a class="button" href="problema_013.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>4) Dada la siguiente función</p>
+<p>\[
+f(x)=\frac{2x-1}{x^2-x-2},
+\]</p>
+<p>a) (0,75 puntos) Estudia y escribe su dominio de definición.</p>
+<p>b) (1,25 puntos) Estudia la existencia de asíntotas y ramas parabólicas. Determina las asíntotas caso de existir.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 4</strong></p>
+<p>Dada la siguiente función  <br>
+\[
+f(x)=\frac{2x-1}{\sqrt{x^2-x-2}}
+\]</p>
+<h4>a) Dominio de definición</h4>
+<p>Vemos cuándo se anula el denominador:</p>
+<p>\[
+x^2-x-2=0
+\]</p>
+<p>\[
+x=\frac{1\pm \sqrt{1+8}}{2}=\frac{1\pm 3}{2}
+\]</p>
+<p>\[
+x=-1,\quad x=2
+\]</p>
+<p>Estos valores están excluidos del dominio.</p>
+<p>Vemos cuándo existe la raíz. Para ello debe ser el radicando positivo:</p>
+<p>\[
+x^2-x-2&gt;0
+\]</p>
+<p>En el intervalo \((-\infty,-1)\), tomando \(x=-2\):</p>
+<p>\[
+(-2)^2-(-2)-2=4&gt;0
+\]</p>
+<p>La función existe en \((-\infty,-1)\).</p>
+<p>En el intervalo \((-1,2)\), tomando \(x=0\):</p>
+<p>\[
+0^2-0-2=-2&lt;0
+\]</p>
+<p>La función no existe en \((-1,2)\).</p>
+<p>En el intervalo \((2,+\infty)\), tomando \(x=3\):</p>
+<p>\[
+3^2-3-2=4&gt;0
+\]</p>
+<p>La función existe en \((2,+\infty)\).</p>
+<p>Por tanto, el dominio de la función es:</p>
+<p>\[
+(-\infty,-1)\cup(2,+\infty)
+\]</p>
+<p>---</p>
+<h4>b) Asíntotas y ramas parabólicas</h4>
+<p>#### Asíntotas verticales</p>
+<p>\[
+x=a
+\]</p>
+<p>Comprobamos \(x=2\):</p>
+<p>\[
+\lim_{x\to 2^+} f(x)
+=
+\lim_{x\to 2^+}\frac{2x-1}{\sqrt{x^2-x-2}}
+=
+\frac{3}{0^+}
+=
++\infty
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+x=2
+\]</p>
+<p>es asíntota vertical.</p>
+<p>Comprobamos \(x=-1\):</p>
+<p>\[
+\lim_{x\to -1^-} f(x)
+=
+\lim_{x\to -1^-}\frac{2x-1}{\sqrt{x^2-x-2}}
+=
+\frac{-3}{0^+}
+=
+-\infty
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+x=-1
+\]</p>
+<p>es asíntota vertical.</p>
+<p>---</p>
+<p>#### Asíntotas horizontales</p>
+<p>\[
+y=b
+\]</p>
+<p>\[
+\lim_{x\to +\infty} f(x)
+=
+\lim_{x\to +\infty}
+\frac{2x-1}{\sqrt{x^2-x-2}}
+=
+2
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+y=2
+\]</p>
+<p>es asíntota horizontal cuando \(x\to +\infty\).</p>
+<p>\[
+\lim_{x\to -\infty} f(x)
+=
+\lim_{x\to -\infty}
+\frac{2x-1}{\sqrt{x^2-x-2}}
+=
+-2
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+y=-2
+\]</p>
+<p>es asíntota horizontal cuando \(x\to -\infty\).</p>
+<p>---</p>
+<p>#### Asíntotas oblicuas</p>
+<p>No tiene, pues tiene asíntotas horizontales.</p>
+<p>La función no tiene ramas parabólicas, pues los límites en el infinito son finitos.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 4 del documento proporcionado, necesitamos abordar dos apartados distintos: el estudio del dominio de definición de la función \( f(x) \) y el estudio de las asíntotas y ramas parabólicas de la misma. Procedamos paso a paso.</p>
+<h4>a) Estudio del dominio de definición</h4>
+<p>La función dada es:</p>
+<p>\[
+f(x) = \frac{2x-1}{x^2 - x - 2}
+\]</p>
+<p>Para determinar el dominio de definición de \( f(x) \), necesitamos encontrar los valores de \( x \) para los cuales el denominador no es cero, ya que la división por cero no está definida.</p>
+<p>Factorizamos el denominador:</p>
+<p>\[
+x^2 - x - 2 = (x-2)(x+1)
+\]</p>
+<p>Así, el denominador es cero cuando:</p>
+<p>\[
+x - 2 = 0 \quad \text{o} \quad x + 1 = 0
+\]</p>
+<p>Esto ocurre para:</p>
+<p>\[
+x = 2 \quad \text{o} \quad x = -1
+\]</p>
+<p>Por lo tanto, el dominio de definición de \( f(x) \) es el conjunto de todos los números reales excepto \( x = 2 \) y \( x = -1 \), que se puede expresar como:</p>
+<p>\[
+\text{Dominio de } f(x) = \mathbb{R} \setminus \{2, -1\}
+\]</p>
+<h4>b) Estudio de las asíntotas y ramas parabólicas</h4>
+<p>Para encontrar las asíntotas, consideramos tanto las asíntotas verticales como las horizontales o inclinadas.</p>
+<p>#### Asíntotas verticales:</p>
+<p>Las asíntotas verticales aparecen donde el denominador se hace cero, siempre y cuando el numerador no se haga cero en los mismos puntos, lo cual ya hemos determinado al factorizar el denominador y determinar su dominio. Dado que el numerador no es cero en \( x = 2 \) y \( x = -1 \) (porque \( 2(2)-1 = 3 \) y \( 2(-1)-1 = -3 \)), existen asíntotas verticales en esos puntos. Por tanto:</p>
+<p><strong>Asíntotas verticales:</strong><br>
+- \( x = 2 \)<br>
+- \( x = -1 \)</p>
+<p>#### Asíntotas horizontales/inclinadas:</p>
+<p>Para las asíntotas horizontales o inclinadas, miramos el comportamiento de \( f(x) \) cuando \( x \) tiende a \( \infty \) o \( -\infty \). El grado del polinomio en el numerador y en el denominador es diferente (1 para el numerador y 2 para el denominador). Esto significa que:</p>
+<p>\[
+\lim_{x \to \pm \infty} f(x) = \lim_{x \to \pm \infty} \frac{2x-1}{x^2-x-2} = 0
+\]</p>
+<p>Por lo tanto, existe una asíntota horizontal \( y = 0 \).</p>
+<p><strong>Asíntota horizontal:</strong><br>
+- \( y = 0 \)</p>
+<p>Este análisis completo responde a ambos apartados del enunciado del ejercicio.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver</p>
+<p>\[
+f(x)=\frac{2x-1}{x^2-x-2}.
+\]</p>
+<h3>a) Dominio de definición</h3>
+<p>La función racional está definida siempre que el denominador no sea cero.</p>
+<p>Factorizamos:</p>
+<p>\[
+x^2-x-2=(x-2)(x+1).
+\]</p>
+<p>Por tanto, el denominador se anula en</p>
+<p>\[
+x=2,\qquad x=-1.
+\]</p>
+<p>Entonces, el dominio es</p>
+<p>\[
+D_f=\mathbb{R}\setminus\{-1,2\}
+\]</p>
+<p>o, en intervalos,</p>
+<p>\[
+D_f=(-\infty,-1)\cup(-1,2)\cup(2,\infty).
+\]</p>
+<p>---</p>
+<h3>b) Asíntotas y ramas parabólicas</h3>
+<h4>1. Asíntotas verticales</h4>
+<p>Puede haber asíntotas verticales en los puntos donde el denominador se anula y el numerador no.</p>
+<p>- En \(x=-1\):</p>
+<p>\[
+2(-1)-1=-3\neq 0
+\]</p>
+<p>Luego puede haber asíntota vertical. Estudiamos los límites laterales:</p>
+<p>\[
+\lim_{x\to -1^-} f(x)=-\infty,\qquad \lim_{x\to -1^+} f(x)=+\infty.
+\]</p>
+<p>Así, <strong>\(x=-1\)</strong> es una asíntota vertical.</p>
+<p>- En \(x=2\):</p>
+<p>\[
+2(2)-1=3\neq 0
+\]</p>
+<p>Estudiamos los límites laterales:</p>
+<p>\[
+\lim_{x\to 2^-} f(x)=-\infty,\qquad \lim_{x\to 2^+} f(x)=+\infty.
+\]</p>
+<p>Así, <strong>\(x=2\)</strong> es una asíntota vertical.</p>
+<p>---</p>
+<h4>2. Asíntotas horizontales / oblicuas</h4>
+<p>Comparamos grados:</p>
+<p>- grado del numerador: \(1\)<br>
+- grado del denominador: \(2\)</p>
+<p>Como el grado del numerador es menor que el del denominador,</p>
+<p>\[
+\lim_{x\to\pm\infty}\frac{2x-1}{x^2-x-2}=0.
+\]</p>
+<p>Por tanto, la función tiene <strong>asíntota horizontal</strong></p>
+<p>\[
+y=0.
+\]</p>
+<p>No hay asíntota oblicua, porque para que exista debe cumplirse que el grado del numerador sea una unidad mayor que el del denominador, y aquí no ocurre.</p>
+<p>---</p>
+<h4>3. Ramas parabólicas</h4>
+<p>No existen ramas parabólicas, porque la función no se aproxima a una parábola cuando \(x\to\pm\infty\); de hecho,</p>
+<p>\[
+f(x)\to 0.
+\]</p>
+<p>---</p>
+<h2>Resultado final</h2>
+<p>- <strong>Dominio</strong>:</p>
+<p>\[
+\boxed{D_f=\mathbb{R}\setminus\{-1,2\}}
+\]</p>
+<p>- <strong>Asíntotas verticales</strong>:</p>
+<p>\[
+\boxed{x=-1,\qquad x=2}
+\]</p>
+<p>- <strong>Asíntota horizontal</strong>:</p>
+<p>\[
+\boxed{y=0}
+\]</p>
+<p>- <strong>Asíntotas oblicuas</strong>: no existen.</p>
+<p>- <strong>Ramas parabólicas</strong>: no existen.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_011.html">Anterior</a><a class="button" href="problema_013.html">Siguiente</a></nav>
+</main></body>
+</html>

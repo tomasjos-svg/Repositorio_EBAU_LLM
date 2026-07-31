@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 111: murcia_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 111 de 139</h1>
+<div class="meta"><span class="badge">murcia_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_110.html">Anterior</a><a class="button" href="problema_112.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>8: En un club deportivo, el 30% de los miembros son aficionados al bádminton y el 50% son aficionados al pádel. Además, el 15% son aficionados a ambos deportes.</p>
+<p>a) [0,5 p.] ¿Son independientes los sucesos “ser aficionado al bádminton” y “ser aficionado al pádel”? ¿Por qué?</p>
+<p>b) [1 p.] ¿Cuál es la probabilidad de que un miembro del club no sea aficionado al bádminton pero sí lo sea al pádel?</p>
+<p>c) [1 p.] Si un miembro del club no es aficionado al bádminton, ¿cuál es la probabilidad de que sea aficionado al pádel?</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>8: En un club deportivo, el 30% de los miembros son aficionados al bádminton y el 50% son aficionados al pádel. Además, el 15% son aficionados a ambos deportes.</p>
+<p>Realizamos una tabla de contingencia para obtener todos los porcentajes que se producen en el club deportivo.</p>
+<p>|  | Aficionado al pádel | No aficionado al pádel |  |<br>
+|---|---:|---:|---:|<br>
+| Aficionado al bádminton | 15 | 15 | 30 |<br>
+| No aficionado al bádminton | 35 | 35 | 70 |<br>
+|  | 50 | 50 | 100 |</p>
+<p><strong>a)</strong> Para que dos sucesos \(A\) y \(B\) sean independientes debe cumplirse que  <br>
+\[
+P(A \cap B)=P(A)\cdot P(B).
+\]</p>
+<p>Si llamamos \(A=\) ser aficionado al bádminton y \(B=\) ser aficionado al pádel:</p>
+<p>\[
+P(A \cap B)=\frac{15}{100}
+\]</p>
+<p>\[
+P(A)\cdot P(B)=\frac{30}{100}\cdot \frac{50}{100}
+=\frac{1500}{10000}=\frac{15}{100}
+\]</p>
+<p>Los sucesos ser aficionado al bádminton y ser aficionado al pádel son independientes.</p>
+<p><strong>b)</strong> Nos piden calcular \(P(\overline{A}\cap B)\). Mirando la tabla tenemos:</p>
+<p>\[
+P(\overline{A}\cap B)=\frac{35}{100}=0.35
+\]</p>
+<p><strong>c)</strong> Como de 100 miembros hay 70 que no son aficionados al bádminton y de ellos 35 son aficionados al pádel, tenemos que:</p>
+<p>\[
+P(\text{Ser aficionado al pádel siendo no aficionado al bádminton})
+=\frac{35}{70}=0.5
+\]</p>
+<p>Otra forma de calcularlo:</p>
+<p>Nos piden calcular \(P(B/\overline{A})\). Aplicamos el teorema de Bayes.</p>
+<p>\[
+P(B/\overline{A})=\frac{P(B\cap \overline{A})}{P(\overline{A})}
+=\frac{\frac{35}{100}}{\frac{70}{100}}
+=\frac{35}{70}=0.5
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 8, vamos a emplear el teorema de probabilidad para determinar independencia y calcular probabilidades solicitadas en cada apartado.</p>
+<h4>a) Independencia entre &quot;ser aficionado al bádminton&quot; y &quot;ser aficionado al pádel&quot;</h4>
+<p>Denotemos \(B\) como el evento de ser aficionado al bádminton y \(P\) como el evento de ser aficionado al pádel. Nos proporcionan que:<br>
+- \(P(B) = 0.3\) (30% son aficionados al bádminton)<br>
+- \(P(P) = 0.5\) (50% son aficionados al pádel)<br>
+- \(P(B \cap P) = 0.15\) (15% son aficionados a ambos deportes)</p>
+<p>Para determinar si los eventos \(B\) y \(P\) son independientes, necesitamos verificar si la siguiente igualdad se cumple:<br>
+\[ P(B \cap P) = P(B)P(P) \]</p>
+<p>Sustituyendo los valores dados:<br>
+\[ P(B \cap P) = 0.15 \]<br>
+\[ P(B)P(P) = 0.3 \times 0.5 = 0.15 \]</p>
+<p>Dado que \(0.15 = 0.15\), podemos concluir que \( P(B \cap P) = P(B)P(P) \). Por lo tanto, los eventos \(B\) y \(P\) son independientes.</p>
+<h4>b) Probabilidad de no ser aficionado al bádminton pero sí al pádel</h4>
+<p>Deseamos encontrar \(P(P \cap B^c)\), donde \(B^c\) es el complemento de \(B\) (no ser aficionado al bádminton).</p>
+<p>Utilizando la ley de probabilidad total:<br>
+\[ P(P) = P(P \cap B) + P(P \cap B^c) \]</p>
+<p>Sabemos que:<br>
+- \(P(P \cap B) = 0.15\) (ya dado)<br>
+- \(P(P) = 0.5\) (ya dado)</p>
+<p>Sustituimos y despejamos para \(P(P \cap B^c)\):<br>
+\[ 0.5 = 0.15 + P(P \cap B^c) \]<br>
+\[ P(P \cap B^c) = 0.5 - 0.15 = 0.35 \]</p>
+<p>Por lo tanto, la probabilidad de que un miembro del club no sea aficionado al bádminton pero sí lo sea al pádel es 0.35 (35%).</p>
+<h4>c) Probabilidad de ser aficionado al pádel dado que no es aficionado al bádminton</h4>
+<p>Queremos encontrar \(P(P | B^c)\), la probabilidad condicional de ser aficionado al pádel dado que no es aficionado al bádminton.</p>
+<p>Según la definición de probabilidad condicional:<br>
+\[ P(P | B^c) = \frac{P(P \cap B^c)}{P(B^c)} \]</p>
+<p>Ya determinamos que:<br>
+- \(P(P \cap B^c) = 0.35\) (del apartado b)</p>
+<p>Calculamos \(P(B^c)\), el complemento de \(B\):<br>
+- \(P(B^c) = 1 - P(B) = 1 - 0.3 = 0.7\)</p>
+<p>Así:<br>
+\[ P(P | B^c) = \frac{0.35}{0.7} = 0.5 \]</p>
+<p>Por lo tanto, si un miembro del club no es aficionado al bádminton, la probabilidad de que sea aficionado al pádel es 0.5 (50%).</p>
+<p>Estos resultados completan la resolución de los apartados del ejercicio 8.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea  <br>
+- \(B\): “ser aficionado al bádminton”  <br>
+- \(P\): “ser aficionado al pádel”</p>
+<p>Datos del enunciado:</p>
+<p>\[
+P(B)=0{,}30,\qquad P(P)=0{,}50,\qquad P(B\cap P)=0{,}15
+\]</p>
+<h3>a) ¿Son independientes?</h3>
+<p>Dos sucesos son independientes si:</p>
+<p>\[
+P(B\cap P)=P(B)\cdot P(P)
+\]</p>
+<p>Calculamos:</p>
+<p>\[
+P(B)\cdot P(P)=0{,}30\cdot 0{,}50=0{,}15
+\]</p>
+<p>Como</p>
+<p>\[
+P(B\cap P)=0{,}15
+\]</p>
+<p>coincide con el producto, <strong>sí son independientes</strong>.</p>
+<h3>b) Probabilidad de que no sea aficionado al bádminton pero sí al pádel</h3>
+<p>Queremos:</p>
+<p>\[
+P(B^c\cap P)
+\]</p>
+<p>Como los aficionados al pádel se dividen entre los que también son de bádminton y los que no:</p>
+<p>\[
+P(B^c\cap P)=P(P)-P(B\cap P)
+\]</p>
+<p>\[
+P(B^c\cap P)=0{,}50-0{,}15=0{,}35
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{0{,}35}
+\]</p>
+<p>o sea, <strong>35%</strong>.</p>
+<h3>c) Si no es aficionado al bádminton, probabilidad de que sea aficionado al pádel</h3>
+<p>Queremos la probabilidad condicionada:</p>
+<p>\[
+P(P\mid B^c)=\frac{P(P\cap B^c)}{P(B^c)}
+\]</p>
+<p>Ya sabemos que:</p>
+<p>\[
+P(P\cap B^c)=0{,}35
+\]</p>
+<p>y</p>
+<p>\[
+P(B^c)=1-P(B)=1-0{,}30=0{,}70
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(P\mid B^c)=\frac{0{,}35}{0{,}70}=0{,}50
+\]</p>
+<p><strong>Resultado:</strong></p>
+<p>\[
+\boxed{0{,}50}
+\]</p>
+<p>o sea, <strong>50%</strong>.</p>
+<h3>Resumen final</h3>
+<p>- <strong>a)</strong> Sí, son independientes, porque  <br>
+  \[
+  P(B\cap P)=P(B)\cdot P(P)=0{,}15
+  \]</p>
+<p>- <strong>b)</strong>  <br>
+  \[
+  P(B^c\cap P)=0{,}35=35\%
+  \]</p>
+<p>- <strong>c)</strong>  <br>
+  \[
+  P(P\mid B^c)=0{,}50=50\%
+  \]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_110.html">Anterior</a><a class="button" href="problema_112.html">Siguiente</a></nav>
+</main></body>
+</html>

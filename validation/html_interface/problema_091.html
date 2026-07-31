@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 91: galicia_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 91 de 139</h1>
+<div class="meta"><span class="badge">galicia_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_090.html">Anterior</a><a class="button" href="problema_092.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>8. Estadística y Probabilidad:  <br>
+Para un determinado grupo de pacientes, la tensión arterial sistólica (medida en mmHg) sigue una distribución normal de media 123.6 y desviación típica 17.8. Calcule la probabilidad de que un paciente elegido al azar tenga una tensión comprendida entre 100 y 120 mmHg. Luego, obtenga el valor de la tensión que es superado por el 67% de los pacientes.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>8. \(X=\) tensión arterial sistólica en mmHg.</p>
+<p>\[
+X\sim N(123.6,17.8), \qquad Z=\frac{X-123.6}{17.8}\sim N(0,1).
+\]</p>
+<p>\[
+P(100\le X\le 120)
+=
+P\left(\frac{100-123.6}{17.8}\le Z\le \frac{120-123.6}{17.8}\right)
+\]</p>
+<p>\[
+=P(-1.33\le Z\le -0.20)
+=P(0.20\le Z\le 1.33)
+\]</p>
+<p>\[
+=P(Z\le 1.33)-P(Z\le 0.20)
+\simeq 0.9082-0.5793
+=0.3289.
+\]</p>
+<p>Por tanto, la probabilidad de que un paciente elegido al azar tenga una tensión comprendida entre 100 y 120 mmHg es aproximadamente</p>
+<p>\[
+\boxed{0.3289}.
+\]</p>
+<p>También se pide el valor de \(t\) tal que</p>
+<p>\[
+P(X&gt;t)=0.67.
+\]</p>
+<p>Al ser \(0.67\) mayor que \(0.5\), es claro que \(t\) tendrá que ser menor que la media \(123.6\). Entonces</p>
+<p>\[
+P(X&gt;t)=P\left(Z&gt;\frac{t-123.6}{17.8}\right)
+=
+P\left(Z&lt;\frac{123.6-t}{17.8}\right)
+=0.67.
+\]</p>
+<p>Yendo a la tabla de la normal se ve que</p>
+<p>\[
+\frac{123.6-t}{17.8}\simeq 0.44,
+\]</p>
+<p>de donde</p>
+<p>\[
+t\simeq 123.6-17.8\cdot 0.44=115.768.
+\]</p>
+<p>\[
+\boxed{t\simeq 115.768}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 8, abordaremos ambos apartados por separado empezando con el cálculo de la probabilidad de que un paciente elegido al azar tenga una tensión arterial sistólica entre 100 y 120 mmHg, seguido de la determinación del valor de la tensión superado por el 67% de los pacientes.</p>
+<h4>Parte 1: Probabilidad de una tensión arterial entre 100 y 120 mmHg</h4>
+<p>Dado que la tensión arterial sistólica sigue una distribución normal con media \(\mu = 123.6\) mmHg y desviación típica \(\sigma = 17.8\) mmHg, podemos modelar la variable aleatoria \(X\) que representa la tensión arterial sistólica de un paciente como \(X \sim N(123.6, 17.8^2)\).</p>
+<p>Para encontrar la probabilidad de que \(X\) esté entre 100 y 120, utilizamos la función de distribución acumulativa normal estándar, ajustando \(X\) a una variable \(Z\) de distribución normal estándar mediante la fórmula:<br>
+\[
+Z = \frac{X - \mu}{\sigma}
+\]<br>
+Las transformaciones para 100 y 120 serían:<br>
+\[
+Z_{100} = \frac{100 - 123.6}{17.8} \approx -1.32
+\]<br>
+\[
+Z_{120} = \frac{120 - 123.6}{17.8} \approx -0.20
+\]<br>
+Utilizando la tabla de la distribución normal estándar o una calculadora adecuada, obtenemos:<br>
+\[
+P(100 \leq X \leq 120) = P(-1.32 \leq Z \leq -0.20) = P(Z \leq -0.20) - P(Z \leq -1.32)
+\]<br>
+Tomando los valores correspondientes de una tabla de la distribución normal estándar, supongamos que obtenemos:<br>
+\[
+P(Z \leq -0.20) \approx 0.4207, \quad P(Z \leq -1.32) \approx 0.0934
+\]<br>
+Entonces:<br>
+\[
+P(100 \leq X \leq 120) = 0.4207 - 0.0934 = 0.3273
+\]<br>
+Así la probabilidad es aproximadamente 0.3273 o 32.73%.</p>
+<h4>Parte 2: Calculando el valor superado por el 67% de los pacientes</h4>
+<p>Para encontrar el valor \(x\) tal que el 67% de los pacientes tengan una tensión arterial menor que \(x\), necesitamos el cuantil 67% de la distribución normal. De la transformación inversa de \(Z\) a \(X\),<br>
+\[
+P(X \leq x) = 0.67 \Rightarrow P(Z \leq z) = 0.67
+\]<br>
+Usando la tabla de la distribución normal estándar o una función de cuantiles continua, supongamos que encontramos:<br>
+\[
+z \approx 0.44
+\]<br>
+Transformando \(z\) de nuevo a \(X\),<br>
+\[
+x = \mu + z \sigma = 123.6 + 0.44 \times 17.8 \approx 131.8
+\]<br>
+Por lo tanto, el valor de la tensión arterial sistólica superado por el 67% de los pacientes es aproximadamente \(131.8\) mmHg.</p>
+<p>Este análisis proporciona respuestas completas para ambos segmentos del problema, utilizando las propiedades de la distribución normal y correspondientes manipulaciones matemáticas.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea \(X\) la tensión arterial sistólica de un paciente:</p>
+<p>\[
+X \sim N(\mu=123.6,\ \sigma=17.8)
+\]</p>
+<h3>1) Probabilidad de que \(100 \le X \le 120\)</h3>
+<p>Estandarizamos:</p>
+<p>\[
+Z=\frac{X-\mu}{\sigma}
+\]</p>
+<p>Entonces,</p>
+<p>\[
+P(100\le X\le 120)=P\left(\frac{100-123.6}{17.8}\le Z \le \frac{120-123.6}{17.8}\right)
+\]</p>
+<p>Calculamos los valores tipificados:</p>
+<p>\[
+z_1=\frac{100-123.6}{17.8}=\frac{-23.6}{17.8}\approx -1.33
+\]</p>
+<p>\[
+z_2=\frac{120-123.6}{17.8}=\frac{-3.6}{17.8}\approx -0.20
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+P(100\le X\le 120)=P(-1.33\le Z\le -0.20)
+\]</p>
+<p>Usando la tabla de la normal estándar:</p>
+<p>\[
+\Phi(-0.20)\approx 0.4207,\qquad \Phi(-1.33)\approx 0.0918
+\]</p>
+<p>Luego,</p>
+<p>\[
+P(-1.33\le Z\le -0.20)=\Phi(-0.20)-\Phi(-1.33)
+\]</p>
+<p>\[
+\approx 0.4207-0.0918=0.3289
+\]</p>
+<h4>Resultado:</h4>
+\[
+\boxed{P(100\le X\le 120)\approx 0.329}
+\]
+<p>Es decir, aproximadamente un <strong>32.9%</strong>.</p>
+<p>---</p>
+<h3>2) Valor de la tensión que es superado por el 67% de los pacientes</h3>
+<p>Buscamos \(x\) tal que:</p>
+<p>\[
+P(X&gt;x)=0.67
+\]</p>
+<p>Esto equivale a:</p>
+<p>\[
+P(X\le x)=1-0.67=0.33
+\]</p>
+<p>Por tanto, \(x\) es el percentil 33 de la distribución.</p>
+<p>Estandarizamos:</p>
+<p>\[
+P\left(Z\le \frac{x-123.6}{17.8}\right)=0.33
+\]</p>
+<p>De la tabla de la normal estándar:</p>
+<p>\[
+\Phi(z)=0.33 \quad \Rightarrow \quad z\approx -0.44
+\]</p>
+<p>Entonces,</p>
+<p>\[
+\frac{x-123.6}{17.8}=-0.44
+\]</p>
+<p>\[
+x=123.6+17.8(-0.44)
+\]</p>
+<p>\[
+x=123.6-7.832=115.768
+\]</p>
+<h4>Resultado:</h4>
+\[
+\boxed{x\approx 115.8\ \text{mmHg}}
+\]
+<p>Es decir, la tensión que es superada por el 67% de los pacientes es aproximadamente <strong>115.8 mmHg</strong>.</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>- <strong>Probabilidad entre 100 y 120 mmHg:</strong> \(\boxed{0.329 \approx 32.9\%}\)<br>
+- <strong>Tensión superada por el 67% de los pacientes:</strong> \(\boxed{115.8\ \text{mmHg}}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_090.html">Anterior</a><a class="button" href="problema_092.html">Siguiente</a></nav>
+</main></body>
+</html>

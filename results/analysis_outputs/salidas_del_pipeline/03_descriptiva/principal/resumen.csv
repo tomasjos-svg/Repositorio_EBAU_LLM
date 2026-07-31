@@ -1,0 +1,11 @@
+﻿indicator,value
+scenario,principal
+description,Análisis principal: problemas emparejados con las réplicas no débiles disponibles en ambas condiciones.
+problem_condition_rows,772
+unique_problems,386
+conditions,2
+condition_names,gpt-4-turbo + Assistants API | gpt-5.4 + Responses API
+replicate_rows,2316
+datasets,51
+domains,2
+education_levels,2

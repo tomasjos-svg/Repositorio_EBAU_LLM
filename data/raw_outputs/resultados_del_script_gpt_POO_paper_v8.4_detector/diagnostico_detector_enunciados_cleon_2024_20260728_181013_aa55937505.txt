@@ -1,0 +1,22 @@
+DIAGNOSTICO DEL DETECTOR - ENUNCIADOS
+================================================================================
+Patron elegido: numeric
+Ejercicios aceptados: 2, 1, 3, 6, 7
+
+ADVERTENCIAS
+- Numeracion no continua; faltan: 4, 5
+
+CANDIDATOS
+L0017 | numeric | 2 | 2.- CALCULADORA: Podra n usarse calculadoras no programables, que no admitan memoria para texto, ni para
+L0026 | numeric | 1 | 1.- (A lgebra)
+L0035 | numeric | 2 | 2.- (A lgebra)
+L0043 | numeric | 3 | 3.- (Geometri a)
+L0049 | prefixed | E4 | E4.- (Geometri a)
+L0062 | prefixed | E5 | E5.- (Ana lisis)
+L0068 | numeric | 6 | 6.- (Ana lisis)
+L0073 | numeric | 7 | 7.- (Ana lisis)
+L0083 | prefixed | E8 | E8.- (Ana lisis)
+L0106 | prefixed | E10 | E10.- (Probabilidad y Estadi stica)
+
+DESCARTADOS
+L0091 | sin_contenido | E9- 

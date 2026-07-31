@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 96: lamancha_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 96 de 139</h1>
+<div class="meta"><span class="badge">lamancha_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_095.html">Anterior</a><a class="button" href="problema_097.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>5. a) [1 punto] Encontrar el área encerrada por la recta \(x=1\) y las gráficas de las funciones  <br>
+\[
+f(x)=x^2-2x+3 \quad \text{y} \quad g(x)=\frac12 x^2+1.
+\]</p>
+<p>b) [1,5 puntos] Sea la matriz  <br>
+\[
+A=\begin{pmatrix}
+2 &amp; 1 &amp; a\\
+1 &amp; 0 &amp; 0\\
+1 &amp; a+1 &amp; a+1
+\end{pmatrix}
+\quad \text{con } a\in\mathbb{R}.
+\]<br>
+Estudia el rango de \(A\) en función de los valores de \(a\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 5. Solución oficial</strong></p>
+<p><strong>a)</strong> El área que se pide es:</p>
+<p>Las gráficas de estas funciones se cortan cuando \(x = 2\), por tanto el área es</p>
+<p>\[
+\int_{-1}^{2} \left(f(x)-g(x)\right)\,dx
+=
+\int_{-1}^{2} \left(x^2 - 2x + 3 - \left(\frac12 x^2 + 1\right)\right)\,dx
+=
+\frac{9}{2}.
+\]</p>
+<p><strong>b)</strong> El determinante de \(A\) es</p>
+<p>\[
+|A| = -a^2 + 1.
+\]</p>
+<p>Este determinante se anula para \(a = 1\) y \(a = -1\). Como además,</p>
+<p>\[
+\begin{vmatrix}
+-2 &amp; 1 \\
+-1 &amp; 0
+\end{vmatrix}
+= 1 \neq 0,
+\]</p>
+<p>sabemos que el rango de \(A\) va a ser al menos 2.</p>
+<p>Por tanto, para \(a = 1\) el rango será 2 y para el resto de casos el rango será 3.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver el ejercicio 5 del documento que incluye dos partes: calcular un área entre curvas y estudiar el rango de una matriz.</p>
+<h4>a) Calcular el área encerrada por la recta \(x = 1\) y las gráficas de \(f(x)\) y \(g(x)\)</h4>
+<p>Las funciones dadas son:<br>
+\[ f(x) = x^2 - 2x + 3 \]<br>
+\[ g(x) = \frac{1}{2}x^2 + 1 \]</p>
+<p>Primero, necesitamos determinar las intersecciones de las curvas. Igualamos las funciones y resolvemos para \(x\):<br>
+\[ x^2 - 2x + 3 = \frac{1}{2}x^2 + 1 \]<br>
+\[ \frac{1}{2}x^2 - 2x + 2 = 0 \]<br>
+Multiplicamos por 2 para eliminar el denominador:<br>
+\[ x^2 - 4x + 4 = 0 \]<br>
+\[ (x-2)^2 = 0 \]<br>
+Esto implica que \( x = 2 \) es el único punto de intersección de las funciones.</p>
+<p>Para encontrar el área entre las dos curvas desde \(x = 1\) hasta \(x = 2\), calculamos la integral de la diferencia entre las funciones en este intervalo. Dado que \(f(x) \geq g(x)\) en este intervalo, la integral es:<br>
+\[ \int_{1}^{2} (f(x) - g(x)) \,dx = \int_{1}^{2} \left((x^2-2x+3) - \left(\frac{1}{2}x^2 + 1\right)\right) \,dx \]<br>
+\[ = \int_{1}^{2} \left(\frac{1}{2}x^2 - 2x + 2\right) \,dx \]<br>
+\[ = \left[\frac{1}{6}x^3 - x^2 + 2x \right]_1^2 \]<br>
+Calculamos los valores:<br>
+\[ \left(\frac{1}{6}(2^3) - (2^2) + (2 \cdot 2)\right) - \left(\frac{1}{6}(1^3) - (1^2) + ( 1 \cdot 2)\right) \]<br>
+\[ = \left(\frac{8}{6} - 4 + 4\right) - \left(\frac{1}{6} - 1 + 2\right) \]<br>
+\[ = \left(\frac{4}{3} - 4 + 4\right) - \left(\frac{1}{6} - 1 + 2\right) \]<br>
+\[ = \frac{4}{3} + \frac{5}{6} \]<br>
+\[ = \frac{8}{6} + \frac{5}{6} \]<br>
+\[ = \frac{13}{6} \]</p>
+<p>Por lo tanto, el área encerrada es \(\frac{13}{6}\) unidades cuadradas.</p>
+<h4>b) Estudiar el rango de la matriz \(A\) en función de los valores de \(a\)</h4>
+<p>La matriz \(A\) es:<br>
+\[
+A = \begin{pmatrix}
+2 &amp; 1 &amp; a \\
+1 &amp; 0 &amp; 0 \\
+1 &amp; a+1 &amp; a+1
+\end{pmatrix}
+\]</p>
+<p>Para estudiar el rango, dedicamos atención al determinante para identificar si la matriz podría ser invertible (rango completo) o calcular el determinante/menor principal si se anula:</p>
+<p>1. Evaluamos el determinante de \(A\):<br>
+\[ \det(A) = 2 \det\begin{pmatrix} 0 &amp; 0 \\ a+1 &amp; a+1 \end{pmatrix} - 1 \det\begin{pmatrix} 1 &amp; 0 \\ 1 &amp; a+1 \end{pmatrix} + a \det\begin{pmatrix} 1 &amp; 0 \\ 1 &amp; a+1 \end{pmatrix} \]<br>
+\[ = 2 (0 \cdot (a+1) - 0 \cdot (a+1)) - 1 (1 \cdot (a+1) - 0 \cdot 1) + a (1 \cdot (a+1) - 0 \cdot 1) \]<br>
+\[ = 0 - (a+1) + a(a+1) \]<br>
+\[ = a^2 - 1 \]</p>
+<p>Si \( \det(A) = a^2 - 1 = (a+1)(a-1) \), entonces la matriz es invertible (rango completo) cuando \(a \neq 1\) y \(a \neq -1\). Si \(a = 1\) o \(a = -1\), \( \det(A) = 0 \) y debemos evaluar submatrices mayores para determinar el rango menor.</p>
+<p>2. Para \(a = 1\) o \(a = -1\), evaluaremos una submatriz para determinar si el rango es 2:<br>
+   - Si \(a = 1\):<br>
+\[
+A = \begin{pmatrix}
+2 &amp; 1 &amp; 1 \\
+1 &amp; 0 &amp; 0 \\
+1 &amp; 2 &amp; 2
+\end{pmatrix} \rightarrow \text{Filas 3 y 2 son proporcionales, luego el rango es 2.}
+\]</p>
+<p>- Si \(a = -1\):<br>
+\[
+A = \begin{pmatrix}
+2 &amp; 1 &amp; -1 \\
+1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0
+\end{pmatrix} \rightarrow \text{Filas 3 y 2 son proporcionales, luego el rango es 2.}
+\]</p>
+<p>Conclusiones:<br>
+- Para \(a \neq 1\) y \(a \neq -1\), el rango de \(A\) es 3 (invertible).<br>
+- Para \(a = 1\) o \(a = -1\), el rango de \(A\) es 2.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los dos apartados.</p>
+<p>---</p>
+<h3>5.a) Área encerrada</h3>
+<p>Dadas<br>
+\[
+f(x)=x^2-2x+3,\qquad g(x)=\frac12x^2+1,
+\]<br>
+buscamos el área encerrada por la recta \(x=1\) y las dos gráficas.</p>
+<h4>1. Punto de corte entre \(f\) y \(g\)</h4>
+<p>Igualamos:<br>
+\[
+x^2-2x+3=\frac12x^2+1
+\]<br>
+\[
+\frac12x^2-2x+2=0
+\]<br>
+\[
+x^2-4x+4=0
+\]<br>
+\[
+(x-2)^2=0.
+\]</p>
+<p>Luego se cortan en<br>
+\[
+x=2.
+\]<br>
+La ordenada es<br>
+\[
+f(2)=4-4+3=3,\qquad g(2)=\frac12\cdot4+1=3.
+\]<br>
+Así, el punto de corte es \((2,3)\).</p>
+<h4>2. Qué función queda arriba</h4>
+<p>\[
+f(x)-g(x)=\frac12x^2-2x+2=\frac12(x-2)^2\ge 0.
+\]<br>
+Por tanto,<br>
+\[
+f(x)\ge g(x)
+\]<br>
+en todo \(x\), y entre \(x=1\) y \(x=2\) el área es</p>
+<p>\[
+A=\int_1^2 \bigl(f(x)-g(x)\bigr)\,dx
+=\int_1^2 \frac12(x-2)^2\,dx.
+\]</p>
+<h4>3. Cálculo del área</h4>
+<p>\[
+A=\frac12\int_1^2 (x-2)^2\,dx
+=\frac12\left[\frac{(x-2)^3}{3}\right]_1^2
+=\frac12\left(0-\left(-\frac13\right)\right)
+=\frac16.
+\]</p>
+<h4>Resultado</h4>
+\[
+\boxed{A=\frac16}
+\]
+<p>---</p>
+<h3>5.b) Rango de \(A\) según \(a\)</h3>
+<p>La matriz es<br>
+\[
+A=\begin{pmatrix}
+2 &amp; 1 &amp; a\\
+1 &amp; 0 &amp; 0\\
+1 &amp; a+1 &amp; a+1
+\end{pmatrix}.
+\]</p>
+<h4>1. Menor de orden 2</h4>
+<p>Tomamos el menor formado por las filas 1 y 2 y columnas 1 y 2:<br>
+\[
+\begin{vmatrix}
+2&amp;1\\
+1&amp;0
+\end{vmatrix}
+=2\cdot 0-1\cdot 1=-1\neq 0.
+\]</p>
+<p>Luego, para todo \(a\),<br>
+\[
+\operatorname{rg}(A)\ge 2.
+\]</p>
+<h4>2. Determinante de \(A\)</h4>
+<p>Calculamos el determinante expandiendo por la segunda fila:</p>
+<p>\[
+\det(A)=
+1\cdot(-1)^{2+1}
+\begin{vmatrix}
+1&amp;a\\
+a+1&amp;a+1
+\end{vmatrix}.
+\]</p>
+<p>Entonces<br>
+\[
+\det(A)=-
+\left(1\cdot(a+1)-a(a+1)\right)
+=-(a+1)(1-a)
+=(a+1)(a-1).
+\]</p>
+<p>Por tanto,<br>
+\[
+\det(A)=a^2-1.
+\]</p>
+<h4>3. Estudio del rango</h4>
+<p>- Si \(\det(A)\neq 0\), es decir, si<br>
+  \[
+  a\neq 1,\quad a\neq -1,
+  \]<br>
+  entonces<br>
+  \[
+  \operatorname{rg}(A)=3.
+  \]</p>
+<p>- Si \(\det(A)=0\), es decir, si<br>
+  \[
+  a=1 \quad \text{o} \quad a=-1,
+  \]<br>
+  entonces el rango no puede ser 3.  <br>
+  Como ya sabemos que siempre es al menos 2, se tiene<br>
+  \[
+  \operatorname{rg}(A)=2.
+  \]</p>
+<h4>Resultado final</h4>
+\[
+\boxed{
+\operatorname{rg}(A)=
+\begin{cases}
+3, &amp; a\neq \pm 1,\\[2mm]
+2, &amp; a=\pm 1.
+\end{cases}}
+\]
+<p>---</p>
+<h3>Respuesta final del ejercicio 5</h3>
+<p><strong>a)</strong> El área encerrada es<br>
+\[
+\boxed{\frac16}.
+\]</p>
+<p><strong>b)</strong> El rango de la matriz es<br>
+\[
+\boxed{
+\operatorname{rg}(A)=
+\begin{cases}
+3, &amp; a\neq \pm 1,\\
+2, &amp; a=\pm 1.
+\end{cases}}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_095.html">Anterior</a><a class="button" href="problema_097.html">Siguiente</a></nav>
+</main></body>
+</html>

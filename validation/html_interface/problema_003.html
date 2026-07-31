@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 3: andalucia_2023 3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 3 de 139</h1>
+<div class="meta"><span class="badge">andalucia_2023</span> &nbsp; Ejercicio 3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_002.html">Anterior</a><a class="button" href="problema_004.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>EJERCICIO 3. (2,5 puntos)</p>
+<p>Calcula \(a\) con \(0&lt;a&lt;1\), tal que</p>
+<p>\[
+\int_a^1 \frac{\ln(x)}{x}\,dx + 2 = 0
+\]</p>
+<p>\((\ln\) denota la función logaritmo neperiano).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>EJERCICIO 3 (2.5 puntos)</strong></p>
+<p>Calcula \(a\) con \(0&lt;a&lt;1\), tal que</p>
+<p>\[
+\int_a^1 \frac{\ln x}{x}\,dx+\ln 2=0
+\]</p>
+<p>Hay que determinar cuándo</p>
+<p>\[
+\int_a^1 \frac{\ln x}{x}\,dx+\ln 2=0
+\quad \Rightarrow \quad
+\int_a^1 \frac{\ln x}{x}\,dx=-\ln 2
+\]</p>
+<p>Calculamos primero la integral indefinida.</p>
+<p>\[
+\int \frac{\ln x}{x}\,dx
+\]</p>
+<p>Por integración por partes:</p>
+<p>\[
+u=\ln x \Rightarrow du=\frac{1}{x}dx
+\]</p>
+<p>\[
+dv=\frac{1}{x}dx \Rightarrow v=\ln x
+\]</p>
+<p>\[
+\int \frac{\ln x}{x}\,dx
+=
+\ln x \cdot \ln x-\int \ln x \cdot \frac{1}{x}\,dx
+\]</p>
+<p>\[
+\int \frac{\ln x}{x}\,dx
+=
+(\ln x)^2-\int \frac{\ln x}{x}\,dx
+\]</p>
+<p>\[
+2\int \frac{\ln x}{x}\,dx=(\ln x)^2
+\]</p>
+<p>\[
+\int \frac{\ln x}{x}\,dx=\frac{(\ln x)^2}{2}+K
+\]</p>
+<p>Aplicamos este resultado a la integral definida.</p>
+<p>\[
+\int_a^1 \frac{\ln x}{x}\,dx
+=
+\left[\frac{(\ln x)^2}{2}\right]_a^1
+\]</p>
+<p>\[
+=
+\frac{(\ln 1)^2}{2}-\frac{(\ln a)^2}{2}
+=
+-\frac{(\ln a)^2}{2}
+\]</p>
+<p>Entonces:</p>
+<p>\[
+-\frac{(\ln a)^2}{2}=-\ln 2
+\]</p>
+<p>\[
+(\ln a)^2=2\ln 2=\ln 4
+\]</p>
+<p>\[
+\ln a=-\sqrt{\ln 4}
+\]</p>
+<p>Como \(0&lt;a&lt;1\), se toma la solución negativa:</p>
+<p>\[
+a=e^{-\sqrt{\ln 4}}
+\]</p>
+<p>El valor buscado es</p>
+<p>\[
+\boxed{a=e^{-\sqrt{\ln 4}}}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 3 del examen, debemos calcular el valor de \( a \) en el intervalo \( (0,1) \) tal que la ecuación integral dada sea cierta:</p>
+<p>\[
+\int_a^1 \frac{\ln(x)}{x} dx + 2 = 0
+\]</p>
+<p>Esta es una integral común en matemáticas avanzadas, y se resuelve utilizando el hecho de que la derivada de \( \ln(x) \) respectivamente a \( x \) es \( \frac{1}{x} \). En primer lugar, calculemos la integral indefinida de \( \frac{\ln(x)}{x} \). La integración se simplifica bajo el cambio de variable \( u = \ln(x) \), con lo que \( du = \frac{1}{x}dx \), y así la integral se convierte en:</p>
+<p>\[
+\int \frac{\ln(x)}{x} dx = \int u \, du = \frac{u^2}{2} + C = \frac{(\ln(x))^2}{2} + C
+\]</p>
+<p>Luego, evaluamos esta integral desde \( a \) hasta \( 1 \):</p>
+<p>\[
+\int_a^1 \frac{\ln(x)}{x} dx = \left[ \frac{(\ln(x))^2}{2} \right]_a^1 = \left( \frac{(\ln(1))^2}{2} - \frac{(\ln(a))^2}{2} \right) = -\frac{(\ln(a))^2}{2}
+\]</p>
+<p>Debido a que \( \ln(1) = 0 \), la integral evalúa a:</p>
+<p>\[
+-\frac{(\ln(a))^2}{2}
+\]</p>
+<p>Ahora sustituimos esta expresión en la ecuación original:</p>
+<p>\[
+-\frac{(\ln(a))^2}{2} + 2 = 0
+\]</p>
+<p>Para resolver esta ecuación por \( a \):</p>
+<p>\[
+-\frac{(\ln(a))^2}{2} = -2 \quad \Rightarrow \quad \frac{(\ln(a))^2}{2} = 2 \quad \Rightarrow \quad (\ln(a))^2 = 4 \quad \Rightarrow \quad \ln(a) = \pm 2
+\]</p>
+<p>Debido a que \( a \) está entre \( 0 \) y \( 1 \), \( \ln(a) \) debe ser negativo (ya que el logaritmo natural de un número entre \( 0 \) y \( 1 \) es negativo), así que:</p>
+<p>\[
+\ln(a) = -2 \quad \Rightarrow \quad a = e^{-2} \approx 0.1353
+\]</p>
+<p>Por lo tanto, \( a \approx 0.1353 \) es el valor buscado para que la igualdad dada en el enunciado sea verdadera【4:0†Examen Matemáticas II Andalucia 2023 enunciado.pdf】.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Buscamos \(a\in(0,1)\) tal que</p>
+<p>\[
+\int_a^1 \frac{\ln x}{x}\,dx +2=0.
+\]</p>
+<p>La primitiva de \(\dfrac{\ln x}{x}\) es</p>
+<p>\[
+\int \frac{\ln x}{x}\,dx=\frac{(\ln x)^2}{2}.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\int_a^1 \frac{\ln x}{x}\,dx
+=
+\left[\frac{(\ln x)^2}{2}\right]_a^1
+=
+\frac{(\ln 1)^2}{2}-\frac{(\ln a)^2}{2}
+=
+-\frac{(\ln a)^2}{2},
+\]</p>
+<p>ya que \(\ln 1=0\).</p>
+<p>Sustituyendo en la ecuación:</p>
+<p>\[
+-\frac{(\ln a)^2}{2}+2=0.
+\]</p>
+<p>Multiplicamos por 2:</p>
+<p>\[
+-(\ln a)^2+4=0
+\quad\Longrightarrow\quad
+(\ln a)^2=4.
+\]</p>
+<p>Entonces</p>
+<p>\[
+\ln a = \pm 2.
+\]</p>
+<p>Como \(0&lt;a&lt;1\), se cumple \(\ln a&lt;0\), luego</p>
+<p>\[
+\ln a=-2.
+\]</p>
+<p>Así,</p>
+<p>\[
+\boxed{a=e^{-2}}.
+\]</p>
+<p><strong>Resultado:</strong> \(\boxed{a=\dfrac{1}{e^2}}\).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_002.html">Anterior</a><a class="button" href="problema_004.html">Siguiente</a></nav>
+</main></body>
+</html>

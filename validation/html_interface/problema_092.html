@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 92: lamancha_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 92 de 139</h1>
+<div class="meta"><span class="badge">lamancha_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_091.html">Anterior</a><a class="button" href="problema_093.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p><strong>1. Sea el sistema de ecuaciones lineales</strong></p>
+<p>\[
+\begin{cases}
+2x+y+z=1\\
+x+ay+z=2\\
+2x+y+az=3
+\end{cases}
+\quad \text{con } a\in\mathbb{R}.
+\]</p>
+<p><strong>a) [1,75 puntos]</strong> Discute cómo es el sistema en función de los valores del parámetro \(a\).</p>
+<p><strong>b) [0,75 puntos]</strong> Resuelve razonadamente el sistema anterior para \(a=2\), si es posible.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 1. Solución oficial</strong></p>
+<p>a) Sean las matrices</p>
+<p>\[
+M=\begin{pmatrix}
+-2 &amp; 1 &amp; -1 &amp; -1\\
+-1 &amp; a &amp; 1 &amp; 2\\
+2 &amp; 1 &amp; a &amp; 3
+\end{pmatrix}
+\quad \text{y} \quad
+A=\begin{pmatrix}
+-2 &amp; 1 &amp; -1\\
+-1 &amp; a &amp; 1\\
+2 &amp; 1 &amp; a
+\end{pmatrix}.
+\]</p>
+<p>Para estudiar cómo es el sistema en función de \(a\), tenemos que estudiar su rango.</p>
+<p>Como</p>
+<p>\[
+|A|=-2a^2+3a+5,
+\]</p>
+<p>este se anula para</p>
+<p>\[
+a=-1 \quad \text{y} \quad a=\frac{5}{2}.
+\]</p>
+<p>Estudiemos el rango de \(M\) para cada uno de estos casos.</p>
+<p>- \(a=-1\): El rango de \(M\) es 3, por lo que tenemos un sistema incompatible.<br>
+- \(a=\frac{5}{2}\): El rango de \(M\) es 3, por lo que tenemos un sistema incompatible.</p>
+<p>Para el resto de valores de \(a\), tanto el rango de \(A\) como el de \(M\) es tres y, por tanto, el sistema es compatible determinado.</p>
+<p>b) En este caso tenemos un sistema compatible determinado y la solución es</p>
+<p>\[
+x=0,\qquad y=\frac{1}{3},\qquad z=\frac{4}{3}.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para abordar este ejercicio, comenzaremos con la parte (a) discutiendo el sistema en función de los valores del parámetro \( a \), y luego procederemos a resolver el sistema como se describe en la parte (b) para \( a=2 \).</p>
+<h4>Parte (a) - Discusión del Sistema en Función de \( a \)</h4>
+<p>Empezaremos formando la matriz ampliada del sistema para poder aplicar el método de eliminación de Gauss y ver cómo intervienen los valores de \( a \) en este proceso.</p>
+<p>El sistema dado es:<br>
+\[
+\left\{
+\begin{array}{c}
+2x + y + z = 1 \\
+x + ay + z = 2 \\
+2x + y + az = 3 
+\end{array}
+\right.
+\]</p>
+<p>La matriz asociada (matriz ampliada incluyendo el vector de términos constantes) es:<br>
+\[
+\begin{bmatrix}
+2 &amp; 1 &amp; 1 &amp; | &amp; 1 \\
+1 &amp; a &amp; 1 &amp; | &amp; 2 \\
+2 &amp; 1 &amp; a &amp; | &amp; 3 
+\end{bmatrix}
+\]</p>
+<p>Aplicaremos transformaciones elementales para ponerla en forma escalonada y así determinar la consistencia del sistema según \( a \). Empezamos eliminando la \( x \) de la segunda y tercera filas con operaciones de fila:</p>
+<p>- \( F2 \leftarrow F2 - \frac{1}{2}F1 \)<br>
+- \( F3 \leftarrow F3 - F1 \)</p>
+<p>Calculando, obtenemos:<br>
+\[
+F2: \ (1 - \frac{1}{2} \cdot 2, a - \frac{1}{2} \cdot 1, 1 - \frac{1}{2} \cdot 1 | 2 - \frac{1}{2} \cdot 1) \rightarrow (0, a - \frac{1}{2}, \frac{1}{2} | \frac{3}{2})
+\]<br>
+\[
+F3: \ (2 - 2, 1 - 1, a - 1 | 3 - 1) \rightarrow (0, 0, a - 1 | 2)
+\]</p>
+<p>Nuestra matriz transformada es ahora:<br>
+\[
+\begin{bmatrix}
+2 &amp; 1 &amp; 1 &amp; | &amp; 1 \\
+0 &amp; a - \frac{1}{2} &amp; \frac{1}{2} &amp; | &amp; \frac{3}{2} \\
+0 &amp; 0 &amp; a - 1 &amp; | &amp; 2 
+\end{bmatrix}
+\]</p>
+<p>Analizamos:</p>
+<p>1. Si \( a-1 = 0 \) (es decir, \( a = 1 \)), entonces el sistema tiene la última fila \([0, 0, 0 | 2]\), lo cual es inconsistente, llevando a un sistema sin solución (incompatible).</p>
+<p>2. Si \( a \neq 1 \), el sistema es escalonado y tiene elementos no nulos en la diagonal principal de las submatrices 3x3 y 2x2. Dependiendo de si \( a - \frac{1}{2} \neq 0 \) (es decir, \( a \neq \frac{1}{2}\)), el sistema tendrá solución única. Si \( a = \frac{1}{2} \), el sistema precisa de análisis adicional porque resultará en una fila de ceros.</p>
+<p>Por lo tanto, el sistema tiene solución única si \( a \neq 1 \) y \( a \neq \frac{1}{2} \), no tiene solución si \( a = 1 \), y necesitaríamos observar más cuidadosamente en el caso de que \( a = \frac{1}{2} \).</p>
+<h4>Parte (b) - Resolución del Sistema para \( a = 2 \)</h4>
+<p>Usando los resultados obtenidos para cuando \( a \neq 1 \), y dado que \( 2 \neq \frac{1}{2} \) y \( 2 \neq 1 \), podemos afirmar que el sistema tiene solución única.</p>
+<p>Retomando la matriz escalonada para \( a = 2 \):<br>
+\[
+\begin{bmatrix}
+2 &amp; 1 &amp; 1 &amp; | &amp; 1 \\
+0 &amp; 2 - \frac{1}{2} &amp; \frac{1}{2} &amp; | &amp; \frac{3}{2} \\
+0 &amp; 0 &amp; 2 - 1 &amp; | &amp; 2 
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+2 &amp; 1 &amp; 1 &amp; | &amp; 1 \\
+0 &amp; \frac{3}{2} &amp; \frac{1}{2} &amp; | &amp; \frac{3}{2} \\
+0 &amp; 0 &amp; 1 &amp; | &amp; 2 
+\end{bmatrix}
+\]</p>
+<p>Resolviendo desde la última fila hacia arriba:<br>
+- \( z = 2 \)<br>
+- Sustituyendo en la segunda fila: \(\frac{3}{2}y + \frac{1}{2} \cdot 2 = \frac{3}{2} \Rightarrow y = 0\)<br>
+- Sustituyendo en la primera fila: \(2x + 1 \cdot 0 + 2 = 1 \Rightarrow 2x = -1 \Rightarrow x = -\frac{1}{2}\)</p>
+<p>Por lo tanto, la solución para \( a = 2 \) es \( x = -\frac{1}{2} \), \( y = 0 \), \( z = 2 \).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea</p>
+<p>\[
+\begin{cases}
+2x+y+z=1 \qquad (E_1)\\
+x+ay+z=2 \qquad (E_2)\\
+2x+y+az=3 \qquad (E_3)
+\end{cases}
+\]</p>
+<h3>a) Discusión según \(a\)</h3>
+<p>Hacemos operaciones entre ecuaciones para obtener un sistema equivalente:</p>
+<p>- \(2E_2-E_1\):  <br>
+  \[
+  (2a-1)y+z=3
+  \]</p>
+<p>- \(E_3-E_1\):  <br>
+  \[
+  (a-1)z=2
+  \]</p>
+<p>Por tanto, el sistema es equivalente a</p>
+<p>\[
+\begin{cases}
+2x+y+z=1\\
+(2a-1)y+z=3\\
+(a-1)z=2
+\end{cases}
+\]</p>
+<h4>Caso 1: \(a\neq 1\) y \(a\neq \tfrac12\)</h4>
+<p>De la tercera ecuación:</p>
+<p>\[
+z=\frac{2}{a-1}
+\]</p>
+<p>Sustituyendo en la segunda:</p>
+<p>\[
+(2a-1)y+\frac{2}{a-1}=3
+\]</p>
+<p>\[
+y=\frac{3-\frac{2}{a-1}}{2a-1}
+=\frac{3a-5}{(a-1)(2a-1)}
+\]</p>
+<p>Ahora en la primera:</p>
+<p>\[
+2x=1-y-z
+\]</p>
+<p>\[
+x=\frac{1-y-z}{2}
+=\frac{a-4}{2a-1}
+\]</p>
+<p>Luego hay <strong>una única solución</strong>.  <br>
+El sistema es <strong>compatible determinado</strong>.</p>
+<p>---</p>
+<h4>Caso 2: \(a=1\)</h4>
+<p>La tercera ecuación queda:</p>
+<p>\[
+(1-1)z=2 \;\Rightarrow\; 0=2
+\]</p>
+<p>Imposible.  <br>
+El sistema es <strong>incompatible</strong>.</p>
+<p>---</p>
+<h4>Caso 3: \(a=\tfrac12\)</h4>
+<p>La segunda ecuación queda:</p>
+<p>\[
+(2\cdot \tfrac12-1)y+z=3 \;\Rightarrow\; z=3
+\]</p>
+<p>La tercera queda:</p>
+<p>\[
+\left(\tfrac12-1\right)z=2
+\;\Rightarrow\;
+-\tfrac12 z=2
+\;\Rightarrow\;
+z=-4
+\]</p>
+<p>Contradicción.  <br>
+El sistema es <strong>incompatible</strong>.</p>
+<p>---</p>
+<h3>Conclusión</h3>
+<p>- Si \(\boxed{a\neq 1,\ \ a\neq \tfrac12}\), el sistema es <strong>compatible determinado</strong>.<br>
+- Si \(\boxed{a=1}\) o \(\boxed{a=\tfrac12}\), el sistema es <strong>incompatible</strong>.<br>
+- No hay ningún valor de \(a\) para el que sea compatible indeterminado.</p>
+<p>Además, para \(a\neq 1,\tfrac12\),</p>
+<p>\[
+\boxed{
+x=\frac{a-4}{2a-1},\qquad
+y=\frac{3a-5}{(a-1)(2a-1)},\qquad
+z=\frac{2}{a-1}
+}
+\]</p>
+<p>---</p>
+<h3>b) Resolución para \(a=2\)</h3>
+<p>Como \(2\neq 1\) y \(2\neq \tfrac12\), el sistema tiene solución única.</p>
+<p>Sustituyendo \(a=2\):</p>
+<p>\[
+\begin{cases}
+2x+y+z=1\\
+x+2y+z=2\\
+2x+y+2z=3
+\end{cases}
+\]</p>
+<p>Usando las ecuaciones reducidas:</p>
+<p>\[
+(a-1)z=2 \Rightarrow z=2
+\]</p>
+<p>\[
+(2a-1)y+z=3 \Rightarrow 3y+2=3 \Rightarrow y=\frac13
+\]</p>
+<p>\[
+2x+y+z=1 \Rightarrow 2x+\frac13+2=1
+\]</p>
+<p>\[
+2x=-\frac43 \Rightarrow x=-\frac23
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{(x,y,z)=\left(-\frac23,\frac13,2\right)}
+\]</p>
+<p>Esa es la solución.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_091.html">Anterior</a><a class="button" href="problema_093.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 138: rioja_2023 9</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 138 de 139</h1>
+<div class="meta"><span class="badge">rioja_2023</span> &nbsp; Ejercicio 9</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_137.html">Anterior</a><a class="button" href="problema_139.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>9.- (2 puntos) En una empresa automovilística se ha recibido un lote de piezas de coches de tipos A, B y C. El 80 % corresponde al coche de tipo A, el 10 % al B y el resto al C. Se ha observado que hay piezas que están defectuosas en los siguientes porcentajes: el 10 % de A, el 20 % de B y el 5 % de C. Se elige una pieza al azar. Calcula:</p>
+<p>(i) la probabilidad de coger una pieza defectuosa.</p>
+<p>(ii) si sabemos que la pieza es defectuosa, la probabilidad de que sea del tipo A.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>9.- Hacemos un diagrama de árbol.</p>
+<p>(i) Aplicamos el teorema de la probabilidad total.</p>
+<p>\[
+P(D)=P(A\cap D)+P(B\cap D)+P(C\cap D)
+\]</p>
+<p>\[
+P(D)=P(A)P(D/A)+P(B)P(D/B)+P(C)P(D/C)
+\]</p>
+<p>\[
+P(D)=0.8\cdot 0.1+0.1\cdot 0.2+0.1\cdot 0.05=0.105
+\]</p>
+<p>(ii) Es una probabilidad a posteriori. Aplicamos el teorema de Bayes.</p>
+<p>\[
+P(A/D)=\frac{P(A\cap D)}{P(D)}
+\]</p>
+<p>\[
+P(A/D)=\frac{0.8\cdot 0.1}{0.105}=\frac{16}{21}=0.7619
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea:</p>
+<p>- \(A\): “la pieza es del tipo A”<br>
+- \(B\): “la pieza es del tipo B”<br>
+- \(C\): “la pieza es del tipo C”<br>
+- \(D\): “la pieza es defectuosa”</p>
+<p>Datos del enunciado:</p>
+<p>\[
+P(A)=0.80,\qquad P(B)=0.10,\qquad P(C)=1-0.80-0.10=0.10
+\]</p>
+<p>\[
+P(D\mid A)=0.10,\qquad P(D\mid B)=0.20,\qquad P(D\mid C)=0.05
+\]</p>
+<h3>(i) Probabilidad de coger una pieza defectuosa</h3>
+<p>Aplicamos la <strong>ley de la probabilidad total</strong>:</p>
+<p>\[
+P(D)=P(A)P(D\mid A)+P(B)P(D\mid B)+P(C)P(D\mid C)
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+P(D)=0.80\cdot 0.10+0.10\cdot 0.20+0.10\cdot 0.05
+\]</p>
+<p>\[
+P(D)=0.08+0.02+0.005=0.105
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{P(D)=0.105}
+\]</p>
+<p>es decir, la probabilidad es del <strong>10,5 %</strong>.</p>
+<p>---</p>
+<h3>(ii) Si la pieza es defectuosa, probabilidad de que sea del tipo A</h3>
+<p>Aplicamos el <strong>teorema de Bayes</strong>:</p>
+<p>\[
+P(A\mid D)=\frac{P(A\cap D)}{P(D)}=\frac{P(A)P(D\mid A)}{P(D)}
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+P(A\mid D)=\frac{0.80\cdot 0.10}{0.105}
+=\frac{0.08}{0.105}
+=\frac{16}{21}
+\approx 0.7619
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{P(A\mid D)=\frac{16}{21}\approx 0.7619}
+\]</p>
+<p>es decir, aproximadamente un <strong>76,19 %</strong>.</p>
+<p>---</p>
+<h3>Respuestas finales</h3>
+<p><strong>(i)</strong> \(\boxed{0.105 = 10.5\%}\)</p>
+<p><strong>(ii)</strong> \(\boxed{\dfrac{16}{21}\approx 0.7619 = 76.19\%}\)</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el Ejercicio 9, utilizaremos la información dada sobre la distribución de piezas y los porcentajes de defectuosidad para cada tipo de pieza (A, B, C). Procedamos paso a paso:</p>
+<h4>Datos del Problema</h4>
+- Porcentajes de piezas por tipo:
+  - Tipo A: 80%
+  - Tipo B: 10%
+  - Tipo C: 10% (el &quot;resto&quot;)
+<p>- Porcentajes de defectuosas:<br>
+  - Tipo A: 10%<br>
+  - Tipo B: 20%<br>
+  - Tipo C: 5%</p>
+<h4>(i) Probabilidad de coger una pieza defectuosa (P(D))</h4>
+<p>Para calcular la probabilidad de seleccionar una pieza defectuosa, usaremos la ley total de la probabilidad. La probabilidad de que una pieza sea defectuosa se calcula como la suma de las probabilidades de obtener una pieza defectuosa de cada tipo de coche, ponderada por la probabilidad de seleccionar un coche de ese tipo.</p>
+<p>#### Cálculo<br>
+- \( P(D|A) = 0.10 \)<br>
+- \( P(D|B) = 0.20 \)<br>
+- \( P(D|C) = 0.05 \)</p>
+<p>- \( P(A) = 0.80 \)<br>
+- \( P(B) = 0.10 \)<br>
+- \( P(C) = 0.10 \)</p>
+<p>Aplicando la ley total de la probabilidad:<br>
+\[ P(D) = P(D|A)P(A) + P(D|B)P(B) + P(D|C)P(C) \]<br>
+\[ P(D) = (0.10)(0.80) + (0.20)(0.10) + (0.05)(0.10) \]<br>
+\[ P(D) = 0.08 + 0.02 + 0.005 = 0.105 \]</p>
+<p>#### Resultado:<br>
+La probabilidad de coger una pieza defectuosa es 0.105, o 10.5%.</p>
+<h4>(ii) Probabilidad de que la pieza defectuosa sea del tipo A (P(A|D))</h4>
+<p>Para calcular esto, usamos la fórmula de la probabilidad condicional:<br>
+\[ P(A|D) = \frac{P(D|A)P(A)}{P(D)} \]</p>
+<p>#### Cálculo<br>
+\( P(A|D) = \frac{0.08}{0.105} = \frac{8}{10.5} = \frac{16}{21} \approx 0.762 \)</p>
+<p>#### Resultado:<br>
+La probabilidad de que una pieza defectuosa sea del tipo A es aproximadamente 0.762, o 76.2%.</p>
+<h4>Conclusión</h4>
+<p>- <strong>(i)</strong> La probabilidad de seleccionar una pieza defectuosa de cualquier tipo es del 10.5%.<br>
+- <strong>(ii)</strong> Si la pieza seleccionada es defectuosa, hay un 76.2% de probabilidad de que sea del tipo A.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_137.html">Anterior</a><a class="button" href="problema_139.html">Siguiente</a></nav>
+</main></body>
+</html>

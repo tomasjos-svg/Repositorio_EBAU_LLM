@@ -1,0 +1,15 @@
+﻿indicator,value
+source_files,52
+unique_file_contents,52
+records_after_file_dedup,4644
+unique_rows,4644
+duplicate_row_occurrences,528
+datasets,51
+unique_problems,387
+conditions,4
+valid_execution_records,2322
+technical_error_records,2322
+weak_reference_records_auto_valid_only,6
+primary_analysis_records,2316
+sensitivity_analysis_records,2322
+invalid_metric_values,0

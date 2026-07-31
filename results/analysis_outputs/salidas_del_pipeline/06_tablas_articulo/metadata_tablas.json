@@ -1,0 +1,12 @@
+{
+  "pipeline_version": "3.1",
+  "tables_generated": 14,
+  "main_tables": 11,
+  "supplementary_tables": 3,
+  "formats": [
+    "xlsx",
+    "csv",
+    "latex",
+    "docx"
+  ]
+}

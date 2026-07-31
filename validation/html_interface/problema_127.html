@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 127: pais_vasco_2023 B3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 127 de 139</h1>
+<div class="meta"><span class="badge">pais_vasco_2023</span> &nbsp; Ejercicio B3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_126.html">Anterior</a><a class="button" href="problema_128.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio B3</p>
+<p>Sea \(f(x)=x^3+Ax^2+Bx+C\). Encuentra los valores de los parámetros \(A\), \(B\) y \(C\) para que \(f(0)=2\), las rectas tangentes a la gráfica de \(f\) en los puntos de abscisa \(x=1\) y \(x=3\) sean paralelas y \(f\) tenga un extremo relativo en el punto \(x=-1\). Ese extremo relativo, ¿es un máximo o un mínimo? Estudia si \(f\) tiene algún otro extremo relativo y determina si son máximos o mínimos.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>Ejercicio B3</p>
+<p>Sea  <br>
+\[
+f(x)=x^3+Ax^2+Bx+C
+\]<br>
+Encuentra los valores de los parámetros \(A\), \(B\) y \(C\) para que \(f(0)=2\), las rectas tangentes a la gráfica de \(f\) en los puntos de abscisa \(x=1\) y \(x=3\) sean paralelas y \(f\) tenga un extremo relativo en el punto \(x=-1\). Ese extremo relativo, ¿es un máximo o un mínimo? Estudia si \(f\) tiene algún otro extremo relativo y determina si son máximos o mínimos.</p>
+<p>Sabemos que \(f(0)=2\)</p>
+<p>\[
+f(0)=0^3+A\cdot 0^2+B\cdot 0+C=C
+\]</p>
+<p>\[
+f(0)=2 \Rightarrow C=2
+\]</p>
+<p>La función queda</p>
+<p>\[
+f(x)=x^3+Ax^2+Bx+2
+\]</p>
+<p>Si las rectas tangentes a la gráfica de \(f\) en los puntos de abscisa \(x=1\) y \(x=3\) son paralelas entonces los valores de las derivadas en dichos puntos son iguales:</p>
+<p>\[
+f&#x27;(1)=f&#x27;(3)
+\]</p>
+<p>\[
+f&#x27;(x)=3x^2+2Ax+B
+\]</p>
+<p>\[
+3\cdot 1^2+2A\cdot 1+B=3\cdot 3^2+2A\cdot 3+B
+\]</p>
+<p>\[
+3+2A+B=27+6A+B
+\]</p>
+<p>\[
+-4A=24 \Rightarrow A=-6
+\]</p>
+<p>La función queda</p>
+<p>\[
+f(x)=x^3-6x^2+Bx+2
+\]</p>
+<p>Si \(f\) tiene un extremo relativo en el punto \(x=-1\), implica que</p>
+<p>\[
+f&#x27;(-1)=0
+\]</p>
+<p>\[
+f&#x27;(x)=3x^2-12x+B
+\]</p>
+<p>\[
+3(-1)^2-12(-1)+B=0
+\]</p>
+<p>\[
+3+12+B=0 \Rightarrow B=-15
+\]</p>
+<p>La función queda</p>
+<p>\[
+f(x)=x^3-6x^2-15x+2
+\]</p>
+<p>Los valores buscados son</p>
+<p>\[
+A=-6,\qquad B=-15,\qquad C=2
+\]</p>
+<p>Ese extremo relativo, ¿es un máximo o un mínimo?</p>
+<p>Usamos la segunda derivada para averiguarlo.</p>
+<p>\[
+f&#x27;&#x27;(x)=6x-12
+\]</p>
+<p>\[
+f&#x27;&#x27;(-1)=6(-1)-12=-18&lt;0
+\]</p>
+<p>\[
+x=-1 \text{ es máximo relativo}
+\]</p>
+<p>Buscamos más puntos críticos de la función usando la derivada.</p>
+<p>\[
+f&#x27;(x)=3x^2-12x-15
+\]</p>
+<p>\[
+3x^2-12x-15=0
+\]</p>
+<p>\[
+x^2-4x-5=0
+\]</p>
+<p>\[
+x=\frac{4\pm \sqrt{16+20}}{2}=\frac{4\pm 6}{2}
+\]</p>
+<p>\[
+x=-1,\quad x=5
+\]</p>
+<p>La función tiene otro extremo relativo en \(x=5\). Comprobamos si es máximo o mínimo usando la segunda derivada.</p>
+<p>\[
+f&#x27;&#x27;(5)=6\cdot 5-12=18&gt;0
+\]</p>
+<p>\[
+x=5 \text{ es mínimo relativo}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio B3, seguiremos los siguientes pasos:</p>
+<h4>Paso 1: Evaluar \(f(0) = 2\)</h4>
+Dada la función \(f(x)=x^3+Ax^2+Bx+C\), si sustituimos \(x = 0\), obtenemos:
+\[ f(0) = C = 2 \]
+<h4>Paso 2: Rectas tangentes paralelas en \(x = 1\) y \(x = 3\)</h4>
+Sabemos que la derivada de \(f(x)\), \(f&#x27;(x)\), nos da la pendiente de la recta tangente en cualquier punto \(x\). Calculamos primero \(f&#x27;(x)\):
+\[ f&#x27;(x) = 3x^2 + 2Ax + B \]
+<p>Para que las tangentes en \(x = 1\) y \(x = 3\) sean paralelas, sus pendientes deben ser iguales, es decir:<br>
+\[ f&#x27;(1) = f&#x27;(3) \]<br>
+Sustituyendo \(x = 1\) y \(x = 3\) en \(f&#x27;(x)\):<br>
+\[ 3(1)^2 + 2A(1) + B = 3(3)^2 + 2A(3) + B \]<br>
+Simplificando, tenemos:<br>
+\[ 3 + 2A + B = 27 + 6A + B \]<br>
+\[ 3 + 2A + B - 6A - B = 27 \]<br>
+\[ -4A = 24 \Rightarrow A = -6 \]</p>
+<h4>Paso 3: Extremo relativo en \(x = -1\)</h4>
+Un extremo relativo ocurre donde \(f&#x27;(x) = 0\) y el signo de \(f&#x27;&#x27;(x)\) cambia. Primero determinamos \(f&#x27;(x)\) con \(A = -6\), y lo evaluamos en \(x = -1\):
+\[ f&#x27;(-1) = 3(-1)^2 - 2(6)(-1) + B = 3 + 12 + B \]
+Debido a que \(x = -1\) es un extremo:
+\[ 3 + 12 + B = 0 \]
+\[ B = -15 \]
+<h4>Paso 4: Determinar si el extremo en \(x = -1\) es un máximo o un mínimo</h4>
+Calculamos la segunda derivada \(f&#x27;&#x27;(x)\) para determinar la concavidad:
+\[ f&#x27;&#x27;(x) = 6x - 12 \]
+Evaluamos en \(x = -1\):
+\[ f&#x27;&#x27;(-1) = 6(-1) - 12 = -6 - 12 = -18 \]
+El valor negativo indica que la concavidad es hacia abajo y por lo tanto, el punto \(x = -1\) es un máximo relativo.
+<h4>Paso 5: Revisar otros extremos relativos</h4>
+Estudiamos \(f&#x27;(x) = 0\) para otras soluciones aparte de \(x = -1\):
+\[ 3x^2 - 12x - 15 = 0 \]
+\[ x^2 - 4x - 5 = 0 \]
+\[ (x-5)(x+1) = 0 \Rightarrow x = 5,\, x = -1 \]
+Ya hemos discutido \(x = -1\), así que evaluamos en \(x = 5\):
+\[ f&#x27;&#x27;(5) = 6(5) - 12 = 30 - 12 = 18 \]
+El resultado positivo implica que \(x = 5\) es un mínimo relativo.
+<h4>Resumen:</h4>
+Los valores de \(A\), \(B\), y \(C\) son \(-6\), \(-15\), y \(2\) respectivamente. En \(x = -1\), \(f\) tiene un máximo relativo. En \(x = 5\), \(f\) tiene un mínimo relativo.</section>
+<section class="card"><h2>Respuesta B</h2><p>Sea  <br>
+\[
+f(x)=x^3+Ax^2+Bx+C.
+\]</p>
+<p>Queremos hallar \(A,B,C\) cumpliendo:</p>
+<p>1. \(f(0)=2\),<br>
+2. las tangentes en \(x=1\) y \(x=3\) sean paralelas,<br>
+3. \(f\) tenga un extremo relativo en \(x=-1\).</p>
+<p>---</p>
+<h3>1. Condición \(f(0)=2\)</h3>
+<p>\[
+f(0)=C=2.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+C=2.
+\]</p>
+<p>---</p>
+<h3>2. Tangentes paralelas en \(x=1\) y \(x=3\)</h3>
+<p>Las tangentes son paralelas si tienen la misma pendiente, es decir,</p>
+<p>\[
+f&#x27;(1)=f&#x27;(3).
+\]</p>
+<p>Derivamos:</p>
+<p>\[
+f&#x27;(x)=3x^2+2Ax+B.
+\]</p>
+<p>Entonces,</p>
+<p>\[
+f&#x27;(1)=3+2A+B,
+\qquad
+f&#x27;(3)=27+6A+B.
+\]</p>
+<p>Igualamos:</p>
+<p>\[
+3+2A+B=27+6A+B.
+\]</p>
+<p>Se simplifica \(B\):</p>
+<p>\[
+3+2A=27+6A
+\]</p>
+<p>\[
+-24=4A
+\]</p>
+<p>\[
+A=-6.
+\]</p>
+<p>---</p>
+<h3>3. Extremo relativo en \(x=-1\)</h3>
+<p>Para que haya un extremo relativo en \(x=-1\), debe cumplirse</p>
+<p>\[
+f&#x27;(-1)=0.
+\]</p>
+<p>Usamos \(A=-6\):</p>
+<p>\[
+f&#x27;(x)=3x^2-12x+B.
+\]</p>
+<p>Entonces,</p>
+<p>\[
+f&#x27;(-1)=3(-1)^2-12(-1)+B=3+12+B=15+B.
+\]</p>
+<p>Imponiendo \(f&#x27;(-1)=0\):</p>
+<p>\[
+15+B=0
+\]</p>
+<p>\[
+B=-15.
+\]</p>
+<p>---</p>
+<h3>4. Función resultante</h3>
+<p>Los valores buscados son</p>
+<p>\[
+\boxed{A=-6,\quad B=-15,\quad C=2.}
+\]</p>
+<p>Así,</p>
+<p>\[
+\boxed{f(x)=x^3-6x^2-15x+2.}
+\]</p>
+<p>---</p>
+<h3>5. Clasificación del extremo en \(x=-1\)</h3>
+<p>Calculamos la segunda derivada:</p>
+<p>\[
+f&#x27;&#x27;(x)=6x+2A=6x-12.
+\]</p>
+<p>En \(x=-1\):</p>
+<p>\[
+f&#x27;&#x27;(-1)=6(-1)-12=-18&lt;0.
+\]</p>
+<p>Luego en \(x=-1\) hay un <strong>máximo relativo</strong>.</p>
+<p>---</p>
+<h3>6. ¿Tiene algún otro extremo relativo?</h3>
+<p>Buscamos todos los puntos críticos resolviendo \(f&#x27;(x)=0\):</p>
+<p>\[
+f&#x27;(x)=3x^2-12x-15=3(x^2-4x-5)=3(x+1)(x-5).
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+f&#x27;(x)=0 \iff x=-1 \quad \text{o} \quad x=5.
+\]</p>
+<p>Ya sabemos que en \(x=-1\) hay un máximo relativo.</p>
+<p>Para \(x=5\):</p>
+<p>\[
+f&#x27;&#x27;(5)=30-12=18&gt;0,
+\]</p>
+<p>así que en \(x=5\) hay un <strong>mínimo relativo</strong>.</p>
+<p>---</p>
+<h3>Conclusión</h3>
+<p>\[
+\boxed{A=-6,\; B=-15,\; C=2}
+\]</p>
+<p>y la función es</p>
+<p>\[
+\boxed{f(x)=x^3-6x^2-15x+2.}
+\]</p>
+<p>Sus extremos relativos son:</p>
+<p>- en \(\boxed{x=-1}\): <strong>máximo relativo</strong>;<br>
+- en \(\boxed{x=5}\): <strong>mínimo relativo</strong>.</p>
+<p>No tiene más extremos relativos.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_126.html">Anterior</a><a class="button" href="problema_128.html">Siguiente</a></nav>
+</main></body>
+</html>

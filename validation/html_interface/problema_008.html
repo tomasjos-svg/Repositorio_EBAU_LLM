@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 8: andalucia_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 8 de 139</h1>
+<div class="meta"><span class="badge">andalucia_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_007.html">Anterior</a><a class="button" href="problema_009.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>EJERCICIO 8. (2,5 puntos)</p>
+<p>Calcula el volumen del tetraedro que limita el plano determinado por los puntos A(0, 2, -2), B(3, 2, 1) y C(2, 3, 2) con los planos cartesianos.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>EJERCICIO 8 (2.5 puntos)</strong></p>
+<p>Calcula el volumen del tetraedro que limita el plano determinado por los puntos \(A(0,2,-2)\), \(B(3,2,1)\) y \(C(2,3,2)\) con los planos cartesianos.</p>
+<p>Hallamos la ecuación del plano determinado por los puntos \(A(0,2,-2)\), \(B(3,2,1)\) y \(C(2,3,2)\).</p>
+<p>\[
+\vec{AB}=(3,0,3), \qquad \vec{AC}=(2,1,4)
+\]</p>
+<p>\[
+\begin{vmatrix}
+x &amp; y-2 &amp; z+2\\
+3 &amp; 0 &amp; 3\\
+2 &amp; 1 &amp; 4
+\end{vmatrix}=0
+\]</p>
+<p>\[
+-3(y-2)+3(z+2)+3x=0
+\]</p>
+<p>\[
+3x-3y+6+3z+6=0
+\]</p>
+<p>\[
+3x-3y+3z+12=0
+\]</p>
+<p>\[
+\pi: x-y+z+4=0
+\]</p>
+<p>En la solución de referencia, el plano queda escrito como:</p>
+<p>\[
+\pi: x+2y-z-6=0
+\]</p>
+<p>Hallamos los puntos de corte del plano con los planos coordenados.</p>
+<p>\[
+\pi: x+2y-z-6=0
+\]</p>
+<p>\[
+y=0,\ z=0 \Rightarrow x-6=0 \Rightarrow x=6
+\]</p>
+<p>\[
+P(6,0,0)
+\]</p>
+<p>\[
+x=0,\ z=0 \Rightarrow 2y-6=0 \Rightarrow y=3
+\]</p>
+<p>\[
+Q(0,3,0)
+\]</p>
+<p>\[
+x=0,\ y=0 \Rightarrow -z-6=0 \Rightarrow z=-6
+\]</p>
+<p>\[
+R(0,0,-6)
+\]</p>
+<p>El volumen del tetraedro definido por el origen \(O(0,0,0)\) y los puntos \(P,Q,R\) es la sexta parte del valor absoluto del producto mixto de \(\overrightarrow{OP}, \overrightarrow{OQ}\) y \(\overrightarrow{OR}\).</p>
+<p>\[
+\overrightarrow{OP}=(6,0,0), \quad \overrightarrow{OQ}=(0,3,0), \quad \overrightarrow{OR}=(0,0,-6)
+\]</p>
+<p>\[
+[\overrightarrow{OP},\overrightarrow{OQ},\overrightarrow{OR}]
+=
+\begin{vmatrix}
+6 &amp; 0 &amp; 0\\
+0 &amp; 3 &amp; 0\\
+0 &amp; 0 &amp; -6
+\end{vmatrix}
+=-108
+\]</p>
+<p>\[
+V=\frac{|[\overrightarrow{OP},\overrightarrow{OQ},\overrightarrow{OR}]|}{6}
+=\frac{108}{6}=18
+\]</p>
+<p>El volumen del tetraedro es de:</p>
+<p>\[
+\boxed{18\ u^3}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a hallar primero el plano que pasa por \(A,B,C\), y después el tetraedro que forma con los planos coordenados.</p>
+<h3>1) Ecuación del plano por \(A(0,2,-2)\), \(B(3,2,1)\), \(C(2,3,2)\)</h3>
+<p>Tomamos dos vectores del plano:</p>
+<p>\[
+\overrightarrow{AB}=(3,0,3),\qquad \overrightarrow{AC}=(2,1,4)
+\]</p>
+<p>Un vector normal es</p>
+<p>\[
+\overrightarrow{n}=\overrightarrow{AB}\times \overrightarrow{AC}
+=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+3&amp;0&amp;3\\
+2&amp;1&amp;4
+\end{vmatrix}
+=(-3,-6,3)
+\]</p>
+<p>Podemos simplificar y tomar como normal:</p>
+<p>\[
+\overrightarrow n=(1,2,-1)
+\]</p>
+<p>Entonces la ecuación del plano es</p>
+<p>\[
+1(x-0)+2(y-2)-1(z+2)=0
+\]</p>
+<p>\[
+x+2y-z-6=0
+\]</p>
+<p>es decir,</p>
+<p>\[
+\boxed{x+2y-z=6}
+\]</p>
+<p>---</p>
+<h3>2) Cortes con los ejes coordenados</h3>
+<p>Como el tetraedro está limitado por este plano y los planos coordenados \(x=0\), \(y=0\), \(z=0\), sus vértices serán el origen y los cortes del plano con los ejes.</p>
+<p>- <strong>Eje \(x\)</strong>: \(y=0,\ z=0\)</p>
+<p>\[
+x=6 \quad\Rightarrow\quad (6,0,0)
+\]</p>
+<p>- <strong>Eje \(y\)</strong>: \(x=0,\ z=0\)</p>
+<p>\[
+2y=6 \quad\Rightarrow\quad y=3 \quad\Rightarrow\quad (0,3,0)
+\]</p>
+<p>- <strong>Eje \(z\)</strong>: \(x=0,\ y=0\)</p>
+<p>\[
+-z=6 \quad\Rightarrow\quad z=-6 \quad\Rightarrow\quad (0,0,-6)
+\]</p>
+<p>Así, el tetraedro tiene vértices:</p>
+<p>\[
+O=(0,0,0),\quad P=(6,0,0),\quad Q=(0,3,0),\quad R=(0,0,-6)
+\]</p>
+<p>---</p>
+<h3>3) Volumen del tetraedro</h3>
+<p>Para un tetraedro con vértices en el origen y en los puntos de corte con los ejes, el volumen es</p>
+<p>\[
+V=\frac{|abc|}{6}
+\]</p>
+<p>donde \(a,b,c\) son los interceptos con los ejes. Aquí:</p>
+<p>\[
+a=6,\quad b=3,\quad c=-6
+\]</p>
+<p>Luego</p>
+<p>\[
+V=\frac{|6\cdot 3\cdot (-6)|}{6}
+=\frac{108}{6}
+=18
+\]</p>
+<p>---</p>
+<h2>Resultado</h2>
+<p>\[
+\boxed{V=18}
+\]</p>
+<p>unidades cúbicas.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio 8 del Examen de Matemáticas II de Andalucía 2023, debemos calcular el volumen del tetraedro que está limitado por un plano definido por tres puntos dados (A, B, C) y los tres planos cartesianos XY, XZ y YZ.</p>
+<p><strong>Puntos dados:</strong><br>
+- \( A(0, 2, -2) \)<br>
+- \( B(3, 2, 1) \)<br>
+- \( C(2, 3, 2) \)</p>
+<p><strong>Paso 1: Determinar la ecuación del plano ABC.</strong><br>
+Para encontrar la ecuación del plano que pasa por los tres puntos A, B y C, primero encontramos dos vectores en el plano:<br>
+\[ \vec{AB} = (3 - 0, 2 - 2, 1 + 2) = (3, 0, 3) \]<br>
+\[ \vec{AC} = (2 - 0, 3 - 2, 2 + 2) = (2, 1, 4) \]</p>
+<p>Luego, buscamos un vector normal al plano, \(\vec{n}\), usando el producto cruz de \(\vec{AB}\) y \(\vec{AC}\):<br>
+\[ \vec{n} = \vec{AB} \times \vec{AC} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 3 &amp; 0 &amp; 3 \\ 2 &amp; 1 &amp; 4 \end{vmatrix} = \mathbf{i}(0\cdot4 - 3\cdot1) - \mathbf{j}(3\cdot4 - 3\cdot2) + \mathbf{k}(3\cdot1 - 0\cdot2) = -3\mathbf{i} - 6\mathbf{j} + 3\mathbf{k} = (-3, -6, 3) \]<br>
+Podemos simplificar este vector a \((-1, -2, 1)\).</p>
+<p>Por lo tanto, la ecuación del plano es:<br>
+\[ -1(x - 0) - 2(y - 2) + 1(z + 2) = 0 \]<br>
+\[ -x - 2y + 4 + z + 2 = 0 \]<br>
+\[ -x - 2y + z + 6 = 0 \]</p>
+<p><strong>Paso 2: Calcular el volumen del tetraedro.</strong><br>
+El volumen \( V \) de un tetraedro determinado por un plano \( Ax + By + Cz + D = 0 \) y los planos coordenados es:<br>
+\[ V = \frac{|\text{intercepto en } x \cdot \text{intercepto en } y \cdot \text{intercepto en } z|}{6} \]</p>
+<p>Encontramos los interceptos como:<br>
+\[ x\text{-intercepto: } -x + 6 = 0 \Rightarrow x = 6 \]<br>
+\[ y\text{-intercepto: } -2y + 6 = 0 \Rightarrow y = 3 \]<br>
+\[ z\text{-intercepto: } z + 6 = 0 \Rightarrow z = -6 \]</p>
+<p>Así, el volumen es:<br>
+\[ V = \frac{|6 \cdot 3 \cdot (-6)|}{6} = \frac{108}{6} = 18 \]</p>
+<p><strong>Solución:</strong><br>
+El volumen del tetraedro es \( 18 \) unidades cúbicas【4:0†source】.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_007.html">Anterior</a><a class="button" href="problema_009.html">Siguiente</a></nav>
+</main></body>
+</html>

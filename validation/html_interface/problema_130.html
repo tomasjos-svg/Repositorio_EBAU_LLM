@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 130: rioja_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 130 de 139</h1>
+<div class="meta"><span class="badge">rioja_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_129.html">Anterior</a><a class="button" href="problema_131.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>1.- (2 puntos) Sea  <br>
+\[
+f(x)=\frac{x}{(x-2)(x-1)}
+\]</p>
+<p>(i) Halla el dominio, asíntotas verticales y horizontales de la función \(f\), en caso de que existan.</p>
+<p>(ii) Halla los intervalos de crecimiento y decrecimiento, y máximos y mínimos relativos si los hubiera.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 1 - Solución oficial</strong></p>
+<p>Sea</p>
+<p>\[
+f(x)=\frac{x}{(x-2)(x-1)}
+\]</p>
+<h4>(i) Dominio, asíntotas verticales y horizontales</h4>
+<p>El dominio son todos los números reales menos los que anulan el denominador:</p>
+<p>\[
+(x-2)(x-1)=0 \Rightarrow x=2,\ x=1
+\]</p>
+<p>Por tanto, el dominio es:</p>
+<p>\[
+\mathbb{R}-\{1,2\}
+\]</p>
+<p><strong>Asíntotas verticales</strong></p>
+<p>\[
+x=a
+\]</p>
+<p>Comprobamos:</p>
+<p>\[
+\lim_{x\to 1} f(x)=\infty
+\]</p>
+<p>Luego,</p>
+<p>\[
+x=1
+\]</p>
+<p>es asíntota vertical.</p>
+<p>\[
+\lim_{x\to 2} f(x)=\infty
+\]</p>
+<p>Luego,</p>
+<p>\[
+x=2
+\]</p>
+<p>es asíntota vertical.</p>
+<p><strong>Asíntota horizontal</strong></p>
+<p>\[
+y=b
+\]</p>
+<p>\[
+b=\lim_{x\to +\infty} f(x)
+=\lim_{x\to +\infty}\frac{x}{(x-2)(x-1)}
+=\lim_{x\to +\infty}\frac{x}{x^2-3x+2}=0
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+y=0
+\]</p>
+<p>es asíntota horizontal.</p>
+<p>La función tiene dos asíntotas verticales:</p>
+<p>\[
+x=1,\quad x=2
+\]</p>
+<p>y una asíntota horizontal:</p>
+<p>\[
+y=0
+\]</p>
+<p>---</p>
+<h4>(ii) Intervalos de crecimiento y decrecimiento, máximos y mínimos relativos</h4>
+<p>Usamos la función derivada:</p>
+<p>\[
+f(x)=\frac{x}{x^2-3x+2}
+\]</p>
+<p>\[
+f&#x27;(x)=\frac{1\cdot(x^2-3x+2)-x(2x-3)}{(x^2-3x+2)^2}
+\]</p>
+<p>\[
+f&#x27;(x)=\frac{x^2-3x+2-2x^2+3x}{(x^2-3x+2)^2}
+=\frac{-x^2+2}{(x^2-3x+2)^2}
+\]</p>
+<p>\[
+f&#x27;(x)=0 \Rightarrow -x^2+2=0 \Rightarrow x^2=2 \Rightarrow x=\pm \sqrt{2}
+\]</p>
+<p>Estudiamos el signo de la derivada antes, entre y después de estos valores. Añadimos los valores excluidos del dominio.</p>
+<p>En el intervalo</p>
+<p>\[
+(-\infty,-\sqrt{2})
+\]</p>
+<p>tomamos \(x=-2\) y la derivada vale:</p>
+<p>\[
+f&#x27;(-2)&lt;0
+\]</p>
+<p>La función decrece en</p>
+<p>\[
+(-\infty,-\sqrt{2})
+\]</p>
+<p>En el intervalo</p>
+<p>\[
+(-\sqrt{2},1)
+\]</p>
+<p>tomamos \(x=0\) y la derivada vale:</p>
+<p>\[
+f&#x27;(0)&gt;0
+\]</p>
+<p>La función crece en</p>
+<p>\[
+(-\sqrt{2},1)
+\]</p>
+<p>En el intervalo</p>
+<p>\[
+(1,\sqrt{2})
+\]</p>
+<p>tomamos \(x=1.1\) y la derivada vale:</p>
+<p>\[
+f&#x27;(1.1)&gt;0
+\]</p>
+<p>La función crece en</p>
+<p>\[
+(1,\sqrt{2})
+\]</p>
+<p>En el intervalo</p>
+<p>\[
+(\sqrt{2},2)
+\]</p>
+<p>tomamos \(x=1.5\) y la derivada vale:</p>
+<p>\[
+f&#x27;(1.5)&lt;0
+\]</p>
+<p>La función decrece en</p>
+<p>\[
+(\sqrt{2},2)
+\]</p>
+<p>En el intervalo</p>
+<p>\[
+(2,+\infty)
+\]</p>
+<p>tomamos \(x=3\) y la derivada vale:</p>
+<p>\[
+f&#x27;(3)&lt;0
+\]</p>
+<p>La función decrece en</p>
+<p>\[
+(2,+\infty)
+\]</p>
+<p>La función decrece en</p>
+<p>\[
+(-\infty,-\sqrt{2})\cup(\sqrt{2},2)\cup(2,+\infty)
+\]</p>
+<p>y crece en</p>
+<p>\[
+(-\sqrt{2},1)\cup(1,\sqrt{2})
+\]</p>
+<p>La función presenta un mínimo relativo en</p>
+<p>\[
+x=-\sqrt{2}
+\]</p>
+<p>y un máximo relativo en</p>
+<p>\[
+x=\sqrt{2}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 1, procederemos analizando paso a paso cada uno de los puntos solicitados:</p>
+<h4>(i) Dominio, asíntotas verticales y horizontales</h4>
+<p>#### Dominio<br>
+El dominio de una función se refiere a todos los valores posibles para \( x \) para los cuales la función está bien definida. En el caso de la función <br>
+\[ f(x) = \frac{x}{(x-2)(x-1)}, \]<br>
+el denominador no puede ser cero porque la división por cero es indefinida. Por lo tanto, necesitamos encontrar los valores para \( x \) que hacen que el denominador sea cero:<br>
+- \( x-2 = 0 \) implica \( x = 2 \)<br>
+- \( x-1 = 0 \) implica \( x = 1 \)</p>
+<p>Por lo tanto, el dominio de \( f(x) \) es \( \mathbb{R} \setminus \{1, 2\} \), es decir, todos los números reales excepto 1 y 2.</p>
+<p>#### Asíntotas verticales<br>
+Las asíntotas verticales ocurren en los valores de \( x \) donde la función se hace infinita. Como se mencionó, \( f(x) \) se vuelve indefinida en \( x = 1 \) y \( x = 2 \); por lo tanto, estas son las asíntotas verticales:<br>
+- \( x = 1 \)<br>
+- \( x = 2 \)</p>
+<p>#### Asíntotas horizontales<br>
+Las asíntotas horizontales se determinan observando el comportamiento de \( f(x) \) cuando \( x \) tiende a infinito. En términos de grado, el numerador y el denominador tienen el mismo grado (1). El comportamiento a largo plazo de la función es dominado por los términos de mayor grado en el numerador y el denominador. Por lo tanto, la asíntota horizontal se encuentra dividiendo los coeficientes de los términos de más alto grado:<br>
+- El coeficiente principal del numerador es \( 1 \) y del denominador es \( 1 \) para \( x^2 \), luego, \( y = \frac{1}{1} = 1 \)</p>
+<p>Entonces, la asíntota horizontal es \( y = 1 \).</p>
+<h4>(ii) Intervalos de crecimiento y decrecimiento, y máximos y mínimos relativos</h4>
+<p>Para estudiar el crecimiento y los extremos locales de \( f(x) \), calculamos la primera derivada \( f&#x27;(x) \):<br>
+\[ f&#x27;(x) = \frac{d}{dx}\left(\frac{x}{(x-2)(x-1)}\right) \]</p>
+<p>Usando la regla del producto para la derivación de una función cociente:<br>
+\[ f&#x27;(x) = \frac{(x-2)(x-1) \cdot 1 - x \cdot ((x-1) + (x-2))}{(x-2)^2(x-1)^2} \]<br>
+\[ f&#x27;(x) = \frac{x^2 - 3x + 2 - (2x^2 - 6x + 2)}{(x-2)^2(x-1)^2} \]<br>
+\[ f&#x27;(x) = \frac{-x^2 + 3x}{(x-2)^2(x-1)^2} \]</p>
+<p>De aquí, encontramos que el signo de \( f&#x27;(x) \) se determina principalmente por el numerador \( -x^2 + 3x \), lo que podemos expresar como \( x(3-x) \). La derivada es cero cuando \( x = 0 \) y \( x = 3 \), lo que sugiere puntos críticos o posibles extremos en estos puntos.</p>
+<p>- Para \( x &lt; 0 \), \( f&#x27;(x) &gt; 0 \) (creciente)<br>
+- Para \( 0 &lt; x &lt; 1 \), \( f&#x27;(x) &gt; 0 \) (creciente)<br>
+- Para \( 1 &lt; x &lt; 2 \), \( f&#x27;(x) &gt; 0 \) (creciente)<br>
+- Para \( 2 &lt; x &lt; 3 \), \( f&#x27;(x) &lt; 0 \) (decreciente)<br>
+- Para \( x &gt; 3 \), \( f&#x27;(x) &gt; 0 \) (creciente)</p>
+<p>Los puntos \( x = 0 \) y \( x = 3 \) son máximos locales porque la derivada cambia de positivo a negativo y de negativo a positivo, respectivamente.</p>
+<p>Así, se puede concluir que:<br>
+- Hay un máximo local en \( x = 0 \).<br>
+- Hay otro cambio en el comportamiento cerca de \( x = 3 \).</p>
+<p>Esto completa la solución al ejercicio 1 según lo solicitado en el enunciado.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el <strong>ejercicio 1</strong> para</p>
+<p>\[
+f(x)=\frac{x}{(x-2)(x-1)}.
+\]</p>
+<p>---</p>
+<h3>(i) Dominio y asíntotas</h3>
+<h4>Dominio</h4>
+La función racional no está definida cuando el denominador se anula:
+<p>\[
+(x-2)(x-1)=0 \quad \Longrightarrow \quad x=1,\;x=2.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{D_f=\mathbb{R}\setminus\{1,2\}}.
+\]</p>
+<p>---</p>
+<h4>Asíntotas verticales</h4>
+Hay asíntotas verticales en los ceros del denominador que no anulan el numerador. Como
+<p>- en \(x=1\), el numerador vale \(1\neq 0\),<br>
+- en \(x=2\), el numerador vale \(2\neq 0\),</p>
+<p>entonces:</p>
+<p>\[
+\boxed{x=1 \text{ y } x=2 \text{ son asíntotas verticales}.}
+\]</p>
+<p>Además, los límites laterales son:</p>
+<p>- Al acercarnos a \(x=1\):<br>
+  \[
+  \lim_{x\to 1^-}f(x)=+\infty,\qquad \lim_{x\to 1^+}f(x)=-\infty.
+  \]</p>
+<p>- Al acercarnos a \(x=2\):<br>
+  \[
+  \lim_{x\to 2^-}f(x)=-\infty,\qquad \lim_{x\to 2^+}f(x)=+\infty.
+  \]</p>
+<p>---</p>
+<h4>Asíntota horizontal</h4>
+Como el grado del numerador es \(1\) y el del denominador es \(2\), se tiene
+<p>\[
+\lim_{x\to\pm\infty}\frac{x}{(x-2)(x-1)}=0.
+\]</p>
+<p>Luego la asíntota horizontal es</p>
+<p>\[
+\boxed{y=0}.
+\]</p>
+<p>---</p>
+<h3>(ii) Crecimiento, decrecimiento y extremos relativos</h3>
+<h4>Derivada</h4>
+Derivamos usando la regla del cociente:
+<p>\[
+f&#x27;(x)=\frac{[(x-2)(x-1)]\cdot 1 - x[(x-2)(x-1)]&#x27;}{[(x-2)(x-1)]^2}.
+\]</p>
+<p>Como</p>
+<p>\[
+(x-2)(x-1)=x^2-3x+2,\qquad \frac{d}{dx}(x^2-3x+2)=2x-3,
+\]</p>
+<p>queda</p>
+<p>\[
+f&#x27;(x)=\frac{x^2-3x+2-x(2x-3)}{(x^2-3x+2)^2}
+=\frac{2-x^2}{(x^2-3x+2)^2}.
+\]</p>
+<p>Equivalentemente,</p>
+<p>\[
+\boxed{f&#x27;(x)=\frac{2-x^2}{(x-2)^2(x-1)^2}}.
+\]</p>
+<p>---</p>
+<h4>Signo de la derivada</h4>
+El denominador es siempre positivo en el dominio, así que el signo de \(f&#x27;(x)\) depende de
+<p>\[
+2-x^2.
+\]</p>
+<p>- \(f&#x27;(x)&gt;0\) si \(x^2&lt;2\), es decir, si \(-\sqrt2&lt;x&lt;\sqrt2\).<br>
+- \(f&#x27;(x)&lt;0\) si \(x^2&gt;2\), es decir, si \(x&lt;-\sqrt2\) o \(x&gt;\sqrt2\).</p>
+<p>Teniendo en cuenta que la función no está definida en \(x=1\) ni en \(x=2\), los intervalos son:</p>
+<p>- <strong>Decreciente</strong> en<br>
+  \[
+  \boxed{(-\infty,-\sqrt2),\quad (\sqrt2,2),\quad (2,\infty)}.
+  \]</p>
+<p>- <strong>Creciente</strong> en<br>
+  \[
+  \boxed{(-\sqrt2,1),\quad (1,\sqrt2)}.
+  \]</p>
+<p>---</p>
+<h4>Máximos y mínimos relativos</h4>
+<p>Los puntos críticos del dominio vienen de</p>
+<p>\[
+f&#x27;(x)=0 \iff 2-x^2=0 \iff x=\pm\sqrt2.
+\]</p>
+<p>#### En \(x=-\sqrt2\)<br>
+La derivada cambia de negativa a positiva, luego hay <strong>mínimo relativo</strong>.</p>
+<p>Su valor es:</p>
+<p>\[
+f(-\sqrt2)=\frac{-\sqrt2}{(-\sqrt2-2)(-\sqrt2-1)}=2\sqrt2-3.
+\]</p>
+<p>Entonces:</p>
+<p>\[
+\boxed{\text{Mínimo relativo en }x=-\sqrt2,\quad f(-\sqrt2)=2\sqrt2-3.}
+\]</p>
+<p>#### En \(x=\sqrt2\)<br>
+La derivada cambia de positiva a negativa, luego hay <strong>máximo relativo</strong>.</p>
+<p>Su valor es:</p>
+<p>\[
+f(\sqrt2)=\frac{\sqrt2}{(\sqrt2-2)(\sqrt2-1)}=-3-2\sqrt2.
+\]</p>
+<p>Entonces:</p>
+<p>\[
+\boxed{\text{Máximo relativo en }x=\sqrt2,\quad f(\sqrt2)=-3-2\sqrt2.}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<h4>(i)</h4>
+- <strong>Dominio</strong>:
+  \[
+  \boxed{\mathbb{R}\setminus\{1,2\}}
+  \]
+- <strong>Asíntotas verticales</strong>:
+  \[
+  \boxed{x=1,\quad x=2}
+  \]
+- <strong>Asíntota horizontal</strong>:
+  \[
+  \boxed{y=0}
+  \]
+<h4>(ii)</h4>
+- <strong>Creciente</strong> en:
+  \[
+  \boxed{(-\sqrt2,1)\cup(1,\sqrt2)}
+  \]
+- <strong>Decreciente</strong> en:
+  \[
+  \boxed{(-\infty,-\sqrt2)\cup(\sqrt2,2)\cup(2,\infty)}
+  \]
+- <strong>Mínimo relativo</strong>:
+  \[
+  \boxed{(-\sqrt2,\;2\sqrt2-3)}
+  \]
+- <strong>Máximo relativo</strong>:
+  \[
+  \boxed{(\sqrt2,\;-3-2\sqrt2)}
+  \]
+<p>Si quieres, también puedo dibujarte un <strong>esquema de variación</strong> de la función.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_129.html">Anterior</a><a class="button" href="problema_131.html">Siguiente</a></nav>
+</main></body>
+</html>

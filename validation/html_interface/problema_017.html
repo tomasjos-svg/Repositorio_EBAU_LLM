@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 17: aragon_2023 9</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 17 de 139</h1>
+<div class="meta"><span class="badge">aragon_2023</span> &nbsp; Ejercicio 9</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_016.html">Anterior</a><a class="button" href="problema_018.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>9) Si los vectores \(\{u, v, w\}\) son linealmente independientes,</p>
+<p>a) (1 punto) Comprueba si los vectores \(\{r, s, t\}\) son linealmente dependientes o independientes, siendo  <br>
+\[
+r = 2u + w,\quad s = u + v - w,\quad t = 3u - v + w.
+\]</p>
+<p>b) (1 punto) Si además, los vectores \(\{u, v, w\}\) son ortogonales y unitarios, calcula razonadamente  <br>
+\[
+r\cdot u + s\cdot v + t\cdot w
+\]<br>
+donde \(\cdot\) representa el producto escalar de dos vectores.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>9)</strong> Si los vectores \(\vec u,\vec v,\vec w\) son linealmente independientes,</p>
+<h4>a)</h4>
+<p>Comprobamos si el producto mixto de los vectores es nulo o no.</p>
+<p>\[
+\vec r=2\vec u+\vec w \Rightarrow \vec r=(2,0,1)
+\]</p>
+<p>\[
+\vec s=\vec u+\vec v-\vec w \Rightarrow \vec s=(1,1,-1)
+\]</p>
+<p>\[
+\vec t=3\vec u-\vec v+\vec w \Rightarrow \vec t=(3,-1,1)
+\]</p>
+<p>\[
+[\vec r,\vec s,\vec t]=
+\begin{vmatrix}
+2&amp;0&amp;1\\
+1&amp;1&amp;-1\\
+3&amp;-1&amp;1
+\end{vmatrix}
+=2+0-1+3-0+2=6\neq 0
+\]</p>
+<p>Los vectores \(\vec r,\vec s,\vec t\) son linealmente independientes.</p>
+<p>---</p>
+<h4>b)</h4>
+<p>\[
+\vec u\cdot \vec r+\vec v\cdot \vec s+\vec w\cdot \vec t
+\]</p>
+<p>\[
+=\vec u\cdot(2\vec u+\vec w)+\vec v\cdot(\vec u+\vec v-\vec w)+\vec w\cdot(3\vec u-\vec v+\vec w)
+\]</p>
+<p>\[
+=2\vec u\cdot\vec u+\vec u\cdot\vec w+\vec v\cdot\vec u+\vec v\cdot\vec v-\vec v\cdot\vec w+3\vec w\cdot\vec u-\vec w\cdot\vec v+\vec w\cdot\vec w
+\]</p>
+<p>Por ser unitarios:</p>
+<p>\[
+\vec u\cdot\vec u=1,\quad \vec v\cdot\vec v=1,\quad \vec w\cdot\vec w=1
+\]</p>
+<p>Por ser ortogonales:</p>
+<p>\[
+\vec u\cdot\vec w=0,\quad \vec v\cdot\vec u=0,\quad \vec v\cdot\vec w=0,\quad \vec w\cdot\vec u=0,\quad \vec w\cdot\vec v=0
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+2+0+0+1-0+0-0+1=4
+\]</p>
+<p>\[
+\boxed{4}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver los dos apartados.</p>
+<p>---</p>
+<h3>a) ¿Son \(\{r,s,t\}\) linealmente dependientes o independientes?</h3>
+<p>Dado:<br>
+\[
+r=2u+w,\qquad s=u+v-w,\qquad t=3u-v+w
+\]<br>
+y sabiendo que \(\{u,v,w\}\) es un conjunto linealmente independiente.</p>
+<p>Para estudiar si \(\{r,s,t\}\) es independiente, planteamos:<br>
+\[
+\alpha r+\beta s+\gamma t=0
+\]<br>
+y sustituimos \(r,s,t\):</p>
+<p>\[
+\alpha(2u+w)+\beta(u+v-w)+\gamma(3u-v+w)=0
+\]</p>
+<p>Agrupando coeficientes de \(u,v,w\):<br>
+\[
+(2\alpha+\beta+3\gamma)u+(\beta-\gamma)v+(\alpha-\beta+\gamma)w=0
+\]</p>
+<p>Como \(\{u,v,w\}\) es linealmente independiente, sus coeficientes deben ser cero:</p>
+<p>\[
+\begin{cases}
+2\alpha+\beta+3\gamma=0\\
+\beta-\gamma=0\\
+\alpha-\beta+\gamma=0
+\end{cases}
+\]</p>
+<p>De la segunda ecuación:<br>
+\[
+\beta=\gamma
+\]</p>
+<p>Sustituyendo en la tercera:<br>
+\[
+\alpha-\beta+\beta=0 \Rightarrow \alpha=0
+\]</p>
+<p>Sustituyendo en la primera:<br>
+\[
+0+\beta+3\beta=0 \Rightarrow 4\beta=0 \Rightarrow \beta=0
+\]<br>
+y entonces<br>
+\[
+\gamma=0
+\]</p>
+<p>La única solución es<br>
+\[
+\alpha=\beta=\gamma=0
+\]</p>
+<h4>Conclusión</h4>
+\[
+\boxed{\{r,s,t\}\text{ es un conjunto linealmente independiente}}
+\]
+<p>---</p>
+<h3>b) Calcular \(r\cdot u+s\cdot v+t\cdot w\)</h3>
+<p>Ahora además \(\{u,v,w\}\) es un conjunto <strong>ortogonal y unitario</strong>, es decir:<br>
+\[
+u\cdot u=v\cdot v=w\cdot w=1,\qquad
+u\cdot v=u\cdot w=v\cdot w=0
+\]</p>
+<p>Calculamos cada producto escalar:</p>
+<h4>1. \(r\cdot u\)</h4>
+\[
+r\cdot u=(2u+w)\cdot u=2(u\cdot u)+(w\cdot u)=2\cdot1+0=2
+\]
+<h4>2. \(s\cdot v\)</h4>
+\[
+s\cdot v=(u+v-w)\cdot v=(u\cdot v)+(v\cdot v)-(w\cdot v)=0+1-0=1
+\]
+<h4>3. \(t\cdot w\)</h4>
+\[
+t\cdot w=(3u-v+w)\cdot w=3(u\cdot w)-(v\cdot w)+(w\cdot w)=0-0+1=1
+\]
+<p>Sumando:<br>
+\[
+r\cdot u+s\cdot v+t\cdot w=2+1+1=4
+\]</p>
+<h4>Resultado</h4>
+\[
+\boxed{r\cdot u+s\cdot v+t\cdot w=4}
+\]
+<p>---</p>
+<h3>Respuesta final</h3>
+<p>- <strong>a)</strong> Los vectores \(\{r,s,t\}\) son <strong>linealmente independientes</strong>.<br>
+- <strong>b)</strong> <br>
+\[
+\boxed{r\cdot u+s\cdot v+t\cdot w=4}
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el ejercicio 9 presentado en el documento.</p>
+<h4>Parte a)</h4>
+<p><strong>Objetivo:</strong> Verificar si los vectores \(\{r, s, t\}\) son linealmente dependientes o independientes.</p>
+<p>Dado que los vectores \(\{u, v, w\}\) son linealmente independientes, ningún vector en este conjunto puede ser representado como una combinación lineal de los otros.</p>
+<p>Los vectores \(r, s, t\) se definen como:<br>
+\[
+r = 2u + w, \quad s = u + v - w, \quad t = 3u - v + w
+\]</p>
+<p>Para determinar si \(\{r, s, t\}\) son linealmente dependientes, necesitamos verificar si la ecuación \( \alpha r + \beta s + \gamma t = 0 \) tiene solamente la solución trivial \( \alpha = \beta = \gamma = 0 \).</p>
+<p>Sustituyendo \(r\), \(s\), y \(t\) en la ecuación, tenemos:<br>
+\[
+\alpha(2u + w) + \beta(u + v - w) + \gamma(3u - v + w) = 0
+\]<br>
+Expresando los términos en forma de componentes, obtenemos:<br>
+\[
+(2\alpha + \beta + 3\gamma)u + (\beta - \gamma)v + (\alpha - \beta + \gamma)w = 0
+\]</p>
+<p>Dado que \(\{u, v, w\}\) son linealmente independientes, la única solución a esto es que los coeficientes de \(u\), \(v\) y \(w\) sean cero:<br>
+1. \(2\alpha + \beta + 3\gamma = 0\)<br>
+2. \(\beta - \gamma = 0\)<br>
+3. \(\alpha - \beta + \gamma = 0\)</p>
+<p>De la segunda ecuación, \(\beta = \gamma\). Sustituyendo en la primera y tercera ecuación:<br>
+\[
+2\alpha + \gamma + 3\gamma = 0  \Rightarrow  2\alpha + 4\gamma = 0  \Rightarrow  \alpha + 2\gamma = 0  \Rightarrow  \alpha = -2\gamma
+\]<br>
+\[
+-2\gamma - \gamma + \gamma = 0 \Rightarrow -2\gamma = 0 \Rightarrow \gamma = 0 \Rightarrow \beta = \gamma = 0 \Rightarrow \alpha = 0
+\]</p>
+<p>La única solución es \( \alpha = \beta = \gamma = 0 \), por lo que los vectores \(\{r, s, t\}\) son linealmente independientes.</p>
+<h4>Parte b)</h4>
+<p><strong>Objetivo:</strong> Calcular \( r\cdot u + s\cdot v + t\cdot w \) asumiendo que \(\{u, v, w\}\) son ortogonales y unitarios.</p>
+<p>Dado que los vectores son ortogonales, \( u \cdot v = u \cdot w = v \cdot w = 0 \), y como son unitarios, \( u \cdot u = v \cdot v = w \cdot w = 1 \).</p>
+<p>Primero, calculamos \( r\cdot u \), \( s\cdot v \), y \( t\cdot w \):<br>
+\[
+r\cdot u = (2u + w) \cdot u = 2(u\cdot u) + w\cdot u = 2 \cdot 1 + 0 = 2
+\]<br>
+\[
+s\cdot v = (u + v - w) \cdot v = u\cdot v + v \cdot v - w\cdot v = 0 + 1 - 0 = 1
+\]<br>
+\[
+t\cdot w = (3u - v + w) \cdot w = 3(u \cdot w) - v \cdot w + w \cdot w = 0 - 0 + 1 = 1
+\]</p>
+<p>Finalmente, sumando los resultados obtenidos:<br>
+\[
+r\cdot u + s\cdot v + t\cdot w = 2 + 1 + 1 = 4
+\]</p>
+<p>Por tanto, \( r\cdot u + s\cdot v + t\cdot w = 4 \).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_016.html">Anterior</a><a class="button" href="problema_018.html">Siguiente</a></nav>
+</main></body>
+</html>

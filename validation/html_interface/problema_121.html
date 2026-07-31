@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 121: pais_vasco_2023 A2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 121 de 139</h1>
+<div class="meta"><span class="badge">pais_vasco_2023</span> &nbsp; Ejercicio A2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_120.html">Anterior</a><a class="button" href="problema_122.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio A2</p>
+<p>Sean la recta r y el plano π, que se cortan perpendicularmente en el punto P(1, -1, 2). Si el plano π pasa por el punto Q(1, 2, 3) y contiene al vector (0, 0, 2), calcula las ecuaciones de la recta r y del plano π.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio A2</strong></p>
+<p>Sea la recta \(r\) y el plano \(\pi\), que se cortan perpendicularmente en el punto \(P(1,-1,2)\). Si el plano \(\pi\) pasa por el punto \(Q(1,2,3)\) y contiene al vector \((0,0,2)\), calcula las ecuaciones de la recta \(r\) y del plano \(\pi\).</p>
+<p><strong>Solución oficial:</strong></p>
+<p>Hallamos la ecuación del plano.</p>
+<p>El plano \(\pi\) pasa por el punto \(Q(1,2,3)\), por el punto \(P(1,-1,2)\) y contiene al vector \((0,0,2)\).</p>
+<p>\[
+\overrightarrow{PQ}=Q-P=(1,2,3)-(1,-1,2)=(0,3,1)
+\]</p>
+<p>\[
+v=(0,0,2)
+\]</p>
+<p>\[
+\pi:
+\begin{vmatrix}
+x-1 &amp; y+1 &amp; z-2\\
+0 &amp; 3 &amp; 1\\
+0 &amp; 0 &amp; 2
+\end{vmatrix}
+=0
+\]</p>
+<p>\[
+(x-1)\cdot 6=0 \Rightarrow x-1=0
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{\pi: x=1}
+\]</p>
+<p>Hallamos la ecuación de la recta.</p>
+<p>La recta \(r\) contiene el punto \(P(1,-1,2)\) y tiene como vector director el vector normal del plano \(\pi\).</p>
+<p>\[
+n_\pi=(1,0,0)
+\]</p>
+<p>\[
+r:
+\begin{cases}
+x=1+\lambda\\
+y=-1\\
+z=2
+\end{cases}
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{r:\ \begin{cases}
+x=1+\lambda\\
+y=-1\\
+z=2
+\end{cases}}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea \(P(1,-1,2)\) el punto de corte entre la recta \(r\) y el plano \(\pi\).</p>
+<h3>1) Hallar el plano \(\pi\)</h3>
+<p>Como \(P\in \pi\) y \(Q(1,2,3)\in \pi\), un vector del plano es</p>
+<p>\[
+\overrightarrow{PQ}=Q-P=(1-1,\;2-(-1),\;3-2)=(0,3,1).
+\]</p>
+<p>Además, el plano contiene al vector</p>
+<p>\[
+\vec v=(0,0,2).
+\]</p>
+<p>Por tanto, dos vectores directores de \(\pi\) son</p>
+<p>\[
+(0,3,1)\quad \text{y}\quad (0,0,2).
+\]</p>
+<p>Un vector normal al plano se obtiene con el producto vectorial:</p>
+<p>\[
+\vec n=(0,3,1)\times(0,0,2)=(6,0,0).
+\]</p>
+<p>Podemos tomar como normal \(\vec n=(1,0,0)\).</p>
+<p>Entonces, la ecuación del plano que pasa por \(P(1,-1,2)\) es</p>
+<p>\[
+(1,0,0)\cdot (x-1,\;y+1,\;z-2)=0,
+\]</p>
+<p>es decir,</p>
+<p>\[
+x-1=0.
+\]</p>
+<h4>Ecuación del plano:</h4>
+\[
+\boxed{\pi:\ x=1}
+\]
+<p>---</p>
+<h3>2) Hallar la recta \(r\)</h3>
+<p>La recta \(r\) es perpendicular al plano \(\pi\), así que su vector director es un vector normal del plano:</p>
+<p>\[
+\vec d_r=(1,0,0).
+\]</p>
+<p>Y como pasa por \(P(1,-1,2)\), sus ecuaciones paramétricas son</p>
+<p>\[
+\boxed{
+r:\begin{cases}
+x=1+t\\
+y=-1\\
+z=2
+\end{cases}\quad t\in\mathbb R
+}
+\]</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p>\[
+\boxed{\pi:\ x=1}
+\]</p>
+<p>\[
+\boxed{
+r:\begin{cases}
+x=1+t\\
+y=-1\\
+z=2
+\end{cases}\quad t\in\mathbb R
+}
+\]</p>
+<p>Si quieres, también puedo dar la ecuación del plano en forma vectorial o la recta en forma continua.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio A2, comenzaremos por calcular la ecuación del plano \( \pi \) y luego usaremos esos resultados para hallar la ecuación de la recta \( r \).</p>
+<h4>Paso 1: Ecuación del plano \( \pi \)</h4>
+<p>El plano \( \pi \) se define por dos vectores y un punto por el que pasa. El enunciado nos proporciona que el plano pasa por los puntos \( P(1, -1, 2) \) y \( Q(1, 2, 3) \), y contiene al vector \( (0, 0, 2) \).</p>
+<p>Primero, calculamos el vector dirección \( \overrightarrow{PQ} \) que está dado por:<br>
+\[ \overrightarrow{PQ} = Q - P = (1 - 1, 2 - (-1), 3 - 2) = (0, 3, 1) \]</p>
+<p>Ahora, tenemos dos vectores en el plano \( \pi \): \( \overrightarrow{PQ} = (0, 3, 1) \) y otro dado en el enunciado, \( (0, 0, 2) \). <br>
+Para encontrar la normal al plano, calculamos el producto cruz de estos dos vectores:<br>
+\[ \overrightarrow{n} = (0, 3, 1) \times (0, 0, 2) = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 0 &amp; 3 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{vmatrix} \]<br>
+\[ = \mathbf{i}(3 \cdot 2 - 0 \cdot 1) - \mathbf{j}(0 \cdot 2 - 0 \cdot 1) + \mathbf{k}(0 \cdot 0 - 3 \cdot 0) \]<br>
+\[ = 6 \mathbf{i} + 0 \mathbf{j} + 0 \mathbf{k} = (6, 0, 0) \]</p>
+<p>Podemos simplificar este vector a \( \overrightarrow{n} = (1, 0, 0) \).</p>
+<p>La ecuación general del plano es de la forma:<br>
+\[ n_x(x - x_0) + n_y(y - y_0) + n_z(z - z_0) = 0 \]<br>
+Donde \( (x_0, y_0, z_0) \) son las coordenadas de un punto por el plano y \( (n_x, n_y, n_z) \) las componentes del vector normal.</p>
+<p>Usando el punto \( P(1, -1, 2) \) y la normal \( (1, 0, 0) \):<br>
+\[ 1(x - 1) + 0(y + 1) + 0(z - 2) = 0 \]<br>
+\[ x - 1 = 0 \]<br>
+\[ x = 1 \]</p>
+<h4>Paso 2: Ecuación de la recta \( r \)</h4>
+<p>Sabemos que la recta \( r \) es perpendicular al plano \( \pi \), por lo tanto, el vector director de \( r \) es paralelo al vector normal del plano \( \pi \). Por lo tanto, el vector director de \( r \) también es \( (1, 0, 0) \).</p>
+<p>La ecuación paramétrica de la recta que pasa por el punto \( P \) con vector director \( (1, 0, 0) \) es:<br>
+\[ x = 1 + 1t \]<br>
+\[ y = -1 + 0t \]<br>
+\[ z = 2 + 0t \]</p>
+<p>Simplificando:<br>
+\[ x = 1 + t \]<br>
+\[ y = -1 \]<br>
+\[ z = 2 \]</p>
+<h4>Resumen</h4>
+La ecuación del plano \( \pi \) es \( x = 1 \) y la de la recta \( r \) es dada por:
+\[ x = 1 + t \]
+\[ y = -1 \]
+\[ z = 2 \]
+<p>Esta solución utiliza la información proporcionada para derivar lógicamente las ecuaciones solicitadas, aplicando conceptos básicos de geometría en el espacio como el producto cruz y el uso de puntos y vectores para definir planos y rectas.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_120.html">Anterior</a><a class="button" href="problema_122.html">Siguiente</a></nav>
+</main></body>
+</html>

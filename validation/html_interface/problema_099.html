@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 99: lamancha_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 99 de 139</h1>
+<div class="meta"><span class="badge">lamancha_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_098.html">Anterior</a><a class="button" href="problema_100.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p><strong>8.</strong>  <br>
+<strong>a) [1,25 puntos]</strong> Sabiendo que</p>
+<p>\[
+\begin{vmatrix}
+1 &amp; 3 &amp; 5\\
+a &amp; b &amp; c\\
+x &amp; y &amp; z
+\end{vmatrix}=6
+\quad \text{con } a,b,c,x,y,z\in\mathbb{R},
+\]</p>
+<p>calcula el valor de</p>
+<p>\[
+\begin{vmatrix}
+1-2 &amp; 3-2 &amp; 5-2\\
+a+2 &amp; b+6 &amp; c+10\\
+4x &amp; 4y &amp; 4z
+\end{vmatrix}
+\]</p>
+<p>e indica en cada paso las propiedades que utilizas.</p>
+<p><strong>b) [1,25 puntos]</strong> Calcula el ángulo que forman los vectores</p>
+<p>\[
+\vec u=(1,1,1) \quad \text{y} \quad \vec v=(3,2,3).
+\]</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 8. Solución oficial</strong></p>
+<p>a) Aplicando las propiedades de los determinantes:</p>
+<p>\[
+\begin{vmatrix}
+1/2 &amp; 3/2 &amp; 5/2\\
+a+2 &amp; b+6 &amp; c+10\\
+4x &amp; 4y &amp; 4z
+\end{vmatrix}
+=
+\begin{vmatrix}
+1/2 &amp; 3/2 &amp; 5/2\\
+a &amp; b &amp; c\\
+4x &amp; 4y &amp; 4z
+\end{vmatrix}
++
+\begin{vmatrix}
+1/2 &amp; 3/2 &amp; 5/2\\
+2 &amp; 6 &amp; 10\\
+4x &amp; 4y &amp; 4z
+\end{vmatrix}
+\]</p>
+<p>\[
+=
+\frac{4}{2}
+\begin{vmatrix}
+1 &amp; 3 &amp; 5\\
+a &amp; b &amp; c\\
+x &amp; y &amp; z
+\end{vmatrix}
++
+\frac{4}{2}
+\begin{vmatrix}
+1 &amp; 3 &amp; 5\\
+2 &amp; 6 &amp; 10\\
+x &amp; y &amp; z
+\end{vmatrix}
+=
+2\cdot 6 + 2\cdot 0 = 12.
+\]</p>
+<p><strong>Criterios de corrección:</strong>  <br>
+Realizar todas las operaciones intermedias correctamente, 1 punto; obtener la solución correcta, 0,25 puntos.</p>
+<p>b) El coseno del ángulo formado por dos vectores es:</p>
+<p>\[
+\cos(\theta)=\frac{|\vec u\cdot \vec v|}{|\vec u|\,|\vec v|}
+=
+\frac{|3+2+3|}{\sqrt{1+1+1}\sqrt{3^2+2^2+3^2}}
+=
+\frac{8}{\sqrt{3}\sqrt{22}}
+=0,98.
+\]</p>
+<p>Entonces,</p>
+<p>\[
+\theta=\arccos(0,98)=0,20 \text{ radianes}=11,46^\circ.
+\]</p>
+<p><strong>Criterios de corrección:</strong>  <br>
+Plantear el problema, 0,5 puntos; obtener el producto escalar, 0,25 puntos; calcular la norma de los dos vectores, 0,25 puntos; obtener el ángulo, 0,25 puntos.</p></section>
+<section class="card"><h2>Respuesta A</h2><p><strong>Solución del Ejercicio 8</strong></p>
+<p><strong>Apartado a)</strong></p>
+<p>Queremos calcular el valor del determinante de la siguiente matriz:</p>
+<p>\[
+\begin{vmatrix}
+-1 &amp; 1 &amp; 3\\
+a+2 &amp; b+6 &amp; c+10\\
+4x &amp; 4y &amp; 4z
+\end{vmatrix}
+\]</p>
+<p>Primero, utilizamos la propiedad lineal de los determinantes respecto a la multiplicación por un escalar de una fila. En la tercera fila, todos los elementos han sido multiplicados por 4:</p>
+<p>\[
+\begin{vmatrix}
+-1 &amp; 1 &amp; 3\\
+a+2 &amp; b+6 &amp; c+10\\
+4x &amp; 4y &amp; 4z
+\end{vmatrix}
+= 4 \begin{vmatrix}
+-1 &amp; 1 &amp; 3\\
+a+2 &amp; b+6 &amp; c+10\\
+x &amp; y &amp; z
+\end{vmatrix}
+\]</p>
+<p>Luego, observamos las modificaciones en la primera fila. Se puede obtener mediante la primera fila de la matriz original mediante:</p>
+<p>- Restar 2 a cada elemento de la primera fila del determinante original.</p>
+<p>Utilizamos la propiedad que nos indica que restar o sumar a una fila un múltiplo de otra fila no cambia el valor del determinante. En este caso, podríamos pensar en restar 2 veces el segundo elemento y sumar 2 veces el primero más un múltiplo del tercer elemento.</p>
+<p>Sin embargo, un acercamiento más sencillo sería modificar cada elemento de la fila de forma independiente y luego considerar las modificaciones en el resultado. La relación \((-1, 1, 3)\) se puede obtener de \((1, 3, 5)\) si multiplicamos la primera fila por -1, luego sumamos dos veces el tercer elemento a la primera y sustraemos un múltiplo de él (2 veces) a la segunda. Por lo tanto:</p>
+<p>- La primera fila obtenida sería simplemente -1 veces la original más modificaciones, pero las modificaciones están diseñadas para no cambiar el valor determinante, ya que se compensan.</p>
+<p>La modificación sobre la primera fila se puede expresar mediante:<br>
+\[
+\begin{vmatrix}
+1 &amp; 3 &amp; 5
+\end{vmatrix}
+\rightarrow
+-1 \begin{vmatrix}
+1 &amp; 3 &amp; 5
+\end{vmatrix}
+\]</p>
+<p>Ahora, la matriz reducida sería:<br>
+\[
+4 (-1) \begin{vmatrix}
+1 &amp; 3 &amp; 5\\
+a+2 &amp; b+6 &amp; c+10\\
+x &amp; y &amp; z
+\end{vmatrix}
+\]</p>
+<p>Debido a que sumar un múltiplo de una fila a otra no cambia el valor del determinante, las sumas en la segunda fila no afectan el resultado:<br>
+\[
+= -4 \begin{vmatrix}
+1 &amp; 3 &amp; 5\\
+a &amp; b &amp; c\\
+x &amp; y &amp; z
+\end{vmatrix}
+\]</p>
+<p>Dado que el determinante original es 6, entonces:<br>
+\[
+-4 \cdot 6 = -24
+\]</p>
+<p>El valor del determinante es \(-24\).</p>
+<p><strong>Apartado b)</strong></p>
+<p>Para calcular el ángulo que forman los vectores \(\vec{u} = (1, 1, 1)\) y \(\vec{v} = (3, 2, 3)\), utilizamos la fórmula del producto escalar y la magnitud de los vectores.</p>
+<p>El producto escalar de \(\vec{u}\) y \(\vec{v}\) es:<br>
+\[
+\vec{u} \cdot \vec{v} = 1 \cdot 3 + 1 \cdot 2 + 1 \cdot 3 = 3 + 2 + 3 = 8
+\]</p>
+<p>Las magnitudes de \(\vec{u}\) y \(\vec{v}\) son:<br>
+\[
+|\vec{u}| = \sqrt{1^2 + 1^2 + 1^2} = \sqrt{3}
+\]<br>
+\[
+|\vec{v}| = \sqrt{3^2 + 2^2 + 3^2} = \sqrt{22}
+\]</p>
+<p>El ángulo \(\theta\) entre \(\vec{u}\) y \(\vec{v}\) viene dado por:<br>
+\[
+\cos\theta = \frac{\vec{u} \cdot \vec{v}}{|\vec{u}| |\vec{v}|} = \frac{8}{\sqrt{3} \sqrt{22}} = \frac{8}{\sqrt{66}}
+\]</p>
+<p>El ángulo \(\theta\) es entonces:<br>
+\[
+\theta = \cos^{-1}\left(\frac{8}{\sqrt{66}}\right)
+\]</p>
+<p>Estos son los pasos para resolver el ejercicio completo 8.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Voy a resolver los dos apartados.  <br>
+<strong>Importante:</strong> en el <strong>apartado a)</strong>, con el enunciado tal como está escrito, <strong>no se puede obtener un valor numérico único</strong>; lo justifico abajo.</p>
+<p>---</p>
+<h3>8.a)</h3>
+<p>Sea</p>
+<p>\[
+D=\begin{vmatrix}
+1 &amp; 3 &amp; 5\\
+a &amp; b &amp; c\\
+x &amp; y &amp; z
+\end{vmatrix}=6.
+\]</p>
+<p>Queremos calcular</p>
+<p>\[
+\Delta=
+\begin{vmatrix}
+1-2 &amp; 3-2 &amp; 5-2\\
+a+2 &amp; b+6 &amp; c+10\\
+4x &amp; 4y &amp; 4z
+\end{vmatrix}.
+\]</p>
+<p>Primero simplificamos la primera fila:</p>
+<p>\[
+\Delta=
+\begin{vmatrix}
+-1 &amp; 1 &amp; 3\\
+a+2 &amp; b+6 &amp; c+10\\
+4x &amp; 4y &amp; 4z
+\end{vmatrix}.
+\]</p>
+<h4>Paso 1: sacar factor común de la tercera fila</h4>
+Como la tercera fila está multiplicada por \(4\),
+<p>\[
+\Delta=4
+\begin{vmatrix}
+-1 &amp; 1 &amp; 3\\
+a+2 &amp; b+6 &amp; c+10\\
+x &amp; y &amp; z
+\end{vmatrix}.
+\]</p>
+<h4>Paso 2: escribir las filas en función de las originales</h4>
+Si llamamos
+<p>\[
+R_1=(1,3,5),\qquad R_2=(a,b,c),\qquad R_3=(x,y,z),\qquad E=(1,1,1),
+\]</p>
+<p>entonces</p>
+<p>\[
+(-1,1,3)=R_1-2E,\qquad (a+2,b+6,c+10)=R_2+2R_1.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\Delta=4\det(R_1-2E,\;R_2+2R_1,\;R_3).
+\]</p>
+<h4>Paso 3: usar linealidad del determinante en una fila</h4>
+\[
+\det(R_1-2E,\;R_2+2R_1,\;R_3)
+=
+\det(R_1,R_2,R_3)
+-2\det(E,R_2,R_3)
+-4\det(E,R_1,R_3),
+\]
+<p>porque \(\det(R_1,R_1,R_3)=0\).</p>
+<p>Como \(\det(R_1,R_2,R_3)=6\),</p>
+<p>\[
+\Delta=
+4\left(
+6
+-2\begin{vmatrix}
+1&amp;1&amp;1\\
+a&amp;b&amp;c\\
+x&amp;y&amp;z
+\end{vmatrix}
+-4\begin{vmatrix}
+1&amp;1&amp;1\\
+1&amp;3&amp;5\\
+x&amp;y&amp;z
+\end{vmatrix}
+\right).
+\]</p>
+<p>---</p>
+<h3>Conclusión del apartado a)</h3>
+<p><strong>Con los datos dados, \(\Delta\) no queda determinado de forma única.</strong></p>
+<h4>Comprobación con dos ejemplos</h4>
+<p>#### Ejemplo 1<br>
+Tomemos</p>
+<p>\[
+(a,b,c,x,y,z)=(0,1,0,0,0,6).
+\]</p>
+<p>Entonces</p>
+<p>\[
+\begin{vmatrix}
+1&amp;3&amp;5\\
+0&amp;1&amp;0\\
+0&amp;0&amp;6
+\end{vmatrix}=6,
+\]</p>
+<p>pero</p>
+<p>\[
+\Delta=
+\begin{vmatrix}
+-1&amp;1&amp;3\\
+2&amp;7&amp;10\\
+0&amp;0&amp;24
+\end{vmatrix}
+=24\begin{vmatrix}-1&amp;1\\2&amp;7\end{vmatrix}
+=24(-9)=-216.
+\]</p>
+<p>#### Ejemplo 2<br>
+Tomemos</p>
+<p>\[
+(a,b,c,x,y,z)=(0,0,1,2,0,0).
+\]</p>
+<p>Entonces también</p>
+<p>\[
+\begin{vmatrix}
+1&amp;3&amp;5\\
+0&amp;0&amp;1\\
+2&amp;0&amp;0
+\end{vmatrix}=6,
+\]</p>
+<p>pero ahora</p>
+<p>\[
+\Delta=
+\begin{vmatrix}
+-1&amp;1&amp;3\\
+2&amp;6&amp;11\\
+8&amp;0&amp;0
+\end{vmatrix}
+=8\begin{vmatrix}1&amp;3\\6&amp;11\end{vmatrix}
+=8(11-18)=-56.
+\]</p>
+<p>Como salen valores distintos, <strong>el apartado a), tal como está escrito, es indeterminado</strong>.</p>
+<p>---</p>
+<h3>8.b)</h3>
+<p>Dados</p>
+<p>\[
+\vec u=(1,1,1),\qquad \vec v=(3,2,3),
+\]</p>
+<p>usamos</p>
+<p>\[
+\cos\theta=\frac{\vec u\cdot \vec v}{\|\vec u\|\;\|\vec v\|}.
+\]</p>
+<h4>Producto escalar</h4>
+\[
+\vec u\cdot \vec v=1\cdot3+1\cdot2+1\cdot3=8.
+\]
+<h4>Módulos</h4>
+\[
+\|\vec u\|=\sqrt{1^2+1^2+1^2}=\sqrt3,
+\qquad
+\|\vec v\|=\sqrt{3^2+2^2+3^2}=\sqrt{22}.
+\]
+<h4>Ángulo</h4>
+\[
+\cos\theta=\frac{8}{\sqrt3\,\sqrt{22}}=\frac{8}{\sqrt{66}}.
+\]
+<p>Por tanto,</p>
+<p>\[
+\boxed{\theta=\arccos\!\left(\frac{8}{\sqrt{66}}\right)}
+\]</p>
+<p>y, aproximadamente,</p>
+<p>\[
+\boxed{\theta\approx 10^\circ}.
+\]</p>
+<p>---</p>
+<p>Si quieres, también puedo rehacer el <strong>apartado a)</strong> suponiendo que hay una errata y proponiendo la corrección más probable.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_098.html">Anterior</a><a class="button" href="problema_100.html">Siguiente</a></nav>
+</main></body>
+</html>

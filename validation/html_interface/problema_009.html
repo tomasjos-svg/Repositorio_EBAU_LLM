@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 9: aragon_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 9 de 139</h1>
+<div class="meta"><span class="badge">aragon_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_008.html">Anterior</a><a class="button" href="problema_010.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>1) Sea la siguiente función</p>
+<p>\[
+f(x)=
+\begin{cases}
+ax-\dfrac{\sen x}{x}+2, &amp; x\neq 0,\\[4pt]
+2, &amp; x=0,
+\end{cases}
+\quad a\in \mathbb{R}.
+\]</p>
+<p>a) (1 punto) Estudia su continuidad en \(\mathbb{R}\) según los valores de \(a\).</p>
+<p>b) (1 punto) Calcula el valor de \(a\) para que \(f(x)\) tenga un extremo relativo en \(x=-\dfrac{\pi}{2}\) y di qué tipo de extremo es.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 1 — Solución oficial</strong></p>
+<p>Sea la función</p>
+<p>\[
+f(x)=
+\begin{cases}
+a x+\dfrac{\sen x-2x}{x^2}, &amp; x\neq 0\\
+a, &amp; x=0
+\end{cases}
+\]</p>
+<h4>a) Estudia su continuidad en \(\mathbb{R}\) según los valores de \(a\).</h4>
+<p>Para \(x\neq 0\) la función existe para todos los valores y es continua. Falta comprobar la continuidad en \(x=0\).</p>
+<p>\[
+\lim_{x\to 0} f(x)
+=
+\lim_{x\to 0}\left(ax+\frac{\sen x-2x}{x^2}\right)
+\]</p>
+<p>\[
+\lim_{x\to 0}\frac{\sen x-2x}{x^2}
+=
+\frac{0}{0}
+\]</p>
+<p>Aplicando L’Hôpital:</p>
+<p>\[
+\lim_{x\to 0}\frac{\cos x-2}{2x}
+=
+\frac{1-2}{0}
+=
+\frac{-1}{0}
+\]</p>
+<p>El límite no existe finito. Por tanto, la función no es continua en \(x=0\), independientemente del valor de \(a\).</p>
+<p>La función es continua en \(\mathbb{R}\setminus\{0\}\) para todo valor de \(a\).</p>
+<p>---</p>
+<h4>b) Calcula el valor de \(a\) para que \(f(x)\) tenga un extremo relativo en \(x=-\dfrac{\pi}{2}\) y di qué tipo de extremo es.</h4>
+<p>Para que \(f(x)\) tenga un extremo relativo en \(x=-\dfrac{\pi}{2}\), la derivada debe anularse.</p>
+<p>\[
+f&#x27;(x)=a+\frac{x^2\cos x-x^2-2x\sen x}{x^4}
+\]</p>
+<p>\[
+f&#x27;\left(-\frac{\pi}{2}\right)=0
+\]</p>
+<p>\[
+a=\frac{4}{\pi^2}
+\]</p>
+<p>El valor buscado es:</p>
+<p>\[
+\boxed{a=\frac{4}{\pi^2}}
+\]</p>
+<p>Para \(a=\dfrac{4}{\pi^2}\), estudiamos el signo de la derivada antes y después de este valor.</p>
+<p>En el intervalo \(\left(-\infty,-\dfrac{\pi}{2}\right)\), tomando \(x=-2\), la derivada vale aproximadamente:</p>
+<p>\[
+f&#x27;(-2)\simeq -0.03&lt;0
+\]</p>
+<p>La función decrece.</p>
+<p>En el intervalo \(\left(-\dfrac{\pi}{2},0\right)\), tomando \(x=-1\), la derivada vale aproximadamente:</p>
+<p>\[
+f&#x27;(-1)\simeq 0.1&gt;0
+\]</p>
+<p>La función crece.</p>
+<p>Por tanto, decrece y luego crece, luego en</p>
+<p>\[
+x=-\frac{\pi}{2}
+\]</p>
+<p>hay un <strong>mínimo relativo</strong>.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>\[
+f(x)=
+\begin{cases}
+ax-\dfrac{\sen x}{x}+2, &amp; x\neq 0,\\[4pt]
+2, &amp; x=0.
+\end{cases}
+\qquad a\in\mathbb R
+\]</p>
+<h3>a) Continuidad según \(a\)</h3>
+<h4>En \(x\neq 0\)</h4>
+Si \(x\neq 0\), la función
+\[
+f(x)=ax-\frac{\sen x}{x}+2
+\]
+es suma de funciones continuas, luego es continua para todo \(x\neq 0\), cualquiera que sea \(a\).
+<h4>En \(x=0\)</h4>
+Estudiamos el límite:
+\[
+\lim_{x\to 0}f(x)=\lim_{x\to 0}\left(ax-\frac{\sen x}{x}+2\right)
+\]
+Usando que
+\[
+\lim_{x\to 0}ax=0,\qquad \lim_{x\to 0}\frac{\sen x}{x}=1,
+\]
+se obtiene
+\[
+\lim_{x\to 0}f(x)=0-1+2=1.
+\]
+<p>Pero<br>
+\[
+f(0)=2.
+\]</p>
+<p>Como<br>
+\[
+\lim_{x\to 0}f(x)\neq f(0),
+\]<br>
+la función <strong>no es continua en \(x=0\)</strong>.</p>
+<h4>Conclusión</h4>
+- Para <strong>todo</strong> \(a\in\mathbb R\), \(f\) es continua en \(\mathbb R\setminus\{0\}\).
+- Para <strong>ningún</strong> valor de \(a\), \(f\) es continua en todo \(\mathbb R\).
+- En \(x=0\) tiene una <strong>discontinuidad evitable</strong>.
+<p>---</p>
+<h3>b) Valor de \(a\) para que haya un extremo relativo en \(x=-\dfrac{\pi}{2}\) y tipo</h3>
+<p>Como \(-\dfrac{\pi}{2}\neq 0\), derivamos la expresión de \(f\) para \(x\neq 0\):<br>
+\[
+f&#x27;(x)=a-\left(\frac{\sen x}{x}\right)&#x27;.
+\]<br>
+Y<br>
+\[
+\left(\frac{\sen x}{x}\right)&#x27;=\frac{x\cos x-\sen x}{x^2},
+\]<br>
+así que<br>
+\[
+f&#x27;(x)=a-\frac{x\cos x-\sen x}{x^2}.
+\]</p>
+<p>Para que haya un extremo relativo en \(x=-\dfrac{\pi}{2}\), es necesario que<br>
+\[
+f&#x27;\left(-\frac{\pi}{2}\right)=0.
+\]</p>
+<p>Calculamos:<br>
+\[
+\cos\left(-\frac{\pi}{2}\right)=0,\qquad \sen\left(-\frac{\pi}{2}\right)=-1.
+\]<br>
+Entonces<br>
+\[
+f&#x27;\left(-\frac{\pi}{2}\right)
+=a-\frac{\left(-\frac{\pi}{2}\right)\cdot 0-(-1)}{\left(-\frac{\pi}{2}\right)^2}
+=a-\frac{1}{\pi^2/4}
+=a-\frac{4}{\pi^2}.
+\]<br>
+Imponiendo \(f&#x27;(-\pi/2)=0\):<br>
+\[
+a-\frac{4}{\pi^2}=0
+\quad\Longrightarrow\quad
+\boxed{a=\frac{4}{\pi^2}}.
+\]</p>
+<h4>Tipo de extremo</h4>
+Derivamos de nuevo:
+\[
+f&#x27;&#x27;(x)=\frac{\sen x}{x}+\frac{2\cos x}{x^2}-\frac{2\sen x}{x^3}.
+\]
+<p>Evaluamos en \(x=-\dfrac{\pi}{2}\):<br>
+\[
+f&#x27;&#x27;\left(-\frac{\pi}{2}\right)
+=\frac{-1}{-\pi/2}+0-\frac{2(-1)}{(-\pi/2)^3}
+=\frac{2}{\pi}-\frac{16}{\pi^3}
+=\frac{2(\pi^2-8)}{\pi^3}.
+\]<br>
+Como \(\pi^2&gt;8\), resulta<br>
+\[
+f&#x27;&#x27;\left(-\frac{\pi}{2}\right)&gt;0.
+\]</p>
+<p>Por tanto, en \(x=-\dfrac{\pi}{2}\) hay un <strong>mínimo relativo</strong>.</p>
+<p>---</p>
+<h3>Resultado final</h3>
+<p>- <strong>a)</strong> Para todo \(a\in\mathbb R\), \(f\) es continua en \(\mathbb R\setminus\{0\}\), pero <strong>no</strong> es continua en \(x=0\).  <br>
+  No existe ningún valor de \(a\) que la haga continua en todo \(\mathbb R\).</p>
+<p>- <strong>b)</strong> El valor pedido es<br>
+\[
+\boxed{a=\frac{4}{\pi^2}}
+\]<br>
+y el extremo relativo en \(x=-\dfrac{\pi}{2}\) es un<br>
+\[
+\boxed{\text{mínimo relativo}}.
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio 1 propuesto, vamos a empezar con la parte (a), donde necesitamos estudiar la continuidad de la función \( f(x) \) en \( \mathbb{R} \) según los valores de \( a \).</p>
+<h4>Parte (a)</h4>
+La función \( f(x) \) está definida de manera diferente en \( x = 0 \) que para \( x \neq 0 \). Esto sugiere la posibilidad de una discontinuidad en \( x = 0 \). Para verificar la continuidad de \( f \) en \( \mathbb{R} \), debemos probar que \( f(x) \) sea continua en cada \( x \in \mathbb{R} \), y especialmente en \( x=0 \).
+<p><strong>Paso 1</strong>: <strong>Continuidad en \( x \neq 0 \)</strong></p>
+<p>Cuando \( x \neq 0 \), \( f(x) = ax - \frac{\sin x}{x} + 2 \). Tanto \( ax \) como \( 2 \) son polinomios y, por lo tanto, funciones continuas para todo \( x \in \mathbb{R} \). La función \( \sin x \) es también continua, y como \( \frac{\sin x}{x} \) es una expresión conocida que es continua en \( x \neq 0 \) (teniendo en cuenta que la indeterminación en \( x = 0 \) no nos afecta aquí ya que está cubierto en otro caso), deducimos que \( \frac{\sin x}{x} \) también es continua para todo \( x \neq 0 \).</p>
+<p>De esta forma, \( f(x) \) es continua en el dominio \( x \neq 0 \).</p>
+<p><strong>Paso 2</strong>: <strong>Continuidad en \( x = 0 \)</strong></p>
+<p>Por definición, tenemos \( f(0) = 2 \). Para que \( f \) sea continua en \( x = 0 \), el límite de \( f(x) \) cuando \( x \) tiende a \( 0 \) debe ser igual a \( f(0) \). Debemos verificar si:</p>
+<p>\[
+\lim_{x \to 0} (ax - \frac{\sin x}{x} + 2) = 2
+\]</p>
+<p>Sabemos que \(\lim_{x \to 0} \frac{\sin x}{x} = 1\), por lo tanto:</p>
+<p>\[
+\lim_{x \to 0} (ax - \frac{\sin x}{x} + 2) = \lim_{x \to 0} ax + 2 - 1 = 2 - 1 + \lim_{x \to 0} ax
+\]</p>
+<p>Dado que \(\lim_{x \to 0} ax = 0\):</p>
+<p>\[
+\lim_{x \to 0} (ax - \frac{\sin x}{x} + 2) = 1 + 0 = 1 \neq 2
+\]</p>
+<p>Sin embargo, notamos una discrepancia aquí. Para que el límite favorable sea igual a 2 y, por lo tanto, la función sea continua en \( x = 0 \), necesitamos que:</p>
+<p>\[
+a(\lim_{x \to 0} x) - 1 + 2 = 2
+\]</p>
+<p>La única forma de que esto ocurra es que \( a \cdot 0 - 1 + 2 = 2 \), lo cual siempre se da, pero el límite siempre da 1, lo cual indica que la función no es continua en \( x = 0 \) sin importar el valor de \( a \).</p>
+<h4>Conclusión: </h4>
+La función es continua en todos los puntos excepto en \( x = 0 \), y esto es independiente del valor de \( a \).
+<p>Ahora vamos con la parte (b).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_008.html">Anterior</a><a class="button" href="problema_010.html">Siguiente</a></nav>
+</main></body>
+</html>

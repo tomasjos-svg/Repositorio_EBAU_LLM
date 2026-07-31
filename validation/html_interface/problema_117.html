@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 117: navarra_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 117 de 139</h1>
+<div class="meta"><span class="badge">navarra_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_116.html">Anterior</a><a class="button" href="problema_118.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P6) Se considera la función</p>
+<p>\[
+f(x)=\frac{\cos\left[\frac{\pi}{2}(x-1)\right]}{x^2-6x+10}.
+\]</p>
+<p>a) Estudia la continuidad de la función en el intervalo \([1,4]\).  <br>
+(0,75 puntos)</p>
+<p>b) Comprueba que existen dos valores \(\alpha\) y \(\beta\) en el intervalo \((1,4)\) tales que</p>
+<p>\[
+f(\alpha)=-\frac{1}{2}=f(\beta).
+\]</p>
+<p>Enuncia el/los resultado(s) teórico(s) utilizado(s), y justifica su uso.  <br>
+(1,75 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>P6) Solución oficial</strong></p>
+<p>Se considera la función  <br>
+\[
+f(x)=\frac{\cos(\pi x)-1}{x^2-6x+10}
+\]</p>
+<h4>a) Estudia la continuidad de la función en el intervalo \([1,4]\).</h4>
+<p>La función \(\cos(\pi x)-1\) es composición de funciones continuas, el único problema es cuando se anula el denominador y si eso ocurre en el intervalo \([1,4]\).</p>
+<p>\[
+x^2-6x+10=0
+\]</p>
+<p>\[
+x=\frac{6\pm\sqrt{36-40}}{2}
+\]</p>
+<p>El denominador nunca se anula y, por tanto, la función es continua.</p>
+<p>---</p>
+<h4>b) Comprueba que existen dos valores \(\alpha\) y \(\beta\) en el intervalo \((1,4)\) tales que</h4>
+<p>\[
+f(\alpha)=f(\beta)=-\frac12
+\]</p>
+<p>Usaremos el teorema de Darboux:</p>
+<p>Sea \(f\) continua en \([a,b]\) y sea \(m\) tal que</p>
+<p>\[
+f(a)&lt;m&lt;f(b)
+\]</p>
+<p>entonces existe un valor \(c\in(a,b)\) tal que \(f(c)=m\).</p>
+<p>En el intervalo \([1,4]\) buscamos valores de la función con distinto signo.</p>
+<p>\[
+f(1)=\frac{\cos(\pi)-1}{1-6+10}=\frac{-2}{5}
+\]</p>
+<p>\[
+f(2)=\frac{\cos(2\pi)-1}{4-12+10}=0
+\]</p>
+<p>\[
+f(3)=\frac{\cos(3\pi)-1}{9-18+10}=-2
+\]</p>
+<p>\[
+f(4)=\frac{\cos(4\pi)-1}{16-24+10}=0
+\]</p>
+<p>Consideramos la función</p>
+<p>\[
+g(x)=-f(x)
+\]</p>
+<p>Así,</p>
+<p>\[
+g(2)=0,\qquad g(3)=1
+\]</p>
+<p>La función \(g(x)\) es continua en el intervalo \([2,3]\) y se cumple que</p>
+<p>\[
+g(2)=0&lt;\frac12&lt;1=g(3)
+\]</p>
+<p>Aplicando el teorema de Darboux, existe \(\alpha\in(2,3)\) tal que</p>
+<p>\[
+g(\alpha)=\frac12
+\]</p>
+<p>Esto implica que existe \(\alpha\in(2,3)\) tal que</p>
+<p>\[
+f(\alpha)=-\frac12
+\]</p>
+<p>Como la función \(f(x)\) es continua en el intervalo \([3,4]\) y se cumple que</p>
+<p>\[
+f(3)=-2&lt;-\frac12&lt;0=f(4)
+\]</p>
+<p>aplicando el teorema de Darboux, existe \(\beta\in(3,4)\) tal que</p>
+<p>\[
+f(\beta)=-\frac12
+\]</p>
+<p>Como los valores \(\alpha\) y \(\beta\) pertenecen a intervalos distintos, son valores diferentes y pertenecientes al intervalo \((1,4)\).</p>
+<p>Existen \(\alpha,\beta\in(1,4)\) tales que</p>
+<p>\[
+f(\alpha)=f(\beta)=-\frac12
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>El ejercicio 6 del documento pide resolver los siguientes apartados para la función:</p>
+<p>\[ f(x) = \frac{\cos \left( \frac{\pi}{2} (x-1) \right)}{x^2 - 6x + 10} \]</p>
+<h4>Apartado a) Estudia la continuidad de la función en el intervalo [1, 4].</h4>
+<p>Para estudiar la continuidad de \( f(x) \) en el intervalo [1,4], primero revisamos si el denominador se hace cero en este intervalo, ya que esto haría que \( f(x) \) sea discontinua. El denominador es un polinomio cuadrático, \( x^2 - 6x + 10 \). Calculamos su discriminante:</p>
+<p>\[ \Delta = b^2 - 4ac = (-6)^2 - 4 \cdot 1 \cdot 10 = 36 - 40 = -4 \]</p>
+<p>Dado que el discriminante es negativo, el polinomio no tiene raíces reales y, por lo tanto, no se anula en ningún \( x \) real. Esto implica que el denominador nunca es cero y que, en efecto, la función no presenta discontinuidades en el denominador en el intervalo [1,4].</p>
+<p>El numerador de \( f(x) \) es la función \( \cos\left( \frac{\pi}{2} (x-1) \right) \), una función trigonométrica continua por naturaleza.</p>
+<p>Por lo tanto, la función \( f(x) \) es continua en todo el intervalo [1, 4].</p>
+<h4>Apartado b) Comprueba que existen dos valores \( \alpha \) y \( \beta \) en el intervalo (1, 4) tales que \( f(\alpha) = f(\beta) = -\frac{1}{2} \).</h4>
+<p>Para verificar esto, primero computamos \( f(x) \) en los extremos y algunos otros puntos del intervalo para ver cómo se comporta.</p>
+<p>Calculamos:<br>
+1. \( f(1) = \frac{0}{-5} = 0 \)<br>
+2. \( f(2) = \frac{1}{2} = 1 \)<br>
+3. \( f(3) = \frac{0}{5} = 0 \)<br>
+4. \( f(4) = \frac{-1}{2} = -0.5 \)</p>
+<p>Aquí, ya vemos que \( f(4) = -0.5 \).</p>
+<p>Para argumentar que hay otro valor en \( (1, 4) \) con \( f(x) = -\frac{1}{2} \), podemos aplicar el teorema del valor intermedio para \( f(x) \) en \( (1, 4) \), ya que ha mostrado ser continua en este intervalo. Dado que \( f(x) \) alcanza valores de 0 y -0.5, por el teorema del valor intermedio, debe alcanzar todo valor intermedio entre estos, incluido \( -\frac{1}{2} \), en al menos otro punto dentro del intervalo.</p>
+<p>Por lo tanto, existen al menos dos valores \( \alpha \) y \( \beta \) (uno siendo \( \beta = 4 \)) donde \( f(x) = -\frac{1}{2} \) en el intervalo (1, 4).</p>
+<p>Estos cálculos implican el uso del teorema del valor intermedio como base teórica para afirmar la existencia de los valores \( \alpha \) y \( \beta \)【4:0†Examen matematicas II Navarra 2023 enunciado.pdf】.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea  <br>
+\[
+f(x)=\frac{\cos\!\left(\frac{\pi}{2}(x-1)\right)}{x^2-6x+10}.
+\]</p>
+<h3>a) Continuidad en \([1,4]\)</h3>
+<p>- La función \(\cos\left(\frac{\pi}{2}(x-1)\right)\) es continua, por ser composición de funciones continuas.<br>
+- El denominador<br>
+\[
+x^2-6x+10=(x-3)^2+1&gt;0 \quad \text{para todo } x\in\mathbb{R}.
+\]<br>
+Por tanto, nunca se anula.</p>
+<p>Como \(f\) es cociente de dos funciones continuas y el denominador no vale cero, <strong>\(f\) es continua en todo \(\mathbb{R}\)</strong>, y en particular en \([1,4]\).</p>
+<p>---</p>
+<h3>b) Existencia de dos valores \(\alpha,\beta\in(1,4)\) tales que \(f(\alpha)=-\frac12=f(\beta)\)</h3>
+<p>Calculamos algunos valores:</p>
+<p>\[
+f(2)=\frac{\cos\left(\frac{\pi}{2}(2-1)\right)}{2^2-6\cdot2+10}
+=\frac{\cos(\pi/2)}{2}=0,
+\]</p>
+<p>\[
+f(3)=\frac{\cos\left(\frac{\pi}{2}(3-1)\right)}{3^2-6\cdot3+10}
+=\frac{\cos(\pi)}{1}=-1,
+\]</p>
+<p>\[
+f(4)=\frac{\cos\left(\frac{\pi}{2}(4-1)\right)}{4^2-6\cdot4+10}
+=\frac{\cos(3\pi/2)}{2}=0.
+\]</p>
+<p>Entonces:</p>
+<p>- En \([2,3]\):  <br>
+  \[
+  f(2)=0&gt;-\frac12&gt;-1=f(3).
+  \]<br>
+  Como \(f\) es continua en \([2,3]\), por el <strong>teorema del valor intermedio</strong> (o Bolzano aplicado a \(f(x)+\frac12\)), existe<br>
+  \[
+  \alpha\in(2,3)
+  \]<br>
+  tal que<br>
+  \[
+  f(\alpha)=-\frac12.
+  \]</p>
+<p>- En \([3,4]\):  <br>
+  \[
+  f(3)=-1&lt;-\frac12&lt;0=f(4).
+  \]<br>
+  Como \(f\) es continua en \([3,4]\), de nuevo por el <strong>teorema del valor intermedio</strong>, existe<br>
+  \[
+  \beta\in(3,4)
+  \]<br>
+  tal que<br>
+  \[
+  f(\beta)=-\frac12.
+  \]</p>
+<p>Como \(\alpha\in(2,3)\) y \(\beta\in(3,4)\), son distintos.</p>
+<h3>Conclusión</h3>
+<p>Existen <strong>dos valores distintos</strong> \(\alpha,\beta\in(1,4)\) tales que<br>
+\[
+f(\alpha)=-\frac12=f(\beta).
+\]</p>
+<p>Teorema usado: <strong>teorema del valor intermedio</strong> (o Bolzano sobre \(f(x)+\frac12\)).</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_116.html">Anterior</a><a class="button" href="problema_118.html">Siguiente</a></nav>
+</main></body>
+</html>

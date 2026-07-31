@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 22: asturias_2023 4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 22 de 139</h1>
+<div class="meta"><span class="badge">asturias_2023</span> &nbsp; Ejercicio 4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_021.html">Anterior</a><a class="button" href="problema_023.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Pregunta 4. Se considera la función \(f(x)=xe^{2x^2}\). Se pide:</p>
+<p>(a) (1.5 puntos) Calcula una primitiva de \(f(x)\), que pase por el punto \((0,-1)\). (Sugerencia: Puedes utilizar el cambio de variable \(t=2x^2\))</p>
+<p>(b) (1 punto) Calcula el área encerrada por la gráfica de \(f\), las rectas \(x=0\) y \(x=1\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Pregunta 4.</strong> Se considera la función \(f(x)=xe^{2x^2}\). Se pide:</p>
+<p><strong>(a) (1.5 puntos)</strong> Calcula una primitiva de \(f(x)\), que pase por el punto \((0,-1)\).  <br>
+*Sugerencia: Puedes utilizar el cambio de variable \(t=2x^2\).*</p>
+<p>Si hacemos el cambio de variable: \(2x^2=t\), \(4x\,dx=dt\), se tiene que</p>
+<p>\[
+\int xe^{2x^2}\,dx=\int \frac14 e^t\,dt=\frac14 e^t+k=\frac14 e^{2x^2}+k
+\]</p>
+<p>Como debe pasar por \((0,-1)\), se tiene que</p>
+<p>\[
+\frac14+k=-1
+\]</p>
+<p>por lo que</p>
+<p>\[
+k=-\frac54.
+\]</p>
+<p><strong>(b) (1 punto)</strong> Calcula el área encerrada por la gráfica de \(f\), las rectas \(x=0\) y \(x=1\).</p>
+<p>\[
+xe^{2x^2}\ge 0
+\]</p>
+<p>siempre que \(x\ge 0\). El área pedida es</p>
+<p>\[
+\int_0^1 xe^{2x^2}\,dx
+=
+\frac14 e^{2x^2}\Big|_0^1
+=
+\frac14 e^2-\frac14.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 4, vamos a abordar ambas partes del problema usando las técnicas adecuadas de cálculo integral.</p>
+<h4>Parte (a)</h4>
+<p><strong>Pregunta:</strong> Calcula una primitiva de \(f(x) = xe^{2x^2}\) que pase por el punto \((0, -1)\).</p>
+<p><strong>Solución:</strong></p>
+<p>Como se sugiere usar el cambio de variable \( t = 2x^2 \), procedamos con esto. Haciendo el cambio de variable, primero calculamos \( dt \):</p>
+<p>\[ dt = 4x \, dx \quad \Rightarrow \quad \frac{dt}{4} = x \, dx \]</p>
+<p>Sustituimos en la integral:</p>
+<p>\[ \int xe^{2x^2} \, dx = \int e^t \frac{dt}{4} = \frac{1}{4} \int e^t \, dt \]</p>
+<p>La integral indefinida de \( e^t \) es conocidamente \( e^t \), por lo tanto:</p>
+<p>\[ \frac{1}{4} \int e^t \, dt = \frac{1}{4}e^t + C \]</p>
+<p>Regresando a la variable original, dado que \( t = 2x^2 \), tenemos:</p>
+<p>\[ F(x) = \frac{1}{4}e^{2x^2} + C \]</p>
+<p>Ahora, necesitamos encontrar el valor de \( C \) tal que la función primitiva pase por el punto \((0, -1)\).</p>
+<p>\[ F(0) = \frac{1}{4}e^{2 \cdot 0} + C = \frac{1}{4} + C = -1 \]</p>
+<p>Resolviendo para C:</p>
+<p>\[ \frac{1}{4} + C = -1 \quad \Rightarrow \quad C = -1 - \frac{1}{4} = -\frac{5}{4} \]</p>
+<p>Así, la primitiva que buscamos es:</p>
+<p>\[ F(x) = \frac{1}{4}e^{2x^2} - \frac{5}{4} \]</p>
+<h4>Parte (b)</h4>
+<p><strong>Pregunta:</strong> Calcula el área encerrada por la gráfica de \( f(x) = xe^{2x^2} \), las rectas \( x = 0 \) y \( x = 1 \).</p>
+<p><strong>Solución:</strong></p>
+<p>La fórmula para el área bajo la curva de una función \( g(x) \) desde \( a \) hasta \( b \) es:</p>
+<p>\[ \text{Área} = \int_a^b |g(x)| \, dx \]</p>
+<p>En este caso:</p>
+<p>\[ \text{Área} = \int_0^1 |xe^{2x^2}| \, dx = \int_0^1 xe^{2x^2} \, dx \]</p>
+<p>Utilizando el mismo cambio de variable propuesto anteriormente, y sabiendo que \( f(x) = xe^{2x^2} \) es positiva en \( [0, 1] \), tenemos:</p>
+<p>\[ t = 2x^2, \quad dt = 4x \, dx, \quad \frac{dt}{4} = x \, dx \]</p>
+<p>\[ \text{Área} = \int_0^1 xe^{2x^2} \, dx = \int_0^2 \frac{e^t}{4} \, dt = \frac{1}{4} \int_0^2 e^t \, dt = \frac{1}{4} [e^t]_0^2 = \frac{1}{4} (e^2 - 1) \]</p>
+<p>El área encerrada por la curva es:</p>
+<p>\[ \frac{e^2 - 1}{4} \]</p>
+<p>Este valor es lo que se busca.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver los dos apartados.</p>
+<h3>Dada:</h3>
+\[
+f(x)=x e^{2x^2}
+\]
+<p>---</p>
+<h3>(a) Primitiva de \(f(x)\) que pasa por \((0,-1)\)</h3>
+<p>Buscamos \(F(x)\) tal que<br>
+\[
+F&#x27;(x)=x e^{2x^2}.
+\]</p>
+<p>Calculamos:<br>
+\[
+\int x e^{2x^2}\,dx
+\]</p>
+<p>Usamos el cambio sugerido:<br>
+\[
+t=2x^2 \quad \Rightarrow \quad dt=4x\,dx \quad \Rightarrow \quad x\,dx=\frac{dt}{4}.
+\]</p>
+<p>Entonces:<br>
+\[
+\int x e^{2x^2}\,dx
+= \int e^t \frac{dt}{4}
+= \frac14 \int e^t\,dt
+= \frac14 e^t + C
+= \frac14 e^{2x^2}+C.
+\]</p>
+<p>Ahora imponemos que pase por \((0,-1)\), es decir:<br>
+\[
+F(0)=-1.
+\]</p>
+<p>Sustituyendo:<br>
+\[
+\frac14 e^{0}+C=-1
+\quad\Rightarrow\quad
+\frac14 + C = -1
+\quad\Rightarrow\quad
+C=-\frac54.
+\]</p>
+<p>Por tanto, la primitiva pedida es:<br>
+\[
+\boxed{F(x)=\frac14 e^{2x^2}-\frac54}.
+\]</p>
+<p>---</p>
+<h3>(b) Área encerrada por la gráfica de \(f\), \(x=0\) y \(x=1\)</h3>
+<p>En el intervalo \([0,1]\),<br>
+\[
+f(x)=x e^{2x^2}\ge 0,
+\]<br>
+así que el área es:<br>
+\[
+A=\int_0^1 x e^{2x^2}\,dx.
+\]</p>
+<p>Usando la primitiva:<br>
+\[
+\int x e^{2x^2}\,dx=\frac14 e^{2x^2}+C,
+\]<br>
+tenemos:<br>
+\[
+A=\left[\frac14 e^{2x^2}\right]_0^1
+= \frac14 e^2 - \frac14 e^0
+= \frac14(e^2-1).
+\]</p>
+<p>Así, el área vale:<br>
+\[
+\boxed{A=\frac{e^2-1}{4}}.
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<p><strong>(a)</strong> \(\displaystyle \boxed{F(x)=\frac14 e^{2x^2}-\frac54}\)</p>
+<p><strong>(b)</strong> \(\displaystyle \boxed{\frac{e^2-1}{4}}\)</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_021.html">Anterior</a><a class="button" href="problema_023.html">Siguiente</a></nav>
+</main></body>
+</html>

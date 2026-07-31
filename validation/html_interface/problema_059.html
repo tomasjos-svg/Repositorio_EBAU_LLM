@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 59: cleon_2023 E4</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 59 de 139</h1>
+<div class="meta"><span class="badge">cleon_2023</span> &nbsp; Ejercicio E4</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_058.html">Anterior</a><a class="button" href="problema_060.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>E4.- (Geometría)  <br>
+Sea r la recta que pasa por los puntos (1,0,-1) y (0,1,1),</p>
+<p>a) Determinar el plano que contiene a la recta r y al punto P = (0,0,1). (1 punto)</p>
+<p>b) Calcular la distancia de la recta r al punto P = (0,0,1). (1 punto)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>E4.- (Geometría)</strong></p>
+<p>Sea \(r\) la recta que pasa por los puntos \((1,0,-1)\) y \((0,1,1)\).</p>
+<h4>a) Determinar el plano que contiene a la recta \(r\) y al punto \(P=(0,0,1)\).</h4>
+<p>El plano que contiene a la recta \(r\) y al punto \(P=(0,0,1)\) es el plano que contiene a los tres puntos dados en el ejercicio.</p>
+<p>\[
+P=(0,0,1), \quad Q=(1,0,-1), \quad R=(0,1,1)
+\]</p>
+<p>\[
+\vec u=\overrightarrow{PQ}=(1,0,-2), \qquad \vec v=\overrightarrow{PR}=(0,1,0)
+\]</p>
+<p>\[
+\pi:
+\begin{vmatrix}
+x &amp; y &amp; z-1\\
+1 &amp; 0 &amp; -2\\
+0 &amp; 1 &amp; 0
+\end{vmatrix}=0
+\]</p>
+<p>\[
+-2x-(z-1)=0
+\]</p>
+<p>\[
+\pi:\ 2x+z-1=0
+\]</p>
+<p>---</p>
+<h4>b) Calcular la distancia de la recta \(r\) al punto \(P=(0,0,1)\).</h4>
+<p>Hallamos la ecuación del plano perpendicular a la recta que pasa por \(P\).</p>
+<p>La recta \(r\) tiene vector director:</p>
+<p>\[
+\vec u=\overrightarrow{QR}=(0,1,1)-(1,0,-1)=(-1,1,2)
+\]</p>
+<p>Por tanto, el plano perpendicular a \(r\) que pasa por \(P\) tiene vector normal \(\vec n=(-1,1,2)\):</p>
+<p>\[
+\pi:\ -x+y+2z+D=0
+\]</p>
+<p>Como pasa por \(P=(0,0,1)\):</p>
+<p>\[
+2+D=0 \Rightarrow D=-2
+\]</p>
+<p>\[
+\pi:\ -x+y+2z-2=0
+\]</p>
+<p>Hallamos el punto \(M\) de corte de la recta y el plano.</p>
+<p>\[
+r:
+\begin{cases}
+x=1-t\\
+y=t\\
+z=-1+2t
+\end{cases}
+\]</p>
+<p>Sustituyendo en el plano:</p>
+<p>\[
+-(1-t)+t+2(-1+2t)-2=0
+\]</p>
+<p>\[
+-1+t+t-2+4t-2=0
+\]</p>
+<p>\[
+6t-5=0 \Rightarrow t=\frac56
+\]</p>
+<p>\[
+M=\left(1-\frac56,\frac56,-1+2\cdot\frac56\right)
+=
+\left(\frac16,\frac56,\frac23\right)
+\]</p>
+<p>La distancia del punto \(P\) a la recta es la distancia del punto \(P\) al punto \(M\):</p>
+<p>\[
+d(P,r)=d(P,M)
+\]</p>
+<p>\[
+\overrightarrow{MP}
+=
+\left(0,0,1\right)-\left(\frac16,\frac56,\frac23\right)
+=
+\left(-\frac16,-\frac56,\frac13\right)
+\]</p>
+<p>\[
+d(P,r)=
+\sqrt{\left(-\frac16\right)^2+\left(-\frac56\right)^2+\left(\frac13\right)^2}
+=
+\sqrt{\frac1{36}+\frac{25}{36}+\frac19}
+\]</p>
+<p>\[
+d(P,r)=\sqrt{\frac{30}{36}}=\frac{\sqrt{30}}6 \simeq 0.913
+\]</p>
+<p>\[
+\boxed{d(P,r)=\frac{\sqrt{30}}6}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio E4 del documento brindado, vamos a abordar cada punto (a y b) paso a paso:</p>
+<h4>a) Determinar el plano que contiene a la recta \( r \) y al punto \( P = (0,0,1) \).</h4>
+<p>#### Paso 1: Representación paramétrica de la recta \( r \)<br>
+La recta \( r \) pasa por los puntos \( (1,0,-1) \) y \( (0,1,1) \). Podemos determinar un vector dirección \( \mathbf{v} \) de la recta \( r \) como la diferencia entre estos dos puntos:<br>
+\[
+\mathbf{v} = (0,1,1) - (1,0,-1) = (-1,1,2)
+\]<br>
+Ahora podemos escribir la representación paramétrica de la recta \( r \) usando el punto \( (1,0,-1) \) y el vector dirección \( \mathbf{v} \):<br>
+\[
+\mathbf{r}(t) = (1,0,-1) + t \cdot (-1,1,2)
+\]<br>
+Lo que implica:<br>
+\[
+x = 1 - t, \quad y = t, \quad z = -1 + 2t
+\]</p>
+<p>#### Paso 2: Ecuación del plano<br>
+Para encontrar un plano que contenga a la recta \( r \) y al punto \( P = (0,0,1) \), necesitamos un vector normal al plano. Este vector normal puede ser obtenido mediante el producto cruz entre el vector dirección \( \mathbf{v} \) y el vector que une un punto de \( r \) con \( P \).</p>
+<p>Usando el punto \( (1,0,-1) \) en \( r \) y \( P = (0,0,1) \):<br>
+\[
+\mathbf{u} = P - (1,0,-1) = (0,0,1) - (1,0,-1) = (-1,0,2)
+\]<br>
+El vector normal \( \mathbf{n} \) al plano es el producto cruz de \( \mathbf{v} \) y \( \mathbf{u} \):<br>
+\[
+\mathbf{n} = \mathbf{v} \times \mathbf{u} = (-1,1,2) \times (-1,0,2) = (2 \cdot 2 - 1 \cdot 0, 2 \cdot (-1) - (-1) \cdot 2, (-1) \cdot 0 - 1 \cdot (-1)) = (4, 0, 1)
+\]<br>
+La ecuación del plano es entonces:<br>
+\[
+4x + 0y + 1z = d
+\]<br>
+Utilizando el punto \( P = (0,0,1) \) para determinar \( d \):<br>
+\[
+4 \cdot 0 + 0 \cdot 0 + 1 \cdot 1 = 1
+\]<br>
+Por lo tanto, la ecuación del plano es:<br>
+\[
+4x + z = 1
+\]</p>
+<h4>b) Calcular la distancia de la recta \( r \) al punto \( P = (0,0,1) \).</h4>
+<p>#### Paso 1: Fórmula de distancia<br>
+La distancia \( D \) de un punto \( P \) a una recta dada por \( \mathbf{r}(t) = \mathbf{p} + t\mathbf{v} \) se calcula mediante:<br>
+\[
+D = \frac{\|\mathbf{p} - P + t_{0}\mathbf{v}\|}{\|\mathbf{v}\|}
+\]<br>
+donde \( t_{0} \) es el valor de \( t \) que minimiza la distancia, dado por \( t_{0} = -\frac{(\mathbf{p} - P) \cdot \mathbf{v}}{\|\mathbf{v}\|^2} \).</p>
+<p>#### Paso 2: Aplicar la fórmula<br>
+Aquí, \( \mathbf{p} = (1,0,-1) \) y \( P = (0,0,1) \), lo que implica \( \mathbf{p} - P = (1,0,-2) \):<br>
+\[
+t_{0} = -\frac{(1,0,-2) \cdot (-1,1,2)}{(-1)^2 + 1^2 + 2^2} = -\frac{(-1 + 0 - 4)}{6} = \frac{5}{6}
+\]<br>
+Ahora, aplicamos \( t_{0} \) en la representación paramétrica para encontrar el punto en \( r \) más cercano a \( P \):<br>
+\[
+\mathbf{r}\left(\frac{5}{6}\right) = (1,0,-1) + \frac{5}{6}(-1,1,2) = \left(\frac{1}{6}, \frac{5}{6}, \frac{4}{3}\right)
+\]<br>
+La distancia \( D \) es entonces la norma de \( \left(\frac{1}{6}, \frac{5}{6}, \frac{4}{3}\right) - (0,0,1) \):<br>
+\[
+D = \left\|\left(\frac{1}{6}, \frac{5}{6}, \frac{1}{3}\right)\right\| = \sqrt{\left(\frac{1}{6}\right)^2 + \left(\frac{5}{6}\right)^2 + \left(\frac{1}{3}\right)^2} = \sqrt{\frac{1}{36} + \frac{25}{36} + \frac{1}{9}} = \sqrt{\frac{9}{36} + \frac{1}{9}} = \sqrt{\frac{10}{36}} = \frac{1}{\sqrt{3.6}}
+\]</p>
+<p>Esta es la distancia buscada entre la recta \( r \) y el punto \( P \).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea \(A=(1,0,-1)\), \(B=(0,1,1)\) y \(P=(0,0,1)\).</p>
+<p>La recta \(r\) pasa por \(A\) y \(B\), así que su vector director es</p>
+<p>\[
+\vec v = B-A=(0-1,\,1-0,\,1-(-1)) = (-1,1,2).
+\]</p>
+<p>Por tanto, una ecuación paramétrica de \(r\) es</p>
+<p>\[
+r:\ (x,y,z)=(1,0,-1)+t(-1,1,2).
+\]</p>
+<p>---</p>
+<h3>a) Plano que contiene a \(r\) y al punto \(P\)</h3>
+<p>El plano debe contener:</p>
+<p>- la dirección de la recta: \(\vec v=(-1,1,2)\),<br>
+- y el vector \(\vec w=P-A=(0-1,0-0,1-(-1))=(-1,0,2)\).</p>
+<p>Un vector normal al plano es el producto vectorial:</p>
+<p>\[
+\vec n=\vec v\times \vec w=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+-1 &amp; 1 &amp; 2\\
+-1 &amp; 0 &amp; 2
+\end{vmatrix}
+=(2,0,1).
+\]</p>
+<p>Luego la ecuación del plano que pasa por \(A=(1,0,-1)\) es</p>
+<p>\[
+2(x-1)+0(y-0)+1(z+1)=0.
+\]</p>
+<p>Simplificando:</p>
+<p>\[
+2x-2+z+1=0
+\quad\Rightarrow\quad
+2x+z-1=0.
+\]</p>
+<h4>Resultado del apartado a)</h4>
+\[
+\boxed{2x+z-1=0}
+\]
+<p>---</p>
+<h3>b) Distancia de la recta \(r\) al punto \(P\)</h3>
+<p>La distancia de un punto \(P\) a una recta que pasa por \(A\) con vector director \(\vec v\) es</p>
+<p>\[
+d(P,r)=\frac{\|\overrightarrow{AP}\times \vec v\|}{\|\vec v\|}.
+\]</p>
+<p>Tenemos</p>
+<p>\[
+\overrightarrow{AP}=P-A=(-1,0,2).
+\]</p>
+<p>Ya hemos calculado</p>
+<p>\[
+\overrightarrow{AP}\times \vec v
+\]</p>
+<p>(o su opuesto), y su módulo es</p>
+<p>\[
+\|(2,0,1)\|=\sqrt{2^2+0^2+1^2}=\sqrt5.
+\]</p>
+<p>Además,</p>
+<p>\[
+\|\vec v\|=\sqrt{(-1)^2+1^2+2^2}=\sqrt6.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+d(P,r)=\frac{\sqrt5}{\sqrt6}=\sqrt{\frac56}.
+\]</p>
+<p>Racionalizando:</p>
+<p>\[
+d(P,r)=\frac{\sqrt{30}}{6}.
+\]</p>
+<h4>Resultado del apartado b)</h4>
+\[
+\boxed{d(P,r)=\sqrt{\frac56}=\frac{\sqrt{30}}{6}}
+\]
+<p>---</p>
+<h3>Respuesta final</h3>
+<p><strong>a)</strong> El plano pedido es</p>
+<p>\[
+\boxed{2x+z-1=0}.
+\]</p>
+<p><strong>b)</strong> La distancia del punto \(P=(0,0,1)\) a la recta \(r\) es</p>
+<p>\[
+\boxed{\sqrt{\frac56}=\frac{\sqrt{30}}{6}}.
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_058.html">Anterior</a><a class="button" href="problema_060.html">Siguiente</a></nav>
+</main></body>
+</html>

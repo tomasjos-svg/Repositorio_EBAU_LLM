@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 67: cvalenciana_2023 2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 67 de 139</h1>
+<div class="meta"><span class="badge">cvalenciana_2023</span> &nbsp; Ejercicio 2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_066.html">Anterior</a><a class="button" href="problema_068.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Problema 2. Dadas las matrices  <br>
+\[
+A=\begin{pmatrix}
+0 &amp; -1 &amp; -2\\
+-1 &amp; 0 &amp; -2\\
+1 &amp; 1 &amp; 3
+\end{pmatrix}
+\quad \text{e} \quad
+I=\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix},
+\]<br>
+obtener:</p>
+<p>a) La matriz \(M=(A-\lambda I)^2\), donde \(\lambda\) es un parámetro real. (6 puntos)</p>
+<p>b) El valor de \(\lambda\), si existe, para el cual la matriz \(M\) es la matriz nula. (4 puntos)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Problema 2. Solución oficial:</strong></p>
+<p>a)  <br>
+\[
+M=(A-\lambda I)^2=
+\begin{pmatrix}
+\lambda^2-1 &amp; 2\lambda-2 &amp; 4\lambda-4\\
+2\lambda-2 &amp; \lambda^2-1 &amp; 4\lambda-4\\
+2\lambda-2 &amp; 2\lambda-2 &amp; \lambda^2-6\lambda+2
+\end{pmatrix}
+\]</p>
+<p>b)  <br>
+\[
+\lambda=1
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el Problema 2, comenzaremos con la parte <strong>a)</strong>:</p>
+<h4>Parte a)</h4>
+Se nos pide calcular la matriz \( M = (A - \lambda I)^2 \), donde \(\lambda\) es un parámetro real y \(A\) e \(I\) son las matrices dadas.
+<p><strong>Paso 1: Calcular \( A - \lambda I \)</strong></p>
+<p>Dado que <br>
+\[ 
+I = \begin{pmatrix} 
+1 &amp; 0 &amp; 0 \\ 
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 
+\end{pmatrix},
+\]<br>
+la expresión \( A - \lambda I \) es:<br>
+\[ 
+A - \lambda I = \begin{pmatrix}
+0 &amp; -1 &amp; -2 \\
+-1 &amp; 0 &amp; -2 \\
+1 &amp; 1 &amp; 3
+\end{pmatrix} - \lambda \begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix} = \begin{pmatrix}
+0-\lambda &amp; -1 &amp; -2 \\
+-1 &amp; 0-\lambda &amp; -2 \\
+1 &amp; 1 &amp; 3-\lambda
+\end{pmatrix} = \begin{pmatrix}
+-\lambda &amp; -1 &amp; -2 \\
+-1 &amp; -\lambda &amp; -2 \\
+1 &amp; 1 &amp; 3-\lambda
+\end{pmatrix}.
+\]</p>
+<p><strong>Paso 2: Calcular \( (A - \lambda I)^2 \)</strong></p>
+<p>Ahora necesitamos multiplicar la matriz \( A - \lambda I \) por sí misma:<br>
+\[ 
+(A - \lambda I)^2 = \begin{pmatrix}
+-\lambda &amp; -1 &amp; -2 \\
+-1 &amp; -\lambda &amp; -2 \\
+1 &amp; 1 &amp; 3-\lambda
+\end{pmatrix} \times \begin{pmatrix}
+-\lambda &amp; -1 &amp; -2 \\
+-1 &amp; -\lambda &amp; -2 \\
+1 &amp; 1 &amp; 3-\lambda
+\end{pmatrix}.
+\]<br>
+Calcularemos cada entrada de la matriz resultante:<br>
+\[ 
+\left[ (A - \lambda I)^2 \right]_{11} = (-\lambda)^2 + (-1)(-1) + (-2)(1) = \lambda^2 + 1 - 2 = \lambda^2 - 1,
+\]<br>
+\[ 
+\left[ (A - \lambda I)^2 \right]_{12} = (-\lambda)(-1) + (-1)(-\lambda) + (-2)(1) = \lambda + \lambda - 2 = 2\lambda - 2,
+\]<br>
+y así sucesivamente para los demás elementos. Un cálculo completo de todas las entradas resultaría en la matriz cuadrada \(M\).</p>
+<h4>Parte b)</h4>
+Se nos pide encontrar el valor de \(\lambda\), si existe, tal que \(M = 0\) (matriz nula).
+<p>Para que \(M\) sea la matriz nula, cada entrada de la matriz cuadrada calculada previamente debe ser igual a cero. Este sistema de ecuaciones, resultante de igualar a cero cada entrada de \(M\), podría ser complicado de resolver en función de \(\lambda\). Propondremos resolverlo seteando todas las ecuaciones derivadas de \(M\) igualadas a cero y buscar valores de \(\lambda\) que satisfagan simultáneamente todas estas ecuaciones.</p>
+<p>Como esta es una tarea laboriosa, sería esencial realizarla mediante procedimientos algebraicos detallados y posiblemente usar herramientas computacionales para encontrar con precisión dichos valores de \(\lambda\), o demostrar que no existen. Alternativamente, podría evaluarse la demostración de que \(M\) no puede ser nula para ningún \(\lambda\) real si alguna de las ecuaciones no admite soluciones reales o se contradicen entre ellas.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el <strong>problema 2</strong>.</p>
+<h3>Datos</h3>
+\[
+A=\begin{pmatrix}
+0 &amp; -1 &amp; -2\\
+-1 &amp; 0 &amp; -2\\
+1 &amp; 1 &amp; 3
+\end{pmatrix},
+\qquad
+I=\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}.
+\]
+<p>---</p>
+<h3>a) Hallar \(M=(A-\lambda I)^2\)</h3>
+<p>Primero calculamos:</p>
+<p>\[
+A-\lambda I=
+\begin{pmatrix}
+-\lambda &amp; -1 &amp; -2\\
+-1 &amp; -\lambda &amp; -2\\
+1 &amp; 1 &amp; 3-\lambda
+\end{pmatrix}.
+\]</p>
+<p>Ahora elevamos al cuadrado:</p>
+<p>\[
+M=(A-\lambda I)(A-\lambda I).
+\]</p>
+<p>Multiplicando filas por columnas:</p>
+<h4>Primera fila</h4>
+\[
+m_{11}=(-\lambda)(-\lambda)+(-1)(-1)+(-2)(1)=\lambda^2+1-2=\lambda^2-1
+\]
+\[
+m_{12}=(-\lambda)(-1)+(-1)(-\lambda)+(-2)(1)=\lambda+\lambda-2=2\lambda-2
+\]
+\[
+m_{13}=(-\lambda)(-2)+(-1)(-2)+(-2)(3-\lambda)=2\lambda+2-6+2\lambda=4\lambda-4
+\]
+<h4>Segunda fila</h4>
+\[
+m_{21}=(-1)(-\lambda)+(-\lambda)(-1)+(-2)(1)=2\lambda-2
+\]
+\[
+m_{22}=(-1)(-1)+(-\lambda)(-\lambda)+(-2)(1)=1+\lambda^2-2=\lambda^2-1
+\]
+\[
+m_{23}=(-1)(-2)+(-\lambda)(-2)+(-2)(3-\lambda)=2+2\lambda-6+2\lambda=4\lambda-4
+\]
+<h4>Tercera fila</h4>
+\[
+m_{31}=1(-\lambda)+1(-1)+(3-\lambda)(1)=-\lambda-1+3-\lambda=2-2\lambda
+\]
+\[
+m_{32}=1(-1)+1(-\lambda)+(3-\lambda)(1)=-1-\lambda+3-\lambda=2-2\lambda
+\]
+\[
+m_{33}=1(-2)+1(-2)+(3-\lambda)^2=-4+(3-\lambda)^2
+\]
+\[
+m_{33}=-4+9-6\lambda+\lambda^2=\lambda^2-6\lambda+5
+\]
+<p>Por tanto,</p>
+<p>\[
+\boxed{
+M=
+\begin{pmatrix}
+\lambda^2-1 &amp; 2\lambda-2 &amp; 4\lambda-4\\
+2\lambda-2 &amp; \lambda^2-1 &amp; 4\lambda-4\\
+2-2\lambda &amp; 2-2\lambda &amp; \lambda^2-6\lambda+5
+\end{pmatrix}}
+\]</p>
+<p>Si se quiere, también puede escribirse factorizada como:</p>
+<p>\[
+\boxed{
+M=
+\begin{pmatrix}
+(\lambda-1)(\lambda+1) &amp; 2(\lambda-1) &amp; 4(\lambda-1)\\
+2(\lambda-1) &amp; (\lambda-1)(\lambda+1) &amp; 4(\lambda-1)\\
+-2(\lambda-1) &amp; -2(\lambda-1) &amp; (\lambda-1)(\lambda-5)
+\end{pmatrix}}
+\]</p>
+<p>---</p>
+<h3>b) Valor de \(\lambda\) para que \(M\) sea la matriz nula</h3>
+<p>Para que \(M\) sea la matriz nula, <strong>todas</strong> sus entradas deben ser cero.</p>
+<p>De la entrada \(m_{12}\):</p>
+<p>\[
+2\lambda-2=0 \quad\Rightarrow\quad \lambda=1
+\]</p>
+<p>Comprobamos en las demás:</p>
+<p>- \(\lambda^2-1=1-1=0\)<br>
+- \(4\lambda-4=4-4=0\)<br>
+- \(2-2\lambda=2-2=0\)<br>
+- \(\lambda^2-6\lambda+5=1-6+5=0\)</p>
+<p>Todo se anula.</p>
+<p>Por tanto, el único valor es:</p>
+<p>\[
+\boxed{\lambda=1}
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<h4>a)</h4>
+\[
+\boxed{
+(A-\lambda I)^2=
+\begin{pmatrix}
+\lambda^2-1 &amp; 2\lambda-2 &amp; 4\lambda-4\\
+2\lambda-2 &amp; \lambda^2-1 &amp; 4\lambda-4\\
+2-2\lambda &amp; 2-2\lambda &amp; \lambda^2-6\lambda+5
+\end{pmatrix}}
+\]
+<h4>b)</h4>
+\[
+\boxed{\lambda=1}
+\]
+<p>En ese caso, \(M\) es la matriz nula.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_066.html">Anterior</a><a class="button" href="problema_068.html">Siguiente</a></nav>
+</main></body>
+</html>

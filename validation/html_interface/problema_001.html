@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 1: andalucia_2023 1</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 1 de 139</h1>
+<div class="meta"><span class="badge">andalucia_2023</span> &nbsp; Ejercicio 1</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_002.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>EJERCICIO 1. (2,5 puntos)</p>
+<p>Sea la función \(f : [-2, 2\pi] \to \mathbb{R}\), definida por</p>
+<p>\[
+f(x)=
+\begin{cases}
+5x+1 &amp; \text{si } -2 \le x \le 0,\\
+e^x \cos(x) &amp; \text{si } 0 &lt; x \le 2\pi.
+\end{cases}
+\]</p>
+<p>a) [2 puntos] Halla los extremos relativos y absolutos de \(f\) (abscisas donde se obtienen y valores que se alcanzan).</p>
+<p>b) [0,5 puntos] Determina la ecuación de la recta tangente a la gráfica de \(f\) en el punto de abscisa \(x=\dfrac{\pi}{2}\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><h3>EJERCICIO 1</h3>
+<p>Sea la función \(f:[-2,2\pi]\to \mathbb{R}\) definida por</p>
+<p>\[
+f(x)=
+\begin{cases}
+5x+1, &amp; -2\le x\le 0,\\
+e^x\cos x, &amp; 0&lt;x\le 2\pi.
+\end{cases}
+\]</p>
+<h4>a) Extremos relativos y absolutos</h4>
+<p>En el intervalo \([-2,0]\), la función es</p>
+<p>\[
+f(x)=5x+1,
+\]</p>
+<p>una recta creciente, por lo que el valor mínimo lo alcanza en \(x=-2\) y el máximo en \(x=0\). Como</p>
+<p>\[
+f(-2)=5(-2)+1=-9,\qquad f(0)=5(0)+1=1,
+\]</p>
+<p>tenemos que el valor mínimo en \([-2,0]\) es \(-9\) y el máximo es \(1\).</p>
+<p>En el intervalo \((0,2\pi]\), la función es</p>
+<p>\[
+f(x)=e^x\cos x.
+\]</p>
+<p>Usamos la derivada para obtener los puntos críticos:</p>
+<p>\[
+f&#x27;(x)=e^x\cos x-e^x\sen x=e^x(\cos x-\sen x).
+\]</p>
+<p>\[
+f&#x27;(x)=0 \Longrightarrow e^x(\cos x-\sen x)=0
+\Longrightarrow \cos x-\sen x=0
+\Longrightarrow \tan x=1.
+\]</p>
+<p>En \((0,2\pi]\):</p>
+<p>\[
+x=\frac{\pi}{4},\qquad x=\frac{5\pi}{4}.
+\]</p>
+<p>Estudiamos el signo de la segunda derivada:</p>
+<p>\[
+f&#x27;&#x27;(x)=e^x(\cos x-\sen x)+e^x(-\sen x-\cos x)
+=-2e^x\sen x.
+\]</p>
+<p>\[
+f&#x27;&#x27;\left(\frac{\pi}{4}\right)
+=-2e^{\pi/4}\sen\left(\frac{\pi}{4}\right)&lt;0
+\]</p>
+<p>luego hay un máximo relativo en \(x=\frac{\pi}{4}\).</p>
+<p>\[
+f&#x27;&#x27;\left(\frac{5\pi}{4}\right)
+=-2e^{5\pi/4}\sen\left(\frac{5\pi}{4}\right)&gt;0
+\]</p>
+<p>luego hay un mínimo relativo en \(x=\frac{5\pi}{4}\).</p>
+<p>Los valores son:</p>
+<p>\[
+f\left(\frac{\pi}{4}\right)
+=e^{\pi/4}\cos\left(\frac{\pi}{4}\right)
+=\frac{\sqrt2}{2}e^{\pi/4}\simeq 1.554,
+\]</p>
+<p>\[
+f\left(\frac{5\pi}{4}\right)
+=e^{5\pi/4}\cos\left(\frac{5\pi}{4}\right)
+=-\frac{\sqrt2}{2}e^{5\pi/4}\simeq -35.884.
+\]</p>
+<p>Comprobamos si la función es continua en \(x=0\):</p>
+<p>\[
+f(0)=1,
+\]</p>
+<p>\[
+\lim_{x\to 0^-} f(x)=\lim_{x\to 0^-}(5x+1)=1,
+\]</p>
+<p>\[
+\lim_{x\to 0^+} f(x)=\lim_{x\to 0^+}e^x\cos x=1.
+\]</p>
+<p>La función es continua en \(x=0\).</p>
+<p>En \(x=0\) la función cambia de definición y no tiene un máximo relativo pues al tener un máximo relativo en \(x=\frac{\pi}{4}\) significa que la función crece en el intervalo \(\left(0,\frac{\pi}{4}\right)\).</p>
+<p>El máximo relativo de la función es</p>
+<p>\[
+\left(\frac{\pi}{4},\frac{\sqrt2}{2}e^{\pi/4}\right)
+\]</p>
+<p>y el mínimo relativo es</p>
+<p>\[
+\left(\frac{5\pi}{4},-\frac{\sqrt2}{2}e^{5\pi/4}\right).
+\]</p>
+<p>Reunimos toda la información obtenida para decidir dónde está el máximo y mínimo absoluto. También valoramos la función en los extremos del intervalo de definición \([-2,2\pi]\).</p>
+<p>- El valor mínimo en \([-2,0]\) está en \(x=-2\) y es \(-9\), y el máximo está en \(x=0\) y es \(1\).<br>
+- El valor mínimo relativo en \((0,2\pi]\) está en \(x=\frac{5\pi}{4}\) y es \(-35.88\), y el máximo relativo está en \(x=\frac{\pi}{4}\) y es \(1.55\).<br>
+- La función en \(x=2\pi\) vale</p>
+<p>\[
+f(2\pi)=e^{2\pi}\cos(2\pi)=e^{2\pi}\simeq 535.49.
+\]</p>
+<p>El máximo absoluto está en</p>
+<p>\[
+x=2\pi
+\]</p>
+<p>con valor</p>
+<p>\[
+e^{2\pi}\simeq 535.49.
+\]</p>
+<p>El mínimo absoluto está en</p>
+<p>\[
+x=\frac{5\pi}{4}
+\]</p>
+<p>y su valor es</p>
+<p>\[
+-\frac{\sqrt2}{2}e^{5\pi/4}\simeq -35.88.
+\]</p>
+<p>---</p>
+<h4>b) Recta tangente en \(x=\frac{\pi}{2}\)</h4>
+<p>La función en un entorno de \(x=\frac{\pi}{2}\) es</p>
+<p>\[
+f(x)=e^x\cos x.
+\]</p>
+<p>La ecuación de la recta tangente a la gráfica de \(f\) en el punto de abscisa \(x=\frac{\pi}{2}\) es:</p>
+<p>\[
+f\left(\frac{\pi}{2}\right)=e^{\pi/2}\cos\left(\frac{\pi}{2}\right)=0,
+\]</p>
+<p>\[
+f&#x27;(x)=e^x(\cos x-\sen x),
+\]</p>
+<p>\[
+f&#x27;\left(\frac{\pi}{2}\right)
+=e^{\pi/2}\left(\cos\frac{\pi}{2}-\sen\frac{\pi}{2}\right)
+=-e^{\pi/2}.
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+y-f\left(\frac{\pi}{2}\right)
+=f&#x27;\left(\frac{\pi}{2}\right)\left(x-\frac{\pi}{2}\right),
+\]</p>
+<p>\[
+y=-e^{\pi/2}\left(x-\frac{\pi}{2}\right).
+\]</p>
+<p>Es decir,</p>
+<p>\[
+\boxed{y=-e^{\pi/2}x+\frac{\pi}{2}e^{\pi/2}}.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea<br>
+\[
+f(x)=
+\begin{cases}
+5x+1, &amp; -2\le x\le 0,\\[2mm]
+e^x\cos x, &amp; 0&lt;x\le 2\pi.
+\end{cases}
+\]</p>
+<h3>a) Extremos relativos y absolutos</h3>
+<h4>1. En el tramo \([-2,0]\)</h4>
+\[
+f(x)=5x+1 \quad\Rightarrow\quad f&#x27;(x)=5&gt;0.
+\]
+Luego \(f\) es <strong>creciente</strong> en \([-2,0]\).
+<p>Además,<br>
+\[
+f(-2)=5(-2)+1=-9,\qquad f(0)=1.
+\]</p>
+<h4>2. En el tramo \((0,2\pi]\)</h4>
+\[
+f(x)=e^x\cos x
+\]
+y
+\[
+f&#x27;(x)=e^x\cos x+e^x(-\sin x)=e^x(\cos x-\sin x).
+\]
+<p>Como \(e^x&gt;0\), los puntos críticos salen de<br>
+\[
+\cos x-\sin x=0
+\quad\Longleftrightarrow\quad
+\tan x=1.
+\]<br>
+En \((0,2\pi]\):<br>
+\[
+x=\frac{\pi}{4},\quad x=\frac{5\pi}{4}.
+\]</p>
+<p>Estudiamos el signo de \(f&#x27;(x)\):</p>
+<p>- si \(0&lt;x&lt;\frac{\pi}{4}\), \(f&#x27;(x)&gt;0\)  \(\Rightarrow\) creciente;<br>
+- si \(\frac{\pi}{4}&lt;x&lt;\frac{5\pi}{4}\), \(f&#x27;(x)&lt;0\)  \(\Rightarrow\) decreciente;<br>
+- si \(\frac{5\pi}{4}&lt;x\le 2\pi\), \(f&#x27;(x)&gt;0\)  \(\Rightarrow\) creciente.</p>
+<p>Por tanto:</p>
+<p>- en \(x=\frac{\pi}{4}\) hay <strong>máximo relativo</strong>;<br>
+- en \(x=\frac{5\pi}{4}\) hay <strong>mínimo relativo</strong>.</p>
+<p>Sus valores:<br>
+\[
+f\!\left(\frac{\pi}{4}\right)=e^{\pi/4}\cos\frac{\pi}{4}
+=\frac{e^{\pi/4}}{\sqrt2},
+\]<br>
+\[
+f\!\left(\frac{5\pi}{4}\right)=e^{5\pi/4}\cos\frac{5\pi}{4}
+=-\frac{e^{5\pi/4}}{\sqrt2}.
+\]</p>
+<h4>3. En \(x=0\)</h4>
+\[
+f(0)=1,\qquad \lim_{x\to 0^+}e^x\cos x=1,
+\]
+así que \(f\) es continua en \(0\). Como a ambos lados es creciente, <strong>en \(x=0\) no hay extremo</strong>.
+<h4>4. Extremos absolutos</h4>
+Comparamos los valores relevantes:
+\[
+f(-2)=-9,\qquad f(0)=1,\qquad
+f\!\left(\frac{\pi}{4}\right)=\frac{e^{\pi/4}}{\sqrt2},
+\]
+\[
+f\!\left(\frac{5\pi}{4}\right)=-\frac{e^{5\pi/4}}{\sqrt2},\qquad
+f(2\pi)=e^{2\pi}.
+\]
+<p>Luego:</p>
+<p>- <strong>Máximo absoluto</strong> en<br>
+  \[
+  x=2\pi,\qquad f(2\pi)=e^{2\pi}.
+  \]</p>
+<p>- <strong>Mínimo absoluto</strong> en<br>
+  \[
+  x=\frac{5\pi}{4},\qquad
+  f\!\left(\frac{5\pi}{4}\right)=-\frac{e^{5\pi/4}}{\sqrt2}.
+  \]</p>
+<h4>Resumen</h4>
+- <strong>Máximo relativo</strong>:
+  \[
+  x=\frac{\pi}{4},\qquad f\left(\frac{\pi}{4}\right)=\frac{e^{\pi/4}}{\sqrt2}.
+  \]
+<p>- <strong>Mínimo relativo</strong>:<br>
+  \[
+  x=\frac{5\pi}{4},\qquad f\left(\frac{5\pi}{4}\right)=-\frac{e^{5\pi/4}}{\sqrt2}.
+  \]</p>
+<p>- <strong>Máximo absoluto</strong>:<br>
+  \[
+  x=2\pi,\qquad f(2\pi)=e^{2\pi}.
+  \]</p>
+<p>- <strong>Mínimo absoluto</strong>:<br>
+  \[
+  x=\frac{5\pi}{4},\qquad f\left(\frac{5\pi}{4}\right)=-\frac{e^{5\pi/4}}{\sqrt2}.
+  \]</p>
+<p>---</p>
+<h3>b) Recta tangente en \(x=\dfrac{\pi}{2}\)</h3>
+<p>Como \(\frac{\pi}{2}&gt;0\), usamos \(f(x)=e^x\cos x\).</p>
+<h4>Punto de tangencia</h4>
+\[
+f\left(\frac{\pi}{2}\right)=e^{\pi/2}\cos\frac{\pi}{2}=0.
+\]
+<h4>Pendiente</h4>
+\[
+f&#x27;(x)=e^x(\cos x-\sin x),
+\]
+\[
+f&#x27;\left(\frac{\pi}{2}\right)=e^{\pi/2}\left(0-1\right)=-e^{\pi/2}.
+\]
+<h4>Ecuación de la tangente</h4>
+\[
+y-f\left(\frac{\pi}{2}\right)=f&#x27;\left(\frac{\pi}{2}\right)\left(x-\frac{\pi}{2}\right),
+\]
+\[
+y=-e^{\pi/2}\left(x-\frac{\pi}{2}\right).
+\]
+<p>Equivalente:<br>
+\[
+\boxed{\,y=-e^{\pi/2}x+\frac{\pi}{2}e^{\pi/2}\, }.
+\]</p></section>
+<section class="card"><h2>Respuesta B</h2><h4>Ejercicio 1 del Examen de Matemáticas II Andalucía 2023</h4>
+<p>#### Parte (a)<br>
+La función \(f: [-2, 2\pi] \rightarrow \mathbb{R}\) está definida por:<br>
+\[ f(x) = \begin{cases} 
+5x + 1 &amp; \text{si } -2 \leq x \leq 0 \\
+e^x \cos(x) &amp; \text{si } 0 &lt; x \leq 2\pi 
+\end{cases} \]</p>
+<p><strong>Paso 1: Estudio de extremos relativos y absolutos</strong></p>
+<p>Para la primera parte de la función:<br>
+- <strong>Derivada</strong>: \(f&#x27;(x) = 5\) en el intervalo \([-2, 0]\). No hay cambios en el signo de la derivada, por lo que no hay extremos relativos en este tramo.</p>
+<p>Para la segunda parte de la función:<br>
+- <strong>Derivada</strong>: La derivada de \(e^x \cos(x)\) utilizando la regla del producto es \(f&#x27;(x) = e^x \cos(x) - e^x \sin(x)\).</p>
+<p>Solucionando \(f&#x27;(x) = 0\) para hallar posibles cambios de signo:<br>
+  \[ e^x \cos(x) - e^x \sin(x) = 0 \]<br>
+  \[ \cos(x) - \sin(x) = 0 \]<br>
+  \[ \tan(x) = 1 \Rightarrow x = \frac{\pi}{4}, \frac{5\pi}{4} \] (dentro del tramo \(0, 2\pi\)).</p>
+<p>Evaluando cada uno de estos puntos, se encuentra si son mínimos o máximos relativos, usando un análisis de cambios de signos o una segunda derivada.</p>
+<p><strong>Paso 2: Análisis en el punto de unión</strong><br>
+El punto \(x = 0\) requiere análisis particular. Se calculan los límites de \(f\) cuando \(x\) se aproxima a \(0\) desde la izquierda y la derecha:<br>
+\[ \lim_{x \to 0^-} f(x) = 1 \]<br>
+\[ \lim_{x \to 0^+} f(x) = 1 \]<br>
+Como los límites coinciden y la función es continua en \(x = 0\), este punto no es un extremo.</p>
+<p><strong>Paso 3: Extremos absolutos</strong><br>
+Se evalúa \(f(x)\) en los extremos del intervalo y en los puntos críticos hallados:<br>
+- \(f(-2) = -9\)<br>
+- \(f(0) = 1\)<br>
+- \(f(2\pi) = e^{2\pi}\cos(2\pi) = e^{2\pi}\)<br>
+- Los valores de \(f\) en los puntos críticos hallados se evalúan también.</p>
+<p>El mínimo absoluto es \(-9\) en \(x = -2\). El máximo absoluto es \(e^{2\pi}\) en \(x = 2\pi\).</p>
+<p>#### Parte (b)<br>
+<strong>Ecuación de la recta tangente en \(x = \frac{\pi}{2}\)</strong><br>
+- \(f\left(\frac{\pi}{2}\right) = e^{\frac{\pi}{2}} \cos\left(\frac{\pi}{2}\right) = 0\)<br>
+- La derivada en \(x = \frac{\pi}{2}\), \(f&#x27;\left(\frac{\pi}{2}\right) = e^{\frac{\pi}{2}}(-1)\).</p>
+<p>La ecuación de la recta tangente es entonces la forma punto-pendiente:<br>
+\[ y - 0 = -e^{\frac{\pi}{2}}(x - \frac{\pi}{2}) \]<br>
+\[ y = -e^{\frac{\pi}{2}}x + \frac{\pi}{2} e^{\frac{\pi}{2}} \]</p>
+<p>Estos son los desarrollos y resultados esenciales para el ejercicio 1 del documento suministrado【4:0†Examen Matemáticas II Andalucia 2023 enunciado】.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_002.html">Siguiente</a></nav>
+</main></body>
+</html>

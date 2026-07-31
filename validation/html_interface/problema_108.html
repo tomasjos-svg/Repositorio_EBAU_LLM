@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 108: murcia_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 108 de 139</h1>
+<div class="meta"><span class="badge">murcia_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_107.html">Anterior</a><a class="button" href="problema_109.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>5: Considere las rectas \(r\) y \(s\) dadas por las siguientes ecuaciones</p>
+<p>\[
+r:\frac{x-1}{2}=\frac{y}{1}=\frac{z+3}{-1}
+\quad \text{y} \quad
+s:
+\begin{cases}
+2x-y=0\\
+x+z=2
+\end{cases}
+\]</p>
+<p>a) [1 p.] Justifique que ambas rectas se cruzan en el espacio.</p>
+<p>b) [1,5 p.] Calcule la ecuación de la perpendicular común a ambas rectas.</p></section>
+<section class="card"><h2>Solucion oficial</h2><h4>Ejercicio 5</h4>
+<p>Considere las rectas \(r\) y \(s\) dadas por las siguientes ecuaciones:</p>
+<p>\[
+r:\frac{x-1}{2}=\frac{y}{1}=\frac{z+3}{-1}
+\]</p>
+<p>\[
+s:\begin{cases}
+x-y=0\\
+x+z=2
+\end{cases}
+\]</p>
+<p>#### a) Justifique que ambas rectas se cruzan en el espacio.</p>
+<p>Obtenemos un punto y un vector director de cada recta.</p>
+<p>\[
+r:\frac{x-1}{2}=\frac{y}{1}=\frac{z+3}{-1}
+\Rightarrow
+P_r=(1,0,-3), \quad \vec u_r=(2,1,-1)
+\]</p>
+<p>\[
+s:\begin{cases}
+x-y=0\\
+x+z=2
+\end{cases}
+\Rightarrow
+\begin{cases}
+x=\lambda\\
+y=\lambda\\
+z=2-\lambda
+\end{cases}
+\Rightarrow
+Q_s=(0,0,2), \quad \vec v_s=(1,1,-1)
+\]</p>
+<p>Los vectores directores de ambas rectas no tienen coordenadas proporcionales y, por tanto, las rectas no son ni coincidentes ni paralelas, y deben cruzarse o cortarse.</p>
+<p>Para ver si se cortan o cruzan calculamos el producto mixto de \(\vec u_r\), \(\vec v_s\) y \(\overrightarrow{P_rQ_s}\).</p>
+<p>\[
+\overrightarrow{P_rQ_s}=Q_s-P_r=(0,0,2)-(1,0,-3)=(-1,0,5)
+\]</p>
+<p>\[
+[\vec u_r,\vec v_s,\overrightarrow{P_rQ_s}]
+=
+\begin{vmatrix}
+2 &amp; 1 &amp; -1\\
+1 &amp; 1 &amp; -1\\
+-1 &amp; 0 &amp; 5
+\end{vmatrix}
+\neq 0
+\]</p>
+<p>Como el producto mixto es no nulo, las rectas se cruzan.</p>
+<p>---</p>
+<p>#### b) Calcule la ecuación de la perpendicular común a ambas rectas.</p>
+<p>El producto vectorial de los vectores directores de las rectas \(r\) y \(s\) es el vector director de la recta \(t\) perpendicular común a ambas rectas.</p>
+<p>\[
+\vec w_t=\vec u_r\times \vec v_s
+=
+\begin{vmatrix}
+\vec i &amp; \vec j &amp; \vec k\\
+2 &amp; 1 &amp; -1\\
+1 &amp; 1 &amp; -1
+\end{vmatrix}
+=(0,1,1)
+\]</p>
+<p>Hallamos la ecuación de la recta \(t\) como intersección de los planos \(\pi_r\) y \(\pi_s\).</p>
+<p>El plano \(\pi_r\) es el plano que contiene a la recta \(r\) y, por lo tanto, contiene el punto \(P_r\) y tiene como vectores directores \(\vec u_r\) y \(\vec w_t\).</p>
+<p>\[
+\pi_r:
+\begin{vmatrix}
+x-1 &amp; y &amp; z+3\\
+2 &amp; 1 &amp; -1\\
+0 &amp; 1 &amp; 1
+\end{vmatrix}
+=0
+\]</p>
+<p>\[
+\pi_r: 2y-2z-6=0
+\]</p>
+<p>El plano \(\pi_s\) es el plano que contiene a la recta \(s\) y, por lo tanto, contiene el punto \(Q_s\) y tiene como vectores directores \(\vec v_s\) y \(\vec w_t\).</p>
+<p>\[
+\pi_s:
+\begin{vmatrix}
+x &amp; y &amp; z-2\\
+1 &amp; 1 &amp; -1\\
+0 &amp; 1 &amp; 1
+\end{vmatrix}
+=0
+\]</p>
+<p>\[
+\pi_s: 2y-z+2=0
+\]</p>
+<p>La recta \(t\) es la intersección de ambos planos:</p>
+<p>\[
+t:
+\begin{cases}
+2y-2z-6=0\\
+2y-z+2=0
+\end{cases}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 5, procedemos a analizar la geometría y las posiciones relativas de las rectas \(r\) y \(s\) en el espacio, dado por las ecuaciones proporcionadas en el enunciado.</p>
+<p><strong>a) Justifique que ambas rectas se cruzan en el espacio.</strong></p>
+<p>La recta \(r\) está dada en forma paramétrica como:</p>
+<p>\[
+r: x = 1 + 2t, \quad y = t, \quad z = -3 - t
+\]</p>
+<p>donde \( t \) es el parámetro.</p>
+<p>La recta \(s\) está dada mediante un sistema de ecuaciones:</p>
+<p>\[
+\begin{cases}
+2x - y = 0 \\
+x + z = 2
+\end{cases}
+\]</p>
+<p>De la primera ecuación, \(2x - y = 0\), podemos despejar \(y\) en términos de \(x\): \(y = 2x\).</p>
+<p>Sustituyendo este valor en la representación paramétrica de \(r\):</p>
+<p>\[
+2(1 + 2t) - t = t + 2 + 4t - t = 2 + 4t
+\]</p>
+<p>Sustituimos \(x = 1 + 2t\) y \(y = 2x = 2 + 4t\) en las ecuaciones de \(s\):</p>
+<p>\[
+1 + 2t + z = 2  \quad \Rightarrow \quad z = 2 - (1 + 2t) = 1 - 2t
+\]</p>
+<p>Vemos ahora si este valor de \(z\) concuerda con la ecuación de \(r\):</p>
+<p>\[
+z = -3 - t  \quad \text{con} \quad z = 1 - 2t
+\]</p>
+<p>Igualamos ambos valores de \(z\):</p>
+<p>\[
+-3 - t = 1 - 2t \quad \Rightarrow \quad t = -4
+\]</p>
+<p>Sustituyendo \(t = -4\) en las ecuaciones de \(r\), tenemos:</p>
+<p>\[
+x = 1 + 2(-4) = -7, \quad y = -4, \quad z = -3 - (-4) = 1
+\]</p>
+<p>Esto verifica la intersección ya que las coordenadas \((-7, -4, 1)\) también satisfacen las ecuaciones de la recta \(s\):</p>
+<p>\[
+2(-7) + 4 = -14 + 4 = -10 \quad \text{(Cumple con } 2x - y = 0 \text{)}
+\]</p>
+<p>\[
+-7 + 1 = -6 \quad \text{(No es satisfactorio para } x + z = 2\text{)}
+\]</p>
+<p>Debido a este resultado, parecería que hubo un error de cálculo en el paso anterior, ya que el punto \((-7, -4, 1)\) no satisface ambas ecuaciones de \(s\). Lo correcto sería revisar este cálculo. Revisaremos:</p>
+<p>\[
+\text{Sustituimos } y = 2x \text{ en } x + z = 2:
+\]<br>
+\[
+1 + 2t + 1 - 2t = 2
+\]<br>
+\[
+2 = 2, \text{ es siempre verdadero.}
+\]</p>
+<p>Llegamos a la conclusión que las rectas pueden intersecarse. Tendríamos entonces que obtener correctamente el cálculo para verificar si el punto de intersección cumple ambas ecuaciones de \(s\).</p>
+<p><strong>b) Calcule la ecuación de la perpendicular común a ambas rectas.</strong></p>
+<p>La ecuación de una perpendicular común puede ser determinada encontrando un vector que sea perpendicular a los vectores de dirección de dichas rectas, que en este caso son \(\vec{v}_r = (2, 1, -1)\) y \(\vec{v}_s = (2, 2, 0)\) (asumimos que el vector de dirección de \(s\) es un vector perpendicular a ambos planos).</p>
+<p>Debido a la complejidad matemática de este cálculo, sería necesario un análisis más detenido y posiblemente el uso de herramientas como el método del producto vectorial o solución de sistemas no lineales, los cuales podrían estar fuera del alcance directo de este método explicativo. En un examen o contexto normal, se procederá a calcular el producto vectorial \(\vec{v}_r \times \vec{v}_s\) para encontrar un vector de dirección común y luego definir la línea que pasa a través de este vector y el punto de intersección encontrado.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea</p>
+<p>\[
+r:\frac{x-1}{2}=\frac{y}{1}=\frac{z+3}{-1},
+\qquad
+s:\begin{cases}
+2x-y=0\\
+x+z=2
+\end{cases}
+\]</p>
+<h3>a) Justificar que las rectas se cruzan</h3>
+<h4>Recta \(r\)</h4>
+Tomando parámetro \(\lambda\),
+<p>\[
+\frac{x-1}{2}=\frac{y}{1}=\frac{z+3}{-1}=\lambda
+\]</p>
+<p>queda</p>
+<p>\[
+r:\begin{cases}
+x=1+2\lambda\\
+y=\lambda\\
+z=-3-\lambda
+\end{cases}
+\]</p>
+<p>Por tanto, un punto y un vector director de \(r\) son:</p>
+<p>\[
+P_r=(1,0,-3), \qquad \vec v_r=(2,1,-1).
+\]</p>
+<h4>Recta \(s\)</h4>
+De
+<p>\[
+2x-y=0,\qquad x+z=2
+\]</p>
+<p>tomamos \(x=\mu\). Entonces:</p>
+<p>\[
+y=2\mu,\qquad z=2-\mu
+\]</p>
+<p>y por tanto</p>
+<p>\[
+s:\begin{cases}
+x=\mu\\
+y=2\mu\\
+z=2-\mu
+\end{cases}
+\]</p>
+<p>Un punto y un vector director de \(s\) son:</p>
+<p>\[
+P_s=(0,0,2), \qquad \vec v_s=(1,2,-1).
+\]</p>
+<h4>No son paralelas</h4>
+Sus vectores directores no son proporcionales:
+<p>\[
+(2,1,-1)\not\parallel(1,2,-1).
+\]</p>
+<h4>Comprobamos si se cortan</h4>
+Igualamos las ecuaciones paramétricas:
+<p>\[
+\begin{cases}
+1+2\lambda=\mu\\
+\lambda=2\mu\\
+-3-\lambda=2-\mu
+\end{cases}
+\]</p>
+<p>De las dos primeras:</p>
+<p>\[
+\lambda=2\mu,\qquad 1+2(2\mu)=\mu
+\]</p>
+<p>\[
+1+4\mu=\mu \quad\Rightarrow\quad 3\mu=-1 \quad\Rightarrow\quad \mu=-\frac13,
+\]</p>
+<p>y entonces</p>
+<p>\[
+\lambda=2\mu=-\frac23.
+\]</p>
+<p>Sustituyendo en la tercera:</p>
+<p>\[
+-3-\left(-\frac23\right)=-\frac73,
+\qquad
+2-\left(-\frac13\right)=\frac73,
+\]</p>
+<p>lo cual es imposible. Luego no se cortan.</p>
+<p>Como <strong>no son paralelas</strong> y <strong>no se cortan</strong>, las rectas <strong>se cruzan en el espacio</strong>.</p>
+<p>---</p>
+<h3>b) Ecuación de la perpendicular común</h3>
+<p>Buscamos puntos</p>
+<p>\[
+P\in r,\qquad Q\in s
+\]</p>
+<p>tales que el vector \(\overrightarrow{PQ}\) sea perpendicular a ambas rectas.</p>
+<p>Tomamos:</p>
+<p>\[
+P=(1+2\lambda,\lambda,-3-\lambda),
+\qquad
+Q=(\mu,2\mu,2-\mu).
+\]</p>
+<p>Entonces</p>
+<p>\[
+\overrightarrow{PQ}=Q-P=
+(\mu-1-2\lambda,\;2\mu-\lambda,\;5-\mu+\lambda).
+\]</p>
+<p>Debe verificarse:</p>
+<p>\[
+\overrightarrow{PQ}\cdot \vec v_r=0,
+\qquad
+\overrightarrow{PQ}\cdot \vec v_s=0.
+\]</p>
+<h4>Condición 1</h4>
+\[
+(\mu-1-2\lambda,\,2\mu-\lambda,\,5-\mu+\lambda)\cdot(2,1,-1)=0
+\]
+<p>\[
+2(\mu-1-2\lambda)+(2\mu-\lambda)-(5-\mu+\lambda)=0
+\]</p>
+<p>\[
+5\mu-6\lambda=7.
+\]</p>
+<h4>Condición 2</h4>
+\[
+(\mu-1-2\lambda,\,2\mu-\lambda,\,5-\mu+\lambda)\cdot(1,2,-1)=0
+\]
+<p>\[
+(\mu-1-2\lambda)+2(2\mu-\lambda)-(5-\mu+\lambda)=0
+\]</p>
+<p>\[
+6\mu-5\lambda=6.
+\]</p>
+<p>Resolvemos el sistema:</p>
+<p>\[
+\begin{cases}
+5\mu-6\lambda=7\\
+6\mu-5\lambda=6
+\end{cases}
+\]</p>
+<p>De aquí,</p>
+<p>\[
+\lambda=-\frac{12}{11},\qquad \mu=\frac{1}{11}.
+\]</p>
+<h4>Puntos de contacto</h4>
+En \(r\):
+<p>\[
+P=\left(1+2\left(-\frac{12}{11}\right),-\frac{12}{11},-3+\frac{12}{11}\right)
+=
+\left(-\frac{13}{11},-\frac{12}{11},-\frac{21}{11}\right).
+\]</p>
+<p>En \(s\):</p>
+<p>\[
+Q=\left(\frac{1}{11},\frac{2}{11},2-\frac{1}{11}\right)
+=
+\left(\frac{1}{11},\frac{2}{11},\frac{21}{11}\right).
+\]</p>
+<p>Entonces</p>
+<p>\[
+\overrightarrow{PQ}=Q-P=
+\left(\frac{14}{11},\frac{14}{11},\frac{42}{11}\right)
+\]</p>
+<p>que tiene dirección</p>
+<p>\[
+(1,1,3).
+\]</p>
+<p>Por tanto, la <strong>perpendicular común</strong> es la recta que pasa por \(P\) y lleva dirección \((1,1,3)\):</p>
+<p>\[
+\boxed{
+\ell:\begin{cases}
+x=-\frac{13}{11}+t\\[2mm]
+y=-\frac{12}{11}+t\\[2mm]
+z=-\frac{21}{11}+3t
+\end{cases}
+}
+\qquad (t\in\mathbb R)
+\]</p>
+<p>Equivalentemente, en forma continua:</p>
+<p>\[
+\boxed{
+\frac{x+\frac{13}{11}}{1}
+=
+\frac{y+\frac{12}{11}}{1}
+=
+\frac{z+\frac{21}{11}}{3}
+}
+\]</p>
+<p>---</p>
+<p>Si quieres, también puedo dar una versión más corta “tipo examen”.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_107.html">Anterior</a><a class="button" href="problema_109.html">Siguiente</a></nav>
+</main></body>
+</html>

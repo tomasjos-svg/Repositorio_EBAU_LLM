@@ -1,0 +1,11 @@
+﻿file,status,error
+code/analysis/01_auditoria_datos.py,OK,
+code/analysis/02_dataset_maestro.py,OK,
+code/analysis/03_estadistica_descriptiva.py,OK,
+code/analysis/04_inferencia.py,OK,
+code/analysis/05_figuras_publicacion.py,OK,
+code/analysis/06_tablas_publicacion.py,OK,
+code/analysis/common.py,OK,
+code/analysis/run_pipeline.py,OK,
+code/experiment/gpt_POO_paper_v8_4_detector_ebau.py,OK,
+code/validation/validacion_humana_juez_llm.py,OK,

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 26: asturias_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 26 de 139</h1>
+<div class="meta"><span class="badge">asturias_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_025.html">Anterior</a><a class="button" href="problema_027.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Pregunta 8. Las calificaciones de la asignatura Análisis Matemático I de la Facultad de Matemáticas siguen una distribución N(5, 2).</p>
+<p>(a) (0.75 puntos) Calcule la probabilidad de que un estudiante haya obtenido una nota mayor o igual que 7.5.</p>
+<p>(b) (0.75 puntos) Calcula la probabilidad de que un estudiante haya obtenido una nota entre 3 y 5.</p>
+<p>(c) (1 punto) Se modifica sistema de enseñanza de forma que la desviación típica ahora es 1.5 y la probabilidad de obtener una nota menor o igual que 6, sea 0.52. Cuál será la nueva media? Ha funcionado el sistema aplicado?</p>
+<p>Algunos valores de la función de distribución N(0, 1) son: F(x) = P(Z &lt;= x), F(0) = 0.5, F(1.25) = 0.8944, F(0.05) = 0.52, F(0.52) = 0.6985, F(0.8944) = 0.8133, F(1) = 0.8413.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Pregunta 8. Solución oficial</strong></p>
+<p>Las calificaciones de la asignatura Análisis Matemático I de la Facultad de Matemáticas siguen una distribución \(N(5,2)\).</p>
+<p><strong>(a) (0.75 puntos)</strong></p>
+<p>\[
+P(X \geq 7.5)=1-P(X\leq 7.5)
+=1-P\left(Z\leq \frac{7.5-5}{2}\right)
+\]</p>
+<p>\[
+=1-F(1.25)=1-0.8944=0.1056
+\]</p>
+<p>---</p>
+<p><strong>(b) (0.75 puntos)</strong></p>
+<p>\[
+P(3\leq X\leq 5)=P(X\leq 5)-P(X\leq 3)
+\]</p>
+<p>\[
+=P\left(Z\leq \frac{5-5}{2}\right)
+-P\left(Z\leq \frac{3-5}{2}\right)
+\]</p>
+<p>\[
+=0.5-P(Z\leq -1)
+\]</p>
+<p>Como</p>
+<p>\[
+P(Z\leq -1)=P(Z\geq 1)=1-P(Z\leq 1)=1-0.8413=0.1587
+\]</p>
+<p>entonces</p>
+<p>\[
+P(3\leq X\leq 5)=0.5-0.1587=0.3413
+\]</p>
+<p>---</p>
+<p><strong>(c) (1 punto)</strong></p>
+<p>\[
+P(X\leq 6)=0.52
+\]</p>
+<p>que corresponde al valor de la normal tipificada \(F(0.05)\), por lo tanto</p>
+<p>\[
+Z=0.05=\frac{6-\mu}{1.5}
+\]</p>
+<p>\[
+\mu=5.9250
+\]</p>
+<p>La media ha pasado de 5 a 5.925, por lo que el sistema ha funcionado.</p>
+<p>---</p>
+<p>Algunos valores de la función de distribución \(N(0,1)\) son:</p>
+<p>\[
+F(x)=P(Z\leq x),\quad F(0)=0.5,\quad F(1.25)=0.8944,
+\]</p>
+<p>\[
+F(0.05)=0.52,\quad F(0.52)=0.6985,\quad F(0.8944)=0.8133,\quad F(1)=0.8413.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver la Pregunta 8, vamos paso a paso de acuerdo a cada sub-pregunta:</p>
+<h4>(a) Probabilidad de que un estudiante haya obtenido una nota mayor o igual que 7.5.</h4>
+Se nos da que las calificaciones siguen una distribución normal \( N(5, 2) \), donde 5 es la media y 2 es la desviación estándar. Primero vamos a convertir la nota 7.5 en un valor Z, usando la fórmula:
+\[ Z = \frac{X - \mu}{\sigma} \]
+donde \( \mu = 5 \), \( \sigma = 2 \) y \( X = 7.5 \).
+<p>Calculamos:<br>
+\[ Z = \frac{7.5 - 5}{2} = \frac{2.5}{2} = 1.25 \]</p>
+<p>Ahora buscamos esta Z en la tabla de valores proporcionada:<br>
+\[ P(Z \leq 1.25) = 0.8944 \]</p>
+<p>Como necesitamos \( P(Z \geq 1.25) \), usamos la complementariedad:<br>
+\[ P(Z \geq 1.25) = 1 - P(Z \leq 1.25) = 1 - 0.8944 = 0.1056 \]</p>
+<p>Por lo tanto, la probabilidad de que un estudiante obtenga una nota mayor o igual que 7.5 es <strong>0.1056</strong>.</p>
+<h4>(b) Probabilidad de que un estudiante haya obtenido una nota entre 3 y 5.</h4>
+Para \( X = 3 \):
+\[ Z = \frac{3 - 5}{2} = -1 \]
+Usando la simetría de la distribución normal:
+\[ P(Z \leq -1) = 1 - P(Z \leq 1) = 1 - 0.8413 = 0.1587 \]
+<p>Para \( X = 5 \):<br>
+\[ Z = \frac{5 - 5}{2} = 0 \]<br>
+Usamos la tabla:<br>
+\[ P(Z \leq 0) = 0.5 \]</p>
+<p>La probabilidad buscada es la diferencia:<br>
+\[ P(3 \leq X \leq 5) = P(Z \leq 0) - P(Z \leq -1) = 0.5 - 0.1587 = 0.3413 \]</p>
+<p>Por lo tanto, la probabilidad de que un estudiante obtenga una nota entre 3 y 5 es <strong>0.3413</strong>.</p>
+<h4>(c) Nueva media con desviación típica 1.5 y probabilidad de una nota ≤ 6 es 0.52.</h4>
+Dados los cambios: \( \sigma&#x27; = 1.5 \) y \( P(X \leq 6) = 0.52 \). Convertimos este último a un valor Z:
+\[ P(Z \leq Z&#x27;) = 0.52 \]
+donde \( Z&#x27; \) corresponde a la probabilidad 0.52, que, de la tabla, es \( Z&#x27; = 0.05 \).
+<p>Ahora, despejando la media nueva \( \mu&#x27; \) con \( X = 6 \):<br>
+\[ Z&#x27; = \frac{6 - \mu&#x27;}{1.5} = 0.05 \]<br>
+\[ \mu&#x27; = 6 - 1.5 \times 0.05 = 6 - 0.075 = 5.925 \]</p>
+<p>Por lo tanto, la nueva media es \( \mu&#x27; = 5.925 \).</p>
+<p>Para determinar si el nuevo sistema ha funcionado, observamos que la nueva media \( 5.925 \) es muy cercana a la antigua media \( 5 \), con una reducción en la desviación estándar de \( 2 \) a \( 1.5 \). Esto indica una concentración mayor de calificaciones cerca de la media, lo que podría interpretarse como una reducción en la variabilidad de las calificaciones, lo cual generalmente es positivo. Sin embargo, el cambio es menor, y evaluaciones adicionales podrían ser necesarias para una conclusión definitiva.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea \(X\) la nota de un estudiante.</p>
+<p>Del enunciado, interpretamos que</p>
+<p>\[
+X \sim N(5,2)
+\]</p>
+<p>es decir, <strong>media</strong> \(\mu=5\) y <strong>desviación típica</strong> \(\sigma=2\).</p>
+<p>Tomamos la variable tipificada:</p>
+<p>\[
+Z=\frac{X-\mu}{\sigma}\sim N(0,1).
+\]</p>
+<p>---</p>
+<h3>(a) Probabilidad de obtener una nota mayor o igual que \(7.5\)</h3>
+<p>Queremos calcular:</p>
+<p>\[
+P(X\ge 7.5).
+\]</p>
+<p>Tipificando:</p>
+<p>\[
+P(X\ge 7.5)=P\left(Z\ge \frac{7.5-5}{2}\right)=P(Z\ge 1.25).
+\]</p>
+<p>Como \(F(1.25)=P(Z\le 1.25)=0.8944\),</p>
+<p>\[
+P(Z\ge 1.25)=1-0.8944=0.1056.
+\]</p>
+<h4>Resultado:</h4>
+\[
+\boxed{P(X\ge 7.5)=0.1056}
+\]
+<p>---</p>
+<h3>(b) Probabilidad de obtener una nota entre \(3\) y \(5\)</h3>
+<p>Queremos:</p>
+<p>\[
+P(3\le X\le 5).
+\]</p>
+<p>Tipificando:</p>
+<p>\[
+P(3\le X\le 5)=P\left(\frac{3-5}{2}\le Z\le \frac{5-5}{2}\right)
+= P(-1\le Z\le 0).
+\]</p>
+<p>Entonces:</p>
+<p>\[
+P(-1\le Z\le 0)=F(0)-F(-1).
+\]</p>
+<p>Sabemos que \(F(0)=0.5\), y por simetría de la normal:</p>
+<p>\[
+F(-1)=1-F(1)=1-0.8413=0.1587.
+\]</p>
+<p>Así,</p>
+<p>\[
+P(-1\le Z\le 0)=0.5-0.1587=0.3413.
+\]</p>
+<h4>Resultado:</h4>
+\[
+\boxed{P(3\le X\le 5)=0.3413}
+\]
+<p>---</p>
+<h3>(c) Nueva media con \(\sigma=1.5\) y \(P(X\le 6)=0.52\)</h3>
+<p>Ahora la nueva desviación típica es:</p>
+<p>\[
+\sigma=1.5
+\]</p>
+<p>y se cumple:</p>
+<p>\[
+P(X\le 6)=0.52.
+\]</p>
+<p>Sea \(\mu&#x27;\) la nueva media. Entonces:</p>
+<p>\[
+P\left(Z\le \frac{6-\mu&#x27;}{1.5}\right)=0.52.
+\]</p>
+<p>Como del enunciado \(F(0.05)=0.52\), se tiene:</p>
+<p>\[
+\frac{6-\mu&#x27;}{1.5}=0.05.
+\]</p>
+<p>Despejando:</p>
+<p>\[
+6-\mu&#x27;=1.5\cdot 0.05=0.075
+\]</p>
+<p>\[
+\mu&#x27;=6-0.075=5.925.
+\]</p>
+<h4>Nueva media:</h4>
+\[
+\boxed{\mu&#x27;=5.925}
+\]
+<h4>¿Ha funcionado el sistema?</h4>
+Si el objetivo era <strong>mejorar las calificaciones</strong>, sí, porque la media ha pasado de
+<p>\[
+5 \quad \text{a} \quad 5.925,
+\]</p>
+<p>y además la dispersión ha disminuido de \(2\) a \(1.5\).</p>
+<h4>Conclusión:</h4>
+\[
+\boxed{\text{Sí, el sistema ha funcionado, pues la nota media ha aumentado.}}
+\]
+<p>---</p>
+<h2>Resumen final</h2>
+<p>\[
+\boxed{(a)\;0.1056}
+\]</p>
+<p>\[
+\boxed{(b)\;0.3413}
+\]</p>
+<p>\[
+\boxed{(c)\;\mu&#x27;=5.925,\ \text{sí ha funcionado el sistema}}
+\]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_025.html">Anterior</a><a class="button" href="problema_027.html">Siguiente</a></nav>
+</main></body>
+</html>

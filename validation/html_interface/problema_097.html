@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 97: lamancha_2023 6</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 97 de 139</h1>
+<div class="meta"><span class="badge">lamancha_2023</span> &nbsp; Ejercicio 6</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_096.html">Anterior</a><a class="button" href="problema_098.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>6. a) [1 punto] Calcula el límite siguiente:</p>
+<p>\[
+\lim_{x \to 3} \frac{x^3 - 3x^2 + 3x - 9}{3x - 9}
+\]</p>
+<p>b) [1,5 puntos] Sean el punto \(A(1,2,1)\) y el plano \(x-y=1\). Calcula la distancia del punto \(A\) al plano.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>6.  <br>
+a) El límite es del tipo \(0/0\). Como el 3 es raíz del numerador y denominador podemos escribir el límite así:</p>
+<p>\[
+\lim_{x \to 3} \frac{x^3 - 3x^2 + 3x - 9}{3x - 9}
+=
+\lim_{x \to 3} \frac{(x^2 + 3)(x - 3)}{3(x - 3)}
+=
+\frac{9+3}{3}
+=
+4.
+\]</p>
+<p>b) La distancia es</p>
+<p>\[
+d(A,\pi)=\frac{|1-2-1|}{\sqrt{1^2+(-1)^2+0^2}}
+=
+\frac{2}{\sqrt{2}}
+=
+\sqrt{2}.
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Para resolver el ejercicio 6, abordaremos cada punto (a y b) de manera individual:</p>
+<h4>a) Cálculo del límite</h4>
+<p>El límite proporcionado es:<br>
+\[
+\lim_{x \to 3} \frac{x^3 - 3x^2 + 3x - 9}{3x - 9}
+\]</p>
+<p>Primero, observamos que si directamente sustituimos \(x=3\) en el expresión, tanto el numerador como el denominador se vuelven 0. Esto sugiere que podría haber una factorización común o la utilización de la regla de L&#x27;Hôpital es necesaria. Vamos a intentar factorizar primero:</p>
+<p>Observando el numerador:<br>
+\[
+x^3 - 3x^2 + 3x - 9
+\]<br>
+Podemos intentar factorizarlo por agrupación o reconociendo un patrón. A menudo, una forma cúbica como esta puede ser escalonada usando una identidad. Reconocemos que el término puede ser reescrito empleando la identidad de un cubo menos otro:<br>
+\[
+x^3 - 3^3 = (x - 3)(x^2 + 3x + 9)
+\]<br>
+Sin embargo, para este caso, con términos adicionales, es probable aplicar más las diferencias de cuadrados, obtenemos:<br>
+\[
+x^3 - 3x^2 + 3x - 9 = (x - 3)(x^2 - 3 + 3)
+\]<br>
+Pero al recalcular, vemos que nos equivocamos en el término lineal. Rehacemos la factorización, considerando la raíz evidente \(x = 3\):<br>
+\[
+x^3 - 3x^2 + 3x - 9 = (x-3)(x^2 + 0x + 3)
+\]</p>
+<p>Eso simplifica y cancela con el denominador:<br>
+\[
+\frac{x^3 - 3x^2 + 3x - 9}{3x - 9} = \frac{(x - 3)(x^2 + 3)}{3(x - 3)} = \frac{x^2 + 3}{3}
+\]<br>
+Ahora, podemos sustituir fácilmente \(x = 3\) y encontrar el límite sin problemas:<br>
+\[
+\lim_{x \to 3} \frac{x^2 + 3}{3} = \frac{3^2 + 3}{3} = \frac{12}{3} = 4
+\]</p>
+<h4>b) Distancia de un punto a un plano</h4>
+<p>La distancia \(d\) de un punto \(P_0 = (x_0, y_0, z_0)\) a un plano dado por la ecuación \( Ax + By + Cz + D = 0 \) es calculada por la siguiente fórmula:<br>
+\[
+d = \frac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}}
+\]<br>
+Para nuestro caso, el plano está dado por:<br>
+\[
+x - y = 1 \quad \Rightarrow \quad x - y + 0z - 1 = 0
+\]<br>
+Los valores asociados serían: \(A = 1\), \(B = -1\), \(C = 0\), \(D = -1\), y el punto \(A\) tiene coordenadas \((1, 2, 1)\). Sustituyendo obtenemos:<br>
+\[
+d = \frac{|1\cdot1 - 1\cdot2 + 0\cdot1 - 1|}{\sqrt{1^2 + (-1)^2 + 0^2}} = \frac{|1 - 2 - 1|}{\sqrt{1 + 1}} = \frac{|-2|}{\sqrt{2}} = \frac{2}{\sqrt{2}} = \sqrt{2}
+\]</p>
+<p>Así, la distancia de \(A\) al plano es \(\sqrt{2}\) unidades.</p></section>
+<section class="card"><h2>Respuesta B</h2><p><strong>Ejercicio 6</strong></p>
+<h4>a) Cálculo del límite</h4>
+\[
+\lim_{x \to 3} \frac{x^3 - 3x^2 + 3x - 9}{3x - 9}
+\]
+<p>Primero factorizamos numerador y denominador:</p>
+<p>\[
+x^3 - 3x^2 + 3x - 9
+= x^2(x-3)+3(x-3)
+= (x-3)(x^2+3)
+\]</p>
+<p>y</p>
+<p>\[
+3x-9=3(x-3)
+\]</p>
+<p>Entonces, para \(x\neq 3\),</p>
+<p>\[
+\frac{x^3 - 3x^2 + 3x - 9}{3x - 9}
+=
+\frac{(x-3)(x^2+3)}{3(x-3)}
+=
+\frac{x^2+3}{3}
+\]</p>
+<p>Ahora calculamos el límite:</p>
+<p>\[
+\lim_{x\to 3}\frac{x^2+3}{3}
+=
+\frac{3^2+3}{3}
+=
+\frac{12}{3}
+=4
+\]</p>
+<p><strong>Resultado:</strong><br>
+\[
+\boxed{4}
+\]</p>
+<p>---</p>
+<h4>b) Distancia del punto \(A(1,2,1)\) al plano \(x-y=1\)</h4>
+<p>Escribimos el plano en forma general:</p>
+<p>\[
+x-y-1=0
+\]</p>
+<p>La fórmula de la distancia de un punto \(A(x_0,y_0,z_0)\) al plano \(ax+by+cz+d=0\) es:</p>
+<p>\[
+d=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}
+\]</p>
+<p>Aquí:<br>
+- \(a=1\)<br>
+- \(b=-1\)<br>
+- \(c=0\)<br>
+- \(d=-1\)</p>
+<p>y el punto es \(A(1,2,1)\). Sustituimos:</p>
+<p>\[
+d=\frac{|1\cdot 1+(-1)\cdot 2+0\cdot 1-1|}{\sqrt{1^2+(-1)^2+0^2}}
+\]</p>
+<p>\[
+d=\frac{|1-2-1|}{\sqrt{2}}
+=\frac{|-2|}{\sqrt{2}}
+=\frac{2}{\sqrt{2}}
+=\sqrt{2}
+\]</p>
+<p><strong>Resultado:</strong><br>
+\[
+\boxed{\sqrt{2}}
+\]</p>
+<p>---</p>
+<h3>Respuestas finales</h3>
+- <strong>a)</strong> \(\boxed{4}\)
+- <strong>b)</strong> \(\boxed{\sqrt{2}}\)</section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_096.html">Anterior</a><a class="button" href="problema_098.html">Siguiente</a></nav>
+</main></body>
+</html>

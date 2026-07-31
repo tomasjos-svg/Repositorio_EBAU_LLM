@@ -1,0 +1,11 @@
+﻿indicator,value
+scenario,sensibilidad
+description,"Análisis de sensibilidad: problemas emparejados incluyendo referencias potencialmente débiles, pero excluyendo errores técnicos."
+problem_condition_rows,774
+unique_problems,387
+conditions,2
+condition_names,gpt-4-turbo + Assistants API | gpt-5.4 + Responses API
+replicate_rows,2322
+datasets,51
+domains,2
+education_levels,2

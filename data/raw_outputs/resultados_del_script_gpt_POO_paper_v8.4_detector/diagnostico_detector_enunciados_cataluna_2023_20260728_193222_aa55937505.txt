@@ -1,0 +1,18 @@
+DIAGNOSTICO DEL DETECTOR - ENUNCIADOS
+================================================================================
+Patron elegido: numeric
+Ejercicios aceptados: 1, 2, 3, 4, 5, 6
+
+CANDIDATOS
+L0036 | numeric | 1 | 1. Calculeu els coeficients a, b, c i d de la funcio f(x) = ax3 + bx2 + cx + d si sabem que l equa-
+L0052 | numeric | 2 | 2. Considereu les dues matrius segu ents:
+L0076 | numeric | 3 | 3. Sigui la funcio derivada d una funcio derivable f (x) que passa
+L0099 | numeric | 4 | 4. Sigui el sistema d equacions lineals segu ent, que depe n del para metre real :
+L0120 | numeric | 5 | 5. La Nu ria te un jardi rectangular i vol fer-hi un tan-
+L0150 | numeric | 6 | 6. Siguin els plans pi1 i pi2, determinats respectivament per les equacions pi1: x + y = 3 i
+L0223 | numeric | 1 | 1. Considereu les funcions f(x) = -x2 + x + 6 i g(x) = -9x + 3x2.
+L0244 | numeric | 2 | 2. Considereu el sistema d equacions lineals
+L0265 | numeric | 3 | 3. Considereu les rectes a l espai r : x = -y = z + m i , en que m e s un para metre
+L0286 | numeric | 4 | 4. En una carretera principal hi trobem el poble A. A 12 km del poble A, hi ha un encre -
+L0310 | numeric | 5 | 5. Considereu la fami lia S de matrius de la forma , en que a, b R.
+L0332 | numeric | 6 | 6. Sigui la funcio .

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 58: cleon_2023 E3</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 58 de 139</h1>
+<div class="meta"><span class="badge">cleon_2023</span> &nbsp; Ejercicio E3</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_057.html">Anterior</a><a class="button" href="problema_059.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>E3.- (Geometría)  <br>
+Dadas las rectas \(r_1\)</p>
+<p>\[
+\begin{cases}
+x = 1 + t\\
+y = 2t\\
+z = -1 + t
+\end{cases}
+,\quad t \in \mathbb{R},
+\]</p>
+<p>y \(r_2\)</p>
+<p>\[
+\frac{x-1}{3}=\frac{y}{2}=\frac{z}{2}.
+\]</p>
+<p>a) Razonar si existe un plano perpendicular a \(r_2\) que contenga a \(r_1\). (1 punto)</p>
+<p>b) Calcular la recta con vector director perpendicular a los de las rectas \(r_1\) y \(r_2\) y que contiene al punto \((1,0,0)\). (1 punto)</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>E3.- (Geometría)</strong></p>
+<p>Dadas las rectas  <br>
+\[
+r_1:\ \frac{x-1}{1}=\frac{y}{2}=\frac{z+1}{1}
+\]<br>
+y  <br>
+\[
+r_2:\ \begin{cases}
+x=3t\\
+y=2\\
+z=2t-1
+\end{cases}
+\]</p>
+<h4>a)</h4>
+<p>Estudiamos la posición relativa de las rectas.</p>
+<p>\[
+r_1:\ P_1=(1,0,-1),\quad \vec u=(1,2,1)
+\]</p>
+<p>\[
+r_2:\ P_2=(0,2,-1),\quad \vec v=(3,0,2)
+\]</p>
+<p>Las rectas no son paralelas ni coincidentes, pues sus vectores directores no tienen coordenadas proporcionales:</p>
+<p>\[
+\frac{1}{3}\neq \frac{2}{0}\neq \frac{1}{2}
+\]</p>
+<p>Las rectas se cortan o se cruzan. Estudiamos el valor nulo o no de:</p>
+<p>\[
+[\vec u,\vec v,\overrightarrow{P_1P_2}]
+\]</p>
+<p>\[
+\overrightarrow{P_1P_2}=(0,2,-1)-(1,0,-1)=(-1,2,0)
+\]</p>
+<p>\[
+\begin{vmatrix}
+1&amp;2&amp;1\\
+3&amp;0&amp;2\\
+-1&amp;2&amp;0
+\end{vmatrix}
+\neq 0
+\]</p>
+<p>Las rectas \(r_1\) y \(r_2\) se cruzan.</p>
+<p>Para que pueda existir un plano perpendicular a \(r_2\) que contenga a \(r_1\), los vectores directores de las rectas deben ser perpendiculares:</p>
+<p>\[
+\vec u\cdot \vec v=(1,2,1)\cdot(3,0,2)=3+0+2=5\neq 0
+\]</p>
+<p>Los vectores directores de las rectas no son perpendiculares y no existe el plano pedido.</p>
+<p>---</p>
+<h4>b)</h4>
+<p>Si el vector director es perpendicular a los de las rectas \(r_1\) y \(r_2\), nos sirve como vector director de la recta que buscamos el producto vectorial de los vectores directores de \(r_1\) y \(r_2\).</p>
+<p>\[
+\vec u=(1,2,1),\quad \vec v=(3,0,2)
+\]</p>
+<p>\[
+\vec u\times \vec v=
+\begin{vmatrix}
+\vec i&amp;\vec j&amp;\vec k\\
+1&amp;2&amp;1\\
+3&amp;0&amp;2
+\end{vmatrix}
+=(4,1,-6)
+\]</p>
+<p>La recta pedida es la recta que tiene como vector director \((4,1,-6)\) y que pasa por el punto \((1,0,0)\):</p>
+<p>\[
+\begin{cases}
+x=1+4t\\
+y=t\\
+z=-6t
+\end{cases}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea</p>
+<p>\[
+r_1:\begin{cases}
+x=1+t\\
+y=2t\\
+z=-1+t
+\end{cases}
+\qquad (t\in\mathbb R)
+\]</p>
+<p>y</p>
+<p>\[
+r_2:\frac{x-1}{3}=\frac y2=\frac z2.
+\]</p>
+<p>Primero extraemos sus vectores directores:</p>
+<p>- Para \(r_1\): \(\vec v_1=(1,2,1)\).<br>
+- Para \(r_2\): \(\vec v_2=(3,2,2)\), ya que<br>
+  \[
+  r_2:\begin{cases}
+  x=1+3s\\
+  y=2s\\
+  z=2s
+  \end{cases}
+  \]</p>
+<p>---</p>
+<h3>a) ¿Existe un plano perpendicular a \(r_2\) que contenga a \(r_1\)?</h3>
+<p>Si un plano es perpendicular a la recta \(r_2\), entonces un vector normal del plano es paralelo al vector director de \(r_2\).  <br>
+Por tanto, el plano tendría como vector normal</p>
+<p>\[
+\vec n=(3,2,2).
+\]</p>
+<p>Para que la recta \(r_1\) esté contenida en ese plano, su vector director \(\vec v_1=(1,2,1)\) debe ser perpendicular al vector normal del plano:</p>
+<p>\[
+\vec v_1\cdot \vec n=(1,2,1)\cdot(3,2,2)=3+4+2=9\neq 0.
+\]</p>
+<p>Como no es cero, \(r_1\) <strong>no puede estar contenida</strong> en un plano con normal \((3,2,2)\).</p>
+<h4>Conclusión</h4>
+<strong>No existe</strong> un plano perpendicular a \(r_2\) que contenga a \(r_1\).
+<p>---</p>
+<h3>b) Recta con vector director perpendicular a los de \(r_1\) y \(r_2\), que pase por \((1,0,0)\)</h3>
+<p>Buscamos un vector perpendicular a \(\vec v_1=(1,2,1)\) y a \(\vec v_2=(3,2,2)\).  <br>
+Se obtiene con el producto vectorial:</p>
+<p>\[
+\vec v=\vec v_1\times \vec v_2
+=
+\begin{vmatrix}
+\mathbf i &amp; \mathbf j &amp; \mathbf k\\
+1&amp;2&amp;1\\
+3&amp;2&amp;2
+\end{vmatrix}
+=(2,1,-4).
+\]</p>
+<p>Comprobación:</p>
+<p>\[
+(2,1,-4)\cdot(1,2,1)=2+2-4=0,
+\]<br>
+\[
+(2,1,-4)\cdot(3,2,2)=6+2-8=0.
+\]</p>
+<p>Luego un vector director válido es \((2,1,-4)\).</p>
+<p>Como la recta debe pasar por \((1,0,0)\), su ecuación es:</p>
+<p>\[
+\boxed{
+\begin{cases}
+x=1+2\lambda\\
+y=\lambda\\
+z=-4\lambda
+\end{cases}
+\qquad \lambda\in\mathbb R
+}
+\]</p>
+<p>---</p>
+<h3>Respuesta final</h3>
+<h4>a)</h4>
+No existe tal plano, porque el vector director de \(r_1\), \((1,2,1)\), no es perpendicular al vector director de \(r_2\), \((3,2,2)\):
+<p>\[
+(1,2,1)\cdot(3,2,2)=9\neq 0.
+\]</p>
+<h4>b)</h4>
+La recta pedida es
+<p>\[
+\boxed{
+\begin{cases}
+x=1+2\lambda\\
+y=\lambda\\
+z=-4\lambda
+\end{cases}
+\qquad \lambda\in\mathbb R
+}
+\]</p>
+<p>ya que su vector director \((2,1,-4)\) es perpendicular a los de \(r_1\) y \(r_2\).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver el ejercicio E3 del documento proporcionado:</p>
+<h4>a) Razonar si existe un plano perpendicular a \(r_2\) que contenga a \(r_1\).</h4>
+<p>Primero, necesitamos determinar si existe un plano que sea perpendicular a una de las rectas y que contenga la otra. Un plano es perpendicular a una recta si el vector normal del plano es paralelo al vector director de la recta. Aquí, debemos considerar si el vector director de \(r_2\) puede ser normal a un plano que contiene a \(r_1\).</p>
+<p>El vector director de la recta \(r_1\) es \(\vec{v}_{r_1} = (1, 2, 1)\) y el de la recta \(r_2\) es \(\vec{v}_{r_2} = (3, 2, 2)\).</p>
+<p>Para que un plano sea perpendicular a \(r_2\) y contenga \(r_1\), el vector normal al plano debe ser paralelo a \(\vec{v}_{r_2}\) y al mismo tiempo debe ser perpendicular a \(\vec{v}_{r_1}\). Esto sucede cuando el producto punto del vector normal del plano y \(\vec{v}_{r_1}\) es cero:<br>
+\[
+\vec{v}_{r_2} \cdot \vec{v}_{r_1} = 3 \cdot 1 + 2 \cdot 2 + 2 \cdot 1 = 3 + 4 + 2 = 9 \neq 0
+\]<br>
+Dado que el producto no es cero, no es posible encontrar un plano que sea perpendicular a \(r_2\) y al mismo tiempo contenga a \(r_1\). Por lo tanto, <strong>no existe un plano perpendicular a \(r_2\) que contenga a \(r_1\)</strong>.</p>
+<h4>b) Calcular la recta con vector director perpendicular a los de las rectas \(r_1\) y \(r_2\) y que contiene al punto \((1,0,0)\).</h4>
+<p>Para encontrar un vector perpendicular a ambos, \(\vec{v}_{r_1}\) y \(\vec{v}_{r_2}\), usamos el producto cruz entre los vectores directores de las dos rectas:<br>
+\[
+\vec{v}_{r_1} \times \vec{v}_{r_2} = \begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ 1 &amp; 2 &amp; 1 \\ 3 &amp; 2 &amp; 2 \end{vmatrix} = \hat{i}(2\cdot2 - 1\cdot2) - \hat{j}(1\cdot2 - 1\cdot3) + \hat{k}(1\cdot2 - 2\cdot3)
+\]<br>
+\[
+= \hat{i}(4 - 2) - \hat{j}(2 - 3) + \hat{k}(2 - 6) = 2\hat{i} + \hat{j} - 4\hat{k}
+\]<br>
+El vector resultante \( \vec{n} = (2, 1, -4) \) es perpendicular a ambos vectores directores.</p>
+<p>La ecuación de la recta que contiene al punto \((1,0,0)\) y tiene como vector director \( (2, 1, -4) \) es:<br>
+\[
+\begin{cases}
+x = 1 + 2t\\
+y = 0 + 1t\\
+z = 0 - 4t
+\end{cases}
+\]<br>
+Así, la ecuación paramétrica de la recta buscada es:<br>
+\[
+\begin{cases}
+x = 1 + 2t\\
+y = t\\
+z = -4t
+\end{cases}
+,\quad t \in \mathbb{R}
+\]<br>
+Este es el resultado para ambos apartados del ejercicio E3.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_057.html">Anterior</a><a class="button" href="problema_059.html">Siguiente</a></nav>
+</main></body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 78: extremadura_2023 5</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 78 de 139</h1>
+<div class="meta"><span class="badge">extremadura_2023</span> &nbsp; Ejercicio 5</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_077.html">Anterior</a><a class="button" href="problema_079.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>5. Calcular los coeficientes \(a, b, c\) y \(d\) del polinomio  <br>
+\[
+p(x)=a+bx+cx^2+dx^3
+\]<br>
+sabiendo que cumple todas las condiciones siguientes: (2 puntos)</p>
+<p>- \(p(x)\) tiene un máximo relativo en \(x=-1\), y<br>
+- la gráfica de \(p(x)\) tiene un punto de inflexión en \((0,0)\), y<br>
+- la recta tangente a la gráfica de \(p(x)\) en \(x=2\) tiene pendiente \(3\).</p></section>
+<section class="card"><h2>Solucion oficial</h2><p>5. Calcular los coeficientes \(a, b, c\) y \(d\) del polinomio  <br>
+\[
+p(x)=a+bx+cx^2+dx^3
+\]<br>
+sabiendo que cumple todas las condiciones siguientes:</p>
+<p>- \(p(x)\) tiene un máximo relativo en \(x=-1\), y<br>
+- la gráfica de \(p(x)\) tiene un punto de inflexión en \((0,0)\), y<br>
+- la recta tangente a la gráfica de \(p(x)\) en \(x=2\) tiene pendiente 3.</p>
+<p>Si \(p(x)\) tiene un máximo relativo en \(x=-1\), entonces:<br>
+\[
+p&#x27;(-1)=0 \quad \text{y} \quad p&#x27;&#x27;(-1)&lt;0
+\]</p>
+<p>Si la gráfica de \(p(x)\) tiene un punto de inflexión en \((0,0)\), entonces:<br>
+\[
+p(0)=0, \quad p&#x27;&#x27;(0)=0
+\]</p>
+<p>Si la recta tangente a la gráfica de \(p(x)\) en \(x=2\) tiene pendiente 3, entonces:<br>
+\[
+p&#x27;(2)=3
+\]</p>
+<p>Aplicamos todas estas condiciones a nuestra función:</p>
+<p>\[
+p(x)=a+bx+cx^2+dx^3 \Rightarrow p(0)=a=0
+\]</p>
+<p>\[
+p&#x27;(x)=b+2cx+3dx^2
+\]</p>
+<p>\[
+p&#x27;&#x27;(x)=2c+6dx
+\]</p>
+<p>\[
+p&#x27;&#x27;(0)=2c=0 \Rightarrow c=0
+\]</p>
+<p>Por tanto:<br>
+\[
+p&#x27;(x)=b+3dx^2
+\]</p>
+<p>\[
+p&#x27;(-1)=0 \Rightarrow b+3d=0
+\]</p>
+<p>\[
+p&#x27;(2)=3 \Rightarrow b+12d=3
+\]</p>
+<p>Resolviendo:<br>
+\[
+b=-3d
+\]</p>
+<p>\[
+-3d+12d=3 \Rightarrow 9d=3 \Rightarrow d=\frac13
+\]</p>
+<p>\[
+b=-3\cdot \frac13=-1
+\]</p>
+<p>Los valores buscados son:</p>
+<p>\[
+\boxed{a=0,\quad b=-1,\quad c=0,\quad d=\frac13}
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Sea<br>
+\[
+p(x)=a+bx+cx^2+dx^3.
+\]</p>
+<p>Queremos hallar \(a,b,c,d\) usando las condiciones del enunciado.</p>
+<p>---</p>
+<h3>1. Derivadas del polinomio</h3>
+<p>\[
+p&#x27;(x)=b+2cx+3dx^2,
+\qquad
+p&#x27;&#x27;(x)=2c+6dx.
+\]</p>
+<p>---</p>
+<h3>2. Condición de punto de inflexión en \((0,0)\)</h3>
+<p>Que haya un punto de inflexión en \((0,0)\) implica:</p>
+<p>- la gráfica pasa por \((0,0)\), luego<br>
+  \[
+  p(0)=a=0;
+  \]<br>
+- además, al ser punto de inflexión en \(x=0\),<br>
+  \[
+  p&#x27;&#x27;(0)=0.
+  \]</p>
+<p>Como<br>
+\[
+p&#x27;&#x27;(0)=2c,
+\]<br>
+se obtiene<br>
+\[
+2c=0 \quad\Rightarrow\quad c=0.
+\]</p>
+<p>Así, el polinomio queda<br>
+\[
+p(x)=bx+dx^3.
+\]</p>
+<p>---</p>
+<h3>3. Condición de máximo relativo en \(x=-1\)</h3>
+<p>Para que haya un máximo relativo en \(x=-1\), debe cumplirse:</p>
+<p>\[
+p&#x27;(-1)=0.
+\]</p>
+<p>Como ahora<br>
+\[
+p&#x27;(x)=b+3dx^2,
+\]<br>
+tenemos<br>
+\[
+p&#x27;(-1)=b+3d=0.
+\]<br>
+Luego:<br>
+\[
+b+3d=0. \tag{1}
+\]</p>
+<p>Además, para que sea máximo, necesitamos \(p&#x27;&#x27;(-1)&lt;0\). Lo comprobaremos al final.</p>
+<p>---</p>
+<h3>4. Pendiente de la tangente en \(x=2\)</h3>
+<p>La pendiente de la tangente en \(x=2\) es \(3\), así que</p>
+<p>\[
+p&#x27;(2)=3.
+\]</p>
+<p>Como<br>
+\[
+p&#x27;(2)=b+3d(2)^2=b+12d,
+\]<br>
+resulta<br>
+\[
+b+12d=3. \tag{2}
+\]</p>
+<p>---</p>
+<h3>5. Resolver el sistema</h3>
+<p>De (2) menos (1):</p>
+<p>\[
+(b+12d)-(b+3d)=3-0
+\]<br>
+\[
+9d=3
+\]<br>
+\[
+d=\frac13.
+\]</p>
+<p>Sustituyendo en (1):</p>
+<p>\[
+b+3\cdot \frac13=0
+\]<br>
+\[
+b+1=0
+\]<br>
+\[
+b=-1.
+\]</p>
+<p>Y ya teníamos:</p>
+<p>\[
+a=0,\qquad c=0.
+\]</p>
+<p>---</p>
+<h3>6. Coeficientes y polinomio</h3>
+<p>Por tanto,</p>
+<p>\[
+\boxed{a=0,\quad b=-1,\quad c=0,\quad d=\frac13.}
+\]</p>
+<p>El polinomio es</p>
+<p>\[
+\boxed{p(x)=-x+\frac13x^3.}
+\]</p>
+<p>---</p>
+<h3>7. Comprobación</h3>
+<p>- \(p(0)=0\), luego pasa por \((0,0)\).<br>
+- \(p&#x27;&#x27;(x)=2x\), que cambia de signo al pasar por \(x=0\), así que \((0,0)\) es punto de inflexión.<br>
+- \(p&#x27;(-1)=-1+(-1)^2=0\) (o directamente con la fórmula obtenida).<br>
+- \(p&#x27;&#x27;(-1)=2(-1)=-2&lt;0\), así que en \(x=-1\) hay un máximo relativo.<br>
+- \(p&#x27;(2)=-1+4=3\), luego la pendiente en \(x=2\) es \(3\).</p>
+<p>Todo se cumple.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Para resolver este problema debemos encontrar los valores de los coeficientes \(a, b, c, d\) del polinomio cúbico dado <br>
+\[ p(x) = a + bx + cx^2 + dx^3 \]<br>
+satisfaciendo las condiciones mencionadas. Utilizaremos el cálculo diferencial para ayudarnos en esta tarea. Vamos a proceder paso a paso:</p>
+<h4>1. Derivadas del Polinomio</h4>
+<p>Primero, calcularemos la primera y segunda derivada de \(p(x)\):</p>
+<p>\[ p&#x27;(x) = b + 2cx + 3dx^2 \]<br>
+\[ p&#x27;&#x27;(x) = 2c + 6dx \]</p>
+<h4>2. Condición del Máximo Relativo en \(x = -1\)</h4>
+<p>Para que \(p(x)\) tenga un máximo relativo en \(x = -1\), debe cumplirse que \(p&#x27;(-1) = 0\) y \(p&#x27;&#x27;(-1) &lt; 0\) (ya que un máximo requiere que la concavidad sea hacia abajo).</p>
+<p>\[ p&#x27;(-1) = b - 2c + 3d = 0 \]<br>
+\[ p&#x27;&#x27;(-1) = 2c - 6d &lt; 0 \]</p>
+<h4>3. Condición del Punto de Inflexión en \((0,0)\)</h4>
+<p>Un punto de inflexión ocurre donde la segunda derivada cambia de signo, así que necesitamos que \(p&#x27;&#x27;(0) = 0\). Además, como el punto de inflexión es \((0,0)\), esto implica que \(p(0) = 0\).</p>
+<p>\[ p&#x27;&#x27;(0) = 2c = 0 \Rightarrow c = 0 \]<br>
+\[ p(0) = a = 0 \]</p>
+<h4>4. Condición de la Pendiente de la Recta Tangente en \(x=2\)</h4>
+<p>La pendiente de la recta tangente al gráfico de \(p(x)\) en \(x=2\) debe ser 3, por lo que \(p&#x27;(2) = 3\).</p>
+<p>\[ p&#x27;(2) = b + 4c + 12d = 3 \]</p>
+<h4>5. Resolución del Sistema de Ecuaciones</h4>
+<p>Ya hemos obtenido las siguientes ecuaciones:</p>
+<p>1. \( b - 2c + 3d = 0 \)<br>
+2. \( 2c - 6d &lt; 0 \) - ya que \(c = 0\), esto simplifica a \(-6d &lt; 0 \Rightarrow d &gt; 0\)<br>
+3. \( c = 0 \)<br>
+4. \( a = 0 \)<br>
+5. \( b + 4c + 12d = 3 \) - y con \(c = 0\), simplifica a \( b + 12d = 3 \)</p>
+<p>De (1) y dado que \(c = 0\):<br>
+\[ b + 3d = 0 \]<br>
+\[ b = -3d \]</p>
+<p>Sustituimos \(b\) en la ecuación (5):<br>
+\[ -3d + 12d = 3 \]<br>
+\[ 9d = 3 \]<br>
+\[ d = \frac{1}{3} \]</p>
+<p>Sustituyendo \(d\) en \(b = -3d\):<br>
+\[ b = -3 \times \frac{1}{3} = -1 \]</p>
+<h4>Conclusión</h4>
+<p>Los coeficientes del polinomio son:<br>
+\[ a = 0, \quad b = -1, \quad c = 0, \quad d = \frac{1}{3} \]</p>
+<p>Por lo tanto, el polinomio es:<br>
+\[ p(x) = -x + \frac{1}{3}x^3 \]</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_077.html">Anterior</a><a class="button" href="problema_079.html">Siguiente</a></nav>
+</main></body>
+</html>

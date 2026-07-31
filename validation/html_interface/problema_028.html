@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 28: baleares_2023 P2</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 28 de 139</h1>
+<div class="meta"><span class="badge">baleares_2023</span> &nbsp; Ejercicio P2</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_027.html">Anterior</a><a class="button" href="problema_029.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>P2. - Sigui A una matriu invertible n x n amb coeficients reals tal que compleix la igualtat A² + A = I. Aleshores,</p>
+<p>(a) [3 punts] Satisfà la matriu</p>
+<p>\[
+M =
+\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix}
+\]</p>
+<p>les condicions de l’enunciat? És a dir, compleix M la igualtat de l’enunciat i, a més, és invertible?</p>
+<p>Tornant a considerar que A és una matriu qualsevol que satisfà les condicions de l’enunciat,</p>
+<p>(b) [3 punts] Calcula la inversa de A.</p>
+<p>(c) [4 punts] Comprova que se satisfà la igualtat \(A(B + A) - I = A(B - I)\), sent B una matriu quadrada qualsevol n x n amb coeficients reals.</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>P2.</strong> Sigui \(A\) una matriu invertible \(n \times n\) amb coeficients reals tal que compleix la igualtat \(A^2 + A = I\).</p>
+<p><strong>(a)</strong> Satisfà la matriu  <br>
+\[
+M=\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix}
+\]<br>
+les condicions de l’enunciat?</p>
+<p><strong>Solució.</strong> Sí, ho compleix \((\det(M)\neq 0\), per tant, és invertible, i compleix que \(M^2+M=I)\).</p>
+<p><strong>(b)</strong> Calcula la inversa de \(A\).</p>
+<p><strong>Solució.</strong>  <br>
+\[
+A(A+I)=I
+\]<br>
+i, per tant,  <br>
+\[
+A+I=A^{-1}.
+\]</p>
+<p><strong>(c)</strong> Comprova que se satisfà la igualtat \(A(B+A)-I=A(B-I)\), sent \(B\) una matriu quadrada qualsevol \(n \times n\) amb coeficients reals.</p>
+<p><strong>Solució.</strong>  <br>
+\[
+A(B+A)-I=AB+A^2-I=AB+(I-A)-I=AB-A=A(B-I).
+\]</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver los tres apartados.</p>
+<p>---</p>
+<h3>Dato del enunciado</h3>
+<p>Sea \(A\in M_n(\mathbb{R})\) tal que</p>
+<p>\[
+A^2+A=I.
+\]</p>
+<p>---</p>
+<h3>(a) Comprobar si \(M\) cumple las condiciones</h3>
+<p>Dada</p>
+<p>\[
+M=\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix},
+\]</p>
+<p>hay que verificar:</p>
+<p>1. si cumple \(M^2+M=I_2\),<br>
+2. si es invertible.</p>
+<h4>1) Calculamos \(M^2\)</h4>
+<p>\[
+M^2=
+\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix}
+\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; 1\\
+1 &amp; 2
+\end{pmatrix}.
+\]</p>
+<p>Entonces,</p>
+<p>\[
+M^2+M=
+\begin{pmatrix}
+1 &amp; 1\\
+1 &amp; 2
+\end{pmatrix}
++
+\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; 0\\
+0 &amp; 1
+\end{pmatrix}
+=I_2.
+\]</p>
+<p>Por tanto, <strong>sí cumple</strong> la igualdad del enunciado.</p>
+<h4>2) Comprobamos si es invertible</h4>
+<p>\[
+\det(M)=
+0\cdot(-1)-(-1)\cdot(-1)=-1\neq 0.
+\]</p>
+<p>Luego \(M\) es <strong>invertible</strong>.</p>
+<h4>Conclusión del apartado (a)</h4>
+<p>Sí, la matriz \(M\) satisface las condiciones del enunciado:  <br>
+\[
+M^2+M=I_2
+\quad\text{y}\quad
+M \text{ es invertible}.
+\]</p>
+<p>---</p>
+<h3>(b) Calcular la inversa de \(A\)</h3>
+<p>Partimos de</p>
+<p>\[
+A^2+A=I.
+\]</p>
+<p>Factorizamos:</p>
+<p>\[
+A(A+I)=I.
+\]</p>
+<p>Además, como \(A\) conmuta consigo misma y con \(I\),</p>
+<p>\[
+(A+I)A=A^2+A=I.
+\]</p>
+<p>Así, \(A+I\) es a la vez inversa por la derecha y por la izquierda de \(A\). Por tanto,</p>
+<p>\[
+\boxed{A^{-1}=A+I}.
+\]</p>
+<p>---</p>
+<h3>(c) Comprobar que \(A(B+A)-I=A(B-I)\)</h3>
+<p>Sea \(B\) cualquier matriz cuadrada \(n\times n\). Calculamos el miembro izquierdo:</p>
+<p>\[
+A(B+A)-I=AB+A^2-I.
+\]</p>
+<p>Usamos ahora la relación del enunciado:</p>
+<p>\[
+A^2+A=I
+\quad\Longrightarrow\quad
+A^2-I=-A.
+\]</p>
+<p>Sustituyendo:</p>
+<p>\[
+AB+A^2-I=AB-A.
+\]</p>
+<p>Sacamos factor común \(A\) por la izquierda:</p>
+<p>\[
+AB-A=A(B-I).
+\]</p>
+<p>Por tanto,</p>
+<p>\[
+\boxed{A(B+A)-I=A(B-I)}.
+\]</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<p>- <strong>(a)</strong> Sí, \(M\) cumple las condiciones, porque<br>
+  \[
+  M^2+M=I_2,\qquad \det(M)=-1\neq 0.
+  \]</p>
+<p>- <strong>(b)</strong> La inversa de \(A\) es<br>
+  \[
+  \boxed{A^{-1}=A+I}.
+  \]</p>
+<p>- <strong>(c)</strong> Se verifica que<br>
+  \[
+  \boxed{A(B+A)-I=A(B-I)}
+  \]<br>
+  para toda matriz cuadrada \(B\).</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Vamos a resolver el ejercicio P2 paso a paso.</p>
+<h4>Parte (a)</h4>
+Necesitamos comprobar si la matriz
+<p>\[ M =
+\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix}
+\]</p>
+<p>satisface la igualdad \(M^2 + M = I\) y si es invertible.</p>
+<p>Primero, encontramos \(M^2\):</p>
+<p>\[ 
+M^2 = 
+\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix}
+\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; 1\\
+1 &amp; 0
+\end{pmatrix}
+\]</p>
+<p>Calculemos ahora \(M^2 + M\):</p>
+<p>\[ 
+M^2 + M = 
+\begin{pmatrix}
+1 &amp; 1\\
+1 &amp; 0
+\end{pmatrix}
++
+\begin{pmatrix}
+0 &amp; -1\\
+-1 &amp; -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; 0\\
+0 &amp; -1
+\end{pmatrix}
+\]</p>
+<p>La igualdad requerida es \(M^2 + M = I\), pero</p>
+<p>\[ 
+M^2 + M =
+\begin{pmatrix}
+1 &amp; 0\\
+0 &amp; -1
+\end{pmatrix}
+\neq
+\begin{pmatrix}
+1 &amp; 0\\
+0 &amp; 1
+\end{pmatrix}
+= I
+\]</p>
+<p>Por lo tanto, \(M\) no satisface la igualdad del enunciado.</p>
+<p>Además, verifiquemos si \(M\) es invertible comprobando el determinante de \(M\):</p>
+<p>\[
+\text{det}(M) = (0)(-1) - (-1)(-1) = -1 \neq 0
+\]</p>
+<p>Dado que el determinante no es cero, la matriz \(M\) es invertible. <strong>Resumen: \(M\) es invertible, pero no satisface la igualdad \(M^2 + M = I\).</strong></p>
+<h4>Parte (b)</h4>
+Dado que \(A\) es una matriz que satisface \(A^2 + A = I\), podemos reorganizar esta igualdad para encontrar la inversa de \(A\):
+<p>\[ 
+A^2 + A = I \Rightarrow A^2 + A - I = 0 \Rightarrow A(A + I) = I 
+\]</p>
+<p>Por lo tanto, la inversa de \(A\) es \(A^{-1} = A + I\).</p>
+<h4>Parte (c)</h4>
+Queremos comprobar si la siguiente igualdad se mantiene para cualquier matriz \(B\):
+<p>\[ 
+A(B + A) - I = A(B - I) 
+\]</p>
+<p>Expresando \(B + A\) y \(B - I\) podemos derivar lo siguiente:</p>
+<p>\[
+A(B + A) = A(B + A), \quad A(B - I) = A(B - I)
+\]</p>
+<p>Usando la igualdad \(AA^{-1} = I\) y que \(A^{-1} = A + I\), podemos manipular la derecha:</p>
+<p>\[
+A(B - I) = A(B - I) =  AB - AI
+\]</p>
+<p>Donde \(AI = A(A + I) - A = I - A\) (esto usando que \(AA^2 + A = I\), así \(AA + A^2 = I - A\)).</p>
+<p>Por lo tanto:</p>
+<p>\[
+A(B - I) = AB - I + A
+\]</p>
+<p>Otra manipulación similar a la izquierda nos da:</p>
+<p>\[
+A(B + A) = AB + AA = AB + I - A \quad \text{(usando que } AA + A = I)
+\]</p>
+<p>Comparando ambas expresiones:</p>
+<p>\[
+A(B + A) - I = (AB + I - A) - I = AB - A
+\]<br>
+\[
+A(B - I) = AB - I + A = AB - A
+\]</p>
+<p>Por lo tanto, ambas expresiones son iguales y se puede verificar que la igualdad se mantiene. Esto concluye la comprobación y la solución del problema.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_027.html">Anterior</a><a class="button" href="problema_029.html">Siguiente</a></nav>
+</main></body>
+</html>

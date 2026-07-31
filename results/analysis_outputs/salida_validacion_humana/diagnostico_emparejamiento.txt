@@ -1,0 +1,331 @@
+DIAGNÓSTICO DE VALIDACIÓN HUMANA
+============================================================================
+JSON humano: C:\Users\tomas\Downloads\pipeline_analisis_v3_0_1\pipeline_v3\validacion_humana_2023.json
+Excel de clave ciega: C:\Users\tomas\Downloads\pipeline_analisis_v3_0_1\pipeline_v3\Validacion_humana_2023.xlsx
+Carpeta de resultados: C:\Users\tomas\Downloads\pipeline_analisis_v3_0_1\pipeline_v3\resultados
+Valoraciones humanas completas: 276
+Registros del pipeline detectados: 4908
+JSON del pipeline utilizados: 52
+Clave ciega emparejada: 276/276
+Pipeline emparejado: 276/276
+
+Archivos utilizados:
+- resultados_andalucia_2023_20260719_113956_aa55937505.json
+- resultados_andalucia_2024_20260719_123635_aa55937505.json
+- resultados_andalucia_2025_20260719_131942_aa55937505.json
+- resultados_aragon_2023_20260719_165651_aa55937505.json
+- resultados_aragon_2024_20260719_174619_aa55937505.json
+- resultados_aragon_2025_20260719_184953_aa55937505.json
+- resultados_asturias_2023_20260719_191359_aa55937505.json
+- resultados_asturias_2024_20260719_195312_aa55937505.json
+- resultados_asturias_2025_20260719_203532_aa55937505.json
+- resultados_baleares_2023_20260727_185141_aa55937505.json
+- resultados_baleares_2024_20260727_194346_aa55937505.json
+- resultados_baleares_2025_20260727_202756_aa55937505.json
+- resultados_canarias_2023_20260727_212840_aa55937505.json
+- resultados_canarias_2024_20260727_224451_aa55937505.json
+- resultados_canarias_2025_20260727_235640_aa55937505.json
+- resultados_cantabria_2023_20260719_211238_aa55937505.json
+- resultados_cantabria_2024_20260719_214205_aa55937505.json
+- resultados_cantabria_2025_20260719_222056_aa55937505.json
+- resultados_cantabria_2025_20260719_222756_aa55937505.json
+- resultados_cataluna_2023_20260728_193222_aa55937505.json
+- resultados_cataluna_2024_20260728_201335_aa55937505.json
+- resultados_cataluna_2025_20260728_205350_aa55937505.json
+- resultados_cleon_2023_20260728_171423_aa55937505.json
+- resultados_cleon_2024_20260728_181013_aa55937505.json
+- resultados_cleon_2025_20260728_184211_aa55937505.json
+- resultados_cvalenciana_2023_20260728_213547_aa55937505.json
+- resultados_cvalenciana_2024_20260728_224121_aa55937505.json
+- resultados_cvalenciana_2025_20260728_233903_aa55937505.json
+- resultados_extremadura_2023_20260728_000943_aa55937505.json
+- resultados_extremadura_2024_20260728_010814_aa55937505.json
+- resultados_extremadura_2025_20260728_015735_aa55937505.json
+- resultados_galicia_2023_20260727_163434_aa55937505.json
+- resultados_galicia_2024_20260727_172547_aa55937505.json
+- resultados_galicia_2025_20260727_181545_aa55937505.json
+- resultados_lamancha_2023_20260728_140933_aa55937505.json
+- resultados_lamancha_2024_20260728_153540_aa55937505.json
+- resultados_lamancha_2025_20260728_162634_aa55937505.json
+- resultados_madrid_2023_20260728_121950_aa55937505.json
+- resultados_madrid_2024_20260728_124035_aa55937505.json
+- resultados_madrid_2025_20260728_133132_aa55937505.json
+- resultados_murcia_2023_20260728_090847_aa55937505.json
+- resultados_murcia_2024_20260728_101045_aa55937505.json
+- resultados_murcia_2025_20260728_112032_aa55937505.json
+- resultados_navarra_2023_20260719_135515_aa55937505.json
+- resultados_navarra_2024_20260719_144437_aa55937505.json
+- resultados_navarra_2025_20260719_161348_aa55937505.json
+- resultados_pais_vasco_2023_20260729_083333_aa55937505.json
+- resultados_pais_vasco_2024_20260729_092818_aa55937505.json
+- resultados_pais_vasco_2025_20260729_103027_aa55937505.json
+- resultados_rioja_2023_20260729_002139_aa55937505.json
+- resultados_rioja_2024_20260729_011632_aa55937505.json
+- resultados_rioja_2025_20260729_021924_aa55937505.json
+
+AVISO: se detectaron claves duplicadas en los JSON. El programa promedió las métricas duplicadas:
+  dataset_name question_number              condition  run  n_duplicates
+cantabria_2025               1 assistants_gpt_4_turbo    1             2
+cantabria_2025               1 assistants_gpt_4_turbo    2             2
+cantabria_2025               1 assistants_gpt_4_turbo    3             2
+cantabria_2025               1     assistants_gpt_5_4    1             2
+cantabria_2025               1     assistants_gpt_5_4    2             2
+cantabria_2025               1     assistants_gpt_5_4    3             2
+cantabria_2025               1  responses_gpt_4_turbo    1             2
+cantabria_2025               1  responses_gpt_4_turbo    2             2
+cantabria_2025               1  responses_gpt_4_turbo    3             2
+cantabria_2025               1      responses_gpt_5_4    1             2
+cantabria_2025               1      responses_gpt_5_4    2             2
+cantabria_2025               1      responses_gpt_5_4    3             2
+cantabria_2025              10 assistants_gpt_4_turbo    1             2
+cantabria_2025              10 assistants_gpt_4_turbo    2             2
+cantabria_2025              10 assistants_gpt_4_turbo    3             2
+cantabria_2025              10     assistants_gpt_5_4    1             2
+cantabria_2025              10     assistants_gpt_5_4    2             2
+cantabria_2025              10     assistants_gpt_5_4    3             2
+cantabria_2025              10  responses_gpt_4_turbo    1             2
+cantabria_2025              10  responses_gpt_4_turbo    2             2
+cantabria_2025              10  responses_gpt_4_turbo    3             2
+cantabria_2025              10      responses_gpt_5_4    1             2
+cantabria_2025              10      responses_gpt_5_4    2             2
+cantabria_2025              10      responses_gpt_5_4    3             2
+cantabria_2025              11 assistants_gpt_4_turbo    1             2
+cantabria_2025              11 assistants_gpt_4_turbo    2             2
+cantabria_2025              11 assistants_gpt_4_turbo    3             2
+cantabria_2025              11     assistants_gpt_5_4    1             2
+cantabria_2025              11     assistants_gpt_5_4    2             2
+cantabria_2025              11     assistants_gpt_5_4    3             2
+cantabria_2025              11  responses_gpt_4_turbo    1             2
+cantabria_2025              11  responses_gpt_4_turbo    2             2
+cantabria_2025              11  responses_gpt_4_turbo    3             2
+cantabria_2025              11      responses_gpt_5_4    1             2
+cantabria_2025              11      responses_gpt_5_4    2             2
+cantabria_2025              11      responses_gpt_5_4    3             2
+cantabria_2025              12 assistants_gpt_4_turbo    1             2
+cantabria_2025              12 assistants_gpt_4_turbo    2             2
+cantabria_2025              12 assistants_gpt_4_turbo    3             2
+cantabria_2025              12     assistants_gpt_5_4    1             2
+cantabria_2025              12     assistants_gpt_5_4    2             2
+cantabria_2025              12     assistants_gpt_5_4    3             2
+cantabria_2025              12  responses_gpt_4_turbo    1             2
+cantabria_2025              12  responses_gpt_4_turbo    2             2
+cantabria_2025              12  responses_gpt_4_turbo    3             2
+cantabria_2025              12      responses_gpt_5_4    1             2
+cantabria_2025              12      responses_gpt_5_4    2             2
+cantabria_2025              12      responses_gpt_5_4    3             2
+cantabria_2025              13 assistants_gpt_4_turbo    1             2
+cantabria_2025              13 assistants_gpt_4_turbo    2             2
+cantabria_2025              13 assistants_gpt_4_turbo    3             2
+cantabria_2025              13     assistants_gpt_5_4    1             2
+cantabria_2025              13     assistants_gpt_5_4    2             2
+cantabria_2025              13     assistants_gpt_5_4    3             2
+cantabria_2025              13  responses_gpt_4_turbo    1             2
+cantabria_2025              13  responses_gpt_4_turbo    2             2
+cantabria_2025              13  responses_gpt_4_turbo    3             2
+cantabria_2025              13      responses_gpt_5_4    1             2
+cantabria_2025              13      responses_gpt_5_4    2             2
+cantabria_2025              13      responses_gpt_5_4    3             2
+cantabria_2025              14 assistants_gpt_4_turbo    1             2
+cantabria_2025              14 assistants_gpt_4_turbo    2             2
+cantabria_2025              14 assistants_gpt_4_turbo    3             2
+cantabria_2025              14     assistants_gpt_5_4    1             2
+cantabria_2025              14     assistants_gpt_5_4    2             2
+cantabria_2025              14     assistants_gpt_5_4    3             2
+cantabria_2025              14  responses_gpt_4_turbo    1             2
+cantabria_2025              14  responses_gpt_4_turbo    2             2
+cantabria_2025              14  responses_gpt_4_turbo    3             2
+cantabria_2025              14      responses_gpt_5_4    1             2
+cantabria_2025              14      responses_gpt_5_4    2             2
+cantabria_2025              14      responses_gpt_5_4    3             2
+cantabria_2025              15 assistants_gpt_4_turbo    1             2
+cantabria_2025              15 assistants_gpt_4_turbo    2             2
+cantabria_2025              15 assistants_gpt_4_turbo    3             2
+cantabria_2025              15     assistants_gpt_5_4    1             2
+cantabria_2025              15     assistants_gpt_5_4    2             2
+cantabria_2025              15     assistants_gpt_5_4    3             2
+cantabria_2025              15  responses_gpt_4_turbo    1             2
+cantabria_2025              15  responses_gpt_4_turbo    2             2
+cantabria_2025              15  responses_gpt_4_turbo    3             2
+cantabria_2025              15      responses_gpt_5_4    1             2
+cantabria_2025              15      responses_gpt_5_4    2             2
+cantabria_2025              15      responses_gpt_5_4    3             2
+cantabria_2025              16 assistants_gpt_4_turbo    1             2
+cantabria_2025              16 assistants_gpt_4_turbo    2             2
+cantabria_2025              16 assistants_gpt_4_turbo    3             2
+cantabria_2025              16     assistants_gpt_5_4    1             2
+cantabria_2025              16     assistants_gpt_5_4    2             2
+cantabria_2025              16     assistants_gpt_5_4    3             2
+cantabria_2025              16  responses_gpt_4_turbo    1             2
+cantabria_2025              16  responses_gpt_4_turbo    2             2
+cantabria_2025              16  responses_gpt_4_turbo    3             2
+cantabria_2025              16      responses_gpt_5_4    1             2
+cantabria_2025              16      responses_gpt_5_4    2             2
+cantabria_2025              16      responses_gpt_5_4    3             2
+cantabria_2025              17 assistants_gpt_4_turbo    1             2
+cantabria_2025              17 assistants_gpt_4_turbo    2             2
+cantabria_2025              17 assistants_gpt_4_turbo    3             2
+cantabria_2025              17     assistants_gpt_5_4    1             2
+cantabria_2025              17     assistants_gpt_5_4    2             2
+cantabria_2025              17     assistants_gpt_5_4    3             2
+cantabria_2025              17  responses_gpt_4_turbo    1             2
+cantabria_2025              17  responses_gpt_4_turbo    2             2
+cantabria_2025              17  responses_gpt_4_turbo    3             2
+cantabria_2025              17      responses_gpt_5_4    1             2
+cantabria_2025              17      responses_gpt_5_4    2             2
+cantabria_2025              17      responses_gpt_5_4    3             2
+cantabria_2025              18 assistants_gpt_4_turbo    1             2
+cantabria_2025              18 assistants_gpt_4_turbo    2             2
+cantabria_2025              18 assistants_gpt_4_turbo    3             2
+cantabria_2025              18     assistants_gpt_5_4    1             2
+cantabria_2025              18     assistants_gpt_5_4    2             2
+cantabria_2025              18     assistants_gpt_5_4    3             2
+cantabria_2025              18  responses_gpt_4_turbo    1             2
+cantabria_2025              18  responses_gpt_4_turbo    2             2
+cantabria_2025              18  responses_gpt_4_turbo    3             2
+cantabria_2025              18      responses_gpt_5_4    1             2
+cantabria_2025              18      responses_gpt_5_4    2             2
+cantabria_2025              18      responses_gpt_5_4    3             2
+cantabria_2025              19 assistants_gpt_4_turbo    1             2
+cantabria_2025              19 assistants_gpt_4_turbo    2             2
+cantabria_2025              19 assistants_gpt_4_turbo    3             2
+cantabria_2025              19     assistants_gpt_5_4    1             2
+cantabria_2025              19     assistants_gpt_5_4    2             2
+cantabria_2025              19     assistants_gpt_5_4    3             2
+cantabria_2025              19  responses_gpt_4_turbo    1             2
+cantabria_2025              19  responses_gpt_4_turbo    2             2
+cantabria_2025              19  responses_gpt_4_turbo    3             2
+cantabria_2025              19      responses_gpt_5_4    1             2
+cantabria_2025              19      responses_gpt_5_4    2             2
+cantabria_2025              19      responses_gpt_5_4    3             2
+cantabria_2025               2 assistants_gpt_4_turbo    1             2
+cantabria_2025               2 assistants_gpt_4_turbo    2             2
+cantabria_2025               2 assistants_gpt_4_turbo    3             2
+cantabria_2025               2     assistants_gpt_5_4    1             2
+cantabria_2025               2     assistants_gpt_5_4    2             2
+cantabria_2025               2     assistants_gpt_5_4    3             2
+cantabria_2025               2  responses_gpt_4_turbo    1             2
+cantabria_2025               2  responses_gpt_4_turbo    2             2
+cantabria_2025               2  responses_gpt_4_turbo    3             2
+cantabria_2025               2      responses_gpt_5_4    1             2
+cantabria_2025               2      responses_gpt_5_4    2             2
+cantabria_2025               2      responses_gpt_5_4    3             2
+cantabria_2025              20 assistants_gpt_4_turbo    1             2
+cantabria_2025              20 assistants_gpt_4_turbo    2             2
+cantabria_2025              20 assistants_gpt_4_turbo    3             2
+cantabria_2025              20     assistants_gpt_5_4    1             2
+cantabria_2025              20     assistants_gpt_5_4    2             2
+cantabria_2025              20     assistants_gpt_5_4    3             2
+cantabria_2025              20  responses_gpt_4_turbo    1             2
+cantabria_2025              20  responses_gpt_4_turbo    2             2
+cantabria_2025              20  responses_gpt_4_turbo    3             2
+cantabria_2025              20      responses_gpt_5_4    1             2
+cantabria_2025              20      responses_gpt_5_4    2             2
+cantabria_2025              20      responses_gpt_5_4    3             2
+cantabria_2025              21 assistants_gpt_4_turbo    1             2
+cantabria_2025              21 assistants_gpt_4_turbo    2             2
+cantabria_2025              21 assistants_gpt_4_turbo    3             2
+cantabria_2025              21     assistants_gpt_5_4    1             2
+cantabria_2025              21     assistants_gpt_5_4    2             2
+cantabria_2025              21     assistants_gpt_5_4    3             2
+cantabria_2025              21  responses_gpt_4_turbo    1             2
+cantabria_2025              21  responses_gpt_4_turbo    2             2
+cantabria_2025              21  responses_gpt_4_turbo    3             2
+cantabria_2025              21      responses_gpt_5_4    1             2
+cantabria_2025              21      responses_gpt_5_4    2             2
+cantabria_2025              21      responses_gpt_5_4    3             2
+cantabria_2025              22 assistants_gpt_4_turbo    1             2
+cantabria_2025              22 assistants_gpt_4_turbo    2             2
+cantabria_2025              22 assistants_gpt_4_turbo    3             2
+cantabria_2025              22     assistants_gpt_5_4    1             2
+cantabria_2025              22     assistants_gpt_5_4    2             2
+cantabria_2025              22     assistants_gpt_5_4    3             2
+cantabria_2025              22  responses_gpt_4_turbo    1             2
+cantabria_2025              22  responses_gpt_4_turbo    2             2
+cantabria_2025              22  responses_gpt_4_turbo    3             2
+cantabria_2025              22      responses_gpt_5_4    1             2
+cantabria_2025              22      responses_gpt_5_4    2             2
+cantabria_2025              22      responses_gpt_5_4    3             2
+cantabria_2025               3 assistants_gpt_4_turbo    1             2
+cantabria_2025               3 assistants_gpt_4_turbo    2             2
+cantabria_2025               3 assistants_gpt_4_turbo    3             2
+cantabria_2025               3     assistants_gpt_5_4    1             2
+cantabria_2025               3     assistants_gpt_5_4    2             2
+cantabria_2025               3     assistants_gpt_5_4    3             2
+cantabria_2025               3  responses_gpt_4_turbo    1             2
+cantabria_2025               3  responses_gpt_4_turbo    2             2
+cantabria_2025               3  responses_gpt_4_turbo    3             2
+cantabria_2025               3      responses_gpt_5_4    1             2
+cantabria_2025               3      responses_gpt_5_4    2             2
+cantabria_2025               3      responses_gpt_5_4    3             2
+cantabria_2025               4 assistants_gpt_4_turbo    1             2
+cantabria_2025               4 assistants_gpt_4_turbo    2             2
+cantabria_2025               4 assistants_gpt_4_turbo    3             2
+cantabria_2025               4     assistants_gpt_5_4    1             2
+cantabria_2025               4     assistants_gpt_5_4    2             2
+cantabria_2025               4     assistants_gpt_5_4    3             2
+cantabria_2025               4  responses_gpt_4_turbo    1             2
+cantabria_2025               4  responses_gpt_4_turbo    2             2
+cantabria_2025               4  responses_gpt_4_turbo    3             2
+cantabria_2025               4      responses_gpt_5_4    1             2
+cantabria_2025               4      responses_gpt_5_4    2             2
+cantabria_2025               4      responses_gpt_5_4    3             2
+cantabria_2025               5 assistants_gpt_4_turbo    1             2
+cantabria_2025               5 assistants_gpt_4_turbo    2             2
+cantabria_2025               5 assistants_gpt_4_turbo    3             2
+cantabria_2025               5     assistants_gpt_5_4    1             2
+cantabria_2025               5     assistants_gpt_5_4    2             2
+cantabria_2025               5     assistants_gpt_5_4    3             2
+cantabria_2025               5  responses_gpt_4_turbo    1             2
+cantabria_2025               5  responses_gpt_4_turbo    2             2
+cantabria_2025               5  responses_gpt_4_turbo    3             2
+cantabria_2025               5      responses_gpt_5_4    1             2
+cantabria_2025               5      responses_gpt_5_4    2             2
+cantabria_2025               5      responses_gpt_5_4    3             2
+cantabria_2025               6 assistants_gpt_4_turbo    1             2
+cantabria_2025               6 assistants_gpt_4_turbo    2             2
+cantabria_2025               6 assistants_gpt_4_turbo    3             2
+cantabria_2025               6     assistants_gpt_5_4    1             2
+cantabria_2025               6     assistants_gpt_5_4    2             2
+cantabria_2025               6     assistants_gpt_5_4    3             2
+cantabria_2025               6  responses_gpt_4_turbo    1             2
+cantabria_2025               6  responses_gpt_4_turbo    2             2
+cantabria_2025               6  responses_gpt_4_turbo    3             2
+cantabria_2025               6      responses_gpt_5_4    1             2
+cantabria_2025               6      responses_gpt_5_4    2             2
+cantabria_2025               6      responses_gpt_5_4    3             2
+cantabria_2025               7 assistants_gpt_4_turbo    1             2
+cantabria_2025               7 assistants_gpt_4_turbo    2             2
+cantabria_2025               7 assistants_gpt_4_turbo    3             2
+cantabria_2025               7     assistants_gpt_5_4    1             2
+cantabria_2025               7     assistants_gpt_5_4    2             2
+cantabria_2025               7     assistants_gpt_5_4    3             2
+cantabria_2025               7  responses_gpt_4_turbo    1             2
+cantabria_2025               7  responses_gpt_4_turbo    2             2
+cantabria_2025               7  responses_gpt_4_turbo    3             2
+cantabria_2025               7      responses_gpt_5_4    1             2
+cantabria_2025               7      responses_gpt_5_4    2             2
+cantabria_2025               7      responses_gpt_5_4    3             2
+cantabria_2025               8 assistants_gpt_4_turbo    1             2
+cantabria_2025               8 assistants_gpt_4_turbo    2             2
+cantabria_2025               8 assistants_gpt_4_turbo    3             2
+cantabria_2025               8     assistants_gpt_5_4    1             2
+cantabria_2025               8     assistants_gpt_5_4    2             2
+cantabria_2025               8     assistants_gpt_5_4    3             2
+cantabria_2025               8  responses_gpt_4_turbo    1             2
+cantabria_2025               8  responses_gpt_4_turbo    2             2
+cantabria_2025               8  responses_gpt_4_turbo    3             2
+cantabria_2025               8      responses_gpt_5_4    1             2
+cantabria_2025               8      responses_gpt_5_4    2             2
+cantabria_2025               8      responses_gpt_5_4    3             2
+cantabria_2025               9 assistants_gpt_4_turbo    1             2
+cantabria_2025               9 assistants_gpt_4_turbo    2             2
+cantabria_2025               9 assistants_gpt_4_turbo    3             2
+cantabria_2025               9     assistants_gpt_5_4    1             2
+cantabria_2025               9     assistants_gpt_5_4    2             2
+cantabria_2025               9     assistants_gpt_5_4    3             2
+cantabria_2025               9  responses_gpt_4_turbo    1             2
+cantabria_2025               9  responses_gpt_4_turbo    2             2
+cantabria_2025               9  responses_gpt_4_turbo    3             2
+cantabria_2025               9      responses_gpt_5_4    1             2
+cantabria_2025               9      responses_gpt_5_4    2             2
+cantabria_2025               9      responses_gpt_5_4    3             2

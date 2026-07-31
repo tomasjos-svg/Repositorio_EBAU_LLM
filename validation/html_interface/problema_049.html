@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problema 49: cantabria_2023 8</title>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { color-scheme: light dark; --bg:#f4f6f8; --card:#fff; --text:#1f2937; --muted:#64748b; --line:#dbe3ea; --accent:#0f4c81; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#cbd5e1; --line:#475569; --accent:#7dd3fc; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+main { max-width:1200px; margin:0 auto; padding:24px; }
+header { margin-bottom:18px; }
+h1 { margin:.2rem 0; }
+.meta { color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow-wrap:anywhere; }
+.card h2 { margin-top:0; color:var(--accent); }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+a.button { display:inline-block; padding:9px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+th { position:sticky; top:0; background:var(--card); }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+.notice { padding:10px 12px; border-left:4px solid #f59e0b; background:rgba(245,158,11,.12); }
+@media print { nav,.notice { display:none; } body { background:white; color:black; } .card { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body><main>
+<header><h1>Problema 49 de 139</h1>
+<div class="meta"><span class="badge">cantabria_2023</span> &nbsp; Ejercicio 8</div></header>
+<div class="notice">Las identidades de los modelos permanecen cegadas como A y B. Registra las puntuaciones en el Excel.</div>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_048.html">Anterior</a><a class="button" href="problema_050.html">Siguiente</a></nav>
+<section class="card"><h2>Enunciado</h2><p>Ejercicio 8 [2,5 PUNTOS]</p>
+<p>En una población determinada la altura de los niños de 17 años sigue una distribución normal de media 175 cm y desviación típica 7,41.</p>
+<p>A) [1 PUNTO] Calcule la probabilidad de que en dicha población la altura de un niño de 17 años esté entre 170 cm y 180 cm.</p>
+<p>B) [1,5 PUNTOS] A partir de qué altura un niño de 17 años de dicha población se encontraría dentro del 5% de niños de 17 años más altos de dicha población?</p></section>
+<section class="card"><h2>Solucion oficial</h2><p><strong>Ejercicio 8 [2.5 PUNTOS]</strong></p>
+<p>En una población determinada la altura de los niños de 17 años sigue una distribución normal de media 175 cm y desviación típica 7,41.</p>
+<p>Sea \(X=\) altura de un niño de 17 años en centímetros.</p>
+<p>\[
+X=N(175,7.41)
+\]</p>
+<h4>A) [1 PUNTO]</h4>
+<p>Nos pide calcular:</p>
+<p>\[
+P(170 \le X \le 180)
+\]</p>
+<p>\[
+P(170 \le X \le 180)=P(X\le 180)-P(X\le 170)
+\]</p>
+<p>Tipificamos:</p>
+<p>\[
+P\left(Z\le \frac{180-175}{7.41}\right)-P\left(Z\le \frac{170-175}{7.41}\right)
+\]</p>
+<p>\[
+=P(Z\le 0.675)-P(Z\le -0.675)
+\]</p>
+<p>\[
+=P(Z\le 0.675)-\left[1-P(Z\le 0.675)\right]
+\]</p>
+<p>Mirando en la tabla \(N(0,1)\):</p>
+<p>\[
+P(Z\le 0.675)\simeq \frac{0.7486+0.7517}{2}=0.75015
+\]</p>
+<p>Por tanto:</p>
+<p>\[
+P(170 \le X \le 180)=0.75015-(1-0.75015)=0.5003
+\]</p>
+<p>---</p>
+<h4>B) [1,5 PUNTOS]</h4>
+<p>Nos piden hallar el valor de \(a\) tal que:</p>
+<p>\[
+P(X\ge a)=0.05
+\]</p>
+<p>Tipificamos:</p>
+<p>\[
+P\left(Z\ge \frac{a-175}{7.41}\right)=0.05
+\]</p>
+<p>\[
+P\left(Z\le \frac{a-175}{7.41}\right)=0.95
+\]</p>
+<p>Mirando en la tabla \(N(0,1)\):</p>
+<p>\[
+\frac{a-175}{7.41}=1.645
+\]</p>
+<p>\[
+a=175+1.645\cdot 7.41=187.19
+\]</p>
+<p>Por tanto, a partir de:</p>
+<p>\[
+\boxed{187.19\text{ cm}}
+\]</p>
+<p>un niño se encontraría dentro del 5% de los más altos.</p></section>
+<section class="card"><h2>Respuesta A</h2><p>Vamos a resolver el Ejercicio 8 que consta de dos partes, A y B.</p>
+<h4>Parte A</h4>
+<p>En esta parte se nos pide calcular la probabilidad de que un niño de 17 años tenga una altura entre 170 cm y 180 cm. Dado que la altura sigue una distribución normal con media \( \mu = 175 \) cm y desviación estándar \( \sigma = 7.41 \) cm, podemos utilizar la distribución normal estandarizada para encontrar esta probabilidad.</p>
+<p>Primero, convertimos los valores 170 cm y 180 cm a sus correspondientes valores Z en la distribución normal estándar utilizando la fórmula:<br>
+\[ Z = \frac{X - \mu}{\sigma} \]</p>
+<p>Para 170 cm:<br>
+\[ Z_{170} = \frac{170 - 175}{7.41} = \frac{-5}{7.41} \approx -0.675 \]</p>
+<p>Para 180 cm:<br>
+\[ Z_{180} = \frac{180 - 175}{7.41} = \frac{5}{7.41} \approx 0.675 \]</p>
+<p>Ahora, usando la tabla de la distribución normal estándar o una calculadora de distribución normal, buscamos los valores correspondientes a \( Z_{170} \) y \( Z_{180} \).</p>
+<p>La probabilidad de que \( Z \) esté entre -0.675 y 0.675 es:<br>
+\[ P(-0.675 \leq Z \leq 0.675) \]</p>
+<p>Consultando una tabla estándar de la distribución normal o usando una función de distribución acumulativa (CDF), encontramos:<br>
+\[ P(-0.675) \]<br>
+\[ P(0.675) \]</p>
+<p>La probabilidad acumulativa hasta \( Z = 0.675 \) es aproximadamente 0.7493 y para \( Z = -0.675 \) es aproximadamente 0.2507. Entonces, la probabilidad buscada es:<br>
+\[ P(-0.675 \leq Z \leq 0.675) = P(Z \leq 0.675) - P(Z \leq -0.675) = 0.7493 - 0.2507 = 0.4986 \]</p>
+<h4>Parte B</h4>
+<p>Aquí se nos pide determinar a partir de qué altura un niño de 17 años se encuentra en el 5% de los más altos. Esto significa que queremos encontrar el valor de \( k \) tal que \( P(X &gt; k) = 0.05 \).</p>
+<p>En términos de una distribución normal estándar:<br>
+\[ P\left(\frac{X - 175}{7.41} &gt; \frac{k - 175}{7.41}\right) = 0.05 \]<br>
+\[ P\left(Z &gt; \frac{k - 175}{7.41}\right) = 0.05 \]</p>
+<p>Necesitamos el valor crítico de \( Z \) que corresponde al 95% acumulado (porque el 100% - 5% = 95%), que comúnmente denotamos como \( Z_{0.95} \). Este valor, según una tabla de Z, es aproximadamente \( Z_{0.95} \approx 1.645 \).</p>
+<p>Ahora, resolvemos para \( k \):<br>
+\[ \frac{k - 175}{7.41} = 1.645 \]<br>
+\[ k - 175 = 1.645 \times 7.41 \]<br>
+\[ k = 175 + 1.645 \times 7.41 \]<br>
+\[ k = 175 + 12.18595 \]<br>
+\[ k \approx 187.19 \text{ cm} \]</p>
+<p>Por lo tanto, un niño de esta población necesita tener una altura aproximadamente mayor a 187.19 cm para estar en el 5% más alto de la población de niños de 17 años.</p></section>
+<section class="card"><h2>Respuesta B</h2><p>Sea \(X\) la altura (en cm) de un niño de 17 años.  <br>
+Según el enunciado,</p>
+<p>\[
+X \sim N(175,\;7.41^2)
+\]</p>
+<p>es decir, media \(\mu=175\) cm y desviación típica \(\sigma=7.41\) cm.</p>
+<p>---</p>
+<h3>A) Probabilidad de que mida entre 170 cm y 180 cm</h3>
+<p>Queremos calcular:</p>
+<p>\[
+P(170 \le X \le 180)
+\]</p>
+<p>Estandarizamos:</p>
+<p>\[
+Z=\frac{X-\mu}{\sigma}=\frac{X-175}{7.41}
+\]</p>
+<p>Entonces,</p>
+<p>\[
+P(170 \le X \le 180)
+=
+P\left(\frac{170-175}{7.41}\le Z \le \frac{180-175}{7.41}\right)
+\]</p>
+<p>\[
+=
+P\left(\frac{-5}{7.41}\le Z \le \frac{5}{7.41}\right)
+=
+P(-0.675 \le Z \le 0.675)
+\]</p>
+<p>Usando la tabla de la normal estándar,</p>
+<p>\[
+\Phi(0.675)\approx 0.750
+\]</p>
+<p>y por simetría,</p>
+<p>\[
+P(-0.675 \le Z \le 0.675)=2\Phi(0.675)-1
+\]</p>
+<p>\[
+\approx 2(0.750)-1=0.500
+\]</p>
+<h4>Resultado del apartado A</h4>
+\[
+\boxed{P(170 \le X \le 180)\approx 0.50}
+\]
+<p>Es decir, aproximadamente un <strong>50%</strong>.</p>
+<p>---</p>
+<h3>B) Altura a partir de la cual está en el 5% más alto</h3>
+<p>Buscamos el valor \(h\) tal que solo el 5% quede por encima:</p>
+<p>\[
+P(X\ge h)=0.05
+\]</p>
+<p>Equivale a:</p>
+<p>\[
+P(X\le h)=0.95
+\]</p>
+<p>Por tanto, \(h\) es el percentil 95 de la distribución normal.  <br>
+En la normal estándar:</p>
+<p>\[
+z_{0.95}\approx 1.645
+\]</p>
+<p>Deshacemos la estandarización:</p>
+<p>\[
+h=\mu+z\sigma
+\]</p>
+<p>\[
+h=175+1.645\cdot 7.41
+\]</p>
+<p>\[
+h=175+12.19\approx 187.19
+\]</p>
+<h4>Resultado del apartado B</h4>
+\[
+\boxed{h\approx 187.2\text{ cm}}
+\]
+<p>A partir de <strong>187,2 cm</strong> aproximadamente, un niño estaría dentro del <strong>5% más alto</strong> de la población.</p>
+<p>---</p>
+<h3>Resumen final</h3>
+<p>- <strong>A)</strong> \(\boxed{P(170\le X\le 180)\approx 0.50}\)<br>
+- <strong>B)</strong> \(\boxed{187.2\text{ cm}}\) aproximadamente.</p></section>
+<nav><a class="button" href="index.html">Indice</a><a class="button" href="problema_048.html">Anterior</a><a class="button" href="problema_050.html">Siguiente</a></nav>
+</main></body>
+</html>
